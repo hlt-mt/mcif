@@ -14,14 +14,27 @@
 
 import argparse
 import csv
+import datetime
+import logging
+import os
 import random
 import re
+import wave
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, List
 import xml.etree.ElementTree as ET
+
+import yaml
 
 
 TEST_SET_DEF_FNAME = "[IWSLT 2025] Test Set - ASR, ST, SQA, SSUM final.tsv"
+
+logging.basicConfig(
+    format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    level=os.environ.get("LOGLEVEL", "INFO").upper(),
+)
+logger = logging.getLogger("iwslt2025_testset_generator")
 
 
 class Instructions:
@@ -81,17 +94,67 @@ class TestsetDefinitionLine:
     def unique_id(self) -> str:
         return f"{self.line['Video ID']}_{self.line['ID']}"
 
+    @staticmethod
+    def _str_to_seconds(time_string):
+        t = datetime.datetime.strptime(time_string, "%H:%M:%S")
+        return datetime.timedelta(hours=t.hour, minutes=t.minute, seconds=t.second).total_seconds()
 
-def long_track(args):
+    def answer_start(self) -> float:
+        return self._str_to_seconds(self.line["Answer Start"])
+
+    def answer_end(self) -> float:
+        return self._str_to_seconds(self.line["Answer End"])
+
+
+class SegmentedAudios:
     """
-    Writes the src and ref files for the long track in the `output-dir`.
+    Wrapper giving access to a YAML file with definition of audio splits.
+    """
 
-    :param args: an argparse.Namespace containing the `source-dir` and `output-dir`
+    def __init__(self, yaml_fname: str):
+        self.audio_to_segments = {}
+        with open(yaml_fname) as f:
+            segments = yaml.load(f, Loader=yaml.BaseLoader)
+            segm_i = 0
+            for segm in segments:
+                if segm["wav"] not in self.audio_to_segments:
+                    self.audio_to_segments[segm["wav"]] = []
+                    segm_i = 0
+                self.audio_to_segments[segm["wav"]].append({
+                    "wav": segm["wav"].replace(".wav", f"_{segm_i}.wav"),
+                    "segm_i": segm_i,
+                    "start": float(segm["offset"]),
+                    "end": float(segm["offset"]) + float(segm["duration"])
+                })
+                segm_i += 1
+
+    def corresponding_segments(self, wav: str, start: float, end: float) -> List[Dict[str, Any]]:
+        result = []
+        for segm in self.audio_to_segments[wav]:
+            if end < segm["start"]:
+                break
+            if start < segm["end"]:
+                result.append(segm)
+        return result
+
+
+def merge_wav_files(wavs: List[Path], output_fname: Path):
+    with wave.open(output_fname.as_posix(), 'wb') as wav_out:
+        for wav_path in wavs:
+            with wave.open(wav_path.as_posix(), 'rb') as wav_in:
+                if not wav_out.getnframes():
+                    wav_out.setparams(wav_in.getparams())
+                wav_out.writeframes(wav_in.readframes(wav_in.getnframes()))
+
+
+def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
+    """
+    Reads the test set definition and returns a dictionary with the corresponding information.
     """
     instruction_builder = Instructions()
-    source_path = Path(args.source_dir)
-    output_path = Path(args.output_dir)
     test_elements = []
+    audio_segments = SegmentedAudios(
+        (source_path / "SEGMENTED_AUDIO" / "shas_segmentation.yaml").as_posix())
     # Read test elements from the TSV definition
     with open(source_path / TEST_SET_DEF_FNAME, 'r') as f:
         reader = csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE)
@@ -105,7 +168,8 @@ def long_track(args):
                     "instruction": instruction_builder.asr(),
                     "reference": test_item_def.transcript(),
                     "task": "ASR",
-                    "iid": "ASR_" + str(test_item_def.video_id())
+                    "iid": "ASR_" + str(test_item_def.video_id()),
+                    "short_audio_segments": audio_segments.audio_to_segments[test_item_def.audio()]
                 })
                 test_elements.append({
                     "audio": test_item_def.audio(),
@@ -115,12 +179,25 @@ def long_track(args):
                     "iid": "SSUM_" + str(test_item_def.video_id())
                 })
             if test_item_def.question_type() in {"AV", "A"}:
+                corresponding_audio_segments = audio_segments.corresponding_segments(
+                    test_item_def.audio(),
+                    test_item_def.answer_start(),
+                    test_item_def.answer_end()
+                )
+                assert len(corresponding_audio_segments) > 0, \
+                    f"No audio segment for question {test_item_def.unique_id()}"
+                if len(corresponding_audio_segments) > 1:
+                    logger.warning(
+                        f"Question {test_item_def.unique_id()} [{test_item_def.answer_start()}"
+                        f"-{test_item_def.answer_end()}] is associated with multiple speech "
+                        f"segments: {corresponding_audio_segments}")
                 test_elements.append({
                     "audio": test_item_def.audio(),
                     "instruction": instruction_builder.sqa(test_item_def.question()),
                     "reference": test_item_def.answer(),
                     "task": "SQA",
-                    "iid": "SQA_" + str(test_item_def.unique_id())
+                    "iid": "SQA_" + str(test_item_def.unique_id()),
+                    "short_audio_segments": corresponding_audio_segments
                 })
             elif test_item_def.question_type() == "NA":
                 test_elements.append({
@@ -128,13 +205,17 @@ def long_track(args):
                     "instruction": instruction_builder.sqa(test_item_def.question()),
                     "reference": "Not answerable.",
                     "task": "SQA",
-                    "iid": "SQA_" + str(test_item_def.unique_id())
+                    "iid": "SQA_" + str(test_item_def.unique_id()),
+                    "short_audio_segments": [random.choice(
+                        audio_segments.audio_to_segments[test_item_def.audio()])]
                 })
+    return test_elements
 
-    # Shuffle test elements to avoid clear patterns in instructions
-    random.seed(42)
-    random.shuffle(test_elements)
 
+def long_track(test_elements: List[Dict[str, Any]], output_path: Path) -> None:
+    """
+    Writes the src and ref files for the long track in the `output_path`.
+    """
     xml_src = ET.Element("testset", attrib={'name': "IWSLT2025"})
     xml_ref = ET.Element("testset", attrib={'name': "IWSLT2025"})
     xml_src_track = ET.SubElement(xml_src, "task", attrib={"track": "long", "text_lang": "en"})
@@ -160,6 +241,68 @@ def long_track(args):
         output_path / "IWSLT2025.IF.long.en.ref.xml", encoding="utf-8", xml_declaration=True)
 
 
+def short_track(test_elements: List[Dict[str, Any]], source_path: Path, output_path: Path) -> None:
+    """
+    Writes the src and ref files for the short track in the `output_path`.
+    """
+    short_segments_path = source_path / "SEGMENTED_AUDIO" / "shas_segments"
+    audio_output_path = output_path / "SHORT_AUDIOS"
+    audio_output_path.mkdir()
+    xml_src = ET.Element("testset", attrib={'name': "IWSLT2025"})
+    xml_ref = ET.Element("testset", attrib={'name': "IWSLT2025"})
+    xml_src_track = ET.SubElement(xml_src, "task", attrib={"track": "short", "text_lang": "en"})
+    xml_ref_track = ET.SubElement(xml_ref, "task", attrib={"track": "short", "text_lang": "en"})
+    sample_id = 0
+    for sample in test_elements:
+        if sample["task"] == "SSUM":
+            continue
+        if sample["task"] == "ASR":
+            sample_ids = []
+            for short_audio_segm in sample["short_audio_segments"]:
+                xml_src_sample = ET.SubElement(xml_src_track, "sample", attrib={'id': str(sample_id)})
+                ET.SubElement(xml_src_sample, "audio_path").text = short_audio_segm["wav"]
+                ET.SubElement(xml_src_sample, "instruction").text = sample["instruction"]
+                sample_ids.append(sample_id)
+                sample_id += 1
+            xml_ref_sample = ET.SubElement(
+                xml_ref_track,
+                "sample",
+                attrib={
+                    'id': ",".join(str(s) for s in sample_ids),
+                    "iid": sample["iid"],
+                    "task": sample["task"]})
+            ET.SubElement(xml_ref_sample, "audio_path").text = sample["audio"]
+            ET.SubElement(xml_ref_sample, "reference").text = sample["reference"]
+        else:
+            assert sample["task"] == "SQA", f"Unsupported task {sample['task']}"
+            xml_src_sample = ET.SubElement(xml_src_track, "sample", attrib={'id': str(sample_id)})
+            if len(sample["short_audio_segments"]) == 1:
+                short_audio = sample["short_audio_segments"][0]["wav"]
+            else:
+                short_audio = sample["iid"] + ".wav"
+                merge_wav_files(
+                    [short_segments_path / s["wav"] for s in sample["short_audio_segments"]],
+                    audio_output_path / short_audio)
+            ET.SubElement(xml_src_sample, "audio_path").text = short_audio
+            ET.SubElement(xml_src_sample, "instruction").text = sample["instruction"]
+            xml_ref_sample = ET.SubElement(
+                xml_ref_track,
+                "sample",
+                attrib={"id": str(sample_id), "iid": sample["iid"], "task": sample["task"]})
+            sample_id += 1
+            ET.SubElement(xml_ref_sample, "audio_path").text = short_audio
+            ET.SubElement(xml_ref_sample, "reference").text = sample["reference"]
+
+    tree_src = ET.ElementTree(xml_src)
+    tree_ref = ET.ElementTree(xml_ref)
+    ET.indent(tree_src)
+    ET.indent(tree_ref)
+    tree_src.write(
+        output_path / "IWSLT2025.IF.short.en.src.xml", encoding="utf-8", xml_declaration=True)
+    tree_ref.write(
+        output_path / "IWSLT2025.IF.short.en.ref.xml", encoding="utf-8", xml_declaration=True)
+
+
 def cli_script():
     """
     Starting from the test set definitions collected in TSV format, this scripts outputs:
@@ -178,8 +321,17 @@ def cli_script():
     args = parser.parse_args()
     output_path = Path(args.output_dir)
     output_path.mkdir(exist_ok=True)
-    long_track(args)
-    # TODO: short_track(args)
+    source_path = Path(args.source_dir)
+    # we set the seed to make reproducible the test set generation even though
+    # there are random choices
+    random.seed(3)  # in read_test_elements we select a random segment fon NA questions
+    test_elements = read_test_elements(source_path)
+    # shuffle test elements to avoid clear patterns in instructions
+    random.seed(42)
+    random.shuffle(test_elements)
+    # write the XML test definition and reference
+    long_track(test_elements, output_path)
+    short_track(test_elements, source_path, output_path)
 
 
 if __name__ == "__main__":
