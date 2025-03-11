@@ -19,6 +19,8 @@ import logging
 import os
 import random
 import re
+import shutil
+import string
 import wave
 from pathlib import Path
 from typing import Dict, Any, List
@@ -35,6 +37,32 @@ logging.basicConfig(
     level=os.environ.get("LOGLEVEL", "INFO").upper(),
 )
 logger = logging.getLogger("iwslt2025_testset_generator")
+
+
+class AudioToAlias:
+    """
+    Helper class that takes audio names and maps each of them to an anonymous name.
+    """
+    _ALREADY_RETURNED_NAMES = set()
+
+    def __init__(self):
+        self.names_map = {}
+
+    def __getitem__(self, item: str):
+        if item not in self.names_map:
+            self.names_map[item] = AudioToAlias.get_random_name()
+        return self.names_map[item]
+
+    def __iter__(self):
+        return self.names_map.__iter__()
+
+    @staticmethod
+    def get_random_name():
+        while True:
+            candidate = ''.join(random.choices(string.ascii_letters, k=10)) + ".wav"
+            if candidate not in AudioToAlias._ALREADY_RETURNED_NAMES:
+                AudioToAlias._ALREADY_RETURNED_NAMES.add(candidate)
+                return candidate
 
 
 class Instructions:
@@ -212,23 +240,27 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
     return test_elements
 
 
-def long_track(test_elements: List[Dict[str, Any]], output_path: Path) -> None:
+def long_track(
+        test_elements: List[Dict[str, Any]],
+        source_path: Path,
+        output_path: Path) -> Dict[str, str]:
     """
     Writes the src and ref files for the long track in the `output_path`.
     """
+    audio_to_alias = AudioToAlias()
     xml_src = ET.Element("testset", attrib={'name': "IWSLT2025"})
     xml_ref = ET.Element("testset", attrib={'name': "IWSLT2025"})
     xml_src_track = ET.SubElement(xml_src, "task", attrib={"track": "long", "text_lang": "en"})
     xml_ref_track = ET.SubElement(xml_ref, "task", attrib={"track": "long", "text_lang": "en"})
     for sample_id, sample in enumerate(test_elements):
         xml_src_sample = ET.SubElement(xml_src_track, "sample", attrib={'id': str(sample_id)})
-        ET.SubElement(xml_src_sample, "audio_path").text = sample["audio"]
+        ET.SubElement(xml_src_sample, "audio_path").text = audio_to_alias[sample["audio"]]
         ET.SubElement(xml_src_sample, "instruction").text = sample["instruction"]
         xml_ref_sample = ET.SubElement(
             xml_ref_track,
             "sample",
             attrib={'id': str(sample_id), "iid": sample["iid"], "task": sample["task"]})
-        ET.SubElement(xml_ref_sample, "audio_path").text = sample["audio"]
+        ET.SubElement(xml_ref_sample, "audio_path").text = audio_to_alias[sample["audio"]]
         ET.SubElement(xml_ref_sample, "reference").text = sample["reference"]
 
     tree_src = ET.ElementTree(xml_src)
@@ -240,11 +272,25 @@ def long_track(test_elements: List[Dict[str, Any]], output_path: Path) -> None:
     tree_ref.write(
         output_path / "IWSLT2025.IF.long.en.ref.xml", encoding="utf-8", xml_declaration=True)
 
+    base_audio_path = source_path / "AUDIO"
+    output_audio_path = output_path / "LONG_AUDIOS"
+    output_audio_path.mkdir()
+    for original_name in audio_to_alias:
+        shutil.copyfile(
+            base_audio_path / original_name, output_audio_path / audio_to_alias[original_name])
 
-def short_track(test_elements: List[Dict[str, Any]], source_path: Path, output_path: Path) -> None:
+    return audio_to_alias.names_map
+
+
+def short_track(
+        test_elements: List[Dict[str, Any]],
+        long_audio_map: Dict[str, str],
+        source_path: Path,
+        output_path: Path) -> None:
     """
     Writes the src and ref files for the short track in the `output_path`.
     """
+    audio_to_alias = AudioToAlias()
     short_segments_path = source_path / "SEGMENTED_AUDIO" / "shas_segments"
     audio_output_path = output_path / "SHORT_AUDIOS"
     audio_output_path.mkdir()
@@ -259,8 +305,10 @@ def short_track(test_elements: List[Dict[str, Any]], source_path: Path, output_p
         if sample["task"] == "ASR":
             sample_ids = []
             for short_audio_segm in sample["short_audio_segments"]:
-                xml_src_sample = ET.SubElement(xml_src_track, "sample", attrib={'id': str(sample_id)})
-                ET.SubElement(xml_src_sample, "audio_path").text = short_audio_segm["wav"]
+                xml_src_sample = ET.SubElement(
+                    xml_src_track, "sample", attrib={'id': str(sample_id)})
+                ET.SubElement(xml_src_sample, "audio_path").text = audio_to_alias[
+                    short_audio_segm["wav"]]
                 ET.SubElement(xml_src_sample, "instruction").text = sample["instruction"]
                 sample_ids.append(sample_id)
                 sample_id += 1
@@ -271,15 +319,15 @@ def short_track(test_elements: List[Dict[str, Any]], source_path: Path, output_p
                     'id': ",".join(str(s) for s in sample_ids),
                     "iid": sample["iid"],
                     "task": sample["task"]})
-            ET.SubElement(xml_ref_sample, "audio_path").text = sample["audio"]
+            ET.SubElement(xml_ref_sample, "audio_path").text = long_audio_map[sample["audio"]]
             ET.SubElement(xml_ref_sample, "reference").text = sample["reference"]
         else:
             assert sample["task"] == "SQA", f"Unsupported task {sample['task']}"
             xml_src_sample = ET.SubElement(xml_src_track, "sample", attrib={'id': str(sample_id)})
             if len(sample["short_audio_segments"]) == 1:
-                short_audio = sample["short_audio_segments"][0]["wav"]
+                short_audio = audio_to_alias[sample["short_audio_segments"][0]["wav"]]
             else:
-                short_audio = sample["iid"] + ".wav"
+                short_audio = AudioToAlias.get_random_name()
                 merge_wav_files(
                     [short_segments_path / s["wav"] for s in sample["short_audio_segments"]],
                     audio_output_path / short_audio)
@@ -301,6 +349,10 @@ def short_track(test_elements: List[Dict[str, Any]], source_path: Path, output_p
         output_path / "IWSLT2025.IF.short.en.src.xml", encoding="utf-8", xml_declaration=True)
     tree_ref.write(
         output_path / "IWSLT2025.IF.short.en.ref.xml", encoding="utf-8", xml_declaration=True)
+
+    for original_name in audio_to_alias:
+        shutil.copyfile(
+            short_segments_path / original_name, audio_output_path / audio_to_alias[original_name])
 
 
 def cli_script():
@@ -330,8 +382,8 @@ def cli_script():
     random.seed(42)
     random.shuffle(test_elements)
     # write the XML test definition and reference
-    long_track(test_elements, output_path)
-    short_track(test_elements, source_path, output_path)
+    long_audio_map = long_track(test_elements, source_path, output_path)
+    short_track(test_elements, long_audio_map, source_path, output_path)
 
 
 if __name__ == "__main__":
