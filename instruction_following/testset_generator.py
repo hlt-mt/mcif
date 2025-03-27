@@ -29,7 +29,32 @@ import xml.etree.ElementTree as ET
 import yaml
 
 
-TEST_SET_DEF_FNAME = "[IWSLT 2025] Test Set - ASR, ST, SQA, SSUM final.tsv"
+TEST_SET_DEF_FNAME = "[IWSLT 2025] Test Set - ASR, ST, SQA (also cross-lingual), SSUM final .tsv"
+TEST_SET_SSUM_DEF_FNAME = "[IWSLT 2025] Test Set - SSUM (only abstract in English).tsv"
+TGT_LANGS = ["de", "it", "zh"]
+LANG_INSTRUCTIONS = {
+    "de": {
+        "st": "Übersetze die englische Audioaufnahme nach Deutsch.",
+        "sqa": "Beantworte die folgende Frage basierend auf der englischen Audioaufnahme:",
+        "ssum": "Fasse den Inhalt der englischen Audioaufnahme in maximal 200 Wörtern zusammen."
+    },
+    "it": {
+        "st": "Traduci l’audio inglese in italiano.",
+        "sqa": "Rispondi alla seguente domanda dato l’audio inglese:",
+        "ssum": "Riassumi il contenuto dell'audio inglese usando al massimo 200 parole."
+    },
+    "zh": {
+        "st": "将英文音频翻译成中文。",
+        "sqa": "根据英语音频，回答以下问题：",
+        "ssum": "用不超过 200 个字概括给出的英语音频。"
+    },
+}
+LANG_NOT_ANSWERABLE = {
+    "en": "Not answerable.",
+    "de": "Nicht zu beantworten.",
+    "it": "Non è possibile rispondere.",
+    "zh": "无法回答。"
+}
 
 logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
@@ -76,12 +101,22 @@ class Instructions:
         return "Transcribe the English audio."
 
     def sqa(self, question, lang="en"):
-        assert lang in {"en"}
-        return f"Answer the following question given the English audio: {question}"
+        if lang == "en":
+            return f"Answer the following question given the English audio: {question}"
+        else:
+            assert lang in TGT_LANGS
+            return f"{LANG_INSTRUCTIONS[lang]['sqa']} {question}"
 
     def ssum(self, lang="en"):
-        assert lang in {"en"}
-        return "Summarize the English audio in maximum 200 words."
+        if lang == "en":
+            return "Summarize the English audio in maximum 200 words."
+        else:
+            assert lang in TGT_LANGS
+            return LANG_INSTRUCTIONS[lang]['ssum']
+
+    def st(self, lang):
+        assert lang in TGT_LANGS
+        return LANG_INSTRUCTIONS[lang]['st']
 
 
 class TestsetDefinitionLine:
@@ -96,6 +131,9 @@ class TestsetDefinitionLine:
     def video_id(self) -> int:
         return int(self.line["Video ID"])
 
+    def line_id(self) -> int:
+        return int(self.line["ID"])
+
     def audio(self) -> str:
         base_name = self.line["Video Link"].replace("https://aclanthology.org/", "")[:-4]
         return base_name + ".wav"
@@ -103,21 +141,24 @@ class TestsetDefinitionLine:
     def transcript(self) -> str:
         return self._RE_COMBINE_WHITESPACE.sub(" ", self.line["Revised Transcript"]).strip()
 
-    def abstract(self) -> str:
-        return self.line["Abstract"].strip()
+    def translation(self, lang) -> str:
+        return self._RE_COMBINE_WHITESPACE.sub(" ", self.line[f"Translation_{lang}"]).strip()
+
+    def abstract(self, lang="en") -> str:
+        return self.line[f"Abstract_{lang}"].strip()
 
     def question_id(self) -> int:
         return int(self.line['Question ID'])
 
-    def question(self) -> str:
-        return self.line['Question']
+    def question(self, lang="en") -> str:
+        return self.line[f'Question_{lang}']
 
     def question_type(self) -> str:
         assert self.line['Question Type'] in {"AV", "A", "V", "NA"}
         return self.line['Question Type']
 
-    def answer(self) -> str:
-        return self.line['Answer']
+    def answer(self, lang="en") -> str:
+        return self.line[f'Answer_{lang}']
 
     def unique_id(self) -> str:
         return f"{self.line['Video ID']}_{self.line['ID']}"
@@ -183,6 +224,7 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
     test_elements = []
     audio_segments = SegmentedAudios(
         (source_path / "SEGMENTED_AUDIO" / "shas_segmentation.yaml").as_posix())
+    video_ids = set()
     # Read test elements from the TSV definition
     with open(source_path / TEST_SET_DEF_FNAME, 'r') as f:
         reader = csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE)
@@ -193,19 +235,43 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                 assert current_audio_path.exists(), f"{current_audio_path} not found."
                 test_elements.append({
                     "audio": test_item_def.audio(),
-                    "instruction": instruction_builder.asr(),
-                    "reference": test_item_def.transcript(),
+                    "langs": {
+                        "en": {
+                            "instruction": instruction_builder.asr(),
+                            "reference": test_item_def.transcript()
+                        }
+                    },
                     "task": "ASR",
                     "iid": "ASR_" + str(test_item_def.video_id()),
                     "short_audio_segments": audio_segments.audio_to_segments[test_item_def.audio()]
                 })
                 test_elements.append({
                     "audio": test_item_def.audio(),
-                    "instruction": instruction_builder.ssum(),
-                    "reference": test_item_def.abstract(),
+                    "langs": {
+                        lang: {
+                            "instruction": instruction_builder.st(lang=lang),
+                            "reference": test_item_def.translation(lang=lang)
+                        }
+                        for lang in TGT_LANGS
+                    },
+                    "transcript": test_item_def.transcript(),
+                    "task": "ST",
+                    "iid": "ST_" + str(test_item_def.video_id()),
+                    "short_audio_segments": audio_segments.audio_to_segments[test_item_def.audio()]
+                })
+                test_elements.append({
+                    "audio": test_item_def.audio(),
+                    "langs": {
+                        lang: {
+                            "instruction": instruction_builder.ssum(lang=lang),
+                            "reference": test_item_def.abstract(lang=lang)
+                        }
+                        for lang in {"en"}.union(TGT_LANGS)
+                    },
                     "task": "SSUM",
                     "iid": "SSUM_" + str(test_item_def.video_id())
                 })
+                video_ids.add(test_item_def.video_id())
             if test_item_def.question_type() in {"AV", "A"}:
                 corresponding_audio_segments = audio_segments.corresponding_segments(
                     test_item_def.audio(),
@@ -221,8 +287,14 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                         f"segments: {corresponding_audio_segments}")
                 test_elements.append({
                     "audio": test_item_def.audio(),
-                    "instruction": instruction_builder.sqa(test_item_def.question()),
-                    "reference": test_item_def.answer(),
+                    "langs": {
+                        lang: {
+                            "instruction": instruction_builder.sqa(
+                                test_item_def.question(), lang=lang),
+                            "reference": test_item_def.answer(lang=lang)
+                        }
+                        for lang in {"en"}.union(TGT_LANGS)
+                    },
                     "task": "SQA",
                     "iid": "SQA_" + str(test_item_def.unique_id()),
                     "short_audio_segments": corresponding_audio_segments
@@ -230,12 +302,34 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
             elif test_item_def.question_type() == "NA":
                 test_elements.append({
                     "audio": test_item_def.audio(),
-                    "instruction": instruction_builder.sqa(test_item_def.question()),
-                    "reference": "Not answerable.",
+                    "langs": {
+                        lang: {
+                            "instruction": instruction_builder.sqa(
+                                test_item_def.question(), lang=lang),
+                            "reference": LANG_NOT_ANSWERABLE[lang]
+                        }
+                        for lang in {"en"}.union(TGT_LANGS)
+                    },
                     "task": "SQA",
                     "iid": "SQA_" + str(test_item_def.unique_id()),
                     "short_audio_segments": [random.choice(
                         audio_segments.audio_to_segments[test_item_def.audio()])]
+                })
+    with open(source_path / TEST_SET_SSUM_DEF_FNAME, 'r') as f:
+        reader = csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE)
+        for line in reader:
+            test_item_def = TestsetDefinitionLine(line)
+            if test_item_def.line_id() not in video_ids:
+                test_elements.append({
+                    "audio": test_item_def.audio(),
+                    "langs": {
+                        "en": {
+                            "instruction": instruction_builder.ssum(),
+                            "reference": test_item_def.abstract()
+                        }
+                    },
+                    "task": "SSUM",
+                    "iid": "SSUM_" + str(test_item_def.line_id())
                 })
     return test_elements
 
@@ -248,29 +342,47 @@ def long_track(
     Writes the src and ref files for the long track in the `output_path`.
     """
     audio_to_alias = AudioToAlias()
-    xml_src = ET.Element("testset", attrib={'name': "IWSLT2025"})
-    xml_ref = ET.Element("testset", attrib={'name': "IWSLT2025"})
-    xml_src_track = ET.SubElement(xml_src, "task", attrib={"track": "long", "text_lang": "en"})
-    xml_ref_track = ET.SubElement(xml_ref, "task", attrib={"track": "long", "text_lang": "en"})
+    xml_src = {}
+    xml_ref = {}
+    xml_src_track = {}
+    xml_ref_track = {}
+    for lang in {"en"}.union(TGT_LANGS):
+        xml_src[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
+        xml_ref[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
+        xml_src_track[lang] = ET.SubElement(
+            xml_src[lang], "task", attrib={"track": "long", "text_lang": lang})
+        xml_ref_track[lang] = ET.SubElement(
+            xml_ref[lang], "task", attrib={"track": "long", "text_lang": lang})
     for sample_id, sample in enumerate(test_elements):
-        xml_src_sample = ET.SubElement(xml_src_track, "sample", attrib={'id': str(sample_id)})
-        ET.SubElement(xml_src_sample, "audio_path").text = audio_to_alias[sample["audio"]]
-        ET.SubElement(xml_src_sample, "instruction").text = sample["instruction"]
-        xml_ref_sample = ET.SubElement(
-            xml_ref_track,
-            "sample",
-            attrib={'id': str(sample_id), "iid": sample["iid"], "task": sample["task"]})
-        ET.SubElement(xml_ref_sample, "audio_path").text = audio_to_alias[sample["audio"]]
-        ET.SubElement(xml_ref_sample, "reference").text = sample["reference"]
+        for lang in sample["langs"]:
+            xml_src_sample = ET.SubElement(
+                xml_src_track[lang], "sample", attrib={'id': str(sample_id)})
+            ET.SubElement(xml_src_sample, "audio_path").text = audio_to_alias[sample["audio"]]
+            ET.SubElement(xml_src_sample, "instruction").text = \
+                sample["langs"][lang]["instruction"]
+            xml_ref_sample = ET.SubElement(
+                xml_ref_track[lang],
+                "sample",
+                attrib={'id': str(sample_id), "iid": sample["iid"], "task": sample["task"]})
+            ET.SubElement(xml_ref_sample, "audio_path").text = audio_to_alias[sample["audio"]]
+            ET.SubElement(xml_ref_sample, "reference").text = sample["langs"][lang]["reference"]
+            if sample["task"] == "ST":
+                xml_metadata = ET.SubElement(xml_ref_sample, "metadata")
+                ET.SubElement(xml_metadata, "transcript").text = sample["transcript"]
 
-    tree_src = ET.ElementTree(xml_src)
-    tree_ref = ET.ElementTree(xml_ref)
-    ET.indent(tree_src)
-    ET.indent(tree_ref)
-    tree_src.write(
-        output_path / "IWSLT2025.IF.long.en.src.xml", encoding="utf-8", xml_declaration=True)
-    tree_ref.write(
-        output_path / "IWSLT2025.IF.long.en.ref.xml", encoding="utf-8", xml_declaration=True)
+    for lang in {"en"}.union(TGT_LANGS):
+        tree_src = ET.ElementTree(xml_src[lang])
+        tree_ref = ET.ElementTree(xml_ref[lang])
+        ET.indent(tree_src)
+        ET.indent(tree_ref)
+        tree_src.write(
+            output_path / f"IWSLT2025.IF.long.{lang}.src.xml",
+            encoding="utf-8",
+            xml_declaration=True)
+        tree_ref.write(
+            output_path / f"IWSLT2025.IF.long.{lang}.ref.xml",
+            encoding="utf-8",
+            xml_declaration=True)
 
     base_audio_path = source_path / "AUDIO"
     output_audio_path = output_path / "LONG_AUDIOS"
@@ -294,36 +406,49 @@ def short_track(
     short_segments_path = source_path / "SEGMENTED_AUDIO" / "shas_segments"
     audio_output_path = output_path / "SHORT_AUDIOS"
     audio_output_path.mkdir()
-    xml_src = ET.Element("testset", attrib={'name': "IWSLT2025"})
-    xml_ref = ET.Element("testset", attrib={'name': "IWSLT2025"})
-    xml_src_track = ET.SubElement(xml_src, "task", attrib={"track": "short", "text_lang": "en"})
-    xml_ref_track = ET.SubElement(xml_ref, "task", attrib={"track": "short", "text_lang": "en"})
+    xml_src = {}
+    xml_ref = {}
+    xml_src_track = {}
+    xml_ref_track = {}
+    for lang in {"en"}.union(TGT_LANGS):
+        xml_src[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
+        xml_ref[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
+        xml_src_track[lang] = ET.SubElement(
+            xml_src[lang], "task", attrib={"track": "short", "text_lang": lang})
+        xml_ref_track[lang] = ET.SubElement(
+            xml_ref[lang], "task", attrib={"track": "short", "text_lang": lang})
     sample_id = 0
     for sample in test_elements:
         if sample["task"] == "SSUM":
             continue
-        if sample["task"] == "ASR":
+        if sample["task"] == "ASR" or sample["task"] == "ST":
             sample_ids = []
             for short_audio_segm in sample["short_audio_segments"]:
-                xml_src_sample = ET.SubElement(
-                    xml_src_track, "sample", attrib={'id': str(sample_id)})
-                ET.SubElement(xml_src_sample, "audio_path").text = audio_to_alias[
-                    short_audio_segm["wav"]]
-                ET.SubElement(xml_src_sample, "instruction").text = sample["instruction"]
+                for lang in sample["langs"]:
+                    xml_src_sample = ET.SubElement(
+                        xml_src_track[lang], "sample", attrib={'id': str(sample_id)})
+                    ET.SubElement(xml_src_sample, "audio_path").text = audio_to_alias[
+                        short_audio_segm["wav"]]
+                    ET.SubElement(xml_src_sample, "instruction").text = \
+                        sample["langs"][lang]["instruction"]
                 sample_ids.append(sample_id)
                 sample_id += 1
-            xml_ref_sample = ET.SubElement(
-                xml_ref_track,
-                "sample",
-                attrib={
-                    'id': ",".join(str(s) for s in sample_ids),
-                    "iid": sample["iid"],
-                    "task": sample["task"]})
-            ET.SubElement(xml_ref_sample, "audio_path").text = long_audio_map[sample["audio"]]
-            ET.SubElement(xml_ref_sample, "reference").text = sample["reference"]
+            for lang in sample["langs"]:
+                xml_ref_sample = ET.SubElement(
+                    xml_ref_track[lang],
+                    "sample",
+                    attrib={
+                        'id': ",".join(str(s) for s in sample_ids),
+                        "iid": sample["iid"],
+                        "task": sample["task"]})
+                ET.SubElement(xml_ref_sample, "audio_path").text = long_audio_map[sample["audio"]]
+                ET.SubElement(xml_ref_sample, "reference").text = \
+                    sample["langs"][lang]["reference"]
+                if sample["task"] == "ST":
+                    xml_metadata = ET.SubElement(xml_ref_sample, "metadata")
+                    ET.SubElement(xml_metadata, "transcript").text = sample["transcript"]
         else:
             assert sample["task"] == "SQA", f"Unsupported task {sample['task']}"
-            xml_src_sample = ET.SubElement(xml_src_track, "sample", attrib={'id': str(sample_id)})
             if len(sample["short_audio_segments"]) == 1:
                 short_audio = audio_to_alias[sample["short_audio_segments"][0]["wav"]]
             else:
@@ -331,24 +456,34 @@ def short_track(
                 merge_wav_files(
                     [short_segments_path / s["wav"] for s in sample["short_audio_segments"]],
                     audio_output_path / short_audio)
-            ET.SubElement(xml_src_sample, "audio_path").text = short_audio
-            ET.SubElement(xml_src_sample, "instruction").text = sample["instruction"]
-            xml_ref_sample = ET.SubElement(
-                xml_ref_track,
-                "sample",
-                attrib={"id": str(sample_id), "iid": sample["iid"], "task": sample["task"]})
+            for lang in sample["langs"]:
+                xml_src_sample = ET.SubElement(
+                    xml_src_track[lang], "sample", attrib={'id': str(sample_id)})
+                ET.SubElement(xml_src_sample, "audio_path").text = short_audio
+                ET.SubElement(xml_src_sample, "instruction").text = \
+                    sample["langs"][lang]["instruction"]
+                xml_ref_sample = ET.SubElement(
+                    xml_ref_track[lang],
+                    "sample",
+                    attrib={"id": str(sample_id), "iid": sample["iid"], "task": sample["task"]})
+                ET.SubElement(xml_ref_sample, "audio_path").text = short_audio
+                ET.SubElement(xml_ref_sample, "reference").text = \
+                    sample["langs"][lang]["reference"]
             sample_id += 1
-            ET.SubElement(xml_ref_sample, "audio_path").text = short_audio
-            ET.SubElement(xml_ref_sample, "reference").text = sample["reference"]
 
-    tree_src = ET.ElementTree(xml_src)
-    tree_ref = ET.ElementTree(xml_ref)
-    ET.indent(tree_src)
-    ET.indent(tree_ref)
-    tree_src.write(
-        output_path / "IWSLT2025.IF.short.en.src.xml", encoding="utf-8", xml_declaration=True)
-    tree_ref.write(
-        output_path / "IWSLT2025.IF.short.en.ref.xml", encoding="utf-8", xml_declaration=True)
+    for lang in {"en"}.union(TGT_LANGS):
+        tree_src = ET.ElementTree(xml_src[lang])
+        tree_ref = ET.ElementTree(xml_ref[lang])
+        ET.indent(tree_src)
+        ET.indent(tree_ref)
+        tree_src.write(
+            output_path / f"IWSLT2025.IF.short.{lang}.src.xml",
+            encoding="utf-8",
+            xml_declaration=True)
+        tree_ref.write(
+            output_path / f"IWSLT2025.IF.short.{lang}.ref.xml",
+            encoding="utf-8",
+            xml_declaration=True)
 
     for original_name in audio_to_alias:
         shutil.copyfile(

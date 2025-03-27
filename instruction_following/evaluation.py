@@ -20,7 +20,7 @@ import string
 import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
-from collections import namedtuple
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List
 
@@ -31,7 +31,12 @@ from comet import download_model, load_from_checkpoint
 
 CHAR_LEVEL_LANGS = {"zh"}
 
-ReferenceSample = namedtuple('ReferenceSample', ['sample_ids', 'reference'])
+
+@dataclass
+class ReferenceSample:
+    sample_ids: List[str]
+    reference: str
+    metadata: Dict[str, str] = None
 
 
 class MwerSegmenter:
@@ -115,8 +120,13 @@ def read_reference(
             for sample in task.iter("sample"):
                 if sample.attrib['task'] not in samples_by_subtask:
                     samples_by_subtask[sample.attrib['task']] = {}
+                sample_ids = sample.attrib['id'].split(",")
+                sample_reference = next(sample.iter('reference')).text
+                sample_metadata = {}
+                for metadata_field in next(sample.iter('metadata')).iter():
+                    sample_metadata[metadata_field.tag] = metadata_field.text
                 samples_by_subtask[sample.attrib['task']][sample.attrib['iid']] = ReferenceSample(
-                    sample.attrib['id'].split(","), next(sample.iter('reference')).text)
+                    sample_ids, sample_reference, sample_metadata)
             return samples_by_subtask
         avail_tasks.append((task.attrib['track'], task.attrib['text_lang']))
     raise Exception(
@@ -211,7 +221,7 @@ def score_st(
     mwer_segmeter = MwerSegmenter(character_level=(lang in CHAR_LEVEL_LANGS))
     for iid, ref_sample in ref_dict["ST"].items():
         ref_lines = ref_sample.reference.split("\n")
-        src_lines = ref_dict["ASR"][iid].reference.split("\n")
+        src_lines = ref_sample.metadata["transcript"].split("\n")
         assert len(ref_lines) == len(src_lines), \
             f"ST reference (IID: {iid}) has mismatched number of target ({len(ref_lines)}) and " \
             f"source lines ({len(src_lines)})"
