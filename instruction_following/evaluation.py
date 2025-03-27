@@ -123,8 +123,9 @@ def read_reference(
                 sample_ids = sample.attrib['id'].split(",")
                 sample_reference = next(sample.iter('reference')).text
                 sample_metadata = {}
-                for metadata_field in next(sample.iter('metadata')).iter():
-                    sample_metadata[metadata_field.tag] = metadata_field.text
+                for metadata in sample.iter('metadata'):
+                    for metadata_field in metadata.iter():
+                        sample_metadata[metadata_field.tag] = metadata_field.text
                 samples_by_subtask[sample.attrib['task']][sample.attrib['iid']] = ReferenceSample(
                     sample_ids, sample_reference, sample_metadata)
             return samples_by_subtask
