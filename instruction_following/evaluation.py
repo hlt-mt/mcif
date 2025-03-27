@@ -191,10 +191,6 @@ def bertscore(
         hypos.append(hypo_dict[ref_sample.sample_ids[0]])
         refs.append(ref_sample.reference)
 
-    # since BERTScore supports a dedicated model for scientific text, we use it as it aligns with
-    # out domain data. This should be revisited if used with different type of data
-    if lang == "en":
-        lang = "en-sci"
     P, R, F1 = bert_score.score(hypos, refs, lang=lang, rescale_with_baseline=True)
     return F1.mean().detach().item()
 
