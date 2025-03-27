@@ -19,6 +19,7 @@ For the evaluation script, other requirements are:
 pip install jiwer==3.0.5
 pip install bert_score==0.3.13
 pip install unbabel-comet==2.2.4
+pip install whisper_normalizer==0.0.10
 ```
 
 The scripts have been tested with Python 3.9.

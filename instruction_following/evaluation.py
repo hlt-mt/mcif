@@ -27,6 +27,7 @@ from typing import Dict, List
 import bert_score
 import jiwer
 from comet import download_model, load_from_checkpoint
+from whisper_normalizer import english, basic
 
 
 CHAR_LEVEL_LANGS = {"zh"}
@@ -142,22 +143,17 @@ def score_asr(
     """
     Computes WER after removing punctuation and lowercasing. No tokenization is performed.
     """
-    _RE_COMBINE_WHITESPACE = re.compile(r"\s+")
-
-    def preprocess(text: str) -> str:
-        # Remove punctuation
-        text = text.translate(str.maketrans('', '', string.punctuation))
-        # convert newlines to spaces and remove duplicated spaces
-        text = _RE_COMBINE_WHITESPACE.sub(" ", text).strip()
-        # Convert to lowercase
-        return text.lower()
+    if lang == "en":
+        std = english.EnglishTextNormalizer()
+    else:
+        std = basic.BasicTextNormalizer()
 
     refs, hypos = [], []
     for _, ref_sample in ref_dict["ASR"].items():
         hypo_components = []
         for sample_id in ref_sample.sample_ids:
-            hypo_components.append(preprocess(hypo_dict[sample_id]))
-        refs.append(preprocess(ref_sample.reference))
+            hypo_components.append(std(hypo_dict[sample_id]))
+        refs.append(std(ref_sample.reference))
         hypos.append(" ".join(hypo_components))
     return jiwer.wer(refs, hypos)
 
