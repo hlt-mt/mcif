@@ -216,6 +216,13 @@ def merge_wav_files(wavs: List[Path], output_fname: Path):
                 wav_out.writeframes(wav_in.readframes(wav_in.getnframes()))
 
 
+def total_segments_duration(segments: List[Dict[str, Any]]) -> float:
+    total_seconds = 0.
+    for segment in segments:
+        total_seconds += segment["end"] - segment["start"]
+    return total_seconds
+
+
 def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
     """
     Reads the test set definition and returns a dictionary with the corresponding information.
@@ -281,10 +288,16 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                 assert len(corresponding_audio_segments) > 0, \
                     f"No audio segment for question {test_item_def.unique_id()}"
                 if len(corresponding_audio_segments) > 1:
-                    logger.warning(
+                    logger.debug(
                         f"Question {test_item_def.unique_id()} [{test_item_def.answer_start()}"
                         f"-{test_item_def.answer_end()}] is associated with multiple speech "
                         f"segments: {corresponding_audio_segments}")
+                    total_duration = total_segments_duration(corresponding_audio_segments)
+                    if total_duration > 30.:
+                        logger.warning(
+                            f"Skipping question {test_item_def.unique_id()} with duration "
+                            f"{total_duration} seconds.")
+                        continue
                 test_elements.append({
                     "audio": test_item_def.audio(),
                     "langs": {
