@@ -16,7 +16,6 @@ import json
 import os
 import re
 import shutil
-import string
 import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
