@@ -303,7 +303,7 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                     "langs": {
                         lang: {
                             "instruction": instruction_builder.sqa(
-                                test_item_def.question(), lang=lang),
+                                test_item_def.question(lang=lang), lang=lang),
                             "reference": test_item_def.answer(lang=lang)
                         }
                         for lang in {"en"}.union(TGT_LANGS)
