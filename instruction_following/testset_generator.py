@@ -207,6 +207,33 @@ class SegmentedAudios:
         return result
 
 
+class Translation:
+    def __init__(self, translation_file: Path):
+        self.videos = {}
+        with open(translation_file) as f:
+            reader = csv.reader(f, delimiter='\t')
+            next(reader)  # skip header
+            for line in reader:
+                assert len(line) % 2 == 0  # transcript and translation lines are alternated
+                transcript_lines = []
+                translation_lines = []
+                for i in range(2, len(line)):
+                    if line[i] == '':
+                        continue
+                    if i % 2 == 0:
+                        transcript_lines.append(line[i])
+                    else:
+                        translation_lines.append(line[i])
+                assert len(transcript_lines) == len(translation_lines)
+                self.videos[int(line[0])] = {
+                    "transcript": "\n".join(transcript_lines),
+                    "translation": "\n".join(translation_lines),
+                }
+
+    def __getitem__(self, item):
+        return self.videos[item]
+
+
 def merge_wav_files(wavs: List[Path], output_fname: Path):
     with wave.open(output_fname.as_posix(), 'wb') as wav_out:
         for wav_path in wavs:
@@ -231,6 +258,11 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
     test_elements = []
     audio_segments = SegmentedAudios(
         (source_path / "SEGMENTED_AUDIO" / "shas_segmentation.yaml").as_posix())
+    translations = {
+        "de": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_german.tsv"),
+        "it": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_italian.tsv"),
+        "zh": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_chinese.tsv"),
+    }
     video_ids = set()
     # Read test elements from the TSV definition
     with open(source_path / TEST_SET_DEF_FNAME, 'r') as f:
@@ -257,11 +289,11 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                     "langs": {
                         lang: {
                             "instruction": instruction_builder.st(lang=lang),
-                            "reference": test_item_def.translation(lang=lang)
+                            "reference": translations[lang][test_item_def.video_id()]["translation"],
+                            "transcript": translations[lang][test_item_def.video_id()]["transcript"],
                         }
                         for lang in TGT_LANGS
                     },
-                    "transcript": test_item_def.transcript(),
                     "task": "ST",
                     "iid": "ST_" + str(test_item_def.video_id()),
                     "short_audio_segments": audio_segments.audio_to_segments[test_item_def.audio()]
@@ -381,7 +413,8 @@ def long_track(
             ET.SubElement(xml_ref_sample, "reference").text = sample["langs"][lang]["reference"]
             if sample["task"] == "ST":
                 xml_metadata = ET.SubElement(xml_ref_sample, "metadata")
-                ET.SubElement(xml_metadata, "transcript").text = sample["transcript"]
+                ET.SubElement(xml_metadata, "transcript").text = \
+                    sample["langs"][lang]["transcript"]
 
     for lang in {"en"}.union(TGT_LANGS):
         tree_src = ET.ElementTree(xml_src[lang])
@@ -459,7 +492,8 @@ def short_track(
                     sample["langs"][lang]["reference"]
                 if sample["task"] == "ST":
                     xml_metadata = ET.SubElement(xml_ref_sample, "metadata")
-                    ET.SubElement(xml_metadata, "transcript").text = sample["transcript"]
+                    ET.SubElement(xml_metadata, "transcript").text = \
+                        sample["langs"][lang]["transcript"]
         else:
             assert sample["task"] == "SQA", f"Unsupported task {sample['task']}"
             if len(sample["short_audio_segments"]) == 1:
