@@ -234,6 +234,30 @@ class Translation:
         return self.videos[item]
 
 
+class AbstractTranslation:
+    def __init__(self, translation_file: Path):
+        self.videos = {}
+        with open(translation_file) as f:
+            reader = csv.reader(f, delimiter='\t')
+            next(reader)  # skip header
+            for line in reader:
+                assert len(line) % 2 == 0  # transcript and translation lines are alternated
+                transcript_lines = []
+                translation_lines = []
+                for i in range(2, len(line)):
+                    if line[i] == '':
+                        continue
+                    if i % 2 == 0:
+                        transcript_lines.append(line[i])
+                    else:
+                        translation_lines.append(line[i])
+                assert len(transcript_lines) == len(translation_lines)
+                self.videos[int(line[0])] = " ".join(translation_lines).strip()
+
+    def __getitem__(self, item):
+        return self.videos[item]
+
+
 def merge_wav_files(wavs: List[Path], output_fname: Path):
     with wave.open(output_fname.as_posix(), 'wb') as wav_out:
         for wav_path in wavs:
@@ -262,6 +286,11 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
         "de": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_german.tsv"),
         "it": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_italian.tsv"),
         "zh": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_chinese.tsv"),
+    }
+    abstract_translations = {
+        "de": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_german.tsv"),
+        "it": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_italian.tsv"),
+        "zh": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_chinese.tsv"),
     }
     video_ids = set()
     # Read test elements from the TSV definition
@@ -298,15 +327,20 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                     "iid": "ST_" + str(test_item_def.video_id()),
                     "short_audio_segments": audio_segments.audio_to_segments[test_item_def.audio()]
                 })
+                langs = {
+                    "en": {
+                        "instruction": instruction_builder.ssum(),
+                        "reference": test_item_def.abstract()
+                    }
+                }
+                for lang in TGT_LANGS:
+                    langs[lang] = {
+                        "instruction": instruction_builder.ssum(lang=lang),
+                        "reference": abstract_translations[lang][test_item_def.video_id()]
+                    }
                 test_elements.append({
                     "audio": test_item_def.audio(),
-                    "langs": {
-                        lang: {
-                            "instruction": instruction_builder.ssum(lang=lang),
-                            "reference": test_item_def.abstract(lang=lang)
-                        }
-                        for lang in {"en"}.union(TGT_LANGS)
-                    },
+                    "langs": langs,
                     "task": "SSUM",
                     "iid": "SSUM_" + str(test_item_def.video_id())
                 })
