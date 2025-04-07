@@ -298,6 +298,7 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
         reader = csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE)
         for line in reader:
             test_item_def = TestsetDefinitionLine(line)
+            video_id = test_item_def.video_id()
             if test_item_def.question_id() == 1:
                 current_audio_path = source_path / "AUDIO" / test_item_def.audio()
                 assert current_audio_path.exists(), f"{current_audio_path} not found."
@@ -310,7 +311,7 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                         }
                     },
                     "task": "ASR",
-                    "iid": "ASR_" + str(test_item_def.video_id()),
+                    "iid": "ASR_" + str(video_id),
                     "short_audio_segments": audio_segments.audio_to_segments[test_item_def.audio()]
                 })
                 test_elements.append({
@@ -318,13 +319,13 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                     "langs": {
                         lang: {
                             "instruction": instruction_builder.st(lang=lang),
-                            "reference": translations[lang][test_item_def.video_id()]["translation"],
-                            "transcript": translations[lang][test_item_def.video_id()]["transcript"],
+                            "reference": translations[lang][video_id]["translation"],
+                            "transcript": translations[lang][video_id]["transcript"],
                         }
                         for lang in TGT_LANGS
                     },
                     "task": "ST",
-                    "iid": "ST_" + str(test_item_def.video_id()),
+                    "iid": "ST_" + str(video_id),
                     "short_audio_segments": audio_segments.audio_to_segments[test_item_def.audio()]
                 })
                 langs = {
@@ -336,15 +337,15 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                 for lang in TGT_LANGS:
                     langs[lang] = {
                         "instruction": instruction_builder.ssum(lang=lang),
-                        "reference": abstract_translations[lang][test_item_def.video_id()]
+                        "reference": abstract_translations[lang][video_id]
                     }
                 test_elements.append({
                     "audio": test_item_def.audio(),
                     "langs": langs,
                     "task": "SSUM",
-                    "iid": "SSUM_" + str(test_item_def.video_id())
+                    "iid": "SSUM_" + str(video_id)
                 })
-                video_ids.add(test_item_def.video_id())
+                video_ids.add(video_id)
             if test_item_def.question_type() in {"AV", "A"}:
                 corresponding_audio_segments = audio_segments.corresponding_segments(
                     test_item_def.audio(),
