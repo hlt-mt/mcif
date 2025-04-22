@@ -99,11 +99,17 @@ class MwerSegmenter:
 
 
 def read_hypo(hypo_path: Path, track: str, language: str) -> Dict[str, str]:
+
+    def read_text(xml_sample):
+        if xml_sample.text is None:
+            return ""
+        return xml_sample.text.strip()
+
     xml = ET.parse(hypo_path)
     avail_tasks = []
     for task in xml.getroot().iter("task"):
         if task.attrib['track'] == track and task.attrib['text_lang'] == language:
-            return {sample.attrib['id']: sample.text.strip() for sample in task.iter("sample")}
+            return {sample.attrib['id']: read_text(sample) for sample in task.iter("sample")}
         avail_tasks.append((task.attrib['track'], task.attrib['text_lang']))
     raise Exception(
         f"Task '{track}' for language '{language}' not available in {hypo_path}. "
