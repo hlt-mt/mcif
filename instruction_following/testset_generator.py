@@ -211,7 +211,7 @@ class Translation:
     def __init__(self, translation_file: Path):
         self.videos = {}
         with open(translation_file) as f:
-            reader = csv.reader(f, delimiter='\t')
+            reader = csv.reader(f, delimiter='\t', quotechar=None)
             next(reader)  # skip header
             for line in reader:
                 assert len(line) % 2 == 0  # transcript and translation lines are alternated
@@ -238,7 +238,7 @@ class AbstractTranslation:
     def __init__(self, translation_file: Path):
         self.videos = {}
         with open(translation_file) as f:
-            reader = csv.reader(f, delimiter='\t')
+            reader = csv.reader(f, delimiter='\t', quotechar=None)
             next(reader)  # skip header
             for line in reader:
                 assert len(line) % 2 == 0  # transcript and translation lines are alternated
