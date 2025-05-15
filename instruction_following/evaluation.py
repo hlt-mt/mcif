@@ -259,14 +259,14 @@ def main(hypo_path: Path, ref_path: Path, track: str, lang: str) -> Dict[str, fl
             assert "ST" in ref.keys()
             scores["ST-COMET"] = score_st(hypo, ref, lang)
     else:
-        assert len(ref.keys()) == 3
+        assert len(ref.keys()) == 3 or len(ref.keys()) == 2
         assert "SQA" in ref.keys()
         assert "SSUM" in ref.keys()
         scores["SQA-BERTScore"] = score_sqa(hypo, ref, lang)
         scores["SSUM-BERTScore"] = score_ssum(hypo, ref, lang)
         if lang == "en":
-            assert "ASR" in ref.keys()
-            scores["ASR-WER"] = score_asr(hypo, ref, lang)
+            if "ASR" in ref.keys():
+                scores["ASR-WER"] = score_asr(hypo, ref, lang)
         else:
             assert "ST" in ref.keys()
             scores["ST-COMET"] = score_st(hypo, ref, lang)
