@@ -33,6 +33,11 @@ TEST_SET_DEF_FNAME = "[IWSLT 2025] Test Set - ASR, ST, SQA (also cross-lingual),
 TEST_SET_SSUM_DEF_FNAME = "[IWSLT 2025] Test Set - SSUM (only abstract in English).tsv"
 TGT_LANGS = ["de", "it", "zh"]
 LANG_INSTRUCTIONS = {
+    "en": {
+        "asr": "Transcribe the English audio.",
+        "sqa": "Answer the following question given the English audio:",
+        "ssum": "Summarize the English audio in maximum 200 words.",
+    },
     "de": {
         "st": "Übersetze die englische Audioaufnahme nach Deutsch.",
         "sqa": "Beantworte die folgende Frage basierend auf der englischen Audioaufnahme:",
@@ -98,21 +103,15 @@ class Instructions:
     """
     def asr(self, lang="en"):
         assert lang in {"en"}
-        return "Transcribe the English audio."
+        return LANG_INSTRUCTIONS[lang]['asr']
 
     def sqa(self, question, lang="en"):
-        if lang == "en":
-            return f"Answer the following question given the English audio: {question}"
-        else:
-            assert lang in TGT_LANGS
-            return f"{LANG_INSTRUCTIONS[lang]['sqa']} {question}"
+        assert lang == "en" or lang in TGT_LANGS
+        return f"{LANG_INSTRUCTIONS[lang]['sqa']} {question}"
 
     def ssum(self, lang="en"):
-        if lang == "en":
-            return "Summarize the English audio in maximum 200 words."
-        else:
-            assert lang in TGT_LANGS
-            return LANG_INSTRUCTIONS[lang]['ssum']
+        assert lang == "en" or lang in TGT_LANGS
+        return LANG_INSTRUCTIONS[lang]['ssum']
 
     def st(self, lang):
         assert lang in TGT_LANGS
@@ -377,6 +376,7 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                     },
                     "task": "SQA",
                     "iid": "SQA_" + str(test_item_def.unique_id()),
+                    "type": test_item_def.question_type(),
                     "short_audio_segments": corresponding_audio_segments
                 })
             elif test_item_def.question_type() == "NA":
@@ -392,6 +392,7 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                     },
                     "task": "SQA",
                     "iid": "SQA_" + str(test_item_def.unique_id()),
+                    "type": "NA",
                     "short_audio_segments": [random.choice(
                         audio_segments.audio_to_segments[test_item_def.audio()])]
                 })
@@ -400,14 +401,20 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
         for line in reader:
             test_item_def = TestsetDefinitionLine(line)
             if test_item_def.line_id() not in video_ids:
+                langs = {
+                    "en": {
+                        "instruction": instruction_builder.ssum(),
+                        "reference": test_item_def.abstract()
+                    }
+                }
+                for lang in TGT_LANGS:
+                   langs[lang] = {
+                       "instruction": instruction_builder.ssum(lang=lang),
+                       "reference": abstract_translations[lang][video_id]
+                   }
                 test_elements.append({
                     "audio": test_item_def.audio(),
-                    "langs": {
-                        "en": {
-                            "instruction": instruction_builder.ssum(),
-                            "reference": test_item_def.abstract()
-                        }
-                    },
+                    "langs": langs,
                     "task": "SSUM",
                     "iid": "SSUM_" + str(test_item_def.line_id())
                 })
@@ -547,7 +554,11 @@ def short_track(
                 xml_ref_sample = ET.SubElement(
                     xml_ref_track[lang],
                     "sample",
-                    attrib={"id": str(sample_id), "iid": sample["iid"], "task": sample["task"]})
+                    attrib={
+                        "id": str(sample_id),
+                        "iid": sample["iid"],
+                        "task": sample["task"],
+                        "qa_type": sample["type"]})
                 ET.SubElement(xml_ref_sample, "audio_path").text = short_audio
                 ET.SubElement(xml_ref_sample, "reference").text = \
                     sample["langs"][lang]["reference"]
