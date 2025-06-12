@@ -27,6 +27,7 @@ from typing import Dict, Any, List
 import xml.etree.ElementTree as ET
 
 import yaml
+from moviepy import VideoFileClip, concatenate_videoclips
 
 
 TEST_SET_DEF_FNAME = "[IWSLT 2025] Test Set - ASR, ST, SQA (also cross-lingual), SSUM final .tsv"
@@ -266,6 +267,12 @@ def merge_wav_files(wavs: List[Path], output_fname: Path):
                 wav_out.writeframes(wav_in.readframes(wav_in.getnframes()))
 
 
+def merge_mp4_files(mp4s: List[Path], output_fname: Path):
+    video_clips = [VideoFileClip(mp4) for mp4 in mp4s]
+    final_clip = concatenate_videoclips(video_clips)
+    final_clip.write_videofile(output_fname, audio_codec='aac')
+
+
 def total_segments_duration(segments: List[Dict[str, Any]]) -> float:
     total_seconds = 0.
     for segment in segments:
@@ -273,7 +280,7 @@ def total_segments_duration(segments: List[Dict[str, Any]]) -> float:
     return total_seconds
 
 
-def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
+def read_test_elements(source_path: Path, include_video: bool = False) -> List[Dict[str, Any]]:
     """
     Reads the test set definition and returns a dictionary with the corresponding information.
     """
@@ -282,16 +289,19 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
     audio_segments = SegmentedAudios(
         (source_path / "SEGMENTED_AUDIO" / "shas_segmentation.yaml").as_posix())
     translations = {
-        "de": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_german.tsv"),
-        "it": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_italian.tsv"),
-        "zh": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_chinese.tsv"),
+        "de": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_german - REVISED.tsv"),
+        "it": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_italian - REVISED.tsv"),
+        "zh": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_chinese - REVISED.tsv"),
     }
     abstract_translations = {
-        "de": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_german.tsv"),
-        "it": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_italian.tsv"),
-        "zh": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_chinese.tsv"),
+        "de": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_german - REVISED.tsv"),
+        "it": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_italian - REVISED.tsv"),
+        "zh": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_chinese - REVISED.tsv"),
     }
     video_ids = set()
+    qa_types = {"A", "AV"}
+    if include_video:
+        qa_types.add("V")
     # Read test elements from the TSV definition
     with open(source_path / TEST_SET_DEF_FNAME, 'r') as f:
         reader = csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE)
@@ -345,7 +355,7 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
                     "iid": "SSUM_" + str(video_id)
                 })
                 video_ids.add(video_id)
-            if test_item_def.question_type() in {"AV", "A"}:
+            if test_item_def.question_type() in qa_types:
                 corresponding_audio_segments = audio_segments.corresponding_segments(
                     test_item_def.audio(),
                     test_item_def.answer_start(),
@@ -424,7 +434,8 @@ def read_test_elements(source_path: Path) -> List[Dict[str, Any]]:
 def long_track(
         test_elements: List[Dict[str, Any]],
         source_path: Path,
-        output_path: Path) -> Dict[str, str]:
+        output_path: Path,
+        include_video: bool = False) -> Dict[str, str]:
     """
     Writes the src and ref files for the long track in the `output_path`.
     """
@@ -445,6 +456,9 @@ def long_track(
             xml_src_sample = ET.SubElement(
                 xml_src_track[lang], "sample", attrib={'id': str(sample_id)})
             ET.SubElement(xml_src_sample, "audio_path").text = audio_to_alias[sample["audio"]]
+            if include_video:
+                ET.SubElement(xml_src_sample, "video_path").text = \
+                    audio_to_alias[sample["audio"]].replace("wav", "mp4")
             ET.SubElement(xml_src_sample, "instruction").text = \
                 sample["langs"][lang]["instruction"]
             xml_ref_sample = ET.SubElement(
@@ -452,6 +466,9 @@ def long_track(
                 "sample",
                 attrib={'id': str(sample_id), "iid": sample["iid"], "task": sample["task"]})
             ET.SubElement(xml_ref_sample, "audio_path").text = audio_to_alias[sample["audio"]]
+            if include_video:
+                ET.SubElement(xml_ref_sample, "video_path").text = \
+                    audio_to_alias[sample["audio"]].replace("wav", "mp4")
             ET.SubElement(xml_ref_sample, "reference").text = sample["langs"][lang]["reference"]
             if sample["task"] == "ST":
                 xml_metadata = ET.SubElement(xml_ref_sample, "metadata")
@@ -473,11 +490,19 @@ def long_track(
             xml_declaration=True)
 
     base_audio_path = source_path / "AUDIO"
+    base_video_path = source_path / "VIDEO"
     output_audio_path = output_path / "LONG_AUDIOS"
+    output_video_path = output_path / "LONG_VIDEOS"
     output_audio_path.mkdir()
+    if include_video:
+        output_video_path.mkdir()
     for original_name in audio_to_alias:
         shutil.copyfile(
             base_audio_path / original_name, output_audio_path / audio_to_alias[original_name])
+        if include_video:
+            shutil.copyfile(
+                base_video_path / original_name.replace("wav", "mp4"),
+                output_video_path / audio_to_alias[original_name].replace("wav", "mp4"))
 
     return audio_to_alias.names_map
 
@@ -486,14 +511,19 @@ def short_track(
         test_elements: List[Dict[str, Any]],
         long_audio_map: Dict[str, str],
         source_path: Path,
-        output_path: Path) -> None:
+        output_path: Path,
+        include_video: bool = False) -> None:
     """
     Writes the src and ref files for the short track in the `output_path`.
     """
     audio_to_alias = AudioToAlias()
     short_segments_path = source_path / "SEGMENTED_AUDIO" / "shas_segments"
+    short_video_segments_path = source_path / "SEGMENTED_VIDEO"
     audio_output_path = output_path / "SHORT_AUDIOS"
     audio_output_path.mkdir()
+    video_output_path = output_path / "SHORT_VIDEOS"
+    if include_video:
+        video_output_path.mkdir()
     xml_src = {}
     xml_ref = {}
     xml_src_track = {}
@@ -517,6 +547,9 @@ def short_track(
                         xml_src_track[lang], "sample", attrib={'id': str(sample_id)})
                     ET.SubElement(xml_src_sample, "audio_path").text = audio_to_alias[
                         short_audio_segm["wav"]]
+                    if include_video:
+                        ET.SubElement(xml_src_sample, "video_path").text = audio_to_alias[
+                            short_audio_segm["wav"]].replace(".wav", ".mp4")
                     ET.SubElement(xml_src_sample, "instruction").text = \
                         sample["langs"][lang]["instruction"]
                 sample_ids.append(sample_id)
@@ -530,6 +563,9 @@ def short_track(
                         "iid": sample["iid"],
                         "task": sample["task"]})
                 ET.SubElement(xml_ref_sample, "audio_path").text = long_audio_map[sample["audio"]]
+                if include_video:
+                    ET.SubElement(xml_ref_sample, "video_path").text = \
+                        long_audio_map[sample["audio"]].replace(".wav", ".mp4")
                 ET.SubElement(xml_ref_sample, "reference").text = \
                     sample["langs"][lang]["reference"]
                 if sample["task"] == "ST":
@@ -540,15 +576,24 @@ def short_track(
             assert sample["task"] == "SQA", f"Unsupported task {sample['task']}"
             if len(sample["short_audio_segments"]) == 1:
                 short_audio = audio_to_alias[sample["short_audio_segments"][0]["wav"]]
+                short_video = short_audio.replace(".wav", ".mp4")
             else:
                 short_audio = AudioToAlias.get_random_name()
+                short_video = short_audio.replace(".wav", ".mp4")
                 merge_wav_files(
                     [short_segments_path / s["wav"] for s in sample["short_audio_segments"]],
                     audio_output_path / short_audio)
+                if include_video:
+                    merge_mp4_files(
+                        [short_video_segments_path / s["wav"].replace(".wav", ".mp4")
+                         for s in sample["short_audio_segments"]],
+                        video_output_path / short_video)
             for lang in sample["langs"]:
                 xml_src_sample = ET.SubElement(
                     xml_src_track[lang], "sample", attrib={'id': str(sample_id)})
                 ET.SubElement(xml_src_sample, "audio_path").text = short_audio
+                if include_video:
+                    ET.SubElement(xml_src_sample, "video_path").text = short_video
                 ET.SubElement(xml_src_sample, "instruction").text = \
                     sample["langs"][lang]["instruction"]
                 xml_ref_sample = ET.SubElement(
@@ -560,6 +605,8 @@ def short_track(
                         "task": sample["task"],
                         "qa_type": sample["type"]})
                 ET.SubElement(xml_ref_sample, "audio_path").text = short_audio
+                if include_video:
+                    ET.SubElement(xml_ref_sample, "video_path").text = short_video
                 ET.SubElement(xml_ref_sample, "reference").text = \
                     sample["langs"][lang]["reference"]
             sample_id += 1
@@ -581,6 +628,10 @@ def short_track(
     for original_name in audio_to_alias:
         shutil.copyfile(
             short_segments_path / original_name, audio_output_path / audio_to_alias[original_name])
+        if include_video:
+            shutil.copyfile(
+                short_video_segments_path / original_name.replace(".wav", ".mp4"),
+                video_output_path / audio_to_alias[original_name].replace(".wav", ".mp4"))
 
 
 def cli_script():
@@ -598,6 +649,12 @@ def cli_script():
     parser.add_argument(
         '--source-dir', '-s', type=str, required=True,
         help='the path to the folder containing the test set definition.')
+    parser.add_argument(
+        "--include-video",
+        action="store_true",
+        default=False,
+        help="add video clips",
+    )
     args = parser.parse_args()
     output_path = Path(args.output_dir)
     output_path.mkdir(exist_ok=True)
@@ -605,13 +662,13 @@ def cli_script():
     # we set the seed to make reproducible the test set generation even though
     # there are random choices
     random.seed(3)  # in read_test_elements we select a random segment fon NA questions
-    test_elements = read_test_elements(source_path)
+    test_elements = read_test_elements(source_path, args.include_video)
     # shuffle test elements to avoid clear patterns in instructions
     random.seed(42)
     random.shuffle(test_elements)
     # write the XML test definition and reference
-    long_audio_map = long_track(test_elements, source_path, output_path)
-    short_track(test_elements, long_audio_map, source_path, output_path)
+    long_audio_map = long_track(test_elements, source_path, output_path, args.include_video)
+    short_track(test_elements, long_audio_map, source_path, output_path, args.include_video)
 
 
 if __name__ == "__main__":
