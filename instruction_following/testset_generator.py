@@ -467,10 +467,10 @@ def long_track(
                     audio_to_alias[sample["audio"]].replace("wav", "mp4")
             ET.SubElement(xml_src_sample, "instruction").text = \
                 sample["langs"][lang]["instruction"]
-            xml_ref_sample = ET.SubElement(
-                xml_ref_track[lang],
-                "sample",
-                attrib={'id': str(sample_id), "iid": sample["iid"], "task": sample["task"]})
+            attribs = {'id': str(sample_id), "iid": sample["iid"], "task": sample["task"]}
+            if sample["task"] == "SQA":
+                attribs["qa_type"] = sample["type"]
+            xml_ref_sample = ET.SubElement(xml_ref_track[lang],"sample", attrib=attribs)
             ET.SubElement(xml_ref_sample, "audio_path").text = audio_to_alias[sample["audio"]]
             if include_video:
                 ET.SubElement(xml_ref_sample, "video_path").text = \
