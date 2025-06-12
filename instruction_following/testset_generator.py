@@ -289,14 +289,20 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
     audio_segments = SegmentedAudios(
         (source_path / "SEGMENTED_AUDIO" / "shas_segmentation.yaml").as_posix())
     translations = {
-        "de": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_german - REVISED.tsv"),
-        "it": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_italian - REVISED.tsv"),
-        "zh": Translation(source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_chinese - REVISED.tsv"),
+        "de": Translation(
+            source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_german - REVISED.tsv"),
+        "it": Translation(
+            source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_italian - REVISED.tsv"),
+        "zh": Translation(
+            source_path / "[IWSLT 2025] Test Set - TRANSCRIPT_chinese - REVISED.tsv"),
     }
     abstract_translations = {
-        "de": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_german - REVISED.tsv"),
-        "it": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_italian - REVISED.tsv"),
-        "zh": AbstractTranslation(source_path / "[IWSLT 2025] Test Set - SSUM_chinese - REVISED.tsv"),
+        "de": AbstractTranslation(
+            source_path / "[IWSLT 2025] Test Set - SSUM_german - REVISED.tsv"),
+        "it": AbstractTranslation(
+            source_path / "[IWSLT 2025] Test Set - SSUM_italian - REVISED.tsv"),
+        "zh": AbstractTranslation(
+            source_path / "[IWSLT 2025] Test Set - SSUM_chinese - REVISED.tsv"),
     }
     video_ids = set()
     qa_types = {"A", "AV"}
@@ -418,10 +424,10 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                     }
                 }
                 for lang in TGT_LANGS:
-                   langs[lang] = {
-                       "instruction": instruction_builder.ssum(lang=lang),
-                       "reference": abstract_translations[lang][video_id]
-                   }
+                    langs[lang] = {
+                        "instruction": instruction_builder.ssum(lang=lang),
+                        "reference": abstract_translations[lang][video_id]
+                    }
                 test_elements.append({
                     "audio": test_item_def.audio(),
                     "langs": langs,
