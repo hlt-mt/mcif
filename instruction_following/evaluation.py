@@ -167,14 +167,14 @@ def score_sqa(
         hypo_dict: Dict[str, str],
         ref_dict: Dict[str, Dict[str, ReferenceSample]],
         lang: str) -> float:
-    return bertscore(hypo_dict, ref_dict, lang, "SQA")
+    return bertscore(hypo_dict, ref_dict, lang, "QA")
 
 
 def score_ssum(
         hypo_dict: Dict[str, str],
         ref_dict: Dict[str, Dict[str, ReferenceSample]],
         lang: str) -> float:
-    return bertscore(hypo_dict, ref_dict, lang, "SSUM")
+    return bertscore(hypo_dict, ref_dict, lang, "SUM")
 
 
 def bertscore(
@@ -188,7 +188,7 @@ def bertscore(
     refs, hypos = [], []
     for iid, ref_sample in ref_dict[task].items():
         assert len(ref_sample.sample_ids) == 1, \
-            f"SQA reference (IID: {iid}) mapped to multiple samples ids: {ref_sample.sample_ids}"
+            f"QA reference (IID: {iid}) mapped to multiple samples ids: {ref_sample.sample_ids}"
         hypos.append(hypo_dict[ref_sample.sample_ids[0]])
         refs.append(ref_sample.reference)
 
@@ -217,20 +217,20 @@ def score_st(
     """
     comet_data = []
     mwer_segmeter = MwerSegmenter(character_level=(lang in CHAR_LEVEL_LANGS))
-    for iid, ref_sample in ref_dict["ST"].items():
+    for iid, ref_sample in ref_dict["TRANS"].items():
         ref_lines = ref_sample.reference.split("\n")
         src_lines = ref_sample.metadata["transcript"].split("\n")
         assert len(ref_lines) == len(src_lines), \
-            f"ST reference (IID: {iid}) has mismatched number of target ({len(ref_lines)}) and " \
-            f"source lines ({len(src_lines)})"
+            f"TRANS reference (IID: {iid}) has mismatched number of target ({len(ref_lines)}) " \
+            f"and source lines ({len(src_lines)})"
         hypo_components = []
         for sample_id in ref_sample.sample_ids:
             hypo_components.append(hypo_dict[sample_id])
 
         resegm_hypos = mwer_segmeter("\n".join(hypo_components), ref_lines)
         assert len(ref_lines) == len(resegm_hypos), \
-            f"ST reference (IID: {iid}) has mismatched number of target ({len(resegm_hypos)}) " \
-            f"and resegmented lines ({len(resegm_hypos)})"
+            f"TRANS reference (IID: {iid}) has mismatched number of target ({len(resegm_hypos)})" \
+            f" and resegmented lines ({len(resegm_hypos)})"
         for hyp, ref, src in zip(resegm_hypos, ref_lines, src_lines):
             comet_data.append({
                 "src": src.strip(),
@@ -250,26 +250,26 @@ def main(hypo_path: Path, ref_path: Path, track: str, lang: str) -> Dict[str, fl
     # sanity checks for the IWSLT25 task
     if track == "short":
         assert len(ref.keys()) == 2
-        assert "SQA" in ref.keys()
-        scores["SQA-BERTScore"] = score_sqa(hypo, ref, lang)
+        assert "QA" in ref.keys()
+        scores["QA-BERTScore"] = score_sqa(hypo, ref, lang)
         if lang == "en":
             assert "ASR" in ref.keys()
             scores["ASR-WER"] = score_asr(hypo, ref, lang)
         else:
-            assert "ST" in ref.keys()
-            scores["ST-COMET"] = score_st(hypo, ref, lang)
+            assert "TRANS" in ref.keys()
+            scores["TRANS-COMET"] = score_st(hypo, ref, lang)
     else:
         assert len(ref.keys()) == 3 or len(ref.keys()) == 2
-        assert "SQA" in ref.keys()
-        assert "SSUM" in ref.keys()
-        scores["SQA-BERTScore"] = score_sqa(hypo, ref, lang)
-        scores["SSUM-BERTScore"] = score_ssum(hypo, ref, lang)
+        assert "QA" in ref.keys()
+        assert "SUM" in ref.keys()
+        scores["QA-BERTScore"] = score_sqa(hypo, ref, lang)
+        scores["SUM-BERTScore"] = score_ssum(hypo, ref, lang)
         if lang == "en":
             if "ASR" in ref.keys():
                 scores["ASR-WER"] = score_asr(hypo, ref, lang)
         else:
-            assert "ST" in ref.keys()
-            scores["ST-COMET"] = score_st(hypo, ref, lang)
+            assert "TRANS" in ref.keys()
+            scores["TRANS-COMET"] = score_st(hypo, ref, lang)
     return scores
 
 

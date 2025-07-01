@@ -174,6 +174,9 @@ class TestsetDefinitionLine:
     def answer_end(self) -> float:
         return self._str_to_seconds(self.line["Answer End"])
 
+    def question_origin(self):
+        return self.line['Question Origin'][:-2]  # strip ' Q'
+
 
 class SegmentedAudios:
     """
@@ -339,8 +342,8 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                         }
                         for lang in TGT_LANGS
                     },
-                    "task": "ST",
-                    "iid": "ST_" + str(video_id),
+                    "task": "TRANS",
+                    "iid": "TRANS_" + str(video_id),
                     "short_audio_segments": audio_segments.audio_to_segments[test_item_def.audio()]
                 })
                 langs = {
@@ -357,8 +360,8 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                 test_elements.append({
                     "audio": test_item_def.audio(),
                     "langs": langs,
-                    "task": "SSUM",
-                    "iid": "SSUM_" + str(video_id)
+                    "task": "SUM",
+                    "iid": "SUM_" + str(video_id)
                 })
                 video_ids.add(video_id)
             if test_item_def.question_type() in qa_types:
@@ -390,9 +393,10 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                         }
                         for lang in {"en"}.union(TGT_LANGS)
                     },
-                    "task": "SQA",
-                    "iid": "SQA_" + str(test_item_def.unique_id()),
+                    "task": "QA",
+                    "iid": "QA_" + str(test_item_def.unique_id()),
                     "type": test_item_def.question_type(),
+                    "origin": test_item_def.question_origin(),
                     "short_audio_segments": corresponding_audio_segments
                 })
             elif test_item_def.question_type() == "NA":
@@ -406,9 +410,10 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                         }
                         for lang in {"en"}.union(TGT_LANGS)
                     },
-                    "task": "SQA",
-                    "iid": "SQA_" + str(test_item_def.unique_id()),
+                    "task": "QA",
+                    "iid": "QA_" + str(test_item_def.unique_id()),
                     "type": "NA",
+                    "origin": test_item_def.question_origin(),
                     "short_audio_segments": [random.choice(
                         audio_segments.audio_to_segments[test_item_def.audio()])]
                 })
@@ -431,8 +436,8 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                 test_elements.append({
                     "audio": test_item_def.audio(),
                     "langs": langs,
-                    "task": "SSUM",
-                    "iid": "SSUM_" + str(test_item_def.line_id())
+                    "task": "SUM",
+                    "iid": "SUM_" + str(test_item_def.line_id())
                 })
     return test_elements
 
@@ -468,15 +473,16 @@ def long_track(
             ET.SubElement(xml_src_sample, "instruction").text = \
                 sample["langs"][lang]["instruction"]
             attribs = {'id': str(sample_id), "iid": sample["iid"], "task": sample["task"]}
-            if sample["task"] == "SQA":
+            if sample["task"] == "QA":
                 attribs["qa_type"] = sample["type"]
+                attribs["qa_origin"] = sample["origin"]
             xml_ref_sample = ET.SubElement(xml_ref_track[lang],"sample", attrib=attribs)
             ET.SubElement(xml_ref_sample, "audio_path").text = audio_to_alias[sample["audio"]]
             if include_video:
                 ET.SubElement(xml_ref_sample, "video_path").text = \
                     audio_to_alias[sample["audio"]].replace("wav", "mp4")
             ET.SubElement(xml_ref_sample, "reference").text = sample["langs"][lang]["reference"]
-            if sample["task"] == "ST":
+            if sample["task"] == "TRANS":
                 xml_metadata = ET.SubElement(xml_ref_sample, "metadata")
                 ET.SubElement(xml_metadata, "transcript").text = \
                     sample["langs"][lang]["transcript"]
@@ -543,9 +549,9 @@ def short_track(
             xml_ref[lang], "task", attrib={"track": "short", "text_lang": lang})
     sample_id = 0
     for sample in test_elements:
-        if sample["task"] == "SSUM":
+        if sample["task"] == "SUM":
             continue
-        if sample["task"] == "ASR" or sample["task"] == "ST":
+        if sample["task"] == "ASR" or sample["task"] == "TRANS":
             sample_ids = []
             for short_audio_segm in sample["short_audio_segments"]:
                 for lang in sample["langs"]:
@@ -574,12 +580,12 @@ def short_track(
                         long_audio_map[sample["audio"]].replace(".wav", ".mp4")
                 ET.SubElement(xml_ref_sample, "reference").text = \
                     sample["langs"][lang]["reference"]
-                if sample["task"] == "ST":
+                if sample["task"] == "TRANS":
                     xml_metadata = ET.SubElement(xml_ref_sample, "metadata")
                     ET.SubElement(xml_metadata, "transcript").text = \
                         sample["langs"][lang]["transcript"]
         else:
-            assert sample["task"] == "SQA", f"Unsupported task {sample['task']}"
+            assert sample["task"] == "QA", f"Unsupported task {sample['task']}"
             if len(sample["short_audio_segments"]) == 1:
                 short_audio = audio_to_alias[sample["short_audio_segments"][0]["wav"]]
                 short_video = short_audio.replace(".wav", ".mp4")
@@ -609,7 +615,8 @@ def short_track(
                         "id": str(sample_id),
                         "iid": sample["iid"],
                         "task": sample["task"],
-                        "qa_type": sample["type"]})
+                        "qa_type": sample["type"],
+                        "qa_origin": sample["origin"]})
                 ET.SubElement(xml_ref_sample, "audio_path").text = short_audio
                 if include_video:
                     ET.SubElement(xml_ref_sample, "video_path").text = short_video
