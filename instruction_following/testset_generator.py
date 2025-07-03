@@ -121,7 +121,7 @@ POOL_INSTRUCTIONS = {
             "Gib den englischen Inhalt in ca. 200 Wörtern wieder.",
             "Fasse den Inhalt auf Englisch in ungefähr 200 Wörtern zusammen.",
             "Verfasse eine ungefähr 200 Wörter lange Zusammenfassung des englischen Inhalts.",
-            "Erstelle eine kompakte Zusammenfassung des englischen Inhalts in ungefähr 200 Wörtern.",
+            "Erstelle eine kompakte Zusammenfassung des englischen Inhalts in ungefähr 200 Wörtern.",  # noqa: E501
             "Gib eine Kurzfassung des englischen Inhalts in ca. 200 Wörtern.",
             "Formuliere eine Zusammenfassung des englischen Inhalts mit ungefähr 200 Wörtern."
         ]
@@ -681,7 +681,7 @@ def long_track(
             if sample["task"] == "QA":
                 attribs["qa_type"] = sample["type"]
                 attribs["qa_origin"] = sample["origin"]
-            xml_ref_sample = ET.SubElement(xml_ref_track[lang],"sample", attrib=attribs)
+            xml_ref_sample = ET.SubElement(xml_ref_track[lang], "sample", attrib=attribs)
             ET.SubElement(xml_ref_sample, "audio_path").text = audio_path
             if include_video:
                 ET.SubElement(xml_ref_sample, "video_path").text = audio_path.replace("wav", "mp4")
