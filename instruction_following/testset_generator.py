@@ -35,25 +35,167 @@ TEST_SET_SSUM_DEF_FNAME = "[IWSLT 2025] Test Set - SSUM (only abstract in Englis
 TGT_LANGS = ["de", "it", "zh"]
 LANG_INSTRUCTIONS = {
     "en": {
-        "asr": "Transcribe the English audio.",
-        "sqa": "Answer the following question given the English audio:",
-        "ssum": "Summarize the English audio in maximum 200 words.",
+        "asr": "Transcribe the English content.",
+        "sqa": "Answer the following question given the English content:",
+        "ssum": "Summarize the English content in an abstract of approximately 200 words.",
     },
     "de": {
-        "st": "Übersetze die englische Audioaufnahme nach Deutsch.",
-        "sqa": "Beantworte die folgende Frage basierend auf der englischen Audioaufnahme:",
-        "ssum": "Fasse den Inhalt der englischen Audioaufnahme in maximal 200 Wörtern zusammen."
+        "st": "Übersetze den englischem Inhalt nach Deutsch.",
+        "sqa": "Beantworte die folgende Frage basierend auf dem englischen Inhalt:",
+        "ssum": "Fasse den englischen Inhalt in einem Abstract mit maximal 200 Wörtern zusammen."
     },
     "it": {
-        "st": "Traduci l’audio inglese in italiano.",
-        "sqa": "Rispondi alla seguente domanda dato l’audio inglese:",
-        "ssum": "Riassumi il contenuto dell'audio inglese usando al massimo 200 parole."
+        "st": "Traduci il contenuto inglese in italiano.",
+        "sqa": "Rispondi alla seguente domanda dato il contenuto inglese:",
+        "ssum": "Riassumi il contenuto inglese in un abstract di circa 200 parole."
     },
     "zh": {
-        "st": "将英文音频翻译成中文。",
-        "sqa": "根据英语音频，回答以下问题：",
-        "ssum": "用不超过 200 个字概括给出的英语音频。"
+        "st": "将英文内容翻译成中文。",
+        "sqa": "根据所给的英文内容，回答以下问题：",
+        "ssum": "用400个字左右概括所给的英语内容。"
     },
+}
+POOL_INSTRUCTIONS = {
+    "en": {
+        "asr": [
+            "Please write down what is said in the English content.",
+            "Generate a transcription of the English content.",
+            "Convert the English content into text.",
+            "Produce a written version of the English content.",
+            "Provide a text transcript of the English content.",
+            "Accurately transcribe the English content.",
+            "Turn the English content into written text.",
+            "Create a verbatim transcript of the English content.",
+            "Write out the English content as it is stated."
+        ],
+        "sqa": [
+            "Based on the English content, respond to this question:",
+            "Use the English content to answer the question below:",
+            "Consider the English content and reply to the question:",
+            "Given the English content, what is the answer to the question:",
+            "Relying on the English content, provide your answer:",
+            "Interpret the English content and respond to the following:",
+            "Consider the English content and answer this:",
+            "Use the content in English to formulate your response:",
+            "Refer to the English content to answer the question:"
+        ],
+        "ssum": [
+            "Provide a summary of the English content using roughly 200 words.",
+            "Condense the English content into a summary of about 200 words.",
+            "Write a brief summary (about 200 words) of the English content.",
+            "Summarize the English content, keeping it around 200 words.",
+            "Create a concise summary of the English content in about 200 words.",
+            "Using approximately 200 words, summarize the English audio content.",
+            "Capture the main points of the English content in about 200 words.",
+            "Give a summary of approximately 200 words of the English content.",
+            "Write a short summary (about 200 words) of what’s in the English content."
+        ]
+    },
+    "de": {
+        "st": [
+            "Übersetze den englischen Inhalt ins Deutsche.",
+            "Gib den englischen Inhalt auf Deutsch wieder.",
+            "Übertrage den englischen Inhalt ins Deutsche.",
+            "Führe eine Übersetzung des englischen Inhalts ins Deutsche durch.",
+            "Übersetze den Inhalt aus dem Englischen ins Deutsche.",
+            "Formuliere den englischen Inhalt auf Deutsch.",
+            "Erstelle eine deutsche Übersetzung des englischen Inhalts.",
+            "Übertrage den englischen Inhalt in die deutsche Sprache.",
+            "Gib den englischen Inhalt sinngemäß auf Deutsch wieder."
+        ],
+        "sqa": [
+            "Beantworte folgende Frage unter Bezugnahme auf den englischen Inhalt:",
+            "Verwende den englischen Inhalt, um diese Frage zu beantworten:",
+            "Beziehe dich auf den englischen Inhalt an und gib eine Antwort auf die Frage:",
+            "Basierend auf dem englischen Inhalt, beantworte die nachfolgende Frage:",
+            "Nutze den englischen Inhalt zur Beantwortung der Frage:",
+            "Analysiere den englischen Inhalt und beantworte die Frage:",
+            "Beantworte diese Frage mithilfe des englischen Inhalts:",
+            "Analysiere den englischen Inhalt und beantworte dann diese Frage:",
+            "Orientiere dich am englischen Inhalt und gib eine Antwort:"
+        ],
+        "ssum": [
+            "Fasse den englischen Inhalt in ungefähr 200 Wörtern zusammen.",
+            "Erstelle eine Zusammenfassung (um die 200 Wörter) des englischen Inhalts.",
+            "Schreibe eine kurze Zusammenfassung des englischen Inhalts mit ungefähr 200 Wörtern",
+            "Gib den englischen Inhalt in ca. 200 Wörtern wieder.",
+            "Fasse den Inhalt auf Englisch in ungefähr 200 Wörtern zusammen.",
+            "Verfasse eine ungefähr 200 Wörter lange Zusammenfassung des englischen Inhalts.",
+            "Erstelle eine kompakte Zusammenfassung des englischen Inhalts in ungefähr 200 Wörtern.",
+            "Gib eine Kurzfassung des englischen Inhalts in ca. 200 Wörtern.",
+            "Formuliere eine Zusammenfassung des englischen Inhalts mit ungefähr 200 Wörtern."
+        ]
+    },
+    "it": {
+        "st": [
+            "Dammi una traduzione in italiano del contenuto in inglese.",
+            "Converti il contenuto inglese in italiano.",
+            "Scrivi una traduzione italiana del contenuto in inglese.",
+            "Traduci in italiano ciò che viene detto in inglese.",
+            "Riporta il contenuto inglese in lingua italiana.",
+            "Fornisci una versione italiana del contenuto inglese.",
+            "Effettua la traduzione del contenuto inglese in italiano.",
+            "Trasforma il contenuto in inglese in una versione italiana.",
+            "Rendi in italiano il contenuto in inglese."
+        ],
+        "sqa": [
+            "Rispondi alla seguente domanda utilizzando il contenuto inglese:",
+            "Esamina il contenuto inglese e rispondi alla domanda:",
+            "Fornisci una risposta alla domanda basandoti sul contenuto inglese:",
+            "Considera il contenuto inglese e rispondi a questa domanda:",
+            "Rispondi alla domanda servendoti del contenuto inglese:",
+            "Sulla base del contenuto inglese, dai una risposta alla domanda:",
+            "Rispondi alla domanda usando le informazioni del contenuto inglese:",
+            "Considera il contenuto inglese per rispondere alla seguente domanda:",
+            "Utilizza il contenuto inglese come base per rispondere alla domanda:"
+        ],
+        "ssum": [
+            "Riassumi il contenuto inglese in circa 200 parole.",
+            "Fai un riassunto del contenuto in inglese con circa 200 parole.",
+            "Scrivi un breve riassunto del contenuto inglese (circa 200 parole).",
+            "Sintetizza il contenuto inglese in circa 200 parole.",
+            "Riassumi quanto detto nel contenuto inglese usando circa 200 parole.",
+            "Rendi in sintesi il contenuto inglese (circa 200 parole).",
+            "Scrivi un riassunto in circa 200 parole dell’audio inglese.",
+            "Esprimi in forma sintetica il contenuto inglese (circa 200 parole).",
+            "Fornisci una sintesi del contenuto audio inglese in circa 200 parole."
+        ]
+    },
+    "zh": {
+        "st": [
+            "把英文内容翻译成中文。",
+            "将所给的英文内容转换成中文。",
+            "请将所给出的英文翻译成中文。",
+            "将该段英文内容翻译为中文。",
+            "将这段英语内容表达为中文。",
+            "用中文翻译所给内容中的英文。",
+            "请将英文内容转换为汉语。",
+            "收到英文内容后，用中文表述其意思。",
+            "将这段英语内容用中文重新表达。"
+        ],
+        "sqa": [
+            "根据英语内容，回答下面的问题：",
+            "接收到英文内容后，回答以下问题：",
+            "请结合英语内容，对如下问题作答：",
+            "根据所给英文内容，给出答案：",
+            "请基于所给内容中的英文信息回答问题：",
+            "听完英语内容后，请为以下提问作答：",
+            "参考英语内容，回答下列问题：",
+            "使用所给内容中的英文来回答问题：",
+            "请依据英文内容回答问题："
+        ],
+        "ssum": [
+            "将英文内容用400个字概括。",
+            "请用400字左右总结这段英文内容的要点。",
+            "对这段英文内容做出400字左右的简要概括。",
+            "用大约400个汉字总结这段英文内容。",
+            "将这段英语内容的核心内容简要描述（400字左右）。",
+            "以简洁语言，约400字总结英文内容。",
+            "提炼英文内容的主要信息，用400字左右表达。",
+            "用大约400字写出这段英文内容的总结。",
+            "对所给的英语内容进行400字左右的总结。"
+        ]
+    }
 }
 LANG_NOT_ANSWERABLE = {
     "en": "Not answerable.",
@@ -117,6 +259,34 @@ class Instructions:
     def st(self, lang):
         assert lang in TGT_LANGS
         return LANG_INSTRUCTIONS[lang]['st']
+
+
+class RandomInstructions:
+    def __init__(self):
+        self.instructions = POOL_INSTRUCTIONS
+        for lang, task_instr in LANG_INSTRUCTIONS.items():
+            for task, instruction in task_instr.items():
+                self.instructions[lang][task].append(instruction)
+
+    @staticmethod
+    def _random(pool):
+        return random.choice(pool)
+
+    def asr(self, lang="en"):
+        assert lang in {"en"}
+        return self._random(self.instructions[lang]['asr'])
+
+    def sqa(self, question, lang="en"):
+        assert lang == "en" or lang in TGT_LANGS
+        return f"{self._random(self.instructions[lang]['sqa'])} {question}"
+
+    def ssum(self, lang="en"):
+        assert lang == "en" or lang in TGT_LANGS
+        return self._random(self.instructions[lang]['ssum'])
+
+    def st(self, lang):
+        assert lang in TGT_LANGS
+        return self._random(self.instructions[lang]['st'])
 
 
 class TestsetDefinitionLine:
@@ -288,6 +458,7 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
     Reads the test set definition and returns a dictionary with the corresponding information.
     """
     instruction_builder = Instructions()
+    random_instruction_builder = RandomInstructions()
     test_elements = []
     audio_segments = SegmentedAudios(
         (source_path / "SEGMENTED_AUDIO" / "shas_segmentation.yaml").as_posix())
@@ -325,6 +496,7 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                     "langs": {
                         "en": {
                             "instruction": instruction_builder.asr(),
+                            "random_instruction": random_instruction_builder.asr(),
                             "reference": test_item_def.transcript()
                         }
                     },
@@ -337,6 +509,7 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                     "langs": {
                         lang: {
                             "instruction": instruction_builder.st(lang=lang),
+                            "random_instruction": random_instruction_builder.st(lang=lang),
                             "reference": translations[lang][video_id]["translation"],
                             "transcript": translations[lang][video_id]["transcript"],
                         }
@@ -349,12 +522,14 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                 langs = {
                     "en": {
                         "instruction": instruction_builder.ssum(),
+                        "random_instruction": random_instruction_builder.ssum(),
                         "reference": test_item_def.abstract()
                     }
                 }
                 for lang in TGT_LANGS:
                     langs[lang] = {
                         "instruction": instruction_builder.ssum(lang=lang),
+                        "random_instruction": random_instruction_builder.ssum(lang=lang),
                         "reference": abstract_translations[lang][video_id]
                     }
                 test_elements.append({
@@ -389,6 +564,8 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                         lang: {
                             "instruction": instruction_builder.sqa(
                                 test_item_def.question(lang=lang), lang=lang),
+                            "random_instruction": random_instruction_builder.sqa(
+                                test_item_def.question(lang=lang), lang=lang),
                             "reference": test_item_def.answer(lang=lang)
                         }
                         for lang in {"en"}.union(TGT_LANGS)
@@ -405,6 +582,8 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                     "langs": {
                         lang: {
                             "instruction": instruction_builder.sqa(
+                                test_item_def.question(lang=lang), lang=lang),
+                            "random_instruction": random_instruction_builder.sqa(
                                 test_item_def.question(lang=lang), lang=lang),
                             "reference": LANG_NOT_ANSWERABLE[lang]
                         }
@@ -425,12 +604,14 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                 langs = {
                     "en": {
                         "instruction": instruction_builder.ssum(),
+                        "random_instruction": random_instruction_builder.ssum(),
                         "reference": test_item_def.abstract()
                     }
                 }
                 for lang in TGT_LANGS:
                     langs[lang] = {
                         "instruction": instruction_builder.ssum(lang=lang),
+                        "random_instruction": random_instruction_builder.ssum(lang=lang),
                         "reference": abstract_translations[lang][video_id]
                     }
                 test_elements.append({
@@ -453,8 +634,10 @@ def long_track(
     """
     audio_to_alias = AudioToAlias()
     xml_src = {}
+    xml_src_rand = {}
     xml_ref = {}
     xml_src_track = {}
+    xml_src_track_rand = {}
     xml_ref_track = {}
     transcripts_map = {}
     if include_text:
@@ -464,23 +647,36 @@ def long_track(
                 transcripts_map[audio_path] = test_element["langs"]["en"]["reference"]
     for lang in {"en"}.union(TGT_LANGS):
         xml_src[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
+        xml_src_rand[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
         xml_ref[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
         xml_src_track[lang] = ET.SubElement(
             xml_src[lang], "task", attrib={"track": "long", "text_lang": lang})
+        xml_src_track_rand[lang] = ET.SubElement(
+            xml_src_rand[lang], "task", attrib={"track": "long", "text_lang": lang})
         xml_ref_track[lang] = ET.SubElement(
             xml_ref[lang], "task", attrib={"track": "long", "text_lang": lang})
     for sample_id, sample in enumerate(test_elements):
         for lang in sample["langs"]:
             xml_src_sample = ET.SubElement(
                 xml_src_track[lang], "sample", attrib={'id': str(sample_id)})
+            xml_src_sample_rand = ET.SubElement(
+                xml_src_track_rand[lang], "sample", attrib={'id': str(sample_id)})
             audio_path = audio_to_alias[sample["audio"]]
-            ET.SubElement(xml_src_sample, "audio_path").text =audio_path
+            ET.SubElement(xml_src_sample, "audio_path").text = audio_path
+            ET.SubElement(xml_src_sample_rand, "audio_path").text = audio_path
             if include_video:
                 ET.SubElement(xml_src_sample, "video_path").text = audio_path.replace("wav", "mp4")
+                ET.SubElement(xml_src_sample_rand, "video_path").text = \
+                    audio_path.replace("wav", "mp4")
             if sample["task"] != "ASR" and audio_path in transcripts_map:
                 ET.SubElement(xml_src_sample, "text_path").text = audio_path.replace("wav", "en")
+                ET.SubElement(xml_src_sample_rand, "text_path").text = \
+                    audio_path.replace("wav", "en")
             ET.SubElement(xml_src_sample, "instruction").text = \
                 sample["langs"][lang]["instruction"]
+            ET.SubElement(xml_src_sample_rand, "instruction").text = \
+                sample["langs"][lang]["random_instruction"]
+
             attribs = {'id': str(sample_id), "iid": sample["iid"], "task": sample["task"]}
             if sample["task"] == "QA":
                 attribs["qa_type"] = sample["type"]
@@ -499,11 +695,17 @@ def long_track(
 
     for lang in {"en"}.union(TGT_LANGS):
         tree_src = ET.ElementTree(xml_src[lang])
+        tree_src_rand = ET.ElementTree(xml_src_rand[lang])
         tree_ref = ET.ElementTree(xml_ref[lang])
         ET.indent(tree_src)
+        ET.indent(tree_src_rand)
         ET.indent(tree_ref)
         tree_src.write(
-            output_path / f"IWSLT2025.IF.long.{lang}.src.xml",
+            output_path / f"IWSLT2025.IF.long.{lang}.src.fixedprompts.xml",
+            encoding="utf-8",
+            xml_declaration=True)
+        tree_src_rand.write(
+            output_path / f"IWSLT2025.IF.long.{lang}.src.randomprompts.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_ref.write(
@@ -555,14 +757,19 @@ def short_track(
     if include_video:
         video_output_path.mkdir()
     xml_src = {}
+    xml_src_rand = {}
     xml_ref = {}
     xml_src_track = {}
+    xml_src_track_rand = {}
     xml_ref_track = {}
     for lang in {"en"}.union(TGT_LANGS):
         xml_src[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
+        xml_src_rand[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
         xml_ref[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
         xml_src_track[lang] = ET.SubElement(
             xml_src[lang], "task", attrib={"track": "short", "text_lang": lang})
+        xml_src_track_rand[lang] = ET.SubElement(
+            xml_src_rand[lang], "task", attrib={"track": "short", "text_lang": lang})
         xml_ref_track[lang] = ET.SubElement(
             xml_ref[lang], "task", attrib={"track": "short", "text_lang": lang})
     sample_id = 0
@@ -573,15 +780,22 @@ def short_track(
             sample_ids = []
             for short_audio_segm in sample["short_audio_segments"]:
                 for lang in sample["langs"]:
+                    audio_path = audio_to_alias[short_audio_segm["wav"]]
                     xml_src_sample = ET.SubElement(
                         xml_src_track[lang], "sample", attrib={'id': str(sample_id)})
-                    ET.SubElement(xml_src_sample, "audio_path").text = audio_to_alias[
-                        short_audio_segm["wav"]]
+                    xml_src_sample_rand = ET.SubElement(
+                        xml_src_track_rand[lang], "sample", attrib={'id': str(sample_id)})
+                    ET.SubElement(xml_src_sample, "audio_path").text = audio_path
+                    ET.SubElement(xml_src_sample_rand, "audio_path").text = audio_path
                     if include_video:
-                        ET.SubElement(xml_src_sample, "video_path").text = audio_to_alias[
-                            short_audio_segm["wav"]].replace(".wav", ".mp4")
+                        ET.SubElement(xml_src_sample, "video_path").text = \
+                            audio_path.replace(".wav", ".mp4")
+                        ET.SubElement(xml_src_sample_rand, "video_path").text = \
+                            audio_path.replace(".wav", ".mp4")
                     ET.SubElement(xml_src_sample, "instruction").text = \
                         sample["langs"][lang]["instruction"]
+                    ET.SubElement(xml_src_sample_rand, "instruction").text = \
+                        sample["langs"][lang]["random_instruction"]
                 sample_ids.append(sample_id)
                 sample_id += 1
             for lang in sample["langs"]:
@@ -621,11 +835,18 @@ def short_track(
             for lang in sample["langs"]:
                 xml_src_sample = ET.SubElement(
                     xml_src_track[lang], "sample", attrib={'id': str(sample_id)})
+                xml_src_sample_rand = ET.SubElement(
+                    xml_src_track_rand[lang], "sample", attrib={'id': str(sample_id)})
                 ET.SubElement(xml_src_sample, "audio_path").text = short_audio
+                ET.SubElement(xml_src_sample_rand, "audio_path").text = short_audio
                 if include_video:
                     ET.SubElement(xml_src_sample, "video_path").text = short_video
+                    ET.SubElement(xml_src_sample_rand, "video_path").text = short_video
                 ET.SubElement(xml_src_sample, "instruction").text = \
                     sample["langs"][lang]["instruction"]
+                ET.SubElement(xml_src_sample_rand, "instruction").text = \
+                    sample["langs"][lang]["random_instruction"]
+
                 xml_ref_sample = ET.SubElement(
                     xml_ref_track[lang],
                     "sample",
@@ -644,11 +865,17 @@ def short_track(
 
     for lang in {"en"}.union(TGT_LANGS):
         tree_src = ET.ElementTree(xml_src[lang])
+        tree_src_rand = ET.ElementTree(xml_src_rand[lang])
         tree_ref = ET.ElementTree(xml_ref[lang])
         ET.indent(tree_src)
+        ET.indent(tree_src_rand)
         ET.indent(tree_ref)
         tree_src.write(
-            output_path / f"IWSLT2025.IF.short.{lang}.src.xml",
+            output_path / f"IWSLT2025.IF.short.{lang}.src.fixedprompt.xml",
+            encoding="utf-8",
+            xml_declaration=True)
+        tree_src_rand.write(
+            output_path / f"IWSLT2025.IF.short.{lang}.src.randomprompt.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_ref.write(
