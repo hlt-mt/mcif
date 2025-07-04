@@ -596,6 +596,9 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                     "short_audio_segments": [random.choice(
                         audio_segments.audio_to_segments[test_item_def.audio()])]
                 })
+            else:
+                print(test_item_def)
+                exit(1)
     with open(source_path / TEST_SET_SSUM_DEF_FNAME, 'r') as f:
         reader = csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE)
         for line in reader:
@@ -778,6 +781,8 @@ def short_track(
             continue
         if sample["task"] == "ASR" or sample["task"] == "TRANS":
             sample_ids = []
+            audio_paths = {lang: [] for lang in sample["langs"]}
+            video_paths = {lang: [] for lang in sample["langs"]}
             for short_audio_segm in sample["short_audio_segments"]:
                 for lang in sample["langs"]:
                     audio_path = audio_to_alias[short_audio_segm["wav"]]
@@ -787,11 +792,13 @@ def short_track(
                         xml_src_track_rand[lang], "sample", attrib={'id': str(sample_id)})
                     ET.SubElement(xml_src_sample, "audio_path").text = audio_path
                     ET.SubElement(xml_src_sample_rand, "audio_path").text = audio_path
+                    audio_paths[lang].append(audio_path)
                     if include_video:
                         ET.SubElement(xml_src_sample, "video_path").text = \
                             audio_path.replace(".wav", ".mp4")
                         ET.SubElement(xml_src_sample_rand, "video_path").text = \
                             audio_path.replace(".wav", ".mp4")
+                        video_paths[lang].append(audio_path.replace(".wav", ".mp4"))
                     ET.SubElement(xml_src_sample, "instruction").text = \
                         sample["langs"][lang]["instruction"]
                     ET.SubElement(xml_src_sample_rand, "instruction").text = \
@@ -806,10 +813,9 @@ def short_track(
                         'id': ",".join(str(s) for s in sample_ids),
                         "iid": sample["iid"],
                         "task": sample["task"]})
-                ET.SubElement(xml_ref_sample, "audio_path").text = long_audio_map[sample["audio"]]
+                ET.SubElement(xml_ref_sample, "audio_path").text = ",".join(audio_paths[lang])
                 if include_video:
-                    ET.SubElement(xml_ref_sample, "video_path").text = \
-                        long_audio_map[sample["audio"]].replace(".wav", ".mp4")
+                    ET.SubElement(xml_ref_sample, "video_path").text = ",".join(video_paths[lang])
                 ET.SubElement(xml_ref_sample, "reference").text = \
                     sample["langs"][lang]["reference"]
                 if sample["task"] == "TRANS":
