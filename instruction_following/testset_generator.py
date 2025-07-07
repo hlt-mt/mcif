@@ -881,11 +881,11 @@ def short_track(
         ET.indent(tree_src_rand)
         ET.indent(tree_ref)
         tree_src.write(
-            output_path / f"MCIF{VERSION}.IF.short.{lang}.src.fixedprompt.xml",
+            output_path / f"MCIF{VERSION}.IF.short.{lang}.src.fixedprompts.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_src_rand.write(
-            output_path / f"MCIF{VERSION}.IF.short.{lang}.src.randomprompt.xml",
+            output_path / f"MCIF{VERSION}.IF.short.{lang}.src.randomprompts.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_ref.write(
