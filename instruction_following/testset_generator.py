@@ -453,7 +453,10 @@ def total_segments_duration(segments: List[Dict[str, Any]]) -> float:
     return total_seconds
 
 
-def read_test_elements(source_path: Path, include_video: bool = False) -> List[Dict[str, Any]]:
+def read_test_elements(
+        source_path: Path,
+        include_video: bool = False,
+        threshold_short_audio: float = 30.) -> List[Dict[str, Any]]:
     """
     Reads the test set definition and returns a dictionary with the corresponding information.
     """
@@ -553,7 +556,7 @@ def read_test_elements(source_path: Path, include_video: bool = False) -> List[D
                         f"-{test_item_def.answer_end()}] is associated with multiple speech "
                         f"segments: {corresponding_audio_segments}")
                     total_duration = total_segments_duration(corresponding_audio_segments)
-                    if total_duration > 30.:
+                    if total_duration > threshold_short_audio:
                         logger.warning(
                             f"Skipping question {test_item_def.unique_id()} with duration "
                             f"{total_duration} seconds.")
@@ -925,6 +928,12 @@ def cli_script():
         default=False,
         help="add text source",
     )
+    parser.add_argument(
+        "--threshold-short-audio",
+        default=30.,
+        type=float,
+        help="maximum length for short audio segments (default 30s)",
+    )
     args = parser.parse_args()
     output_path = Path(args.output_dir)
     output_path.mkdir(exist_ok=True)
@@ -932,7 +941,7 @@ def cli_script():
     # we set the seed to make reproducible the test set generation even though
     # there are random choices
     random.seed(3)  # in read_test_elements we select a random segment fon NA questions
-    test_elements = read_test_elements(source_path, args.include_video)
+    test_elements = read_test_elements(source_path, args.include_video, args.threshold_short_audio)
     # shuffle test elements to avoid clear patterns in instructions
     random.seed(42)
     random.shuffle(test_elements)

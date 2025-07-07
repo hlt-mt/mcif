@@ -47,11 +47,11 @@ python instruction_following/shas_mp4_segmentation.py -s TEST_SET/VIDEO \
     -o TEST_SET/SEGMENTED_VIDEO/ -d TEST_SET/SEGMENTED_AUDIO/shas_segmentation.yaml
 ```
 
-and then run the script that generates the test set:
+and then run the script that generates the test set. To obtain MCIF, use the command:
 
 ```shell
-python instruction_following/testset_generator.py --include-video \
-    --output-dir IWSLT2025_WITHVIDEO --source-dir TEST_SET
+python instruction_following/testset_generator.py --include-video --include-text \
+    --output-dir IWSLT2025_WITHVIDEO --source-dir TEST_SET --threshold-short-audio 100
 ```
 
 where TEST_SET contains the raw data.
