@@ -30,6 +30,7 @@ import yaml
 from moviepy import VideoFileClip, concatenate_videoclips
 
 
+VERSION = '0.1'
 TEST_SET_DEF_FNAME = "[IWSLT 2025] Test Set - ASR, ST, SQA (also cross-lingual), SSUM final .tsv"
 TEST_SET_SSUM_DEF_FNAME = "[IWSLT 2025] Test Set - SSUM (only abstract in English).tsv"
 TGT_LANGS = ["de", "it", "zh"]
@@ -652,9 +653,9 @@ def long_track(
                 audio_path = audio_to_alias[test_element["audio"]]
                 transcripts_map[audio_path] = test_element["langs"]["en"]["reference"]
     for lang in {"en"}.union(TGT_LANGS):
-        xml_src[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
-        xml_src_rand[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
-        xml_ref[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
+        xml_src[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
+        xml_src_rand[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
+        xml_ref[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
         xml_src_track[lang] = ET.SubElement(
             xml_src[lang], "task", attrib={"track": "long", "text_lang": lang})
         xml_src_track_rand[lang] = ET.SubElement(
@@ -707,15 +708,15 @@ def long_track(
         ET.indent(tree_src_rand)
         ET.indent(tree_ref)
         tree_src.write(
-            output_path / f"IWSLT2025.IF.long.{lang}.src.fixedprompts.xml",
+            output_path / f"MCIF{VERSION}.IF.long.{lang}.src.fixedprompts.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_src_rand.write(
-            output_path / f"IWSLT2025.IF.long.{lang}.src.randomprompts.xml",
+            output_path / f"MCIF{VERSION}.IF.long.{lang}.src.randomprompts.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_ref.write(
-            output_path / f"IWSLT2025.IF.long.{lang}.ref.xml",
+            output_path / f"MCIF{VERSION}.IF.long.{lang}.ref.xml",
             encoding="utf-8",
             xml_declaration=True)
 
@@ -769,9 +770,9 @@ def short_track(
     xml_src_track_rand = {}
     xml_ref_track = {}
     for lang in {"en"}.union(TGT_LANGS):
-        xml_src[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
-        xml_src_rand[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
-        xml_ref[lang] = ET.Element("testset", attrib={'name': "IWSLT2025"})
+        xml_src[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
+        xml_src_rand[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
+        xml_ref[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
         xml_src_track[lang] = ET.SubElement(
             xml_src[lang], "task", attrib={"track": "short", "text_lang": lang})
         xml_src_track_rand[lang] = ET.SubElement(
@@ -880,15 +881,15 @@ def short_track(
         ET.indent(tree_src_rand)
         ET.indent(tree_ref)
         tree_src.write(
-            output_path / f"IWSLT2025.IF.short.{lang}.src.fixedprompt.xml",
+            output_path / f"MCIF{VERSION}.IF.short.{lang}.src.fixedprompt.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_src_rand.write(
-            output_path / f"IWSLT2025.IF.short.{lang}.src.randomprompt.xml",
+            output_path / f"MCIF{VERSION}.IF.short.{lang}.src.randomprompt.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_ref.write(
-            output_path / f"IWSLT2025.IF.short.{lang}.ref.xml",
+            output_path / f"MCIF{VERSION}.IF.short.{lang}.ref.xml",
             encoding="utf-8",
             xml_declaration=True)
 
@@ -904,9 +905,9 @@ def short_track(
 def cli_script():
     """
     Starting from the test set definitions collected in TSV format, this scripts outputs:
-     - IWSLT2025.IF.<track>.<lang>.src.xml: XML files containing the test set definitions to be
+     - MCIF{VERSION}.IF.<track>.<lang>.src.xml: XML files containing the test set definitions to be
        circulated to participants.
-     - IWSLT2025.IF.<track>.<lang>.ref.xml: XML files containing the corresponding references, to
+     - MCIF{VERSION}.IF.<track>.<lang>.ref.xml: XML files containing the corresponding references, to
        be used to compute the scores.
     """
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
