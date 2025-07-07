@@ -907,8 +907,8 @@ def cli_script():
     Starting from the test set definitions collected in TSV format, this scripts outputs:
      - MCIF{VERSION}.IF.<track>.<lang>.src.xml: XML files containing the test set definitions to be
        circulated to participants.
-     - MCIF{VERSION}.IF.<track>.<lang>.ref.xml: XML files containing the corresponding references, to
-       be used to compute the scores.
+     - MCIF{VERSION}.IF.<track>.<lang>.ref.xml: XML files containing the corresponding references,
+       to be used to compute the scores.
     """
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument(

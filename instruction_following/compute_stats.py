@@ -32,7 +32,8 @@ def compute_stats(reference, audio_dir, use_chars=False):
     root = tree.getroot()
 
     # === STORAGE ===
-    stats = defaultdict(lambda: {'reference_count': 0, 'audio_duration_sec': 0.0, 'num_samples': 0})
+    stats = defaultdict(
+        lambda: {'reference_count': 0, 'audio_duration_sec': 0.0, 'num_samples': 0})
 
     # === PROCESS EACH SAMPLE ===
     for sample in root.findall('.//sample'):
