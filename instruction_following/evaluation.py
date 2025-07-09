@@ -127,15 +127,15 @@ def read_reference(
         if task.attrib['track'] == track and task.attrib['text_lang'] == language:
             samples_by_subtask = {}
             for sample in task.iter("sample"):
-                if sample.attrib['task'] not in samples_by_subtask:
-                    samples_by_subtask[sample.attrib['task']] = {}
-                sample_ids = sample.attrib['id'].split(",")
-                sample_reference = next(sample.iter('reference')).text
-                sample_metadata = {}
-                for metadata in sample.iter('metadata'):
-                    for metadata_field in metadata.iter():
-                        sample_metadata[metadata_field.tag] = metadata_field.text
                 if modality is None or len(list(sample.iter(modality + '_path'))) > 0:
+                    if sample.attrib['task'] not in samples_by_subtask:
+                        samples_by_subtask[sample.attrib['task']] = {}
+                    sample_ids = sample.attrib['id'].split(",")
+                    sample_reference = next(sample.iter('reference')).text
+                    sample_metadata = {}
+                    for metadata in sample.iter('metadata'):
+                        for metadata_field in metadata.iter():
+                            sample_metadata[metadata_field.tag] = metadata_field.text
                     samples_by_subtask[sample.attrib['task']][sample.attrib['iid']] = \
                         ReferenceSample(sample_ids, sample_reference, sample_metadata)
             return samples_by_subtask
