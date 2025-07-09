@@ -21,7 +21,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 import bert_score
 import jiwer
@@ -117,7 +117,10 @@ def read_hypo(hypo_path: Path, track: str, language: str) -> Dict[str, str]:
 
 
 def read_reference(
-        ref_path: Path, track: str, language: str) -> Dict[str, Dict[str, ReferenceSample]]:
+        ref_path: Path,
+        track: str,
+        language: str,
+        modality: Optional[str] = None) -> Dict[str, Dict[str, ReferenceSample]]:
     xml = ET.parse(ref_path)
     avail_tasks = []
     for task in xml.getroot().iter("task"):
@@ -132,8 +135,9 @@ def read_reference(
                 for metadata in sample.iter('metadata'):
                     for metadata_field in metadata.iter():
                         sample_metadata[metadata_field.tag] = metadata_field.text
-                samples_by_subtask[sample.attrib['task']][sample.attrib['iid']] = ReferenceSample(
-                    sample_ids, sample_reference, sample_metadata)
+                if modality is None or len(list(sample.iter(modality + '_path'))) > 0:
+                    samples_by_subtask[sample.attrib['task']][sample.attrib['iid']] = \
+                        ReferenceSample(sample_ids, sample_reference, sample_metadata)
             return samples_by_subtask
         avail_tasks.append((task.attrib['track'], task.attrib['text_lang']))
     raise Exception(
@@ -188,7 +192,8 @@ def bertscore(
     refs, hypos = [], []
     for iid, ref_sample in ref_dict[task].items():
         assert len(ref_sample.sample_ids) == 1, \
-            f"QA reference (IID: {iid}) mapped to multiple samples ids: {ref_sample.sample_ids}"
+            f"{task} reference (IID: {iid}) mapped to multiple samples ids: " \
+            f"{ref_sample.sample_ids}"
         hypos.append(hypo_dict[ref_sample.sample_ids[0]])
         refs.append(ref_sample.reference)
 
@@ -229,7 +234,7 @@ def score_st(
 
         resegm_hypos = mwer_segmeter("\n".join(hypo_components), ref_lines)
         assert len(ref_lines) == len(resegm_hypos), \
-            f"TRANS reference (IID: {iid}) has mismatched number of target ({len(resegm_hypos)})" \
+            f"TRANS reference (IID: {iid}) has mismatched number of target ({len(ref_lines)})" \
             f" and resegmented lines ({len(resegm_hypos)})"
         for hyp, ref, src in zip(resegm_hypos, ref_lines, src_lines):
             comet_data.append({
@@ -240,12 +245,17 @@ def score_st(
     return comet_score(comet_data)
 
 
-def main(hypo_path: Path, ref_path: Path, track: str, lang: str) -> Dict[str, float]:
+def main(
+        hypo_path: Path,
+        ref_path: Path,
+        track: str,
+        lang: str,
+        filter_modality: Optional[str]) -> Dict[str, float]:
     """
     Main function computing all the scores and returning a Dictionary with the scores
     """
     hypo = read_hypo(hypo_path, track, lang)
-    ref = read_reference(ref_path, track, lang)
+    ref = read_reference(ref_path, track, lang, modality=filter_modality)
     scores = {}
     # sanity checks for the IWSLT25 task
     if track == "short":
@@ -294,11 +304,14 @@ def cli_script():
     parser.add_argument(
         '--language', '-l', type=str, required=True,
         help="the target language to evaluate")
+    parser.add_argument(
+        '--filter-modality', '-m', choices=["audio", "text", "video"], default=None,
+        help="consider only samples which have this modality")
     args = parser.parse_args()
     try:
         hypo_path = Path(args.hypothesis)
         ref_path = Path(args.reference)
-        scores = main(hypo_path, ref_path, args.track, args.language)
+        scores = main(hypo_path, ref_path, args.track, args.language, args.filter_modality)
         print(json.dumps({
             "state": "OK",
             "scores": scores
