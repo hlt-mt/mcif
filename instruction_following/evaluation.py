@@ -69,6 +69,10 @@ class MwerSegmenter:
             prediction = " ".join(prediction)
             reference_sentences = [" ".join(reference) for reference in reference_sentences]
         try:
+            # if the prediction is empty mwerSegmenter returns a segmentation fault, so we put a
+            # fake "." to avoid this issue
+            if prediction.strip() == "":
+                prediction = "."
             tmp_pred.write(prediction)
             tmp_ref.writelines(ref + '\n' for ref in reference_sentences)
             tmp_pred.flush()
