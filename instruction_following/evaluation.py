@@ -21,7 +21,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 import bert_score
 import jiwer
@@ -140,6 +140,9 @@ def read_reference(
                     for metadata in sample.iter('metadata'):
                         for metadata_field in metadata.iter():
                             sample_metadata[metadata_field.tag] = metadata_field.text
+                    for field in ['qa_type', 'qa_origin']:
+                        if field in sample.attrib:
+                            sample_metadata[field] = sample.attrib[field]
                     samples_by_subtask[sample.attrib['task']][sample.attrib['iid']] = \
                         ReferenceSample(sample_ids, sample_reference, sample_metadata)
             return samples_by_subtask
@@ -174,35 +177,51 @@ def score_asr(
 def score_sqa(
         hypo_dict: Dict[str, str],
         ref_dict: Dict[str, Dict[str, ReferenceSample]],
-        lang: str) -> float:
-    return bertscore(hypo_dict, ref_dict, lang, "QA")
+        lang: str,
+        breakdown_qa_types: bool) -> Tuple[float, Optional[Dict[str, float]]]:
+    return bertscore(hypo_dict, ref_dict, lang, "QA", breakdown_qa_types)
 
 
 def score_ssum(
         hypo_dict: Dict[str, str],
         ref_dict: Dict[str, Dict[str, ReferenceSample]],
         lang: str) -> float:
-    return bertscore(hypo_dict, ref_dict, lang, "SUM")
+    score, _ = bertscore(hypo_dict, ref_dict, lang, "SUM")
+    return score
 
 
 def bertscore(
         hypo_dict: Dict[str, str],
         ref_dict: Dict[str, Dict[str, ReferenceSample]],
         lang: str,
-        task: str) -> float:
+        task: str,
+        breakdown_qa_types: bool = False) -> Tuple[float, Optional[Dict[str, float]]]:
     """
     Computes BERTScore.
     """
     refs, hypos = [], []
-    for iid, ref_sample in ref_dict[task].items():
+    qa_types_indices = {}
+    for i, (iid, ref_sample) in enumerate(ref_dict[task].items()):
         assert len(ref_sample.sample_ids) == 1, \
             f"{task} reference (IID: {iid}) mapped to multiple samples ids: " \
             f"{ref_sample.sample_ids}"
         hypos.append(hypo_dict[ref_sample.sample_ids[0]])
         refs.append(ref_sample.reference)
+        if breakdown_qa_types:
+            for field in ['qa_type', 'qa_origin']:
+                qa_type = ref_sample.metadata[field]
+                if qa_type not in qa_types_indices:
+                    qa_types_indices[qa_type] = []
+                qa_types_indices[qa_type].append(i)
 
     P, R, F1 = bert_score.score(hypos, refs, lang=lang, rescale_with_baseline=True)
-    return F1.mean().detach().item()
+    qa_types_scores = None
+    if breakdown_qa_types:
+        qa_types_scores = {
+            qa_type: F1[indices].mean().detach().item()
+            for qa_type, indices in qa_types_indices.items()
+        }
+    return F1.mean().detach().item(), qa_types_scores
 
 
 def comet_score(data: List[Dict[str, str]]) -> float:
@@ -254,18 +273,23 @@ def main(
         ref_path: Path,
         track: str,
         lang: str,
-        filter_modality: Optional[str]) -> Dict[str, float]:
+        filter_modality: Optional[str],
+        breakdown_qa_types: bool) -> Dict[str, float]:
     """
     Main function computing all the scores and returning a Dictionary with the scores
     """
     hypo = read_hypo(hypo_path, track, lang)
     ref = read_reference(ref_path, track, lang, modality=filter_modality)
     scores = {}
+    assert "QA" in ref.keys()
+    scores["QA-BERTScore"], qa_types_scores = score_sqa(hypo, ref, lang, breakdown_qa_types)
+    if qa_types_scores is not None:
+        for qa_type, score in qa_types_scores.items():
+            scores[f"QA-{qa_type}-BERTScore"] = score
+
     # sanity checks for the IWSLT25 task
     if track == "short":
         assert len(ref.keys()) == 2
-        assert "QA" in ref.keys()
-        scores["QA-BERTScore"] = score_sqa(hypo, ref, lang)
         if lang == "en":
             assert "ASR" in ref.keys()
             scores["ASR-WER"] = score_asr(hypo, ref, lang)
@@ -274,9 +298,7 @@ def main(
             scores["TRANS-COMET"] = score_st(hypo, ref, lang)
     else:
         assert len(ref.keys()) == 3 or len(ref.keys()) == 2
-        assert "QA" in ref.keys()
         assert "SUM" in ref.keys()
-        scores["QA-BERTScore"] = score_sqa(hypo, ref, lang)
         scores["SUM-BERTScore"] = score_ssum(hypo, ref, lang)
         if lang == "en":
             if "ASR" in ref.keys():
@@ -311,11 +333,20 @@ def cli_script():
     parser.add_argument(
         '--filter-modality', '-m', choices=["audio", "text", "video"], default=None,
         help="consider only samples which have this modality")
+    parser.add_argument(
+        '--breakdown-qa-types', default=False, action='store_true',
+        help="if set, print separate scores for different QA types")
     args = parser.parse_args()
     try:
         hypo_path = Path(args.hypothesis)
         ref_path = Path(args.reference)
-        scores = main(hypo_path, ref_path, args.track, args.language, args.filter_modality)
+        scores = main(
+            hypo_path,
+            ref_path,
+            args.track,
+            args.language,
+            args.filter_modality,
+            args.breakdown_qa_types)
         print(json.dumps({
             "state": "OK",
             "scores": scores
