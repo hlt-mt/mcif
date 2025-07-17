@@ -58,7 +58,10 @@ def compute_stats(reference, audio_dir, use_chars=False):
             if task == "QA":
                 qa_type = sample.attrib.get('qa_type')
                 qa_origin = sample.attrib.get('qa_origin')
-                for subtask in [task + "_" + qa_type, task + "_" + qa_origin]:
+                for subtask in [
+                        task + "_" + qa_type,
+                        task + "_" + qa_origin,
+                        task + "_" + qa_type  + "_" + qa_origin]:
                     stats[subtask]['num_samples'] += 1
                     stats[subtask]['reference_count'] += ref_count
                     stats[subtask]['audio_duration_sec'] += duration_sec
@@ -77,7 +80,8 @@ def print_stats(stats, use_chars=False):
     print('-' * len(header))
 
     # === PRINT TABLE ROWS ===
-    for task, values in stats.items():
+    for task in sorted(stats.keys()):
+        values = stats[task]
         output = f"{task:<15} {values['num_samples']:>15} "
         for field in ['audio_duration_sec', 'reference_count']:
             output += f"{values[field]:>30.2f} {values[field] / values['num_samples']:>30.2f} "
