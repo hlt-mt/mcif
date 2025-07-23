@@ -42,7 +42,7 @@ LANG_INSTRUCTIONS = {
     },
     "de": {
         "st": "Übersetze den englischem Inhalt nach Deutsch.",
-        "sqa": "Beantworte die folgende Frage kurz und bündig basierend auf dem englischen Inhalt:",
+        "sqa": "Beantworte die folgende Frage kurz und bündig basierend auf dem englischen Inhalt:",  # noqa: E501
         "ssum": "Fasse den englischen Inhalt in einem Abstract mit maximal 200 Wörtern zusammen."
     },
     "it": {
@@ -105,10 +105,10 @@ POOL_INSTRUCTIONS = {
             "Gib den englischen Inhalt sinngemäß auf Deutsch wieder."
         ],
         "sqa": [
-            "Beantworte folgende Frage kurz und bündig unter Bezugnahme auf den englischen Inhalt:",
+            "Beantworte folgende Frage kurz und bündig unter Bezugnahme auf den englischen Inhalt:",  # noqa: E501
             "Verwende den englischen Inhalt, um diese Frage kurz und bündig zu beantworten:",
             "Beziehe dich auf den englischen Inhalt an und gib eine kurze Antwort auf die Frage:",
-            "Basierend auf dem englischen Inhalt, beantworte die nachfolgende Frage kurz und bündig:",
+            "Basierend auf dem englischen Inhalt, beantworte die nachfolgende Frage kurz und bündig:",  # noqa: E501
             "Nutze den englischen Inhalt zur knappen Beantwortung der Frage:",
             "Analysiere den englischen Inhalt und beantworte die Frage kurz und bündig:",
             "Beantworte diese Frage kurz und bündig mithilfe des englischen Inhalts:",
@@ -147,8 +147,8 @@ POOL_INSTRUCTIONS = {
             "Rispondi alla domanda in modo conciso servendoti del contenuto inglese:",
             "Sulla base del contenuto inglese, dai una risposta concisa alla domanda:",
             "Rispondi sinteticamente alla domanda usando le informazioni del contenuto inglese:",
-            "Considera il contenuto inglese per rispondere alla seguente domanda in maniera concisa:",
-            "Utilizza il contenuto inglese come base per rispondere. Fornisci una risposta concisa:"
+            "Considera il contenuto inglese per rispondere alla seguente domanda in maniera concisa:",  # noqa: E501
+            "Utilizza il contenuto inglese come base per rispondere. Fornisci una risposta concisa:"  # noqa: E501
         ],
         "ssum": [
             "Riassumi il contenuto inglese in circa 200 parole.",

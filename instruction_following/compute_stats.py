@@ -61,7 +61,7 @@ def compute_stats(reference, audio_dir, use_chars=False):
                 for subtask in [
                         task + "_" + qa_type,
                         task + "_" + qa_origin,
-                        task + "_" + qa_type  + "_" + qa_origin]:
+                        task + "_" + qa_type + "_" + qa_origin]:
                     stats[subtask]['num_samples'] += 1
                     stats[subtask]['reference_count'] += ref_count
                     stats[subtask]['audio_duration_sec'] += duration_sec
