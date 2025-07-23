@@ -148,7 +148,7 @@ POOL_INSTRUCTIONS = {
             "Sulla base del contenuto inglese, dai una risposta concisa alla domanda:",
             "Rispondi sinteticamente alla domanda usando le informazioni del contenuto inglese:",
             "Considera il contenuto inglese per rispondere alla seguente domanda in maniera concisa:",  # noqa: E501
-            "Utilizza il contenuto inglese come base per rispondere. Fornisci una risposta concisa:"  # noqa: E501
+            "Utilizza il contenuto inglese come base per rispondere. Fornisci una risposta concisa:"  # noqa: E501,W505
         ],
         "ssum": [
             "Riassumi il contenuto inglese in circa 200 parole.",
