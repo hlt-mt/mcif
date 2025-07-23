@@ -30,29 +30,29 @@ import yaml
 from moviepy import VideoFileClip, concatenate_videoclips
 
 
-VERSION = '0.1'
+VERSION = '0.2'
 TEST_SET_DEF_FNAME = "[IWSLT 2025] Test Set - ASR, ST, SQA (also cross-lingual), SSUM final .tsv"
 TEST_SET_SSUM_DEF_FNAME = "[IWSLT 2025] Test Set - SSUM (only abstract in English).tsv"
 TGT_LANGS = ["de", "it", "zh"]
 LANG_INSTRUCTIONS = {
     "en": {
         "asr": "Transcribe the English content.",
-        "sqa": "Answer the following question given the English content:",
+        "sqa": "Answer the following question concisely given the English content:",
         "ssum": "Summarize the English content in an abstract of approximately 200 words.",
     },
     "de": {
         "st": "Übersetze den englischem Inhalt nach Deutsch.",
-        "sqa": "Beantworte die folgende Frage basierend auf dem englischen Inhalt:",
+        "sqa": "Beantworte die folgende Frage kurz und bündig basierend auf dem englischen Inhalt:",
         "ssum": "Fasse den englischen Inhalt in einem Abstract mit maximal 200 Wörtern zusammen."
     },
     "it": {
         "st": "Traduci il contenuto inglese in italiano.",
-        "sqa": "Rispondi alla seguente domanda dato il contenuto inglese:",
+        "sqa": "Rispondi in modo conciso alla seguente domanda dato il contenuto inglese:",
         "ssum": "Riassumi il contenuto inglese in un abstract di circa 200 parole."
     },
     "zh": {
         "st": "将英文内容翻译成中文。",
-        "sqa": "根据所给的英文内容，回答以下问题：",
+        "sqa": "根据所给的英文内容，简要回答以下问题：",
         "ssum": "用400个字左右概括所给的英语内容。"
     },
 }
@@ -70,15 +70,15 @@ POOL_INSTRUCTIONS = {
             "Write out the English content as it is stated."
         ],
         "sqa": [
-            "Based on the English content, respond to this question:",
-            "Use the English content to answer the question below:",
-            "Consider the English content and reply to the question:",
-            "Given the English content, what is the answer to the question:",
-            "Relying on the English content, provide your answer:",
-            "Interpret the English content and respond to the following:",
-            "Consider the English content and answer this:",
-            "Use the content in English to formulate your response:",
-            "Refer to the English content to answer the question:"
+            "Based on the English content, respond to this question with a brief answer:",
+            "Use the English content to provide a concise answer to the question below:",
+            "Consider the English content and provide a brief reply to the question:",
+            "Given the English content, what is a concise answer to the question:",
+            "Relying on the English content, provide a concise answer:",
+            "Interpret the English content and concisely respond to the following:",
+            "Consider the English content and briefly answer this:",
+            "Use the content in English to formulate a concise response:",
+            "Refer to the English content to answer the question. Be concise:"
         ],
         "ssum": [
             "Provide a summary of the English content using roughly 200 words.",
@@ -105,15 +105,15 @@ POOL_INSTRUCTIONS = {
             "Gib den englischen Inhalt sinngemäß auf Deutsch wieder."
         ],
         "sqa": [
-            "Beantworte folgende Frage unter Bezugnahme auf den englischen Inhalt:",
-            "Verwende den englischen Inhalt, um diese Frage zu beantworten:",
-            "Beziehe dich auf den englischen Inhalt an und gib eine Antwort auf die Frage:",
-            "Basierend auf dem englischen Inhalt, beantworte die nachfolgende Frage:",
-            "Nutze den englischen Inhalt zur Beantwortung der Frage:",
-            "Analysiere den englischen Inhalt und beantworte die Frage:",
-            "Beantworte diese Frage mithilfe des englischen Inhalts:",
-            "Analysiere den englischen Inhalt und beantworte dann diese Frage:",
-            "Orientiere dich am englischen Inhalt und gib eine Antwort:"
+            "Beantworte folgende Frage kurz und bündig unter Bezugnahme auf den englischen Inhalt:",
+            "Verwende den englischen Inhalt, um diese Frage kurz und bündig zu beantworten:",
+            "Beziehe dich auf den englischen Inhalt an und gib eine kurze Antwort auf die Frage:",
+            "Basierend auf dem englischen Inhalt, beantworte die nachfolgende Frage kurz und bündig:",
+            "Nutze den englischen Inhalt zur knappen Beantwortung der Frage:",
+            "Analysiere den englischen Inhalt und beantworte die Frage kurz und bündig:",
+            "Beantworte diese Frage kurz und bündig mithilfe des englischen Inhalts:",
+            "Analysiere den englischen Inhalt und beantworte dann diese Frage kurz und bündig:",
+            "Orientiere dich am englischen Inhalt und gib eine kurze Antwort:"
         ],
         "ssum": [
             "Fasse den englischen Inhalt in ungefähr 200 Wörtern zusammen.",
@@ -140,15 +140,15 @@ POOL_INSTRUCTIONS = {
             "Rendi in italiano il contenuto in inglese."
         ],
         "sqa": [
-            "Rispondi alla seguente domanda utilizzando il contenuto inglese:",
-            "Esamina il contenuto inglese e rispondi alla domanda:",
-            "Fornisci una risposta alla domanda basandoti sul contenuto inglese:",
-            "Considera il contenuto inglese e rispondi a questa domanda:",
-            "Rispondi alla domanda servendoti del contenuto inglese:",
-            "Sulla base del contenuto inglese, dai una risposta alla domanda:",
-            "Rispondi alla domanda usando le informazioni del contenuto inglese:",
-            "Considera il contenuto inglese per rispondere alla seguente domanda:",
-            "Utilizza il contenuto inglese come base per rispondere alla domanda:"
+            "Rispondi brevemente alla seguente domanda utilizzando il contenuto inglese:",
+            "Esamina il contenuto inglese e rispondi alla domanda in modo conciso:",
+            "Fornisci una breve risposta alla domanda basandoti sul contenuto inglese:",
+            "Considera il contenuto inglese e rispondi sinteticamente a questa domanda:",
+            "Rispondi alla domanda in modo conciso servendoti del contenuto inglese:",
+            "Sulla base del contenuto inglese, dai una risposta concisa alla domanda:",
+            "Rispondi sinteticamente alla domanda usando le informazioni del contenuto inglese:",
+            "Considera il contenuto inglese per rispondere alla seguente domanda in maniera concisa:",
+            "Utilizza il contenuto inglese come base per rispondere. Fornisci una risposta concisa:"
         ],
         "ssum": [
             "Riassumi il contenuto inglese in circa 200 parole.",
@@ -175,15 +175,15 @@ POOL_INSTRUCTIONS = {
             "将这段英语内容用中文重新表达。"
         ],
         "sqa": [
-            "根据英语内容，回答下面的问题：",
-            "接收到英文内容后，回答以下问题：",
-            "请结合英语内容，对如下问题作答：",
-            "根据所给英文内容，给出答案：",
-            "请基于所给内容中的英文信息回答问题：",
-            "听完英语内容后，请为以下提问作答：",
-            "参考英语内容，回答下列问题：",
-            "使用所给内容中的英文来回答问题：",
-            "请依据英文内容回答问题："
+            "根据英语内容，简要回答下面的问题：",
+            "接收到英文内容后，简短回答以下问题：",
+            "请结合英语内容，对如下问题简要作答：",
+            "根据所给英文内容，给出简短的答案：",
+            "请基于所给内容中的英文信息简要回答问题：",
+            "听完英语内容后，请为以下提问简要作答：",
+            "参考英语内容，简要回答下列问题：",
+            "使用所给内容中的英文来简要回答问题：",
+            "请依据英文内容简要回答问题："
         ],
         "ssum": [
             "将英文内容用400个字概括。",
