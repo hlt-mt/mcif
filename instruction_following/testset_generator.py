@@ -33,6 +33,7 @@ from moviepy import VideoFileClip, concatenate_videoclips
 VERSION = '0.2'
 TEST_SET_DEF_FNAME = "[IWSLT 2025] Test Set - ASR, ST, SQA (also cross-lingual), SSUM final .tsv"
 TEST_SET_SSUM_DEF_FNAME = "[IWSLT 2025] Test Set - SSUM (only abstract in English).tsv"
+TEST_SET_TRANSCRIPTS = "[IWSLT 2025] Test Set - Test set with revised transcript.tsv"
 TGT_LANGS = ["de", "it", "zh"]
 LANG_INSTRUCTIONS = {
     "en": {
@@ -349,6 +350,24 @@ class TestsetDefinitionLine:
         return self.line['Question Origin'][:-2]  # strip ' Q'
 
 
+class TranscriptReader:
+    def __init__(self, translation_file: Path):
+        self.transcripts_map = {}
+        with open(translation_file) as f:
+            reader = csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE)
+            for line in reader:
+                audio = line["Video Link"].replace("https://aclanthology.org/", "")[:-4] + '.wav'
+                transcript = TestsetDefinitionLine._RE_COMBINE_WHITESPACE.sub(
+                    " ", line["Revised Transcript"]).strip()
+                self.transcripts_map[audio] = transcript
+
+    def __getitem__(self, audio_id):
+        return self.transcripts_map[audio_id]
+
+    def __contains__(self, audio_id):
+        return audio_id in self.transcripts_map
+
+
 class SegmentedAudios:
     """
     Wrapper giving access to a YAML file with definition of audio splits.
@@ -646,12 +665,9 @@ def long_track(
     xml_src_track = {}
     xml_src_track_rand = {}
     xml_ref_track = {}
-    transcripts_map = {}
+    transcript_map = None
     if include_text:
-        for test_element in test_elements:
-            if test_element["task"] == "ASR":
-                audio_path = audio_to_alias[test_element["audio"]]
-                transcripts_map[audio_path] = test_element["langs"]["en"]["reference"]
+        transcript_map = TranscriptReader(source_path / TEST_SET_TRANSCRIPTS)
     for lang in {"en"}.union(TGT_LANGS):
         xml_src[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
         xml_src_rand[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
@@ -675,7 +691,7 @@ def long_track(
                 ET.SubElement(xml_src_sample, "video_path").text = audio_path.replace("wav", "mp4")
                 ET.SubElement(xml_src_sample_rand, "video_path").text = \
                     audio_path.replace("wav", "mp4")
-            if sample["task"] != "ASR" and audio_path in transcripts_map:
+            if sample["task"] != "ASR" and include_text and sample["audio"] in transcript_map:
                 ET.SubElement(xml_src_sample, "text_path").text = audio_path.replace("wav", "en")
                 ET.SubElement(xml_src_sample_rand, "text_path").text = \
                     audio_path.replace("wav", "en")
@@ -692,7 +708,7 @@ def long_track(
             ET.SubElement(xml_ref_sample, "audio_path").text = audio_path
             if include_video:
                 ET.SubElement(xml_ref_sample, "video_path").text = audio_path.replace("wav", "mp4")
-            if sample["task"] != "ASR" and audio_path in transcripts_map:
+            if sample["task"] != "ASR" and include_text and sample["audio"] in transcript_map:
                 ET.SubElement(xml_ref_sample, "text_path").text = audio_path.replace("wav", "en")
             ET.SubElement(xml_ref_sample, "reference").text = sample["langs"][lang]["reference"]
             if sample["task"] == "TRANS":
@@ -738,8 +754,8 @@ def long_track(
                 base_video_path / original_name.replace("wav", "mp4"),
                 output_video_path / audio_to_alias[original_name].replace("wav", "mp4"))
     if include_text:
-        for original_name, transcript in transcripts_map.items():
-            fname = original_name.replace("wav", "en")
+        for original_name, transcript in transcript_map.transcripts_map.items():
+            fname = audio_to_alias[original_name].replace("wav", "en")
             with open(output_text_path / fname, "w") as f:
                 f.write(transcript)
 
