@@ -572,7 +572,7 @@ def read_test_elements(
                                 test_item_def.question(lang=lang), lang=lang),
                             "reference": test_item_def.answer(lang=lang)
                         }
-                        for lang in {"en"}.union(TGT_LANGS)
+                        for lang in TGT_LANGS[::-1] + ["en"]
                     },
                     "task": "QA",
                     "iid": "QA_" + str(test_item_def.unique_id()),
@@ -591,7 +591,7 @@ def read_test_elements(
                                 test_item_def.question(lang=lang), lang=lang),
                             "reference": LANG_NOT_ANSWERABLE[lang]
                         }
-                        for lang in {"en"}.union(TGT_LANGS)
+                        for lang in TGT_LANGS[::-1] + ["en"]
                     },
                     "task": "QA",
                     "iid": "QA_" + str(test_item_def.unique_id()),
