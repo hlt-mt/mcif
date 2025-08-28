@@ -177,7 +177,7 @@ def main(in_data_folder, out_folder, model, lang, track, modality, prompt):
     logging.info(f"Input folder: {in_data_folder}")
     logging.info(f"Output XML: {output_file_path}")
 
-    logging.info(f"Loading Data.")
+    logging.info("Loading Data.")
     data = read_from_xml(
         folder_path=in_data_folder,
         lang=lang,
@@ -185,10 +185,10 @@ def main(in_data_folder, out_folder, model, lang, track, modality, prompt):
         modality=modality,
         prompt=prompt,
     )
-    logging.info(f"Loading Model.")
+    logging.info("Loading Model.")
     model_instance, generate = load_model(model)
 
-    logging.info(f"Starting Output Generation.")
+    logging.info("Starting Output Generation.")
     outputs = []
     for example in tqdm(data, desc="Generating Outputs"):
         sample_id, instruction, example_path = example

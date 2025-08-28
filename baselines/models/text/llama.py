@@ -37,7 +37,9 @@ def generate(pipeline, prompt, example_path, modality):
 
     example = read_txt_file(example_path)
 
-    system_prompt = "A chat between a curious user and an artificial intelligence assistant. Only return the answer requested. Do not include any explanation or introductions.\n"
+    system_prompt = "A chat between a curious user and an artificial intelligence assistant. " \
+                    "Only return the answer requested. Do not include any explanation or " \
+                    "introductions.\n"
     user_prompt = f"{example}\n{prompt}"
     messages = [
         {

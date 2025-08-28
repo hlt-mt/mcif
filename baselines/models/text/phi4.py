@@ -36,7 +36,8 @@ def generate(pipeline, prompt, example_path, modality):
     messages = [
         {
             "role": "system",
-            "content": "You are a helpful assistant. Only return the answer requested. Do not include any explanation or introductions.",
+            "content": "You are a helpful assistant. Only return the answer requested. "
+                       "Do not include any explanation or introductions.",
         },
         {"role": "user", "content": f"{example}\n{prompt}"},
     ]

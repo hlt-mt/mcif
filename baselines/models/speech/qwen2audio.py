@@ -60,7 +60,7 @@ def generate(model_processor, prompt, example_path, modality):
     inputs.input_ids = inputs.input_ids.to("cuda")
 
     generate_ids = model.generate(**inputs, max_length=4096)
-    generate_ids = generate_ids[:, inputs.input_ids.size(1) :]
+    generate_ids = generate_ids[:, inputs.input_ids.size(1):]
 
     response = processor.batch_decode(
         generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False

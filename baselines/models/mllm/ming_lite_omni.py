@@ -30,14 +30,14 @@ def load_model():
     )
 
     model = BailingMMNativeForConditionalGeneration.from_pretrained(
-        "inclusionAI/Ming-Lite-Omni", # path to your download of the repo
+        "inclusionAI/Ming-Lite-Omni",  # path to your download of the repo
         torch_dtype=torch.bfloat16,
         low_cpu_mem_usage=True,
         trust_remote_code=True,
     ).to("cuda")
 
     processor = AutoProcessor.from_pretrained(
-        "inclusionAI/Ming-Lite-Omni", # path to your download of the repo
+        "inclusionAI/Ming-Lite-Omni",  # path to your download of the repo
         trust_remote_code=True,
     )
     return model, processor
@@ -132,7 +132,7 @@ def generate(model_processor, prompt, example_path, modality):
             generation_config=generation_config,
         )
     generated_ids_trimmed = [
-        out_ids[len(in_ids) :]
+        out_ids[len(in_ids):]
         for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
     ]
     response = processor.batch_decode(
@@ -142,4 +142,3 @@ def generate(model_processor, prompt, example_path, modality):
     )[0]
 
     return response
-

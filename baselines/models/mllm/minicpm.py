@@ -63,7 +63,7 @@ def get_video_chunk_content(video_path, flatten=True, use_audio=True):
         frame = video.get_frame(i + 1)
         image = Image.fromarray((frame).astype(np.uint8))
         if use_audio:
-            audio = audio_np[sr * i : sr * (i + 1)]
+            audio = audio_np[sr * i: sr * (i + 1)]
             if flatten:
                 contents.extend(["<unit>", image, audio])
             else:

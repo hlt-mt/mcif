@@ -43,7 +43,8 @@ def generate(model_processor, prompt, example_path, modality):
             "content": [
                 {
                     "type": "text",
-                    "text": "You are a helpful assistant. Only return the answer requested. Do not include any explanation or introductions.",
+                    "text": "You are a helpful assistant. Only return the answer requested. "
+                            "Do not include any explanation or introductions.",
                 }
             ],
         },

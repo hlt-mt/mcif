@@ -33,7 +33,9 @@ def generate(model, prompt, example_path, modality):
     turns = [
         {
             "role": "system",
-            "content": "You are a friendly and helpful character. You love to answer questions for people. Only return the answer requested. Do not include any explanation or introductions.",
+            "content": "You are a friendly and helpful character. You love to answer questions "
+                       "for people. Only return the answer requested. Do not include any "
+                       "explanation or introductions.",
         },
         {"role": "user", "content": f"<|audio|>{prompt}"},
     ]

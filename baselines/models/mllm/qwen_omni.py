@@ -67,7 +67,10 @@ def generate(model_processor, prompt, example_path, modality):
         "content": [
             {
                 "type": "text",
-                "text": "You are Qwen, a virtual human developed by the Qwen Team, Alibaba Group, capable of perceiving auditory and visual inputs, as well as generating text and speech. Only return the answer requested. Do not include any explanation or introductions.",
+                "text": "You are Qwen, a virtual human developed by the Qwen Team, Alibaba Group, "
+                        "capable of perceiving auditory and visual inputs, as well as generating "
+                        "text and speech. Only return the answer requested. Do not include any "
+                        "explanation or introductions.",
             }
         ],
     }

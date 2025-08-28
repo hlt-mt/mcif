@@ -47,7 +47,8 @@ def generate(model_processor, prompt, example_path, modality):
     conversation = [
         {
             "role": "system",
-            "content": "You are a helpful assistant. Only return the answer requested. Do not include any explanation or introductions.",
+            "content": "You are a helpful assistant. Only return the answer requested. "
+                       "Do not include any explanation or introductions.",
         },
         {
             "role": "user",

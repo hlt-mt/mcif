@@ -32,7 +32,8 @@ def generate(model, prompt, example_path, modality):
     messages = [
         {
             "role": "system",
-            "content": "You are a helpful voice assistant. Only return the answer requested. Do not include any explanation or introductions.",
+            "content": "You are a helpful voice assistant. Only return the answer requested. "
+                       "Do not include any explanation or introductions.",
         },
         {"role": "audio", "content": example_path},
         {"role": "user", "content": prompt},

@@ -44,7 +44,10 @@ def generate(model_processor_tokenizer, prompt, example_path, modality):
     chat = [
         {
             "role": "system",
-            "content": "Knowledge Cutoff Date: April 2024.\nToday's Date: April 9, 2025.\nYou are Granite, developed by IBM. You are a helpful AI assistant. Only return the answer requested. Do not include any explanation or introductions.",
+            "content": "Knowledge Cutoff Date: April 2024.\nToday's Date: April 9, 2025.\n"
+                       "You are Granite, developed by IBM. You are a helpful AI assistant. "
+                       "Only return the answer requested. Do not include any explanation or "
+                       "introductions.",
         },
         {
             "role": "user",

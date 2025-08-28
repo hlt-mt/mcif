@@ -14,9 +14,10 @@
 
 import torch
 
+from utils import read_txt_file
+
 torch._dynamo.config.cache_size_limit = 128
 torch._dynamo.disable()
-from utils import read_txt_file
 
 
 def load_model():
@@ -69,7 +70,8 @@ def generate(model_processor, prompt, example_path, modality):
             "content": [
                 {
                     "type": "text",
-                    "text": "You are a helpful assistant.  Only return the answer requested. Do not include any explanation or introductions.",
+                    "text": "You are a helpful assistant.  Only return the answer requested. "
+                            "Do not include any explanation or introductions.",
                 }
             ],
         },

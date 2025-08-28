@@ -55,7 +55,6 @@ def load_audio(audio_file_name):
         speech_wav = speech_wav[:, 0]
     speech_wav = speech_wav.astype(np.float32)
     CHUNK_LIM = 480000
-    SAMPLE_RATE = 16000
     speechs = []
     speech_wavs = []
 
@@ -66,7 +65,7 @@ def load_audio(audio_file_name):
         speech_wavs.append(torch.from_numpy(speech_wav).unsqueeze(0))
     else:
         for i in range(0, len(speech_wav), CHUNK_LIM):
-            chunk = speech_wav[i : i + CHUNK_LIM]
+            chunk = speech_wav[i: i + CHUNK_LIM]
             if len(chunk) < CHUNK_LIM:
                 chunk = whisper.pad_or_trim(chunk)
             speechs.append(chunk)
@@ -103,7 +102,6 @@ def generate(tokenizer_model_image_processor, prompt, example_path, modality):
     from ola.constants import (
         DEFAULT_IMAGE_TOKEN,
         DEFAULT_SPEECH_TOKEN,
-        IGNORE_INDEX,
         IMAGE_TOKEN_INDEX,
         SPEECH_TOKEN_INDEX,
     )
@@ -116,7 +114,6 @@ def generate(tokenizer_model_image_processor, prompt, example_path, modality):
     )
     from ola.mm_utils import (
         KeywordsStoppingCriteria,
-        get_model_name_from_path,
         process_anyres_highres_image,
         process_anyres_video,
     )
@@ -159,7 +156,6 @@ def generate(tokenizer_model_image_processor, prompt, example_path, modality):
     if modality == "video":
         vr = VideoReader(visual, ctx=cpu(0))
         total_frame_num = len(vr)
-        fps = round(vr.get_avg_fps())
         uniform_sampled_frames = np.linspace(0, total_frame_num - 1, 64, dtype=int)
         frame_idx = uniform_sampled_frames.tolist()
         spare_frames = vr.get_batch(frame_idx).asnumpy()

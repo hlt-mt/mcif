@@ -68,7 +68,7 @@ def generate(model_processor_config, prompt, example_path, modality):
         max_new_tokens=4096,
         generation_config=generation_config,
     )
-    generate_ids = generate_ids[:, inputs["input_ids"].shape[1] :]
+    generate_ids = generate_ids[:, inputs["input_ids"].shape[1]:]
     response = processor.batch_decode(
         generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False
     )[0]
