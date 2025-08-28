@@ -1,0 +1,47 @@
+# ---- All project specifications ---- #
+[project]
+name = "mcif"
+description = "Repository with the code for the multilingual and multimodal benchmark MCIF"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [
+    { name = "Marco Gaido", email = "mgaido@fbk.eu" },
+    { name = "Maike Züfle", email = "maike.zuefle@kit.edu" },
+    { name = "Sara Papi", email = "spapi@fbk.eu" },
+]
+keywords = ["multimodal", "multilingual", "benchmark", "evaluation"]
+dependencies = [
+    "pyyaml>6.0",
+    "jiwer==3.0.5",
+    "bert_score==0.3.13",
+    "unbabel-comet==2.2.4",
+    "whisper_normalizer==0.0.10"
+]
+
+dynamic = ["version"]
+
+[project.urls]
+GitHub = "https://github.com/hlt-mt/mcif"
+Issues = "https://github.com/hlt-mt/mcif/issues"
+
+[project.scripts]
+mcif_eval = "mcif.evaluation:cli_script"
+
+[project.optional-dependencies]
+dev = [
+    "flake8",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "mcif.__version__"}
+
+
+# ---- Explicit project build information ---- #
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
