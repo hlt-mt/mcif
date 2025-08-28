@@ -16,7 +16,7 @@ For the dataset creation and baselines please refer to the dedicated READMEs.
 
 The repository can be installed with `pip install -e .`.
 
-# Usage
+## Usage
 
 For the evaluation, you can simply run:
 

@@ -1,4 +1,4 @@
-## Installation
+# Installation
 
 The scripts are standalone and require no installation beside the PyYAML (`yaml`) package,
 which can be installed with:
