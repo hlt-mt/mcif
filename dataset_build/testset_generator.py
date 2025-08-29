@@ -28,9 +28,9 @@ import xml.etree.ElementTree as ET
 
 import yaml
 from moviepy import VideoFileClip, concatenate_videoclips
+from mcif import __benchmark_version__
 
 
-VERSION = '0.2'
 TEST_SET_DEF_FNAME = "[IWSLT 2025] Test Set - ASR, ST, SQA (also cross-lingual), SSUM final .tsv"
 TEST_SET_SSUM_DEF_FNAME = "[IWSLT 2025] Test Set - SSUM (only abstract in English).tsv"
 TEST_SET_TRANSCRIPTS = "[IWSLT 2025] Test Set - Test set with revised transcript.tsv"
@@ -669,9 +669,9 @@ def long_track(
     if include_text:
         transcript_map = TranscriptReader(source_path / TEST_SET_TRANSCRIPTS)
     for lang in {"en"}.union(TGT_LANGS):
-        xml_src[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
-        xml_src_rand[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
-        xml_ref[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
+        xml_src[lang] = ET.Element("testset", attrib={'name': f"MCIF{__benchmark_version__}"})
+        xml_src_rand[lang] = ET.Element("testset", attrib={'name': f"MCIF{__benchmark_version__}"})
+        xml_ref[lang] = ET.Element("testset", attrib={'name': f"MCIF{__benchmark_version__}"})
         xml_src_track[lang] = ET.SubElement(
             xml_src[lang], "task", attrib={"track": "long", "text_lang": lang})
         xml_src_track_rand[lang] = ET.SubElement(
@@ -724,15 +724,15 @@ def long_track(
         ET.indent(tree_src_rand)
         ET.indent(tree_ref)
         tree_src.write(
-            output_path / f"MCIF{VERSION}.IF.long.{lang}.src.fixedprompts.xml",
+            output_path / f"MCIF{__benchmark_version__}.IF.long.{lang}.src.fixedprompts.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_src_rand.write(
-            output_path / f"MCIF{VERSION}.IF.long.{lang}.src.randomprompts.xml",
+            output_path / f"MCIF{__benchmark_version__}.IF.long.{lang}.src.randomprompts.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_ref.write(
-            output_path / f"MCIF{VERSION}.IF.long.{lang}.ref.xml",
+            output_path / f"MCIF{__benchmark_version__}.IF.long.{lang}.ref.xml",
             encoding="utf-8",
             xml_declaration=True)
 
@@ -786,9 +786,9 @@ def short_track(
     xml_src_track_rand = {}
     xml_ref_track = {}
     for lang in {"en"}.union(TGT_LANGS):
-        xml_src[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
-        xml_src_rand[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
-        xml_ref[lang] = ET.Element("testset", attrib={'name': f"MCIF{VERSION}"})
+        xml_src[lang] = ET.Element("testset", attrib={'name': f"MCIF{__benchmark_version__}"})
+        xml_src_rand[lang] = ET.Element("testset", attrib={'name': f"MCIF{__benchmark_version__}"})
+        xml_ref[lang] = ET.Element("testset", attrib={'name': f"MCIF{__benchmark_version__}"})
         xml_src_track[lang] = ET.SubElement(
             xml_src[lang], "task", attrib={"track": "short", "text_lang": lang})
         xml_src_track_rand[lang] = ET.SubElement(
@@ -897,15 +897,15 @@ def short_track(
         ET.indent(tree_src_rand)
         ET.indent(tree_ref)
         tree_src.write(
-            output_path / f"MCIF{VERSION}.IF.short.{lang}.src.fixedprompts.xml",
+            output_path / f"MCIF{__benchmark_version__}.IF.short.{lang}.src.fixedprompts.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_src_rand.write(
-            output_path / f"MCIF{VERSION}.IF.short.{lang}.src.randomprompts.xml",
+            output_path / f"MCIF{__benchmark_version__}.IF.short.{lang}.src.randomprompts.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_ref.write(
-            output_path / f"MCIF{VERSION}.IF.short.{lang}.ref.xml",
+            output_path / f"MCIF{__benchmark_version__}.IF.short.{lang}.ref.xml",
             encoding="utf-8",
             xml_declaration=True)
 

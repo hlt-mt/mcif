@@ -1,1 +1,2 @@
-__version__ = '0.2'
+__version__ = '0.1'
+__benchmark_version__ = '0.2'
