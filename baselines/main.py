@@ -205,7 +205,7 @@ if __name__ == "__main__":
     LANGS = ["de", "en", "it", "zh"]
     TRACKS = ["long", "short"]
     MODALITIES = ["text", "audio", "video", "mllm"]
-    PROMPT = ["fixed", "random"]
+    PROMPT = ["fixed", "mixed"]
     MODELS = [
         "phi_multimodal",
         "desta",

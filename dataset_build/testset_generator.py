@@ -728,7 +728,7 @@ def long_track(
             encoding="utf-8",
             xml_declaration=True)
         tree_src_rand.write(
-            output_path / f"MCIF{__benchmark_version__}.IF.long.{lang}.src.randomprompts.xml",
+            output_path / f"MCIF{__benchmark_version__}.IF.long.{lang}.src.mixedprompts.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_ref.write(
@@ -901,7 +901,7 @@ def short_track(
             encoding="utf-8",
             xml_declaration=True)
         tree_src_rand.write(
-            output_path / f"MCIF{__benchmark_version__}.IF.short.{lang}.src.randomprompts.xml",
+            output_path / f"MCIF{__benchmark_version__}.IF.short.{lang}.src.mixedprompts.xml",
             encoding="utf-8",
             xml_declaration=True)
         tree_ref.write(
