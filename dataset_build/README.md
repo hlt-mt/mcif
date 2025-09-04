@@ -1,3 +1,9 @@
+# Dataset Creation
+
+The dataset has been created following the guidelines that can be found in `annotation_guidelines`.
+The annotations have been collected in TSV files that have been processed with the code in this
+folder to create the final benchmark.
+
 # Installation
 
 The scripts are standalone and require no installation beside the PyYAML (`yaml`) package,
