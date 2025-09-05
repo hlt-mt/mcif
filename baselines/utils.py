@@ -17,6 +17,8 @@ import os
 import sys
 import xml.etree.ElementTree as ET
 
+from mcif import __benchmark_version__
+
 TASK_ATTRIB = ["track", "text_lang"]
 
 
@@ -61,11 +63,11 @@ def set_up_dirs(in_data_folder, out_folder, model, track, lang, modality, prompt
     return output_file_path
 
 
-def read_from_xml(folder_path, lang, track, modality, prompt):
+def read_from_xml(folder_path, lang, track, modality, prompt, version=__benchmark_version__):
     if modality == "text" and track == "short":
         raise ValueError("Text-to-text is not available in the short track.")
 
-    xml_path = f"{folder_path}/MCIF0.2.IF.{track}.{lang}.src.{prompt}prompts.xml"
+    xml_path = f"{folder_path}/MCIF{version}.IF.{track}.{lang}.src.{prompt}prompts.xml"
 
     tree = ET.parse(xml_path)
     root = tree.getroot()
