@@ -29,15 +29,15 @@ python main.py \
 ```
 
 ### Arguments
-| Argument           | Description                                    | Options / Examples                       |
-|--------------------|------------------------------------------------|------------------------------------------|
-| `--model`          | Model to use                                   |See `main.py` for the full list. Examples: `llama`, `gemma`, `ola`, ... |
-| `--lang`           | Language code                                  | `en`, `de`, `it`, `zh`                   |
-| `--track`          | Track type                                     | `short`, `long`                          |
-| `--modality`       | Input modality                                 | `text`, `audio`, `video`, `mllm`         |
-| `--prompt`         | Prompt type                                    | `fixed`, `random`                        |
-| `--in_data_folder` | Path to the input data folder                  | e.g., `MCIF/`                            |
-| `--out_folder`     | Path to save generated outputs                 | e.g., `output/`                          |
+| Argument           | Description                                    | Options / Examples                                                      |
+|--------------------|------------------------------------------------|-------------------------------------------------------------------------|
+| `--model`          | Model to use                                   | See `main.py` for the full list. Examples: `llama`, `gemma`, `ola`, ... |
+| `--lang`           | Language code                                  | `en`, `de`, `it`, `zh`                                                  |
+| `--track`          | Track type                                     | `short`, `long`                                                         |
+| `--modality`       | Input modality                                 | `text`, `audio`, `video`, `mllm`                                        |
+| `--prompt`         | Prompt type                                    | `fixed`, `mixed`                                                        |
+| `--in_data_folder` | Path to the input data folder                  | e.g., `MCIF/`                                                           |
+| `--out_folder`     | Path to save generated outputs                 | e.g., `output/`                                                         |
 
 
 
