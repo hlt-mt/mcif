@@ -46,11 +46,7 @@ def split_mp4s(source_path: Path, output_path: Path, shas_segm: List[Dict[str, s
 
 def cli_script():
     """
-    Starting from the test set definitions collected in TSV format, this scripts outputs:
-     - IWSLT2025.IF.<track>.<lang>.src.xml: XML files containing the test set definitions to be
-       circulated to participants.
-     - IWSLT2025.IF.<track>.<lang>.ref.xml: XML files containing the corresponding references, to
-       be used to compute the scores.
+    Starting from the SHAS segmentation of the audio, segment the videos accordingly.
     """
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument(
