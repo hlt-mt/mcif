@@ -22,7 +22,7 @@ For the evaluation, you can simply run:
 
 ```shell
 mcif_eval -t {short/long} -l {en/de/it/zh} \
-    -s model_outputs.xml -r MCIF0.2.IF.{short/long}.{en/de/it/zh}.ref.xml
+    -s model_outputs.xml -r MCIF1.0.IF.{short/long}.{en/de/it/zh}.ref.xml
 ```
 
 ## License

@@ -35,7 +35,7 @@ and then run the script that generates the test set. To obtain MCIF, use the com
 
 ```shell
 python dataset_build/testset_generator.py --include-video --include-text \
-    --output-dir MCIF_v0.2 --source-dir TEST_SET --threshold-short-audio 100
+    --output-dir MCIF_v1.0 --source-dir TEST_SET --threshold-short-audio 100
 ```
 
 where TEST_SET contains the raw data.
