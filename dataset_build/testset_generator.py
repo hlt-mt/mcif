@@ -211,7 +211,7 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S",
     level=os.environ.get("LOGLEVEL", "INFO").upper(),
 )
-logger = logging.getLogger("iwslt2025_testset_generator")
+logger = logging.getLogger("testset_generator")
 
 
 class AudioToAlias:
