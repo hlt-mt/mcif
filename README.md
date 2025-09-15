@@ -5,7 +5,7 @@ shared task.
 
 This includes:
 
- - scripts used to create test sets and their references ([dataset_build/README.md]());
+ - scripts and guidelines used to create test sets and their references ([dataset_build/README.md]());
  - scripts used to create the baselines ([baselines/README.md]());
  - evaluation code.
 
