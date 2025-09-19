@@ -244,7 +244,7 @@ def score_st(
     Computes COMET.
     """
     comet_data = []
-    mwer_segmeter = MwerSegmenter(character_level=(lang in CHAR_LEVEL_LANGS))
+    mwer_segmenter = MwerSegmenter(character_level=(lang in CHAR_LEVEL_LANGS))
     for iid, ref_sample in ref_dict["TRANS"].items():
         ref_lines = ref_sample.reference.split("\n")
         src_lines = ref_sample.metadata["transcript"].split("\n")
@@ -255,7 +255,7 @@ def score_st(
         for sample_id in ref_sample.sample_ids:
             hypo_components.append(hypo_dict[sample_id])
 
-        resegm_hypos = mwer_segmeter("\n".join(hypo_components), ref_lines)
+        resegm_hypos = mwer_segmenter("\n".join(hypo_components), ref_lines)
         assert len(ref_lines) == len(resegm_hypos), \
             f"TRANS reference (IID: {iid}) has mismatched number of target ({len(ref_lines)})" \
             f" and resegmented lines ({len(resegm_hypos)})"
