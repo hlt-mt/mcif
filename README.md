@@ -1,4 +1,4 @@
-# MCIF - Multimodal Crosslingual Instruction-Following Benchmark
+# MCIF - Multimodal Crosslingual Instruction-Following 
 
 <p align="center">
 <img src="mcif.png" alt="MCIF Logo" width="600"/>
