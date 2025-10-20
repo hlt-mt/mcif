@@ -12,9 +12,9 @@
 
 MCIF is a comprehensive benchmark for evaluating **multimodal, multilingual instruction-following**
 systems, which covers *3 modalities* (text, speech, and video), *4 languages* (English, German, 
-Italian, and Chinese), and *13 tasks* (organized in 4 macro-tasks).
+Italian, and Chinese), and *13 tasks* (organized into 4 macro-tasks).
 
-A subset of MCIF has been for the evaluation of the 
+A subset of MCIF has been used for the evaluation of the 
 [IWSLT 2025 **Instruction-Following** Shared Task](https://iwslt.org/2025/instruction-following).
 
 
