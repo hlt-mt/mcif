@@ -68,7 +68,7 @@ and Chinese (`zh`), and is structured as follows:
 </testset>
 ```
 
-To ease usability, we provide [a helper function](baselines/utils.py#104) that automatically 
+To ease usability, we provide [a helper function](baselines/utils.py#L104) that automatically 
 formats model predictions into the XML structure required by the MCIF evaluation script.
 The method takes as input:
 - `outputs`: a list of tuples (`sample_id`, `prediction`) containing the sample id and its related 
