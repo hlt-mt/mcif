@@ -18,8 +18,6 @@ A subset of MCIF has been for the evaluation of the
 [IWSLT 2025 **Instruction-Following** Shared Task](https://iwslt.org/2025/instruction-following).
 
 
-
-
 ## 📰 News
 
 2025.10.20: ⭐️ MCIF Evaluation first release
