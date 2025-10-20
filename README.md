@@ -4,6 +4,12 @@
 <img src="mcif.png" alt="MCIF Logo" width="600"/>
 </p>
 
+<p align="center">
+  <a href="https://arxiv.org/abs/2507.19634">
+    <img src="https://img.shields.io/badge/arXiv%3A2507.19634-b31b1b?style=flat&logo=arxiv&logoColor=white" alt="arXiv:2507.19634" width="130"/>
+  </a>
+</p>
+
 MCIF is a comprehensive benchmark for evaluating **multimodal, multilingual instruction-following**
 systems, which covers *3 modalities* (text, speech, and video), *4 languages* (English, German, 
 Italian, and Chinese), and *13 tasks* (organized in 4 macro-tasks).
@@ -12,7 +18,7 @@ A subset of MCIF has been for the evaluation of the
 [IWSLT 2025 **Instruction-Following** Shared Task](https://iwslt.org/2025/instruction-following).
 
 
-This repository provides code for dataset creation, baseline systems, and evaluation.
+
 
 ## 📰 News
 
@@ -20,15 +26,21 @@ This repository provides code for dataset creation, baseline systems, and evalua
 
 ## 📦 Repository Structure
 
-- 🧱 Dataset Construction — scripts for creating test sets and references
+The evaluation is the core component of this repository.
+All other components (i.e., dataset construction and baseline inference) are included to ensure 
+full reproducibility and transparency of the evaluation results.
+
+For details on dataset generation or baseline models, please refer to the dedicated READMEs 
+(baselines may require specific dependencies):
+
+- 🧱 Dataset Construction — scripts and guidelines for creating test sets and references
 → [dataset_build/README.md](dataset_build/README.md)
 
-- 🚀 Baselines — training and inference scripts for baseline systems
+- 🚀 Baselines — inference scripts for baseline systems
 → [baselines/README.md](baselines/README.md)
 
 - 📊 Evaluation — scoring and comparison utilities for submitted outputs → [README.md](README.md#️-evaluation-usage)
 
-For details on dataset generation or baseline models, please refer to the dedicated READMEs.
 
 ## ⚙️ Installation
 
