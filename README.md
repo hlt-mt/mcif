@@ -53,6 +53,31 @@ mcif_eval -t {short/long} -l {en/de/it/zh} \
     -s model_outputs.xml -r MCIF1.0.IF.{short/long}.{en/de/it/zh}.ref.xml
 ```
 
+where `model_outputs.xml` contains the outputs of your model for the selected track or context 
+length (`short` or `long`) and target language among English (`en`), German (`de`), Italian (`it`) 
+and Chinese (`zh`), and is structured as follows:
+
+```xml
+<?xml version='1.0' encoding='utf-8'?>
+<testset name="MCIF" type="output">
+  <task track="{short/long}" text_lang="{en/de/it/zh}">
+    <sample id="1">{SAMPLE1_CONTENT}</sample>
+    <sample id="3">{SAMPLE2_CONTENT}</sample>
+   ....
+  </task>
+</testset>
+```
+
+To ease usability, we provide [a helper function](baselines/utils.py#104) that automatically 
+formats model predictions into the XML structure required by the MCIF evaluation script.
+The method takes as input:
+- `outputs`: a list of tuples (`sample_id`, `prediction`) containing the sample id and its related 
+prediction;
+- `lang`: the target language (`en/de/it/zh`);
+- `track`: the context length or track (`short/long`);
+- `output_file`: the path to the XML file being created containing all system's outputs, ready 
+for evaluation.
+
 ## 📜 License
 
 MCIF is released under the [Apache 2.0 License](LICENSE).
