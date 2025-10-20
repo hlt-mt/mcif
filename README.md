@@ -62,7 +62,7 @@ and Chinese (`zh`), and is structured as follows:
 <testset name="MCIF" type="output">
   <task track="{short/long}" text_lang="{en/de/it/zh}">
     <sample id="1">{SAMPLE1_CONTENT}</sample>
-    <sample id="3">{SAMPLE2_CONTENT}</sample>
+    <sample id="2">{SAMPLE2_CONTENT}</sample>
    ....
   </task>
 </testset>
