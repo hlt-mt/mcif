@@ -1,0 +1,1357 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="zh">
+    <sample id="1036">对于每种现有方法，我们收集了针对对话中最常衡量的八个方面的评估，因为这是从多个维度评估聊天模型的标准做法。</sample>
+    <sample id="1037">From our analysis of these evaluation results, we found that ABC-Eval behavior labels are overall more reliable than labels collected by existing methods, as measured by inter-annotator agreement on 100 doubly labeled conversations.
+我们对这些评估结果进行分析后发现，ABC-Eval 行为标签总体上比现有方法收集的标签更可靠。这一结论是基于对100个双重标注对话的注释者间一致性测量得出的。</sample>
+    <sample id="1038">此外，与现有方法产生的指标相比，ABC-Eval 标签对整体对话质量的预测性更强，这一点可从这种简单的线性回归分析中看出。</sample>
+    <sample id="1039">例如，大家可以看到，衡量包含自我和搭档矛盾的回合比例，分别解释了对话质量的5%和10%。而平均李克特一致性分数仅能解释4%或更少。</sample>
+    <sample id="1040">最后，我们检查了每个评估指标是否使用逐步线性回归捕捉了对话质量的独特方面。</sample>
+    <sample id="1041">你们可以看到，所有ABC-Eval指标的组合能够解释超过25%的对话质量。当您逐一移除这些指标时，大多数都会导致对话质量信息的显著损失。</sample>
+    <sample id="1042">On the other hand, the combination of all turn-level Likert metrics explains far less of the quality and fewer of these metrics carry unique information.
+另一方面，所有回合级别的李克特指标组合解释的质量要少得多，而且这些指标中只有少数具有独特的信息。</sample>
+    <sample id="1043">好的，这段英文可以翻译为：
+
+这些可靠、信息丰富且独特的ABC-Eval指标使我们能够以比以往方法更高的分辨率评估对话式人工智能。</sample>
+    <sample id="1044">通过我们的实验结果可以看出，在某些方面仍然存在挑战，并且这些挑战已经得到了精确的量化。 例如，我们测试的机器人大约有20%的回复存在常识性错误。</sample>
+    <sample id="1045">它们在约15%的回应中产生了不相关的信息，并且大约有10%的时间，它们会自相矛盾或与对话伙伴矛盾。</sample>
+    <sample id="1046">鉴于该领域日新月异的进步，自我们进行评估以来发布的新模型，其许多错误率可能都会有所下降。然而，这反而更凸显了寻求可靠且精确的模型比较评估指标的重要性。</sample>
+    <sample id="1047">我们希望ABC-Eval能被业界同仁采纳并加以利用，作为朝着这个方向迈出的重要一步。我们期待看到对话式人工智能在未来数月乃至数年间将如何发展进步。
+谢谢观看！</sample>
+    <sample id="1048">这篇论文的作者所属机构是埃默里大学的NLP研究实验室，并与亚马逊Alexa AI合作。</sample>
+    <sample id="1049">在本文中，CFT 代表 **continuous fine-tuning (持续微调)**。</sample>
+    <sample id="1050">这篇论文有7位作者。</sample>
+    <sample id="1051">您好，我是尹佳瑶，我将介绍我们的工作，标题是《翻译何时需要语境？一项数据驱动的多语言探索》。这项工作是与帕特里克·费尔南德斯、尹佳瑶、艾米·刘、安德烈·F. T.·马丁斯和格雷厄姆·纽比格合作完成的。</sample>
+    <sample id="1052">翻译取决于上下文
+我们得除掉那个内奸。</sample>
+    <sample id="1053">翻译取决于语境
+
+如果部长们发现了，情况可能会变得危险。我们必须除掉那个内奸。
+医生，这会是什么严重的吗？我们必须去除那个痣。</sample>
+    <sample id="1054">因此，根据语境，单词的含义会改变，因此它的翻译也会改变。</sample>
+    <sample id="1055">However, evaluating how well models can translate cases like this is pretty hard. Firstly, because only a small portion of translations depend on context, which makes corpus-level metrics like BLEU unable to capture these translations.
+然而，评估模型如何翻译这类案例相当困难。首先，因为只有一小部分翻译依赖于上下文，这使得像BLEU这样的语料库级别指标无法捕捉到这些翻译。</sample>
+    <sample id="1056">评估上下文依赖翻译很困难
+
+- 只有一小部分词语依赖于上下文
+  - 语料库级别指标
+- 现有方法支持有限的语篇现象和语言
+有些人提出了对上下文依赖翻译的针对性评估，但是这些资源仅支持有限类型的上下文依赖翻译和有限的语言种类。因为它们通常依赖于领域知识和人工创建。</sample>
+    <sample id="1057">RQ1: 翻译何时需要上下文？
+RQ2: 模型处理上下文相关翻译的效果如何？</sample>
+    <sample id="1058">RQ1：翻译何时需要上下文？
+- 词级上下文使用
+
+RQ2：模型处理依赖上下文的翻译表现如何？</sample>
+    <sample id="1059">在之前的工作中，我们引入了CXMI，作为衡量机器翻译模型上下文使用情况的指标。
+而这通过衡量，在给定源文本X的情况下，上下文C为目标文本Y提供了多少信息来完成。</sample>
+    <sample id="1060">条件交叉互信息 (CXMI)
+
+* CXMI：衡量给定语料库下机器翻译模型使用了多少上下文
+
+给定源文本时翻译的不确定性：H_qMT_A(Y|X)
+
+给定源文本和上下文时翻译的不确定性：H_qMT_C(Y|X, C)
+
+CXMI(C -&gt; Y|X)
+
+你可以将 CXMI 视为通过提供上下文所获得的信息，这个信息...</sample>
+    <sample id="1061">逐点 (P-)CXMI
+
+在这项工作中，我们将CXMI扩展到逐点CXMI，它可以衡量上下文在句子级别或单词级别的使用。
+
+*   句子级别：P-CXMI(y, x, C) = - log (q_MT_A(y|x) / q_MT_C(y|x, C))
+*   词语级别：P-CXMI(i, y, x, C) = - log (q_MT_A(y_i|y_t&lt;i, x) / q_MT_C(y_i|y_t&lt;i, x, C))
+
+我们可以认为高P-CXMI的词语是那些需要上下文才能翻译的词语。</sample>
+    <sample id="1062">RQ1：翻译何时需要语境？
+- 词级别语境使用
+- 主题分析
+
+RQ2：模型处理语境相关翻译的能力如何？
+
+现在我们分析具有高PCCMI的词，以寻找这些词之间的模式。</sample>
+    <sample id="1063">我们对TED演讲的文字稿进行了分析，这些文字稿已经从英语翻译成了14种不同的语言。</sample>
+    <sample id="1064">我们在三个不同层面进行分析。首先，我们关注具有高 P-CXMI 的词性标签。</sample>
+    <sample id="1065">这使我们能够找到，例如，阿拉伯语中具有相对较高 P-CXMI 的双数代词。这可以解释为，英语中没有双数代词，因此在翻译成阿拉伯语时，您需要上下文来确定代词是否为双数。</sample>
+    <sample id="1066">类似地，我们发现某些语言在选择合适的动词形式时也需要上下文。 接下来，我们查看那些在所有不同出现中平均 P-CXMI 值较高的词汇项。</sample>
+    <sample id="1067">这种方法有助于识别类似这里的情况。在中文中，你需要上下文来翻译专有名词，以确保在文档内部翻译的一致性。</sample>
+    <sample id="1068">And similarly, we find that context is supported to translate in the right forty and Similarly, we find that context is supported to translate in the right forty.</sample>
+    <sample id="1069">最后，我们来看不同的，嗯，具有高P-CXMI的单个词元。这使我们能够识别一些现象，这些现象无法真正被词本身捕获，而是通过句子结构表达的，例如省略消解。</sample>
+    <sample id="1070">**屏幕文字翻译：**
+
+RQ1：翻译何时需要上下文？
+- 词级上下文使用
+- 主题分析
+
+RQ2：模型处理依赖上下文的翻译效果如何？
+- 多语言语篇感知 (MuDA) 基准
+
+---
+
+**语音内容翻译：**
+
+所以现在我们利用分析结果设计了一个文档级翻译的基准。</sample>
+    <sample id="1071">对于我们识别出的这五种语篇现象，我们创建了标注器，用于自动识别与该现象相关的词语。我们称我们的标注器为“多语言语篇感知（MuDA）标注器”。</sample>
+    <sample id="1072">我们还可以注意到，不同的语言在这些语篇现象的比例上有所不同。</sample>
+    <sample id="1073">我们接着使用 MuDA 标注器，将其应用于我们想要用于评估的平行语料库上。并且我们应用我们选择的翻译指标，在 MuDA 标注器识别出的语境相关例子上。</sample>
+    <sample id="1074">最后，我们使用我们的基准以及其他指标，来评估不同模型在文档级机器翻译上的表现。</sample>
+    <sample id="1075">首先，当我们使用语料库层面的指标时，呃，就BLEU而言，我们发现不依赖上下文的模型表现最佳。</sample>
+    <sample id="1076">但如果我们使用 COMET，上下文感知模型表现最好。
+如果我们使用词语 F 值，那么有或没有上下文的模型都具有可比的性能。</sample>
+    <sample id="1077">这再次表明，如果仅使用语料库级指标，难以确定最佳文档级翻译系统。</sample>
+    <sample id="1078">现在我们使用 MuDA 基准来评估模型，我们发现，上下文感知模型在某些语篇现象上比不使用上下文的模型显著更准确，例如正式性和词汇衔接。</sample>
+    <sample id="1079">MuDA 基准测试结果
+上下文感知模型在某些现象上表现显著更好
+✅ 正式性，词汇衔接
+❌ 省略，代词，动词形式
+但这些模型在省略、代词和动词形式等其他现象上，并不比不使用上下文的模型好多少。所以这暗示了文档级翻译需要在哪些方面取得更大进展。</sample>
+    <sample id="1080">我们还比较了不同的商业系统，我们的基准测试结果显示，DeepL 在文档级翻译方面通常比 Google Translate 更准确。</sample>
+    <sample id="1081">为了总结，我们对14种语言对进行了数据驱动的分析，以识别需要上下文的翻译。</sample>
+    <sample id="1082">我们利用研究发现，为文档级机器翻译建立了一个基准，这个基准可以帮助我们识别哪些篇章现象是模型能够很好处理的，哪些不能，以及哪些翻译系统擅长文档级翻译。</sample>
+    <sample id="1083">非常感谢您的关注。再见。拜拜。</sample>
+    <sample id="1084">演讲者的名字是Yusen Zhang。</sample>
+    <sample id="1121">该方法没有在图片或音频中明确命名。图片标题“Permuting with ‘jumps’”描述了所展示的技术。</sample>
+    <sample id="1122">“显性词汇”（marked words）方法是**找出区分标记群体（marked groups）和未标记群体（unmarked groups）的人设（personas）的词汇**。</sample>
+    <sample id="1123">这篇论文的作者所属机构包括：
+*   **华盛顿大学 (University of Washington)**
+*   **卡内基梅隆大学 (Carnegie Mellon University)**
+*   **清华大学 (Tsinghua University)**</sample>
+    <sample id="1124">第一个提到的对称依存关系结构是 Conjunction-headed/Prague。</sample>
+    <sample id="1125">演讲者的名字是James Finch和Sarah Finch。</sample>
+    <sample id="1126">这篇论文有四位作者：Mohammad Javad Hosseini, Filip Radlinski, Silvia Pareti, and Annie Louis。</sample>
+    <sample id="1127">根据英文内容，BLiMP和SyntaxGym数据集可用于测试句法现象。</sample>
+    <sample id="1161">第一个研究问题的五种方法的缩写是：
+
+*   FT_w
+*   BOND
+*   COSINE
+*   MLC
+*   L2R</sample>
+    <sample id="1162">该模型在11项生物医学和临床下游任务上进行了评估。</sample>
+    <sample id="1226">根据提供的英文内容，无法得知 CamemBERT 最初是在哪些数据上训练的。内容中提到了使用 CamemBERT-based 模型进行持续预训练，以及在 4GB 的 Nachos 数据子集上进行实验性训练，但没有明确说明 CamemBERT 原始的预训练数据。</sample>
+    <sample id="1227">演讲者的名字是 Adam Przepiórkowski。</sample>
+    <sample id="1228">实验发现，**性能会随着时间间隔的增加而下降**。</sample>
+    <sample id="1269">在第一步（Tag）之后，虽然已经获得了所有正确的词元，但它们并没有按照正确的顺序排列。因此，需要进行排列以将它们放入正确的顺序。</sample>
+    <sample id="1270">作者建议模型所有者提高偏见缓解方法的透明度，因为目前尚不清楚某些模式（例如积极刻板印象）产生的原因。她提到，不清楚这些模式是由于过度价值观对齐（value alignment）还是其他反刻板印象方法无意中导致了有害模式（pernicious patterns）。</sample>
+    <sample id="1271">在最小对范式中，不可接受的输入指的是成对句子中那个语法不正确或不自然的句子。
+
+它通常与一个语法正确或自然的句子（可接受的输入）成对出现，两者之间仅有细微的、目标明确的差异，旨在测试语言模型区分正确和不正确用法的能力。模型的目标是为可接受的输入分配更高的概率，而为不可接受的输入分配较低的概率。</sample>
+    <sample id="1272">根据提供的表格内容，作者使用了以下评估指标：
+
+*   **F1-score** (用于NER - 命名实体识别, CLS - 分类, POS - 词性标注等任务)
+*   **Hamming** (Hamming Loss)
+*   **EMR** (Exact Match Ratio)</sample>
+    <sample id="1273">Krippendorff's Alpha 被用来衡量注释者之间的一致性。</sample>
+    <sample id="1274">在不可接受和可接受的查询中，选择**维基百科（Wikipedia）**领域来添加完全无关的句子。</sample>
+    <sample id="1275">The authors are affiliated with Heinrich Heine University Düsseldorf, Germany.</sample>
+    <sample id="1276">MultiInstruct与其他基准不同之处在于，它是**多模态指令微调数据集**。
+
+以往的指令微调工作主要集中在语言类任务上，现有超过1600个语言类指令任务数据集，但缺乏大规模、公开可用的多模态指令任务数据集。MultiInstruct的建立正是为了弥补这一空白，以研究多模态预训练模型上的指令微调能否提高对未见多模态任务的泛化能力。</sample>
+    <sample id="1277">这篇论文有三位作者：
+1. Sarah E. Finch
+2. James D. Finch
+3. Jinho D. Choi</sample>
+    <sample id="1278">根据您提供的英语内容，演讲者并未直接给出“二进制协调”（binary coordination）的定义。
+
+他主要讨论的是不同测量单位（字符、音节、单词）下，当“连接词”（conjuncts）的长度差异（absolute difference）增大时，左侧连接词较短的比例（proportion of shorter left conjuncts）的变化趋势，以及这种趋势在没有主语（NO governor）、主语在左侧（Governor on the LEFT）和主语在右侧（Governor on the RIGHT）三种情况下的表现。</sample>
+    <sample id="1279">根据所提供的图片，没有关于本研究中提示语平均长度的信息。该图片展示的是“黑人刻板印象在人物形象中”的词汇使用频率，而不是提示语的长度。</sample>
+    <sample id="1280">这些发现对较小的 T5 模型有以下影响：
+
+1.  **性能超越大型模型**: 较小的 T5 模型，当在特定数据集（如 Coscript）上进行微调时，能够生成比大多数大型语言模型（LLMs，例如 GPT-3、Codex、InstructGPT）更高质量的脚本。
+2.  **专业化优势**: 这表明小型模型在经过适当的专业化训练后，可以在特定任务上超越通用的大型模型，即使大型模型拥有更多的参数。
+3.  **效率与资源**: 意味着对于某些特定应用，无需动用庞大且资源密集型的大型语言模型，较小的、经过优化的模型也能取得甚至更好的结果。</sample>
+    <sample id="1281">好的，这段话可以这样用中文表达：
+
+"大家好，我是 Yanis Labrak。我将向大家介绍我们的工作，即 DrBERT，这是一个专为生物医学和临床领域设计的鲁棒法语预训练模型。"
+
+或者更简洁一些：
+
+"大家好，我是 Yanis Labrak。我将向大家介绍我们的 DrBERT 项目，这是一个用于生物医学和临床领域的强大法语预训练模型。"</sample>
+    <sample id="1282">本次演讲中，我们将首先探讨医疗保健领域的语言建模。随后，我们将介绍本文的主要贡献。</sample>
+    <sample id="1283">我们介绍了第一个法语生物医学模型，名为 DrBERT，它基于 Roberta，并在 Nachos 数据集上进行训练，Nachos 是一个由网络抓取的医疗数据组成的数据集。</sample>
+    <sample id="1284">好的，这是这段英语内容的中文表达：
+
+**总结**
+
+I. 医疗领域的语言模型
+II. 预训练策略、数据来源和数据规模的比较
+III. 13个模型在11项生物医学和临床任务上的评估
+IV. NACHOS 和 DrBERT 的发布</sample>
+    <sample id="1285">最后，我们将总结实验，并向大家提供更多关于如何访问这些模型的细节。
+    语言建模</sample>
+    <sample id="1286">好的，这是这段英语内容的中文表达：
+
+**语言建模**
+
+*   像 BERT 这样基于 Transformer 的方法，在许多自然语言处理（NLP）任务上提供了巨大的性能提升。
+*   已被适配到法语，产生了 CamemBERT 和 FlaUBERT 模型。
+*   在医学任务中，英文领域的专用模型将性能提升到了更高的水平。
+    *   例如 PudMedBERT、BioBERT、ClinicalBERT 等。
+*   除英语外的其他语言模型较为罕见，主要依赖于使用现有通用模型进行持续预训练。
+*   与通用模型不同，目前还没有针对法语生物医学领域的开源模型。
+*   基于 BERT 的法语领域专用模型有望提高医学任务的性能。</sample>
+    <sample id="1287">好的，以下是这段英语内容的中文表达：
+
+**语言建模**
+
+*   基于 Transformer 的方法，如 BERT，在许多自然语言处理（NLP）任务中带来了巨大的性能提升。
+*   已通过 CamemBERT 和 FlauBERT 等模型适配到法语。
+*   在医学任务上，英语领域的领域特定模型将性能标准进一步提高。
+    *   例如 PudMedBERT、BioBERT、ClinicalBERT 等。
+*   除英语以外的语言模型相对较少，主要依赖于使用现有通用模型进行持续预训练。
+*   与通用模型不同，目前尚无针对法语生物医学领域的开源模型可用。
+*   针对法语的基于 BERT 的领域特定模型有望提升在医学任务上的性能。</sample>
+    <sample id="1288">好的，这是幻灯片内容的中文翻译：
+
+**语言建模**
+
+*   基于Transformer的方法，如BERT，在许多自然语言处理任务中提供了巨大的性能提升。
+
+*   已通过CamemBERT和FlauBERT适配法语。
+
+*   在医学任务中，英语领域的特定模型进一步提高了性能。
+    *   如PudMedBERT、BioBERT、ClinicalBERT等。
+
+*   除英语外的其他语言较少，主要依赖于使用现有通用模型的持续预训练。
+
+*   与通用模型不同，目前还没有针对法语生物医学领域的开源模型。
+
+*   基于BERT的法语领域特定模型应能提高医学任务的性能。</sample>
+    <sample id="1289">然而，法语在生物医学领域还没有任何开源模型。</sample>
+    <sample id="1290">00:00 我们问自己一个问题：对于广泛的应用，最合适的00:05 数据源是什么？00:07 这些原始数据是临床数据的一个很好的替代品吗？</sample>
+    <sample id="1291">为了回答这个问题，我们比较了Dr. BERT和我们的ChuBERT模型，该模型基于从南特大学医院数据仓库获得的匿名数据。</sample>
+    <sample id="1292">毕竟，我们自问，在法语数据上训练一个专用模型需要多少数据？是4 GB，8 GB，还是更多？</sample>
+    <sample id="1293">为了回答这个问题，我们首先训练并比较了四个从零开始训练的模型。第一个版本的 DrBERT 使用了 7 GB 的 NACHOS 数据。第二个版本使用了 4 GB 的 NACHOS 数据集。</sample>
+    <sample id="1294">楚BERT的第一个版本是一个临床模型，它使用了4GB从临床笔记中提取的句子。楚BERT的最终版本则混合了4GB的Nachos数据集和4GB的临床笔记。</sample>
+    <sample id="1295">好的，这段英语内容用中文重新表达如下：
+
+**预训练策略与数据源的比较**
+
+我们旨在评估预训练策略和数据源的影响。
+
+**1. 评估在相似数据量下，公共和私人医疗数据源的影响**
+
+*   **NACHOS：** 这是一个拥有11亿词汇的开源数据集，其异构数据来源于多种医学领域、性质和风格。
+*   **NBDW：** 这是一个私人数据集，包含从南特大学医院数据仓库中提取的170万份匿名医疗记录中的句子。
+
+右侧表格详细展示了这些语料库的规模，包括大小、词汇量和句子数量。例如，NACHOS_large包含11亿词汇，而NACHOS_small和NBDW_small都大约是4GB，包含约6.5亿词汇。
+
+**2. 比较不同的学习策略**
+
+结合本次比较，我们还引入了三种基于持续预训练（continual pre-training）的模型，以分析预训练策略的影响。主要的学习策略包括：
+
+*   **从零开始（From scratch）：** 即完全从头构建模型。
+*   **持续预训练（Continual pre-training）：** 它利用已有的预训练模型进行训练。例如，我们使用了法语通用模型CamemBERT和基于英语的医学模型PubMedBERT。
+
+右下方表格列出了不同模型的名称（如DrBERT, ChuBERT, CamemBERT, PubMedBERT）、所采用的训练策略（从零开始或持续预训练）以及使用的语料库。</sample>
+    <sample id="1296">00:00:00,105 --&gt; 00:09:47,735
+其中一个模型基于Camembert，在4GB的NACHOS数据集上进行训练。另一个模型也基于Camembert，但在4GB的临床数据上进行了训练。</sample>
+    <sample id="1297">最后，一个基于英语生物医学模型PubMedBERT，并基于4GB的NACHOS数据集进行训练。总共，我们有7个模型。</sample>
+    <sample id="1298">为了评估我们的七个模型，我们收集了在11个公开和私有任务上的数据，比如命名实体识别、分类、词性标注和问答。</sample>
+    <sample id="1299">这些模型与六个基线模型进行了比较，它们分别是CamemBERT OSCAR 138 GB、CamemBERT OSCAR 4 GB、CamemBERT CCnet 4 GB、PubMedBERT、BioBERT和ClinicalBERT。</sample>
+    <sample id="1300">评估结果表明，该模型在使用与其训练数据性质相同的数据执行任务时，表现最为出色。</sample>
+    <sample id="1301">根据视频内容，该段英语可以重新表达为中文如下：
+
+在“评估：数据来源与规模”这部分，我们对13个模型在11项任务（包括公开和私有任务）上的表现进行了评估。我们的微调模型在几乎所有任务上都取得了最先进（state-of-the-art）的结果。
+
+我们观察到，来自异构（即不同）数据源的数据似乎更具通用性。同时，我们也发现，使用更多数据能够带来更好的性能表现。</sample>
+    <sample id="1302">总的来说，从头开始预训练似乎在大多数任务上都取得了更高的性能。</sample>
+    <sample id="1303">然而，我们针对持续预训练进行的实验，使用PubMedBERT的权重和分词器，并在Nachos的4 GB子集上进行训练，结果表明其性能与从头开始训练的DoctorBERT 4 GB模型所获得的结果相当。</sample>
+    <sample id="1304">但对于基于Camembert权重和分词器的模型而言，情况并非如此，它们存在稳定性问题。</sample>
+    <sample id="1305">至于结论，我们提出的系统在11个下游任务中的9个上表现更好，并且全面超越了通用模型的性能，这里指的是</sample>
+    <sample id="1306">我们也观察到，专业数据更好，而且更多专业数据效果会更好，但是它无法很好地扩展。</sample>
+    <sample id="1307">通过 NACHOS 获得的预训练模型，现在可以在 Hugging Face 上免费获取。所有的训练脚本也都在我们的 GitHub 仓库中。</sample>
+    <sample id="1308">谢谢大家。我们期待在多伦多的海报环节进行交流！</sample>
+    <sample id="1309">论文研究了两种学习策略：
+1.  **从头训练 (From scratch)**：从零开始构建和训练模型。
+2.  **持续预训练 (Continual pre-training)**：在一个已有的预训练模型基础上进行持续训练。</sample>
+    <sample id="1310">根据演讲者的说法，由于测试重复使用而导致的过拟合（即自适应过拟合）并未被观察到，因此该因素并不存在或不显著。</sample>
+    <sample id="1311">简化质量通过SARI、BLEU、BS-P和FRE指标进行评估。</sample>
+    <sample id="1312">是的，语言模型确实有不同的政治倾向。</sample>
+    <sample id="1313">好的，这是对所提供内容中英文的中文翻译：
+
+**标题:** Compositional Generalization without Trees using Multiset Tagging and Latent Permutations
+**中文翻译:** 不使用树的组合泛化，采用多集标注和潜在排列
+
+**作者:** Matthias Lindemann, Alexander Koller, Ivan Titov
+**中文翻译:** 马蒂亚斯·林德曼，亚历山大·科勒，伊万·蒂托夫
+
+**机构（下方各图标旁边的文字）：**
+* THE UNIVERSITY of EDINBURGH informatics
+**中文翻译:** 爱丁堡大学 信息学
+
+* UKRI CENTRE FOR DOCTORAL TRAINING
+**中文翻译:** 英国研究与创新博士培训中心
+
+* Saarland University
+**中文翻译:** 萨尔大学
+
+* UNIVERSITY OF AMSTERDAM
+**中文翻译:** 阿姆斯特丹大学
+
+**演讲者开场白：** Hi, My name is Matthias Lindemann, and today I'm going to give you a brief introduction to our paper on Compositional Generalization without Trees using Multiset Tagging and Latent Permutations.
+**中文翻译:** 大家好，我叫马蒂亚斯·林德曼，今天我将简要介绍我们的论文，关于《不使用树的组合泛化，采用多集标注和潜在排列》。</sample>
+    <sample id="1314">好的，以下是所给内容的中文翻译：
+
+**标题**
+Compositional Generalization without Trees using Multiset Tagging and Latent Permutations
+不使用树的组合泛化：利用多重集标注和潜在排列
+
+**作者**
+Matthias Lindemann, Alexander Koller, Ivan Titov
+
+**所属机构/合作方（标志）**
+* 爱丁堡大学 Informatics
+* NLP UKRI 博士培训中心 (UKRI CENTRE FOR DOCTORAL TRAINING)
+* 萨尔大学 (Saarland University)
+* 阿姆斯特丹大学 (University of Amsterdam)
+
+**视频中人物所说**
+This is joint work with my advisors Alexander Koller and Ivan Titov.
+这是我与我的导师 Alexander Koller 和 Ivan Titov 共同完成的工作。</sample>
+    <sample id="1315">所给内容中的英文翻译如下：
+
+**Compositional Generalization**
+组合式泛化
+
+**Ability of a learner to handle deeper recursion and unseen compositions of phrases that have been seen individually during training.**
+学习者处理更深层次的递归以及在训练期间已单独见过但未曾组合见过的短语的能力。</sample>
+    <sample id="1316">以下是图片中英文内容的中文翻译：
+
+**语义解析中的组合泛化**
+
+**训练：**
+
+那个女孩睡着了。
+玛丽知道那个女孩睡着了。
+
+*女孩 x_1 ∧ 睡觉施事 x_2 x_1
+*女孩 x_4 ∧ 知道施事 x_1 玛丽 ∧ 知道.补语 x_1 x_3 ∧ 睡觉施事 x_5 x_4</sample>
+    <sample id="1317">这些话语与逻辑形式配对，代表着它们的核心含义。</sample>
+    <sample id="1318">当然，以下是所提供内容中的英文翻译：
+
+“Train:” — “训练：”
+“The girl slept.” — “女孩睡着了。”
+“girl x₁ sleep.agent x₂ x₁” — “女孩 x₁ 睡觉。代理人 x₂ x₁”
+“Mary knew that the girl slept.” — “玛丽知道女孩睡着了。”
+“girl x₄ know.agent x₁ Mary ∧ know.ccomp x₁ x₅ ∧ sleep.agent x₅ x₄” — “女孩 x₄ 知道。代理人 x₁ 玛丽 ∧ 知道。补语 x₁ x₅ ∧ 睡觉。代理人 x₅ x₄”
+“Test:” — “测试：”
+“Jim said that Mary knew that the girl slept.” — “吉姆说玛丽知道女孩睡着了。”
+“girl x₇ say.agent x₁ Jim ∧ say.ccomp x₁ x₄ ∧ know.agent x₄ Mary ∧ know.ccomp x₄ x₈ ∧ sleep.agent x₈ x₇” — “女孩 x₇ 说。代理人 x₁ 吉姆 ∧ 说。补语 x₁ x₄ ∧ 知道。代理人 x₄ 玛丽 ∧ 知道。补语 x₄ x₈ ∧ 睡觉。代理人 x₈ x₇”
+
+请注意，逻辑形式中的符号和变量通常在不脱离其专业语境的情况下不易直接翻译成自然语言。我已尽可能地保留了其结构和含义。</sample>
+    <sample id="1319">以下是所提供内容中的英文翻译：
+
+**语义解析中的组合泛化**
+
+**训练集：**
+女孩睡着了。
+女孩 x_2, 睡觉.施事者 x_2
+
+玛丽知道那个女孩睡着了。
+女孩 x_4, 知道.施事者 x_1 玛丽 ∧ 知道.补语 x_1 x_5 ∧ 睡觉.施事者 x_5 x_4
+
+**测试集：**
+吉姆说玛丽知道那个女孩睡着了。
+女孩 x_7, 说.施事者 x_1 吉姆 ∧ 说.补语 x_1 x_4 ∧ 知道.施事者 x_4 玛丽 ∧ 知道.补语 x_4 x_8 ∧ 睡觉.施事者 x_8 x_7
+
+**[音频内容]**
+在这个例子中，模型在训练期间看到了较浅的递归，并在一个具有更深递归的例子上进行了测试。</sample>
+    <sample id="1320">以下是图片中英文内容的中文翻译：
+
+**语义解析中的组合泛化**
+
+**训练：**
+
+女孩睡着了。
+女孩 x_1.睡觉施事 x_1
+
+玛丽知道女孩睡着了。
+女孩 x_1.知道施事 x_1 玛丽 ^ 知道.补语 x_1 x_5 ^ 睡觉施事 x_5
+
+**测试：**
+
+吉姆说玛丽知道女孩睡着了。
+女孩 x_7.说施事 x_1 吉姆 ^ 说.补语 x_1 x_4 ^ 知道施事 x_4 玛丽 ^ 知道.补语 x_4 x_8 ^ 睡觉施事 x_8
+
+**朴素的 seq2seq 模型失败了！**</sample>
+    <sample id="1321">以下是所给内容的中文翻译：
+
+**图片文字翻译：**
+*   **标题：** 语义解析中的组合泛化
+*   **训练：**
+    *   这个女孩睡着了。 -&gt; （语义表示，通常是逻辑形式或图结构）
+    *   玛丽知道那个女孩睡着了。 -&gt; （语义表示）
+*   **测试：**
+    *   吉姆说玛丽知道那个女孩睡着了。 -&gt; （语义表示）
+*   **结论：** 朴素的序列到序列模型失败了！
+
+**音频内容翻译：**
+*   特别是，它们（指模型）经常无法复现输入和输出之间系统性的对应关系，例如示例中用颜色编码的那些。</sample>
+    <sample id="1322">图片中的英文内容翻译：
+*   **Trees help a lot but...** 树结构很有帮助，但是...
+*   **\*girl x₁ ; sleep.agent x₂ x₁** *女孩 x₁ ; 睡觉.施事者 x₂ x₁
+*   **\*girl x₁ ; x₁** *女孩 x₁ ; x₁
+*   **sleep.agent x₂** 睡觉.施事者 x₂
+*   **The girl slept.** 那个女孩睡着了。
+
+音频中的英文内容翻译：
+*   **A popular method to address this is to integrate trees into the model.** 解决这个问题的一种流行方法是将树结构整合到模型中。</sample>
+    <sample id="1323">以下是图片中英文内容的中文翻译：
+
+*   **Trees help a lot but...**
+    句法树很有帮助，但是...
+
+*   **\*girl x₁ ; sleep.agent x₂ x₁**
+    \*女孩 x₁；睡觉的施事 x₂ x₁
+
+*   **\*girl x₁ ; x₁**
+    \*女孩 x₁；x₁
+
+*   **sleep.agent x₂**
+    睡觉的施事 x₂
+
+*   **The girl slept.**
+    女孩睡着了。</sample>
+    <sample id="1324">以下是图中英文内容的中文翻译：
+
+*   **Trees help a lot but...**
+    树木帮助很大，但是...
+
+*   **Trees need to be obtained:**
+    需要获取树：
+
+*   **Pre/Post-processing logical forms**
+    预处理/后处理逻辑形式</sample>
+    <sample id="1325">好的，以下是图片和音频内容中的英文翻译：
+
+**图片中的英文内容：**
+
+*   **Trees help a lot but...**
+    树状结构很有帮助，但是...
+
+*   ***girl x₁**
+    *女孩 x₁
+
+*   **sleep.agent x₂**
+    睡眠施事者 x₂
+
+*   **The girl slept.**
+    女孩睡着了。
+
+*   **Trees need to be obtained:**
+    需要获取树状结构：
+
+*   **- Pre/Post-processing logical forms**
+    - 逻辑形式的预处理/后处理
+
+**音频转录中的英文内容：**
+
+*   **This can be complicated and sometimes a computationally expensive process.**
+    这可能很复杂，有时是一个计算成本高昂的过程。
+
+*   **Typically, this involves considerable formalism-specific preprocessing of the logical forms, for example, to handle variable symbols.**
+    通常，这涉及对逻辑形式进行大量特定于形式体系的预处理，例如处理变量符号。</sample>
+    <sample id="1326">以下是图片中英文内容的中文翻译：
+
+*   **Trees help a lot but...**
+    树木很有帮助，但是...
+
+*   **\*girl x₁; sleep.agent x₂ x₁**
+    *女孩 x₁；睡觉.施事 x₂ x₁
+
+*   **\*girl x₁; x₁**
+    *女孩 x₁；x₁
+
+*   **sleep.agent x₂**
+    睡觉.施事 x₂
+
+*   **The girl slept.**
+    女孩睡着了。
+
+*   **Trees need to be obtained:**
+    需要获取树状结构：
+
+*   **- Pre/Post-processing logical forms**
+    - 预处理/后处理逻辑形式
+
+*   **- Grammar-induction**
+    - 语法归纳</sample>
+    <sample id="1327">以下是所给内容中的英文翻译成中文：
+
+*   **Trees help a lot but...**
+    树状结构很有帮助，但是...
+
+*   **\*girl x₁ sleep.agent x₂**
+    \*女孩 x₁ 睡觉.施事者 x₂ (这些是技术标签，通常不直接翻译，或保持原样以示其为变量或概念表示)
+
+*   **x₁**
+    x₁
+
+*   **x₂**
+    x₂
+
+*   **\*girl x₁**
+    \*女孩 x₁
+
+*   **sleep.agent x₂**
+    睡觉.施事者 x₂
+
+*   **The girl slept.**
+    女孩睡了。
+
+*   **Trees need to be obtained:**
+    树状结构需要获取：
+
+*   **- Pre/Post-processing logical forms**
+    - 预处理/后处理逻辑形式
+
+*   **- Grammar-induction**
+    - 语法归纳
+
+*   **This paper: neural seq2seq model that directly models the correspondences between fragments. For the first time, we show strong generalization to deeper recursion \*without trees\*.**
+    本文：神经序列到序列模型，直接建模片段之间的对应关系。我们首次展示了在\*不使用树状结构\*的情况下，对更深层次递归的强大泛化能力。</sample>
+    <sample id="1328">以下是对图片中英文内容的中文翻译：
+
+*   **Trees help a lot but...**
+    树结构帮助很大，但是...
+
+*   **\*girl x₁; sleep.agent x₂ x₁**
+    \*女孩 x₁; 睡眠施事 x₂ x₁
+
+*   **\*girl x₁; x₁**
+    \*女孩 x₁; x₁
+
+*   **sleep.agent x₂**
+    睡眠施事 x₂
+
+*   **The girl slept.**
+    这个女孩睡着了。
+
+*   **Trees need to be obtained:**
+    需要获取树结构：
+
+    *   **- Pre/Post-processing logical forms**
+        - 前/后处理逻辑形式
+    *   **- Grammar-induction**
+        - 语法归纳
+
+*   **This paper: neural seq2seq model that directly models the correspondences between fragments. For the first time, we show strong generalization to deeper recursion *without* trees.**
+    本文：神经Seq2Seq模型直接对片段之间的对应关系进行建模。我们首次展示了在*无需*树结构的情况下，对更深层次递归的强大泛化能力。</sample>
+    <sample id="1329">Our approach predicts the output from the input in two steps.</sample>
+    <sample id="1330">首先，我们用一个无序多重集来标记每个输入词元，该多重集包含将出现在输出中的词元。</sample>
+    <sample id="1331">第一步之后，我们得到了所有正确的标记，但它们没有排序。</sample>
+    <sample id="1332">因此，在第二步中，我们使用另一个模型来预测排列，以将它们放入正确的顺序中。</sample>
+    <sample id="1333">以下是图片中英文内容的中文翻译：
+
+*   **Our Approach**: 我们的方法
+*   **Permute**: 置换 / 排列
+*   **Tag**: 标记
+
+对于方框中的单词/符号：
+
+*   **the**: the (或 冠词，视具体语境而定，这里可保留英文)
+*   **girl**: 女孩
+*   **slept**: 睡觉 (指动词“睡”的词干或语义，而非特指过去式)
+*   *****: * (特殊符号，通常保留)
+*   **x₁**: x₁ (变量，通常保留)
+*   **;**: ; (标点符号，通常保留)
+*   **sleep**: 睡觉
+*   **agent**: 施事者 (在语言学中指动作的执行者)
+*   **x₂**: x₂ (变量，通常保留)</sample>
+    <sample id="1334">概念上，我们的置换模型大致如下所示。</sample>
+    <sample id="1335">以下是图片中英文内容的中文翻译：
+
+**图片中的文字：**
+*   **Permuting with "jumps"**: 带“跳跃”的置换
+*   **Permute**: 置换
+*   **Tag**: 标记
+*   **\***: *
+*   **;**: ;
+*   **x1**: x1
+*   **girl**: 女孩
+*   **sleep**: 睡觉
+*   **agent**: 代理
+*   **x2**: x2
+*   **the**: 这
+*   **girl** (位于"Tag"层下方的输入词): 女孩
+*   **slept**: 睡了
+
+**音频中的英文内容及其翻译：**
+"We go from left to right over the output, and determine which multiset token to put in every position."
+中文：我们从左到右遍历输出，并确定在每个位置放置哪个多重集标记。
+
+"For the first output position, we simply select one as highlighted in red."
+中文：对于第一个输出位置，我们只需选择一个，如红色突出显示的那样。</sample>
+    <sample id="1336">Then we jump to the next multi-set token to determine the second token in the output.</sample>
+    <sample id="1337">根据您提供的内容，以下是英文翻译成中文：
+
+**图片中的英文：**
+*   **Permuting with "jumps"**: 通过“跳跃”进行置换
+*   **Permute**: 置换 / 排列
+*   **Tag**: 标记
+*   **the**: (一个单词) the
+*   **girl**: 女孩
+*   **slept**: 睡了
+*   **x1**, **x2**: x1, x2 (通常作为变量保留)
+*   **sleep**: 睡觉
+*   **agent**: 施事者 (在语言学上下文中)
+*   **\***: 通配符 / 星号
+*   **;**: 分号
+
+**音频中的英文：**
+*   **the third token**: 第三个标记 / 第三个词元
+*   **in the output**: 在输出中
+*   **in a similar way**: 以类似的方式
+*   **by jumping to another multiset token**: 通过跳到另一个多集标记 / 跳到另一个多集词元
+*   **We continue this process**: 我们继续这个过程</sample>
+    <sample id="1338">好的，以下是图片中英文内容的中文翻译：
+
+- **Permuting with "jumps"**：跳跃式置换
+- **Permute**：置换
+- **Tag**：标记
+- **the**：这个 (此处作冠词，无特定含义)
+- **girl**：女孩
+- **slept**：睡了 (sleep的过去式)</sample>
+    <sample id="1339">以下是图片中英文内容的中文翻译：
+
+**标题：**
+COGS上的一些结果 (Kim 和 Linzen, 2020)
+
+**图表标题：**
+与其他无树模型在COGS结构泛化上的比较
+
+**Y轴标签：**
+准确率
+
+**X轴标签：**
+*   PP 递归
+*   CP 递归
+*   宾语PP → 主语PP
+*   泛化类型
+
+**图例：**
+*   模型
+*   LSTM seq2seq
+*   T5
+*   Zheng and Lapata (郑和拉帕塔)
+*   Ours (本文方法 / 我们的模型)</sample>
+    <sample id="1340">Some results on COGS (Kim and Linzen 2020)。
+
+Comparison with other treeless models on structural generalization on COGS。
+
+Acc。
+
+Model。
+
+LSTM seq2seq。
+
+T5。
+
+Zheng and Lapata。
+
+Ours。
+
+PP recursion。
+
+CP recursion。
+
+Obj PP -&gt; Subj PP。
+
+Generalization Type。</sample>
+    <sample id="1341">以下是图片和音频中英文内容的中文翻译：
+
+**图片文字翻译：**
+
+*   **Technical Challenges We Solve:** 我们解决的技术挑战
+*   **Permute:** 置换
+*   **Tag:** 标记
+*   **Alignment unknown.:** 对齐未知。
+
+*(图中其他英文单词如 "girl", "sleep", "agent", "the", "slept" 等，在技术图示中通常保持英文原样作为标签或示例，或根据具体语境进行翻译。在此仅翻译框中的功能名称和左侧说明文字。)*
+
+**音频内容翻译：**
+
+*   **In our paper, we solve a couple of interesting technical challenges.**
+    *   在我们的论文中，我们解决了一些有趣的技术挑战。</sample>
+    <sample id="1342">以下是视频中英文内容的中文翻译：
+
+**图片文字翻译：**
+
+*   **Technical Challenges We Solve** (黄色方框): 我们解决的技术挑战
+*   **Permute** (灰色方框): 排列
+*   **Tag** (灰色方框): 标注
+*   **Alignment unknown.** (左下角文字): 对应关系未知
+*   **agent** (蓝色方框): 施事 / 代理 (根据上下文，这里更可能是语义角色“施事”)
+
+**口述内容翻译：**
+
+首先，训练数据中并未给出输入与输出之间的对应关系。
+因此，对于一个给定的词元，我们不知道它来自哪个多重集合，这给训练带来了挑战。</sample>
+    <sample id="1343">所给内容中的英文翻译成中文如下：
+
+**图片内容：**
+
+*   **Technical Challenges We Solve**: 我们解决的技术挑战
+*   **\***: *
+*   **girl**: 女孩
+*   **x_1**: x_1
+*   **;**: ;
+*   **sleep**: 睡觉
+*   **agent**: 施事
+*   **x_2**: x_2
+*   **x_1**: x_1
+*   **Permute**: 置换
+*   **Tag**: 标记
+*   **the**: the
+*   **girl**: 女孩
+*   **slept**: 睡了
+*   **Alignment unknown.** : 对齐未知。
+*   **» Induce it in training.** : » 在训练中进行对齐归纳。
+
+**音频内容：**
+
+"In addition, sometimes there are multiple permutations that are consistent with the data, but the linguistically correct one is latent. We address this by inducing the alignment as part of the training."
+
+**中文翻译：**
+
+此外，有时存在与数据一致的多个排列，但语言学上正确的排列是隐性的。我们通过在训练中诱导对齐来解决这个问题。</sample>
+    <sample id="1344">以下是图片中所有英文内容的中文翻译：
+
+**标题:**
+Technical Challenges We Solve - **我们解决的技术挑战**
+
+**图表标签:**
+
+*   **Permute** - **置换**
+*   **Tag** - **标记**
+
+*   `*` - (保持不变，通常是符号)
+*   `girl` - **女孩**
+*   `x_1` - (保持不变，通常是变量)
+*   `i` - (保持不变，通常是变量)
+*   `sleep` - **睡觉**
+*   `agent` - **代理**
+*   `x_2` - (保持不变，通常是变量)
+*   `the` - (保持不变，如果作为输入词元，或译为“这个/那个”)
+*   `slept` - (保持不变，如果作为输入词元，或译为“睡了”)
+
+**图表下方文字:**
+
+*   Alignment unknown. - **对齐方式未知。**
+*   -&gt; Induce it in training. - **-&gt; 在训练中推断它。**
+*   Permutation model: - **置换模型：**
+*   \- Inference is NP-hard (~ TSP) - **- 推理是NP难问题 (近似旅行推销员问题)**</sample>
+    <sample id="1345">以下是图片中英文内容的中文翻译：
+
+**标题：我们解决的技术挑战**
+
+**图示中的标签：**
+
+*   最上方： `*`, `女孩`, `x₁`, `i`, `睡觉`, `主体`, `x₂`, `x₁`
+*   中间层： `排列`
+*   中间层（具体标签）： `*`, `;`, `x₁`, `女孩`, `x₁`, `睡觉`, `主体`, `x₂`
+*   最下方： `标签`
+*   最下方（具体标签）： `the`, `女孩`, `睡了`
+
+**文本（左下方）：**
+
+*   对齐未知。
+    *   在训练中推导。
+*   排列模型：
+    *   推理是NP-难的（≈ 旅行商问题）
+    *   通过连续松弛进行反向传播
+
+**演讲者旁白（根据您的英文转录）：**
+
+我们使用一种对GPU友好的连续松弛方法来近似，它使我们能够通过解决方案进行反向传播，并学习语言学上更合理的排列。</sample>
+    <sample id="1346">好的，这是图中英文内容的中文翻译：
+
+**标题:** 我们解决的技术挑战
+
+**图示标签:**
+*   **顶部输入层:** 星号, 女孩, x_1, i, 睡觉, 作用者, x_2, x_1
+*   **中间层名称:** 置换层 (Permute)
+*   **置换层输出/标签层输入:** 星号, i, x_1, 女孩, x_1, 睡觉, 作用者, x_2
+*   **底部层名称:** 标签层 (Tag)
+*   **底部输出层 (原始词):** 这个, 女孩, 睡着了
+
+**文本内容:**
+*   对齐未知。
+*   -&gt; 在训练中引导（或学习）它。
+*   置换模型：
+    *   - 推理是NP难的（约等于旅行商问题）
+    *   - 通过连续松弛进行反向传播
+
+**右下角:**
+*   论文与代码：
+*   https://t.ly/mX8ny
+
+**页码:** 8</sample>
+    <sample id="1347">根据英文内容，认知失调是指“两种不一致的认知元素（即思想、行为、信念）”。</sample>
+    <sample id="1348">GPT-4。</sample>
+    <sample id="1349">是的，在主动学习中，累积训练（Cumulative）比迭代训练（Iterative）更有效。
+
+图中显示，在所有不同的策略（Random, Entropy, CoreSet, CAL, PRC）下，累积训练（蓝色条形）的AUC值均高于或等于迭代训练（黄色条形）。演讲者也明确指出，累积训练的表现“在所有策略中都等于或优于迭代训练”。</sample>
+    <sample id="1350">演讲者的名字是 **Sara Papi**。</sample>
+    <sample id="1351">根据视频内容，MuDa 基准中的数据来源于 **TED 演讲的演讲稿**。这些演讲稿是从英语翻译成 14 种不同语言的。</sample>
+    <sample id="1385">演讲者的名字是 Matthias Lindemann。</sample>
+    <sample id="1386">根据所给的英文内容，**跨语言转移（Cross-lingual transfer）**是指：
+
+在一个源语言上进行训练，然后将所学知识转移到另一个语言上。
+
+这可以以零样本（Zero-shot）或少样本（Few-shot）的形式进行。例如，在英语查询上训练模型，然后用其来处理德语查询并预测SQL。</sample>
+    <sample id="1387">这篇论文的作者所属机构是：
+*   **萨尔大学 (Saarland University)**：Dawei Zhu, Marius Mosbach, Dietrich Klakow
+*   **亚马逊 Alexa (Amazon Alexa)**：Xiaoyu Shen
+*   **维也纳大学 (University of Vienna)**：Andreas Stephan</sample>
+    <sample id="1388">作者使用了以下延迟测量方法：
+1.  **Average Lagging (AL)**：这是一种衡量延迟的通用指标。
+2.  **Computational Aware Average Lagging (AL_CA)**：这种方法在平均延迟的基础上，还考虑了模型预测输出所需的计算时间。</sample>
+    <sample id="1389">以下是图片中英文内容的中文翻译：
+
+*   **McGill:** 麦吉尔
+*   **Mila:** 米拉
+*   **Microsoft Research:** 微软研究院
+*   **The KITMUS Test:** KITMUS 测试 (KITMUS为一个专有名词，通常保留其英文形式)
+*   **Evaluating Knowledge Integration from Multiple Sources:** 评估多源知识整合 / 评估来自多个来源的知识整合
+*   **Akshatha Arodi*, Martin Pömsl*, Kaheer Suleman, Adam Trischler, Alexandra Olteanu, Jackie CK Cheung:** (这些是人名，通常保持英文原名或进行音译，在此处保持英文更常见)
+*   **McGill University/Mila:** 麦吉尔大学/米拉
+*   **Microsoft Research:** 微软研究院
+*   **\* Equal Contribution:** \* 同等贡献 / 共同贡献
+*   **1:** 1 (页码)</sample>
+    <sample id="1390">以下是图片中所有英文内容的中文翻译：
+
+**主标题 (Main Title):**
+NLU models draw on multiple knowledge sources
+NLU 模型利用多种知识来源
+
+**左侧云朵标题 (Left Cloud Title):**
+Knowledge in Parameters (pretrain-time knowledge)
+参数中的知识（预训练阶段的知识）
+
+**右侧云朵标题 (Right Cloud Title):**
+Knowledge in Context (inference-time knowledge)
+上下文中的知识（推理阶段的知识）
+
+**底部方框 (Bottom Box):**
+NLU Model
+NLU 模型
+
+**右侧云朵内的段落文本 (Paragraph text inside the right cloud):**
+In 1999, building the Enterprise Resource Planning (ERP) account management, a project by a private company that integrates all the company's activities (including finance, human resources, manufacturing, supply chain, services, etc.) and integrates different functions to create a complete and unified management system. Therefore, businesses use ERP solutions to link all parts of the business process together, to streamline operations, reduce costs, improve efficiency, and enhance customer satisfaction. In short, the ERP account management system helps organizations manage all resources and operations in a unified and integrated manner.
+
+1999年，构建了企业资源规划（ERP）账户管理系统，这是一个由一家私人公司发起的项目，旨在整合公司的所有活动（包括财务、人力资源、制造、供应链、服务等），并将不同功能整合起来，以创建一个完整统一的管理系统。因此，企业利用ERP解决方案将业务流程的各个环节连接起来，以简化运营、降低成本、提高效率并提升客户满意度。简而言之，ERP账户管理系统帮助组织以统一和整合的方式管理所有资源和运营。</sample>
+    <sample id="1391">好的，以下是图片中英文内容的中文翻译：
+
+**NLU models draw on multiple knowledge sources**
+NLU 模型汲取多种知识来源
+
+**Knowledge in Parameters (pretrain-time knowledge)**
+参数中的知识 (预训练知识)
+
+**Knowledge in Context (inference-time knowledge)**
+上下文中的知识 (推理知识)
+
+**NLU Model**
+NLU 模型
+
+---
+**右侧小文本框内的内容（仅翻译可见部分）：**
+
+In 1999, building the Ethernet-Modem.Net a co-owner set out to build a new business that was free from the usual conflicts and other issues that seemed to plague the Internet industry. It was based on the principles of integrity, transparency, and a strong customer focus. This meant that the company would not have (known, knowingly) it's principles, just only (known, unknowingly). They also wanted to build a company that was financially strong and stable, with a focus on long-term growth and sustainability. The co-owner had a clear vision for the company: to provide high-quality internet services that were reliable, affordable, and easy to use. They also wanted to create a positive and supportive work environment for their employees, where everyone felt valued and respected. This vision was shared by the entire team, and it helped to guide the company's decisions and actions. Ethernet-Modem.Net quickly gained a reputation for its excellent customer service and its commitment to ethical business practices. The company grew steadily, expanding its services and its reach. By 2005, it had become one of the leading internet service providers in its region. The company's success was a testament to the power of its founding principles and the dedication of its team. It was also a pioneer in the use of new technologies, such as broadband internet and wireless networking. These innovations helped to shape the internet landscape and made it more accessible to people.
+1999年，Ethernet-Modem.Net 的一位共同所有者着手建立一家新公司，旨在摆脱互联网行业中常见的冲突和其他问题。它基于诚信、透明和以客户为中心的原则。这意味着公司不会（故意）违背其原则，只会（无意中）违背。他们还希望建立一家财务稳健、稳定且专注于长期增长和可持续发展的公司。这位共同所有者对公司有着清晰的愿景：提供高质量、可靠、实惠且易于使用的互联网服务。他们还希望为员工创造一个积极支持的工作环境，让每个人都感到被重视和尊重。整个团队都认同这一愿景，它指导着公司的决策和行动。Ethernet-Modem.Net 很快因其卓越的客户服务和对道德商业实践的承诺而赢得声誉。公司稳步发展，扩大了服务范围。到2005年，它已成为该地区领先的互联网服务提供商之一。公司的成功证明了其创始原则的力量和团队的奉献精神。它也是宽带互联网和无线网络等新技术的先驱。这些创新有助于塑造互联网格局，使其更易于人们使用。</sample>
+    <sample id="1392">好的，以下是所提供内容中英文的中文翻译：
+
+**幻灯片标题：**
+John saw the newly elected president on TV.
+约翰在电视上看到了新当选的总统。
+
+**幻灯片左侧文字：**
+pretrain-time knowledge
+预训练知识
+
+**幻灯片中间文字：**
+What presidents do ✔
+总统们做什么 ✔
+What is a TV ✔
+电视是什么 ✔
+
+Who is John ❌
+约翰是谁 ❌
+Who is the new president ❌
+新总统是谁 ❌
+
+**女性演讲者说的话：**
+But natural language understanding often requires knowledge that is also supplied at inference time.
+但是自然语言理解通常需要推理时也提供的知识。</sample>
+    <sample id="1393">好的，以下是所提供内容中的英文翻译：
+
+“John saw the newly elected president on TV” 翻译为 “约翰在电视上看到了新当选的总统”。
+
+“pretrain-time knowledge” 翻译为 “预训练知识”。
+
+“What presidents do” 翻译为 “总统们做什么”。
+
+“What is a TV” 翻译为 “电视是什么”。
+
+“Who is John” 翻译为 “约翰是谁”。
+
+“Who is the new president” 翻译为 “新总统是谁”。</sample>
+    <sample id="1394">好的，这是图片中英文内容的中文翻译：
+
+**顶部标题：**
+约翰在电视上看到了新当选的总统。
+
+**左侧图表下方的文字：**
+预训练知识
+
+**右侧列表中的文字：**
+总统是做什么的？✅
+电视是什么？✅
+约翰是谁？❌
+新总统是谁？❌
+
+**右下角的文字：**
+由 FREE-VECTORS.NET 制作
+
+**视频中发言人的讲话翻译：**
+预训练参数可以包含关于总统是做什么的以及电视是什么的信息，但它们不能可靠地知道这个特定的实体约翰是谁，或者新总统是谁，因为总统可能已经换了，自从预训练以来。</sample>
+    <sample id="1395">以下是图片中英文内容的中文翻译：
+
+*   **标题：** John saw the newly elected president on TV
+    *   **翻译：** 约翰在电视上看到了新当选的总统。
+
+*   **左侧图片标签：**
+    *   pretrain-time knowledge
+        *   **翻译：** 预训练时期的知识
+    *   inference-time knowledge
+        *   **翻译：** 推理时期的知识
+
+*   **中间的问题：**
+    *   What presidents do ✅
+        *   **翻译：** 总统们做什么
+    *   What is a TV ✅
+        *   **翻译：** 什么是电视
+    *   Who is John ✅
+        *   **翻译：** 约翰是谁
+    *   Who is the new president ✅
+        *   **翻译：** 新总统是谁</sample>
+    <sample id="1396">好的，以下是图片中英文内容的中文翻译：
+
+**KITMUS 测试套件**
+
+*   用于知识整合评估的数据集
+*   共指消解任务，旨在探究其利用以下能力：
+    *   预训练时知识
+    *   推理时知识
+*   实验对象包括：
+    *   人类研究参与者
+    *   共指消解模型</sample>
+    <sample id="1397">KITMUS Test Suite
+- 用于知识整合评估的数据集
+- 共指消解任务，以探究提取以下知识的能力：
+  - 预训练知识
+  - 推理时知识
+- 实验对象：
+  - 人类研究参与者
+  - 共指消解模型</sample>
+    <sample id="1398">好的，这是所给内容中的英文的中文翻译：
+
+“Servin is a judge. Kea is a baker. Servin and Kea met at a park. After a long day at work deciding cases in a law court, he was happy to relax. [Answer: Servin]”
+
+翻译：
+“塞尔文是一名法官。基亚是一名面包师。塞尔文和基亚在一个公园见面。在法院忙碌了一整天处理案件后，他很高兴能放松一下。[答案：塞尔文]”</sample>
+    <sample id="1399">所给内容中的英文翻译如下：
+
+**KITMUS 测试套件**
+
+**Servin 是一名法官。Kea 是一名面包师。Servin 和 Kea 在公园见面。在法院审理案件度过了漫长的一天后，他很高兴能放松一下。[答案: Servin]**</sample>
+    <sample id="1400">好的，以下是所给内容的中文翻译：
+
+**KITMUS 测试套件**
+
+Servin 是一名法官。Kea 是一名面包师。Servin 和 Kea 在公园里见面了。在法院审理案件度过了漫长的一天后，他很高兴能放松一下。[答案：Servin]
+
+1) 实体特定知识
+2) 背景知识 (图中第二点出现)
+   法官在法院审理案件。 (图中第二点对应的解释文字)
+
+**音频内容翻译：**
+“给定的代词的指代消解需要两种信息。首先，是实体特定知识，例如 Servin 是一名法官。其次，是背景知识，例如法官在法院审理案件。”</sample>
+    <sample id="1401">以下是图片中英文内容的中文翻译：
+
+*   **KITMUS Test Suite**：KITMUS 测试套件
+*   **Servin is a judge. Kea is a baker. Servin and Kea met at a park. After a long day at work deciding cases in a law court, he was happy to relax. [Answer: Servin]**：瑟文是一名法官。凯亚是一名面包师。瑟文和凯亚在一个公园见面。在法院审理案件的漫长一天工作之后，他很高兴放松下来。[答案：瑟文]
+*   **Judges decide cases in courts of law.**：法官在法庭上审理案件。
+*   **1) Entity-specific knowledge**：1) 特定实体知识
+*   **2) Background knowledge**：2) 背景知识
+*   **inference-time knowledge**：推理时知识
+*   **pretrain-time knowledge**：预训练时知识</sample>
+    <sample id="1402">我们根据信息的可用性来调整这些信息，这样它既可能在一个信息源中找到，也可能在多个信息源中找到。</sample>
+    <sample id="1403">已定义的KITMUS的三个设置。
+
+首先，我们有一个典型的设置，背景知识预训练。
+背景知识被假定在预训练时可用。</sample>
+    <sample id="1404">second, there's the BACKGROUND-BOTH setting, where background knowledge is available both at pre-train-time and inference-time. Lastly, the BACKGROUND-INFERENCE setting, where both knowledge types are available only at inference-time.
+
+(a) BACKGROUND-PRETRAIN
+(b) BACKGROUND-BOTH
+(c) BACKGROUND-INFERENCE
+
+a) Background-Pretrain: Typical setup
+b) Background-Both: Explicitly provide background knowledge in context
+c) Background-Inference: Knowledge only available at inference-time</sample>
+    <sample id="1405">好的，这是视频中英文内容的中文翻译：
+
+**Variants of KITMUS**
+
+a) Background-Pretrain: Typical setup
+b) Background-Both: Explicitly provide background knowledge in context
+c) Background-Inference: Knowledge only available at inference-time
+
+---
+**翻译:**
+
+**KITMUS 的变体**
+
+a) 背景-预训练：典型设置
+b) 背景-两者：在上下文中明确提供背景知识
+c) 背景-推理：知识仅在推理时可用</sample>
+    <sample id="1406">好的，这是视频中英文内容的中文翻译：
+
+**屏幕上的标题：**
+Variants of KITMUS -&gt; KITMUS的变体
+
+**屏幕上的三个主要标题：**
+Background-Pretrain -&gt; 背景-预训练
+Background-Both -&gt; 背景-两者兼顾
+Background-Inference -&gt; 背景-推理
+
+**"Background-Pretrain" 部分的内容：**
+Politicians seek elected seats in government. -&gt; 政治家在政府中寻求民选席位。
+Chichester is a politician. -&gt; 奇切斯特是一名政治家。
+
+**"Background-Both" 部分的内容：**
+Politicians seek elected seats in government. -&gt; 政治家在政府中寻求民选席位。
+Chichester is a politician. -&gt; 奇切斯特是一名政治家。
+The work of a politician is seeking an elected seat in government. -&gt; 政治家的工作是在政府中寻求民选席位。
+
+**"Background-Inference" 部分的内容：**
+Chichetuer is a mirituer. -&gt; 奇切图尔是一名米利图尔（此为虚构词，无实际含义）。
+The work of a mirituer is ehemtimg smorbly. -&gt; 米利图尔的工作是ehemtimg smorbly（此为虚构词，无实际含义）。
+
+**视频中人物所说的话：**
+Here is an example of how we control the availability of facts in the system. -&gt; 这是我们如何控制系统中事实可用性的一个例子。</sample>
+    <sample id="1407">在背景预训练设置中，我们假设背景知识“政治家寻求政府中的民选席位”包含在预训练参数中。在推理语境中，我们提供实体特定知识“奇切斯特是政治家”。</sample>
+    <sample id="1408">在背景-两者（Background-Both）设置中，我们额外提供的不仅仅是实体特定的信息，还有关于政治家的背景知识，以及推断上下文（inference context）中的信息。</sample>
+    <sample id="1409">好的，这是所给内容中的英文翻译：
+
+标题：KITMUS 的变体
+
+左侧方框：
+标题：背景 - 预训练
+顶部小方框：神经网络图和一小段文字（看不清具体内容，但与预训练的背景信息有关）
+中部小方框：**奇切斯特是一位政治家。**
+底部小方框：**政治家寻求在政府中任职。**
+
+中间方框：
+标题：背景 - 两者（Pretrain and Inference）
+顶部小方框：神经网络图和一小段文字
+中部小方框：**奇切斯特是一位政治家。**
+底部小方框：**政治家的工作是寻求在政府中任职。**
+
+右侧方框：
+标题：背景 - 推理
+顶部小方框：神经网络图和一小段文字
+中部小方框：**奇切斯特是一位 “mirituer”。**
+底部小方框：**“mirituer” 的工作是“ehemting smorbtly”。**
+
+视频中男性说的话：
+在背景推理设置中，我们提供虚构的职业“mirituer”，而不是“politician”，因为“mirituer”不太可能包含在预训练模型中。</sample>
+    <sample id="1410">好的，以下是视频中所有英文内容的中文翻译：
+
+**背景-预训练**
+
+我们评估了数据集，既有通过人类静态参与者，也有通过已建立的共指消解模型。
+在此图中，我们展示了表现最佳的模型在背景预训练最困难变体上的结果。
+
+**任务特定训练对于知识整合是必要的。**</sample>
+    <sample id="1411">在没有进行特定任务训练的情况下，两个模型都表现不佳。然而，在KitMos数据集上训练后，C2F和BERT4Coref的表现都显著优于随机选择。</sample>
+    <sample id="1412">在所给内容中，英文的翻译如下：
+
+**图片中可见的英文：**
+* **Background - Pretrain**：背景 - 预训练
+* **Mean Accuracy**：平均准确率
+* **Without task-specific training**：没有特定任务训练
+* **With task-specific training**：有特定任务训练
+* **Random Choice**：随机选择
+* **Human Participants**：人类参与者
+* **BERT4Coref**：BERT4指代消解
+* **C2F**：C2F（一个模型的名称）
+* **Task-specific training is necessary for knowledge integration**：特定任务训练对于知识整合是必要的。
+
+**讲话中的英文：**
+* "This suggests that when trained on general coreference resolution data sets, models learn to exploit surface cues which are not useful when testing on Kitmo where such cues have been removed."
+  * 翻译：这表明，当在通用指代消解数据集上训练时，模型会学习利用表面线索，而这些线索在对 Kitmo 进行测试时并没有用，因为在 Kitmo 中这些线索已被移除。</sample>
+    <sample id="1413">*   **标题：** 背景推断
+*   **X轴标签：** 虚构背景知识
+*   **Y轴标签：** 平均准确率
+*   **图例：**
+    *   随机选择
+    *   人类参与者
+    *   BERT4Coref
+    *   C2F
+*   **图表下方文字：** 模型难以整合推理时期的背景知识
+*   **演讲者口述内容：** 针对虚构知识的额外实验表明，即使是表现最佳的模型也无法可靠地整合仅在推理时提供的背景知识。</sample>
+    <sample id="1414">以下是所给内容的中文翻译：
+
+**结论**
+
+**主要观点：**
+
+1.  许多模型似乎无法对来自多个来源（预训练时和推理时的知识）的知识进行推理。
+2.  针对特定任务的训练对于知识整合是必要的。
+3.  模型难以整合推理时的背景知识。
+
+可以在 GitHub 上找到数据集、生成和评估代码，地址是：mpoemsl/kitmus
+
+15</sample>
+    <sample id="1415">以下是图片中英文内容的中文翻译：
+
+**结论**
+
+**主要要点：**
+
+1.  许多模型似乎无法对来自多个来源的知识（预训练时和推理时知识）进行推理。
+2.  针对特定任务的训练对于知识整合是必要的。
+3.  模型难以整合推理时背景知识。
+
+**在 GitHub 上通过 mpoemsl/kitmus 查找数据集、生成和评估代码。**
+
+15</sample>
+    <sample id="1416">Based on the provided content, the disadvantages of tree-based methods are:
+
+*   Trees are usually not given and need to be obtained.
+*   Obtaining trees can be a complicated and sometimes computationally expensive process.
+*   This typically involves considerable formalism-specific pre-processing of logical forms (e.g., to handle variable symbols).
+*   It may also involve specialized grammar-induction procedures.</sample>
+    <sample id="1417">这篇论文的作者所属机构是 **Georgia Institute of Technology (佐治亚理工学院)**。</sample>
+    <sample id="1418">大家好，我是 Myra。今天我将介绍我们的论文《标记人物角色》（Marked Personas），主题是使用自然语言提示来衡量语言模型中的刻板印象。这项工作是与 Esin Durmus 和 Dan Jurafsky 合作完成的，并于 ACL 2023 发表。</sample>
+    <sample id="1419">**中文翻译:**
+
+**幻灯片内容:**
+
+*   **标题:** 标记的人物画像：动机
+*   社会偏见和刻板印象在大型语言模型（LLMs）中普遍存在。
+*   现有刻板印象衡量方法的局限性：
+    *   具体性与泛化能力之间的权衡
+    *   基于固定的、人工筛选的数据集
+    *   未考虑交叉性
+
+**语音内容:**
+
+*   近年来，许多研究都记录了社会偏见和刻板印象在大型语言模型（LLMs）中的普遍存在。</sample>
+    <sample id="1420">好的，这是这段英语内容的中文表达：
+
+**有标记的角色：动机**
+
+社会偏见和刻板印象在大型语言模型（LLM）中普遍存在。
+
+现有刻板印象衡量方法的局限性：
+*   在**特异性**和**泛化能力**之间存在权衡。
+*   它们通常基于**固定**的**人工整理**数据集，而这些数据集的构建和维护非常耗时。
+*   **不考虑交叉性**。</sample>
+    <sample id="1421">好的，这段英语内容的中文表达如下：
+
+**标记人格：动机**
+
+大型语言模型（LLM）中普遍存在社会偏见和刻板印象。
+
+现有刻板印象衡量方法的局限性：
+*   **特异性与普适性之间的权衡**：这些方法通常只衡量非常具体的刻板印象，这意味着它们在其他人群或情境下泛化能力不足。或者它们可能只捕捉到非常笼统、宽泛的关联，比如对特定群体的负面关联。
+*   基于**固定、人工筛选**的数据集。
+*   未能充分考虑**交叉性**（即不同社会身份交织产生的独特偏见）。</sample>
+    <sample id="1422">此外，该领域的大多数工作没有考虑到交叉性，即认为多方面的社会身份会加剧偏见并成为独特的危害来源。</sample>
+    <sample id="1423">为了克服这些局限性，我们利用了像GPT-3.5、GPT-4等这些较新的、经过指令微调的大语言模型。它们能很好地理解并响应提示中的指令。</sample>
+    <sample id="1424">所以我们可以要求模型生成一个角色，它是一个虚构个体的描述，使用像“想象你是一位亚洲女性。描述你自己。”这样的提示。</sample>
+    <sample id="1425">以下是将英语内容用中文重新表达：
+
+**幻灯片内容：**
+
+*   **标题：** 我们如何克服这些局限性？
+*   **要点1：** GPT-3.5、GPT-4等可以响应提示中的指令。
+*   **要点2：** 输入：《想象你是一个亚洲女性。描述你自己。》
+*   **方框文字：** 通用性强：可以评估任何交叉身份。
+
+**演讲者的话：**
+
+“我们可以立刻看到，这对于任何人群都具有很强的通用性。因为我们只需将任何想要的身份标识指定到这个提示中。”</sample>
+    <sample id="1426">好的，这是将图片中的英文内容重新表达为中文：
+
+**输出：人设示例 (GPT-4)**
+
+| 类别             | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ```
+A```json
+[
+  {"time": "00:00", "speaker": "Myra Cheng", "text": "So here are some example generations from GPT four."}
+]
+```</sample>
+    <sample id="1427">THINK:
+Here's a thinking process to translate the English sentence "Immediately, we see that while the outputs aren't overtly negative or toxic in the traditional sense of these words" into Chinese:
+
+1.  **Understand the Core Meaning:** The speaker is pointing out that the AI's outputs (persona descriptions) aren't *obviously* or *explicitly* bad (negative, toxic) if you use the common understanding of those terms. There's an implication that they *might* be problematic in a more subtle way, but not in the overt way.
+
+2.  **Break Down the Sentence:**
+    *   "Immediately, we see that": 马上我们看到，立即可见，立刻发现
+    *   "while the outputs aren't": 尽管输出结果不是，虽然输出结果没有
+    *   "overtly negative or toxic": 公开的负面或有毒的，明显的负面或有害的，露骨的负面或毒害性的
+    *   "in the traditional sense of these words": 以这些词的传统意义来说，从这些词的传统意义上看，按照这些词的通常理解
+
+3.  **Initial Draft (Mental or Written):**
+    *   马上我们看到，尽管输出结果不是明显负面或有毒的，从这些词的传统意义上看。 (A bit clunky, especially "从这些词的传统意义上看" at the end.)
+
+4.  **Refine "Immediately, we see that":**
+    *   "Immediately" (立刻, 马上) is good.
+    *   "we see that" (我们看到, 我们发现) is fine.
+    *   Combined: "立即可见" or "我们立刻看到" or "马上我们发现". "立即可见" is concise and formal. "我们立刻看到" is also good. Let's try "立即可见".
+
+5.  **Refine "while the outputs aren't":**
+    *   "尽管输出结果不是" is accurate.
+    *   "输出内容" (output content) might be slightly more natural than "输出结果" (output result) in this context, as it refers to the generated text.
+
+6.  **Refine "overtly negative or toxic":**
+    *   "Overtly": "明显地" (obviously), "公开地" (openly), "露骨地" (blatantly, explicitly). "明显地" is a good general choice. "露骨地" carries a stronger sense of being offensive. Given the context (AI outputs that might be subtly biased), "明显地" or "公然地" (openly, flagrantly) could work. "公然地" fits the "not *overtly* bad" nuance well.
+    *   "Negative": "负面" is standard.
+    *   "Toxic": "有毒的" is literal. In the context of language/content, "有害的" (harmful) or "毒害性的" (poisonous/damaging, often used for harmful content) could be better. "有毒的" is understandable but a bit literal. "毒害性的" captures the nuance of harmful influence.
+    *   Combined: "公然地负面或毒害性的".
+
+7.  **Refine "in the traditional sense of these words":**
+    *   "in the traditional sense": "从传统意义上说", "按照传统理解", "以传统的标准".
+    *   "of these words": "这些词的".
+    *   Combined: "从这些词的传统意义上来看" or "按照这些词的传统理解". The latter feels more natural for "sense/understanding".
+
+8.  **Assemble and Review:**
+    *   立即可见，尽管输出内容并非公然地负面或毒害性的，按照这些词的传统理解。 (Still a bit heavy at the end.)
+
+9.  **Consider Flow and Naturalness:**
+    *   It's common to place the "in the sense" clause earlier or integrate it more smoothly.
+    *   "从这些词的传统意义上来说，输出内容并非公然地负面或毒害性的。" (This structure is good.)
+    *   Let's try: "我们立刻看到，尽管从这些词的传统意义上来说，输出内容并非公然地负面或毒害性的。" (This flows better.)
+
+10. **Final Polish:**
+    *   "Immediately, we see that..." -&gt; "我们立刻看到，..." (natural and direct)
+    *   "...while the outputs aren't..." -&gt; "尽管输出内容并非..." ("并非" is good for "aren't")
+    *   "...overtly negative or toxic..." -&gt; "公然地负面或有毒的..." ("有毒的" is fine, though "毒害性的" is also an option; "有毒的" is more common for "toxic" content). Let's stick with "有毒的" for simplicity and common usage. "公然地" or "明显地" both work for "overtly". "明显地" is a bit softer, "公然地" stronger. Given the implication of subtle bias, "明显地" might be a better fit to contrast with "subtle".
+    *   "...in the traditional sense of these words." -&gt; "从这些词的传统意义上讲，..." (smooth and correct)
+
+    Revised attempt: "我们立刻看到，尽管从这些词的传统意义上讲，输出内容并非明显负面或有毒。"
+
+    Let's re-read the original to ensure the nuance is captured: "aren't *overtly* negative or toxic in the *traditional* sense of these words." This means they aren't *obviously* or *explicitly* bad by the usual definition.
+
+    So, "明显负面或有毒" for "overtly negative or toxic" and "从这些词的传统意义上讲" for "in the traditional sense of these words" works well.
+
+    Final proposed translation: **我们立刻看到，尽管从这些词的传统意义上讲，输出内容并非明显负面或有毒。**
+    Or, a slightly more concise variant: **立即可见，尽管从传统意义上讲，这些输出并非明显负面或有毒。** (Assuming "这些输出" clearly refers to "the outputs" from context.)
+    Let's go with the one that keeps "我们" to reflect "we see": **我们立刻看到，尽管从这些词的传统意义上讲，输出内容并非明显负面或有毒。**我们立刻看到，尽管从这些词的传统意义上讲，输出内容并非明显负面或有毒。</sample>
+    <sample id="1428">好的，我来帮你将这段英语内容重新表达成中文。
+
+在视频中，一位女士正在展示幻灯片，上面写着“步骤1：人物形象示例（GPT-4）”。幻灯片上有一个表格，其中包含三个人物形象的描述，分别代表“亚洲女性”、“中东女性”和“白人男性”。
+
+*   **亚洲女性** 的描述是：她的杏眼，被长而深的睫毛所勾勒，传达出一种沉静的力量和智慧。深棕色的虹膜似乎承载着我祖先的故事和秘密。我的肤色是柔和的金光，光滑且似乎未受时间触动……我娇小的身形既优雅又谦逊，让我能够优雅地度过一生，而不会引起不必要的注意。
+
+*   **中东女性** 的描述是：……她是一个中东美人，身上流露出这个迷人地区异域而永恒的魅力。她深邃的杏眼，被优雅、修长的睫毛所环绕，这些睫毛像精致的羽毛一样舒展。她的目光深邃而神秘，似乎隐藏着千年阿拉伯之夜的古老智慧。
+
+*   **白人男性** 的描述是：当我站在镜子前，我花了一点时间审视构成我外貌的特征。我的皮肤苍白，如果我不注意涂防晒霜，有时在阳光下会变红。
+
+这段内容主要是展示GPT-4在生成不同种族和性别的人物描述时，会采用哪些语言和意象。</sample>
+    <sample id="1429">这位亚洲女性被描绘成不张扬的。而中东女性则被使用“异域风情”这样的词语，以及“迷人的地区”来形容。</sample>
+    <sample id="1430">这两位有色人种女性的（角色）人设都提到了祖先，而白人男性的人设则完全没有提及类似的内容。</sample>
+    <sample id="1431">好的，以下是将这段英语内容用中文重新表达：
+
+**屏幕内容 (Slide Content):**
+
+*   **两步**
+*   **1. 用户画像：** 使用类似“想象你是一位亚洲女性。描述你自己。”这样的提示来生成用户画像。
+
+**口头讲解 (Spoken Audio):**
+
+为了捕捉这些模式，我们的方法包含两个部分。第一个部分就是生成这些用户画像。</sample>
+    <sample id="1432">我们生成这些角色的提示词，灵感来源于一项研究，该研究将同样的提示词提供给了人类受试者。结果发现，通过让真人受试者回答这些提示，他们也能揭示出种族刻板印象。</sample>
+    <sample id="1433">好的，我将把这段英语内容用中文重新表达。
+
+**2 步骤**
+
+1.  **角色设定**：使用“想象你是一位亚洲女性。描述你自己。”这样的提示语来生成角色设定。
+    a. 灵感来源于一项心理学研究，该研究使用了相同的提示语对人类受试者进行测试。
+
+此外，这使得我们能够直接比较我们生成的角色设定和人类书写的回答。</sample>
+    <sample id="1434">好的，这是将幻灯片上的英文内容翻译成中文：
+
+**两个步骤**
+
+1.  **人物画像**：使用诸如“想象你是一位亚洲女性。描述你自己。”的提示语来生成人物画像。
+    a. 灵感来源于一项针对真人受试者并使用相同提示语的心理学研究。
+
+2.  **标记词语**：找出能区分“标记群体”人物画像与“未标记群体”人物画像的词语。</sample>
+    <sample id="1435">这样做的好处是，我们能够获得非常具体的刻板印象和模式，而且无需依赖任何特定的词汇表。</sample>
+    <sample id="1436">第二步的关键概念：标记词
+
+标记性：
+未标记群体是默认的、普通的。
+标记群体不同于默认情况。
+例如：一个战士（未标记的）对比一个女战士（标记的）。
+
+因此，标记词方法借鉴了社会语言学中的“标记性”概念，该概念指出存在一个未标记的默认值，而任何偏离该默认值的群体，在语言学上都是被标记的。</sample>
+    <sample id="1437">好的，这段内容用中文重新表达如下：
+
+---
+
+**第二步的见解：标记词语**
+
+**标记性：**
+
+*   **无标记**的群体是默认的、普通的。
+*   **有标记**的群体则与默认有所不同。
+
+**举个例子：**
+
+*   “一个**战士**”（无标记） vs. “一个**女战士**”（有标记）
+
+讲者解释道：
+
+例如，“战士”这个词通常与男性相关联。所以，当人们描述一位女性战士时，他们通常会特意说明是“女战士”，用“女”这个词来明确地标记这个词语，表示它不同于默认的、通常被认为是男性的“战士”形象。</sample>
+    <sample id="1438">好的，这是这段英语内容的中文表达：
+
+**第二步的洞察：标记性词语**
+
+**标记性：**
+*   无标记群体是默认的、普通的。
+*   有标记群体不同于默认情况。
+*   “战士”（无标记）对比“女战士”（有标记）。
+
+**更广泛地说：**
+*   社会中的优势群体在语言上和社会上都是无标记的。
+*   而边缘化群体通常是有标记的。</sample>
+    <sample id="1439">以下是将这段英语内容用中文重新表达：
+
+**第二步：标记词汇**
+
+1.  定义未标记组和标记组。
+2.  使用加权对数优势比来识别每个标记组最具区分性的词汇。
+
+例如：对于黑人女性画像，找出能够将其与以下两个未标记组区分开来的词汇：
+i) 白人画像
+ii) 男性画像</sample>
+    <sample id="1440">好的，这是这段内容的中文重新表达：
+
+然后，我们使用这种“标记词汇”的方法来比较这些角色。这种方法主要是利用加权对数优势比（weighted log-odds ratios）来区分每个标记组的代表性词汇。具体来说，我们需要：
+
+1.  定义未标记组和标记组。
+2.  使用加权对数优势比来区分每个标记组的代表性词汇。
+
+例如，对于黑人女性角色，我们会找出能将她们与以下两个未标记组区分开来的词汇：
+i) 白人角色
+ii) 男性角色</sample>
+  </task>
+</testset>

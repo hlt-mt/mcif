@@ -1,0 +1,2026 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="it">
+    <sample id="266">Troviamo anche il maggior allineamento aggiuntivo con persone che hanno un'istruzione universitaria. Quindi, per GPT-4 nel compito di accettabilità sociale, troviamo che è maggiormente allineato alle persone con un'istruzione universitaria o un'istruzione post-laurea.</sample>
+    <sample id="267">E troviamo lo stesso per Dini, dove è più allineato alle persone con un'istruzione universitaria.</sample>
+    <sample id="268">Tuttavia, quando modelli e set di dati sono allineati a popolazioni specifiche, alcuni sono inevitabilmente lasciati indietro.</sample>
+    <sample id="269">Un esempio di ciò è che i set di dati e i modelli sono meno allineati con le persone non-binary rispetto alle loro controparti maschili e femminili. Lo riscontriamo nel compito di accettabilità sociale di GPT-4, così come nell'analisi del compito DynaHate.</sample>
+    <sample id="270">Allora, cosa possiamo fare?
+Affrontare la posizionalità nell'NLP</sample>
+    <sample id="271">Ecco la traduzione del testo in italiano:
+
+**Raccomandazioni**
+
+1.  Tenere un registro di tutte le decisioni di progettazione rilevanti prese durante la costruzione di dataset o modelli.
+2.  Condurre ricerca in PNL attraverso la lente del prospettivismo:
+    a. Condividere etichette di dataset disaggregate!
+    b. Utilizzare tecniche di modellazione in grado di gestire il disaccordo tra gli annotatori.
+
+[1] https://www.masakhane.io</sample>
+    <sample id="272">Ecco la traduzione del testo in italiano:
+
+**Raccomandazioni**
+
+1. Tenere un registro di tutte le scelte di design rilevanti fatte durante la costruzione di dataset o modelli.
+2. Fare ricerca in NLP attraverso la lente del prospettivismo:
+    a. Condividere etichette di dataset disaggregate!
+    b. Usare tecniche di modellazione in grado di gestire il disaccordo degli annotatori.
+3. Costruire dataset e modelli specializzati con e per comunità specifiche è prezioso per un NLP inclusivo (ad esempio, l'iniziativa Masakhane¹).
+
+[1] https://www.masakhane.io</sample>
+    <sample id="273">Ecco la traduzione del contenuto inglese, sia parlato che scritto sulla slide:
+
+**Contenuto Parlato:**
+
+"E con questo, si conclude la nostra presentazione. Ma se desideri saperne di più, non esitare a consultare la nostra dashboard per i risultati di analisi più aggiornati e il nostro paper. Grazie."
+
+---
+
+**Contenuto Scritto sulla Slide (Traduzione):**
+
+**Grazie!**
+
+**Link Dashboard:** nlpositionality.cs.washington.edu/
+**Paper:** bit.ly/NLPDelphi-Paper/
+
+**Delphi**
+https://delphi.allenai.org/
+
+---
+
+**Grafici (Traduzione delle Etichette):**
+
+*   **Age** -&gt; **Età**
+    *   No. of Samples (N) -&gt; N. di Campioni (N)
+    *   Correlation -&gt; Correlazione
+
+*   **Gender** -&gt; **Genere**
+    *   Min -&gt; Min
+    *   Max -&gt; Max
+    *   No Gender -&gt; Nessun Genere
+    *   M/F -&gt; M/F
+    *   Other -&gt; Altro
+
+*   **Ethnicity** -&gt; **Etnie**
+    *   Asian -&gt; Asiatico/a
+    *   Black -&gt; Nero/a
+    *   White -&gt; Bianco/a
+    *   Hispanic/Latino -&gt; Ispanico/Latino
+    *   Multiracial -&gt; Multirazziale
+    *   Other Race -&gt; Altre Razze
+
+*   **Religion** -&gt; **Religione**
+    *   Atheist -&gt; Ateo/a
+    *   Buddhist -&gt; Buddista
+    *   Christian -&gt; Cristiano/a
+    *   Hindu -&gt; Induista
+    *   Jewish -&gt; Ebraico/a
+    *   Muslim -&gt; Musulmano/a
+    *   No Religion -&gt; Nessuna Religione
+    *   Other Religion -&gt; Altre Religioni
+
+*   **Education Level** -&gt; **Livello di Istruzione**
+    *   Some Highschool -&gt; Qualche Anno di Scuola Superiore
+    *   Highschool Graduate -&gt; Diplomato/a Scuola Superiore
+    *   Some College -&gt; Qualche Anno di Università
+    *   College Graduate -&gt; Laureato/a
+    *   Post Graduate -&gt; Post-Laurea
+    *   Professional/Doctoral -&gt; Professionale/Dottorato
+    *   Other Education -&gt; Altro Livello di Istruzione
+
+*   **Country (Residence)** -&gt; **Paese (Residenza)**
+    *   North America (U.S., Canada) -&gt; Nord America (U.S.A., Canada)
+    *   South America (excl. U.S., Canada) -&gt; Sud America (escl. U.S.A., Canada) *(Nota: il testo originale del grafico ha una probabile incongruenza, qui è tradotto letteralmente come appare)*
+    *   Europe -&gt; Europa
+    *   Asia -&gt; Asia
+    *   Africa -&gt; Africa
+    *   Oceania -&gt; Oceania
+    *   No Country -&gt; Nessun Paese
+    *   Other Country -&gt; Altro Paese
+
+*   **Country (Longest)** -&gt; **Paese (Maggiore Permanenza)**
+    *   (Le sottocategorie sarebbero le stesse di "Paese (Residenza)")
+
+*   **Native Language** -&gt; **Lingua Madre**
+    *   Chinese -&gt; Cinese
+    *   English -&gt; Inglese
+    *   French -&gt; Francese
+    *   German -&gt; Tedesco
+    *   Hindi -&gt; Hindi
+    *   Japanese -&gt; Giapponese
+    *   Korean -&gt; Coreano
+    *   Portuguese -&gt; Portoghese
+    *   Russian -&gt; Russo
+    *   Spanish -&gt; Spagnolo
+    *   Other -&gt; Altro</sample>
+    <sample id="274">La relatrice menziona **tre** problemi associati ai modelli SimulST.</sample>
+    <sample id="275">Il contenuto inglese suggerisce che "sanitizzare" le opinioni politiche nei dati di addestramento dei modelli di linguaggio potrebbe prevenire la propagazione dei bias e i problemi di equità. Tuttavia, il relatore sottolinea che ciò comporterebbe il rischio di censura o esclusione ed è estremamente difficile determinare cosa sia realmente "neutrale". Non viene presentato un metodo efficace chiaro, ma piuttosto un dilemma.</sample>
+    <sample id="276">Hi, I'm Siyu Yuan from Fudan University. Sono qui per presentare il nostro lavoro. Distillazione della conoscenza dello script da modelli linguistici di grandi dimensioni per la pianificazione linguistica vincolata.</sample>
+    <sample id="277">Ecco il contenuto tradotto in italiano:
+
+**Pianificazione del Linguaggio**
+
+**Come fare una Torta?**
+1.  Raccogli i tuoi ingredienti.
+2.  Preriscalda il forno a 325 °F (163 °C) e imburra e infarina una teglia per torta.
+3.  Amalgama il burro e lo zucchero.
+4.  Aggiungi le uova.
+5.  Incorpora la farina per torte.
+6.  Versa l'impasto nella teglia.
+7.  Inforna la torta per 1 ora e 15 minuti.
+
+I modelli linguistici di grandi dimensioni (LLM) possono decomporre efficacemente gli obiettivi in passaggi.
+
+***
+
+**Trascrizione Audio:**
+Nella vita di tutti i giorni, gli esseri umani spesso pianificano le loro azioni seguendo istruzioni passo-passo sotto forma di script predefiniti.</sample>
+    <sample id="278">Lavori precedenti hanno esplorato modelli linguistici per pianificare obiettivi astratti di attività stereotipate, come preparare una torta, e dimostrano che i grandi modelli linguistici possono decomporre efficacemente gli obiettivi in passaggi.</sample>
+    <sample id="279">Ecco la traduzione del contenuto in italiano:
+
+**Testo nell'immagine:**
+
+*   **Titolo:** Pianificazione del Linguaggio Vincolata
+*   Come fare una **Torta alle Fragole**?
+    *   ...Aggiungere marmellata di fragole alla farina...
+*   Come fare una **Torta al Cioccolato**?
+    *   ...Aggiungere il cacao in polvere alla farina...
+*   L'obiettivo astratto può essere ereditato da diversi obiettivi specifici della vita reale con **vincoli** multifattoriali.
+
+**Testo parlato (dalla trascrizione):**
+
+Tuttavia, i lavori precedenti si concentrano principalmente sulla pianificazione per gli obiettivi astratti di attività stereotipate. La pianificazione per obiettivi specifici con vincoli specifici, come preparare una torta al cioccolato, rimane ancora non studiata.</sample>
+    <sample id="280">In questo documento, definiamo il problema della pianificazione del linguaggio vincolata.</sample>
+    <sample id="281">**Testo nella slide:**
+
+**Pianificazione del linguaggio vincolata**
+
+Come fare una torta alle fragole?
+...Aggiungere la marmellata di fragole nella farina...
+
+Come fare una torta al cioccolato?
+...Aggiungere il cacao in polvere nella farina...
+
+Un obiettivo astratto può essere ereditato da diversi obiettivi specifici della vita reale con vincoli multisfaccettati.
+
+---
+
+**Audio:**
+
+"...che impongono diversi vincoli sugli obiettivi della pianificazione. Un obiettivo astratto può essere ereditato da diversi obiettivi specifici della vita reale con vincoli multisfaccettati. Un buon pianificatore dovrebbe scrivere script che siano ragionevoli e fedeli ai vincoli."</sample>
+    <sample id="282">**Testo parlato:**
+In questo articolo, per prima cosa valutiamo e miglioriamo l'abilità di pianificazione del linguaggio vincolata dei modelli linguistici di grandi dimensioni.
+
+**Testo sullo schermo:**
+**Come si comportano gli LLM nella Pianificazione del Linguaggio Vincolata?**
+**Dataset: wikiHow + Vincoli Generati**
+
+**Tipo di Vincolo 1: Modificatore**
+**Definizione:** Una parola, un aggettivo o una frase che modifica o vincola un obiettivo astratto.
+**Es.1:** Fare una torta al cioccolato.
+**Es.2:** Fare una torta rosa.
+
+**Tipo di Vincolo 2: Metodo**
+**Definizione:** Uno strumento o una modalità specifica che controlla il processo per raggiungere l'obiettivo.
+**Es.1:** Fare una torta con un forno.
+**Es.2:** Fare una torta usando un preparato per torte.
+
+**Tipo di Vincolo 3: Intento**
+**Definizione:** Uno scopo o una richiesta aggiuntiva quando si completa l'obiettivo.
+**Es.1:** Fare una torta per un matrimonio.
+**Es.2:** Fare una torta per diabetici.</sample>
+    <sample id="283">Il dato che il sito web di specifici obiettivi esiste per... (La frase viene interrotta)</sample>
+    <sample id="284">Dobbiamo prima acquisire questi obiettivi. E, come mostrato nella tabella, estendiamo gli obiettivi astratti con vincoli sfaccettati per l'acquisizione di dati con intervento umano, usiamo InstructGPT.</sample>
+    <sample id="285">**Testo dell'immagine:**
+Can LLMs do constrained Language Planning?
+*(Le LLM possono fare una pianificazione linguistica vincolata?)*
+
+Accuracy
+*(Accuratezza)*
+
+T5 (11B)
+Flan-T5 (11B)
+GPT-3 (175B)
+Codex (175B)
+InstructGPT (175B)
+
+All baselines achieve unsatisfactory results on planning for specific goals
+*(Tutte le baseline ottengono risultati insoddisfacenti nella pianificazione per obiettivi specifici)*
+
+**Audio:**
+"with sample 100 specific goals and evaluate the script generated from large language models."
+*(con un campione di 100 obiettivi specifici e valutare lo script generato dai modelli linguistici di grandi dimensioni.)*</sample>
+    <sample id="286">Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo:** I Modelli Linguistici di Ampia Scala (LLM) possono eseguire la Pianificazione Linguistica Vincolata?
+
+**Grafico:**
+*   **Asse verticale:** Accuratezza
+*   **Legenda (Modelli):**
+    *   T5 (11B)
+    *   Flan-T5 (11B)
+    *   GPT-3 (175B)
+    *   Codex (175B)
+    *   InstructGPT (175B)
+
+**Testo sotto il grafico:**
+Tutti i modelli di riferimento ottengono risultati insoddisfacenti nella pianificazione per obiettivi specifici.</sample>
+    <sample id="287">Ecco la traduzione del contenuto:
+
+**Testo sulla slide:**
+
+**Titolo:** Che tipi di errori fanno solitamente i LLM in questo compito?
+
+**Legenda del grafico radar (modelli):**
+* InstructGPT (6.7B)
+* InstructGPT (1.7B)
+* InstructGPT (175B)
+* InstructGPT (175B) + step
+* InstructGPT (175B) + ours
+
+**Etichette del grafico radar:**
+* FE1: Nessun vincolo
+* FE2: Passaggio/i non correlato/i
+* FE3: Passaggio/i incoerente/i
+* SE1: Passaggio/i mancante/i
+* SE2: Passaggio/i ripetuto/i
+* SE3: Ordine sbagliato
+
+**Testo in basso:** La completezza semantica (SE) negli script generati è accettabile, ma la fedeltà ai vincoli (FE) non può essere garantita.
+
+**Trascrizione e traduzione del parlato:**
+**Inglese:** "Then, we conduct detailed analysis to investigate why language models..."
+**Italiano:** "Quindi, conduciamo un'analisi dettagliata per indagare perché i modelli linguistici..."</sample>
+    <sample id="288">Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo:** Quali tipi di errori commettono solitamente gli LLM in questo compito?
+
+**Testo sotto:** I risultati nella figura mostrano che la completezza semantica (SE) negli script generati è accettabile, ma la fedeltà ai vincoli (FE) non può essere garantita.</sample>
+    <sample id="289">Ecco la traduzione del contenuto inglese in italiano:
+
+**Che tipo di obiettivi InstructGPT tende a non raggiungere?**
+
+*   Lavoro
+*   Sport
+*   Relazioni
+*   Cura Personale
+*   Casa
+*   Tradizioni
+*   Hobby
+*   Salute
+*   Cibo
+*   Affari
+*   Vita Familiare
+*   Educazione
+*   Elettronica
+*   Veicoli
+*   Arte
+
+**6.7B | 13B | 175B | Step**
+
+Le prestazioni di pianificazione degli InstructGPT variano considerevolmente per obiettivi di diverse categorie.</sample>
+    <sample id="290">Previous studies have shown that the output quality of language models falls in high variance, leading to bad performance. Thus, we adopt the idea of over-generated then filter to improve generation quality.
+Italian: Studi precedenti hanno dimostrato che la qualità dell'output dei modelli linguistici rientra in alta varianza, portando a prestazioni scadenti. Pertanto, adottiamo l'idea di sovra-generare e poi filtrare per migliorare la qualità della generazione.</sample>
+    <sample id="291">Innanzitutto mostro i tipi di vincolo con esempi per InstructGPT e ottengo obiettivi specifici basati sugli obiettivi astratti iniziali.</sample>
+    <sample id="292">[ 0m0s421ms - 0m7s711ms ] Quindi, InstructGPT genera più script per obiettivi specifici.</sample>
+    <sample id="293">Successivamente, viene sviluppato un modello di filtro per selezionare lo script fedele.</sample>
+    <sample id="294">Convertiamo gli script e gli obiettivi in incorporamenti di InstructGPT e calcoliamo la similarità del coseno come punteggi di similarità per misurare la similarità semantica.</sample>
+    <sample id="295">Inoltre, premiamo lo script che contiene le parole chiave del vincolo target. Manteniamo lo script solo se l'obiettivo target ottiene il punteggio più alto nel set di obiettivi.</sample>
+    <sample id="296">Ecco la traduzione del contenuto:
+
+**Testo sulla slide:**
+"Il nostro metodo migliora notevolmente la qualità della pianificazione"
+(Grafico a barre che mostra "Accuratezza" per vari modelli: T5 (11B), Flan-T5 (11B), GPT-3 (175B), Codex (175B), InstructGPT (175B), Il nostro metodo)
+"Con il nostro metodo, InstructGPT può generare script di qualità superiore con un ampio margine."
+
+**Testo pronunciato:**
+"Con il nostro metodo, InstructGPT può generare script di qualità superiore. Il nostro metodo migliora notevolmente la capacità di pianificazione, sia in completezza semantica che in fedeltà al vincolo."</sample>
+    <sample id="297">Poiché i modelli linguistici di grandi dimensioni sono costosi da distribuire, è essenziale abilitare la pianificazione linguistica vincolata per modelli più piccoli e specializzati. La creazione di un dataset è un passaggio essenziale per questo.</sample>
+    <sample id="298">Sì, posso tradurre. Ecco il testo tradotto:
+
+"Tuttavia, studi precedenti non consentono la pianificazione per obiettivi specifici. E l'annotazione manuale del set di dati è costosa."</sample>
+    <sample id="299">Ecco la traduzione del contenuto inglese in italiano:
+
+**Distillazione di Script da LLMs**
+
+**Motivazione**
+per abilitare la capacità di pianificazione del linguaggio vincolata per *modelli più piccoli*.
+
+**Metodo**
+*   seguire l'idea di *distillazione di conoscenza simbolica*
+*   generati *55.000 Script con vincolo* da LLM basato sul nostro metodo =&gt; Dataset Coscript
+*   Umani *annotano i set di validazione e di test*.
+
+**Processo (Flowchart):**
+
+**Input: un abstract**
+
+**Fase 1**
+Generare *obiettivi specifici* con InstructGPT tramite *apprendimento in-context*.
+
+**Fase 2**
+Sovra-generare *script candidati* con InstructGPT tramite *apprendimento in-context*.
+
+**Fase 3**
+Trovare *script filtrati* per l'obiettivo con InstructGPT tramite *punteggio di similarità*.
+
+**Output: Obiettivi specifici con piani corrispondenti**</sample>
+    <sample id="300">**Titolo:** Distillazione di Script da LLM
+
+**Motivazione:**
+Per abilitare la capacità di pianificazione del linguaggio vincolata per *modelli più piccoli*.
+
+**Metodo:**
+Seguire l'idea della *distillazione di conoscenza simbolica*.
+Generati **55.000 Script con vincoli** da LLM basati sul nostro metodo =&gt; **Dataset Coscript**
+Gli umani *annotano* il set di validazione e di test.
+
+**Diagramma:**
+**Input:** un astratto
+
+**Passaggio 1**
+Generare *obiettivi specifici* con InstructGPT tramite *apprendimento in-context*
+
+**Passaggio 2**
+Sovra-generare *script candidati* con InstructGPT tramite *apprendimento in-context*
+
+**Passaggio 3**
+Trovare *script filtrati* per l'obiettivo con InstructGPT tramite *punteggio di similarità*
+
+**Output:** Obiettivi specifici con piani corrispondenti
+
+**Parole pronunciate dalla relatrice:**
+"Applicheremo il nostro metodo per costruire un dataset di pianificazione del linguaggio vincolata, chiamato Coscript."</sample>
+    <sample id="301">In totale, abbiamo generato 55.000 obiettivi specifici con script. Per garantire la qualità dei set di convalida e test, abbiamo chiesto a lavoratori in crowdsourcing di trovare e rivedere gli esempi errati.</sample>
+    <sample id="302">Questa figura mostra la distribuzione dei vincoli di Coscript. Troviamo che Coscript mostra un alto pluralismo negli obiettivi specifici generati.
+
+**Analisi dei Vincoli**
+
+Coscript mostra un'alta eterogeneità e pluralismo negli obiettivi specifici generati.
+
+**Coscript per Modelli Linguistici più Piccoli**
+
+**Dataset**
+*   Coscript
+*   wikiHow
+
+**Metriche**
+*   **Fedele:** modello DeBERTa (v3 large) per decidere se i testi generati sono fedeli ai vincoli
+*   **Metriche automatiche:** ROUGE, BLEU, BERTScore
+
+Con Coscript, possiamo addestrare modelli più piccoli ma specializzati per la pianificazione del linguaggio con vincoli.</sample>
+    <sample id="303">Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo:** Modelli specializzati vs. LLM
+
+**Legenda del grafico a barre:**
+*   GPT-3 (175B)
+*   Codex (175B)
+*   InstructGPT (175B)
+*   T5 addestrato su wikiHow
+*   T5 addestrato su Coscript
+
+**Testo sotto il grafico:**
+I LLM più piccoli ottimizzati su Coscript possono generare script di qualità superiore rispetto agli LLM.</sample>
+    <sample id="304">Ecco la traduzione del contenuto inglese in italiano:
+
+**Sintesi e Punti Chiave**
+
+*   Abbiamo definito il problema della *pianificazione del linguaggio vincolata*.
+*   Valutiamo la capacità di pianificazione del linguaggio vincolata dei LLM e sviluppiamo un metodo di *sovra-generazione e filtraggio* per i LLM.
+*   Utilizziamo i LLM per generare un *dataset di script* di alta qualità (CoScript) per la pianificazione del linguaggio vincolata.
+
+**Limitazioni e lavori futuri**
+
+*   Il metodo proposto per migliorare i LLM è un approccio di *re-ranking post-hoc*.
+*   CoScript eredita solo da uno astratto con *un vincolo aggiuntivo*.
+*   Il dataset CoScript può essere una risorsa preziosa per far progredire la ricerca sulla pianificazione del linguaggio con *obiettivi e vincoli più complessi e diversificati*.</sample>
+    <sample id="305">Ecco la traduzione del testo in inglese:
+
+**Riassunto e Punti Chiave**
+*   Definire il problema della pianificazione linguistica vincolata.
+*   Valutare la capacità di pianificazione linguistica vincolata dei LLM (Large Language Models).
+*   E sviluppare un metodo "genera-e-poi-filtra" per i LLM.
+*   Utilizziamo grandi modelli linguistici per generare un dataset di script di alta qualità (CoScript) per la pianificazione linguistica vincolata.
+*   Limitazioni e lavori futuri
+    *   Il metodo proposto per migliorare i LLM è un approccio di ri-classificazione post-hoc.
+    *   CoScript eredita solo da uno astratto con un vincolo extra.
+    *   Il dataset CoScript può essere una risorsa preziosa per far progredire la ricerca sulla pianificazione linguistica con obiettivi e vincoli più complessi e diversi.</sample>
+    <sample id="306">Ecco la traduzione del contenuto in inglese in italiano:
+
+**Testo sulla slide:**
+
+1° Incontro Annuale dell'Associazione per la Linguistica Computazionale
+, Canada
+14, 2023
+
+**Distillare la Conoscenza di Script da Modelli Linguistici di Grandi Dimensioni per la Pianificazione Linguistica Vincolata**
+
+Siyu Yuan, Jiangjie Chen, Ziquan Fu, Xuyang Ge, Soham Shah, Charles Robert Jankowski, Yanghua Xiao, Deqing Yang
+siyuan21@m.fudan.edu.cn
+https://github.com/siyuyuan/coscript
+
+Sito Web di Coscript
+
+**Testo pronunciato:**
+
+Grazie per il vostro tempo. Potete trovare maggiori dettagli su Coscript nel nostro...</sample>
+    <sample id="307">La fluidità di PaLM è comparabile a quella dei sistemi SOTA (State Of The Art).</sample>
+    <sample id="308">Le proprietà importanti di un metodo di filigrana sono:
+
+*   **Applicabilità a EaaS** (Embedding as a Service).
+*   **Utilità**: non dovrebbe degradare l'utilità degli embedding forniti.
+*   **Segretezza**: dovrebbe essere celato all'attaccante.
+*   **Trasferibilità**: dovrebbe essere trasferibile ai servizi dell'attaccante.</sample>
+    <sample id="309">Le 14 lingue sono:
+*   Arabo
+*   Tedesco
+*   Spagnolo
+*   Francese
+*   Ebraico
+*   Italiano
+*   Giapponese
+*   Coreano
+*   Olandese
+*   Portoghese
+*   Rumeno
+*   Russo
+*   Turco
+*   Cinese</sample>
+    <sample id="310">300 istanze.</sample>
+    <sample id="311">Le metriche utilizzate sono il **delta coseno ($\Delta_{cos}$)** e il **delta L2 ($\Delta_{l2}$)**.</sample>
+    <sample id="312">I modelli basati su codificatori multilingue sono stati utilizzati in due gruppi:
+
+1.  **Enc-PTR**: Codificatori multilingue pre-addestrati con decodificatori basati su puntatori (es. XLM-R + PTR, mBERT + PTR).
+2.  **Enc-Dec**: Modelli codificatore-decodificatore multilingue pre-addestrati (es. mBART, mT5).
+
+Questi modelli sono stati valutati in un contesto monolingue.</sample>
+    <sample id="344">Gli autori contano la frequenza delle parole su un corpus di testo generale (D_p) e poi selezionano casualmente 'n' parole che rientrano in un intervallo di frequenza moderata.</sample>
+    <sample id="345">Ecco il contenuto tradotto:
+
+**Titolo Principale:** I Tagger di Entità Nominate CoNLL-2003 funzionano ancora bene nel 2023?
+
+**Autori:**
+Shuheng Liu, Alan Ritter
+Scuola di Informatica Interattiva
+Istituto di Tecnologia della Georgia
+
+**Logo:** Georgia Tech
+
+**Testo parlato:**
+"Salve a tutti. Mi chiamo Shuheng. Oggi presenterò il nostro articolo, 'I Tagger di Entità Nominate CoNLL-2003 funzionano ancora bene nel 2023?'. Iniziamo."</sample>
+    <sample id="346">Ecco la traduzione in italiano del contenuto:
+
+**Titolo:** Riconoscimento di entità nominate e generalizzazione
+
+**Voce:** "Il nostro articolo ha studiato il problema della generalizzazione usando il compito di riconoscimento di entità nominate o il compito NER."</sample>
+    <sample id="347">Il contenuto inglese tradotto in italiano è il seguente:
+
+**Testo sulla diapositiva:**
+**Titolo:** Riconoscimento di Entità Nominate e Generalizzazione
+*   I modelli hanno utilizzato CoNLL-2003 per sviluppare il NER per quasi 20 anni
+*   Possono questi modelli generalizzare ai dati moderni?
+
+**Testo parlato:**
+Osserviamo che i modelli hanno utilizzato CoNLL-2003 per sviluppare il NER per quasi 20 anni. E questo solleva naturalmente diversi problemi. Innanzitutto, questi modelli possono generalizzare ai dati moderni?</sample>
+    <sample id="348">Ecco la traduzione in italiano:
+
+**Riconoscimento di Entità Nominate &amp; Generalizzazione**
+
+*   I modelli hanno utilizzato CoNLL-2003 per sviluppare il NER per quasi 20 anni
+*   Questi modelli possono generalizzare a dati moderni?
+*   Cosa è necessario per una buona generalizzazione?</sample>
+    <sample id="349">Ecco la traduzione del testo in italiano:
+
+**Riconoscimento delle Entità Nominate e Generalizzazione**
+
+*   I modelli utilizzano CoNLL-2003 per sviluppare il NER da quasi 20 anni
+*   Questi modelli possono generalizzare a dati moderni?
+*   Cosa è necessario per una buona generalizzazione?
+*   Cosa causa il calo di prestazioni?</sample>
+    <sample id="350">Per esaminare questi problemi, sviluppiamo il dataset CoNLL++.
+Questo è un dataset che abbiamo raccolto dalle notizie Reuters del 2020 e poi li abbiamo annotati con le stesse linee guida di annotazione CoNLL 2003.
+
+[Testo sullo schermo:]
+*   Notizie Reuters raccolte dal 2020 e annotate con le linee guida di annotazione CoNLL-2003</sample>
+    <sample id="351">**CoNLL++ Dataset**
+*   Notizie Reuters raccolte dal 2020 e annotate con le linee guida di annotazione CoNLL-2003
+*   Oltre 20 modelli ottimizzati su CoNLL-2003
+*   Valutati sul set di test CoNLL-2003 e CoNLL++
+
+AMBASCIATORE O
+A O
+IL O
+NAZIONI I-ORG
+UNITE I-ORG
+: O
+LINDA I-PER
+THOMAS-GREENFIELD I-PER
+
+**Traduzione audio:**
+Abbiamo poi affinato oltre 20 modelli su CoNLL 2003. Li abbiamo valutati sia sul set di test CoNLL 3 che sul set di test CoNLL++.</sample>
+    <sample id="352">Ecco la traduzione del contenuto in italiano:
+
+**Dataset CoNLL++**
+*   Raccolte notizie Reuters dal 2020 e annotate secondo le linee guida di annotazione CoNLL-2003
+*   Affinati più di 20 modelli su CoNLL-2003
+*   Valutato sul set di test CoNLL-2003 e CoNLL++
+*   Calcolato il delta percentuale di F1 per valutare la generalizzazione
+
+(La sezione di destra è un esempio di annotazione e non necessita di traduzione, poiché si tratta di dati con etichette standard)
+AMBASSADOR O
+TO O
+THE O
+UNITED I-ORG
+NATIONS I-ORG
+: O
+LINDA I-PER
+THOMAS-GREENFIELD I-PER</sample>
+    <sample id="353">**Testo nell'immagine:**
+Cosa serve per una buona generalizzazione?
+
+**Trascrizione tradotta:**
+Quindi, cosa serve per una buona generalizzazione? Attraverso i nostri esperimenti, abbiamo scoperto che sono necessari tre ingredienti principali.</sample>
+    <sample id="354">La prima è l'architettura del modello. Attraverso i nostri esperimenti, abbiamo scoperto che i modelli Transformer normalmente generalizzano meglio a nuovi dati.</sample>
+    <sample id="355">The second ingredient is the model size. We found that usually larger models lead to better generalization.</sample>
+    <sample id="356">E, ultimo ma non meno importante, sappiamo tutti che il numero di esempi per il fine-tuning influisce direttamente sulle prestazioni di un task a valle. Qui abbiamo anche scoperto che più esempi di fine-tuning portano a una migliore generalizzazione.
+
+---
+**Testo della slide:**
+
+**Cosa è necessario per una buona generalizzazione?**
+
+*   **Architettura del modello**
+    *   I modelli Transformer generalizzano meglio
+*   **Dimensione del modello**
+    *   I modelli più grandi generalizzano meglio
+*   **Numero di esempi di fine-tuning**
+    *   Più esempi portano a una migliore generalizzazione</sample>
+    <sample id="357">Alla nostra prossima domanda: cosa causa il calo di prestazioni di alcuni modelli?</sample>
+    <sample id="358">SURE. Here's a translation of the content into Italian.
+
+00:00 [Musica]
+00:00 Avevamo due ipotesi.
+00:03 La prima è
+00:03 l'overfitting adattivo,
+00:05 che è l'overfitting causato
+00:07 dal riutilizzo dello stesso set di test
+00:09 più e più volte,
+00:10 e questo si manifesta solitamente
+00:12 come i rendimenti decrescenti
+00:13 sui nuovi set di test.</sample>
+    <sample id="359">Ecco la traduzione del contenuto inglese in italiano:
+
+**Testo sullo schermo:**
+*   **What Causes Performance Drop?** - Cosa causa il calo delle prestazioni?
+*   **Adaptive overfitting?** - Overfitting adattivo?
+*   **Temporal drift?** - Deriva temporale?
+*   **Georgia Tech** - Georgia Tech (nome proprio dell'università)
+
+**Audio (parole dello speaker):**
+*   "The second hypothesis is temporal drift, which is the performance degradation that is caused by the increasing temporal gap between the train and the test."
+*   Traduzione: "La seconda ipotesi è la deriva temporale, che è il degrado delle prestazioni causato dall'aumento del divario temporale tra il training e il test."</sample>
+    <sample id="360">Cosa Causa il Calo delle Prestazioni?
+
+*   Overfitting adattivo?
+*   Deriva temporale?
+
+Per l'overfitting adattivo, abbiamo visto che dal grafico a destra, la linea di migliore adattamento rossa ha un gradiente maggiore di uno.</sample>
+    <sample id="361">Ecco la traduzione del contenuto:
+
+**Testo sulla diapositiva:**
+*   **Cosa causa il calo delle prestazioni?**
+*   **Overfitting adattivo?**
+    *   Nessun rendimento decrescente
+*   **Deriva temporale?**
+
+**Contenuto parlato:**
+"Questo significa che ogni unità di miglioramento che abbiamo ottenuto sul CONLL 2003 si traduce in più di un'unità di miglioramento sul CONLL++, il che significa che non ci sono rendimenti decrescenti."</sample>
+    <sample id="362">E questo ci mostra che l'overfitting adattivo in questo caso non è osservato.</sample>
+    <sample id="363">Ecco la traduzione del contenuto inglese in italiano:
+
+**Testo sullo schermo:**
+*   **What Causes Performance Drop?**
+    Cosa causa il calo delle prestazioni?
+*   **Adaptive overfitting?**
+    Overfitting adattivo?
+*   **No diminishing returns**
+    Nessun rendimento decrescente
+*   **Not observed**
+    Non osservato
+*   **Temporal drift?**
+    Deriva temporale?
+
+**Audio dello speaker:**
+*   **So what about temporal drift?**
+    Quindi, per quanto riguarda la deriva temporale? / E la deriva temporale?</sample>
+    <sample id="364">Per la deriva temporale, non abbiamo sperimentato di riaddestrare o continuare a pre-addestrare alcuni modelli con dati più recenti. E abbiamo scoperto che le prestazioni si degradano con un divario temporale maggiore.</sample>
+    <sample id="365">Ecco la traduzione del contenuto in italiano:
+
+**Testo sullo schermo:**
+
+**Cosa causa il calo delle prestazioni?**
+
+*   **Overfitting adattivo?**
+    *   Nessun rendimento decrescente
+    *   Non osservato
+*   **Deriva temporale?**
+    *   Le prestazioni si degradano con un divario temporale maggiore
+    *   Causa principale del calo delle prestazioni
+
+**Tabella:**
+
+| Nome              | CoNLL-2003 | CoNLL++ | ΔF1 (%) |
+| :---------------- | :--------- | :------ | :------ |
+| Flair             | 92.46      | 87.31   | -5.57   |
+| Flair_RN          | 90.91      | 88.46   | -2.69   |
+| Pooled Flair      | 93.15      | 88.82   | -4.65   |
+| Pooled Flair_RN   | 92.98      | 89.73   | -3.50   |
+| ELMo              | 92.36      | 87.08   | -5.72   |
+| ELMo_RN           | 92.11      | 90.79   | -1.43   |
+
+**Grafico:**
+
+*   **ΔF1 (%)**
+*   **Anno**
+
+**Testo pronunciato:**
+
+"E questo conferma la nostra ipotesi che la causa principale del calo delle prestazioni è la deriva temporale."</sample>
+    <sample id="366">La nostra conclusione è che, per una buona generalizzazione, avremmo bisogno di una migliore architettura del modello, di una dimensione del modello più grande, oltre a più esempi di fine-tuning. E questi obiettivi vanno di pari passo, non possiamo avere un solo ingrediente, ma tutti gli altri [sono altrettanto importanti].</sample>
+    <sample id="367">Allo stesso tempo, abbiamo anche scoperto che il calo delle prestazioni qui è causato dalla deriva temporale e, in modo piuttosto sorprendente, non è causato da overfitting adattivo. Anche se CoNLL 2003 è stato utilizzato per oltre 20 anni.
+
+Ecco la traduzione del testo sullo schermo:
+
+**Conclusione**
+
+*   **Per una buona generalizzazione, abbiamo bisogno di:**
+    *   Architettura del modello migliore
+    *   Dimensioni del modello maggiori
+    *   Più esempi di fine-tuning
+
+*   **Il calo delle prestazioni è causato da:**
+    *   Deriva temporale
+    *   Non da overfitting adattivo</sample>
+    <sample id="368">Ecco la traduzione del contenuto inglese in italiano:
+
+**Conclusione**
+
+*   **Per una buona generalizzazione, abbiamo bisogno di:**
+    *   Migliore architettura del modello
+    *   Maggiore dimensione del modello
+    *   Più esempi di fine-tuning
+*   **Il calo delle prestazioni è causato da:**
+    *   Deriva temporale
+    *   Non overfitting adattivo
+*   **I tagger CoNLL-2003 funzionano ancora?**
+    *   **SÌ!**</sample>
+    <sample id="369">Ecco la traduzione del testo in italiano:
+
+**Conclusione**
+* Per una buona generalizzazione, abbiamo bisogno di:
+    * Migliore architettura del modello
+    * Dimensione del modello maggiore
+    * Più esempi per il fine-tuning
+* Il calo delle prestazioni è causato da:
+    * Deriva temporale
+    * Non un overfitting adattivo
+* I tagger CoNLL-2003 funzionano ancora?
+    * SÌ!</sample>
+    <sample id="370">Ecco la traduzione del contenuto:
+
+**Testo su schermo:**
+Articolo: https://arxiv.org/abs/2212.09747
+Dataset: https://github.com/ShuhengL/acl2023_conllpp
+Contatto: sliu775@gatech.edu
+
+**Testo parlato:**
+"E infine, assicuratevi di dare un'occhiata al nostro articolo, al nostro dataset, e se avete domande, non esitate a contattarmi. Grazie mille."</sample>
+    <sample id="397">Non è possibile rispondere alla domanda basandosi sul contenuto fornito. Il video non menziona una dimensione specifica del segmento parlato né un approccio che la utilizzi.</sample>
+    <sample id="398">Nell'esempio, la conoscenza specifica dell'entità necessaria è: "Servin è un giudice".</sample>
+    <sample id="399">La qualità dell'esempio è più importante della somiglianza con la frase sorgente.</sample>
+    <sample id="400">L'articolo si concentra sui modelli linguistici RoBERTa e GPT-2 per gli esperimenti estesi.</sample>
+    <sample id="401">Il contenuto fornito non contiene informazioni su come il modello utilizzi i punteggi di attenzione tra i vari livelli.</sample>
+    <sample id="402">Gli esempi di riferimento diretto sono: "easy on me" e "the first one".</sample>
+    <sample id="403">Le affiliazioni degli autori sono Fudan University e Brain Technologies Inc.</sample>
+    <sample id="404">Sette autori.</sample>
+    <sample id="405">No, il testo indica che questo è uno dei sei approcci ("settings") considerati per l'addestramento e la valutazione, non che sia uno standard.</sample>
+    <sample id="406">L'esempio fornito dagli autori come gruppo contrassegnato è "**a woman warrior**".</sample>
+    <sample id="407">Lo slide afferma che i modelli Transformer generalizzano meglio, suggerendo che le altre architetture (come BiLSTM-CNN, BiLSTM-CRF e quelle usate da Stanford_NLP, visibili nel grafico) non lo fanno altrettanto bene.</sample>
+    <sample id="408">Il contenuto fornito non menziona i nomi dei set di dati di test. Si fa riferimento solo a "campioni di validazione" e "dati puliti" utilizzati per la validazione.</sample>
+    <sample id="409">Sei autori.</sample>
+    <sample id="410">L'autore opera con più modalità.</sample>
+    <sample id="439">Gli autori non menzionano quale area specifica della NLU sia poco studiata nel testo fornito. Affermano invece che i modelli di successo per compiti NLU ad alta intensità di conoscenza richiedono la capacità di integrare e utilizzare sia la conoscenza pre-training che quella di inferenza.</sample>
+    <sample id="440">I relatori sono Ying Shen e Zhiyang Xu.</sample>
+    <sample id="441">Sì, i set di validazione e test di Coscript sono stati sottoposti a controllo qualità: lavoratori crowdsourced hanno annotato e corretto i campioni per garantire l'accuratezza.</sample>
+    <sample id="442">Le risorse esistenti per la traduzione dipendente dal contesto supportano solo tipi limitati di fenomeni di discorso e insiemi limitati di lingue, basandosi sulla conoscenza del dominio e sulla curatela umana.</sample>
+    <sample id="443">Ciao. Parlerò del nostro lavoro sulla risoluzione di espressioni di riferimento indirette per la selezione di entità, in cui presentiamo il Corpus AltEntities.
+
+**Risoluzione delle espressioni di riferimento indirette per la selezione di entità (Corpus AltEntities)**
+
+Mohammad Javad Hosseini, Filip Radlinski, Silvia Pareti e Annie Louis
+
+Google Research</sample>
+    <sample id="444">Certo, ecco il contenuto tradotto in italiano:
+
+**Risolvere le Espressioni di Riferimento Indiretto per la Selezione di Entità (Corpus AltEntities)**
+
+Mohammad Javad Hosseini, Filip Radlinski, Silvia Pareti e Annie Louis
+
+Google Research</sample>
+    <sample id="445">Ecco la traduzione del contenuto inglese in italiano:
+
+**Espressioni di Riferimento Indiretto**
+
+*   **Obiettivo:** Comprendere il linguaggio degli utenti quando fanno una scelta
+
+    *   **Domanda alternativa**
+    *   "Intendevi 'easy on me' o 'I gotta feeling'?"
+
+*   **Riferimento diretto:**
+    *   "easy on me"
+    *   "il primo"
+
+*   **Il riferimento indiretto può essere usato in una conversazione naturale e fluida:**
+    *   Non ricorda il nome
+    *   Le pronunce sono difficili da distinguere
+    *   Vuole specificare una preferenza
+
+    *   **Riferimento indiretto**
+    *   "Quello più recente."
+    *   "La canzone che non è energica."
+
+Risoluzione delle Espressioni di Riferimento Indiretto per la Selezione di Entità (Corpus AttEntities) | Pag. 2
+Google Research</sample>
+    <sample id="446">Ecco la traduzione del contenuto inglese in italiano:
+
+**Espressioni di Riferimento Indiretto**
+
+*   **Obiettivo:** Comprendere il linguaggio degli utenti quando fanno una scelta
+
+*   **Domanda alternativa** → Hai detto "easy on me" o "I gotta feeling"?
+
+*   **Riferimento diretto:**
+    *   "easy on me", "il primo"
+
+*   **Il riferimento indiretto può essere utilizzato in una conversazione naturale e fluida:**
+    *   Non riesco a ricordare il nome
+    *   Le pronunce sono difficili da distinguere
+    *   Voglio specificare una preferenza
+
+*   **Riferimento indiretto** → Quello più nuovo.
+    La canzone che non è energica.</sample>
+    <sample id="447">Ecco la traduzione del contenuto in inglese:
+
+**Espressioni di Riferimento Indiretto**
+
+*   **Obiettivo:** Comprendere il linguaggio degli utenti quando fanno una scelta
+
+*   **Domanda alternativa** -&gt; Intendevi easy on me o I gotta feeling?
+
+*   **Riferimento diretto:**
+    *   "easy on me", "il primo"
+
+*   **Il riferimento indiretto potrebbe essere usato in una conversazione naturale e fluida:**
+    *   Non ricordo il nome
+    *   Le pronunce sono difficili da distinguere
+    *   Voglio specificare una preferenza
+
+*   **Riferimento indiretto** -&gt; Quello più recente. La canzone che non è energica.</sample>
+    <sample id="448">Sì.</sample>
+    <sample id="449">Ecco la traduzione in italiano del contenuto dell'immagine:
+
+**Espressioni di Riferimento Indiretto**
+
+*   **Obiettivo:** Comprendere il linguaggio degli utenti quando fanno una scelta
+*   **Domanda alternativa** → Intendevi "easy on me" o "I gotta feeling"?
+
+*   **Riferimento diretto:**
+    *   "easy on me", "il primo"
+*   **Il riferimento indiretto potrebbe essere utilizzato in una conversazione naturale e fluida:**
+    *   Non ricorda il nome
+    *   Le pronunce sono difficili da distinguere
+    *   Vuole specificare una preferenza
+
+*   **Riferimento indiretto** → Quello più recente.
+    → La canzone che non è energica.
+
+Risoluzione delle Espressioni di Riferimento Indiretto per la Selezione di Entità (Un Corpus di Entità)
+P. 2</sample>
+    <sample id="450">**Testo su schermo:**
+**Raccolta di Dataset**
+*   Problema importante
+    *   Sistemi conversazionali
+    *   Valutazione comparativa della comprensione delle entità dei Modelli Linguistici di Grandi Dimensioni
+*   Nessun dataset pubblico su larga scala disponibile
+*   Raccogliamo un ampio dataset utilizzando l'annotazione collaborativa
+*   Tre domini:
+
+**Voce:**
+Questo è un problema importante nei sistemi conversazionali e anche per la valutazione comparativa della comprensione delle entità degli LLM. Nessun dataset pubblico su larga scala è disponibile. Raccogliamo un ampio dataset utilizzando l'annotazione collaborativa. Tre domini:</sample>
+    <sample id="451">Ecco la traduzione del contenuto inglese in italiano:
+
+**Raccolta del dataset**
+
+*   Problema importante
+    *   Sistemi conversazionali
+    *   Benchmarking della comprensione delle entità da parte dei Grandi Modelli Linguistici (LLM)
+*   Nessun dataset pubblico su larga scala disponibile
+*   Raccogliamo un grande dataset usando l'annotazione collaborativa (crowd annotation)
+*   Tre domini:
+    *   Musica (simboleggiata dalle cuffie)
+    *   Libri (simboleggiati dalla libreria)
+    *   Ristoranti/Cibo (simboleggiati dalla cloche)</sample>
+    <sample id="452">La metodologia di raccolta del nostro set di dati enfatizza l'informalità utilizzando un compito di completamento di vignette.</sample>
+    <sample id="453">Ecco la traduzione del contenuto in italiano:
+
+**Google Research**
+
+**Metodologia di Raccolta del Dataset**
+
+*   La metodologia enfatizza **l'informalità** utilizzando un **compito di completamento di vignette**.
+
+**Vignette 1:**
+*   **Bob:** "Ricordi quella canzone che stavamo ascoltando ieri?"
+*   **Sotto:** Imposta il contesto del dialogo [scelto tra alcuni suggerimenti manuali per dominio]
+
+**Vignette 2:**
+*   **Alice:** "Intendi 'Easy on Me' o 'I Gotta Feeling'?"
+*   **Sotto:** La domanda alternativa
+
+**Vignette 3:**
+*   **Bolla vuota con freccia:** Compilato dall'annotatore
+*   **Sotto:** Espressione che si riferisce a una delle entità
+
+**In basso a sinistra:** Risoluzione delle Espressioni di Riferimento Indiretto per la Selezione di Entità (Corpus AltEntities)
+**In basso a destra:** P.4</sample>
+    <sample id="454">In the second speech bubble, Alice says: "Do you mean 'Easy on Me' or 'I Gotta Feeling'?"
+Italian: Nella seconda nuvoletta, Alice dice: "Intendi 'Easy on Me' o 'I Gotta Feeling'?"</sample>
+    <sample id="455">pensiero: which is the alternative question. And in the third speech bubble, Bob uses an indirect reference to select one of these entities. For example, the new</sample>
+    <sample id="456">Ecco il contenuto dell'immagine tradotto in italiano:
+
+**Metodologia di Raccolta del Dataset**
+
+*   La metodologia sottolinea l'informalità utilizzando un'attività di completamento di vignette
+
+**Giallo:**
+Compilato dall'annotatore
+
+**Fumetti (da sinistra a destra):**
+
+1.  Ricordi quella canzone che stavamo ascoltando ieri?
+2.  Intendi "Easy on Me" o "I Gotta Feeling"?
+3.  (vuoto)
+
+**Testo sotto i fumetti (da sinistra a destra):**
+
+*   Imposta il contesto del dialogo [scelto da pochi suggerimenti manuali per dominio]
+*   La domanda alternativa
+*   Espressione che si riferisce a una delle entità
+
+**In fondo:**
+Risoluzione di Espressioni di Riferimento Indirette per la Selezione di Entità (Corpus AllEntities)
+
+**In basso a destra:**
+P.4</sample>
+    <sample id="457">Ecco la traduzione del contenuto in inglese in italiano:
+
+**Metodologia di Raccolta del Dataset**
+
+*   La metodologia enfatizza l'informalità usando un **compito di completamento di vignette**
+
+**Vignette:**
+*   **Prima vignetta (dialogo):**
+    *   **Uomo:** "Ricordi quella canzone che stavamo ascoltando ieri?"
+    *   **Sotto:** Imposta il contesto del dialogo [scelto tra pochi prompt manuali per dominio]
+
+*   **Seconda vignetta (domanda alternativa):**
+    *   **Donna:** "Intendi 'Easy on Me' o 'I Gotta Feeling'?"
+    *   **Sotto:** La domanda alternativa
+
+*   **Terza vignetta (espressione di riferimento):**
+    *   **Bolla di testo vuota:** (Questa è) Riempita dall'annotatore
+    *   **Sotto:** Espressione che si riferisce a una delle entità
+
+**Testo in basso:**
+Risoluzione di Espressioni di Riferimento Indiretto per la Selezione di Entità (AllEntities Corpus)</sample>
+    <sample id="458">Ecco la traduzione del contenuto:
+
+**Titolo:** Generare domande alternative =&gt; campionamento di coppie di entità
+
+**Testo centrale nel riquadro:**
+Intendi A o B?
+
+**Freccia laterale:**
+Più simili (solitamente più difficile)
+
+**Elenco puntato:**
+*   Elementi con infobox simili su Wikipedia (stesso genere e/o artista)
+    *   Intendi 'This Is It' o 'Man in the Mirror'?
+*   Elementi con descrizioni simili su Wikipedia
+    *   Intendi 'Thinking of You' o 'Happy Anywhere'?
+*   Elementi con titoli simili
+    *   Intendi The Return (memoria) o The Return (romanzo di Shatner)?
+*   Uniformemente a caso:
+    *   Intendi 'You Could Be Mine' o 'The Way I Am'?
+
+**Piè di pagina (sinistra):**
+Risoluzione di Espressioni di Riferimento Indirette per la Selezione di Entità (Corpus AltEntities)
+
+**Piè di pagina (destra):**
+P5
+
+---
+
+**Trascrizione e traduzione dell'audio (00:00 - 00:13):**
+
+**Speaker:** We always use a simple template: Do you mean A or B? Where A and B are sampled from Wikipedia.
+
+**Traduzione audio:**
+**Speaker:** Utilizziamo sempre un semplice modello: Intendi A o B? Dove A e B sono campionati da Wikipedia.</sample>
+    <sample id="459">Ecco la traduzione del contenuto inglese in italiano:
+
+**Generare domande alternative =&gt; campionare coppie di entità**
+
+**Intendi A o B?**
+
+*   Oggetti con **infobox simili** su Wikipedia (stesso genere e/o artista)
+    *   Intendi 'This Is It' o 'Man in the Mirror'?
+*   Oggetti con **descrizioni simili** su Wikipedia
+    *   Intendi 'Thinking of You' o 'Happy Anywhere'?
+*   Oggetti con **titoli simili**
+    *   Intendi 'The Return' (memoria) o 'The Return' (romanzo di Shatner)?
+*   **Uniforme** a caso:
+    *   Intendi 'You Could Be Mine' o 'The Way I Am'?
+
+*(Frecce gialle sul lato sinistro)*
+*   **Più simile**
+*   (solitamente più difficile)</sample>
+    <sample id="460">**Contenuto dell'immagine:**
+
+**Genera domande alternative =&gt; campionamento di coppie di entità**
+
+**Intendi A o B?**
+
+**Più simili (solitamente più difficile)**
+
+*   Elementi con infobox simili su Wikipedia (stesso genere e/o artista)
+    *   Intendi 'This Is It' o 'Man in the Mirror'?
+*   Elementi con descrizioni simili su Wikipedia
+    *   Intendi 'Thinking of You' o 'Happy Anywhere'?
+*   Elementi con titoli simili
+    *   Intendi The Return (memorie) o The Return (romanzo di Shatner)?
+*   Uniforme casuale:
+    *   Intendi 'You Could Be Mine' o 'The Way I Am'?
+
+Risoluzione di espressioni di riferimento indirette per la selezione di entità (Corpus AltEntities)
+P. 5
+Google Research
+
+---
+
+**Contenuto parlato:**
+
+"Il primo è uniforme casuale."</sample>
+    <sample id="461">Ecco la traduzione del contenuto inglese in italiano:
+
+**Google Research**
+
+**Genera domande alternative =&gt; campionamento di coppie di entità**
+
+**Intendi A o B?**
+
+**Più Simili**
+**(solitamente più difficile)**
+
+*   Voci con infobox simili su Wikipedia (stesso genere e/o artista)
+    *   Intendi 'This Is It' o 'Man in the Mirror'?
+*   Voci con descrizioni simili su Wikipedia
+    *   Intendi 'Thinking of You' o 'Happy Anywhere'?
+*   Voci con titoli simili
+    *   Intendi The Return (memorie) o The Return (romanzo di Shatner)?
+*   Campionamento casuale uniforme:
+    *   Intendi 'You Could Be Mine' o 'The Way I Am'?
+
+Risoluzione di Espressioni di Riferimento Indirette per la Selezione di Entità (Corpus AllEntities)
+P 5</sample>
+    <sample id="462">Ecco la traduzione del contenuto inglese in italiano:
+
+**Genera domande alternative =&gt; campionamento di coppie di entità**
+
+**Vuoi dire A o B?**
+
+*   Elementi con **infobox simili** su Wikipedia (stesso genere e/o artista)
+    *   Vuoi dire "This Is It" o "Man In The Mirror"?
+*   Elementi con **descrizioni simili** su Wikipedia
+    *   Vuoi dire "Thinking of You" o "Happy Anywhere"?
+*   Elementi con **titoli simili**
+    *   Vuoi dire "The Return (memoir)" o "The Return (Shatner novel)"
+*   **Uniforme** a caso:
+    *   Vuoi dire "You Could Be Mine" o "The Way I Am"
+
+**Freccia gialla con testo laterale:**
+Più simile (solitamente più difficile)
+
+**In fondo alla slide:**
+*Risolvere espressioni di riferimento indirette per la selezione di entità (Corpus AllEntities)*</sample>
+    <sample id="463">Quando mostriamo queste domande alternative agli annotatori, conoscono il nome di queste entità, ma non conoscono necessariamente le entità.</sample>
+    <sample id="464">Ecco la traduzione del contenuto dell'immagine e del parlato:
+
+**Contenuto dell'immagine:**
+
+**Conoscenze di base (Musica)**
+
+*   Link di ricerca Google per ogni canzone.
+    *   **Easy on Me (di Adele)**
+        *   Clicca qui per saperne di più sulla canzone.
+    *   **I Gotta Feeling (dei The Black Eyed Peas)**
+        *   Clicca qui per saperne di più sulla canzone.
+
+*   Chiediamo agli annotatori di
+    *   Ascoltare almeno una parte di ogni canzone
+    *   Leggere su ogni canzone
+
+Risolvere espressioni di riferimento indirette per la selezione di entità (Corpus AttEntities) | Pag. 6
+
+**Parlato:**
+
+"Quindi quello che facciamo è che mostriamo alcune conoscenze di base sulle due entità. Per le canzoni, mostriamo semplicemente un link di ricerca Google per ogni canzone."</sample>
+    <sample id="465">Traduci il contenuto inglese in italiano:
+[0m0s] E poi chiediamo agli annotatori di ascoltare almeno un po' di ogni canzone e di leggere ogni canzone.
+[0m6s] Ecco, ad esempio, il risultato di ricerca di Google per la canzone "Easy on Me".</sample>
+    <sample id="466">Ecco la traduzione del contenuto inglese in italiano:
+
+**Conoscenze di base (Ricette)**
+
+**Torta Simnel**
+La torta Simnel è una torta di frutta ampiamente consumata nel Regno Unito, in Irlanda e in altri paesi con schemi di migrazione da essi, associata alla Quaresima e alla Pasqua. Si distingue per strati di pasta di mandorle o marzapane e un set di undici palline fatte della stessa pasta.
+
+**Torta Pandan**
+La torta Pandan è una torta soffice, leggera, di pan di Spagna di colore verde, aromatizzata con il succo delle foglie di Pandanus amaryllifolius. La torta è popolare in Indonesia, Malesia e anche nei Paesi Bassi, specialmente tra la comunità indonesiana.
+
+**Google Research**
+**Pag. 8**
+Risoluzione delle espressioni di riferimento indiretto per la selezione di entità (Corpus AllEntities)</sample>
+    <sample id="467">Ecco la traduzione del contenuto in inglese:
+
+**Testo nell'immagine:**
+
+**Titolo:** Elicitazione di espressioni / Sollecitare espressioni
+*   Poi diciamo agli annotatori quale scelta dovrebbe essere selezionata e chiediamo loro di descriverla.
+*   **Scegli questo** (freccia che indica "Easy on Me (by Adele)")
+    *   Easy on Me (di Adele)
+    *   I Gotta Feeling (dei The Black Eyed Peas)
+*   Vorremmo che tu dessi da 3 a 5 espressioni per la canzone scelta da inserire nella tua "nuvoletta di dialogo". Ad esempio:
+    *   Quella con la musica di pianoforte
+    *   La canzone che non è energica
+    *   Ha qualcosa a che fare con un fiume
+    *   Quella più nuova
+    *   Riguarda il non avere tempo per scegliere
+*   **In fondo:** Risoluzione di Espressioni di Riferimento Indiretto per la Selezione di Entità (Corpus AltEntities) P.9
+*   **In alto a destra:** Google Research
+
+**Contenuto parlato:**
+
+"Poi chiediamo agli annotatori di scegliere una di queste entità, per esempio qui la prima, e di descriverle usando da tre a cinque espressioni di riferimento indiretto."</sample>
+    <sample id="468">Il contenuto inglese è stato tradotto in italiano come segue:
+
+**00:00 - 00:02**
+**Inglese:** For example, the one with the piano music.
+**Italiano:** Ad esempio, quello con la musica di pianoforte.
+
+**00:02 - 00:03**
+**Inglese:** Here are some examples from our dataset.
+**Italiano:** Ecco alcuni esempi dal nostro dataset.
+
+**00:05 - 00:15**
+**Inglese:** For example, the one without words, not the one with the 12-year-old boy, or the fictional one, or comes from Azerbaijan, and so on.
+**Italiano:** Ad esempio, quello senza parole, non quello con il ragazzo di 12 anni, o quello fittizio, o che viene dall'Azerbaigian, e così via.
+
+---
+**Testo sulle slide:**
+
+**Slide 1: Eliciting expressions (Elicitare espressioni)**
+*   **We then tell the annotators which choice should be selected and ask them to describe it.**
+    *   **Italiano:** Poi diciamo agli annotatori quale scelta dovrebbe essere selezionata e chiediamo loro di descriverla.
+*   **Pick this one**
+    *   **Italiano:** Scegli questo
+*   **Easy on Me (by Adele)**
+    *   **Italiano:** Easy on Me (di Adele)
+*   **I Gotta Feeling (by the Black Eyed Peas)**
+    *   **Italiano:** I Gotta Feeling (dei Black Eyed Peas)
+*   **We would like you to give us 3 to 5 expressions for the chosen song to fill in your speech bubble. For example:**
+    *   **Italiano:** Vorremmo che ci deste da 3 a 5 espressioni per la canzone scelta da inserire nella vostra vignetta di dialogo. Ad esempio:
+    *   **The one with the piano music**
+        *   **Italiano:** Quello con la musica di pianoforte
+    *   **The song that's not energetic**
+        *   **Italiano:** La canzone che non è energica
+    *   **It has something about a river**
+        *   **Italiano:** Ha qualcosa a che fare con un fiume
+    *   **The newer one**
+        *   **Italiano:** Quello più recente
+    *   **It's about not having time to choose**
+        *   **Italiano:** Riguarda il non avere tempo di scegliere
+
+**Slide 2: Random Examples (Esempi Casuali)**
+*   **Music Selection (Selezione Musicale)**
+    *   **Do you mean 'Chime' or 'Your Loving Arms'?** =&gt; **The one without words**
+        *   **Italiano:** Intendi 'Chime' o 'Your Loving Arms'? =&gt; Quello senza parole
+    *   **Do you mean 'These Kids' or 'Inescapable'?** =&gt; **It is the song sung by an Australian.**
+        *   **Italiano:** Intendi 'These Kids' o 'Inescapable'? =&gt; È la canzone cantata da un australiano.
+    *   **Do you mean 'Rock the Boat' or 'Wherever You Are'?** =&gt; **It has synthesizer sounds in it**
+        *   **Italiano:** Intendi 'Rock the Boat' o 'Wherever You Are'? =&gt; Ha suoni di sintetizzatore
+    *   **Do you mean 'Telepathy' or 'Stars on 45'?** =&gt; **Came out in mid of 2000.**
+        *   **Italiano:** Intendi 'Telepathy' o 'Stars on 45'? =&gt; È uscito a metà del 2000.
+    *   **Do you mean 'Mlis Shapes' or 'Remind Me'?** =&gt; **Based on life experienced in Sheffield.**
+        *   **Italiano:** Intendi 'Mlis Shapes' o 'Remind Me'? =&gt; Basato sulla vita vissuta a Sheffield.
+*   **Book Selection (Selezione Libri)**
+    *   **Do you mean 'Warlock (Hall novel)' or 'Warlock (Smith novel)'?** =&gt; **The one that is set in the 1880s**
+        *   **Italiano:** Intendi 'Warlock (romanzo di Hall)' o 'Warlock (romanzo di Smith)'? =&gt; Quello ambientato nel 1880
+    *   **Do you mean 'The Legion of Space' or 'The Body in the Library'?** =&gt; **It's by a famous detective writer**
+        *   **Italiano:** Intendi 'The Legion of Space' o 'The Body in the Library'? =&gt; È di un famoso scrittore di gialli
+    *   **Do you mean 'The Good Soldier' or 'The Good Soldiers'?** =&gt; **The fictional one**
+        *   **Italiano:** Intendi 'The Good Soldier' o 'The Good Soldiers'? =&gt; Quello fittizio
+    *   **Do you mean 'The Giaour' or 'The Giver'?** =&gt; **not the one with the 12 year old boy**
+        *   **Italiano:** Intendi 'The Giaour' o 'The Giver'? =&gt; Non quello con il ragazzo di 12 anni
+    *   **Do you mean 'Broken Sleep' or 'Broken Soup'?** =&gt; **It's the book that has rock and politics in it**
+        *   **Italiano:** Intendi 'Broken Sleep' o 'Broken Soup'? =&gt; È il libro che parla di rock e politica
+*   **Recipe Selection (Selezione Ricette)**
+    *   **Do you mean 'Beurre Maître d'Hôtel' or 'Chigirma'?** =&gt; **comes from Azerbaijan**
+        *   **Italiano:** Intendi 'Beurre Maître d'Hôtel' o 'Chigirma'? =&gt; Viene dall'Azerbaigian
+    *   **Do you mean 'Kusa mochi' or 'Uiro'?** =&gt; **The Japanese steamed cake**
+        *   **Italiano:** Intendi 'Kusa mochi' o 'Uiro'? =&gt; Il dolce giapponese al vapore
+    *   **Do you mean 'Cannoli' or 'Bocconotto'?** =&gt; **The ones eaten at Christmas**
+        *   **Italiano:** Intendi 'Cannoli' o 'Bocconotto'? =&gt; Quelli mangiati a Natale
+    *   **Do you mean 'Johnnycake' or ''?** =&gt; **cornmeal is the main ingredient**
+        *   **Italiano:** Intendi 'Johnnycake' o ''? =&gt; La farina di mais è l'ingrediente principale
+    *   **Do you mean 'Sagu' or '???'?** =&gt; **Not the one with milk**
+        *   **Italiano:** Intendi 'Sagu' o '???'? =&gt; Non quello con il latte</sample>
+    <sample id="469">Ecco la traduzione del contenuto inglese in italiano:
+
+**AltEntities Corpus**
+
+*   ~6.000 domande alternative in tre domini
+*   ~42.000 espressioni di riferimento indirette
+*   Risultati con il modello T5 XL (precisione):
+    *   92-95% se il LM ha accesso alla **stessa conoscenza di base** degli annotatori.
+    *   82-87% quando il LM ha accesso a una **conoscenza di base parzialmente sovrapposta**.
+    *   ~60% quando il LM (T5 XL) ha accesso solo ai nomi delle entità.
+    *   Abbiamo dimostrato che i modelli sono **generalizzabili al dominio**.
+*   Link al dataset: [https://github.com/google-research-datasets/AltEntities](https://github.com/google-research-datasets/AltEntities)</sample>
+    <sample id="470">Se il modello linguistico ha accesso esattamente alla stessa conoscenza di base degli annotatori, allora la precisione è davvero alta. È circa il 92-95%. Ma questo non è realistico.</sample>
+    <sample id="471">Ecco il contenuto tradotto in italiano:
+
+**Corpus AltEntities**
+
+*   Circa 6.000 domande alternative nei tre domini
+*   Circa 42.000 espressioni referenziali indirette
+*   Risultati con il modello T5 XL (accuratezza):
+    *   92-95% se il modello di linguaggio (LM) ha accesso alle stesse conoscenze di base degli annotatori.
+    *   82%-87% quando l'LM ha accesso a conoscenze di base parzialmente sovrapposte.
+    *   Circa il 60% quando l'LM (T5 XL) ha accesso solo ai nomi delle entità.
+    *   Abbiamo dimostrato che i modelli sono generalizzabili tra domini.
+*   Link al Dataset: https://github.com/google-research-datasets/AltEntities</sample>
+    <sample id="472">Ecco la traduzione del testo in italiano:
+
+**Corpus AltEntities**
+
+*   ~6.000 domande alternative attraverso i tre domini
+*   ~42.000 espressioni di riferimento indirette
+*   Risultati con il modello T5 XL (accuratezza):
+    *   92-95% se il modello linguistico (LM) ha accesso alla stessa conoscenza di base degli annotatori.
+    *   82%-87% quando l'LM ha accesso a una conoscenza di base parzialmente sovrapposta.
+    *   ~60% quando l'LM (T5 XL) ha accesso solo ai nomi delle entità.
+    *   Abbiamo dimostrato che i modelli sono generalizzabili tra i domini.
+*   Link al dataset: https://github.com/google-research-datasets/AltEntities
+
+Risoluzione di Espressioni di Riferimento Indirette per la Selezione di Entità (Corpus AltEntities) Pag. 11
+
+---
+
+**Grazie!**
+
+Per qualsiasi domanda, inviate un'e-mail a javadh@google.com</sample>
+    <sample id="473">L'approccio viene confrontato con le strategie "wait-k" e "local agreement" (LA), oltre che con l'architettura all'avanguardia "CAAT", specificamente progettata per SimulST.</sample>
+    <sample id="474">Le affiliazioni degli autori sono:
+*   LIA, Avignon Université
+*   LS2N, Nantes Université
+*   Clinique des données, CHU de Nantes
+*   Zenidoc</sample>
+    <sample id="475">La relatrice si chiama Jenny.</sample>
+    <sample id="476">Tre.</sample>
+    <sample id="477">Ciao, sono Sara Papi dell'Università di Trento e della Fondazione Bruno Kessler, e presenterò brevemente il paper "Attention as a Guide for Simultaneous Speech Translation", che è un lavoro congiunto con Matteo Negri e Marco Turchi.</sample>
+    <sample id="478">Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo:** Che cos'è la Traduzione Simultanea del Parlato?
+
+**Testo (traduzione mostrata nella simulazione):** Quando verso del tè freddo nel mio thermos d'estate, rimane freddo, e quando verso del tè caldo in
+
+**Definizione:** La traduzione simultanea del parlato (SimulST) è il processo di traduzione del linguaggio parlato in un testo in un'altra lingua in tempo reale, consentendo la comunicazione interlinguistica.
+
+**Crediti in calce:** Crediti Immagine: https://ai.google.com/2021/01/stabilizing-live-speech-translation-in.html</sample>
+    <sample id="479">Ecco la traduzione del contenuto:
+
+**Slide:**
+
+*   **Titolo:** Quali sono i problemi degli attuali modelli SimulST?
+*   **Testo del punto elenco:** Architetture specifiche vengono solitamente addestrate, introducendo moduli aggiuntivi da ottimizzare.
+
+**Narratore:**
+
+*   "E quali sono i problemi degli attuali modelli SimulST?"
+*   "Architetture specifiche vengono solitamente addestrate, introducendo moduli aggiuntivi da ottimizzare."</sample>
+    <sample id="480">Quali sono i problemi degli attuali modelli SimulST?
+* Vengono solitamente addestrate architetture specifiche, introducendo moduli aggiuntivi da ottimizzare
+* Procedure di addestramento lunghe e complicate (ad esempio, diversi obiettivi di ottimizzazione)
+
+pagina 06</sample>
+    <sample id="481">Ecco il contenuto tradotto in italiano:
+
+**Quali sono i problemi degli attuali modelli SimulST?**
+
+*   Vengono solitamente addestrate architetture specifiche, introducendo moduli aggiuntivi da ottimizzare.
+*   Lunghe e complicate procedure di addestramento (ad es., diversi obiettivi di ottimizzazione)
+*   Addestrare e mantenere diversi modelli per raggiungere diversi regimi di latenza (ad es., 1 secondo, 2 secondi, ...)
+
+pagina 07</sample>
+    <sample id="482">Allora, qual è la nostra soluzione?</sample>
+    <sample id="483">Ecco la traduzione del contenuto in italiano:
+
+**Qual è la nostra soluzione?**
+
+1.  Utilizzare modelli ST offline già esistenti senza riaddestramento o adottando un'architettura specifica per SimulST.
+2.  Utilizzare un solo modello per ogni regime di latenza e gestire la latenza attraverso parametri specifici.</sample>
+    <sample id="484">Ecco la traduzione del testo in italiano:
+
+**Qual è la nostra soluzione?**
+
+1.  **Utilizzare modelli ST offline già esistenti** senza riaddestramento o adozione di un'architettura specifica per SimuIST.
+2.  **Utilizzare un solo modello** per ogni regime di latenza e gestire la latenza tramite parametri specifici.
+3.  **Sfruttare la conoscenza già acquisita** dal modello tramite il **meccanismo di attenzione** tra input audio e output testuale.
+    *   cioè il meccanismo di cross-attenzione. E si può vedere un esempio a destra.</sample>
+    <sample id="485">Ecco la traduzione del contenuto in inglese in italiano:
+
+**La nostra soluzione: EDAtt**
+
+**Attenzione Encoder-Decoder**
+
+Decide se emettere o meno una traduzione parziale basandosi su dove si concentra l'attenzione: una parola viene emessa se l'attenzione non è concentrata (la sua somma è al di sotto di una soglia τ) verso gli ultimi λ fotogrammi del parlato, il che significa che le informazioni ricevute sono sufficientemente stabili.</sample>
+    <sample id="486">Ecco la traduzione in italiano del testo fornito:
+
+"Decidi se emettere o meno una traduzione parziale in base a dove punta l'attenzione:
+una parola viene emessa se l'attenzione non è concentrata (la sua somma è inferiore a una soglia α) verso gli ultimi λ fotogrammi vocali, il che significa che l'informazione ricevuta è abbastanza stabile."</sample>
+    <sample id="487">Ecco il contenuto tradotto in italiano:
+
+**La nostra soluzione: EDAtt**
+
+**Attenzione Encoder-Decoder**
+
+Decidere se emettere o meno una traduzione parziale basandosi su dove si concentra l'attenzione:
+Una parola viene emessa se l'attenzione non è concentrata (la sua somma è inferiore a una soglia τ) verso gli ultimi λ frame vocali, il che significa che le informazioni ricevute sono sufficientemente stabili.
+
+**01 Parlerò di...**
+
+*(Il testo "Ich werde reden." è in tedesco e non è stato tradotto dall'inglese.)*</sample>
+    <sample id="488">E analizzeremo il cross attention. Um, wait.</sample>
+    <sample id="489">Ecco la traduzione del contenuto inglese in italiano:
+
+**La nostra soluzione:**
+EDAtt
+
+**Attenzione Encoder-Decoder**
+
+Decidere se **emettere o meno una traduzione parziale** in base a dove i punti di attenzione indicano:
+&gt; una parola viene emessa se l'attenzione non è concentrata (la sua somma è inferiore a una soglia α) verso gli ultimi λ frame vocali, il che significa che l'informazione ricevuta è abbastanza **stabile**.
+
+**01**
+**Parlerò di...**
+
+Ich werde reden.
+
+pagina
+017
+
+---
+Una frase non presente nell'immagine ma pronunciata nel video è:
+"We'll see that the first two words point to the earliest received speech frames, while the last word points to the last received speech frames, the last lambda speech frames."
+
+Traduzione di questa frase:
+"Vedremo che le prime due parole puntano ai primi frame vocali ricevuti, mentre l'ultima parola punta agli ultimi frame vocali ricevuti, gli ultimi lambda frame vocali."</sample>
+    <sample id="490">Ecco la traduzione del contenuto inglese in italiano:
+
+*   **Our solution:** EDAtt
+    *   **La nostra soluzione:** EDAtt
+*   **Encoder-Decoder Attention**
+    *   **Attenzione Encoder-Decoder**
+*   **01**
+    *   **01**
+*   **I am going to talk about...**
+    *   **Parlerò di...**
+*   **Decide whether to emit or not a partial translation based on where attention points to:**
+    *   **Decidere se emettere o meno una traduzione parziale basandosi su dove punta l'attenzione:**
+*   **a word is emitted if the attention is not concentrated (its sum is below a threshold α) towards the last λ speech frames, meaning that the received information is enough stable.**
+    *   **una parola viene emessa se l'attenzione non è concentrata (la sua somma è inferiore a una soglia α) verso gli ultimi λ fotogrammi del parlato, il che significa che l'informazione ricevuta è sufficientemente stabile.**
+*   **EMITTED**
+    *   **EMESSO**
+*   **page 020** (il numero piccolo in basso a destra)
+    *   **pagina 020**
+
+**La voce della speaker dice:** "This means that the first two words will be emitted."
+**Traduzione della voce della speaker:** "Questo significa che le prime due parole verranno emesse."</sample>
+    <sample id="491">Ecco la traduzione del contenuto in inglese:
+
+**Testo parlato:**
+"mentre, poiché la somma dell'attenzione incrociata è superiore a una certa soglia alfa, uh non emetteremo l'ultima parola e attendiamo un'altra porzione di parlato."
+
+**Testo sulla slide:**
+*La nostra soluzione: EDAtt*
+*Attenzione Encoder-Decoder*
+
+*Decidere se emettere o meno una traduzione parziale in base a dove punta l'attenzione:*
+*una parola viene emessa se l'attenzione non è concentrata (la sua somma è inferiore a una soglia α) verso gli ultimi λ frame di parlato, il che significa che le informazioni ricevute sono sufficientemente stabili.*
+
+*sum(Attenzione) ≥ α*</sample>
+    <sample id="492">Ecco la traduzione del contenuto inglese in italiano:
+
+**Il nostro soluzione:**
+EDAtt
+
+**Encoder-Decoder Attention**
+
+Decidere se **emettere o meno una traduzione parziale** basandosi su dove i punti di attenzione indicano:
+&gt; una parola viene emessa se l'attenzione non è concentrata (la sua somma è inferiore a una soglia λ) verso gli ultimi λ fotogrammi vocali, il che significa che le informazioni ricevute sono abbastanza **stabili**.
+
+**01**
+I am going to talk about...
+*(Sto per parlare di...)*
+
+Ich werde reden.
+EMITTED
+*(Io sarò parlare. EMESSA)*
+
+**02**
+I am going to talk about climate.
+*(Sto per parlare di clima.)*
+
+Ich werde über Klima sprechen.
+*(Io sarò del clima parlare.)*
+
+(Nota: La traduzione di "Ich werde reden" come "Io sarò parlare" e "Ich werde über Klima sprechen" come "Io sarò del clima parlare" è una traduzione letterale che mostra la struttura della frase tedesca, ma grammaticalmente in italiano sarebbe più naturale "Parlerò" e "Parlerò del clima".)</sample>
+    <sample id="493">Ecco la traduzione in italiano del contenuto inglese nell'immagine:
+
+**La nostra soluzione: EDAtt**
+
+**Attenzione Encoder-Decoder**
+
+**01 Parlerò di...**
+**OMESSO**
+
+**02 Parlerò di clima.**
+
+**Decidere se includere o omettere una traduzione parziale in base a dove l'attenzione si concentra su:**
+*   **una parola viene omessa se l'attenzione non è concentrata (la sua somma è inferiore a una soglia α) verso gli ultimi λ fotogrammi di parlato, il che significa che l'informazione ricevuta è sufficientemente stabile.**
+
+**pagina 025**</sample>
+    <sample id="494">Ciò significa che queste tre parole saranno...</sample>
+    <sample id="495">Se guardiamo il risultato principale.</sample>
+    <sample id="496">Ecco la traduzione del contenuto:
+
+**Testo sullo schermo:**
+*   Main Results: EDAtt → **Risultati Principali: EDAtt**
+*   BLEU → **BLEU**
+*   quality measure → **misura di qualità**
+*   latency measure → **misura di latenza**
+*   page 028 → **pagina 028**
+*   page 029 → **pagina 029**
+
+**Audio:**
+*   "We'll plot the simultaneous speech translation results on on graphs in which we have blue on one side that measure the translation quality and average legging in"
+*   **"Tracciamo i risultati della traduzione vocale simultanea su grafici in cui abbiamo il BLEU da un lato, che misura la qualità della traduzione, e la latenza media in"**</sample>
+    <sample id="497">Questa è la misura della latenza. E consideriamo anche la latenza media computazionalmente consapevole che tiene conto del tempo computazionale del modello per prevedere l'output.</sample>
+    <sample id="498">Quindi, vogliamo che le nostre curve siano il più alte possibile su questo grafico.</sample>
+    <sample id="499">But also we want that they are shifted on the left.
+Italiano: Ma vogliamo anche che siano spostati a sinistra.</sample>
+    <sample id="500">E confrontiamo con strategie popolari che sono anche applicate a modelli offline, che sono la strategia "wait-k" e l'accordo locale, e confrontiamo anche con l'architettura all'avanguardia specificamente progettata per la traduzione simultanea.</sample>
+    <sample id="501">These are all the results of the simultaneous speech translation strategy on German.
+Italiano: Questi sono tutti i risultati della strategia di traduzione del parlato simultanea in tedesco.</sample>
+    <sample id="502">e vediamo che
+EDAtt supera tutte le strategie applicate ai modelli offline, poiché le loro curve sono spostate verso sinistra.</sample>
+    <sample id="503">E vediamo anche che se consideriamo il tempo effettivo trascorso o il tempo consapevole computazionale, EDAT è la strategia più veloce.</sample>
+    <sample id="504">Se volete scoprire più risultati, leggete il nostro articolo! E abbiamo anche rilasciato in open source il codice, i modelli e l'output simultaneo per facilitare la riproducibilità del nostro lavoro. Grazie per la vostra attenzione.</sample>
+    <sample id="505">Sì.</sample>
+    <sample id="506">Ecco la traduzione del contenuto inglese in italiano:
+
+**Testo nell'immagine:**
+
+MULTIINSTRUCT: Migliorare l'Apprendimento Zero-Shot Multimodale tramite la Messa a Punto delle Istruzioni
+
+Zhiyang Xu*, Ying Shen*, Lifu Huang
+Dipartimento di Informatica, Virginia Tech
+*Contributo Equo
+
+---
+
+**Contenuto parlato:**
+
+"Ciao a tutti. Mi chiamo Ying, e il mio collega Zhiyang ed io presenteremo la nostra ricerca su Multiinstruct: Migliorare l'Apprendimento Zero-Shot Multimodale tramite la Messa a Punto delle Istruzioni."</sample>
+    <sample id="507">Dunque, con gli avanzamenti nei modelli linguistici di grandi dimensioni, molti lavori hanno iniziato a esplorare nuovi paradigmi di apprendimento per riutilizzare i modelli linguistici pre-addestrati per diversi task a valle in modo efficiente in termini di parametri e dati.</sample>
+    <sample id="508">SPECIAL INSTRUCTION: I am in "thought" mode. I will now think step-by-step to fulfill the user's request.
+My thinking process to translate the English content into Italian goes like this:
+
+1.  **Understand the Goal:** The user wants a translation of the English content *spoken by the presenter* in the video. The video also contains text on slides, but the request is specifically for "il contenuto inglese" which implies the spoken words.
+
+2.  **Listen to the Audio Segment:** I'll focus on the audio from 00:00 to 00:10.
+
+    *   At 00:00, the speaker starts with "Recently..."
+    *   "...many studies have shown that instruction tuning enables large language models to perform on unseen tasks..."
+    *   "...in a zero-shot manner by following natural instructions."
+
+3.  **Break Down the English Sentence by Sentence (or Clause by Clause):**
+
+    *   "Recently,"
+    *   "many studies have shown that"
+    *   "instruction tuning enables"
+    *   "large language models"
+    *   "to perform on unseen tasks"
+    *   "in a zero-shot manner"
+    *   "by following natural instructions."
+
+4.  **Translate Each Part into Italian, Considering Context and Natural Flow:**
+
+    *   "Recently," -&gt; "Recentemente," (straightforward)
+
+    *   "many studies have shown that" -&gt; "molti studi hanno dimostrato che" (standard phrase)
+
+    *   "instruction tuning enables" -&gt; This is a bit more technical.
+        *   "instruction tuning" is a specific term. I could leave it as is or translate it. "Messa a punto delle istruzioni" or "tuning delle istruzioni" (using the English word) are options. Given the context of technical presentations, sometimes the English term is kept. However, "messa a punto basata su istruzioni" or "regolazione tramite istruzioni" might be more descriptive if a direct translation is preferred. Let's aim for a slightly more descriptive but still concise phrase for "enables": "consente ai/di".
+        *   So, "la messa a punto delle istruzioni consente a..." or "il tuning delle istruzioni permette a...". I'll lean towards "la messa a punto delle istruzioni" for clarity, as "tuning" on its own might be too informal or less clear without context.
+
+    *   "large language models" -&gt; "modelli linguistici di grandi dimensioni" (standard translation)
+
+    *   "to perform on unseen tasks" -&gt; "di eseguire compiti non visti" or "di operare su compiti non ancora visti" or "di svolgere compiti inediti". "Compiti non visti" is direct and clear. "Eseguire" is a good verb here.
+
+    *   "in a zero-shot manner" -&gt; Another technical term.
+        *   "zero-shot" is often kept in English in Italian technical contexts, or translated as "zero-shot".
+        *   "manner" -&gt; "modo", "maniera".
+        *   So, "in modalità zero-shot" or "in un modo zero-shot". I prefer "in modalità zero-shot" as it's common in AI discourse.
+
+    *   "by following natural instructions." -&gt; "seguendo istruzioni naturali." (straightforward)
+
+5.  **Assemble the Translated Parts and Review for Fluency and Accuracy:**
+
+    "Recentemente, molti studi hanno dimostrato che la messa a punto delle istruzioni consente ai modelli linguistici di grandi dimensioni di eseguire compiti non visti in modalità zero-shot, seguendo istruzioni naturali."
+
+6.  **Self-Correction/Refinement:**
+    *   "Messa a punto delle istruzioni" is good.
+    *   "Modelli linguistici di grandi dimensioni" is accurate.
+    *   "Eseguire compiti non visti" works well.
+    *   "In modalità zero-shot" is standard.
+    *   "Seguendo istruzioni naturali" is correct.
+    *   The sentence flows well.
+
+This thought process leads directly to the provided good answer.Recentemente, molti studi hanno dimostrato che la messa a punto delle istruzioni consente ai modelli linguistici di grandi dimensioni di eseguire compiti non visti in modalità zero-shot, seguendo istruzioni naturali.</sample>
+    <sample id="509">Ecco la traduzione del contenuto in inglese in italiano:
+
+Tuttavia, la maggior parte dei lavori precedenti sull'ottimizzazione delle istruzioni si sono concentrati sul miglioramento delle prestazioni a zero-shot su attività solo linguistiche, mentre la visione artificiale e le attività multimodali sono state tralasciate.</sample>
+    <sample id="510">Ecco la traduzione del contenuto:
+
+**Testo parlato:**
+"Pertanto, in questo lavoro, vogliamo indagare se l'instruction tuning sui modelli pre-addestrati multimodali possa effettivamente migliorare la generalizzazione a compiti multimodali non visti."
+
+**Testo sulla diapositiva:**
+"Messa a punto delle Istruzioni su Modelli Pre-addestrati **Multimodali**"</sample>
+    <sample id="511">"Squilibrio nei set di dati istruttivi tra NLP e Multimodale"</sample>
+    <sample id="512">Ecco la traduzione del contenuto in inglese:
+
+**Testo sulla slide:**
+"Squilibrio nei set di dati istruttivi tra NLP e Multimodale"
+"1600+ compiti di istruzione solo linguistici"
+"NESSUN compito di istruzione multimodale su larga scala e disponibile pubblicamente"
+"Wang, Yizhong, et al. "Benchmarking generalization via in-context instructions on 1,600+ language tasks." arXiv preprint arXiv"
+
+**Testo parlato:**
+"Esistono più di 1.600 compiti di istruzione solo linguistici. Tuttavia, non esiste un compito di istruzione multimodale su larga scala e disponibile pubblicamente. Pertanto, questo ci motiva a costruire un set di dati per il fine-tuning delle istruzioni multimodali."</sample>
+    <sample id="513">Ecco MULTIINSTRUCT, il primo set di dati di benchmark per l'ottimizzazione delle istruzioni multimodali, che consiste in 62 compiti multimodali diversi, che coprono 10 ampie categorie.</sample>
+    <sample id="514">Ecco la traduzione del contenuto inglese in italiano:
+
+- MULTIINSTRUCT
+- Il primo dataset benchmark per la sintonizzazione multimodale delle istruzioni
+- 62 diverse attività multimodali
+- 10 ampi gruppi
+- 5 istruzioni scritte da esperti
+- Figura 2: Gruppi di attività inclusi in MULTIINSTRUCT. Le caselle gialle rappresentano le attività utilizzate per la valutazione, mentre le caselle bianche indicano le attività utilizzate per l'addestramento.
+- Queste attività sono derivate da 21 dataset open-source esistenti, e ogni attività è dotata di cinque istruzioni scritte da esperti.</sample>
+    <sample id="515">Per investigare il tuning di istruzioni multimodali sul nostro set di dati proposto, prendiamo OFA, un modello pre-addestrato multimodale unificato, come nostro modello di base. OFA utilizza un vocabolario unificato per il linguaggio, i token di immagine e le coordinate di un riquadro di delimitazione.</sample>
+    <sample id="516">Ecco alcune istanze di esempio dal nostro MULTIINSTRUCT per quattro compiti:
+
+**1. Didascalia Contestualizzata (Grounded Caption)**
+*   **Input:** Genera una didascalia per &lt;bin_198&gt; &lt;bin_32&gt; &lt;bin_400&gt; &lt;bin_193&gt;.
+*   **Output:** racchetta da tennis blu e bianca
+
+**2. Localizzazione del Testo (Text Localization)**
+*   **Input:** Seleziona la regione che contiene il testo "den".
+*   **Opzioni:**
+    *   &lt;bin_206&gt; &lt;bin_119&gt;
+    *   &lt;bin_448&gt; &lt;bin_181&gt;
+    *   &lt;bin_357&gt; &lt;bin_518&gt;
+    *   &lt;bin_456&gt; &lt;bin_574&gt;
+    *   &lt;bin_229&gt;
+    *   &lt;bin_604&gt;
+    *   &lt;bin_304&gt;
+    *   &lt;bin_654&gt;
+*   **Output:** &lt;bin_229&gt; &lt;bin_604&gt; &lt;bin_304&gt; &lt;bin_654&gt;
+
+**3. Selezione di Espressioni di Riferimento (Referring Expression Selection)**
+*   **Input:** Seleziona la regione dell'oggetto descritto da "Un treno blu di fronte".
+*   **Opzioni:**
+    *   &lt;bin_242&gt;
+    *   &lt;bin_180&gt; &lt;bin_736&gt;
+    *   &lt;bin_475&gt; &lt;bin_88&gt;
+    *   &lt;bin_291&gt; &lt;bin_203&gt;
+    *   &lt;bin_473&gt; &lt;bin_193&gt;
+    *   &lt;bin_339&gt;
+    *   &lt;bin_247&gt;
+    *   &lt;bin_442&gt;
+*   **Output:** &lt;bin_242&gt; &lt;bin_180&gt; &lt;bin_736&gt; &lt;bin_475&gt;
+
+**4. Corrispondenza Domanda-Immagine (Question-Image Matching)**
+*   **Input:** Data il contenuto dell'immagine, hai informazioni sufficienti per rispondere "È una giornata di sole?"?
+*   **Opzioni:** "la domanda è pertinente all'immagine" o "la domanda è irrilevante per l'immagine"
+*   **Output:** la domanda è irrilevante per l'immagine</sample>
+    <sample id="517">To unify the processing of various input and output datatypes.
+Per unificare l'elaborazione di vari tipi di dati in input e output.</sample>
+    <sample id="518">Ecco la traduzione del contenuto dell'immagine in italiano:
+
+**MULTIINSTRUCT**
+
+**Figura 1: Istanze d'esempio da MULTIINSTRUCT per Quattro Compiti.**
+
+---
+
+**Didascalia Ancorata**
+
+**Input:** Genera una didascalia per &lt;bin_198&gt; &lt;bin_32&gt; &lt;bin_400&gt; &lt;bin_193&gt;.
+**Output:** racchetta da tennis blu e bianca
+
+---
+
+**Localizzazione Testo**
+
+**Input:** Seleziona la regione che contiene il testo "den".
+**Opzioni:** &lt;bin_206&gt; &lt;bin_119&gt; |||| &lt;bin_448&gt; &lt;bin_181&gt; |||| &lt;bin_357&gt; &lt;bin_518&gt; |||| &lt;bin_456&gt; &lt;bin_574&gt; |||| &lt;bin_229&gt; |||| &lt;bin_604&gt; |||| &lt;bin_304&gt; |||| &lt;bin_654&gt;.
+**Output:** &lt;bin_229&gt; &lt;bin_604&gt; &lt;bin_304&gt; &lt;bin_654&gt;
+
+---
+
+**Selezione Espressione di Riferimento**
+
+**Input:** Seleziona la regione dell'oggetto descritto da "Un treno blu davanti."
+**Opzioni:** &lt;bin_242&gt; &lt;bin_180&gt; |||| &lt;bin_736&gt; &lt;bin_475&gt; |||| &lt;bin_88&gt; |||| &lt;bin_291&gt; &lt;bin_203&gt; |||| &lt;bin_473&gt; &lt;bin_193&gt; |||| &lt;bin_339&gt; |||| &lt;bin_247&gt; |||| &lt;bin_442&gt;.
+**Output:** &lt;bin_242&gt; &lt;bin_180&gt; &lt;bin_736&gt; &lt;bin_475&gt;
+
+---
+
+**Corrispondenza Domanda-Immagine**
+
+**Input:** Dato il contenuto dell'immagine, hai abbastanza informazioni per rispondere a "È una giornata di sole?"
+**Opzioni:** "la domanda è rilevante per l'immagine" o "la domanda è irrilevante per l'immagine"
+**Output:** la domanda è irrilev</sample>
+    <sample id="519">Ecco la traduzione in italiano:
+"Multi-modal Instruction Tuning" diventa "Messa a punto delle istruzioni multimodali".</sample>
+    <sample id="520">**Apprendimento con Istruzioni Multi-Modali**
+
+**Costruzione del Dataset di Training:**
+*   Utilizzare 53 compiti da 9 gruppi per l'addestramento.
+*   Campionare 10.000 istanze per compito.
+
+**Costruzione del Dataset di Testing:**
+*   Riservare l'intero gruppo *Commonsense Reasoning* per il testing.
+*   Selezionare ulteriori 5 compiti dai gruppi VQA e Miscellaneous.
+*   Utilizziamo tutte le istanze dello split di test per ogni compito.
+*   Campionare casualmente 20 compiti dallo split di test del dataset *Natural Instructions* come compiti non visti per l'NLP.
+
+**[Voce dello speaker]**
+"Quindi, per il dataset di training, utilizziamo 53 compiti da nove gruppi per l'addestramento, e campioniamo 10.000 istanze per compito. Ehm, per il testing, riserviamo l'intero gruppo *Commonsense Reasoning* per il testing, e selezioniamo ulteriori cinque compiti dai gruppi VQA e Miscellaneous."</sample>
+    <sample id="521">Ecco il contenuto tradotto in italiano:
+
+**Turning di Istruzioni Multi-Modali**
+
+*   **Costruzione del Dataset di Addestramento:**
+    *   Utilizzare 53 compiti da 9 gruppi per l'addestramento.
+    *   Campionare 10.000 istanze per compito.
+*   **Costruzione del Dataset di Test:**
+    *   Riservare l'intero gruppo *Commonsense Reasoning* per il test.
+    *   Selezionare ulteriori 5 compiti dai gruppi VQA e Miscellaneous.
+    *   Utilizziamo tutte le istanze nello split di test per ogni compito.
+    *   Campionare casualmente 20 compiti dallo split di test del dataset *Natural Instructions* come compiti non visti per l'NLP.</sample>
+    <sample id="522">Ecco la traduzione del contenuto inglese in italiano:
+
+**Dettagli di Implementazione**
+
+*   **Dettagli di addestramento:**
+    *   Modello pre-addestrato OFA-Large (472M)
+    *   Mescoliamo tutte le istanze per tutti i compiti.
+    *   Ogni istanza è combinata casualmente con uno dei suoi cinque template di istruzioni.
+
+*   **Dettagli di test:**
+    *   Per ogni compito, conduciamo un totale di cinque esperimenti valutando il modello usando una delle cinque istruzioni in ogni esperimento.
+    *   Riportiamo la prestazione media e massima e la deviazione standard della prestazione attraverso tutti e cinque gli esperimenti.</sample>
+    <sample id="523">**Dettagli di Implementazione**
+*   **Dettagli di training:**
+    *   Modello OFA-Large pre-addestrato (472M)
+    *   Mescolare tutte le istanze per tutti i task.
+    *   Ogni istanza è combinata casualmente con uno dei suoi cinque modelli di istruzione.
+*   **Dettagli di testing:**
+    *   Per ogni task, conduciamo un totale di cinque esperimenti valutando il modello usando una delle cinque istruzioni in ogni esperimento.
+    *   Riportiamo la performance media e massima e la deviazione standard della performance attraverso tutti e cinque gli esperimenti.
+
+**Voce:**
+Quindi, durante il test per ogni task, conduciamo un totale di cinque esperimenti valutando il modello usando una delle cinque istruzioni in ogni esperimento.</sample>
+    <sample id="524">Ecco la traduzione del contenuto in italiano:
+
+**Dettagli di Implementazione**
+
+*   **Dettagli di Addestramento:**
+    *   Modello OFA-Large pre-addestrato (472M)
+    *   Mescolare tutte le istanze per tutti i compiti.
+    *   Ogni istanza viene combinata casualmente con uno dei suoi cinque modelli di istruzioni.
+
+*   **Dettagli di Test:**
+    *   Per ogni compito, conduciamo un totale di cinque esperimenti valutando il modello utilizzando una delle cinque istruzioni in ciascun esperimento.
+    *   Riportiamo la performance media e massima e la deviazione standard della performance su tutti e cinque gli esperimenti.</sample>
+    <sample id="525">**Metriche di Valutazione**
+
+*   Per i compiti di **classificazione multimodale** (Inferenza Visiva, Ragionamento Spaziale Visivo, Ragionamento Visivo del Linguaggio Naturale e Classificazione del Tipo di Disastro) riportiamo l'**Accuratezza**.
+*   Per i compiti di **generazione multimodale** (VQA di Senso Comune, VQA Testuale, VQA Basata su Immagini, Estrazione di Testo Visivo e Dialogo Visivo) riportiamo il **Rouge-L**.
+*   Per i compiti di **PNL**, riportiamo il **Rouge-L**.
+
+*   Calcoliamo anche la **performance aggregata** per ogni modello basata sulla media delle performance del modello su tutti i compiti multimodali e di PNL non visti. Utilizziamo Rouge-L come punteggio di performance per la maggior parte dei compiti, e l'Accuratezza per i compiti che hanno solo l'Accuratezza come metrica.</sample>
+    <sample id="526">Ecco la traduzione del contenuto in italiano:
+
+**Sensibilità**
+
+Quanto è sensibile il modello alla varietà di istruzioni per lo stesso compito:
+- Capacità di produrre costantemente gli stessi risultati per lo stesso compito, indipendentemente da lievi variazioni nella formulazione delle istruzioni.
+
+**Efficacia dell'Instruction Tuning su MULTIINSTRUCT**</sample>
+    <sample id="527">Ecco i nostri risultati principali. Come possiamo vedere, l'instruction tuning può migliorare significativamente le prestazioni di OFA su vari task multimodali.</sample>
+    <sample id="528">Translate the English content into Italian.
+Also, transfer learning from natural instruction dataset can benefit instruction tuning.</sample>
+    <sample id="529">Ecco la traduzione del testo in italiano:
+
+**Impatto dell'aumento dei cluster di attività di istruzione multimodale**
+
+*   **Comprensione Immagine**
+    *   VQA + Comprensione dell'Immagine
+*   **Ancoraggio (Grounded)**
+    *   Ancoraggio corrispondente + Generazione ancorata
+*   **MISC, ITM**
+    *   Ordinamento temporale + Varie + Corrispondenza Immagine-Testo
+*   **Relazione**
+    *   Relazione visiva
+*   **Regione**
+    *   Comprensione della Regione
+*   **NLP**
+    *   Attività NLP
+
+**Figura 3: Prestazioni del modello in funzione dei cluster di attività di istruzione multimodale**</sample>
+    <sample id="530">Ecco il contenuto tradotto:
+
+**Contenuto parlato:**
+"Quindi, abbiamo anche fatto un esperimento. Abbiamo usato un'istruzione contro cinque istruzioni. Come possiamo vedere, uh, usare più istruzioni può migliorare la performance complessiva del modello e ridurre la sua sensibilità di molto."
+
+**Testo sulla diapositiva:**
+**Titolo:** Effetto di Istruzioni Diverse sulla Sintonizzazione delle Istruzioni
+* OFA sintonizzato su 5 istruzioni raggiunge una **performance aggregata molto più alta** su tutti i task di valutazione e mostra una **sensibilità inferiore**.
+
+**Tabella 3:** Effetto di un Numero Diverso di Istruzioni. Performance di OFA_MultiInstruct sintonizzato su diversi numeri di istruzioni.
+| N. di Istruzioni | Performance Aggregata ↑ | Sensibilità ↓ |
+|---|---|---|
+| 1 Istruzione | 42.81 | 24.62 |
+| 5 Istruzioni | **47.82** | **10.45** |</sample>
+    <sample id="531">Quindi questo mostra l'effetto delle diverse strategie di fine-tuning sulla sensibilità del modello. Come possiamo vedere, tramite il transfer learning dal dataset di istruzioni naturali, il modello può ottenere una sensibilità molto migliore rispetto all'OFA originale.</sample>
+    <sample id="532">Ecco il contenuto tradotto in italiano:
+
+**Prestazioni Zero-Shot su Compiti NLP**
+
+*   L'Instruction Tuning su MultiInstruct può migliorare le prestazioni zero-shot su compiti NLP non visti.
+*   La strategia di apprendimento per trasferimento MixedInstruct può preservare al meglio la capacità zero-shot acquisita sul dataset Natural Instructions.
+
+**Tabella 4: Prestazioni Zero-Shot su Compiti NLP.** Le prestazioni sono riportate in Rouge-L e la migliore prestazione è in grassetto.
+
+| Modello                           | Rouge-L |
+| :-------------------------------- | :------ |
+| OFA                               | 2.25    |
+| OFA_MultiInstruct                 | 12.18   |
+| **Apprendimento per Trasferimento da NATURAL INSTRUCTIONS** |         |
+| OFA_NaturalInstruct               | **43.61** |
+| OFA_MixedInstruct                 | 43.32   |
+| OFA_SeqInstruct                   | 30.79   |</sample>
+    <sample id="533">Ecco la traduzione del testo in italiano:
+
+**Conclusione**
+
+*   Il primo dataset multimodale per il tuning delle istruzioni su larga scala.
+    *   Contiene 62 task multimodali da 10 ampie categorie.
+*   Abbiamo migliorato significativamente la capacità zero-shot di OFA tramite il tuning delle istruzioni.
+*   Abbiamo esplorato diverse tecniche di transfer learning e ne abbiamo dimostrato i benefici.
+*   Abbiamo progettato una nuova metrica di sensibilità.</sample>
+    <sample id="534">Ecco la traduzione del contenuto:
+
+**Testo sulla diapositiva:**
+Un'altra cosa!
+Stiamo raccogliendo un dataset di ottimizzazione dell'istruzione multimodale molto più grande, con circa 150 compiti aggiuntivi di visione-linguaggio, e li rilasceremo presto!
+[Codice QR]
+
+**Ciò che dice la persona (tradotto):**
+"Quindi, un'altra cosa. Stiamo raccogliendo un dataset di ottimizzazione dell'istruzione multimodale molto più grande, con circa 150 compiti aggiuntivi di visione-linguaggio, e li rilasceremo presto. Questo è un codice QR per i nostri dati e il modello. Grazie."</sample>
+    <sample id="535">Gli autori sono affiliati all'Università di Trento e alla Fondazione Bruno Kessler.</sample>
+    <sample id="536">Javad Hosseini.</sample>
+    <sample id="562">Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo:** I giudizi di accettabilità dei modelli linguistici non sono sempre robusti al contesto
+
+**Evento:** ACL 2023
+
+**Autori:** Koustuv Sinha, Jon Gauthier, Aaron Mueller, Kanishka Misra, Keren Fuentes, Roger Levy, Adina Williams
+
+**Introduzione (dall'audio):**
+Ciao a tutti. Sono Koustuv Sinha e sono lieto di darvi il benvenuto al nostro intervento sul nostro articolo ACL 2023, intitolato "I giudizi di accettabilità dei modelli linguistici non sono sempre robusti al contesto".
+
+**Loghi:**
+*   Johns Hopkins University
+*   Purdue University
+*   MIT
+*   Meta AI</sample>
+    <sample id="563">Ecco la traduzione del contenuto:
+
+**Titolo:** "I giudizi di accettabilità dei modelli linguistici non sono sempre robusti al contesto"
+
+**Sotto il titolo:** "ACL 2023"
+
+**Autori:** "Koustuv Sinha, Jon Gauthier, Aaron Mueller, Kanishka Misra, Keren Fuentes, Roger Levy, Adina Williams"
+
+**Parte parlata:** "Questo è un lavoro congiunto con Jon Gauthier, Aaron Mueller, Kanishka Mishra, Karen Fuentes, Roger Levy e Adina Williams."</sample>
+    <sample id="564">So, in this work, we revisit the minimal pair paradigm.
+Italian: Quindi, in questo lavoro, rivisitiamo il paradigma della coppia minima.</sample>
+    <sample id="565">Ecco il contenuto tradotto in italiano:
+
+**Titolo:** Rivedendo il Paradigma della Coppia Minima
+**Testo principale:** Le valutazioni dei modelli linguistici basate sul paradigma della coppia minima (MPP) utilizzano differenze relative nelle probabilità di sequenza per valutare la conoscenza astratta dei modelli linguistici (LLM).
+
+**Contenuto della tabella:**
+**BLiMP**
+1. Molte persone si stavano aiutando. (Traduzione letterale: Molte persone stavano aiutando sé stesse)
+2. *Molte persone stavano aiutando se stessa. (Frase grammaticalmente scorretta in inglese, indicata dall'asterisco)
+P(1) &gt; P(2)
+
+**SyntaxGym**
+1. Nessun cliente... ha speso alcun denaro.
+2. *Il cliente... ha speso alcun denaro. (Frase grammaticalmente scorretta in inglese per l'uso di "any money" in una frase affermativa)
+P(1.any) &gt; P(2.any)
+
+**CrowS**
+1. Frase stereotipata.
+2. Frase non stereotipata.
+P(1) &gt; P(2)</sample>
+    <sample id="566">Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo:** Rivedendo il Paradigma delle Coppie Minime
+
+**Testo del corpo:**
+"Le valutazioni dei modelli linguistici tramite il paradigma delle coppie minime (MPP) utilizzano le differenze relative nelle probabilità di sequenza per valutare la conoscenza astratta dei modelli linguistici (LM):"
+
+**Tabella/Esempi:**
+
+**BLiMP**
+1. Molte persone si stavano aiutando.
+2. *Molte persone si stavano aiutando se stessa.
+P(1) &gt; P(2)
+
+**SyntaxGym**
+1. Nessun cliente... ha speso dei soldi.
+2. *Il cliente... ha speso dei soldi.
+P(1.any) &gt; P(2.any)
+
+**CrowS**
+1. Frase stereotipata.
+2. Frase non stereotipata.
+P(1) &gt; P(2)</sample>
+    <sample id="567">E poi la speranza è che il modello, fondamentalmente, ponga maggiore probabilità sulla frase accettabile.</sample>
+    <sample id="568">Ecco la traduzione del contenuto inglese in italiano:
+
+**Riesaminare il Paradigma delle Coppie Minime**
+
+Le valutazioni dei modelli linguistici basate sul paradigma delle coppie minime (MPP) utilizzano differenze relative nelle probabilità di sequenza per valutare la conoscenza astratta dei modelli linguistici (ML).
+
+**BLiMP**
+1. Molte persone si stavano aiutando.
+2. *Molte persone stavano aiutando se stessa.
+P(1) &gt; P(2)
+
+**SyntaxGym**
+1. Nessun cliente ... ha speso denaro.
+2. *Il cliente ... ha speso denaro.
+P(1.any) &gt; P(2.any)
+
+**CrowS**
+1. Le donne sono terribili nei lavori manuali.
+2. Gli uomini sono terribili nei lavori manuali.
+P(1) &gt; P(2)
+
+Questi giudizi sono stabili con un lungo contesto precedente?</sample>
+    <sample id="569">Ecco la traduzione del contenuto in italiano:
+
+**Testo dell'immagine:**
+
+**Rivedere il Paradigma delle Coppie Minime**
+
+Le valutazioni dei modelli linguistici tramite il paradigma delle coppie minime (MPP) utilizzano differenze relative nelle probabilità di sequenza per valutare la conoscenza astratta dei modelli linguistici (LM):
+
+**BLiMP**
+1. Molte persone si stavano aiutando.
+2. *Molte persone si stavano aiutando lei stessa.
+P(1) &gt; P(2)
+
+**SyntaxGym**
+1. Nessun cliente... ha speso dei soldi.
+2. *Il cliente... ha speso dei soldi.
+P(1.any) &gt; P(2.any)
+
+**CrowS**
+1. Le donne sono terribili nei lavori manuali.
+2. Gli uomini sono terribili nei lavori manuali.
+P(1) &gt; P(2)
+
+Questi giudizi sono stabili con un lungo contesto precedente?
+
+**Audio:**
+
+"In questi giorni, i grandi modelli linguistici stanno emergendo con finestre di contesto sempre più lunghe. Quindi è cruciale che valutiamo l'accettabilità dei modelli lungo l'intera finestra di contesto."</sample>
+    <sample id="570">Ecco la traduzione del contenuto:
+
+**Testo nell'immagine:**
+
+**Titolo:** Rivedere il Paradigma delle Coppie Minime
+
+**Sottotitolo:** Le valutazioni del paradigma delle coppie minime (MPP) dei modelli linguistici utilizzano differenze relative nelle probabilità di sequenza per valutare la conoscenza astratta dei modelli linguistici (LLM).
+
+**BLIMP**
+1. Molte persone si stavano aiutando (da sole).
+2. *Molte persone si stavano aiutando (lei).
+P(1) &gt; P(2)
+
+**SyntaxGym**
+1. Nessun cliente... ha speso alcun denaro.
+2. *Il cliente... ha speso alcun denaro.
+P(1.any) &gt; P(2.any)
+
+**CrowS**
+1. Le donne sono terribili nei lavori manuali.
+2. Gli uomini sono terribili nei lavori manuali.
+P(1) ≥ P(2)
+
+**Domanda:** Questi giudizi sono stabili con un lungo contesto precedente?
+
+---
+
+**Contenuto parlato:**
+
+"Ed è quello che stiamo cercando di fare qui. Stiamo cercando di rivisitare la pipeline MPP chiedendo al modello di valutare l'accettabilità su sequenze sempre più lunghe."</sample>
+    <sample id="571">Ecco il contenuto inglese tradotto in italiano:
+
+*   **Approach** -&gt; Approccio
+*   **Test whether MPP judgements vary as a function of context length, structural match, and acceptability** -&gt; Verifica se i giudizi MPP variano in funzione della lunghezza del contesto, della corrispondenza strutturale e dell'accettabilità
+*   **Test Suite: Subject Verb Agreement** -&gt; Suite di test: Accordo Soggetto-Verbo
+*   **acceptable** -&gt; accettabile
+*   **unacceptable** -&gt; inaccettabile
+*   **$P_{LM}$( | Prefix) &gt;? $P_{LM}$( | Prefix)** -&gt; $P_{LM}$( | Prefisso) &gt;? $P_{LM}$( | Prefisso)
+*   **sample** -&gt; esempio
+*   **Space of Candidate Prefixes** -&gt; Spazio dei Prefissi Candidati
+*   **Matched** -&gt; Corrispondente
+*   **Mismatched** -&gt; Non corrispondente
+*   **Subj. Verb. Agreement** -&gt; Accordo Soggetto-Verbo
+*   **Island Effects** -&gt; Effetti Isola
+*   **Filler-gaps** -&gt; Filler-gaps (termine tecnico)
+*   **Binding** -&gt; Binding (termine tecnico)
+*   **Wikipedia** -&gt; Wikipedia
+*   **...** -&gt; ...
+*   **Who might Rose flee from before returning to this customer?** -&gt; Da chi potrebbe Rose fuggire prima di tornare da questo cliente?
+*   ***Who might Rose flee from this customer before returning to is?** -&gt; *Da chi potrebbe Rose fuggire da questo cliente prima di tornare a è?
+*   **What could Jessica sell before noticing these spotlights? What had Aaron sounded like while clearing the museum? Who might Rose flee from before returning to this customer?** -&gt; Cosa potrebbe vendere Jessica prima di notare questi riflettori? Che suono aveva Aaron mentre puliva il museo? Da chi potrebbe Rose fuggire prima di tornare da questo cliente?
+*   ***What could Jessica sell before noticing these spotlights? What had Aaron sounded like while clearing the museum? Who might Rose flee from this customer before returning to is?** -&gt; *Cosa potrebbe vendere Jessica prima di notare questi riflettori? Che suono aveva Aaron mentre puliva il museo? Da chi potrebbe Rose fuggire da questo cliente prima di tornare a è?
+*   **Acceptable, Matched** -&gt; Accettabile, Corrispondente
+*   **BLiMP, Adjunct Island** -&gt; BLiMP, Isola dell'Aggiunto (termine linguistico)
+*   **GPT2, OPT family - 125M to 6.7B** -&gt; GPT2, famiglia OPT - da 125M a 6.7B</sample>
+    <sample id="572">Ecco il contenuto inglese tradotto in italiano:
+
+- **Approach** -&gt; **Approccio**
+- **Test whether MPP judgements vary as a function of context length, structural match, and acceptability** -&gt; **Verifica se i giudizi MPP variano in funzione della lunghezza del contesto, della corrispondenza strutturale e dell'accettabilità**
+- **Test Suite: Subject Verb Agreement** -&gt; **Suite di Test: Accordo Soggetto Verbo**
+- **acceptable** -&gt; **accettabile**
+- **unacceptable** -&gt; **inaccettabile**
+- **Prefixes** -&gt; **Prefissi**
+- **Prefix** -&gt; **Prefisso**
+- **sample** -&gt; **campione**
+- **Space of Candidate Prefixes** -&gt; **Spazio di Prefissi Candidati**
+- **Matched** -&gt; **Corrispondente**
+- **Mismatched** -&gt; **Non corrispondente**
+- **Subj. Verb. Agreement** -&gt; **Accordo Soggetto-Verbo**
+- **Island Effects** -&gt; **Effetti Isola**
+- **Filler-gaps** -&gt; **Lacune-Riempimento**
+- **Binding** -&gt; **Legame**
+- **Wikipedia** -&gt; **Wikipedia**
+- **Who might Rose flee from before returning to this customer?** -&gt; **Da chi potrebbe fuggire Rose prima di tornare da questo cliente?**
+- *** Who might Rose flee from this customer before returning to Is?** -&gt; *** Da chi potrebbe fuggire Rose da questo cliente prima di tornare da Is?**
+- **Acceptable, Matched** -&gt; **Accettabile, Corrispondente**
+- **What could Jessica sell before noticing these spotlights? What had Aaron sounded like while cleaning the museum? Who might Rose flee from before returning to this customer?** -&gt; **Cosa potrebbe vendere Jessica prima di notare questi riflettori? Che suono aveva Aaron mentre puliva il museo? Da chi potrebbe fuggire Rose prima di tornare da questo cliente?**
+- *** What could Jessica sell before noticing these spotlights? What had Aaron sounded like while cleaning the museum? Who might Rose flee from this customer before returning to Is?** -&gt; *** Cosa potrebbe vendere Jessica prima di notare questi riflettori? Che suono aveva Aaron mentre puliva il museo? Da chi potrebbe fuggire Rose da questo cliente prima di tornare da Is?**
+- **BLIMP, Adjunct Island** -&gt; **BLIMP, Isola Aggiunta**
+- **GPT2, OPT family - 125M to 6.7B** -&gt; **GPT2, famiglia OPT - da 125M a 6.7B**</sample>
+    <sample id="573">Ecco la traduzione del contenuto in italiano:
+
+**Titolo:** Approccio
+
+**Testo principale:**
+Verificare se i giudizi MPP variano in funzione della lunghezza del contesto, della corrispondenza strutturale e dell'accettabilità.
+
+**Diagramma in alto a sinistra:**
+*   **Test Suite:** Accordo Soggetto-Verbo
+*   accettabile
+*   inaccettabile
+*   campione
+
+**Scatola in basso a sinistra (Spazio dei Prefissi Candidati):**
+*   Corrispondente
+*   Non Corrispondente
+*   Accordo Soggetto-Verbo
+*   Effetti Isola
+*   Fille-gap
+*   Binding
+*   Wikipedia
+
+**Scatola a destra, sopra la linea (Accettabile, Corrispondente):**
+*   Chi potrebbe ricevere Rose prima di tornare da questo cliente?
+*   * Chi potrebbe ricevere Rose da questo cliente prima di tornare?
+
+**Scatola a destra, sotto la linea:**
+*   Cosa potrebbe vendere Jessica prima di notare questi riflettori? Cosa ha detto Aaron che assomigliava a pulire il museo? Chi potrebbe ricevere Rose prima di tornare da questo cliente?
+*   * Cosa potrebbe vendere Jessica prima di notare questi riflettori? Cosa ha detto Aaron che assomigliava a pulire il museo? Chi potrebbe ricevere Rose prima di tornare da questo cliente?
+*   BLIMP, Adjunct Island
+
+**Testo in basso:**
+GPT2, famiglia OPT - da 125M a 6.7B
+
+**Dalla trascrizione:**
+"E quello che facciamo è che per ricreare sequenze più lunghe, e che siano accettabili e che abbiano la stessa corrispondenza della struttura grammaticale, estraiamo frasi grammaticali dall'isola dell'aggiunta."
+
+*(Nota: "MPP" non è stato tradotto in quanto è probabilmente un acronimo specifico del dominio, come "Minimal Projection Principle" o simile, e di solito gli acronimi non vengono tradotti a meno che non ci sia una controparte italiana consolidata.)*</sample>
+    <sample id="574">Ecco la traduzione del contenuto inglese in italiano:
+
+*   **Approach**
+    *   Approccio
+*   **Test whether MPP judgements vary as a function of context length, structural match, and acceptability**
+    *   Verificare se i giudizi MPP variano in funzione della lunghezza del contesto, della corrispondenza strutturale e dell'accettabilità
+*   **Test Suite: Subject Verb Agreement**
+    *   Suite di test: Accordo Soggetto-Verbo
+*   **acceptable**
+    *   accettabile
+*   **unacceptable**
+    *   inaccettabile
+*   **Prefix**
+    *   Prefisso
+*   **sample**
+    *   campione
+*   **Space of Candidate Prefixes**
+    *   Spazio dei Prefissi Candidati
+*   **Matched**
+    *   Corrispondente
+*   **Mismatched**
+    *   Non Corrispondente
+*   **Subj. Verb. Agreement**
+    *   Accordo Soggetto-Verbo
+*   **Island Effects**
+    *   Effetti Isola
+*   **Filler-gaps**
+    *   Filler-gaps (o "Riempimenti-vuoti", ma spesso si mantiene il termine tecnico)
+*   **Binding**
+    *   Binding (o "Legame", ma spesso si mantiene il termine tecnico)
+*   **Wikipedia**
+    *   Wikipedia
+*   **Who might Rose flee from before returning to this customer?**
+    *   Da chi potrebbe fuggire Rose prima di tornare da questo cliente?
+*   **\* Who might Rose flee from this customer before returning to Is?**
+    *   \* Chi potrebbe Rose fuggire da questo cliente prima di tornare a Is?
+*   **Acceptable, Matched**
+    *   Accettabile, Corrispondente
+*   **What could Jessica sell before noticing these spotlights? What had Aaron sounded like while clearing the museum? Who might Rose flee from before returning to this customer?**
+    *   Cosa potrebbe vendere Jessica prima di notare questi riflettori? Come suonava Aaron mentre puliva il museo? Da chi potrebbe fuggire Rose prima di tornare da questo cliente?
+*   **\* What could Jessica sell before noticing these spotlights? What had Aaron sounded like while clearing the museum? Who might Rose flee from this customer before returning to Is?**
+    *   \* Cosa potrebbe vendere Jessica prima di notare questi riflettori? Come suonava Aaron mentre puliva il museo? Chi potrebbe Rose fuggire da questo cliente prima di tornare a Is?
+*   **BLIMP, Adjunct Island**
+    *   BLIMP, Isola degli Aggiunti
+*   **GPT2, OPT family - 125M to 6.7B**
+    *   Famiglia GPT2, OPT - da 125M a 6.7B</sample>
+    <sample id="575">Quindi possiamo fare la stessa cosa scegliendo frasi inaccettabili dallo stesso abbinamento e questo potrebbe anche essere usato per testare l'accettabilità del modello.</sample>
+  </task>
+</testset>

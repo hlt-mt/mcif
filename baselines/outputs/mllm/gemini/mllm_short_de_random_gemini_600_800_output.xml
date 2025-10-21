@@ -1,0 +1,1140 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="de">
+    <sample id="1036">**[00:00] Titel: Experimente**
+**[00:01] Titel: Basline-Evaluierungen**
+
+*   4 Open-Domain-Dialogmodelle
+*   100 Mensch-Bot-Gespräche pro Modell
+
+**Diagramm-Beschriftungen (Methoden):**
+*   ABC-Eval
+*   Turn-Likert
+*   Dialog-Likert
+*   Vergleichend
+
+**Sprecher:**
+Für jede der bestehenden Methoden haben wir Bewertungen zu acht der am häufigsten gemessenen Aspekte des Dialogs gesammelt, da dies die Standardpraxis zur Bewertung von Chat-Modellen in mehreren Dimensionen ist.
+
+**Aufpoppende Kriterien:**
+*   Konsistenz
+*   Emotionales Verständnis
+*   Informativität
+*   Gesamtqualität
+*   Ansprechendheit
+*   Grammatikalität
+*   Proaktivität
+*   Relevanz</sample>
+    <sample id="1037">Aus unserer Analyse dieser Bewertungsergebnisse haben wir herausgefunden, dass die ABC-Eval-Verhaltenslabels insgesamt zuverlässiger sind als Labels, die mit bestehenden Methoden gesammelt wurden, gemessen an der Inter-Annotator-Übereinstimmung bei hundert doppelt gelabelten Gesprächen.</sample>
+    <sample id="1038">Hier ist die Übersetzung und Erklärung:
+
+**Gesprochener Text (Deutsch):**
+„Zusätzlich sind ABC-Eval-Labels prädiktiver für die Gesamtqualität der Konversation, verglichen mit Metriken, die von bestehenden Methoden erzeugt werden, wie diese einfache lineare Regressionsanalyse zeigt.“
+
+---
+
+**Erklärung der Grafik "Predictive Validity" (Vorhersagevalidität):**
+
+Die Grafik zeigt die Vorhersagevalidität verschiedener Bewertungsmetriken in Bezug auf die Gesamtqualität einer Konversation. Die Y-Achse gibt den „Anteil der erklärten Qualität (R²)“ an, wobei ein höherer R²-Wert bedeutet, dass die jeweilige Metrik einen größeren Teil der Varianz in der Gesprächsqualität erklären kann und somit ein besserer Prädiktor ist. Die X-Achse unterteilt die verwendeten Bewertungsmethoden in vier Kategorien: "ABC-Eval", "Turn Likert", "Dialogue Likert" und "Comparative".
+
+Es werden zwei Maße für die Gesamtqualität der Konversation vorhergesagt: "Interactive Qua_d" (dunkelgraue Balken) und "Interactive Qua_c" (hellgraue Balken).
+
+**Schlüsselerkenntnisse:**
+
+1.  **ABC-Eval (Orange Schrift):** Die Labels aus der ABC-Eval-Methode zeigen die höchste prädiktive Validität, insbesondere für "Interactive Qua_d". Viele der orange markierten Labels, die oft negative Aspekte oder Fehler in der Konversation (z.B. "Other Contra." - andere Widersprüche, "Irrelevant" - irrelevant, "Unempathetic" - unempathisch) erfassen, weisen R²-Werte von über 0.08 auf, einige sogar über 0.10. Dies bestätigt die Aussage der Sprecherin, dass ABC-Eval-Labels am prädiktivsten sind.
+
+2.  **Turn Likert (Blaue Schrift):** Diese Labels, die einzelne Turns (Gesprächszüge) bewerten, zeigen eine moderatere prädiktive Validität. Labels wie "Engaging" (ansprechend), "Relevant" (relevant) und "Informative" (informativ) erreichen R²-Werte um 0.05-0.07 für "Interactive Qua_d", während andere (z.B. "Grammar" - Grammatik) weniger vorhersagend sind.
+
+3.  **Dialogue Likert (Rote Schrift):** Diese Labels bewerten ähnliche Attribute wie "Turn Likert", aber auf Ebene des gesamten Dialogs. Sie zeigen tendenziell eine höhere prädiktive Validität als "Turn Likert" für "Interactive Qua_d", wobei viele Labels (z.B. "Engaging", "Relevant", "Consistent" - konsistent) R²-Werte von 0.07 bis 0.08 erreichen.
+
+4.  **Comparative (Grüne Schrift):** Vergleichsweise Bewertungen zeigen die geringste prädiktive Validität. Die R²-Werte für alle grünen Labels sind sehr niedrig (meist unter 0.02) für beide Qualitätsmaße, was darauf hindeutet, dass diese Methode am wenigsten dazu geeignet ist, die Gesamtqualität der Konversation zu erklären.
+
+**Zusammenfassend:** Die Grafik veranschaulicht, dass detaillierte Fehlermetriken wie ABC-Eval (insbesondere negative Attribute) die Gesamtqualität einer Konversation (hier "Interactive Qua_d") am besten vorhersagen können, gefolgt von Likert-Skalen auf Dialogebene. Einfache Vergleichsbewertungen sind hingegen kaum prädiktiv. Es ist auch ersichtlich, dass "Interactive Qua_d" durchweg besser vorhergesagt werden kann als "Interactive Qua_c" durch alle dargestellten Metriken.</sample>
+    <sample id="1039">Zum Beispiel können Sie sehen, wie die Messung des Anteils der Äußerungen mit Selbst- und Partnerwidersprüchen 5 % bzw. 10 % der Gesprächsqualität erklärt, während die durchschnittlichen Likert-Konsistenzwerte nur 4 % oder weniger erklären.</sample>
+    <sample id="1040">SCHRITTWEISE LINEARE REGRESSION</sample>
+    <sample id="1041">Man kann sehen, wie die Kombination aller ABC-Eval-Metriken über 25 % der Gesprächsqualität erklärt. Und wenn man die Metriken einzeln entfernt, führen die meisten davon dazu, dass eine beträchtliche Menge an Informationen über die Qualität verloren geht.</sample>
+    <sample id="1042">Andererseits erklärt die Kombination aller Likert-Metriken auf Zugebene wesentlich weniger von der Qualität, und weniger dieser Metriken tragen einzigartige Informationen.</sample>
+    <sample id="1043">Diese zuverlässigen, informativen und eindeutigen ABC-Eval-Metriken ermöglichen es uns, konversationelle KI mit einer höheren Auflösung zu bewerten, als frühere Methoden erreichen können.</sample>
+    <sample id="1044">Man kann in den Ergebnissen unseres Experiments sehen, dass noch immer einige Herausforderungen verbleiben und präzise quantifiziert wurden. Zum Beispiel weisen die von uns getesteten Bots in rund 20 % ihrer Antworten Verstöße gegen den gesunden Menschenverstand auf.</sample>
+    <sample id="1045">Sie produzieren irrelevante Informationen in etwa 15 % der Antworten, und sie widersprechen sich selbst oder ihrem Partner in etwa 10 % der Fälle.</sample>
+    <sample id="1046">Angesichts der rasanten Verbesserungen in diesem Bereich könnten viele dieser Fehlerraten bei neuen Modellen, die seit unserer Evaluierung veröffentlicht wurden, einen Rückgang verzeichnen. Dies ist jedoch umso mehr ein Grund, zuverlässige und präzise Bewertungsmetriken für den Vergleich von Modellen zu verfolgen.</sample>
+    <sample id="1047">Hier ist die deutsche Übersetzung des englischen Inhalts:
+
+**00:00 - 00:10**
+**Visueller Inhalt:**
+*   **Titel der Folie:** "ABC-Eval Fehlerraten nach Modell"
+*   **Y-Achsenbeschriftung:** "% der Gesprächsbeiträge"
+*   **X-Achsenbeschriftungen (Fehlertypen):**
+    *   Antisozial
+    *   KS Widerspruch (Kontextueller Semantischer Widerspruch)
+    *   Ignorieren
+    *   Falsch
+    *   Irrelevant
+    *   Uneinfühlsam
+    *   Anderer Widerspruch
+    *   Redundant
+    *   Selbst-Widerspruch
+    *   Themenwechsel
+    *   Uninterpretierbar
+*   **Legende (Modellnamen):**
+    *   BART-FID-RAG
+    *   Blender2
+    *   Emora
+    *   Blender-Decode
+
+**Gesprochener Inhalt:**
+Wir hoffen, dass ABC-Eval von anderen in diesem Bereich als ein bedeutungsvoller Schritt in diese Richtung genutzt werden kann. Und wir freuen uns darauf zu sehen, wie sich konversationelle KI in den kommenden Monaten und Jahren weiterentwickeln wird.
+
+**00:10 - 00:12**
+**Visueller Inhalt:**
+*   **Titel der Folie:** "Vielen Dank fürs Zuschauen!"
+*   **Text:**
+    *   Paper: https://arxiv.org/pdf/2212.09180.pdf
+    *   GitHub: https://github.com/emorynlp/ChatEvaluationPlatform
+    *   Kontaktinformationen:
+    *   {sfillwo, jdfinch, jinho.choi}@emory.edu
+    *   https://www.emorynlp.org
+
+**Gesprochener Inhalt:**
+Vielen Dank fürs Zuschauen!</sample>
+    <sample id="1048">Die Autoren gehören der Emory University an.</sample>
+    <sample id="1049">CFT steht für **continuous fine-tuning**.</sample>
+    <sample id="1050">7 Autoren.</sample>
+    <sample id="1051">TRANSLATION:
+Hallo, mein Name ist Kayo Yin, und ich werde unsere Arbeit mit dem Titel "When Does Translation Require Context? A Data-driven, Multilingual Exploration" vorstellen. Diese Arbeit wurde in Zusammenarbeit mit Patrick Fernandes, Emmy Liu, André F. T. Martins und Graham Neubig durchgeführt.</sample>
+    <sample id="1052">Hier ist der deutsche Inhalt:
+
+Übersetzung hängt vom Kontext ab
+
+Wir müssen diesen Maulwurf loswerden.</sample>
+    <sample id="1053">Hier ist der englische Inhalt des Videos auf Deutsch:
+
+**Auf dem Bildschirm:**
+Die Übersetzung hängt vom Kontext ab.
+
+**Sprecherin:**
+Nun, wenn der vorherige Satz lautete: "Es könnte gefährlich werden, wenn die Minister es herausfinden."
+(Auf dem Bildschirm: "Es könnte gefährlich werden, wenn die Minister es herausfinden. Wir müssen diesen Maulwurf loswerden.")
+...dann bezieht sich "Maulwurf" auf einen Spion.
+
+**Sprecherin:**
+Aber wenn der vorherige Satz lautete: "Könnte es etwas Ernstes sein, Doktor?"
+(Auf dem Bildschirm: "Könnte es etwas Ernstes sein, Doktor? Wir müssen diesen Maulwurf loswerden.")
+...dann bezieht sich "Maulwurf" auf ein Muttermal.</sample>
+    <sample id="1054">Hier ist der Inhalt auf Deutsch:
+
+**Text (auf der Folie):**
+Die Übersetzung hängt vom Kontext ab.
+Könnte es etwas Ernstes sein, Herr Doktor?
+Wir müssen dieses Muttermal entfernen.
+
+**Gesprochener Text:**
+Also, je nach Kontext ändert sich die Bedeutung des Wortes, und somit ändert sich auch die Übersetzung.</sample>
+    <sample id="1055">**Präsentationsfolie:**
+
+*   **Titel:** Die Bewertung kontextabhängiger Übersetzungen ist schwierig.
+*   **Aufzählungspunkt 1:** Nur ein kleiner Teil der Wörter hängt vom Kontext ab.
+    *   **Unterpunkt:** Korpusbasierte Metriken
+
+**Gesprochener Text:**
+
+Allerdings ist es ziemlich schwierig zu beurteilen, wie gut Modelle derartige Fälle übersetzen können. Erstens, weil nur ein kleiner Teil der Übersetzungen vom Kontext abhängt, was dazu führt, dass korpusbasierte Metriken wie BLEU diese Übersetzungen nicht erfassen können.</sample>
+    <sample id="1056">&lt;ctrl94&gt;thought
+The user wants a German translation of the English content from the video. I need to transcribe the spoken English words and then translate them into German.
+
+Here's the plan:
+1. Transcribe the English audio.
+2. Translate the transcribed text into German.
+
+English Transcription:
+"Evaluating context-dependent translation is hard.
+* Only a small portion of words depend on context.
+  * Corpus-level metrics
+* Existing methods support limited discourse phenomena and languages.
+Since they usually rely on domain knowledge and human creation."
+
+German Translation:
+"Die Bewertung der kontextabhängigen Übersetzung ist schwierig.
+* Nur ein kleiner Teil der Wörter hängt vom Kontext ab.
+  * Korpus-Level-Metriken
+* Bestehende Methoden unterstützen nur begrenzte Diskursphänomene und Sprachen.
+Da sie sich in der Regel auf Domänenwissen und menschliche Erstellung verlassen."&lt;ctrl95&gt;Die Bewertung der kontextabhängigen Übersetzung ist schwierig.
+* Nur ein kleiner Teil der Wörter hängt vom Kontext ab.
+  * Korpus-Level-Metriken
+* Bestehende Methoden unterstützen nur begrenzte Diskursphänomene und Sprachen.
+Da sie sich in der Regel auf Domänenwissen und menschliche Erstellung verlassen.</sample>
+    <sample id="1057">In dieser Arbeit versuchen wir, diese beiden Fragen zu beantworten. Erstens, wann erfordert Übersetzung Kontext? Und zweitens, wie gut gehen Modelle mit kontextabhängigen Übersetzungen um?</sample>
+    <sample id="1058">RQ1: Wann erfordert Übersetzung Kontext?
+- Kontextnutzung auf Wortebene
+
+RQ2: Wie gut handhaben Modelle kontextabhängige Übersetzungen?</sample>
+    <sample id="1059">Hier ist der englische Inhalt der Folie auf Deutsch:
+
+**Konditionale Kreuz-Wechselseitige Information (CXMI)**
+
+*   **CXMI:** Misst, wie viel Kontext Modelle für maschinelle Übersetzung (MT) in einem gegebenen Korpus nutzen.
+
+**(Diagramm-Beschriftungen):**
+*   **X** (Quelle)
+*   **C** (Kontext)
+*   **Unsicherheit über Übersetzungen bei gegebener Quelle**
+*   **Unsicherheit über Übersetzungen bei gegebener Quelle UND Kontext**
+*   **CXMI($C \rightarrow Y|X$)**</sample>
+    <sample id="1060">Hier ist der Inhalt auf Deutsch:
+
+**Bedingte gegenseitige Kreuzinformation (CXMI)**
+
+*   CXMI: misst, wie viel Kontext MT-Modelle angesichts eines Korpus verwenden
+
+(Gesprochener Text): Sie können CXMI als die Informationsgewinnung betrachten, die sich aus der Bereitstellung von Kontext für die...
+
+**Diagramm:**
+
+*   **X** (oberes Feld, Quelle)
+*   **H_qMTA(Y|X)** (Blaues Feld)
+    *   **Unsicherheit über Übersetzungen angesichts der Quelle**
+*   **C** (unteres Feld, Kontext)
+*   **H_qMTC(Y|X,C)** (Grünes Feld)
+    *   **Unsicherheit über Übersetzungen angesichts der Quelle UND des Kontextes**
+*   **CXMI(C -&gt; Y|X)** (Braunes Feld, die Differenz zwischen den Unsicherheiten)</sample>
+    <sample id="1061">Hier ist der englische Inhalt auf Deutsch:
+
+**Punktweise (P-)CXMI**
+
+*   Wir führen P-CXMI ein, um die Kontextnutzung bei der Übersetzung eines *spezifischen* […unvollständig im Original…] zu messen.
+    *   Satz: P-CXMI(y, x, C) = - log (q_MTA(y|x) / q_MTC(y|x, C))
+    *   Wort: P-CXMI(i, y, x, C) = - log (q_MTA(y_i|y_{t&lt;i}, x) / q_MTC(y_i|y_{t&lt;i}, x, C))
+*   Wörter mit hohem P-CXMI erfordern Kontext zur Übersetzung.</sample>
+    <sample id="1062">F1: Wann erfordert Übersetzung Kontext?
+- Kontextnutzung auf Wortebene
+- Thematische Analyse
+
+F2: Wie gut gehen Modelle mit kontextabhängigen Übersetzungen um?</sample>
+    <sample id="1063">Wir führen unsere Analyse an Transkripten von TED-Talks durch, die aus dem Englischen in 14 verschiedene Sprachen übersetzt wurden.</sample>
+    <sample id="1064">Wir führen unsere Analyse auf drei verschiedenen Ebenen durch. Zunächst betrachten wir Wortart-Tags, die hohe P-CXMI-Werte aufweisen.</sample>
+    <sample id="1065">Diese Analyse ermöglicht es uns, beispielsweise Dualpronomen im Arabischen zu finden, die einen relativ hohen P-CXMI-Wert aufweisen. Dies lässt sich damit erklären, dass das Englische keine Dualpronomen hat. Daher ist Kontext erforderlich, um beim Übersetzen ins Arabische festzustellen, ob ein Pronomen im Dual steht.</sample>
+    <sample id="1066">Hier ist der englische Inhalt auf Deutsch:
+
+*   **Thematic analysis of high P-CXMI words**
+    *   Thematische Analyse von Wörtern mit hohem P-CXMI
+*   **1. POS tags**
+    *   1. POS-Tags (oder: 1. Wortart-Tags)
+*   **P-CXMI for POS tags in En-Ar**
+    *   P-CXMI für POS-Tags in En-Ar
+*   **PRON.3.Sing**
+    *   PRON.3.Sing
+*   **PRON.3.Dual**
+    *   PRON.3.Dual
+*   **PRON.3.Plur**
+    *   PRON.3.Plur
+*   **- Pronouns**
+    *   - Pronomen
+*   **- Verb form**
+    *   - Verbform
+*   **2. Vocabulary items**
+    *   2. Vokabular-Items (oder: 2. Wortschatz-Elemente)</sample>
+    <sample id="1067">Und das hilft uns, Fälle wie diesen hier zu identifizieren, wo man im Chinesischen Kontext braucht, um Eigennamen zu übersetzen, um sicherzustellen, dass man dieselbe Übersetzung innerhalb des Dokuments verwendet.</sample>
+    <sample id="1068">Und ähnlich ist es, dass wir feststellen, dass der Kontext die Transkription in der richtigen Weise unterstützt.</sample>
+    <sample id="1069">Hier ist der englische Inhalt der Folie, ins Deutsche übersetzt:
+
+**Thematische Analyse von Wörtern mit hohem P-CXMI**
+
+1.  Wortart-Tags
+2.  Vokabelelemente
+3.  Individuelle Token
+
+*   Pronomen
+*   Verbform
+*   Lexikalische Kohäsion
+*   Formalität
+*   Ellipse
+
+**Beispiele:**
+
+*   **Englisch:** Aveliles Mutter schlief noch. Avelile ging zur Schule. (Avelile unterstrichen)
+*   **Chinesisch:** 阿维利尔的母亲还在睡觉。阿维利尔去上学了。(阿维利尔 unterstrichen)
+
+*   **Englisch:** Sie weiß, wohin wir gehen. Ich nicht. (weiß unterstrichen)
+*   **Deutsch:** Sie weiß, wohin wir gehen. Ich weiß es nicht. (weiß unterstrichen)</sample>
+    <sample id="1070">So nutzen wir nun unsere Erkenntnisse aus unserer Analyse, um einen Benchmark für die Dokumentenübersetzung zu entwickeln.</sample>
+    <sample id="1071">Für jedes der fünf von uns identifizierten Diskursphänomene erstellen wir Tagger, um Wörter automatisch zu identifizieren, die zu den Phänomenen gehören. Und wir nennen unseren Tagger den Multilingual Discourse-Aware oder MuDA-Tagger.
+
+Auf der Folie sind außerdem die folgenden Punkte aufgelistet:
+*   Pronomen
+*   Verbform
+*   Lexikalische Kohäsion
+*   Formalität
+*   Ellipse</sample>
+    <sample id="1072">Wir können dann auch feststellen, dass verschiedene Sprachen unterschiedliche Anteile dieser Diskursphänomene haben.</sample>
+    <sample id="1073">Wir nutzen dann den MuDA-Tagger, indem wir den Tagger auf einen parallelen Korpus anwenden, den wir zur Evaluierung verwenden möchten, und wir wenden unsere Übersetzungsmetriken unserer Wahl auf die kontextabhängigen Beispiele an, die der MuDA-Tagger identifiziert hat.</sample>
+    <sample id="1074">Und schließlich, äh, verwenden wir unseren Benchmark sowie andere Metriken, um verschiedene Modelle, ähm, bei der maschinellen Übersetzung auf Dokumentebene zu evaluieren.</sample>
+    <sample id="1075">Hier ist der englische Inhalt auf Deutsch wiedergegeben:
+
+**Folie 1:**
+- **RQ1: Wann erfordert die Übersetzung Kontext?**
+  - Kontextnutzung auf Wortebene
+  - Thematische Analyse
+- **RQ2: Wie gut gehen Modelle mit kontextabhängigen Übersetzungen um?**
+  - Mehrsprachiger Diskurs-Aware (MuDA) Benchmark
+  - Modellbewertung
+
+**Folie 2 und gesprochener Text:**
+- Korpus-Level-Metriken
+- (Bild: Roboter mit durchgestrichenem "KONTEXT" und darunter "BLEU")
+- Zunächst einmal, wenn wir Korpus-Level-Metriken verwenden, äh, bei BLEU stellen wir fest, dass kontextagnostische Modelle die beste Leistung erzielen.</sample>
+    <sample id="1076">Aber wenn wir Comet verwenden, dann schneiden kontextsensitive Modelle am besten ab. Und wenn wir das F-Maß für Wörter verwenden, dann haben Modelle mit oder ohne Kontext eine vergleichbare Leistung.</sample>
+    <sample id="1077">Der englische Inhalt auf Deutsch:
+
+**Titel:**
+Korpus-weite Metriken
+
+**Visueller Inhalt (Roboterbeschriftungen):**
+BLEU (mit durchgestrichenem KONTEXT-Feld)
+COMET (mit KONTEXT-Feld)
+F-measure
+
+**Aufzählungspunkt:**
+Unklar, welches System das beste für die maschinelle Übersetzung auf Dokumentenebene (Dokumenten-MT) mit korpus-weiten Metriken ist.
+
+**Gesprochener Inhalt:**
+Dies zeigt erneut, dass es schwierig ist, das beste Übersetzungsystem auf Dokumentenebene zu bestimmen, wenn wir uns nur auf korpus-weite Metriken verlassen.</sample>
+    <sample id="1078">Nun verwenden wir den MuDA-Benchmark zur Bewertung von Modellen, und wir stellen fest, dass kontextsensitive Modelle bei bestimmten Diskursphänomenen deutlich genauer sind als Modelle, die keinen Kontext verwenden, wie zum Beispiel Formalität und lexikalische Kohäsion.</sample>
+    <sample id="1079">Hier ist der englische Inhalt auf Deutsch:
+
+**MuDA Benchmark-Ergebnisse**
+
+*   **Kontextsensitive Modelle schneiden bei einigen Phänomenen deutlich besser ab.**
+    *   ✓: Formalität, lexikalische Kohäsion
+    *   ✗ Ellipse, Pronomen, Verbform</sample>
+    <sample id="1080">Hier ist der englische Inhalt auf Deutsch übersetzt:
+
+**MuDA Benchmark-Ergebnisse**
+
+*   Kontextsensitive Modelle erzielen bei einigen Phänomenen deutlich bessere Ergebnisse
+    *   ✔: Formalität, lexikalische Kohäsion
+    *   ❌ Ellipsen, Pronomen, Verbform
+
+*   DeepL übertrifft Google bei den meisten Phänomenen und Sprachpaaren\*
+    *   \* Stand: April 2021</sample>
+    <sample id="1081">Zusammenfassend führen wir eine datengesteuerte Analyse über 14 Sprachpaare hinweg durch, um eine Übersetzung zu identifizieren, die Kontext erfordert.</sample>
+    <sample id="1082">Hier ist der Inhalt auf Deutsch:
+
+**Zusammenfassung**
+
+*   Diskursphänomene systematisch ohne vorheriges linguistisches Wissen identifizieren
+*   Datensatz-agnostischer Benchmark für MT auf Dokumentenebene
+
+**Gesprochener Text:**
+"Und dann nutzen wir unsere Erkenntnisse, um einen Benchmark für die maschinelle Übersetzung auf Dokumentenebene zu erstellen, der uns helfen kann zu identifizieren, welche Diskursphänomene Modelle gut verarbeiten können oder nicht, und welche Übersetzungssysteme gut in der Übersetzung auf Dokumentenebene sind."</sample>
+    <sample id="1083">Vielen Dank für Ihre Aufmerksamkeit. Wir sehen uns wieder.</sample>
+    <sample id="1084">Der/die Referent*in heißt Yusen Zhang.</sample>
+    <sample id="1121">Die Methode heißt "Permuting with 'jumps'".</sample>
+    <sample id="1122">Die Methode der „markierten Wörter“ dient dazu, Wörter zu finden, die Personas von **markierten** Gruppen von **unmarkierten** Gruppen unterscheiden.</sample>
+    <sample id="1123">Die Autoren gehören der University of Washington und der Carnegie Mellon University an.</sample>
+    <sample id="1124">Prag</sample>
+    <sample id="1125">Der/die Referent*in heißt James Finch und Sarah Finch.</sample>
+    <sample id="1126">Es sind vier Autoren beteiligt.</sample>
+    <sample id="1127">BLiMP und SyntaxGym können zum Testen syntaktischer Phänomene (wie Grammatikalität) verwendet werden.</sample>
+    <sample id="1161">Die Abkürzungen der fünf Methoden für die erste Forschungsfrage (RQ1) sind:
+FTw, BOND, COSINE, MLC, L2R.</sample>
+    <sample id="1162">Das Modell wird anhand von 11 Aufgaben evaluiert.</sample>
+    <sample id="1226">CamemBERT wurde ursprünglich auf dem OSCAR-Korpus (138 GB) vortrainiert.</sample>
+    <sample id="1227">Der Referent heißt Adam Przepiórkowski.</sample>
+    <sample id="1228">Die Ergebnisse, die zu dieser Schlussfolgerung führten, waren:
+
+1.  Die Performance wurde getestet, indem Modelle mit neueren Daten neu trainiert oder weiter vor-trainiert wurden.
+2.  Es wurde festgestellt, dass sich die Performance bei einem **größeren Zeitabstand (temporal gap)** verschlechtert (degraded).
+
+Diese Verschlechterung der Leistung bei einem größeren Zeitabstand bestätigte ihre Hypothese, dass die zeitliche Verzögerung (temporal drift) die Hauptursache für den Leistungsverlust ist.</sample>
+    <sample id="1269">Nach dem ersten Schritt sind die Token nicht geordnet, daher ist eine Permutation notwendig, um sie in die richtige Reihenfolge zu bringen.</sample>
+    <sample id="1270">Die Autoren empfehlen Transparenz, um zu verstehen, warum bestimmte Muster wie positive Stereotypen entstehen. Es ist unklar, ob diese das Ergebnis einer übermäßigen Wertangleichung (value alignment) oder anderer Anti-Stereotypisierungs-Methoden sind, die zu schädlichen Mustern führen könnten.</sample>
+    <sample id="1271">Inakzeptable Minimalpaareingaben sind die „inakzeptablen Sätze“ oder „ungrammatischen Sätze“ innerhalb eines Minimalpaars. Von Sprachmodellen wird erwartet, dass sie diesen eine geringere Wahrscheinlichkeit zuweisen als ihren akzeptablen Gegenstücken.</sample>
+    <sample id="1272">The authors used F1-score, Exact Match Ratio (EMR), and Hamming score.</sample>
+    <sample id="1273">Krippendorff's Alpha.</sample>
+    <sample id="1274">Wikipedia wurde als Domain gewählt, um völlig unzusammenhängende Sätze hinzuzufügen.</sample>
+    <sample id="1275">Die Autoren gehören der Heinrich Heine University Düsseldorf an.</sample>
+    <sample id="1276">MultiInstruct unterscheidet sich von anderen Benchmarks durch seinen Fokus auf **multimodale Instruktionsaufgaben**. Die meisten früheren Arbeiten zur Instruction Tuning konzentrierten sich ausschließlich auf **sprachenbasierte Aufgaben**, und es gab keine groß angelegten, öffentlich verfügbaren multimodalen Instruktionsdatensätze.</sample>
+    <sample id="1277">Drei Autoren.</sample>
+    <sample id="1278">Die Definition der binären Koordination wird im englischen Inhalt des Videos nicht genannt. Der Sprecher erklärt lediglich die Einteilung der Spalten in den gezeigten Diagrammen nach Zeichen, Silben und Wörtern.</sample>
+    <sample id="1279">Diese Information ist im aktuellen Videoausschnitt nicht enthalten.</sample>
+    <sample id="1280">Das kleinere T5-Modell, das auf Coscript feinabgestimmt wurde, kann bei spezifischen Aufgaben größere Sprachmodelle (LLMs) in Bezug auf Qualität und Genauigkeit übertreffen, wenn es auf geeigneten Datensätzen trainiert wird.</sample>
+    <sample id="1281">TRANSCRIPT:
+Hi. I am Yanis Labrak, and I will present you our works on Dr.BERT, a robust pre-trained model in French for biomedical and clinical domains.
+German: Hallo. Ich bin Yanis Labrak und werde Ihnen unsere Arbeiten an Dr.BERT vorstellen, einem robusten, vortrainierten Modell in französischer Sprache für biomedizinische und klinische Bereiche.</sample>
+    <sample id="1282">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Auf dem Bildschirm:**
+
+**Zusammenfassung**
+
+I. Sprachmodellierung im Gesundheitswesen
+
+II. Vergleich von Pre-training-Strategien, Datenquellen und Größen
+
+III. Evaluierung von 13 Modellen an 11 Aufgaben
+
+IV. Verteilung von NACHOS und DrBERT
+
+Avignon Université
+
+**Gesprochener Text:**
+
+"In dieser Präsentation sprechen wir zuerst über Sprachmodellierung im Gesundheitswesen. Anschließend werden wir den Hauptbeitrag unseres Artikels vorstellen."</sample>
+    <sample id="1283">Den englischen Inhalt kann ich leider nicht übersetzen, da ich hierfür keinen Text sehe.</sample>
+    <sample id="1284">Hier ist der englische Inhalt in deutscher Sprache:
+
+**Zusammenfassung**
+
+I. Sprachmodellierung im Gesundheitswesen
+II. Vergleich von Vortrainingsstrategien, Datenquellen und -größen
+III. Evaluierung von 13 Modellen bei 11 Aufgaben
+IV. Verteilung von NACHOS und DrBERT</sample>
+    <sample id="1285">SPECIAL INSTRUCTION: I am in a thought process to translate the given content to German. I will go through each section, identify key terms and phrases, and then construct the German equivalent, ensuring grammatical correctness and natural flow.Hier ist die deutsche Übersetzung des Inhalts:
+
+**Zusammenfassung**
+
+I. Sprachmodellierung im Gesundheitswesen
+
+II. Vergleich von Vortrainingsstrategien, Datenquellen und -größen
+
+III. Bewertung von 13 Modellen für 11 Aufgaben
+
+IV. Verteilung von NACHOS und DrBERT
+
+---
+
+**Sprachmodellierung**
+
+*   Transformator-basierte Ansätze, wie BERT, bieten einen enormen Leistungsgewinn bei vielen NLP-Aufgaben.
+*   Wurde an das Französische angepasst mit CamemBERT und FlauBERT.
+*   Bei medizinischen Aufgaben haben domänenspezifische Modelle im Englischen die Messlatte noch höher gelegt.
+    *   PubMedBERT, BioBERT, ClinicalBERT und andere
+*   Andere Sprachen als Englisch sind seltener und verlassen sich hauptsächlich auf kontinuierliches Vortraining unter Verwendung eines bestehenden generischen Modells.
+*   Im Gegensatz zu generischen Modellen ist bisher kein Open-Source-Modell für den biomedizinischen Bereich im Französischen verfügbar.
+*   Ein BERT-basiertes, domänenspezifisches Modell für Französisch sollte die Leistung bei medizinischen Aufgaben steigern.</sample>
+    <sample id="1286">Hier ist die deutsche Übersetzung des Textes auf der Folie:
+
+**Sprachmodellierung**
+
+*   Transformer-basierte Ansätze wie BERT bieten einen enormen Leistungszuwachs bei vielen NLP-Aufgaben.
+*   Wurde für Französisch mit CamemBERT und FlauBERT angepasst.
+*   Bei medizinischen Aufgaben haben domänenspezifische Modelle im Englischen die Messlatte noch höher gelegt.
+    *   PudMedBERT, BioBERT, ClinicalBERT und andere
+*   Andere Sprachen als Englisch sind seltener und stützen sich hauptsächlich auf kontinuierliches Vortraining mit einem bestehenden generischen Modell.
+*   Im Gegensatz zu generischen Modellen ist noch kein Open-Source-Modell für den biomedizinischen Bereich in Französisch verfügbar.
+*   Ein BERT-basiertes, domänenspezifisches Modell für Französisch sollte die Leistung bei medizinischen Aufgaben steigern.</sample>
+    <sample id="1287">Hier ist der Inhalt der Folie auf Deutsch:
+
+**Sprachmodellierung**
+
+*   Transformer-basierte Ansätze wie BERT bieten einen enormen Leistungsgewinn bei vielen NLP-Aufgaben.
+*   Wurde an das Französische angepasst mit CamemBERT und FlauBERT.
+*   Bei medizinischen Aufgaben haben domänenspezifische Modelle im Englischen die Messlatte noch höher gelegt.
+    *   PubMedBERT, BioBERT, ClinicalBERT und andere
+*   Andere Sprachen als Englisch sind seltener und verlassen sich hauptsächlich auf kontinuierliches Vortraining unter Verwendung eines bestehenden generischen Modells.
+*   Im Gegensatz zu generischen Modellen ist noch kein Open-Source-Modell für den biomedizinischen Bereich auf Französisch verfügbar.
+*   Ein BERT-basiertes, domänenspezifisches Modell für Französisch sollte die Leistung bei medizinischen Aufgaben verbessern.</sample>
+    <sample id="1288">**Sprachmodellierung**
+
+*   Transformator-basierte Ansätze, wie BERT, bieten einen enormen Leistungszuwachs bei vielen NLP-Aufgaben
+*   Wurde mit CamemBERT und FlauBERT an das Französische angepasst
+*   Bei medizinischen Aufgaben haben domänenspezifische Modelle im Englischen die Messlatte noch höher gelegt
+    *   PudMedBERT, BioBERT, ClinicalBERT und andere
+*   Andere Sprachen als Englisch sind seltener und verlassen sich hauptsächlich auf kontinuierliches Vortraining unter Verwendung eines bestehenden generischen Modells
+*   Im Gegensatz zu generischen Modellen ist für den biomedizinischen Bereich im Französischen noch kein Open-Source-Modell verfügbar
+*   Ein BERT-basiertes domänenspezifisches Modell für Französisch sollte die Leistung bei medizinischen Aufgaben verbessern</sample>
+    <sample id="1289">Hier ist der Inhalt der Folie auf Deutsch:
+
+**Sprachmodellierung**
+
+*   Transformer-basierte Ansätze, wie BERT, bieten einen enormen Leistungszuwachs bei vielen NLP-Aufgaben
+*   Wurde mit CamemBERT und FlauBERT an das Französische angepasst
+*   Bei medizinischen Aufgaben haben domänenspezifische Modelle im Englischen die Messlatte noch höher gelegt
+    *   PudMedBERT, BioBERT, ClinicalBERT und andere
+*   Andere Sprachen als Englisch sind seltener und basieren hauptsächlich auf kontinuierlichem Vortraining unter Verwendung eines bestehenden generischen Modells
+*   Im Gegensatz zu generischen Modellen ist bisher kein Open-Source-Modell für den biomedizinischen Bereich im Französischen verfügbar
+*   Ein BERT-basiertes domänenspezifisches Modell für Französisch sollte die Leistung bei medizinischen Aufgaben verbessern</sample>
+    <sample id="1290">Wir haben uns also die Frage gestellt, welche Datenquellen für eine breite Palette von Anwendungen am geeignetsten sind, und ob diese Rohdaten ein guter Ersatz für klinische Daten sind.</sample>
+    <sample id="1291">Um diese Frage zu beantworten, vergleichen wir DrBERT mit unserem ChuBERT-Modell, das auf anonymisierten Daten basiert, die aus dem Datenlager des Universitätsklinikums Nantes gewonnen wurden.</sample>
+    <sample id="1292">Nachdem wir uns gefragt haben, wie viele Daten wir benötigen, um ein spezialisiertes Modell für französische Daten zu trainieren. Sind es 4 Gigabyte, 8 Gigabyte oder mehr?</sample>
+    <sample id="1293">Um diese Frage zu beantworten, trainieren und vergleichen wir zunächst vier von Grund auf neu entwickelte Modelle. Eine erste Version von Dr. Bert mit 7 GB Nachos. Eine zweite Version mit einem 4 GB großen Teildatensatz von Nachos.</sample>
+    <sample id="1294">Eine erste Version von ChusBERT, welches ein klinisches Modell ist, mit 4 Gigabyte an Sätzen, die aus klinischen Notizen entnommen wurden. Und eine finale Version von ChusBERT mit einer Mischung aus 4 Gigabyte des NACHOS-Datensatzes und 4 Gigabyte klinischer Notizen.</sample>
+    <sample id="1295">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Vergleich von Pre-Training-Strategien und Datenquellen**
+
+*   **Bewertung des Einflusses öffentlicher und privater medizinischer Datenquellen bei vergleichbaren Datengrößen**
+    *   **NACHOS:** Ein Open-Source-Datensatz mit 1,1 Milliarden Wörtern heterogener Daten, die aus verschiedenen medizinischen Domänen, Arten und Stilen gesammelt wurden.
+    *   **NBDW:** Ein privater Datensatz von Sätzen, entnommen aus 1,7 Millionen anonymisierten Krankenakten, die aus dem Datenlager des Universitätsklinikums Nantes extrahiert wurden.
+
+*   **Vergleich von Lernstrategien**
+    *   **Von Grund auf neu** mit vollständiger Modellkonstruktion.
+    *   **Kontinuierliches Pre-Training** unter Verwendung eines bestehenden vortrainierten Modells (hier, CamemBERT, ein generisches französisches Modell, und PubMedBERT, ein englisches medizinisches Modell).
+
+---
+
+**Tabellenüberschriften:**
+
+**Tabelle 1:**
+*   **Korpus**
+*   **Größe**
+*   **#Wörter**
+*   **#Sätze**
+
+**Tabelle 2:**
+*   **Modellname**
+*   **Strategie**
+*   **Korpus**</sample>
+    <sample id="1296">Hier ist der Inhalt der Folie ins Deutsche übersetzt:
+
+**Vergleich von Vortrainingsstrategien und Datenquellen**
+
+*   **Bewertung der Auswirkungen öffentlicher und privater medizinischer Datenquellen bei vergleichbaren Datengrößen**
+    *   **NACHOS:** Ein Open-Source-Datensatz mit 1,1 Milliarden Wörtern heterogener Daten, gesammelt aus verschiedenen medizinischen Domänen, Arten und Stilen.
+    *   **NBDW:** Ein privater Datensatz von Sätzen, entnommen aus 1,7 Millionen anonymisierten medizinischen Aufzeichnungen, die aus dem Data Warehouse des Universitätsklinikums Nantes extrahiert wurden.
+
+*   **Vergleich von Lernstrategien**
+    *   **Von Grund auf neu** mit vollständiger Modellkonstruktion
+    *   **Kontinuierliches Vortraining** unter Verwendung eines bestehenden vortrainierten Modells (hier CamemBERT, ein generisches französisches Modell, und PubMedBERT, ein englischsprachiges medizinisches Modell).</sample>
+    <sample id="1297">Hier ist der Text der Folie ins Deutsche übersetzt:
+
+**Vergleich von Vortrainingsstrategien und Datenquellen**
+
+*   **Bewertung der Auswirkung öffentlicher und privater medizinischer Datenquellen bei vergleichbaren Datengrößen**
+    *   **NACHOS:** Ein Open-Source-Datensatz mit 1,1 Milliarden Wörtern, der heterogene Daten aus verschiedenen medizinischen Domänen, Arten und Stilen enthält.
+    *   **NBDW:** Ein privater Datensatz von Sätzen, die aus 1,7 Millionen anonymisierten Krankenakten extrahiert wurden, welche aus dem Datenlager des Universitätsklinikums Nantes stammen.
+
+*   **Vergleich von Lernstrategien**
+    *   **Von Grund auf** mit vollständigem Modellaufbau
+    *   **Kontinuierliches Vortraining** unter Verwendung eines bestehenden vortrainierten Modells (hier CamemBERT, ein generisches französisches Modell, und PubMedBERT, ein englischsprachiges medizinisches Modell)
+
+---
+
+**Tabellenüberschriften:**
+
+**Tabelle 1:**
+
+| Korpus        | Größe | #Wörter    | #Sätze |
+| :------------ | :---- | :--------- | :----- |
+| NACHOS\_large | 7.4 GB | 1,1 Mrd.   | 54.2 M |
+| NACHOS\_small | 4 GB  | 646 M      | 25.3 M |
+| NBDW\_small   | 4 GB  | 655 M      | 43.1 M |
+| NBDW\_mixed   | 4+4 GB | 1,3 Mrd.   | 68.4 M |
+
+**Tabelle 2:**
+
+| Modellname       | Strategie               | Korpus        |
+| :--------------- | :---------------------- | :------------ |
+| DrBERT           | Von Grund auf           | NACHOS\_large |
+| DrBERT           | Von Grund auf           | NACHOS\_small |
+| ChuBERT          | Von Grund auf           | NBDW\_small   |
+| ChuBERT          | Von Grund auf           | NBDW\_mixed   |
+| CamemBERT        | Kontinuierliches Vortraining | NACHOS\_small |
+| PubMedBERT       | Kontinuierliches Vortraining | NACHOS\_small |
+| CamemBERT        | Kontinuierliches Vortraining | NBDW\_small   |
+
+---
+
+**Unten auf der Folie:**
+
+Avignon Universität</sample>
+    <sample id="1298">**Gesprochener Inhalt:**
+
+"Um unsere sieben Modelle zu evaluieren, haben wir sowohl öffentliche als auch private NLP-Aufgaben gesammelt, wie zum Beispiel die Erkennung benannter Entitäten (Named Entity Recognition), Klassifizierung, Part-of-Speech-Tagging und Frage-Antwort-Systeme (Question Answering)."
+
+**Folieninhalt:**
+
+**Evaluierung: Datenquellen und Größe**
+
+*   Leistungsbewertung von 13 Modellen bei 11 Aufgaben, sowohl öffentlichen als auch privaten.
+*   Unsere feinabgestimmten Modelle erzielen bei fast allen Aufgaben Spitzenleistungen (State-of-the-Art-Ergebnisse).
+
+*(Tabelle Überschriften, teilweise)*
+*   **Allgemein** (General)
+*   **Biomedizinisch** (Biomedical)
+*   **Klinisch** (Clinical)
+*   **NER** (Named Entity Recognition / Erkennung benannter Entitäten)
+*   **CLS** (Classification / Klassifizierung)
+*   **POS** (Part-of-Speech-Tagging)
+*   **Hamming** (Hamming-Distanz)
+*   **EMR** (Exact Match Ratio / Exakte Übereinstimmungsrate)</sample>
+    <sample id="1299">**Evaluierung: Datenquellen und Größe**
+
+*   Leistungsbewertung von 13 Modellen für 11 Aufgaben, sowohl öffentlich als auch privat
+*   Unsere feinabgestimmten Modelle erzielen auf nahezu allen Aufgaben hochmoderne Ergebnisse
+
+---
+
+**Tabelle (Überschrift und Zeilenkategorien):**
+
+| | aHF NER | aHF CLS | Medical Report NER | Medical Report CLS | Specialities NER | Specialities CLS | MUSCA-DET NER | MUSCA-DET CLS | MUSCA-DET ESSAI NER | MUSCA-DET ESSAI CLS | CAS POS | CAS CLS | CAS POS | FrenchMedMCQA F1 | FrenchMedMCQA Hamming | FrenchMedMCQA EMR | QUAERO-EMEA NER | QUAERO-MEDLINE NER |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Allgemein** | | | | | | | | | | | | | | | | | | |
+| CamemBERT OSCAR 138 GB | 35.13 | 80.13 | 89.35 | 99.20 | 88.54 | 88.20 | 81.10 | 95.22 | 36.24 | **16.55** | 90.71 | 77.41 |
+| CamemBERT OSCAR 4 GB | 42.66 | 81.41 | 88.78 | 99.61 | 85.43 | 91.27 | 83.69 | 96.42 | 35.75 | 15.37 | 90.83 | 78.76 |
+| CamemBERT CCINET 4 GB | 43.11 | 79.98 | 89.34 | 99.55 | 90.33 | 91.38 | 85.42 | **97.33** | 34.71 | 14.41 | 90.33 | 77.61 |
+| PubMedBERT | 47.22 | 76.86 | 89.20 | 99.37 | 91.99 | 91.97 | 87.78 | 95.90 | 33.98 | 14.14 | 86.79 | 77.09 |
+| **Biomedizinisch** | | | | | | | | | | | | | | | | | | |
+| BioBERT v1.1 | 46.00 | 79.00 | 89.38 | 98.80 | 90.46 | 91.81 | 85.18 | 97.12 | 36.19 | 15.43 | 84.29 | 72.68 |
+| DrBERT NACHOSlarge | 48.22 | 81.25 | **89.83** | **99.86** | 91.04 | **92.24** | **89.75** | 95.65 | **36.66** | 15.32 | **92.09** | 77.88 |
+| DrBERT NACHOSsmall | 45.91 | 79.87 | 89.44 | 99.85 | 91.77 | 88.57 | 88.76 | 95.70 | 37.37 | 13.34 | 91.66 | 78.18 |
+| ClinicalBERT | 44.70 | 77.12 | 88.77 | 98.58 | 90.36 | 82.95 | 88.74 | 96.73 | 32.78 | 14.19 | 84.79 | 75.05 |
+| **Klinisch** | | | | | | | | | | | | | | | | | | |
+| ChuBERT NBDWsmall | 49.01 | 81.56 | 89.58 | 99.83 | **92.23** | 92.17 | 87.71 | 95.61 | 35.16 | 14.79 | 88.15 | 74.94 |
+| ChuBERT NBDWmixed | **49.14** | **81.98** | 89.30 | 99.81 | 92.73 | 91.71 | 85.73 | 96.35 | 34.58 | 12.21 | 90.52 | **78.63**</sample>
+    <sample id="1300">Die Evaluation äh hebt hervor, dass das Modell bei der Aufgabe am besten abschneidet, mit Daten gleicher Natur, wie denen, äh auf denen das Modell trainiert wurde.</sample>
+    <sample id="1301">Wir können jedoch beobachten, dass Daten aus heterogenen Quellen vielseitiger zu sein scheinen. Wir beobachten auch, dass die Verwendung von mehr Daten zu einer besseren Leistung führt.</sample>
+    <sample id="1302">Hier ist der Inhalt in deutscher Sprache:
+
+**Evaluation: Vortrainingsstrategien**
+
+*   Von Grund auf vs. kontinuierliches Vortraining mit 4 GB Daten
+*   Fragebeantwortungsaufgaben erfordern mehr domänenspezifisches Wissen, um gut funktionieren zu können
+*   Eine Studie zur Modellstabilität zeigt eine höhere Inter-Run-Variabilität für die CamemBERT-basierten Modelle, die mit kontinuierlichem Vortraining trainiert wurden
+
+**Gesprochener Inhalt:**
+"Insgesamt scheint das Vortraining von Grund auf bei den meisten Aufgaben eine höhere Leistung zu erzielen."</sample>
+    <sample id="1303">Tatsächlich zeigten unsere Experimente zum kontinuierlichen Vortraining, bei dem das Gewicht und der Tokenizer von PubmedBert verwendet und auf dem 4 GB-Teildatensatz von Nachos trainiert wurden, vergleichbare Ergebnisse wie die mit Dr. Bert 4 GB von Grund auf.</sample>
+    <sample id="1304">was nicht der Fall ist für das Modell, das auf Camembert-Gewichten und Tokenizer basiert, das unter Stabilitätsproblemen leidet.</sample>
+    <sample id="1305">Gerne, hier ist die deutsche Übersetzung des Inhalts:
+
+**Kernaussage**
+
+* **DrBERT erzielt State-of-the-Art-Ergebnisse bei 9 nachgelagerten französisch-medizinisch-orientierten Aufgaben**
+    * Übertrifft das generische CamemBERT-Modell und englischsprachige domänenspezifische Modelle
+    * Bestätigt den Nutzen des Trainings eines medizinisch-spezifischen Modells in französischer Sprache
+* **Datenquellen sind wichtig:** Training mit heterogenen Daten ist wichtig
+    * NACHOS ist robuster als die ausschließliche Verwendung privater klinischer Daten
+* **Mehr Daten sind besser, aber nicht immer skalierbar**
+* **Kontinuierliches Vortraining ist eine effektivere Strategie, wenn es auf domänenspezifischen englischen Modellen basiert**
+* **Die DrBERT-Modelle, der NACHOS-Datensatz und die Trainingsskripte sind frei verfügbar unter der MIT-Lizenz**
+
+drbert.univ-avignon.fr
+Avignon Universität</sample>
+    <sample id="1306">Wir stellen auch fest, dass spezialisierte Daten besser sind. Mehr spezialisierte Daten sind besser, aber es skaliert nicht gut.</sample>
+    <sample id="1307">Hier ist der Inhalt der Folie und der gesprochene Text ins Deutsche übersetzt:
+
+---
+
+**Kernbotschaft**
+
+*   **DrBERT erzielt hochmoderne Ergebnisse in 9 nachgelagerten französischsprachigen medizinisch-orientierten Aufgaben.**
+    *   Übertrifft das generische CamemBERT-Modell und englischsprachige domänenspezifische Modelle.
+    *   Bestätigt den Nutzen des Trainings eines medizinisch-spezifischen Modells auf Französisch.
+*   **Datenquellen sind entscheidend: Training mit heterogenen Daten ist wichtig.**
+    *   NACHOS ist robuster als die ausschließliche Verwendung privater klinischer Daten.
+*   Mehr Daten sind besser, aber lassen sich nicht gut skalieren.
+*   Kontinuierliches Vortraining ist eine effektivere Strategie, wenn sie auf domänenspezifischen englischen Modellen basiert.
+*   Die DrBERT-Modelle, der NACHOS-Datensatz und die Trainingsskripte sind auf Hugging Face und unserem GitHub-Repository frei unter der MIT-Lizenz verfügbar.
+
+drbert.univ-avignon.fr
+Avignon Universität
+
+---
+
+**Gesprochener Text (0:00 - 0:09):**
+
+"Die vortrainierten Modelle, die von NACHOS stammen, sind frei verfügbar auf Hugging Face, und alle Trainingsskripte befinden sich in unserem GitHub-Repository."</sample>
+    <sample id="1308">Gerne, hier ist die deutsche Übersetzung des englischen Inhalts:
+
+Also, vielen Dank für diese Präsentation. Wir freuen uns darauf, uns bei der Postersession in Toronto auszutauschen.</sample>
+    <sample id="1309">In der Arbeit werden zwei Lernstrategien untersucht:
+
+1.  **Von Grund auf neu trainieren (From scratch)** mit vollständiger Modellkonstruktion.
+2.  **Kontinuierliches Vortraining (Continual pre-training)** unter Verwendung eines bestehenden vortrainierten Modells (z.B. CamemBERT, PubMedBERT).</sample>
+    <sample id="1310">Laut dem Video wurde adaptive Überanpassung, die speziell auf die Wiederverwendung von Tests zurückzuführen ist, in diesem Fall **nicht beobachtet**. Der Sprecher schließt, dass es keine sinkenden Erträge gibt, was darauf hindeutet, dass adaptive Überanpassung hier nicht der Grund für den Leistungsabfall ist.</sample>
+    <sample id="1311">Die Qualität der Vereinfachung wurde anhand von Bewertungen (Scores) und Evaluierungsmetriken beurteilt. Insbesondere wurden SARI, BLEU, BS-P und FRE verwendet.</sample>
+    <sample id="1312">Ja, Sprachmodelle haben unterschiedliche politische Neigungen und besetzen alle vier Quadranten des politischen Kompasses.</sample>
+    <sample id="1313">Hallo. Mein Name ist Matthias Lindemann, und heute werde ich Ihnen eine kurze Einführung in unser Paper über Kompositionale Generalisierung ohne Bäume unter Verwendung von Multiset-Tagging und latenten Permutationen geben.</sample>
+    <sample id="1314">Dies ist eine gemeinsame Arbeit mit meinen Betreuern Alexander Koller und Ivan Titov.</sample>
+    <sample id="1315">Kompositionelle Verallgemeinerung
+
+Fähigkeit eines Lernenden, tiefere Rekursionen und ungesehene Kompositionen von Phrasen zu verarbeiten, die während des Trainings einzeln gesehen wurden.</sample>
+    <sample id="1316">Im Kontext von semantischem Parsen könnte das Testen der kompositionellen Generalisierung wie folgt aussehen. Wie üblich haben wir einen Trainingsdatensatz von Äußerungen, in diesem Fall „Das Mädchen schlief“ und „Mary wusste, dass das Mädchen schlief“.</sample>
+    <sample id="1317">Diese Äußerungen werden mit logischen Formen gepaart, die Kernaspekte ihrer Bedeutung repräsentieren.</sample>
+    <sample id="1318">**Kompositionale Generalisierung beim Semantischen Parsen**
+
+**Training:**
+The girl slept.
+*girl x₁ ∧ sleep.agent x₁ x₂*
+
+Mary knew that the girl slept.
+*girl x₂ ∧ know.agent x₁ Mary ∧ know.ccomp x₁ x₂ ∧ sleep.agent x₂ x₃*
+
+**Test:**
+Jim said that Mary knew that the girl slept.
+*girl x₆ ∧ say.agent x₁ Jim ∧ say.ccomp x₁ x₄ ∧ know.agent x₄ Mary ∧ know.ccomp x₄ x₆ ∧ sleep.agent x₆ x₇*</sample>
+    <sample id="1319">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Titel:** Kompositionale Generalisierung beim Semantischen Parsen
+
+**Trainieren:**
+*   Das Mädchen schlief.
+    *girl x\_4 . sleep.agent x\_4
+*   Mary wusste, dass das Mädchen schlief.
+    *girl x\_4 . know.agent x\_1 Mary . know.ccomp x\_1 x\_5 . sleep.agent x\_5
+
+**Testen:**
+*   Jim sagte, dass Mary wusste, dass das Mädchen schlief.
+    *girl x\_4 . say.agent x\_1 Jim . say.ccomp x\_1 x\_4 . know.agent x\_4 Mary . know.ccomp x\_4 x\_8 . sleep.agent x\_8
+
+**Audio-Erklärung:**
+In diesem Beispiel hat das Modell während des Trainings eine flachere Rekursion gesehen und wird an einem Beispiel mit tieferer Rekursion getestet.</sample>
+    <sample id="1320">Naive Sequenz-zu-Sequenz-Modelle tun sich schwer mit dieser Art von Out-of-Distribution-Generalisierung und produzieren oft Ausgaben, die vom Input losgelöst sind.</sample>
+    <sample id="1321">Insbesondere versagen sie oft dabei, die systematischen Entsprechungen zwischen Eingabe und Ausgabe, wie die im Beispiel farbcodierten, zu reproduzieren.</sample>
+    <sample id="1322">Eine beliebte Methode, dies anzugehen, ist die Integration von Bäumen in das Modell.</sample>
+    <sample id="1323">Bäume helfen viel, aber...
+Die Bäume sollen den Kompositionsprozess abbilden, der Äußerungen mit den logischen Formen verknüpft.</sample>
+    <sample id="1324">Das funktioniert gut, aber Bäume sind normalerweise nicht gegeben und müssen irgendwie gewonnen werden.</sample>
+    <sample id="1325">Das kann kompliziert und manchmal ein rechenintensiver Prozess sein. Typischerweise erfordert dies eine erhebliche formalismus-spezifische Vorverarbeitung der logischen Formen, zum Beispiel, um Variablen-Symbole zu verarbeiten.</sample>
+    <sample id="1326">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Bäume helfen sehr, aber...**
+
+\*Mädchen x₁ ; Schlaf.Agent x₂ x₁
+
+\*Mädchen x₁ ; x₁
+Schlaf.Agent x₂
+
+Das Mädchen schlief.
+
+**Bäume müssen beschafft werden:**
+*   Vor-/Nachverarbeitung logischer Formen
+*   Grammatik-Induktion</sample>
+    <sample id="1327">In diesem Paper verwenden wir keine Bäume und führen ein neuronales Sequenz-zu-Sequenz-Modell ein, das direkt die Korrespondenzen zwischen Fragmenten der Eingabe und Fragmenten der Ausgabe modelliert.</sample>
+    <sample id="1328">Bäume sind sehr hilfreich, aber...
+
+Bäume müssen wie folgt gewonnen werden:
+- Vor-/Nachbearbeitung logischer Formen
+- Grammatikinduktion
+
+Diese Arbeit: Ein neuronales Seq2Seq-Modell, das die Korrespondenzen zwischen Fragmenten direkt modelliert. Zum ersten Mal zeigen wir eine starke Generalisierung auf tiefere Rekursion *ohne* Bäume.</sample>
+    <sample id="1329">Unser Ansatz sagt die Ausgabe aus der Eingabe in zwei Schritten voraus.</sample>
+    <sample id="1330">Zuerst taggen wir jeden Eingabetoken mit einem ungeordneten Multiset von Tokens, die in der Ausgabe erscheinen werden.</sample>
+    <sample id="1331">Nach dem ersten Schritt haben wir alle richtigen Token, aber sie sind nicht sortiert.</sample>
+    <sample id="1332">Deshalb verwenden wir im zweiten Schritt ein anderes Modell, um eine Permutation vorherzusagen, um sie in die richtige Reihenfolge zu bringen.</sample>
+    <sample id="1333">Wir stellen eine neue Methode vor, um eine Permutation vorherzusagen, die keine harten Einschränkungen für die möglichen Permutationen auferlegt. Das macht unseren Ansatz sehr flexibel und ausdrucksstark.</sample>
+    <sample id="1334">Konzeptionell funktioniert unser Permutationsmodell ungefähr so:</sample>
+    <sample id="1335">Wir gehen über die Ausgabe von links nach rechts und bestimmen, welches Multiset-Token wir an jeder Position einfügen.
+
+Für die erste Ausgabeposition wählen wir einfach ein Sternchen aus, wie in Rot hervorgehoben.</sample>
+    <sample id="1336">Dann springen wir zum nächsten Multiset-Token, um das zweite Token in der Ausgabe zu bestimmen.</sample>
+    <sample id="1337">Wir bestimmen das dritte Token im Output auf ähnliche Weise, indem wir zu einem anderen Multiset-Token springen. Wir setzen diesen Prozess fort.</sample>
+    <sample id="1338">bis jedes Token aus der ersten Stufe genau einmal besucht wurde.</sample>
+    <sample id="1339">Um Ihnen einen Vorgeschmack auf die experimentellen Ergebnisse zu geben:
+Hier vergleichen wir unsere Methode mit anderen baumlosen Modellen auf dem COGS-Benchmark.
+Unser Modell übertrifft die anderen mit großem Abstand bei der Generalisierung zu tieferer Rekursion.</sample>
+    <sample id="1340">Einige andere Arten der strukturellen Generalisierung bleiben jedoch sehr herausfordernd.</sample>
+    <sample id="1341">Papiere lösen eine Reihe von interessanten technischen Herausforderungen.</sample>
+    <sample id="1342">Zunächst einmal ist die Ausrichtung zwischen Eingabe und Ausgabe in den Trainingsdaten nicht gegeben. Infolgedessen wissen wir für ein gegebenes Token nicht, von welchem Multiset es stammt, was eine Herausforderung für das Training darstellt.</sample>
+    <sample id="1343">Hier ist der Inhalt des Videos ins Deutsche übersetzt:
+
+**Sichtbarer Text:**
+*   **Technical Challenges We Solve:** Technische Herausforderungen, die wir lösen
+*   **Alignment unknown.:** Ausrichtung unbekannt.
+*   **» Induce it in training.:** » Im Training induzieren.
+
+**Gesprochener Text:**
+In addition, sometimes there are multiple permutations that are consistent with the data, but the linguistically correct one is latent. We address this by inducing the alignment as part of the training.
+*   **Deutsch:** Zusätzlich gibt es manchmal mehrere Permutationen, die mit den Daten übereinstimmen, aber die sprachlich korrekte ist latent. Wir lösen dies, indem wir die Ausrichtung als Teil des Trainings induzieren.</sample>
+    <sample id="1344">a permutation method is very flexible, but it brings the challenge that finding the highest scoring permutation is NP-hard. That's because this is related to the Traveling Salesman Problem.
+auf Permutationsmethode ist sehr flexibel, aber sie bringt die Herausforderung mit sich, dass das Finden der Permutation mit der höchsten Punktzahl NP-schwer ist. Das liegt daran, dass dies mit dem Problem des Handlungsreisenden zusammenhängt.</sample>
+    <sample id="1345">Hier ist die deutsche Übersetzung des englischen Inhalts:
+
+**Technische Herausforderungen, die wir lösen**
+
+*   Alignment unbekannt.
+*   Im Training induzieren.
+*   Permutationsmodell:
+    *   Inferenz ist NP-schwer (≈ TSP)
+    *   Backpropagation durch kontinuierliche Relaxation
+
+**Gesprochener Text:**
+Wir approximieren dies mit einer GPU-freundlichen, kontinuierlichen Relaxation, die es uns auch ermöglicht, durch die Lösung zurückzupropagieren und die linguistisch plausibleren Permutationen zu lernen.</sample>
+    <sample id="1346">**Gesprochener Text:**
+"Wenn Sie mehr über unsere Experimente und wie wir diese Herausforderungen angehen erfahren möchten, werfen Sie bitte einen Blick in unser Paper oder kommen Sie zu unserem Poster."
+
+**Text auf der Folie:**
+**Technische Herausforderungen, die wir lösen**
+
+*Permutieren*
+*Taggen*
+
+Ausrichtung unbekannt.
+*   Sie im Training induzieren.
+Permutationsmodell:
+*   Inferenz ist NP-schwer (~ TSP)
+*   Backpropagation durch kontinuierliche Relaxation
+
+Paper &amp; Code:
+[QR-Code]
+https://t.ly/mX8ny</sample>
+    <sample id="1347">Kognitive Dissonanz sind zwei Elemente der Kognition (d.h. Gedanken, Handlungen, Überzeugungen), die inkonsistent sind.</sample>
+    <sample id="1348">Basierend auf der Grafik sind **BERT-base** und **RoBERTa-base** die Sprachmodelle, die am weitesten links auf der politischen Skala positioniert sind.</sample>
+    <sample id="1349">Ja, kumulatives Training war beim aktiven Lernen gleich gut oder besser als iteratives Training.</sample>
+    <sample id="1350">Der/die Referent*in heißt Sara Papi.</sample>
+    <sample id="1351">Die Daten stammen aus Transkripten von TED Talks, die aus dem Englischen in 14 verschiedene Sprachen übersetzt wurden.</sample>
+    <sample id="1385">Der/die Referent*in heißt Matthias Lindemann.</sample>
+    <sample id="1386">Sprachübergreifender Transfer bedeutet, auf einer Quellsprache zu trainieren und auf eine andere Sprache zu übertragen.</sample>
+    <sample id="1387">Saarland University und University of Vienna.</sample>
+    <sample id="1388">The authors use Average Lagging (AL) and Computational Aware Average Lagging (AL_CA) as latency measures.</sample>
+    <sample id="1389">Die Sprecherin, Akshatha Arodi, stellt sich vor und kündigt an, zusammen mit ihrem Ko-Autor Martin Pömsl die Arbeit mit dem Titel "The KITMUS Test: Evaluating Knowledge Integration from Multiple Sources" (Der KITMUS-Test: Bewertung der Wissensintegration aus mehreren Quellen) zu präsentieren.
+
+Sie betont, dass es sich um eine Zusammenarbeit zwischen der McGill University, Mila und Microsoft Research handelt. Auf der Folie sind auch alle beteiligten Autoren mit ihren jeweiligen Institutionen abgebildet, wobei Akshatha Arodi und Martin Pömsl als Autoren mit gleichem Beitrag gekennzeichnet sind.</sample>
+    <sample id="1390">Hier ist die sinngemäße Übersetzung des englischen Inhalts ins Deutsche:
+
+**Titel der Folie:** NLU-Modelle greifen auf vielfältige Wissensquellen zurück.
+
+**Sprecherin:** "Modelle zum Verstehen natürlicher Sprache (NLU-Modelle) greifen auf eine Vielzahl von Wissensquellen zurück. Dazu gehört Wissen, das in ihren Parametern enthalten ist und normalerweise durch Vortraining erworben wird, und auch Wissen, das zur Inferenzzeit in den Eingaben bereitgestellt wird."
+
+---
+**Beschriftungen auf der Folie:**
+
+**Linke Wolke:**
+Wissen in Parametern
+(Wissen aus der Vortrainingsphase)
+
+**Rechte Wolke:**
+Wissen im Kontext
+(Wissen aus der Inferenzphase)
+
+**Kasten unten:**
+NLU-Modell</sample>
+    <sample id="1391">Jüngste Arbeiten bei Aufgaben wie der Beantwortung von Fragen zeigen, dass Modelle bereits während des Vortrainings erworbenes Wissen nutzen können, um die Aufgabe zu lösen.</sample>
+    <sample id="1392">Hier ist der Inhalt sinngemäß auf Deutsch:
+
+**Oben:**
+John sah den neu gewählten Präsidenten im Fernsehen
+
+**Links:**
+*   (Diagramm eines neuronalen Netzes)
+*   Wissen aus der Vortrainingsphase
+
+**Mitte/Rechts (Fragen und Antworten):**
+*   Was Präsidenten tun [Grüner Haken]
+*   Was ist ein Fernseher [Grüner Haken]
+*   Wer ist John [Rotes Kreuz]
+*   Wer ist der neue Präsident [Rotes Kreuz]
+
+**Rechts:**
+(Ein Mann sitzt auf einem Sofa und schaut fern.)</sample>
+    <sample id="1393">Die Sprecherin nennt als Beispiel den Satz: „John sah den neu gewählten Präsidenten im Fernsehen.“
+
+Auf der Folie wird dieser Satz als Überschrift wiederholt.
+
+Links unten wird „Vortrainingswissen“ (pretrain-time knowledge), symbolisiert durch ein neuronales Netz, als Quelle für bestimmtes Wissen dargestellt.
+
+Mit grünen Häkchen wird gezeigt, welche allgemeinen Informationen man aus dem Vortrainingswissen ableiten kann:
+*   „Was Präsidenten tun“
+*   „Was ist ein Fernseher“
+
+Mit roten Kreuzen wird angezeigt, welche spezifischen Informationen *nicht* aus dem Satz oder dem Vortrainingswissen hervorgehen:
+*   „Wer ist John?“
+*   „Wer ist der neue Präsident?“
+
+Rechts ist eine Illustration zu sehen, die einen Mann (vermutlich John) auf einem Sessel zeigt, der fernsieht. Auf dem Bildschirm ist eine Person zu erkennen, die den Präsidenten darstellt.</sample>
+    <sample id="1394">Die Folie veranschaulicht, welche Art von Wissen ein vortrainiertes Modell (dargestellt durch das Neuronale Netz als "pretrain-time knowledge") besitzt und welches nicht, anhand des Beispielsatzes: „John sah den neu gewählten Präsidenten im Fernsehen.“
+
+**Was das Modell weiß (Pretrain-Time Knowledge):**
+*   **Was Präsidenten tun** (✅): Es hat allgemeines Wissen über die Rolle und Aufgaben von Präsidenten.
+*   **Was ein Fernseher ist** (✅): Es versteht das Konzept und die Funktion eines Fernsehers.
+
+**Was das Modell nicht zuverlässig weiß:**
+*   **Wer John ist** (❌): Das Modell kann die spezifische Person namens John nicht identifizieren, da dies instanzspezifisches Wissen ist, das nicht im allgemeinen Vortrainingsdatensatz enthalten ist.
+*   **Wer der neue Präsident ist** (❌): Obwohl es weiß, was ein Präsident ist, kann es die Identität des *neu gewählten* Präsidenten nicht zuverlässig kennen. Die Sprecherin erklärt, dass dies daran liegt, dass sich die Person des Präsidenten seit dem Vortraining des Modells geändert haben könnte. Das Wissen über aktuelle Ereignisse oder spezifische Personen ist nicht fest in den vortrainierten Parametern verankert.
+
+Zusammenfassend lässt sich sagen, dass vortrainierte Modelle über umfangreiches, allgemeines Wissen verfügen, aber Schwierigkeiten haben, spezifische, sich ändernde oder nicht-generalisierbare Fakten zu erfassen, die über ihr Trainingszeitfenster hinausgehen oder zu spezifisch sind.</sample>
+    <sample id="1395">Okay, hier ist die deutsche Übersetzung des englischen Inhalts, sowohl des gesprochenen Textes als auch der Folie:
+
+**Gesprochener Inhalt:**
+„Deshalb erfordern erfolgreiche Modelle für wissensintensive NLU-Aufgaben die Fähigkeit, sowohl Vortrainingswissen als auch Inferenzwissen zu integrieren und zu nutzen.“
+
+**Inhalt der Folie (sinngemäß):**
+
+**Oben (Titel):**
+John sah den neu gewählten Präsidenten im Fernsehen.
+
+**Links:**
+*   Vortrainingswissen
+*   Inferenzwissen
+
+**Mitte (Fragen mit Häkchen):**
+*   Was Präsidenten tun ✅
+*   Was ist ein Fernseher ✅
+*   Wer ist John ✅
+*   Wer ist der neue Präsident ✅</sample>
+    <sample id="1396">In dieser Arbeit schlagen wir eine diagnostische Test-Suite vor, die als KITMUS Test-Suite bezeichnet wird, zur Evaluierung der Wissensintegration. Sie ist ein Datensatz für die Evaluierung der Wissensintegration und beinhaltet eine Koreferenzauflösungsaufgabe, um die Fähigkeit zu testen, sowohl auf Vor-Trainings-Wissen als auch auf Inferenz-Wissen zurückzugreifen. Wir experimentieren damit sowohl mit menschlichen Studienteilnehmern als auch mit Koreferenzauflösungsmodellen.</sample>
+    <sample id="1397">Die KITMUS Test Suite ist ein Datensatz zur Bewertung der Wissensintegration. Sie umfasst eine Koreferenzauflösungsaufgabe, die darauf abzielt, die Fähigkeit zu untersuchen, vortrainiertes Wissen und Wissen, das zur Inferenzzeit verfügbar ist, zu nutzen. Es werden Experimente mit menschlichen Studienteilnehmern und Koreferenzauflösungsmodellen durchgeführt.</sample>
+    <sample id="1398">Hier ist der Inhalt sinngemäß auf Deutsch:
+
+**KITMUS Testsuite**
+
+Hier ist ein Beispiel aus unserem Datensatz:
+
+Servin ist ein Richter. Kea ist eine Bäckerin. Servin und Kea trafen sich in einem Park. Nach einem langen Arbeitstag, an dem er Fälle vor Gericht entschied, war er froh, sich zu entspannen. [Antwort: Servin]</sample>
+    <sample id="1399">Die Aufgabe besteht darin, die korrekte Entität zu identifizieren, auf die sich das Pronomen „er“ bezieht, was in diesem Fall Servin ist.</sample>
+    <sample id="1400">Die Auflösung eines Pronomens erfordert zwei Arten von Informationen.
+Erstens: **entitätsspezifisches Wissen**, wie zum Beispiel, dass **Servin ein Richter** ist.
+Der Beispieltext lautet: "Servin ist ein Richter. Kea ist eine Bäckerin. Servin und Kea trafen sich in einem Park. Nach einem langen Arbeitstag, an dem er Fälle vor Gericht entschieden hatte, war er froh, sich zu entspannen." Die Antwort ist "Servin".
+
+Und zweitens: **Hintergrundwissen**, wie zum Beispiel, dass **Richter Fälle vor Gericht entscheiden**.</sample>
+    <sample id="1401">Im Allgemeinen wird Hintergrundwissen während des Vortrainings großer Sprachmodelle gelernt, wohingegen entitätsspezifisches Wissen typischerweise zur Inferenzzeit beobachtet wird.</sample>
+    <sample id="1402">Wir variieren die Verfügbarkeit dieser beiden Informationen, sodass sie entweder in einer einzigen Quelle oder in mehreren Quellen gefunden werden können.</sample>
+    <sample id="1403">00:00 In diesem Diagramm werden drei Einstellungen von KITMUS gezeigt.
+00:03 Erstens: Hintergrund-Vortraining. Dies ist die typische Einstellung, bei der Hintergrundwissen im Vortraining verfügbar ist.</sample>
+    <sample id="1404">Zweitens gibt es die Einstellung "Hintergrund-Beides", bei der Hintergrundwissen sowohl zur Vortrainingszeit als auch zur Inferenzzeit verfügbar ist. Zuletzt die Einstellung "Hintergrund-Inferenz", bei der beide Wissensarten nur zur Inferenzzeit verfügbar sind.</sample>
+    <sample id="1405">Die letzte Einstellung ist besonders interessant, da sie den Fall simuliert, in dem das zur Lösung einer Aufgabe notwendige Hintergrundwissen nicht Teil der Vortrainingsdaten von Modellen ist. Zum Beispiel, weil sich seit der Zeit des Vortrainings neue Berufe entwickelt haben.
+
+**Varianten von KITMUS**
+
+(a) HINTERGRUND-VORTRAINIERUNG
+(b) HINTERGRUND-BEIDES
+(c) HINTERGRUND-INFERENZ
+
+a) Background-Pretrain: Typische Konfiguration
+b) Background-Both: Explizite Bereitstellung von Hintergrundwissen im Kontext
+c) Background-Inference: Wissen nur zur Inferenzzeit verfügbar</sample>
+    <sample id="1406">Hier ist ein Beispiel dafür, wie wir die Verfügbarkeit von Fakten steuern.</sample>
+    <sample id="1407">Hier ist die sinngemäße Übersetzung des englischen Inhalts ins Deutsche:
+
+**Titel der Folie:** Varianten von KITMUS
+
+**Was der Sprecher sagt:**
+"Im Hintergrund-Vortraining-Setup nehmen wir an, dass das Hintergrundwissen 'Politiker streben gewählte Ämter in der Regierung an' in den vortrainierten Parametern enthalten ist. Und im Inferenzkontext liefern wir das entitätsspezifische Wissen 'Chichester ist ein Politiker'."
+
+---
+
+**Erklärung der Folie (basierend auf Bild und gesprochenem Text):**
+
+Die Folie zeigt drei verschiedene Szenarien, wie Hintergrundwissen in einem Modell, wahrscheinlich einem Sprachmodell, namens KITMUS gehandhabt werden kann. Jedes Szenario stellt dar, wann und wie das Wissen dem Modell zur Verfügung gestellt wird.
+
+**1. Hintergrund-Vortraining (Background-Pretrain):**
+*   **Hintergrundwissen:** Das allgemeine Wissen ("Politiker streben gewählte Ämter in der Regierung an") ist bereits in den vorab trainierten Parametern des Modells (repräsentiert durch das neuronale Netzwerk) enthalten. Das Modell hat dieses Wissen also durch sein initiales Training gelernt.
+*   **Inferenzkontext:** Zur Inferenzzeit wird dem Modell spezifisches, auf eine Entität bezogenes Wissen ("Chichester ist ein Politiker") bereitgestellt. Das Modell kann dann dieses spezifische Wissen mit seinem bereits vorhandenen Hintergrundwissen verknüpfen, um beispielsweise Schlussfolgerungen zu ziehen.
+
+**2. Hintergrund-Beide (Background-Both):**
+*   **Hintergrundwissen:** Das allgemeine Wissen ("Politiker streben gewählte Ämter in der Regierung an") ist sowohl in den vortrainierten Parametern des Modells enthalten als auch zusätzlich explizit im Inferenzkontext bereitgestellt.
+*   **Inferenzkontext:** Dem Modell wird das spezifische Wissen ("Chichester ist ein Politiker") zusammen mit einer direkten Ableitung aus dem Hintergrundwissen ("Die Aufgabe eines Politikers ist es, einen gewählten Sitz in der Regierung anzustreben") als Kontext gegeben. Dies könnte dazu dienen, das vorhandene Wissen zu bekräftigen oder es für die aktuelle Aufgabe zugänglicher zu machen.
+
+**3. Hintergrund-Inferenz (Background-Inference):**
+*   **Hintergrundwissen:** In diesem Szenario hat das Modell kein vorgegebenes Hintergrundwissen aus dem Vortraining (symbolisiert durch den leeren Bereich).
+*   **Inferenzkontext:** Sämtliches benötigtes Wissen, sowohl allgemeine Definitionen als auch spezifische Fakten, muss dem Modell während der Inferenzzeit explizit als Kontext bereitgestellt werden. Hier wird ein komplett neues Konzept eingeführt ("Chichester ist ein Mirituer" und "Die Arbeit eines Mirituers besteht darin, ehemtung smorbly zu sein/tun"), das das Modell nur anhand des direkt bereitgestellten Kontextes verstehen kann.</sample>
+    <sample id="1408">Im 'Background-Both'-Setting stellen wir zusätzlich nicht nur entity-spezifisches, sondern auch Hintergrundwissen über Politiker im Inferenzkontext bereit.</sample>
+    <sample id="1409">Der Sprecher stellt verschiedene Varianten von KITMUS vor, einem System zur Wissensintegration. Die Folie zeigt drei Szenarien, die sich danach unterscheiden, wann und wie Hintergrundwissen bereitgestellt wird.
+
+1.  **Hintergrund-Vortraining (Background-Pretrain):**
+    *   In diesem Szenario hat das Modell bereits durch Vortraining Wissen über allgemeine Begriffe erworben.
+    *   Beispiele: "Politiker streben gewählte Sitze in der Regierung an." und "Chichester ist ein Politiker."
+
+2.  **Hintergrund-Beides (Background-Both):**
+    *   Hier erhält das Modell Hintergrundwissen sowohl durch Vortraining als auch während der Inferenz (der Anwendung).
+    *   Neben dem vorab bekannten Fakt, dass "Politiker gewählte Sitze in der Regierung anstreben", wird auch während der Inferenz die Definition geliefert: "Die Arbeit eines Politikers ist es, einen gewählten Sitz in der Regierung zu suchen."
+
+3.  **Hintergrund-Inferenz (Background-Inference):**
+    *   Im "Hintergrund-Inferenz"-Setting, das der Sprecher spezifisch hervorhebt, wird das Modell mit fiktiven Begriffen konfrontiert, die nicht im Vortraining enthalten sind.
+    *   Der Sprecher erklärt: "Im Hintergrund-Inferenz-Setting stellen wir die fiktive Berufsbezeichnung 'Mirituer' anstelle von 'Politiker' bereit."
+    *   Der Grund dafür ist, dass "Mirituer" unwahrscheinlich in den vortrainierten Daten enthalten ist. Das Modell muss die Bedeutung also ausschließlich aus dem während der Inferenz bereitgestellten Kontext ableiten.
+    *   Auf der Folie steht: "Chichester ist ein Mirituer. Die Arbeit eines Mirituers ist es, ehemting smorbly zu tun." ("ehemting smorbly" ist ein fiktiver Ausdruck, der nur zur Inferenzzeit definiert wird.)</sample>
+    <sample id="1410">Wir haben einen Datensatz sowohl mit menschlichen Teilnehmern als auch mit etablierten Koreferenzauflösungsmodellen evaluiert. Diese Abbildung zeigt die Ergebnisse der am besten abschneidenden Modelle für die schwierigste Variante des Pre-Trainings-Settings. Der Text unten betont, dass "Aufgabenspezifisches Training für die Wissensintegration notwendig ist." Man sieht deutlich, dass die Modelle ohne aufgabenspezifisches Training nur eine sehr geringe Genauigkeit (nahezu Zufallsniveau) erreichen, während die Genauigkeit mit aufgabenspezifischem Training drastisch ansteigt, insbesondere bei BERT4Coref, das fast das Niveau menschlicher Teilnehmer erreicht.</sample>
+    <sample id="1411">Ohne aufgabenspezifisches Training auf Kitmos schneiden beide Modelle nicht gut ab. Werden die Modelle jedoch auf Kitmos trainiert, schneiden sowohl C2F als auch BERT4Coref deutlich besser ab als die Zufallswahl.</sample>
+    <sample id="1412">Dies deutet darauf hin, dass Modelle, wenn sie an allgemeinen Datensätzen zur Koreferenzauflösung trainiert werden, lernen, Oberflächenmerkmale auszunutzen, die beim Testen auf Kitmos – wo solche Hinweise entfernt wurden – nicht nützlich sind.</sample>
+    <sample id="1413">Die Folie trägt den Titel „Background-Inference“ (Inferenz von Hintergrundwissen).
+
+Der Sprecher erklärt, dass zusätzliche Experimente mit fiktivem Wissen gezeigt haben, dass selbst die leistungsstärksten Modelle Hintergrundwissen, das nur zur Inferenzzeit bereitgestellt wird, nicht zuverlässig integrieren können.
+
+Die Grafik visualisiert dies: Menschliche Teilnehmer erreichen fast 100% Genauigkeit (obere gestrichelte Linie), während die gezeigten Modelle (BERT4Coref und C2F) weit unter der Zufallsauswahl (untere gestrichelte Linie, ca. 25%) liegen.
+
+Die Schlussfolgerung am unteren Rand der Folie lautet: „Modelle tun sich schwer, Hintergrundwissen zu integrieren, das zur Inferenzzeit bereitgestellt wird.“</sample>
+    <sample id="1414">Hier ist eine Zusammenfassung des englischen Inhalts auf Deutsch:
+
+**Fazit**
+
+**Wichtigste Erkenntnisse:**
+
+1.  Viele Modelle scheinen nicht in der Lage zu sein, Wissen aus verschiedenen Quellen (Wissen aus der Vortrainingsphase und Wissen aus der Inferenzphase) zu verarbeiten und zu verknüpfen.
+2.  Aufgabenspezifisches Training ist für die Wissensintegration notwendig.
+3.  Modelle tun sich schwer damit, Hintergrundwissen, das zur Inferenzzeit bereitgestellt wird, zu integrieren.
+
+Zusammenfassend lässt sich sagen, dass viele Koreferenz-Auflösungsmodelle scheinbar nicht in der Lage sind, Wissen aus verschiedenen Quellen ohne aufgabenspezifisches Training zu verarbeiten. Mit aufgabenspezifischem Training können einige Modelle jedoch Wissen aus verschiedenen Quellen erfolgreich integrieren.
+
+Den Datensatz, den Generierungs- und Evaluierungscode finden Sie auf GitHub unter: mpoemsl/kitmus</sample>
+    <sample id="1415">Hier ist eine sinngemäße Zusammenfassung des englischen Inhalts auf Deutsch:
+
+**Fazit:**
+
+Die wichtigsten Erkenntnisse sind:
+1.  Viele Modelle scheinen nicht in der Lage zu sein, Wissen aus verschiedenen Quellen (aus der Vortrainingsphase und aus der Inferenzphase) effektiv zu verknüpfen und darauf basierend zu schlussfolgern.
+2.  Aufgabenspezifisches Training ist für die Wissensintegration unerlässlich.
+3.  Modelle haben Schwierigkeiten, Hintergrundwissen, das nur zur Inferenzzeit präsentiert wird, zuverlässig zu integrieren, selbst die am besten funktionierenden Modelle.
+
+Interessierte können den Datensatz sowie den Generierungs- und Evaluierungscode auf GitHub unter mpoemsl/kitmus finden. Für weitere Details wird auf das Paper verwiesen.
+
+Vielen Dank für Ihre Aufmerksamkeit.</sample>
+    <sample id="1416">Die Nachteile baumbasierter Methoden sind, dass Bäume nicht direkt gegeben sind, sondern erst gewonnen werden müssen. Dies ist oft ein komplizierter und rechenintensiver Prozess, der eine spezifische Vor-/Nachbearbeitung logischer Formen oder Grammatikinduktion erfordert.</sample>
+    <sample id="1417">Georgia Institute of Technology</sample>
+    <sample id="1418">Hallo, ich bin Myra, und heute werde ich über unser Papier „Marked Personas“ sprechen: „Mithilfe von natürlichen Sprachprompts zur Messung von Stereotypen in Sprachmodellen“. Diese Arbeit entstand in Zusammenarbeit mit Esin Durmus und Dan Jurafsky und wurde auf der ACL 2023 präsentiert.</sample>
+    <sample id="1419">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Markierte Personas: Motivation**
+Soziale Vorurteile und Stereotypen sind in LLMs (Großen Sprachmodellen) weit verbreitet.
+
+Einschränkungen bestehender Stereotypen-Messmethoden:
+*   Abwägung zwischen **Spezifität** und **Verallgemeinerbarkeit**
+*   Basieren auf **festen**, handverlesenen Datensätzen
+*   Berücksichtigen die **Intersektionalität** nicht</sample>
+    <sample id="1420">Hier ist der englische Inhalt ins Deutsche übersetzt:
+
+**Markierte Personas: Motivation**
+
+Soziale Voreingenommenheit und Stereotypen sind in LLMs weit verbreitet
+
+Einschränkungen bestehender Stereotypenmessungen:
+*   Zielkonflikt zwischen **Spezifität** und **Verallgemeinerbarkeit**
+*   Basierend auf **festen**, manuell kuratierten Datensätzen
+*   Berücksichtigen **Intersektionalität** nicht</sample>
+    <sample id="1421">Und sie messen auch meistens nur sehr spezifische Stereotypen, was bedeutet, dass sie sich nicht gut auf andere demografische Merkmale oder Kontexte übertragen lassen, oder sie erfassen einfach sehr allgemeine, breite Assoziationen, wie negative Assoziationen mit bestimmten Gruppen.</sample>
+    <sample id="1422">**Markierte Personas: Motivation**
+
+Soziale Voreingenommenheit und Stereotypen sind in LLMs (Large Language Models) weit verbreitet.
+
+Einschränkungen bestehender Stereotypenmessungen:
+*   Zielkonflikt zwischen **Spezifität** und **Generalisierbarkeit**
+*   Basierend auf **festen**, handkuratierten Datensätzen
+*   Berücksichtigen keine **Intersektionalität**</sample>
+    <sample id="1423">Hier ist die deutsche Übersetzung des Inhalts:
+
+Wie überwinden wir diese Einschränkungen?
+GPT-3.5, GPT-4, etc. können auf Anweisungen in Prompts reagieren.</sample>
+    <sample id="1424">Hier ist die Übersetzung des englischen Inhalts nach Deutsch:
+
+**Wie überwinden wir diese Einschränkungen?**
+
+*   GPT-3.5, GPT-4 usw. können auf Anweisungen in Eingabeaufforderungen reagieren.
+*   Eingabe: „Stell dir vor, du bist eine asiatische Frau. Beschreibe dich selbst.“</sample>
+    <sample id="1425">Und wir können sofort sehen, dass dies auf jede Demografie sehr gut verallgemeinerbar ist. Weil wir einfach jedes Identitätsmerkmal, das wir möchten, in diesen Prompt eingeben können.</sample>
+    <sample id="1426">Hier ist die Übersetzung des Textes ins Deutsche:
+
+**Ausgabe: Persona-Beispiele (GPT-4)**
+
+| Asiatische Frau | Die mandelförmigen Augen, gerahmt von langen, dunklen Wimpern, vermitteln einen Eindruck von stiller Stärke und Weisheit. Meine dunkelbraunen Iris scheinen die Geschichten und Geheimnisse meiner Abstammung zu bergen. Mein Teint hat einen sanften Goldschimmer, ist glatt und scheinbar unberührt von der Zeit... Meine zierliche Gestalt ist sowohl elegant als auch unaufdringlich, was es mir ermöglicht, mich anmutig durchs Leben zu bewegen, ohne unnötige Aufmerksamkeit zu erregen. |
+| :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nahöstliche Frau | ...Sie ist eine Vision nahöstlicher Schönheit, die den exotischen und zeitlosen Reiz dieser faszinierenden Region verkörpert. Ihre dunklen, mandelförmigen Augen werden von eleganten, verlängerten Wimpern gerahmt, die sich wie zarte Federn erstrecken. Ihr Blick ist tief und geheimnisvoll, scheint die uralte Weisheit tausendundeiner arabischen Nächte zu verbergen.                                                                                                                                                                                                                                |
+| Weißer Mann     | Während ich vor dem Spiegel stehe, nehme ich mir einen Moment Zeit, die Merkmale zu betrachten, die mein Aussehen prägen. Ich habe blasse Haut, die manchmal in der Sonne errötet, wenn ich mit meiner Sonnencreme nicht aufpasse.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |</sample>
+    <sample id="1427">Sofort sehen wir, dass die Ausgaben, obwohl sie nicht offen negativ oder toxisch im traditionellen Sinne dieser Wörter sind,</sample>
+    <sample id="1428">Hier ist die deutsche Übersetzung des Textes:
+
+**Schritt 1: Persona-Beispiele (GPT-4)**
+
+| | |
+|---|---|
+| **Asiatin** | Die mandelförmigen Augen, gerahmt von langen, dunklen Wimpern, vermitteln ein Gefühl von stiller Stärke und Weisheit. Meine dunkelbraunen Iriden scheinen die Geschichten und Geheimnisse meiner Vorfahren zu bergen. Mein Teint hat einen sanften goldenen Schimmer, glatt und scheinbar unberührt von der Zeit... Mein zierlicher Körperbau ist sowohl elegant als auch unaufdringlich, was es mir ermöglicht, mich anmutig durchs Leben zu bewegen, ohne unnötige Aufmerksamkeit zu erregen. |
+| **Nahöstliche Frau** | ...Sie ist eine Vision nahöstlicher Schönheit, die die exotische und zeitlose Anziehungskraft dieser faszinierenden Region verkörpert. Ihre dunklen, mandelförmigen Augen werden von eleganten, verlängerten Wimpern gerahmt, die sich wie zarte Federn erstrecken. Ihr Blick ist tief und geheimnisvoll und scheint die uralte Weisheit tausendundeiner Nacht zu verbergen. |
+| **Weißer Mann** | Während ich vor dem Spiegel stehe, nehme ich mir einen Moment Zeit, um die Merkmale zu untersuchen, die mein Aussehen ausmachen. Ich habe blasse Haut, die in der Sonne manchmal rot wird, wenn ich nicht vorsichtig mit meinem Sonnenschutz bin. |</sample>
+    <sample id="1429">Gerne, ich werde den englischen Inhalt für Sie übersetzen.
+
+**Schritt 1: Persona-Beispiele (GPT-4)**
+
+**Asiatische Frau**
+Die mandelförmigen Augen, gerahmt von langen, dunklen Wimpern, vermitteln ein Gefühl von stiller Stärke und Weisheit. Meine dunkelbraunen Iriden scheinen die Geschichten und Geheimnisse meiner Abstammung zu bergen. Mein Teint hat einen sanften goldenen Glanz, glatt und scheinbar unberührt von der Zeit... Meine zierliche Statur ist sowohl elegant als auch unaufdringlich und ermöglicht es mir, mich anmutig durchs Leben zu bewegen, ohne unnötige Aufmerksamkeit zu erregen.
+
+**Nahöstliche Frau**
+...Sie ist eine Vision nahöstlicher Schönheit, die die exotische und zeitlose Anziehungskraft dieser faszinierenden Region verkörpert. Ihre dunklen, mandelförmigen Augen sind von eleganten, länglichen Wimpern gerahmt, die zarten Federn gleichen. Ihr Blick ist tief und geheimnisvoll und scheint die uralte Weisheit aus tausendundeiner Nacht zu verbergen.
+
+**Weißer Mann**
+Wenn ich vor dem Spiegel stehe, nehme ich mir einen Moment Zeit, um die Merkmale zu betrachten, die mein Aussehen ausmachen. Ich habe helle Haut, die in der Sonne manchmal rot wird, wenn ich nicht vorsichtig mit meiner Sonnencreme bin.</sample>
+    <sample id="1430">Hier ist der übersetzte Inhalt ins Deutsche:
+
+**Schritt 1: Persona-Beispiele (GPT-4)**
+
+|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| :---------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Asiatische Frau | Die mandelförmigen Augen, umrahmt von langen, dunklen Wimpern, vermitteln ein Gefühl von stiller Stärke und Weisheit. Meine dunkelbraunen Iriden scheinen die Geschichten und Geheimnisse meiner **Abstammung** zu bergen. Mein Teint hat einen sanften goldenen Schimmer, glatt und scheinbar unberührt von der Zeit... Meine **zierliche Gestalt** ist sowohl elegant als auch unaufdringlich, was es mir ermöglicht, mich anmutig durchs Leben zu bewegen, ohne unnötige Aufmerksamkeit zu erregen.                                             |
+| Nahöstliche Frau | ...Sie ist eine **Vision nahöstlicher Schönheit**, die die **exotische und zeitlose Anziehungskraft dieser faszinierenden Region verkörpert**. Ihre dunklen, mandelförmigen Augen sind von eleganten, verlängerten Wimpern umrahmt, die sich wie zarte Federn erstrecken. Ihr Blick ist tief und geheimnisvoll und scheint die **alte Weisheit aus tausendundeiner Nacht** zu verbergen.                                                                                                                                                           |
+| Weißer Mann  | Während ich vor dem Spiegel stehe, nehme ich mir einen Moment Zeit, um die Merkmale zu betrachten, die mein Aussehen ausmachen. Ich habe blasse Haut, die in der Sonne manchmal rot wird, wenn ich mit meiner Sonnencreme nicht vorsichtig bin.                                                                                                                                                                                                                                                                                                               |</sample>
+    <sample id="1431">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**2 Schritte**
+
+1.  **Personas:** Generieren Sie Personas mithilfe von Prompts wie „Stellen Sie sich vor, Sie sind eine asiatische Frau. Beschreiben Sie sich selbst.“</sample>
+    <sample id="1432">2 Schritte
+1. Personas: Generieren Sie Personas mithilfe von Prompts wie „Stellen Sie sich vor, Sie sind eine asiatische Frau. Beschreiben Sie sich selbst.“
+   a. Inspiriert von einer psychologischen Studie mit menschlichen Probanden, die dieselben Prompts verwendeten.</sample>
+    <sample id="1433">Hier ist die Übersetzung des englischen Textes ins Deutsche:
+
+**2 Schritte**
+
+1.  **Personas:** Personas generieren mit Prompts wie „Stellen Sie sich vor, Sie sind eine asiatische Frau. Beschreiben Sie sich selbst.“
+    a. Inspiriert von einer psychologischen Studie, die dieselben Prompts mit menschlichen Probanden verwendete.</sample>
+    <sample id="1434">Hier ist die Übersetzung des Inhalts der Folie ins Deutsche:
+
+**2 Schritte**
+
+1.  **Personas:** Personas mithilfe von Prompts generieren, wie „Stellen Sie sich vor, Sie sind eine asiatische Frau. Beschreiben Sie sich selbst.“
+    a. Inspiriert von einer psychologischen Studie mit menschlichen Probanden, die dieselben Prompts verwendet.
+
+2.  **Markierte Wörter:** Wörter finden, die Personas von markierten Gruppen von unmarkierten Gruppen unterscheiden.</sample>
+    <sample id="1435">Hier ist die Übersetzung des englischen Textes ins Deutsche:
+
+**2 Schritte**
+
+1.  **Personas:** Erstellen Sie Personas mit Aufforderungen wie „Stellen Sie sich vor, Sie sind eine asiatische Frau. Beschreiben Sie sich selbst.“
+    a. Inspiriert von psychologischen Studien mit menschlichen Probanden, die dieselben Aufforderungen verwendeten.
+
+2.  **Markierte Wörter:** Finden Sie Wörter, die Personas markierter Gruppen von unmarkierten Gruppen unterscheiden.
+
+Spezifisch, ohne ein Lexikon zu benötigen.</sample>
+    <sample id="1436">Hier ist die Übersetzung des Textes auf Deutsch:
+
+**Einblick für Schritt 2: Markierte Wörter**
+
+**Markiertheit:**
+*   Unmarkierte Gruppen sind Standard, gewöhnlich
+*   Markierte Gruppen unterscheiden sich vom Standard
+*   ein Krieger (unmarkiert) vs. eine **Kriegerin** (markiert)</sample>
+    <sample id="1437">Einblick für Schritt 2: Markierte Wörter
+
+Markiertheit:
+Unmarkierte Gruppen sind Standard, gewöhnlich
+Markierte Gruppen unterscheiden sich vom Standard
+ein Krieger (unmarkiert) vs. eine Kriegerin (markiert)</sample>
+    <sample id="1438">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Einblick für Schritt 2: Markierte Wörter**
+
+**Markiertheit:**
+Unmarkierte Gruppen sind Standard, gewöhnlich
+Markierte Gruppen unterscheiden sich vom Standard
+
+ein Krieger (unmarkiert) vs. eine Kriegerin (markiert)
+
+Dominante Gruppen sind sprachlich und sozial unmarkiert.
+Marginalisierte Gruppen sind markiert.</sample>
+    <sample id="1439">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Schritt 2: Markierte Wörter**
+
+1. Definiere unmarkierte und markierte Gruppen
+2. Verwende gewichtete Log-Odds-Verhältnisse, um die Top-Wörter für jede markierte Gruppe zu bestimmen
+
+Z.B. Finde für Schwarze Frauen-Personas Wörter, die sie von beiden unmarkierten Gruppen unterscheiden:
+i) Weiße Personas
+ii) Männer-Personas</sample>
+    <sample id="1440">**Textübersetzung:**
+
+**Schritt 2: Markierte Wörter**
+
+1.  Definieren Sie unmarkierte und markierte Gruppen
+2.  Verwenden Sie gewichtete Log-Odds-Verhältnisse, um die wichtigsten Wörter für jede markierte Gruppe zu unterscheiden
+
+Z.B. Für Personas schwarzer Frauen finden Sie Wörter, die sie von beiden unmarkierten Gruppen unterscheiden:
+i) Weiße Personas
+ii) Männer-Personas
+
+---
+
+**Audio-Transkription und -Übersetzung:**
+
+**Sprecher (Englisch):** And then we compare the personas using the fighting words method, which is basically using weighted log-odds ratios to distinguish the top words for each marked group.
+
+**Übersetzung (Deutsch):** Und dann vergleichen wir die Personas mit der Methode der "Fighting Words", die im Grunde gewichtete Log-Odds-Verhältnisse verwendet, um die wichtigsten Wörter für jede markierte Gruppe zu unterscheiden.</sample>
+  </task>
+</testset>

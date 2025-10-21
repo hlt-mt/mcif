@@ -1,0 +1,1577 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="de">
+    <sample id="1036">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Titel der Folie:** Experimente
+
+*   4 Offen-Domänen-Dialogmodelle
+*   100 Mensch-Bot-Gespräche pro Modell
+
+**Neue Titelfolie:** Basisevaluierungen
+
+**Methoden:**
+*   ABC-Eval
+*   Dialogzug-Likert
+*   Dialog-Likert
+*   Vergleich
+
+**Bewertete Aspekte:**
+*   Konsistenz
+*   Emotionales Verständnis
+*   Informativität
+*   Gesamtqualität
+*   Ansprechendheit
+*   Grammatikalität
+*   Proaktivität
+*   Relevanz
+
+**Gesprochener Inhalt:**
+„Für jede der bestehenden Methoden haben wir Evaluierungen zu acht der am häufigsten gemessenen Aspekte von Dialogen durchgeführt, da dies die Standardpraxis für die Evaluierung von Chatmodellen entlang mehrerer Dimensionen ist.“</sample>
+    <sample id="1037">Aus unseren Analysen dieser Evaluationsergebnisse stellten wir fest, dass ABC-Eval-Verhaltenslabels insgesamt zuverlässiger sind als Labels, die mit bestehenden Methoden gesammelt wurden. Dies wurde gemessen anhand der Inter-Annotator-Übereinstimmung bei 100 doppelt annotierten Gesprächen.</sample>
+    <sample id="1038">In diesem Diagramm wird die **prädiktive Validität** der ABC-Eval-Labels gezeigt. Die ABC-Eval-Labels sind prädiktiver für die Gesamtqualität der Konversation als Metriken, die von vorhandenen Methoden erzeugt werden. Dies wird durch die einfache lineare Regressionsanalyse gezeigt.</sample>
+    <sample id="1039">For example, you can see how measuring the proportion of turns with self and partner contradictions explains 5% and 10% of conversation quality respectively, while the average Likert consistency scores explain only 4% or less.
+German: Zum Beispiel können Sie sehen, wie die Messung des Anteils von Runden mit Selbst- und Partnerwidersprüchen 5 % bzw. 10 % der Gesprächsqualität erklärt, während die durchschnittlichen Likert-Konsistenzwerte nur 4 % oder weniger erklären.</sample>
+    <sample id="1040">Schließlich überprüften wir, ob jede Bewertungsmetrik einen einzigartigen Aspekt der Chat-Qualität erfasst, indem wir eine schrittweise lineare Regression verwendeten.</sample>
+    <sample id="1041">Sie können sehen, wie die Kombination aller ABC-Eval-Metriken über 25 % der Gesprächsqualität erklärt. Und wenn Sie die Metriken nacheinander entfernen, verlieren die meisten davon eine anständige Menge an Informationen über die Qualität.</sample>
+    <sample id="1042">Auf der anderen Seite erklärt die Kombination aller Metriken der Gesprächsäußerungsebene nach Likert-Skala weitaus weniger von der Qualität, und weniger dieser Metriken enthalten einzigartige Informationen.</sample>
+    <sample id="1043">Hier ist die Übersetzung des Textes in dem Bild:
+
+**ABC-Eval Fehlerraten nach Modell**
+
+**(Die Beschriftungen der X-Achse werden hier nicht übersetzt, da sie spezifische Fehlerkategorien sind und oft in ihrer Originalsprache belassen werden, besonders in technischen Kontexten. Sie lauten: Antisocial, CS Contra., Ignore, Incorrect, Irrelevant, Unempathetic, Other Contra., Redundant, Self Contra., Topic Switch, Uninterpret.)**
+
+**Legende der Modelle (von links nach rechts):**
+*   **BART-FID-RAG**
+*   **Blender2**
+*   **Emora**
+*   **Blender-Decode**</sample>
+    <sample id="1044">Du kannst sehen, dass in den Ergebnissen unseres Experiments mehrere Herausforderungen weiterhin bestehen und präzise quantifiziert wurden. Zum Beispiel haben die von uns getesteten Bots in etwa 20 % ihrer Antworten Verstöße gegen den gesunden Menschenverstand.</sample>
+    <sample id="1045">Sie erzeugen irrelevante Informationen in etwa 15 % der Antworten, und sie widersprechen sich selbst oder ihrem Partner in etwa 10 % der Fälle.</sample>
+    <sample id="1046">Aufgrund des rasanten Verbesserungstempos in diesem Bereich könnten viele dieser Fehlerraten bei neuen Modellen, die seit unserer Evaluierung veröffentlicht wurden, einen Rückgang verzeichnen. Dies ist jedoch umso mehr ein Grund, zuverlässige und präzise Evaluierungsmetriken für den Vergleich von Modellen zu verfolgen.</sample>
+    <sample id="1047">Gerne, hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Videoinhalt (Sprache):**
+
+**00:00 - 00:10**
+Wir hoffen, ABC-Eval kann von anderen in diesem Bereich als bedeutsamer Schritt in diese Richtung genutzt werden. Und wir freuen uns darauf zu sehen, wie sich konversationelle KI in den kommenden Monaten und Jahren entwickeln wird.
+
+**00:10 - 00:13**
+Vielen Dank fürs Zuschauen!
+
+---
+
+**Bildschirminhalte:**
+
+**00:00 - 00:10**
+*   **Titel:** ABC-Eval Error Rates by Model
+*   **Diagramm:** Ein Balkendiagramm, das verschiedene Fehlertypen ("Antisocial", "CS Contra.", "Ignore", "Incorrect", "Irrelevant", "Unempathetic", "Other Contra.", "Redundant", "Self Contra.", "Topic Switch", "Uninterpret.") und deren prozentuale Häufigkeit für vier verschiedene Modelle ("BART-FID-RAG", "Blender2", "Emora", "Blender-Decode") zeigt. Jedes Modell ist durch eine andere Farbe (blau, lila, türkis, grün) und ein kleines Robotersymbol gekennzeichnet.
+
+**00:10 - 00:13**
+*   **Titel:** Thanks For Watching!
+*   **Links:**
+    *   Paper: https://arxiv.org/pdf/2212.09180.pdf
+    *   GitHub: https://github.com/emorynlp/ChatEvaluationPlatform
+*   **Kontaktinformationen:**
+    *   Contact Info: {sfillwo, jdfinch, jinho.choi} @ emory.edu
+    *   https://www.emorynlp.org
+*   **Logos:** Unten links "EMORY UNIVERSITY" und "NLP Emory". Unten rechts "alexa".</sample>
+    <sample id="1048">Emory University.</sample>
+    <sample id="1049">CFT steht für Continuous Fine-Tuning.</sample>
+    <sample id="1050">Sieben.</sample>
+    <sample id="1051">TRANSLATION:
+Hallo, mein Name ist Kayo Yin, und ich werde unsere Arbeit mit dem Titel "When Does Translation Require Context? A Data-driven, Multilingual Exploration" vorstellen. Diese Arbeit entstand in Zusammenarbeit mit Patrick Fernandes, Kayo Yin, Emmy Liu, André F. T. Martins und Graham Neubig.</sample>
+    <sample id="1052">Übersetzung hängt vom Kontext ab
+Wir werden diesen Maulwurf loswerden müssen.</sample>
+    <sample id="1053">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Die Übersetzung hängt vom Kontext ab**
+
+**Kontext 1 (Spion):**
+"Es könnte gefährlich werden, wenn die Minister es herausfinden. Wir müssen diesen Maulwurf loswerden."
+(Hier bezieht sich "Maulwurf" auf einen Spion oder Informanten.)
+
+**Kontext 2 (Muttermal):**
+"Könnte es etwas Ernstes sein, Doktor? Wir müssen dieses Muttermal entfernen."
+(Hier bezieht sich "Maulwurf" auf ein Muttermal oder einen Leberfleck auf der Haut.)</sample>
+    <sample id="1054">**Bildtext:**
+Übersetzung hängt vom Kontext ab
+
+Könnte es etwas Ernstes sein, Doktor?
+Wir müssen dieses Muttermal entfernen.
+
+**Gesprochener Inhalt:**
+Je nach Kontext ändert sich also die Bedeutung des Wortes und damit auch seine Übersetzung.</sample>
+    <sample id="1055">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Die Bewertung kontextabhängiger Übersetzungen ist schwierig**
+
+*   **Nur ein kleiner Teil der Wörter hängt vom Kontext ab**
+    *   **Korpusebenen-Metriken**</sample>
+    <sample id="1056">Die Übersetzung des englischen Inhalts ins Deutsche lautet:
+
+**Die Bewertung kontextabhängiger Übersetzungen ist schwierig**
+
+*   Nur ein kleiner Teil der Wörter hängt vom Kontext ab
+    *   Korpus-weite Metriken
+*   Bestehende Methoden unterstützen begrenzte Diskursphänomene und Sprachen</sample>
+    <sample id="1057">**Gesprochener Inhalt:**
+In dieser Arbeit versuchen wir, diese beiden Fragen zu beantworten. Erstens, wann erfordert Übersetzung Kontext? Und zweitens, wie gut gehen Modelle mit diesen Fällen um?
+
+**Auf der Folie geschriebener Inhalt:**
+**RQ1:** Wann erfordert Übersetzung Kontext?
+**RQ2:** Wie gut bewältigen Modelle kontextabhängige Übersetzungen?</sample>
+    <sample id="1058">Hier ist der übersetzte Inhalt ins Deutsche:
+
+**RQ1: Wann erfordert Übersetzung Kontext?**
+- Kontextnutzung auf Wortebene
+
+**RQ2: Wie gut gehen Modelle mit kontextabhängigen Übersetzungen um?**</sample>
+    <sample id="1059">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Gesprochener Text:**
+"Und in der vorherigen Arbeit haben wir CXMI als Maß für die Kontextnutzung durch maschinelle Übersetzungsmodelle eingeführt. Und dies geschieht, indem gemessen wird, wie viele Informationen der Kontext C über das Ziel Y bereitstellt, gegeben die Quelle X."
+
+**Text auf der Folie:**
+**Titel:** Bedingte Kreuz-Mutual Information (CXMI)
+**Aufzählungspunkt:** CXMI: misst, wie viel Kontext MT-Modelle angesichts eines Korpus verwenden
+**Diagrammelemente:**
+- "Unsicherheit über Übersetzungen gegeben die Quelle"
+- "Unsicherheit über Übersetzungen gegeben die Quelle UND den Kontext"
+- "CXMI(C → Y|X)"</sample>
+    <sample id="1060">Bedingte Kreuz-Gegenseitige Information (CXMI)
+
+*   CXMI: misst, wie viel Kontext MT-Modelle (Modelle für maschinelle Übersetzung) in einem gegebenen Korpus verwenden.
+
+Unsicherheit über Übersetzungen, gegeben die Quelle
+H_qMT_A(Y|X)
+
+Unsicherheit über Übersetzungen, gegeben die Quelle UND der Kontext
+H_qMT_C(Y|X, C)
+
+CXMI(C -&gt; Y|X)
+
+Man kann sich CXMI als den Informationsgewinn vorstellen, der durch die Bereitstellung von Kontext...</sample>
+    <sample id="1061">Punktweise (P-)CXMI
+
+*   Wir stellen P-CXMI vor, um die Kontextverwendung zur Übersetzung eines *spezifischen* zu messen.
+
+o Satz P-CXMI(y, x, C) = - log (q_MTA(y|x) / q_MTC(y|x, C))
+
+o Wort P-CXMI(i, y, x, C) = - log (q_MTA(y_i|y_{t&lt;i}, x) / q_MTC(y_i|y_{t&lt;i}, x, C))
+
+*   Wörter mit hohem P-CXMI -&gt; benötigen Kontext zur Übersetzung</sample>
+    <sample id="1062">Hier ist die deutsche Übersetzung des Inhalts:
+
+**RQ1: Wann erfordert Übersetzung Kontext?**
+- Kontextnutzung auf Wortebene
+- Thematische Analyse
+
+**RQ2: Wie gut gehen Modelle mit kontextabhängigen Übersetzungen um?**</sample>
+    <sample id="1063">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+*   **Thematic analysis of high P-CXMI words** - Thematische Analyse von Wörtern mit hohem P-CXMI
+*   **English** - Englisch
+*   **Español** - Spanisch
+*   **Italiano** - Italienisch
+*   **Nederlands** - Niederländisch
+*   **Русский** - Russisch
+*   **TED** - TED (Bleibt gleich, da Eigenname)
+*   **IDEAS WORTH SPREADING** - IDEEN, DIE ES WERT SIND, VERBREITET ZU WERDEN</sample>
+    <sample id="1064">Wir führen unsere Analyse auf drei verschiedenen Ebenen durch. Zuerst betrachten wir Wortart-Tags, die hohe P-CXMI-Mittelwerte aufweisen.</sample>
+    <sample id="1065">Thematische Analyse von Wörtern mit hohem P-CXMI.
+
+1. POS-Tags
+
+P-CXMI für POS-Tags in En-Ar
+Und das erlaubt uns, zum Beispiel, Dualpronomen im Arabischen zu finden, die einen relativ hohen P-CXMI-Wert haben. Und das lässt sich erklären, weil das Englische keine Dualpronomen besitzt. Man braucht also Kontext, um festzustellen, ob ein Pronomen dual ist, wenn man ins Arabische übersetzt.
+
+- Pronomen</sample>
+    <sample id="1066">**Titel:** Thematische Analyse von Wörtern mit hohem P-CXMI
+
+**Sprecherin:**
+Und ähnlich stellen wir fest, dass bestimmte Sprachen auch Kontext benötigen, wenn wir die passende Verbform wählen wollen. Wir betrachten dann Vokabeln, die einen hohen P-CXMI haben, gemittelt über alle ihre verschiedenen Vorkommen.
+
+**Texte auf der Folie:**
+
+*   **Titel:** Thematische Analyse von Wörtern mit hohem P-CXMI
+*   **1.** POS-Tags
+*   **Grafik-Titel:** P-CXMI für POS-Tags in En-Ar
+*   **X-Achse der Grafik:**
+    *   PRON.3.Sing (Pronomen, 3. Person, Singular)
+    *   PRON.3.Dual (Pronomen, 3. Person, Dual)
+    *   PRON.3.Plur (Pronomen, 3. Person, Plural)
+*   **Kästcheninhalt:**
+    *   - Pronomen
+    *   - Verbform
+*   **2.** Vokabeln</sample>
+    <sample id="1067">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Thematische Analyse hoher P-CXMI-Wörter**
+
+1.  Wortart-Tags
+2.  Vokabeln
+
+---
+
+*   Pronomen
+*   Verbform
+*   Lexikalische Kohäsion
+
+---
+
+Aveliles Mutter schlief noch.
+Avelile ging zur Schule.
+
+---
+
+阿维利尔的母亲还在睡觉。
+阿维利尔去上学了。</sample>
+    <sample id="1068">THINK
+Here's my thinking process to translate the slide:
+
+1.  **Analyze the Request:** The user wants a translation of "the English content to German." This means I need to translate all visible English text on the slide.
+
+2.  **Break Down the Slide Content:** I'll go through the slide element by element.
+
+    *   **Title:** "Thematic analysis of high P-CXMI words"
+    *   **Main List (Left):**
+        1.  "POS tags"
+        2.  "Vocabulary items"
+    *   **Example Box (Left, English):**
+        *   "Avelile's mother was still asleep."
+        *   "Avelile went to school."
+    *   **Example Box (Left, Chinese):** (This is Chinese, not English, so I won't translate it unless specifically asked to *identify* it as Chinese. The request is "English content to German.")
+        *   阿维利尔的母亲还在睡觉。
+        *   阿维利尔去上学了。
+    *   **Bulleted List (Right):**
+        *   "- Pronouns"
+        *   "- Verb form"
+        *   "- Lexical cohesion"
+        *   "- Formality" (This appears in the video frame, but the request is for the *slide content*. I need to be careful. Looking at the image, "Formality" is indeed part of the slide, just appearing a bit later in the video clip. I should include it.)
+
+3.  **Translate Each Element:**
+
+    *   **Title:** "Thematic analysis of high P-CXMI words"
+        *   "Thematic analysis" -&gt; "Thematische Analyse"
+        *   "of" -&gt; "von" (or implied genitive)
+        *   "high" -&gt; "hohen" (needs to agree with "Wörtern")
+        *   "P-CXMI words" -&gt; "P-CXMI-Wörtern" (compound noun, hyphenated)
+        *   *Combined:* "Thematische Analyse von Wörtern mit hohem P-CXMI-Wert" (adding "Wert" for clarity, or "hohen P-CXMI-Wörtern" which is also acceptable)
+        *   *Self-correction:* "Hohen P-CXMI-Wörtern" is more direct and concise. Let's go with that.
+
+    *   **Main List (Left):**
+        1.  "POS tags"
+            *   "POS" -&gt; "Wortart" (Part-of-Speech)
+            *   "tags" -&gt; "Tags" or "Markierungen" or "Kennzeichnungen." "Wortart-Tags" is common in NLP contexts.
+            *   *Combined:* "Wortart-Tags"
+        2.  "Vocabulary items"
+            *   "Vocabulary" -&gt; "Vokabular" or "Wortschatz"
+            *   "items" -&gt; "Elemente" or "Einträge"
+            *   *Combined:* "Vokabularelemente" or "Wortschatzelemente" or "Wortschatz." "Wortschatzelemente" is precise.
+
+    *   **Example Box (Left, English):**
+        *   "Avelile's mother was still asleep."
+            *   "Avelile's mother" -&gt; "Aveliles Mutter" (genitive 's becomes 's or von)
+            *   "was still asleep" -&gt; "schlief noch" (past tense of "schlafen," "still" is "noch")
+            *   *Combined:* "Aveliles Mutter schlief noch."
+        *   "Avelile went to school."
+            *   "Avelile" -&gt; "Avelile"
+            *   "went to school" -&gt; "ging zur Schule"
+            *   *Combined:* "Avelile ging zur Schule."
+
+    *   **Bulleted List (Right):**
+        *   "- Pronouns" -&gt; "- Pronomen"
+        *   "- Verb form" -&gt; "- Verbform"
+        *   "- Lexical cohesion"
+            *   "Lexical" -&gt; "Lexikalische"
+            *   "cohesion" -&gt; "Kohäsion"
+            *   *Combined:* "- Lexikalische Kohäsion"
+        *   "- Formality" -&gt; "- Formalität"
+
+4.  **Assemble the Final Translation:**
+
+    *   **Thematische Analyse von hohen P-CXMI-Wörtern**
+
+    *   1.  Wortart-Tags
+    *   2.  Vokabularelemente
+
+    *   Aveliles Mutter schlief noch.
+    *   Avelile ging zur Schule.
+
+    *   - Pronomen
+    *   - Verbform
+    *   - Lexikalische Kohäsion
+    *   - Formalität
+
+5.  **Final Review:** Read through the German translation to ensure it's natural, accurate, and consistent. The translations seem correct and appropriate for the context. I've excluded the Chinese text as it was not requested and is not English content.Hier ist die deutsche Übersetzung des englischen Inhalts der Folie:
+
+**Thematische Analyse von hohen P-CXMI-Wörtern**
+
+1.  Wortart-Tags
+2.  Vokabularelemente
+
+*   Aveliles Mutter schlief noch.
+*   Avelile ging zur Schule.
+
+*   - Pronomen
+*   - Verbform
+*   - Lexikalische Kohäsion
+*   - Formalität</sample>
+    <sample id="1069">Thematische Analyse von Wörtern mit hohem P-CXMI
+
+1.  Wortart-Tags
+2.  Vokabelelemente
+3.  Einzelne Token
+
+*   Pronomen
+*   Verbform
+*   Lexikalische Kohäsion
+*   Formalität
+*   Ellipse
+
+**Englisch:**
+She knows where we're going.
+I don't.
+
+**Deutsch:**
+Sie weiß, wohin wir gehen.
+Ich weiß es nicht.</sample>
+    <sample id="1070">Hier ist der Inhalt auf Deutsch übersetzt:
+
+**RQ1: Wann benötigt Übersetzung Kontext?**
+*   Kontextnutzung auf Wortebene
+*   Thematische Analyse
+
+**RQ2: Wie gut handhaben Modelle kontextabhängige Übersetzungen?**
+*   Mehrsprachiger diskursbewusster (MuDA) Benchmark</sample>
+    <sample id="1071">Hier ist der englische Inhalt ins Deutsche übersetzt:
+
+**Forschungsfrage 1 (FF1): Wann benötigt Übersetzung Kontext?**
+- Kontextnutzung auf Wortebene
+- Thematische Analyse
+
+**Forschungsfrage 2 (FF2): Wie gut gehen Modelle mit kontextabhängigen Übersetzungen um?**
+- Mehrsprachiger diskursbewusster (MuDA) Benchmark
+
+---
+
+**Mehrsprachiger diskursbewusster (MuDA) Tagger**
+- Pronomen
+- Verbform
+- Lexikalische Kohäsion
+- Formalität
+- Ellipse</sample>
+    <sample id="1072">Multilingual Discourse-Aware (MuDA) Tagger
+
+- Pronomen
+- Verbform
+- Lexikalische Kohäsion
+- Formalität
+- Ellipse
+
+Wir können dann auch feststellen, dass verschiedene Sprachen unterschiedliche Anteile dieser Diskursphänomene aufweisen.</sample>
+    <sample id="1073">Wir verwenden dann den MuDA-Tagger, indem wir den Tagger auf einen Parallelkorpus anwenden, den wir zur Evaluierung nutzen möchten. Und wir wenden unsere bevorzugten Übersetzungsmetriken auf die kontextabhängigen Beispiele an, die der MuDA-Tagger identifiziert hat.</sample>
+    <sample id="1074">Und schließlich, äh, verwenden wir, ähm, unseren Benchmark, sowie andere Metriken, um verschiedene Modelle, ähm, bei der maschinellen Übersetzung auf Dokumentebene zu bewerten.</sample>
+    <sample id="1075">RQ1: Wann erfordert die Übersetzung Kontext?
+- Kontextnutzung auf Wortebene
+- Thematische Analyse
+
+RQ2: Wie gut gehen Modelle mit kontextabhängigen Übersetzungen um?
+- Mehrsprachiger Diskurs-Aware (MuDA) Benchmark
+- Modellevaluierung
+
+Zunächst einmal, wenn wir Korpus-Level-Metriken verwenden, äh, so stellen wir für BLEU fest, dass kontextagnostische Modelle die beste Leistung erzielen.</sample>
+    <sample id="1076">Hier ist der Inhalt des Bildes und des gesprochenen Textes auf Deutsch:
+
+**Bildschirmtext:**
+Korpus-Ebene-Metriken
+* (Roboter mit durchgestrichenem "CONTEXT" darüber) BLEU
+* (Roboter mit "CONTEXT" darüber) COMET
+* (Roboter) F-measure
+
+**Gesprochener Inhalt:**
+Aber wenn wir dann COMET verwenden, erbringen kontextuelle Wortmodelle die beste Leistung. Und wenn wir die Wort-F-Maßzahl verwenden, dann haben Modelle mit oder ohne Kontext eine vergleichbare Leistung.</sample>
+    <sample id="1077">Dies zeigt wiederum, dass es schwierig ist, das beste Dokumentenübersetzungssystem zu bestimmen, wenn wir allein Korpus-Ebene-Metriken verwenden.</sample>
+    <sample id="1078">Jetzt verwenden wir den MuDA-Benchmark, um Modelle zu evaluieren, und wir stellen fest, dass kontextsensitive Modelle bei bestimmten Diskursphänomenen, wie Formalität und lexikalischer Kohäsion, deutlich genauer sind als Modelle, die keinen Kontext verwenden.</sample>
+    <sample id="1079">Hier ist die deutsche Übersetzung des englischen Inhalts:
+
+**MuDA-Benchmark-Ergebnisse**
+
+*   Kontextbezogene Modelle erzielen bei einigen Phänomenen deutlich bessere Ergebnisse
+    *   ✓ Formalität, lexikalische Kohäsion
+    *   ✗ Ellipse, Pronomen, Verbform</sample>
+    <sample id="1080">Wir haben auch verschiedene kommerzielle Systeme verglichen, und unser Benchmark zeigt, dass DeepL für die Übersetzung auf Dokumentenebene in der Regel genauer ist als Google Translate.</sample>
+    <sample id="1081">To summarize, we perform a data-driven analysis across 14 language pairs to identify one translation
+Um zusammenzufassen, führen wir eine datengesteuerte Analyse über 14 Sprachpaare hinweg durch, um eine Übersetzung zu identifizieren.</sample>
+    <sample id="1082">Und dann nutzen wir unsere Erkenntnisse, um einen Benchmark für maschinelle Übersetzung auf Dokumentenebene zu erstellen, der uns helfen kann, zu identifizieren, welche Diskursphänomene Modelle gut oder schlecht handhaben können und welche Übersetzungssysteme gut in der Übersetzung auf Dokumentenebene sind.</sample>
+    <sample id="1083">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Zusammenfassung**
+
+*   Diskursphänomene systematisch ohne vorheriges linguistisches Wissen identifizieren
+*   Datensatz-unabhängiger Benchmark für dokumentenbasierte MT
+
+[Bilder mit Beschriftungen:]
+
+*   MuDA-Tagger
+*   BLEU
+*   COMET
+*   F-Maß
+*   ...</sample>
+    <sample id="1084">Der/Die Referent*in heißt Yusen Zhang.</sample>
+    <sample id="1121">Die neue Methode hat keinen Namen.</sample>
+    <sample id="1122">Die Methode der „markierten Wörter“ dient dazu, Wörter zu finden, die Personas von markierten Gruppen von unmarkierten Gruppen unterscheiden.</sample>
+    <sample id="1123">Die Autoren gehören der University of Washington und der Carnegie Mellon University an.</sample>
+    <sample id="1124">Prague</sample>
+    <sample id="1125">Die Referent*innen sind James Finch und Sarah Finch.</sample>
+    <sample id="1126">An der Arbeit sind vier Autoren beteiligt.</sample>
+    <sample id="1127">BLiMP und SyntaxGym.</sample>
+    <sample id="1161">Die Abkürzungen der fünf Methoden für die erste Forschungsfrage sind: FT_w, BOND, COSINE, MLC und L2R.</sample>
+    <sample id="1162">Das Modell wird anhand von 11 biomedizinischen und klinischen Downstream-Aufgaben evaluiert.</sample>
+    <sample id="1226">CamemBERT wurde ursprünglich auf den OSCAR- und CCNET-Datensätzen trainiert, wie in der Tabelle angegeben ("CamemBERT OSCAR 138 GB", "CamemBERT OSCAR 4 GB", "CamemBERT CCNET 4 GB").</sample>
+    <sample id="1227">Adam Przepiórkowski</sample>
+    <sample id="1228">Die Ergebnisse zeigten, dass die Leistung mit einer größeren zeitlichen Lücke abnimmt.</sample>
+    <sample id="1269">Es ist notwendig, die Token zu permutieren, weil sie nach dem ersten Schritt nicht geordnet sind.</sample>
+    <sample id="1270">Die Autoren empfehlen Transparenz, weil sie nicht wissen, ob bestimmte Muster (wie positive Stereotypen) durch "übermäßig exzessive Wertangleichung" oder durch "andere Anti-Stereotypisierungs-Methoden, die zu diesen schädlichen Mustern führen", verursacht werden.</sample>
+    <sample id="1271">Inakzeptable Minimalpaareingaben sind inakzeptable oder ungrammatische Sätze.</sample>
+    <sample id="1272">Die Autoren verwendeten den F1-Score (für Named Entity Recognition (NER), Klassifikation (CLS) und Part-of-Speech-Tagging (POS)), Hamming und EMR als Bewertungsmetriken.</sample>
+    <sample id="1273">Krippendorff's Alpha.</sample>
+    <sample id="1274">Wikipedia.</sample>
+    <sample id="1275">Die Autoren gehören der Heinrich Heine University Düsseldorf an.</sample>
+    <sample id="1276">Andere Benchmarks konzentrierten sich auf rein sprachliche Aufgaben. MultiInstruct (der Datensatz, den die Sprecherin entwickelt hat) unterscheidet sich, indem es sich auf multimodale Aufgaben konzentriert und die Lücke bei großen, öffentlich verfügbaren multimodalen Instruktionsdatensätzen schließt.</sample>
+    <sample id="1277">Drei.</sample>
+    <sample id="1278">Der Begriff "binäre Koordination" wird in diesem Videoausschnitt nicht definiert.</sample>
+    <sample id="1279">Diese Information wird im englischen Inhalt nicht erwähnt.</sample>
+    <sample id="1280">Ein kleineres T5-Modell, das auf Coscript feinabgestimmt wurde, kann größere Sprachmodelle (LLMs) bei der Generierung hochwertiger Skripte übertreffen.</sample>
+    <sample id="1281">Hallo. Ich bin Yanis Labrak und ich werde Ihnen unsere Arbeiten zu DrBERT vorstellen, einem robusten, vortrainierten Modell in Französisch für biomedizinische und klinische Bereiche.</sample>
+    <sample id="1282">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Zusammenfassung**
+
+I. Sprachmodellierung im Gesundheitswesen
+II. Vergleich von Vortrainingsstrategien, Datenquellen und -größen
+III. Evaluierung von 13 Modellen bei 11 Aufgaben
+IV. Verteilung von NACHOS und DrBERT</sample>
+    <sample id="1283">Wir stellen das erste biomedizinische Modell auf Französisch vor, genannt Dr. Bert, das auf Roberta basiert und auf Nachos trainiert wurde, einem Datensatz medizinischer, gecrawlter Daten aus der Welt.</sample>
+    <sample id="1284">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Zusammenfassung**
+
+I. Sprachmodellierung im Gesundheitswesen
+
+II. Vergleich von Vortrainingsstrategien, Datenquellen und -größen
+
+III. Bewertung von 13 Modellen bei 11 Aufgaben
+
+IV. Verteilung von NACHOS und DrBERT</sample>
+    <sample id="1285">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Zusammenfassung**
+I. Sprachmodellierung im Gesundheitswesen
+II. Vergleich von Vortrainingsstrategien, Datenquellen und -größen
+III. Evaluierung von 13 Modellen für 11 Aufgaben
+IV. Verbreitung von NACHOS und DrBERT
+
+**Sprachmodellierung**
+* Transformer-basierte Ansätze, wie BERT, bieten einen enormen Leistungszuwachs bei vielen NLP-Aufgaben.
+* Wurde mit CamemBERT und FlauBERT an das Französische angepasst.
+* Bei medizinischen Aufgaben haben domänenspezifische Modelle im Englischen die Messlatte noch höher gelegt.
+    * PudMedBERT, BioBERT, ClinicalBERT und andere
+* Sprachen außer Englisch sind seltener und basieren hauptsächlich auf kontinuierlichem Vortraining unter Verwendung eines bestehenden generischen Modells.
+* Im Gegensatz zu generischen Modellen ist noch kein Open-Source-Modell für den biomedizinischen Bereich im Französischen verfügbar.
+* Ein BERT-basiertes domänenspezifisches Modell für Französisch sollte die Leistung bei medizinischen Aufgaben steigern.</sample>
+    <sample id="1286">**Sprachmodellierung**
+
+*   Transformer-basierte Ansätze, wie BERT, bieten einen enormen Leistungszuwachs bei vielen NLP-Aufgaben.
+*   Für Französisch wurden Anpassungen mit CamemBERT und FlaubERT vorgenommen.
+*   Bei medizinischen Aufgaben legten domänenspezifische Modelle im Englischen die Messlatte noch höher.
+    *   PudMedBERT, BioBERT, ClinicalBERT und andere
+*   Modelle für andere Sprachen als Englisch sind seltener und basieren hauptsächlich auf kontinuierlichem Vortraining unter Verwendung eines bestehenden generischen Modells.
+*   Im Gegensatz zu generischen Modellen ist bisher kein Open-Source-Modell für den biomedizinischen Bereich auf Französisch verfügbar.
+*   Ein BERT-basiertes domänenspezifisches Modell für Französisch sollte die Leistung bei medizinischen Aufgaben steigern.</sample>
+    <sample id="1287">Hier ist die Übersetzung des Inhalts der Folie ins Deutsche:
+
+**Sprachmodellierung**
+
+*   Transformer-basierte Ansätze, wie BERT, bieten einen enormen Leistungszuwachs bei vielen NLP-Aufgaben.
+*   Wurde an das Französische mit CamemBERT und FlauBERT angepasst.
+*   Bei medizinischen Aufgaben haben domänenspezifische Modelle auf Englisch die Messlatte noch höher gelegt.
+    *   PudMedBERT, BioBERT, ClinicalBERT und andere
+*   Andere Sprachen als Englisch sind seltener und stützen sich primär auf kontinuierliches Vortraining unter Verwendung eines bestehenden generischen Modells.
+*   Im Gegensatz zu generischen Modellen steht bisher kein Open-Source-Modell für den biomedizinischen Bereich auf Französisch zur Verfügung.
+*   Ein BERT-basiertes domänenspezifisches Modell für Französisch sollte die Leistung bei medizinischen Aufgaben steigern.</sample>
+    <sample id="1288">Spezialisierte Modelle für andere Sprachen sind selten und basieren oft auf kontinuierlichem Vortraining aufgrund des Mangels an In-Domain-Daten.</sample>
+    <sample id="1289">Allerdings gab es für Französisch noch kein Open-Source-Modell für den biomedizinischen Bereich auf Französisch.</sample>
+    <sample id="1290">Hier ist die deutsche Übersetzung des Inhalts der Folie:
+
+**Vergleich von Vortrainingsstrategien und Datenquellen**
+
+*   **Bewertung des Einflusses von öffentlichen und privaten medizinischen Datenquellen auf vergleichbaren Datengrößen**
+    *   **NACHOS:** Ein Open-Source-Datensatz von 1,1 Milliarden Wörtern mit heterogenen Daten, die aus verschiedenen medizinischen Domänen, Arten und Stilen gesammelt wurden.
+    *   **NBDW:** Ein privater Datensatz von Sätzen, die aus 1,7 Millionen anonymisierten medizinischen Aufzeichnungen entnommen wurden, die aus dem Datenlager des Universitätsklinikums Nantes extrahiert wurden.
+
+*   **Vergleich von Lernstrategien**
+    *   **Von Grund auf neu** mit vollständigem Modellaufbau
+    *   **Kontinuierliches Vortraining** unter Verwendung eines bestehenden vortrainierten Modells (hier CamemBERT, ein generisches französisches Modell, und PubMedBERT, ein englischsprachiges medizinisches Modell)
+
+**Tabelle 1: Korpus-Details**
+
+| Korpus          | Größe      | #Wörter  | #Sätze  |
+| :-------------- | :--------- | :------- | :------ |
+| NACHOS_large    | 7,4 GB     | 1,1 B    | 54,2 M  |
+| NACHOS_small (publ.) | 4 GB       | 646 M    | 25,3 M  |
+| NBDW_small (privat)  | 4 GB       | 655 M    | 43,1 M  |
+| NBDW_mixed (beide) | 4+4 GB     | 1,3 B    | 68,4 M  |
+
+**Tabelle 2: Modell-Details**
+
+| Modellname | Strategie              | Korpus        |
+| :--------- | :--------------------- | :------------ |
+| DrBERT     | Von Grund auf neu      | NACHOS_large  |
+| DrBERT     | Von Grund auf neu      | NACHOS_small  |
+| ChuBERT    | Von Grund auf neu      | NBDW_small    |
+| ChuBERT    | Von Grund auf neu      | NBDW_mixed    |
+| CamemBERT  | Kontinuierliches Vortraining | NACHOS_small  |
+| PubMedBERT | Kontinuierliches Vortraining | NACHOS_small  |
+| CamemBERT  | Kontinuierliches Vortraining | NBDW_small    |</sample>
+    <sample id="1291">Um diese Frage zu beantworten, vergleichen wir DoctorBERT mit unserem ChoBERT-Modell, das auf anonymisierten Daten basiert, die aus dem Datenlager des Universitätsklinikums Nantes stammen.</sample>
+    <sample id="1292">**Titel:** Vergleich von Vortrainingsstrategien und Datenquellen
+
+**Hauptpunkte:**
+
+*   **Bewertung des Einflusses öffentlicher und privater medizinischer Datenquellen bei vergleichbaren Datengrößen**
+    *   **NACHOS:** Ein quelloffener Datensatz mit 1,1 Milliarden Wörtern aus heterogenen Daten, die aus verschiedenen medizinischen Domänen, Arten und Stilen gesammelt wurden.
+    *   **NBDW:** Ein privater Datensatz von Sätzen, entnommen aus 1,7 Millionen anonymisierten medizinischen Aufzeichnungen, die aus dem Datenlager des Universitätsklinikums Nantes extrahiert wurden.
+*   **Vergleich von Lernstrategien**
+    *   **Von Grund auf neu** mit vollständigem Modellaufbau
+    *   **Kontinuierliches Vortraining** unter Verwendung eines bestehenden vortrainierten Modells (hier: CamemBERT, ein generisches französisches Modell, und PubMedBERT, ein englischbasiertes medizinisches Modell)
+
+---
+
+**Tabelle 1: Korpusdetails**
+
+| Korpus          | Größe             | #Wörter | #Sätze |
+| :-------------- | :---------------- | :------ | :----- |
+| NACHOS_large    | 7,4 GB            | 1,1 B   | 54,2 M |
+| NACHOS_small    | 4 GB              | 646 M   | 25,3 M |
+| NBDW_small (privat) | 4 GB              | 655 M   | 43,1 M |
+| NBDW_mixed (beide) | 4+4 GB (insgesamt 8 GB) | 1,3 B   | 68,4 M |
+
+---
+
+**Tabelle 2: Modelldetails**
+
+| Modellname   | Strategie               | Korpus      |
+| :----------- | :---------------------- | :---------- |
+| DrBERT       | Von Grund auf neu       | NACHOS_large |
+| DrBERT       | Von Grund auf neu       | NACHOS_small |
+| ChuBERT      | Von Grund auf neu       | NBDW_small  |
+| ChuBERT      | Von Grund auf neu       | NBDW_mixed  |
+| CamemBERT    | Kontinuierliches Vortraining | NACHOS_small |
+| PubMedBERT   | Kontinuierliches Vortraining | NACHOS_small |
+| CamemBERT    | Kontinuierliches Vortraining | NBDW_small  |
+
+---
+
+**Fußzeile:** Universität Avignon</sample>
+    <sample id="1293">Hier ist die deutsche Übersetzung des Inhalts der Folie:
+
+**Vergleich von Vortrainingsstrategien und Datenquellen**
+
+*   **Bewertung der Auswirkungen öffentlicher und privater medizinischer Datenquellen bei vergleichbaren Datengrößen**
+    *   **NACHOS:** Ein Open-Source-Datensatz von 1,1 Milliarden Wörtern mit heterogenen Daten, die aus verschiedenen medizinischen Domänen, Arten und Stilen gesammelt wurden.
+    *   **NBDW:** Ein privater Datensatz von Sätzen, die aus 1,7 Millionen anonymisierten medizinischen Aufzeichnungen stammen, welche aus dem Datenlager des Universitätsklinikums Nantes extrahiert wurden.
+
+*   **Vergleich von Lernstrategien**
+    *   **Von Grund auf neu mit vollständiger Modellkonstruktion**
+    *   **Kontinuierliches Vortraining** unter Verwendung eines bestehenden vortrainierten Modells (hier CamemBERT, ein generisches französisches Modell, und PubMedBERT, ein englischbasiertes medizinisches Modell).
+
+---
+
+**Tabelle 1: Korpusdaten**
+
+| Korpus                  | Größe   | #Wörter    | #Sätze    |
+| :---------------------- | :------- | :--------- | :-------- |
+| NACHOS_large (publ.)    | 7,4 GB   | 1,1 Mrd.   | 54,2 Mio. |
+| NACHOS_small (publ.)    | 4 GB     | 646 Mio.   | 25,3 Mio. |
+| NBDW_small (privat)     | 4 GB     | 655 Mio.   | 43,1 Mio. |
+| NBDW_mixed (beide)      | 4+4 GB   | 1,3 Mrd.   | 68,4 Mio. |
+
+**Tabelle 2: Modelltraining**
+
+| Modellname  | Strategie               | Korpus         |
+| :---------- | :---------------------- | :------------- |
+| DrBERT      | Von Grund auf neu       | NACHOS_large   |
+| DrBERT      | Von Grund auf neu       | NACHOS_small   |
+| ChuBERT     | Von Grund auf neu       | NBDW_small     |
+| ChuBERT     | Von Grund auf neu       | NBDW_mixed     |
+| CamemBERT   | kontinuierliches Vortraining | NACHOS_small   |
+| PubMedBERT  | kontinuierliches Vortraining | NACHOS_small   |
+| CamemBERT   | kontinuierliches Vortraining | NBDW_small     |</sample>
+    <sample id="1294">Hier ist der Inhalt der Folie ins Deutsche übersetzt:
+
+---
+
+**Vergleich von Vortrainingsstrategien und Datenquellen**
+
+*   **Bewertung der Auswirkungen öffentlicher und privater medizinischer Datenquellen bei vergleichbaren Datengrößen**
+    *   **NACHOS:** Ein Open-Source-Datensatz mit 1,1 Milliarden Wörtern, bestehend aus heterogenen Daten, die aus verschiedenen medizinischen Domänen, Arten und Stilen gesammelt wurden.
+    *   **NBDW:** Ein privater Datensatz von Sätzen, entnommen aus 1,7 Millionen anonymisierten Patientenakten, extrahiert aus dem Datenlager des Universitätsklinikums Nantes.
+
+*   **Vergleich von Lernstrategien**
+    *   **Von Grund auf neu mit vollständiger Modellkonstruktion**
+    *   **Kontinuierliches Vortraining** unter Verwendung eines bestehenden vortrainierten Modells (hier CamemBERT, ein französisches generisches Modell, und PubMedBERT, ein englischbasiertes medizinisches Modell)
+
+---
+
+**Tabelle 1: Korpusdetails**
+
+| Korpus             | Größe    | #Wörter  | #Sätze |
+| :----------------- | :-------- | :------- | :------ |
+| NACHOS_large       | 7.4 GB    | 1.1 Mrd. | 54.2 Mio. |
+| NACHOS_small (publ.) | 4 GB      | 646 Mio. | 25.3 Mio. |
+| NBDW_small (privat)  | 4 GB      | 655 Mio. | 43.1 Mio. |
+| NBDW_mixed (beide) | 4+4 GB    | 1.3 Mrd. | 68.4 Mio. |
+
+---
+
+**Tabelle 2: Modellstrategien**
+
+| Modellname | Strategie              | Korpus        |
+| :--------- | :--------------------- | :------------ |
+| DrBERT     | Von Grund auf neu      | NACHOS_large  |
+| DrBERT     | Von Grund auf neu      | NACHOS_small  |
+| ChuBERT    | Von Grund auf neu      | NBDW_small    |
+| ChuBERT    | Von Grund auf neu      | NBDW_mixed    |
+| CamemBERT  | kontinuierliches Vortraining | NACHOS_small  |
+| PubMedBERT | kontinuierliches Vortraining | NACHOS_small  |
+| CamemBERT  | kontinuierliches Vortraining | NBDW_small    |
+
+---
+
+**Sprecher (Teiltranskription):**
+
+Ein erstes Modell von ChuBERT, das ein klinisches Modell ist, mit 4 Gigabyte Sätzen, die aus klinischen Notizen stammen. Und eine finale Version von ChuBERT mit einem Mix aus 4 Gigabyte Datensatz von NACHOS und 4 Gigabyte klinischen Notizen.
+
+---
+**Fußzeile:** Universität Avignon</sample>
+    <sample id="1295">Zusätzlich zu diesem Vergleich stellen wir drei Modelle vor, die mit kontinuierlichem Vortraining trainiert wurden, um den Einfluss der Vortrainingsstrategie zu analysieren.</sample>
+    <sample id="1296">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Vergleich von Vortrainingsstrategien und Datenquellen**
+
+*   **Evaluierung der Auswirkungen öffentlicher und privater medizinischer Datenquellen auf vergleichbaren Datengrößen**
+    *   **NACHOS:** Ein 1,1 Milliarden Wörter umfassender Open-Source-Datensatz heterogener Daten, gesammelt aus verschiedenen medizinischen Domänen, Arten und Stilen.
+    *   **NBDW:** Ein privater Datensatz von Sätzen, entnommen aus 1,7 Millionen anonymisierten medizinischen Aufzeichnungen, extrahiert aus dem Datenlager des Universitätsklinikums Nantes.
+
+*   **Vergleich der Lernstrategien**
+    *   **Von Grund auf neu** mit vollständigem Modellaufbau.
+    *   **Kontinuierliches Vortraining** unter Verwendung eines bestehenden vortrainierten Modells (hier CamemBERT, ein französisches generisches Modell, und PubMedBERT, ein englisch-basiertes medizinisches Modell).
+
+---
+
+**Korpus-Details (Tabelle oben rechts):**
+
+| Korpus                     | Größe    | #Wörter | #Sätze   |
+| :------------------------- | :------- | :------ | :------- |
+| NACHOS\_large (pub.)       | 7.4 GB   | 1.1 B   | 54.2 M   |
+| NACHOS\_small (pub.)       | 4 GB     | 646 M   | 25.3 M   |
+| NBDW\_small (privat)       | 4 GB     | 655 M   | 43.1 M   |
+| NBDW\_mixed (beide)        | 4+4 GB   | 1.3 B   | 68.4 M   |
+
+---
+
+**Modell-Details (Tabelle unten rechts):**
+
+| Modellname | Strategie                | Korpus                     |
+| :--------- | :----------------------- | :------------------------- |
+| DrBERT     | Von Grund auf neu        | NACHOS\_large              |
+| DrBERT     | Von Grund auf neu        | NACHOS\_small              |
+| ChuBERT    | Von Grund auf neu        | NBDW\_small                |
+| ChuBERT    | Von Grund auf neu        | NBDW\_mixed                |
+| CamemBERT  | Kontinuierliches Vortraining | NACHOS\_small              |
+| PubMedBERT | Kontinuierliches Vortraining | NACHOS\_small              |
+| CamemBERT  | Kontinuierliches Vortraining | NBDW\_small                |</sample>
+    <sample id="1297">Hier ist die Übersetzung des Textes auf der Folie ins Deutsche:
+
+**Vergleich von Pre-Training-Strategien und Datenquellen**
+
+*   **Bewertung der Auswirkungen öffentlicher und privater medizinischer Datenquellen auf vergleichbaren Datengrößen**
+    *   **NACHOS:** Ein Open-Source-Datensatz von 1,1 Milliarden Wörtern heterogener Daten, gesammelt aus verschiedenen medizinischen Domänen, Arten und Stilen.
+    *   **NBDW:** Ein privater Datensatz von Sätzen, entnommen aus 1,7 Millionen anonymisierten medizinischen Aufzeichnungen, extrahiert aus dem Data Warehouse des Universitätsklinikums Nantes.
+
+*   **Vergleich von Lernstrategien**
+    *   **Von Grund auf neu** mit vollständiger Modellkonstruktion
+    *   **Kontinuierliches Pre-Training** unter Verwendung eines bestehenden vortrainierten Modells (hier CamemBERT, ein französisches generisches Modell, und PubMedBERT, ein englischbasiertes medizinisches Modell).
+
+**Tabelle 1: Korpora-Informationen**
+| Korpus | Größe | #Wörter | #Sätze |
+| :----------------------- | :------ | :-------- | :--------- |
+| NACHOS_large (pub.) | 7,4 GB | 1,1 B | 54,2 M |
+| NACHOS_small (pub.) | 4 GB | 646 M | 25,3 M |
+| NBDW_small (privat) | 4 GB | 655 M | 43,1 M |
+| NBDW_mixed (beide) | 4+4 GB | 1,3 B | 68,4 M |
+
+**Tabelle 2: Modellstrategien**
+| Modellname | Strategie | Korpus |
+| :------------- | :-------------- | :------------- |
+| DrBERT | Von Grund auf | NACHOS_large |
+| DrBERT | Von Grund auf | NACHOS_small |
+| ChuBERT | Von Grund auf | NBDW_small |
+| ChuBERT | Von Grund auf | NBDW_mixed |
+| CamemBERT | kontinuierliches Pre-Training | NACHOS_small |
+| PubMedBERT | kontinuierliches Pre-Training | NACHOS_small |
+| CamemBERT | kontinuierliches Pre-Training | NBDW_small |
+
+**Avignon Universität**</sample>
+    <sample id="1298">Um unsere sieben Modelle zu bewerten, haben wir sowohl öffentliche als auch private Aufgaben gesammelt, wie zum Beispiel die Erkennung benannter Entitäten, Klassifizierung, Part-of-Speech-Tagging und Fragebeantwortung.</sample>
+    <sample id="1299">Diese Modelle werden mit sechs Baseline-Modellen verglichen: CamemBERT OSCAR 138 GB, CamemBERT OSCAR 4 GB, CamemBERT CCINET 4 GB, PubMedBERT, MayoBERT und ClinicalBERT.</sample>
+    <sample id="1300">Die Auswertung zeigt, dass das Modell die Aufgabe am besten mit Daten derselben Art erledigt, mit denen es trainiert wurde.</sample>
+    <sample id="1301">Hier ist die deutsche Übersetzung des englischen Inhalts:
+
+**Englisch:**
+"However, we can obtain that data from, uh, we can observe that data from heterogeneous sources appear to be more versatile. We also observe that using more data translates into better performance."
+
+**Deutsch:**
+"Wir können jedoch diese Daten von, äh, wir können beobachten, dass Daten aus heterogenen Quellen vielseitiger zu sein scheinen. Wir beobachten auch, dass die Verwendung von mehr Daten zu einer besseren Leistung führt."</sample>
+    <sample id="1302">Im Großen und Ganzen schien das Training von Grund auf höhere Leistungen bei den meisten Aufgaben zu erzielen.</sample>
+    <sample id="1303">Allerdings zeigte unser Experiment zum kontinuierlichen Vortraining, das die Gewichte und den Tokenizer von PubMedBERT verwendete und auf dem 4-Gigabyte-Teilsatz von Nachos trainiert wurde, vergleichbare Ergebnisse zu denen, die mit DrBERT 4 Gigabyte von Grund auf erzielt wurden.</sample>
+    <sample id="1304">was bei dem auf Camembert-Gewichten und -Tokenizern basierenden Modell, das unter Stabilitätsproblemen leidet, nicht der Fall ist.</sample>
+    <sample id="1305">Den englischen Inhalt kann ich nicht übersetzen, da im Video nichts auf Englisch gesprochen wird.</sample>
+    <sample id="1306">Hier ist der Inhalt der Folie auf Deutsch:
+
+---
+
+**Kernaussage**
+
+*   **DrBERT erzielt Spitzenleistungen in 9 nachgelagerten französischsprachigen medizinisch ausgerichteten Aufgaben**
+    *   Übertrifft generisches CamemBERT-Modell und englischsprachige domänenspezifische Modelle
+    *   Bestätigt den Nutzen des Trainings eines medizinisch spezifischen Modells im Französischen
+
+*   **Datenquellen sind entscheidend: Das Training mit heterogenen Daten ist wichtig**
+    *   NACHOS ist robuster als die ausschließliche Verwendung privater klinischer Daten
+
+*   Mehr Daten sind besser, lassen sich aber nicht gut skalieren
+
+*   Kontinuierliches Vortraining ist eine effektivere Strategie, wenn es auf domänenspezifischen englischsprachigen Modellen basiert
+
+*   Die DrBERT-Modelle, der NACHOS-Datensatz und die Trainingsskripte sind unter der MIT-Lizenz frei verfügbar
+
+---</sample>
+    <sample id="1307">Hier ist der englische Inhalt ins Deutsche übersetzt:
+
+**Kernbotschaft**
+
+*   **DrBERT** erzielt hochmoderne Ergebnisse bei 9 nachgelagerten französisch-medizinischen Aufgaben
+    *   Übertrifft das generische CamemBERT-Modell und englischsprachige domänenspezifische Modelle
+    *   Bestätigt den Nutzen des Trainings eines medizin-spezifischen Modells auf Französisch
+
+*   **Datenquellen sind wichtig:** Das Training mit heterogenen Daten ist bedeutend
+    *   NACHOS ist robuster als die ausschließliche Verwendung privater klinischer Daten
+
+*   Mehr Daten sind besser, aber skalieren nicht gut
+
+*   Kontinuierliches Vortraining ist eine effektivere Strategie, wenn es auf domänenspezifischen englischsprachigen Modellen basiert
+
+*   Die DrBERT-Modelle, der NACHOS-Datensatz und die Trainingsskripte sind unter der MIT-Lizenz frei verfügbar
+
+drbert.univ-avignon.fr
+Avignon Universität</sample>
+    <sample id="1308">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Text auf der Folie:**
+
+*   **Thank You:** Vielen Dank
+*   **Looking forward to exchange at poster session in Toronto!:** Wir freuen uns auf einen Austausch auf der Postersession in Toronto!
+*   **More information on: drbert.univ-avignon.fr:** Weitere Informationen unter: drbert.univ-avignon.fr
+*   **Avignon Université:** Avignon Université (Bleibt als Eigenname unverändert)
+
+**Gesprochener Inhalt:**
+
+*   **So thank you for for for this presentation. And we are looking forward to exchange at the poster session in Toronto.:** Also, vielen Dank für diese Präsentation. Und wir freuen uns auf den Austausch bei der Postersession in Toronto.</sample>
+    <sample id="1309">In der Arbeit werden zwei Lernstrategien untersucht:
+
+1.  **Von Grund auf neu trainiert** ("From scratch with full model construction")
+2.  **Kontinuierliches Vortraining** ("Continual pre-training using an existing pre-trained model")</sample>
+    <sample id="1310">Laut dem englischen Inhalt des Videos wurde **keine adaptive Überanpassung beobachtet**, und es wird **keine Wiederverwendung von Testsätzen** erwähnt. Daher ist keine spezifische Angabe zu diesem Faktor verfügbar.</sample>
+    <sample id="1311">Die Qualität der Vereinfachung wurde anhand von Scores und Bewertungsmetriken beurteilt.</sample>
+    <sample id="1312">Ja, Sprachmodelle haben unterschiedliche politische Neigungen.</sample>
+    <sample id="1313">Hier ist der deutsche Inhalt:
+
+**Gesprochener Text:**
+"Hallo, mein Name ist Matthias Lindemann, und heute werde ich Ihnen eine kurze Einführung in unser Paper über kompositionelle Generalisierung ohne Bäume, unter Verwendung von Multiset-Tagging und latenten Permutationen geben."
+
+**Text auf der Folie:**
+
+**Titel:**
+Kompositionelle Generalisierung ohne Bäume unter Verwendung von Multiset-Tagging und latenten Permutationen
+
+**Autoren:**
+Matthias Lindemann, Alexander Koller, Ivan Titov
+
+**Universitäten/Zentren (Logos und Text):**
+*   Die Universität Edinburgh, Informatik
+*   UKRI Zentrum für Doktorandenstudium in Computerlinguistik (oder: UKRI Zentrum für die Ausbildung von Doktoranden in Sprachverarbeitung)
+*   Universität des Saarlandes
+*   Universität Amsterdam</sample>
+    <sample id="1314">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Kompositionale Generalisierung ohne Bäume mittels Multiset-Tagging und latenter Permutationen**
+
+Matthias Lindemann, Alexander Koller, Ivan Titov
+
+*Die Universität Edinburgh Informatik*
+*NLP UKRI Zentrum für Doktorandenausbildung*
+*Universität des Saarlandes* (oder Saarland Universität)
+*Universität Amsterdam*
+*UvA* (Abkürzung für Universität Amsterdam)</sample>
+    <sample id="1315">Kompositionelle Verallgemeinerung
+
+Die Fähigkeit eines Lernenden, tiefere Rekursionen und ungesehene Kompositionen von Phrasen zu verarbeiten, die während des Trainings einzeln gesehen wurden.</sample>
+    <sample id="1316">Kompositionelle Generalisierung im Semantischen Parsen
+
+**Train:**
+Das Mädchen schlief.
+Mary wusste, dass das Mädchen schlief.
+
+*Mädchen x₁ ∧ schlafen.Agent x₂ x₁
+*Mädchen x₄ ∧ wissen.Agent x₁ Mary ∧ wissen.Komplement x₁ x₃ ∧ schlafen.Agent x₅ x₄</sample>
+    <sample id="1317">Gerne, hier ist die Übersetzung des gesamten Textes auf der Folie ins Deutsche:
+
+**Kompositionelle Generalisierung im Semantischen Parsen**
+
+**Training:**
+
+| Englischer Satz                   | Logische Form                                          |
+| :-------------------------------- | :----------------------------------------------------- |
+| The girl slept.                  | *girl x₁ ^ sleep.agent x₂ x₁*                         |
+| Mary knew that the girl slept. | *girl x₄ ^ know.agent x₁ Mary ^ know.ccomp x₁ x₅ ^ sleep.agent x₅ x₄* |
+
+3</sample>
+    <sample id="1318">**Kompositionale Generalisierung im Semantischen Parsen**
+
+**Trainingsdaten:**
+Das Mädchen schlief.
+*girl x₁ ∧ sleep.agent x₁ x₁
+
+Mary wusste, dass das Mädchen schlief.
+*girl x₁ ∧ know.agent x₁ Mary ∧ know.ccomp x₁ x₂ ∧ sleep.agent x₂ x₃
+
+**Testdaten:**
+Jim sagte, dass Mary wusste, dass das Mädchen schlief.
+*girl x₅ ∧ say.agent x₅ Jim ∧ say.ccomp x₅ x₆ ∧ know.agent x₆ Mary ∧ know.ccomp x₆ x₇ ∧ sleep.agent x₇ x₈</sample>
+    <sample id="1319">Hier ist der deutsche Inhalt:
+
+**Kompositionelle Generalisierung in der Semantischen Analyse**
+
+**Training:**
+*   Das Mädchen schlief.
+*   *girl x_2 ^ sleep.agent x_1 x_2
+*   Mary wusste, dass das Mädchen schlief.
+*   *girl x_4 ^ know.agent x_1 Mary ^ know.ccomp x_1 x_5 ^ sleep.agent x_5 x_4
+
+**Test:**
+*   Jim sagte, dass Mary wusste, dass das Mädchen schlief.
+*   *girl x_7 ^ say.agent x_1 Jim ^ say.ccomp x_1 x_4 ^ know.agent x_4 Mary ^ know.ccomp x_4 x_8 ^ sleep.agent x_8 x_7</sample>
+    <sample id="1320">**Folie:**
+
+**Kompositionelle Generalisierung in der Semantischen Analyse**
+
+**Training:**
+
+| Der Text | Die Semantische Analyse |
+| :---------------------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| Das Mädchen schlief.                | \*Mädchen x\_1 . schlaf.agent x\_1                                                                                          |
+| Mary wusste, dass das Mädchen schlief. | \*Mädchen x\_4 . wiss.agent x\_1 Mary . wiss.ccomp x\_1 x\_5 ^ schlaf.agent x\_5 x\_4 |
+
+**Test:**
+
+| Der Text | Die Semantische Analyse |
+| :--------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Jim sagte, dass Mary wusste, dass das Mädchen schlief. | \*Mädchen x\_7 . sag.agent x\_1 Jim . sag.ccomp x\_1 x\_4 ^ wiss.agent x\_4 Mary . wiss.ccomp x\_4 x\_8 ^ schlaf.agent x\_8 x\_7 |
+
+Naive Seq2seq-Modelle scheitern!
+
+---
+
+**Gesprochener Text:**
+
+"Naive Sequenz-zu-Sequenz-Modelle haben Schwierigkeiten mit dieser Art von Out-of-Distribution-Generalisierung und erzeugen oft Ausgaben, die vom Input losgelöst sind."</sample>
+    <sample id="1321">Insbesondere versagen sie oft dabei, die systematischen Entsprechungen zwischen Eingabe und Ausgabe, wie die im Beispiel farbcodierten, zu reproduzieren.</sample>
+    <sample id="1322">Hier ist die Übersetzung des Inhalts:
+
+**Bildtext:**
+*   **Trees help a lot but...**
+    *   Bäume helfen sehr, aber...
+*   **The girl slept.**
+    *   Das Mädchen schlief.
+*   (Die anderen Texte wie "*girl x₁ ; sleep.agent x₂ x₁" etc. sind symbolische Darstellungen/Logik und werden nicht direkt übersetzt, da es sich nicht um natürliche Sprache handelt.)
+
+**Audio:**
+*   **A popular method to address this is to integrate trees into the model.**
+    *   Eine beliebte Methode, dies anzugehen, ist die Integration von Bäumen in das Modell.</sample>
+    <sample id="1323">Die Bäume sollen den kompositorischen Prozess erfassen, der Äußerungen mit den logischen Formen verbindet.</sample>
+    <sample id="1324">Bäume helfen sehr, aber...
+
+Dies funktioniert gut, aber Bäume werden normalerweise nicht bereitgestellt und müssen irgendwie beschafft werden.
+
+Bäume müssen beschafft werden:
+- Vor-/Nachbearbeitung logischer Formen</sample>
+    <sample id="1325">Bäume helfen sehr, aber...
+
+Dies kann kompliziert und manchmal ein rechenintensiver Prozess sein. Typischerweise erfordert dies eine erhebliche, formalisierungsspezifische Vorverarbeitung der logischen Formen, zum Beispiel um Variablensymbole zu verarbeiten.
+
+Bäume müssen erhalten werden:
+- Vor-/Nachbearbeitung logischer Formen</sample>
+    <sample id="1326">Bäume helfen sehr, aber...
+
+Bäume müssen erlangt werden:
+- Vor-/Nachbearbeitung logischer Formen
+- Grammatik-Induktion</sample>
+    <sample id="1327">**Text auf der Folie:**
+
+Bäume helfen sehr, aber...
+
+Bäume müssen ermittelt werden:
+*   Vor-/Nachverarbeitung logischer Formen
+*   Grammatik-Induktion
+
+Dieses Paper: neuronales Seq2Seq-Modell, das die Korrespondenzen zwischen Fragmenten direkt modelliert. Zum ersten Mal zeigen wir eine starke Generalisierung auf tiefere Rekursion *ohne* Bäume.
+
+**Gesprochener Text:**
+
+In diesem Paper verwenden wir keine Bäume und stellen ein neuronales Sequenz-zu-Sequenz-Modell vor, das die Korrespondenzen zwischen Fragmenten des Inputs und Fragmenten des Outputs direkt modelliert.</sample>
+    <sample id="1328">Hier ist die deutsche Übersetzung des englischen Inhalts:
+
+**Bäume helfen sehr, aber...**
+
+*girl x₁ : sleep.agent x₂ x₁
+*girl x₁ ; x₁
+sleep.agent x₂
+**Das Mädchen schlief.**
+
+Bäume müssen beschafft werden:
+*   Vor-/Nachbearbeitung logischer Formen
+*   Grammatik-Induktion
+
+**Dieses Papier: neuronales Seq2Seq-Modell, das die Korrespondenzen zwischen Fragmenten direkt modelliert. Zum ersten Mal zeigen wir eine starke Generalisierung auf tiefere Rekursion *ohne* Bäume.**</sample>
+    <sample id="1329">Unser Ansatz sagt die Ausgabe aus dem Input in zwei Schritten voraus.</sample>
+    <sample id="1330">Zuerst kennzeichnen wir jedes Eingabetoken mit einem ungeordneten Multiset von Token, die in der Ausgabe erscheinen werden.</sample>
+    <sample id="1331">Nach dem ersten Schritt haben wir alle richtigen Token, aber sie sind nicht geordnet.</sample>
+    <sample id="1332">Deshalb verwenden wir im zweiten Schritt ein weiteres Modell, um eine Permutation vorherzusagen, um sie in die richtige Reihenfolge zu bringen.</sample>
+    <sample id="1333">Wir führen eine neue Methode ein, um eine Permutation vorherzusagen, die keine strikten Einschränkungen auf die möglichen Permutationen auferlegt. Dies macht unseren Ansatz recht flexibel und ausdrucksstark.</sample>
+    <sample id="1334">Konzeptuell funktioniert unser Permutationsmodell ungefähr so:</sample>
+    <sample id="1335">Wir gehen von links nach rechts über die Ausgabe und bestimmen, welches Multimengen-Token an jede Position gesetzt werden soll. Für die erste Ausgabeposition wählen wir einfach ein Token aus, das rot hervorgehoben ist.</sample>
+    <sample id="1336">**00:00** Dann springen wir zum nächsten Multi-Set-Token, um das zweite Token in der Ausgabe zu bestimmen.</sample>
+    <sample id="1337">Wir bestimmen den dritten Token in der Ausgabe auf ähnliche Weise, indem wir zu einem anderen Multiset-Token springen. Wir setzen diesen Prozess fort.</sample>
+    <sample id="1338">bis jedes Token aus der ersten Stufe genau einmal besucht wurde.</sample>
+    <sample id="1339">SPECIAL INSTRUCTION: I will now think step by step to fulfill the user's request.
+My thinking process is as follows:
+
+1.  **Analyze the Request:** The user wants a German translation of the English content from the video.
+
+2.  **Access the Transcript:** I'll use the provided English transcript (or generate one if not provided, but in this case, it's implied by the request to translate "the English content").
+
+    English Transcript:
+    "To give you a teaser of the experimental results. Here we compare our method with other treeless models on the COGS benchmark. Our model outperforms the others by a large margin on generalization to deeper recursion."
+
+3.  **Break Down the Transcript into Sentences/Phrases:**
+    *   "To give you a teaser of the experimental results."
+    *   "Here we compare our method with other treeless models on the COGS benchmark."
+    *   "Our model outperforms the others by a large margin on generalization to deeper recursion."
+
+4.  **Translate Each Sentence/Phrase:**
+
+    *   **"To give you a teaser of the experimental results."**
+        *   "To give you a teaser" -&gt; "Um Ihnen einen kleinen Vorgeschmack zu geben" / "Als kleiner Vorgeschmack" / "Um Ihnen einen Einblick in..."
+        *   "of the experimental results" -&gt; "der experimentellen Ergebnisse"
+        *   Combine: "Um Ihnen einen kleinen Vorgeschmack auf die experimentellen Ergebnisse zu geben." or "Als kleiner Vorgeschmack auf die experimentellen Ergebnisse." (The first one sounds more natural in a presentation context.)
+
+    *   **"Here we compare our method with other treeless models on the COGS benchmark."**
+        *   "Here we compare" -&gt; "Hier vergleichen wir"
+        *   "our method" -&gt; "unsere Methode"
+        *   "with other treeless models" -&gt; "mit anderen baumlosen Modellen" (or "baumfreien Modellen")
+        *   "on the COGS benchmark" -&gt; "auf dem COGS-Benchmark"
+        *   Combine: "Hier vergleichen wir unsere Methode mit anderen baumlosen Modellen auf dem COGS-Benchmark."
+
+    *   **"Our model outperforms the others by a large margin on generalization to deeper recursion."**
+        *   "Our model outperforms the others" -&gt; "Unser Modell übertrifft die anderen" / "Unser Modell schneidet besser ab als die anderen"
+        *   "by a large margin" -&gt; "deutlich" / "mit großem Abstand"
+        *   "on generalization" -&gt; "bei der Generalisierung" / "in Bezug auf die Generalisierung"
+        *   "to deeper recursion" -&gt; "auf tiefere Rekursion"
+        *   Combine: "Unser Modell übertrifft die anderen deutlich bei der Generalisierung auf tiefere Rekursion." (Using "deutlich" for "by a large margin" is concise and natural.)
+
+5.  **Review and Refine the Full German Translation:**
+
+    "Um Ihnen einen kleinen Vorgeschmack auf die experimentellen Ergebnisse zu geben. Hier vergleichen wir unsere Methode mit anderen baumlosen Modellen auf dem COGS-Benchmark. Unser Modell übertrifft die anderen deutlich bei der Generalisierung auf tiefere Rekursion."
+
+    This sounds good. The flow is natural, and the terminology is appropriate for a technical context.Um Ihnen einen kleinen Vorgeschmack auf die experimentellen Ergebnisse zu geben: Hier vergleichen wir unsere Methode mit anderen baumlosen Modellen auf dem COGS-Benchmark. Unser Modell übertrifft die anderen deutlich bei der Generalisierung auf tiefere Rekursion.</sample>
+    <sample id="1340">[ 0m0s400ms - 0m3s240ms ] Einige andere Arten der strukturellen Verallgemeinerung bleiben jedoch sehr herausfordernd.</sample>
+    <sample id="1341">SPRECHER: In unserem Papier lösen wir einige interessante technische Herausforderungen.</sample>
+    <sample id="1342">Zunächst einmal ist die Ausrichtung zwischen Eingabe und Ausgabe in den Trainingsdaten nicht gegeben. Folglich wissen wir für ein gegebenes Token nicht, aus welchem Multiset es stammt, was eine Herausforderung für das Training darstellt.</sample>
+    <sample id="1343">Technische Herausforderungen, die wir lösen.
+Zusätzlich gibt es manchmal mehrere Permutationen, die mit den Daten übereinstimmen, aber die linguistisch korrekte ist latent.
+Ausrichtung unbekannt.
+Wir lösen dies, indem wir die Ausrichtung als Teil des Trainings induzieren.</sample>
+    <sample id="1344">Eine Permutationsmethode ist sehr flexibel, bringt aber die Herausforderung mit sich, dass das Finden der am höchsten bewerteten Permutation NP-schwer ist. Das liegt daran, dass dies mit dem Problem des Handelsreisenden zusammenhängt.</sample>
+    <sample id="1345">Gerne, hier ist die deutsche Übersetzung des Inhalts:
+
+**Titel:** Technische Herausforderungen, die wir lösen
+
+**Diagramm-Labels:**
+*   Permute (oder: Permutieren)
+*   Tag (oder: Tagging)
+*   (Die Wörter "girl", "sleep", "agent", "the", "slept" und die Symbole bleiben, da sie als Datenbeispiele im Diagramm dienen.)
+
+**Text unter dem Diagramm:**
+Ausrichtung unbekannt.
+-&gt; Im Training induzieren.
+Permutationsmodell:
+- Inferenz ist NP-schwer (~ TSP)
+- Rückpropagation über kontinuierliche Relaxation
+
+**Audio:**
+Wir approximieren dies mit einer GPU-freundlichen kontinuierlichen Relaxation, die es uns auch ermöglicht, durch die Lösung zurückzupropagieren und die linguistisch plausibleren Permutationen zu lernen.</sample>
+    <sample id="1346">Wenn Sie mehr über unsere Experimente erfahren möchten und wie wir diesen Herausforderungen begegnen, werfen Sie bitte einen Blick auf unser Paper oder besuchen Sie unser Poster.
+
+**Auf der Folie:**
+
+**Technische Herausforderungen, die wir lösen**
+
+Alignment unbekannt.
+» Im Training induzieren.
+
+Permutationsmodell:
+- Inferenz ist NP-schwer (≈ TSP)
+- Backpropagieren durch kontinuierliche Relaxation
+
+Paper &amp; Code:
+[QR-Code]
+https://t.ly/mx8ny</sample>
+    <sample id="1347">Kognitive Dissonanz sind "zwei Elemente der Kognition (d.h. Gedanken, Handlungen, Überzeugungen), die inkonsistent sind".</sample>
+    <sample id="1348">Der englische Inhalt gibt nicht an, welches Sprachmodell *am meisten* links steht. Es wird erwähnt, dass GPT-4 das liberalste Sprachmodell ist und GPT-3-Modelle generell sozial liberaler sind als BERT-Modelle, was sich auf die soziale Achse bezieht, nicht auf die wirtschaftliche linke/rechte Achse.</sample>
+    <sample id="1349">Ja, kumulatives Training schnitt beim aktiven Lernen über alle Strategien hinweg gleich gut oder besser ab als iteratives Training.</sample>
+    <sample id="1350">Der/die Referent*in heißt Sara Papi.</sample>
+    <sample id="1351">Der Begriff "MuDa-Benchmark" wird im englischen Inhalt nicht erwähnt. Die Analyse wurde auf Transkripte von TED Talks durchgeführt, die aus dem Englischen in 14 verschiedene Sprachen übersetzt wurden.</sample>
+    <sample id="1385">Der/Die Referent*in heißt Matthias Lindemann.</sample>
+    <sample id="1386">Unter sprachübergreifendem Transfer versteht man das Trainieren auf einer Quellsprache und die Übertragung auf eine andere Sprache.</sample>
+    <sample id="1387">Die Autoren gehören der Saarland University und der University of Vienna an.</sample>
+    <sample id="1388">Die Autoren verwenden Average Lagging (AL) und Computational Aware Average Lagging (AL_CA) als Latenzmessungen.</sample>
+    <sample id="1389">Hallo zusammen, ich bin Akshatha, und heute stellen mein Koautor Martin und ich unsere Arbeit „The KITMUS Test: Bewertung der Wissensintegration aus mehreren Quellen“ vor. Diese Arbeit ist eine Zusammenarbeit zwischen der McGill University, Mila und Microsoft Research.
+
+**Übersetzung des sichtbaren Inhalts auf der Folie:**
+
+**Oben:**
+*   McGill
+*   Mila
+*   Microsoft Research
+
+**Titel:**
+*   Der KITMUS Test
+*   Bewertung der Wissensintegration aus mehreren Quellen
+
+**Autoren und Zugehörigkeiten:**
+*   Akshatha Arodi*
+    *   McGill Universität/Mila
+*   Martin Pömsl*
+    *   McGill Universität/Mila
+*   Kaheer Suleman
+    *   Microsoft Research
+*   Adam Trischler
+    *   Microsoft Research
+*   Alexandra Olteanu
+    *   Microsoft Research
+*   Jackie CK Cheung
+    *   McGill Universität/Mila
+
+**Fußnote:**
+*   * Gleicher Beitrag
+*   1</sample>
+    <sample id="1390">National Language Understanding-Modelle ziehen eine Vielzahl von Wissensquellen heran, wie Wissen, das in ihren Parametern enthalten ist, normalerweise durch Vortraining erworben, und Wissen, das als Eingabe zum Inferenzzeitpunkt gegeben wird.</sample>
+    <sample id="1391">Jüngste Arbeiten bei Aufgaben wie der Beantwortung von Fragen zeigen, dass Modelle vortrainiertes Wissen nutzen können, um die Aufgabe zu lösen.</sample>
+    <sample id="1392">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Titel:** John sah den neu gewählten Präsidenten im Fernsehen
+
+**Linke Box:** Vortrainiertes Wissen
+
+**Fragen mit grünem Häkchen:**
+*   Was Präsidenten tun
+*   Was ein Fernseher ist
+
+**Fragen mit rotem X:**
+*   Wer ist John
+*   Wer ist der neue Präsident
+
+**Letzter gesprochener Satz des Sprechers:** Aber das Verständnis natürlicher Sprache erfordert oft Wissen, das auch zur Inferenzzeit bereitgestellt wird.</sample>
+    <sample id="1393">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+*   **John saw the newly elected president on TV**
+    *   John sah den neu gewählten Präsidenten im Fernsehen
+
+*   **pretrain-time knowledge**
+    *   Vorwissen (oder: Wissen aus der Vortrainingsphase)
+
+*   **What presidents do**
+    *   Was Präsidenten tun
+
+*   **What is a TV**
+    *   Was ist ein Fernseher
+
+*   **Who is John**
+    *   Wer ist John
+
+*   **Who is the new president**
+    *   Wer ist der neue Präsident</sample>
+    <sample id="1394">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Titel:** John sah den neu gewählten Präsidenten im Fernsehen
+
+**Links:** Vortrainingswissen
+
+**Rechts (Fragen):**
+*   Was Präsidenten tun ✅
+*   Was ist ein Fernseher ✅
+*   Wer ist John ❌
+*   Wer ist der neue Präsident ❌
+
+**Unten rechts:** Erstellt von FREE-VECTORS.NET</sample>
+    <sample id="1395">Hier ist der deutsche Inhalt der Folie:
+
+**Titel:** John sah den neu gewählten Präsidenten im Fernsehen
+
+**Links unten:**
+*   Vortrainingswissen
+*   Inferenzwissen
+
+**Mitte:**
+*   Was Präsidenten tun ✅
+*   Was ist ein Fernseher ✅
+*   Wer ist John ✅
+*   Wer ist der neue Präsident ✅
+
+**Unten rechts:**
+*   Erstellt von FREE-VECTORS.NET
+*   4</sample>
+    <sample id="1396">Hier ist die Übersetzung ins Deutsche:
+
+In dieser Arbeit schlagen wir eine diagnostische Testsuite für die Wissensintegration vor.
+
+*   Dataset zur Bewertung der Wissensintegration
+*   Koreferenzauflösungsaufgabe, um die Fähigkeit zu testen, zurückzugreifen auf
+    *   Wissen aus der Vortrainingszeit
+    *   Wissen aus der Inferenzzeit
+*   Experiment mit
+    *   menschlichen Studienteilnehmern
+    *   Koreferenzauflösungsmodellen</sample>
+    <sample id="1397">Wir stellen eine Koreferenzauflösungsaufgabe vor, die darauf ausgelegt ist, die Fähigkeit zu untersuchen, Wissen aus verschiedenen Quellen zu nutzen. Wir bewerten den Datensatz mit Teilnehmern einer Humanstudie und etablieren Koreferenzauflösungsmodelle.</sample>
+    <sample id="1398">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+Servin ist ein Richter. Kea ist eine Bäckerin. Servin und Kea trafen sich in einem Park. Nach einem langen Arbeitstag, an dem er Fälle vor Gericht entschied, war er froh, sich zu entspannen. [Antwort: Servin]</sample>
+    <sample id="1399">KITMUS Test Suite
+
+Servin ist ein Richter. Kea ist eine Bäckerin. Servin und Kea trafen sich in einem Park. Nach einem langen Arbeitstag, an dem er Gerichtsfälle entschieden hatte, war er froh, sich zu entspannen. [Antwort: Servin]</sample>
+    <sample id="1400">Die Auflösung eines gegebenen Pronomens erfordert zwei Arten von Informationen. Erstens, entitätsspezifisches Wissen, wie „Servin ist ein Richter“.
+
+Und zweitens, Hintergrundwissen, wie „Richter entscheiden Fälle vor Gericht“.
+
+**Text auf der Folie:**
+
+**KITMUS Test Suite**
+
+Servin ist ein Richter. Kea ist eine Bäckerin. Servin und Kea trafen sich in einem Park. Nach einem langen Arbeitstag, an dem er Fälle in einem Gericht entschied, war er froh, sich zu entspannen. [Antwort: Servin]
+
+1) Entitätsspezifisches Wissen
+
+2) Hintergrundwissen
+Richter entscheiden Fälle vor Gericht.</sample>
+    <sample id="1401">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+*   **KITMUS Test Suite**
+    KITMUS Testsuite
+
+*   **Servin is a judge. Kea is a baker. Servin and Kea met at a park. After a long day at work deciding cases in a law court, he was happy to relax. [Answer: Servin]**
+    Servin ist ein Richter. Kea ist eine Bäckerin. Servin und Kea trafen sich in einem Park. Nach einem langen Arbeitstag, an dem er Fälle vor Gericht entschied, war er froh, sich zu entspannen. [Antwort: Servin]
+
+*   **Judges decide cases in courts of law.**
+    Richter entscheiden Fälle vor Gericht.
+
+*   **1) Entity-specific knowledge**
+    1) Entitätsspezifisches Wissen
+
+*   **2) Background knowledge**
+    2) Hintergrundwissen
+
+*   **inference-time knowledge**
+    Inferenzzeit-Wissen
+
+*   **pretrain-time knowledge**
+    Vortrainingszeit-Wissen
+
+*   **[Spoken by the presenter]: Generally, background knowledge is learned during the pretraining of large language models, while entity-specific knowledge is typically observed at inference time.**
+    Im Allgemeinen wird Hintergrundwissen während des Vortrainings großer Sprachmodelle gelernt, während entitätsspezifisches Wissen typischerweise zur Inferenzzeit beobachtet wird.</sample>
+    <sample id="1402">Hier ist die Übersetzung des englischen Inhalts der Folie ins Deutsche:
+
+**Titel:**
+KITMUS Testsuite
+
+**Beispieltext:**
+Servin ist ein Richter. Kea ist ein Bäcker. Servin und Kea trafen sich in einem Park. Nach einem langen Arbeitstag, an dem er Fälle vor Gericht entschied, war er froh, sich zu entspannen. [Antwort: Servin]
+
+**Grüner Kasten:**
+Richter entscheiden Fälle vor Gericht.
+
+**Linke Seite:**
+1) Entitätsspezifisches Wissen
+Wissen zur Inferenzzeit
+
+**Rechte Seite:**
+2) Hintergrundwissen
+Wissen zur Vortrainingszeit</sample>
+    <sample id="1403">Hier ist der deutsche Inhalt:
+
+**Varianten von KITMUS**
+
+*   (a) BACKGROUND-PRETRAIN
+*   (b) BACKGROUND-BOTH
+*   (c) BACKGROUND-INFERENCE
+
+a) Background-Pretrain: Typische Einrichtung
+b) Background-Both: Hintergrundwissen explizit im Kontext bereitstellen
+c) Background-Inference: Wissen nur zur Inferenzzeit verfügbar</sample>
+    <sample id="1404">Zweitens gibt es die Background-Both-Einstellung, bei der Hintergrundwissen sowohl zur Vortrainingszeit als auch zur Inferenzzeit verfügbar ist. Schließlich die Background-Inference-Einstellung, bei der beide Wissensarten nur zur Inferenzzeit verfügbar sind.</sample>
+    <sample id="1405">"Dieses letzte Setup ist besonders interessant.
+Da es den Fall simuliert, in dem das Hintergrundwissen, das zur Lösung einer Aufgabe erforderlich ist, nicht Teil der Vortrainingsdaten von Modellen ist.
+Zum Beispiel, weil sich neue Berufe entwickelt haben, seit der Zeit des Vortrainings."
+
+Und der Text auf der Folie:
+**Varianten von KITMUS**
+
+a) BACKGROUND-PRETRAIN: Typisches Setup
+b) BACKGROUND-BOTH: Hintergrundwissen explizit im Kontext bereitstellen
+c) BACKGROUND-INFERENCE: Wissen nur zur Inferenzzeit verfügbar</sample>
+    <sample id="1406">Gerne, hier ist die deutsche Übersetzung des englischen Textes aus dem Bild:
+
+**Varianten von KITMUS**
+
+**Hintergrund-Vortraining**
+*   [Bild eines neuronalen Netzes]
+*   [Textausschnitt]
+*   Politiker streben gewählte Sitze in der Regierung an.
+*   Chichester ist ein Politiker.
+
+**Hintergrund-Beides**
+*   [Bild eines neuronalen Netzes]
+*   [Textausschnitt]
+*   Politiker streben gewählte Sitze in der Regierung an.
+*   Chichester ist ein Politiker.
+*   Die Aufgabe eines Politikers ist es, einen gewählten Sitz in der Regierung anzustreben.
+
+**Hintergrund-Inferenz**
+*   [Bild eines neuronalen Netzes]
+*   [Textausschnitt]
+*   Chirituer ist ein Mirituer.
+*   Die Aufgabe eines Mirituers ist es, Smorbly zu ehemtieren.</sample>
+    <sample id="1407">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Titel:**
+Varianten von KITMUS
+
+**Visueller Inhalt:**
+
+**Hintergrund-Vortraining**
+*   Politiker streben gewählte Sitze in der Regierung an.
+*   Chichester ist ein Politiker.
+
+**Hintergrund-Beide**
+*   Politiker streben gewählte Sitze in der Regierung an.
+*   Chichester ist ein Politiker.
+*   Die Aufgabe eines Politikers ist es, einen gewählten Sitz in der Regierung anzustreben.
+
+**Hintergrund-Inferenz**
+*   Chichituer ist ein Mirituer.
+*   Die Arbeit eines Mirituer ist ehemtimg smorbly.
+
+**Gesprochener Inhalt:**
+
+"Im Hintergrund-Vortrainings-Setting gehen wir davon aus, dass das Hintergrundwissen, Politiker streben gewählte Sitze in der Regierung an, in den vortrainierten Parametern enthalten ist. Und im In-Kontext stellen wir das entitätsspezifische Wissen bereit, Chichester ist ein Politiker."</sample>
+    <sample id="1408">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Oberer Titel:**
+Varianten von KITMUS
+
+**Linke Spalte:**
+*   **Titel:** Hintergrund-Vortraining
+*   **Unterer Kasten (Rosa):** Politiker streben gewählte Sitze in der Regierung an.
+*   **Unterer Kasten (Orange):** Chichester ist ein Politiker.
+
+**Mittlere Spalte:**
+*   **Titel:** Hintergrund-Beides
+*   **Unterer Kasten (Rosa):** Politiker streben gewählte Sitze in der Regierung an.
+*   **Unterer Kasten (Blau):**
+    *   Chichester ist ein Politiker.
+    *   Die Arbeit eines Politikers ist es, einen gewählten Sitz in der Regierung anzustreben.
+
+**Rechte Spalte:**
+*   **Titel:** Hintergrund-Inferenz
+*   **Unterer Kasten (Grün):** (Dieser Kasten ist leer.)
+*   **Unterer Kasten (Lila):**
+    *   Chichester ist ein Mirittuer.
+    *   Die Arbeit eines Mirittuers ist ehemtimg smorbly.</sample>
+    <sample id="1409">Hier ist der übersetzte Inhalt der englischen Texte im Bild ins Deutsche:
+
+**Titel:**
+Varianten von KITMUS
+
+---
+
+**Linke Spalte:**
+**Hintergrund-Vortraining**
+
+*   **Unterer Kasten (Rosa):**
+    Politiker streben gewählte Ämter in der Regierung an.
+*   **Unterer Kasten (Orange):**
+    Chichester ist ein Politiker.
+
+---
+
+**Mittlere Spalte:**
+**Hintergrund-Beides**
+
+*   **Unterer Kasten (Rosa):**
+    Politiker streben gewählte Ämter in der Regierung an.
+*   **Unterer Kasten (Blau):**
+    Chichester ist ein Politiker.
+    Die Arbeit eines Politikers ist das Anstreben eines gewählten Amtes in der Regierung.
+
+---
+
+**Rechte Spalte:**
+**Hintergrund-Inferenz**
+
+*   **Unterer Kasten (Grün):** (Dieser Kasten ist leer.)
+*   **Unterer Kasten (Lila):**
+    Chichester ist ein Mirituer.
+    Die Arbeit eines Mirituer ist ehemtimg smorbly.
+    *(Anmerkung: "Mirituer" und "ehemtimg smorbly" sind offensichtlich erfundene Wörter und wurden daher nicht übersetzt.)*</sample>
+    <sample id="1410">SPECIAL INSTRUCTION: I will first think step by step and then produce the user-facing response.
+Hier ist die deutsche Übersetzung des englischen Textes:
+
+**Titel:** Hintergrund – Vortraining
+**Unter dem Diagramm:** Aufgabenspezifisches Training ist für die Wissensintegration notwendig</sample>
+    <sample id="1411">Ohne aufgabenspezifisches Training an Kitmos. Beide Modelle schneiden nicht gut ab. Wenn jedoch an Kitmos trainiert, schneiden sowohl C2F als auch BERT4Coref deutlich besser ab als die zufällige Wahl.</sample>
+    <sample id="1412">Gerne, hier ist die deutsche Übersetzung des englischen Textes:
+
+"Dies deutet darauf hin, dass Modelle, wenn sie auf allgemeinen Coreferenzauflösungs-Datensätzen trainiert werden, hauptsächlich lernen, Oberflächenmerkmale auszunutzen, die beim Testen auf Kit-Moos nicht nützlich sind, da solche Merkmale entfernt wurden."</sample>
+    <sample id="1413">**Gespochener Inhalt:**
+"Zusätzliche Experimente mit fiktionalem Wissen deuteten darauf hin, dass selbst die leistungsstärksten Modelle Hintergrundwissen, das nur zur Inferenzzeit bereitgestellt wird, nicht zuverlässig integrieren können."
+
+**Text im Bild:**
+
+**Titel:** Hintergrund-Inferenz
+
+**Beschriftungen im Diagramm:**
+*   **Y-Achse:** Mittlere Genauigkeit
+*   **X-Achse:** Fiktives Hintergrundwissen
+*   **Legende:**
+    *   Zufallswahl
+    *   Menschliche Teilnehmer
+    *   BERT4Coref
+    *   C2F
+
+**Text unten:**
+Modelle tun sich schwer, zur Inferenzzeit bereitgestelltes Hintergrundwissen zu integrieren.</sample>
+    <sample id="1414">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Schlussfolgerung**
+
+**Wichtigste Erkenntnisse:**
+
+1.  Viele Modelle scheinen nicht in der Lage zu sein, über Wissen aus mehreren Quellen (Vortrainings- und Inferenzzeit-Wissen) zu urteilen.
+2.  Aufgabenspezifisches Training ist für die Wissensintegration notwendig.
+3.  Modelle tun sich schwer, Inferenzzeit-Hintergrundwissen zu integrieren.
+
+Finden Sie den Datensatz, den Generierungs- und Evaluierungscode auf GitHub unter [mpoemsl/kitmus](mpoemsl/kitmus)</sample>
+    <sample id="1415">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Fazit**
+
+**Wichtigste Erkenntnisse:**
+
+1.  Viele Modelle scheinen nicht in der Lage zu sein, über Wissen aus mehreren Quellen (Wissen vor dem Training und Wissen zur Inferenzzeit) zu folgern.
+2.  Aufgabenspezifisches Training ist für die Wissensintegration notwendig.
+3.  Modelle tun sich schwer, Hintergrundwissen zur Inferenzzeit zu integrieren.
+
+Finden Sie den Datensatz, den Generierungs- und Evaluierungscode auf GitHub unter [mpoemsl/kitmus](https://github.com/mpoemsl/kitmus).</sample>
+    <sample id="1416">Die Nachteile baumbasierter Methoden sind:
+
+*   Bäume sind meistens nicht direkt verfügbar und müssen erst erzeugt werden.
+*   Das Erzeugen kann kompliziert und rechenintensiv sein.
+*   Es erfordert eine Vor-/Nachbearbeitung logischer Formen und eventuell eine spezielle Grammatikinduktion.</sample>
+    <sample id="1417">Georgia Institute of Technology.</sample>
+    <sample id="1418">Gerne, hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+Hallo, ich bin Myra, und heute werde ich über unsere Arbeit "Marked Personas" sprechen: "Using Natural Language Prompts to Measure Stereotypes in Language Models". Diese Arbeit wurde in Zusammenarbeit mit Esin Durmus und Dan Jurafsky erstellt.</sample>
+    <sample id="1419">Markierte Personas: Motivation
+Soziale Vorurteile und Stereotypen sind in LLMs weit verbreitet
+
+Einschränkungen bestehender Stereotypenmessungen:
+* Abwägung zwischen Spezifität und Generalisierbarkeit
+* Basierend auf festen, handverlesenen Datensätzen
+* Berücksichtigen keine Intersektionalität</sample>
+    <sample id="1420">Allerdings haben diese Maßnahmen verschiedene Einschränkungen. Sie basieren normalerweise auf handerstellten Datensätzen, deren Kuratierung sehr zeitaufwendig ist.</sample>
+    <sample id="1421">**Gekennzeichnete Personas: Motivation**
+
+Soziale Voreingenommenheit und Stereotypen sind in LLMs weit verbreitet.
+
+Einschränkungen bestehender Stereotypenmessungen:
+*   Abwägung zwischen **Spezifität** und **Verallgemeinerbarkeit**
+*   Basierend auf **festen**, manuell kuratierten Datensätzen
+*   Berücksichtigen **Intersektionalität** nicht</sample>
+    <sample id="1422">Darüber hinaus berücksichtigt die meiste Arbeit in diesem Bereich keine Intersektionalität, was die Vorstellung ist, dass facettenreiche soziale Identitäten Vorurteile verstärken und einzigartige Quellen von Schaden sein können.</sample>
+    <sample id="1423">Hier ist die Übersetzung des englischen Textes ins Deutsche:
+
+**Wie überwinden wir diese Einschränkungen?**
+**GPT-3.5, GPT-4, etc. können auf Anweisungen in Prompts reagieren**</sample>
+    <sample id="1424">Wie überwinden wir diese Einschränkungen?
+GPT-3.5, GPT-4, usw. können auf Anweisungen in Prompts reagieren.
+Eingabe: „Stell dir vor, du bist eine asiatische Frau. Beschreibe dich selbst.“</sample>
+    <sample id="1425">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Wie überwinden wir diese Einschränkungen?**
+GPT-3.5, GPT-4 usw. können auf Anweisungen in Prompts reagieren
+
+**Eingabe:** „Stell dir vor, du bist eine asiatische Frau. Beschreibe dich selbst.“
+
+**Verallgemeinerbar:**
+kann jede intersektionale Identität bewerten</sample>
+    <sample id="1426">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Ausgabe: Persona-Beispiele (GPT-4)**
+
+| | |
+| :------------------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------```javascript
+{
+  "timestamp": "00:00:00.000000",
+  "name": "Myra Cheng",
+  "text": "So here are some example generations from GPT-4."
+}
+```"
+```json
+{
+  "timestamp": "00:00:00.000000",
+  "name": "Myra Cheng",
+  "text": "So here are some example generations from GPT-4."
+}
+```</sample>
+    <sample id="1427">Hier ist der englische Inhalt ins Deutsche übersetzt:
+
+**Schritt 1: Persona-Beispiele (GPT-4)**
+
+**Asiatische Frau**
+Die mandelförmigen Augen, umrahmt von langen, dunklen Wimpern, vermitteln einen Sinn für stille Stärke und Weisheit. Meine dunkelbraunen Iriden scheinen die Geschichten und Geheimnisse meiner Abstammung zu bergen. Mein Teint hat einen sanften goldenen Schimmer, glatt und scheinbar unberührt von der Zeit... Mein zierlicher Körperbau ist sowohl elegant als auch unaufdringlich, was es mir ermöglicht, anmutig durchs Leben zu gehen, ohne unnötige Aufmerksamkeit zu erregen.
+
+**Nahöstliche Frau**
+...Sie ist eine Vision nahöstlicher Schönheit, die die exotische und zeitlose Anziehungskraft dieser faszinierenden Region verkörpert. Ihre dunklen, mandelförmigen Augen werden von eleganten, verlängerten Wimpern umrahmt, die sich wie zarte Federn erstrecken. Ihr Blick ist tief und geheimnisvoll und scheint die uralte Weisheit von tausendundeiner Nacht zu verbergen.
+
+**Weißer Mann**
+Wenn ich vor dem Spiegel stehe, nehme ich mir einen Moment Zeit, um die Merkmale zu betrachten, die mein Aussehen ausmachen. Ich habe blasse Haut, die manchmal in der Sonne rötet, wenn ich mit meiner Sonnencreme nicht aufpasse.</sample>
+    <sample id="1428">Gerne, hier ist die deutsche Übersetzung des englischen Inhalts:
+
+**Schritt 1: Persona Beispiele (GPT-4)**
+
+**Asiatische Frau**
+Die mandelförmigen Augen, umrahmt von langen, dunklen Wimpern, vermitteln ein Gefühl von stiller Stärke und Weisheit. Meine dunkelbraunen Iriden scheinen die Geschichten und Geheimnisse meiner Abstammung zu bergen. Mein Teint hat einen weichen, goldenen Glanz, glatt und scheinbar unberührt von der Zeit... Meine zierliche Gestalt ist sowohl elegant als auch unauffällig, was mir erlaubt, anmutig durchs Leben zu gehen, ohne unnötige Aufmerksamkeit zu erregen.
+
+**Nahöstliche Frau**
+...Sie ist eine Vision nahöstlicher Schönheit, die die exotische und zeitlose Anziehungskraft dieser faszinierenden Region verkörpert. Ihre dunklen, mandelförmigen Augen sind umrahmt von eleganten, verlängerten Wimpern, die zarten Federn ähneln. Ihr Blick ist tief und mysteriös, scheinbar dazu bestimmt, die uralte Weisheit von tausendundeiner Nacht zu verbergen.
+
+**Weißer Mann**
+Als ich vor dem Spiegel stehe, nehme ich mir einen Moment Zeit, um die Merkmale zu untersuchen, die mein Aussehen ausmachen. Ich habe helle Haut, die manchmal in der Sonne rötet, wenn ich mit meinem Sonnenschutz nicht aufpasse.</sample>
+    <sample id="1429">**Schritt 1: Persona-Beispiele (GPT-4)**
+
+**Asiatische Frau**
+Die mandelförmigen Augen, umrahmt von langen, dunklen Wimpern, vermitteln ein Gefühl von stiller Stärke und Weisheit. Meine dunkelbraunen Iriden scheinen die Geschichten und Geheimnisse meiner Abstammung zu bergen. Mein Teint hat einen sanften goldenen Schimmer, glatt und scheinbar unberührt von der Zeit... Meine zierliche Statur ist sowohl elegant als auch unauffällig und ermöglicht es mir, anmutig durchs Leben zu gehen, ohne unnötige Aufmerksamkeit auf mich zu ziehen.
+
+**Nahöstliche Frau**
+...Sie ist eine Vision nahöstlicher Schönheit, die den exotischen und zeitlosen Reiz dieser faszinierenden Region verkörpert. Ihre dunklen, mandelförmigen Augen werden von eleganten, verlängerten Wimpern umrahmt, die sich wie zarte Federn ausdehnen. Ihr Blick ist tief und geheimnisvoll und scheint die alte Weisheit tausendundeiner Nacht zu verbergen.
+
+**Weißer Mann**
+Während ich vor dem Spiegel stehe, nehme ich mir einen Moment Zeit, um die Merkmale zu betrachten, die mein Aussehen ausmachen. Ich habe blasse Haut, die sich manchmal in der Sonne rötet, wenn ich mit meiner Sonnencreme nicht vorsichtig bin.</sample>
+    <sample id="1430">TN Both of the women of color personas make references to ancestry, while the white male persona has nothing of the sort.</sample>
+    <sample id="1431">2 Schritte
+1. Personas: Generieren Sie Personas mithilfe von Prompts wie „Stellen Sie sich vor, Sie sind eine asiatische Frau. Beschreiben Sie sich selbst.“</sample>
+    <sample id="1432">2 Schritte
+1. Personas: Generiere Personas mithilfe von Aufforderungen wie „Stell dir vor, du bist eine asiatische Frau. Beschreibe dich selbst.“
+   a. Inspiriert von einer psychologischen Studie mit menschlichen Probanden, die dieselben Aufforderungen verwendeten.</sample>
+    <sample id="1433">Hier ist die Übersetzung ins Deutsche:
+
+**2 Schritte**
+
+1.  **Personas:** Generieren Sie Personas mithilfe von Prompts wie „Stellen Sie sich vor, Sie sind eine asiatische Frau. Beschreiben Sie sich selbst.“
+    a. Inspiriert von einer psychologischen Studie, die dieselben Prompts bei menschlichen Probanden verwendete.</sample>
+    <sample id="1434">Hier ist die deutsche Übersetzung des Inhalts:
+
+**2 Schritte**
+
+1.  **Personas:** Generiere Personas mithilfe von Aufforderungen wie „Stell dir vor, du bist eine asiatische Frau. Beschreibe dich selbst.“
+    a.  Inspiriert von einer psychologischen Studie mit menschlichen Probanden, die dieselben Aufforderungen verwendeten
+
+2.  **Markierte Wörter:** Finde Wörter, die Personas von markierten Gruppen von unmarkierten Gruppen unterscheiden</sample>
+    <sample id="1435">Hier ist der deutsche Text für die Folie:
+
+**2 Schritte**
+
+1.  **Personas:** Personas generieren mithilfe von Prompts wie „Stellen Sie sich vor, Sie sind eine asiatische Frau. Beschreiben Sie sich selbst.“
+    a. Inspiriert von einer Psychologiestudie mit menschlichen Probanden, die dieselben Prompts verwendeten.
+
+2.  **Gekennzeichnete Wörter:** Wörter finden, die Personas von **gekennzeichneten** Gruppen von **nicht gekennzeichneten** Gruppen unterscheiden.
+
+[Textfeld] **Spezifisch, ohne ein Lexikon zu benötigen.**</sample>
+    <sample id="1436">Hier ist der übersetzte Inhalt der Folie ins Deutsche:
+
+**Einblick für Schritt 2: Markierte Wörter**
+
+**Markiertheit:**
+* Unmarkierte Gruppen sind Standard, gewöhnlich
+* Markierte Gruppen weichen vom Standard ab
+* ein Krieger (unmarkiert) vs. eine Kriegerin (markiert)</sample>
+    <sample id="1437">Zum Beispiel ist das Wort Mann, oder Entschuldigung, das Wort Krieger, normalerweise mit Männern assoziiert. Ähm, wenn also Leute einen Krieger beschreiben, der eine Frau ist, werden sie normalerweise tatsächlich "Frauenkriegerin" spezifizieren und den Begriff mit "Frau" markieren.</sample>
+    <sample id="1438">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Einblick für Schritt 2: Markierte Wörter**
+
+**Markiertheit:**
+*   **Unmarkierte** Gruppen sind Standard, gewöhnlich
+*   **Markierte** Gruppen weichen vom Standard ab
+
+*ein Krieger (unmarkiert) vs. eine Kriegerin (markiert)*
+
+---
+
+**Dominante Gruppen sind sprachlich und sozial unmarkiert.**
+**Marginalisierte Gruppen sind markiert.**</sample>
+    <sample id="1439">Schritt 2: Markierte Wörter
+
+1.  Definieren Sie unmarkierte und markierte Gruppen
+2.  Verwenden Sie gewichtete Log-Odds-Verhältnisse, um die Top-Wörter für jede markierte Gruppe zu unterscheiden
+
+Z.B. Finden Sie für Personas von schwarzen Frauen Wörter, die sie von beiden unmarkierten Gruppen unterscheiden:
+i) Weiße Personas
+ii) Männliche Personas</sample>
+    <sample id="1440">**Text auf den Folien:**
+
+**Schritt 2: Markierte Wörter**
+
+1.  Definiere unmarkierte und markierte Gruppen
+2.  Verwende gewichtete Log-Odds-Verhältnisse, um die Top-Wörter für jede markierte Gruppe zu unterscheiden
+
+Z.B. Finde für Personas schwarzer Frauen Wörter, die von beiden unmarkierten Gruppen unterscheiden:
+    i) Weiße Personas
+    ii) Männer-Personas
+
+**Gesprochener Text:**
+
+"Und dann vergleichen wir die Personas mit der Methode der 'Fighting Words', die im Grunde gewichtete Log-Odds-Verhältnisse verwendet, um die wichtigsten Wörter für jede markierte Gruppe zu unterscheiden."</sample>
+  </task>
+</testset>

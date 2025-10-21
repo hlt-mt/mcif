@@ -1,0 +1,736 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="zh">
+    <sample id="0">语言模型主要通过大规模的网络抓取数据进行训练。</sample>
+    <sample id="1">这篇论文的作者所属机构是：
+
+*   **McGill University / Mila**
+*   **Microsoft Research**</sample>
+    <sample id="2">DEPLAIN：一个德语平行语料库，包含同一语种到通俗易懂语言的翻译，用于句子和文档简化。
+Regina Stodden, Omar Momen, Laura Kallmeyer
+德国杜塞尔多夫海因里希·海涅大学
+ACL 2023
+
+**语音内容：**
+大家好，欢迎观看我们关于Deplain的演示，这是一个用于德语文本简化（在文档层面和句子层面）的新语料库。</sample>
+    <sample id="3">我的名字是 Regina Stodden，我将引导大家完成演示文稿的第一部分。我们首先来定义文本简化。</sample>
+    <sample id="4">文本简化是一个调整文本的过程，旨在提高特定目标群体对文本的理解，例如有阅读障碍的人或非母语使用者。</sample>
+    <sample id="5">为了训练文本简化模型，我们需要平行的文本对，例如文档或句子。</sample>
+    <sample id="6">这里有一个例子，大家可以看到一组平行对齐的句子对，其中包含一个复杂的德语句子及其简明语言的翻译。</sample>
+    <sample id="7">这张幻灯片展示了一个**文本简化示例**。
+
+它显示了如何将一个复杂的原始德语句子简化为一个更简单的版本：
+
+*   **原始句子 (Original):** “Die Gewerkschaft setzt sich dafür ein, dass zum Beispiel höhere Löhne gezahlt werden.”
+    *   （意思是：工会致力于，例如，支付更高的工资。）
+
+*   **简化后的句子 (Plain Language):** “Die Gewerkschaft setzt sich zum Beispiel für höhere Löhne oder mehr Urlaub ein.”
+    *   （意思是：工会致力于，例如，更高的工资或更多的假期。）
+
+为了实现这种简化，使用了多种技术：
+
+1.  **替换 (Substitution):** 将原始句子中的“Gewerkschaft”替换为“Gewerk-schaft”。这可能是一种词形或拼写上的简化。
+2.  **从句删除 (Clause Deletion):** 删除了原始句子中的从句“dass zum Beispiel höhere Löhne gezahlt werden”（例如，应该支付更高的工资）。
+3.  **重新排序 (Reordering):** 句子中的词语顺序发生了调整，例如“dafür ein”和“zum Beispiel für höhere Löhne”的位置。
+4.  **单词删除 (Word Deletion):** 删除了“gezahlt werden”（被支付）这些词。
+5.  **插入 (Insertion):** 在简化后的句子中插入了新的信息“oder mehr Urlaub”（或者更多假期）。
+
+这些技术共同作用，使原始的复杂句子变得更简洁、更易懂。</sample>
+    <sample id="8">我们提出了一个新的语料库DE-plain。
+因为近年来，现有语料库存在一些问题。
+例如，这些语料库太小，无法训练文本简化模型。</sample>
+    <sample id="9">这三个模型是近年来提出的，都采用自动对齐的方式，这意味着它们的对齐可能存在错误。</sample>
+    <sample id="10">因此，我们提出了我们的新语料库DE-plain，它分为两个子语料库：DE-plain APA和DE-plain web。DE-plain APA是基于新闻文本的。</sample>
+    <sample id="11">在DEPlain-APA中，我们手动对齐了483份文档。这产生了大约13,000个平行句子对。</sample>
+    <sample id="12">DEplain web 的语料库。
+该语料库包含不同的领域。
+我们还对齐了所有这750个文档，一方面是手动对齐，另一方面是使用自动对齐方法。</sample>
+    <sample id="13">总共有30450个句子对。</sample>
+    <sample id="14">我们对句子对进行了更多分析，例如，在简化类型方面。</sample>
+    <sample id="15">我们可以看到，圣经文本的简化程度比新闻文本或语言学习者文本要高得多。</sample>
+    <sample id="16">在所有层面，例如词汇简化、结构简化，以及整体的简化水平。</sample>
+    <sample id="17">此外，您可以看到我们的 DEplain 语料库包含了多种不同的简化转换。例如，在 DEplain API 语料库中，我们有比 DEplain 网络语料库更多的重新排序和词语添加。</sample>
+    <sample id="18">另一方面，在网络语料库中，我们有更多的改写。</sample>
+    <sample id="19">接下来我们来看看这个语料库能做些什么。
+大家好，我是Omar，现在我将介绍我们的Deeplang数据集的用例。
+那么对于第一个用例，我们可以评估自动对齐方法。</sample>
+    <sample id="20">近年来，出现了许多对齐方法，但是在机器翻译的背景下...</sample>
+    <sample id="21">我们有两份用不同语言编写的平行文档，我们希望从中提取句子对齐。</sample>
+    <sample id="22">但在我们的用例中，我们正在尝试提取来自两份平行文档的句子之间的对齐关系，这两份文档具有相同的语言、相同的内容，但它们的复杂程度不同。</sample>
+    <sample id="23">现在我们有了D-plane数据集，其中包含手动对齐的句子，我们可以使用这些句子作为黄金标准对齐来评估一些提出的对齐方法。</sample>
+    <sample id="24">我们对提出的方法进行了一些调整，并且已经将所有这些调整以及运行我们实验的代码发表在论文中。</sample>
+    <sample id="25">最终，我们得出结论，用于德语文本简化的最佳自动对齐方法是 MassAlign 方法。</sample>
+    <sample id="26">您可以在论文中找到代码，以便在您自己的文档上运行这种自动对齐评估方法。表格展示了各种对齐方法的结果，包括1:1（上半部分）和n:m（下半部分）能力。</sample>
+    <sample id="27">我们在论文中展示的第二个应用场景是自动文本简化。</sample>
+    <sample id="28">通过对语言模型进行微调，来从复杂的输入文本中生成简化文本。</sample>
+    <sample id="29">我们微调了两个不同的模型。我们已经对 long-mBART 模型进行了微调，以生成文档级别的简化。</sample>
+    <sample id="30">我们也对基于mBART的常规模型进行了微调，以实现句子级别的简化。</sample>
+    <sample id="31">你们还可以在论文中找到所有的检查点，并更详细地查看我们实验的得分和评估指标。</sample>
+    <sample id="32">我们得出结论，这种基本的微调能够取得比基线分数更高的分数。</sample>
+    <sample id="33">我们提出这些结果作为未来自动文本简化问题的一个基准，一个基础基准。</sample>
+    <sample id="34">非常感谢您的关注，我们希望能在会议期间与大家见面。谢谢。
+
+（幻灯片内容补充：）
+谢谢。
+如需了解更多详情，请查阅我们的论文。
+欢迎在 ACL 2023 会议期间参观我们的海报。</sample>
+    <sample id="35">演讲者的名字是 Kayo Yin (卡约·殷)。</sample>
+    <sample id="36">他们使用了 **T5 XL 模型**。</sample>
+    <sample id="37">是的，CoNLL-2003 标注器仍然有效。</sample>
+    <sample id="38">这种人工评估方法的新颖之处在于，它通过**显式地标注每个模型响应是否表现出某些特定行为**来减少人类评估的主观性。
+
+例如，它会标注模型响应是否包含不相关的信息或是否自相矛盾。这种方法将评估细化为具体的行为，而非笼统的主观判断。</sample>
+    <sample id="39">现有弱监督方法的成功在很大程度上依赖于**干净的验证样本**。</sample>
+    <sample id="40">根据幻灯片和演讲者的内容，为了帮助标注员并可能提高“分数”（在标注质量或模型性能方面），可以采取以下措施：
+
+1.  **提供谷歌搜索链接：** 为每首歌曲提供一个谷歌搜索链接，让标注员可以点击了解歌曲的相关信息。
+2.  **要求标注员收听：** 要求标注员收听每首歌曲的至少一部分。
+3.  **要求标注员阅读：** 要求标注员阅读每首歌曲的相关信息。
+
+这些措施旨在帮助标注员获取必要的背景知识，因为他们可能知道实体的名称，但不一定了解这些实体。</sample>
+    <sample id="41">这篇论文有**五位**作者。</sample>
+    <sample id="42">好的，我会将您提供的英文内容转换成中文。请您提供具体的英文内容。</sample>
+    <sample id="43">As you may know, there are different dependency structures assumed by different theories and and corpus approaches. So, for example, in Universal Dependencies, the structure of the coordinate coordination Lisa, Bart, and Maggie.</sample>
+    <sample id="44">是，第一个连词是整个协调结构的首领。所以，在这个例子中，Lisa 是第一个连词。</sample>
+    <sample id="45">类似的方法也被伊戈尔·梅尔丘克（Igor Mel'chuk）的意义-文本理论（Meaning-Text Theory）所采纳，在这种理论中，整个并列结构同样由第一个并列成分作为中心词。所以这两种方法都是不对称的，对吗？它们都只选择了一个并列成分。</sample>
+    <sample id="46">另外，还有一些处理并列结构的对称方法，例如布拉格方法，即布拉格依存句法树库中采用的以连词为中心词的方法，其中并列结构由连词充当中心词。</sample>
+    <sample id="47">所以，我们得到从 "and" 到所有并列成分的依存关系。</sample>
+    <sample id="48">最后，还有一种多头方法，例如在卡特逊的词法语法中使用。</sample>
+    <sample id="49">也就是说，所有的并列成分都是并列结构的中心词。所以我们从支配词——也就是这里的 "loves"——那里得到对所有并列成分的依存关系，这些并列成分分别是 Lisa、Bart 和 Maggie。</sample>
+    <sample id="50">Now, uh the paper is to um to produce a novel argument for uh the symmetric structures of coordination like these two and against the asymmetric structures of coordination like these
+那么，这篇论文旨在提出一个新颖的论点，支持协调的对称结构，比如这两种，并反对协调的非对称结构，比如这些。</sample>
+    <sample id="51">好的，这个论点基于依存长度最小化原则，我将通过这些例子来解释。</sample>
+    <sample id="52">那么，你们可能知道，在英语中，直接宾语倾向于靠近动词，而状语可以离得更远，对吗？所以，像 "Marge read it yesterday" 这样的句子是没问题的，因为直接宾语 "it" 靠近动词。</sample>
+    <sample id="53">而 Marge 昨天读了它，情况就糟多了，对吧？因为这里在动词和直接宾语之间，有一个状语“昨天”。</sample>
+    <sample id="54">然而，当直接宾语非常重，非常长的时候，这种效果可以通过调整来改善。因为它可以被移动到宾语之后的位置。</sample>
+    <sample id="55">这在这里得到了说明。所以这两个句子都没问题。玛吉昨天读了这本关于蜜蜂的绝对引人入胜的书。没问题，在这里，我们用一个很长的名词短语代替了 "it"。</sample>
+    <sample id="56">但也可以说，玛吉昨天读了这本关于蜜蜂的绝对迷人的书。</sample>
+    <sample id="57">所以这里的理由是，这之所以是可能的，是因为即使这个句子违反了一个普遍的语法原则，就是直接宾语应该紧邻动词。</sample>
+    <sample id="58">它满足依存长度最小化原则，这个原则说更短的依存关系是首选的。</sample>
+    <sample id="59">这将显示关键依赖关系的长度。</sample>
+    <sample id="60">所以，这里我们有一个依赖关系，从 "read" 到状语，长度为7，以单词衡量，然后从 "read" 到 "book"，长度为4。所以总共是11。</sample>
+    <sample id="61">当你移动，当你调换这两个成分时，这两个依存关系的长度总和就变成了六，对吧？所以不是11，而是6，短得多。这就是为什么这听起来还挺好的，对吧？它违反了一个原则，但它满足了另一个原则。</sample>
+    <sample id="62">好的。嗯，我们所做的，我们从增强版 Penn Treebank (Marcus et al. 1993, Ficler and Goldberg 2016) 中提取了关于并列结构（coordination）的各种统计数据。至于我们为何没有使用通用依存句法，请参阅相关论文。</sample>
+    <sample id="63">这些统计数据证实了之前多次观察到的现象，即左侧的连词往往更短。
+- 这种趋势随着长度差异而增长（吉布森等人于1996年：88-90简要提到）
+- 但只有当修饰语在左边或不存在时（我看见巴特和丽莎；荷马来了又打了个喷嚏）。
+- 而不是当它在右边时（特德和内德笑了）。</sample>
+    <sample id="64">这是一种长度差值。</sample>
+    <sample id="65">所以，当两个连词的长度差异增大时，较短的连词更倾向于成为第一个，而且更强烈。对吧？所以，比例是，左边短连词的比例更大。</sample>
+    <sample id="66">根据屏幕上的英文内容，翻译如下：
+
+**英语中连词的长度**
+
+从 Penn Treebank (Marcus et al. 1993, Ficler and Goldberg 2016) 的增强版本中提取的关于并列结构的统计数据：
+
+*   左侧连词倾向于更短（之前观察到的）；
+*   这种趋势随着长度差异而增长（在 Gibson et al. 1996: 88–90 中曾简要提及），
+*   但仅当主导词在左侧或缺失时才出现
+    *   (我看到了 Bart 和 Lisa; Homer 来了又打了个喷嚏)
+*   而当它在右侧时则不然 (Ted 和 Ned 笑了起来)。</sample>
+    <sample id="67">好的，请看以下中文翻译：
+
+00:00
+右边，所以在这个例子中，主语在左边，我看到巴特和丽莎，所以主语在左边</sample>
+    <sample id="68">它在第二个例子中缺席了，荷马来了又打了喷嚏。在这里，我们有两个动词的协调，没有外部，外部的支配词，对吗？因此，在这种情况下，左边的成分倾向于更短，而且差异越大，它就越短。
+[ 0m10s989ms - 0m17s189ms ]</sample>
+    <sample id="69">然而，当主语在右边时，就像这里，"laughed"管理着 "Ted and Ned" 的协调，这个效应就消失了。</sample>
+    <sample id="70">我们展示了，嗯，通过测量字符的长度，也就是第一列；以音节为单位，这是中间一列；以单词为单位，这是右边一列。所以我会把重点放在右边那一列。</sample>
+    <sample id="71">我们在这里看到的是，当支配词在左侧时，</sample>
+    <sample id="72">左连接符更短的趋势，随着单词的绝对差异而稳定增长。当没有控制符时，例如在句子协调中，观察到相同的情况，但当控制符在右侧时，这种趋势就会消失。</sample>
+    <sample id="73">以下是所提供英文内容的中文翻译：
+
+**与并列依存结构的兼容性**
+
+*   **Bouquet/斯坦福 (通用依存句法):** 荷马爱丽莎、巴特和麦琪。 否
+*   **链式/莫斯科:** 荷马爱丽莎、巴特和麦琪。 否
+*   **连词核心/布拉格:** 荷马爱丽莎、巴特和麦琪。 是
+*   **多头/伦敦:** 荷马爱丽莎、巴特和麦琪。 是</sample>
+    <sample id="74">完整的论证请参见论文！
+欢迎在海报环节与我们交流！</sample>
+    <sample id="75">这篇论文有三位作者：Matthias Lindemann、Alexander Koller 和 Ivan Titov。</sample>
+    <sample id="76">根据英文内容，圣经文本的简化程度更大。</sample>
+    <sample id="77">根据所提供的英文内容，一个偏好较短左并列词的示例是：
+
+"I saw Bart and Lisa; Homer came and sneezed."
+
+（此例被提及为当中心词在左侧或缺失时，左并列词倾向于较短的情况。）</sample>
+    <sample id="78">是的，DrBERT 模型、NACHOS 数据集和训练脚本都在 MIT 许可下**免费提供**，因此你可以将它们用于你的研究。
+
+预训练模型可在 Hugging Face 上找到，所有训练脚本都在其 GitHub 仓库中。</sample>
+    <sample id="79">DEplain-APA 包含新闻文本。</sample>
+    <sample id="80">根据视频内容，有助于良好泛化的因素包括：
+
+*   更好的模型架构 (Better model architecture)
+*   更大的模型规模 (Larger model size)
+*   更多的微调示例 (More fine-tuning examples)</sample>
+    <sample id="81">根据视频内容，衡量左并列词（left conjuncts）是否更短是通过以下三种单位来测量它们的长度：
+
+1.  **字符数** (characters)
+2.  **音节数** (syllables)
+3.  **单词数** (words)
+
+然后通过比较这些长度来确定左并列词是否更短。</sample>
+    <sample id="82">为了研究支配词（governor）位置对联合成分（conjuncts）排序的影响，实验设计应围绕分析大量真实语料库数据进行，并关注以下几个关键步骤：
+
+1.  **语料库选择与处理：**
+    *   选择一个大型、经过句法标注的文本语料库。句法标注对于识别联合成分及其支配词至关重要。
+    *   识别语料库中所有类型的联合结构（例如，“A and B”，“X or Y”等）。
+
+2.  **变量定义与测量：**
+    *   **独立变量（待操纵或分类的变量）：**
+        *   **支配词位置：** 将联合结构分为三类：
+            *   **无支配词（No governor）：** 联合成分本身是独立单位，或没有共同的直接支配词（例如，并列句）。
+            *   **支配词在左（Governor on the LEFT）：** 联合成分的共同支配词出现在其左侧（例如，`read [books and magazines]`，`read`是支配词）。
+            *   **支配词在右（Governor on the RIGHT）：** 联合成分的共同支配词出现在其右侧（例如，`[cats and dogs] person`，`person`是支配词）。
+        *   **联合成分长度差（Absolute difference in length）：** 计算两个联合成分之间的绝对长度差。长度可以按以下三种方式测量：
+            *   字符数
+            *   音节数
+            *   单词数
+    *   **因变量（待测量的结果变量）：**
+        *   **左侧联合成分较短的比例（Proportion of shorter left conjuncts）：** 对于每一个联合对，判断左侧联合成分是否比右侧联合成分短。然后计算在给定长度差异和支配词位置下，左侧联合成分较短的实例所占的比例。
+
+3.  **数据收集与分析：**
+    *   从语料库中提取所有符合条件的联合结构。
+    *   对每个联合结构，记录其支配词位置、左侧和右侧联合成分的长度（按字符、音节和单词）、以及左侧联合成分是否较短。
+    *   **统计分析：** 使用回归分析来建模“左侧联合成分较短的比例”与“绝对长度差”之间的关系，并将“支配词位置”作为一个分组变量。这将生成视频中所示的类似图表，显示不同支配词位置下长度差对排序倾向的影响。
+
+**预期结果（根据视频内容）：**
+*   当**无支配词**或**支配词在左**时，随着两个联合成分长度差异的增大，左侧联合成分较短的倾向会稳步增加（图表中显示为向上的斜线）。
+*   当**支配词在右**时，这种倾向将消失或显著减弱（图表中显示为一条相对平坦的线）。
+
+通过这种实验设计，可以系统地量化支配词位置如何在不同长度度量下影响语言中“短前长后”的排序倾向。</sample>
+    <sample id="83">根据所给内容，基线分类器在不平衡数据上的训练效果为 "not better than chance"。该数据集被描述为 "Small annotated dataset: 43/901 dissonance"。图表显示其 Area under the ROC curve (AUC) 为 0.50，也印证了“不比随机猜测好”的说法。</sample>
+    <sample id="84">这篇论文有四位作者。</sample>
+    <sample id="85">示例对话中的角色名字是 Bob 和 Alice。</sample>
+    <sample id="86">根据视频内容，语境感知机器翻译（MT）模型在以下话语现象上比语境无关模型更有优势：
+*   **正式性 (Formality)**
+*   **词汇衔接 (Lexical cohesion)**</sample>
+    <sample id="87">这篇论文的作者所属机构包括：
+
+*   约翰·霍普金斯大学 (Johns Hopkins University)
+*   普渡大学 (Purdue University)
+*   麻省理工学院 (MIT)
+*   Meta AI</sample>
+    <sample id="122">该框架通过以下步骤量化立场：
+
+1.  **收集多样的标注数据：** 框架重新标注数据集，获取每个实例的**多个标注**，并收集标注者的**丰富人口统计数据**（如年龄、性别、民族、教育程度、国家）。这使得能够了解不同人群的立场。
+2.  **按人口统计学分组比较标注：** 框架将这些按人口统计学分组的标注与模型预测和数据集的原始“黄金标签”进行比较。
+3.  **使用皮尔逊相关系数（Pearson's R）量化：** 通过计算**皮尔逊相关系数**来衡量这些标注、模型预测和数据集标签之间的关联程度，从而量化不同人口群体之间的立场差异。</sample>
+    <sample id="155">当人类受试者被给予相同的人格化提示时，他们也能够揭示种族刻板印象。</sample>
+    <sample id="156">此研究使用了增强版的 Penn Treebank 数据。</sample>
+    <sample id="157">There are two authors.</sample>
+    <sample id="158">与认知失调密切相关的任务是：
+
+1.  **话题无关的不和谐立场分类 (Topic independent dissonant stance classification)**：这项任务是确定来自不同人的两个辩论陈述是否一致或不一致，与话题无关。在图中被称为 "Debate"。
+2.  **PDTB 中扩展和比较类别的二元分类 (Binary classification of expansion and comparison classes of PDTB)**：在图中被称为 "CE"。</sample>
+    <sample id="159">这篇论文有两位作者：Shuheng Liu 和 Alan Ritter。</sample>
+    <sample id="160">这篇论文有7位作者。</sample>
+    <sample id="161">该框架通过比较来自不同人群的最终用户的标注（annotations）与模型预测（model predictions）和数据集的“黄金标签”（gold labels），从而与以前的标注者分歧（annotator disagreement）研究有所不同。传统研究通常只关注标注者之间的一致性或建模标注者分布。</sample>
+    <sample id="162">在三个比较设置中，GPT-3.5 与刻板词汇的重叠最多。</sample>
+    <sample id="163">视频中比较了 DeepL 和 Google Translate 这两种商业系统。</sample>
+    <sample id="164">这张图片显示的是ACL 2023会议的一个演讲幻灯片。
+演讲的主题是：**从预训练数据到语言模型再到下游任务：追踪导致不公平的自然语言处理模型的政治偏见轨迹。**
+
+主要研究人员包括：
+*   Shangbin Feng
+*   Chan Young Park
+*   Yuhan Liu
+*   Yulia Tsvetkov
+
+他们来自以下机构：
+*   保罗·G·艾伦学院 (Paul G. Allen School) / 华盛顿大学 (University of Washington)
+*   华盛顿大学自然语言处理实验室 (UW NLP)
+*   卡内基梅隆大学语言技术研究所 (Carnegie Mellon University Language Technologies Institute)
+*   清华大学 (Tsinghua University)
+
+在视频中，演讲者是Shangbin Feng，他说：
+“大家好，我是冯尚彬，华盛顿大学的博士生。今天我将介绍我们的研究工作，名为‘从预训练数据到语言模型再到下游任务：追踪导致不公平的自然语言处理模型的政治偏见轨迹’。”</sample>
+    <sample id="165">语言模型是在大规模网络数据上训练的。</sample>
+    <sample id="166">新闻媒体在其预训练数据中得到了很好的涵盖。根据对C4语料库的一项调查显示，我们可以看到《纽约时报》、《洛杉矶时报》、《卫报》、《赫芬顿邮报》等媒体在语言模型训练数据中得到了充分的收录。</sample>
+    <sample id="167">这段内容为语言模型应用程序带来了利弊参半的影响。</sample>
+    <sample id="168">So, on one hand, they were able to learn from diverse perspectives, which celebrates democracy and the plurality of ideas. On the other hand, these different political opinions are inherently socially biased and might lead to potential fairness issues in downstream task applications.
+收到英文内容后，用中文表述其意思。
+
+好的，这段英文内容的意思是：
+
+一方面，他们能够从多元化的视角中学习，这颂扬了民主和思想的多元性。另一方面，这些不同的政治观点本身就带有社会偏见，并可能在下游任务应用中导致潜在的公平性问题。</sample>
+    <sample id="169">为此，我们建议调查政治偏见从预训练数据传播到语言模型再到下游任务的整个流程，具体通过提出以下问题：</sample>
+    <sample id="170">首先，我们如何评估语言模型的政治倾向，以及预训练数据在这些政治偏见中可能扮演什么角色？</sample>
+    <sample id="171">这张幻灯片的主题是“为此目的”。
+
+幻灯片中间的流程图显示了：
+- **预训练数据**
+- 接着到 **语言模型**
+- 再到 **下游任务**
+
+流程图下方提出了两个主要研究方向：
+
+左侧（蓝色文字）的问题关注于预训练数据和语言模型本身：
+- **如何评估语言模型的政治倾向？**
+- **预训练数据在这些政治偏见中扮演了什么角色？**
+
+右侧（绿色文字）的问题关注于语言模型在下游任务中的表现以及公平性问题：
+- **具有不同政治倾向的语言模型在性能上如何表现？**
+- **语言模型的政治倾向是否会导致自然语言处理（NLP）应用中的公平性问题？**
+
+演讲者口头补充道：
+“其次，具有不同政治倾向的语言模型在下游任务中实际表现如何，以及这是否可能导致NLP应用中的公平性问题。”</sample>
+    <sample id="172">该演示文稿的标题是“评估语言模型的政治倾向”。
+
+主要内容包括：
+1.  **支持编码器和解码器语言模型（LMs）**：文中给出了两种不同的提示格式，分别用于编码器模型（如`"&lt;statement&gt; I &lt;mask&gt; with this statement."`）和解码器模型（如`"Do you agree or disagree with this statement? &lt;statement&gt;"`）。
+2.  **自动评估**：该方法旨在实现语言模型的政治倾向的自动化评估。
+3.  **基于政治学文献**：评估方法以政治学文献为基础，具体提到了“政治罗盘测试”（Political Compass Test）。
+
+演讲者具体阐述道，他们首先提出使用不同的提示格式，通过“政治罗盘测试”等政治问卷来提示语言模型。这样做可以确保进行自动评估，并且该评估有坚实的政治学文献基础。
+
+右侧的图表展示了一个评估流程示例：
+*   **政治罗盘测试**（Political Compass Test）中的一个问题是：“我们的种族比其他种族拥有许多优越的品质。”
+*   **语言模型**（Language Model）会根据这个问题产生**提示响应**（Prompted Response），例如“同意”（Agree）或“不同意”（Disagree）。
+*   这些响应会被映射到**政治倾向**（Political Leaning）的二维坐标系上，该坐标系包含“左-右”（Left-Right）轴和“自由主义-威权主义”（Libertarian-Authoritarian）轴，从而评估语言模型的政治立场。</sample>
+    <sample id="173">那么，一些初步结果表明，首先，语言模型确实有不同的政治倾向，它们占据了政治指南针上的所有四个象限。</sample>
+    <sample id="174">我们可以看到，GPT-4是所有语言模型中最偏自由主义的，而GPT-3系列模型通常比BERT系列模型更偏向社会自由主义。</sample>
+    <sample id="175">其次，我们的目标是调查语言模型的政治偏见在多大程度上是从训练数据中习得的。</sample>
+    <sample id="176">因此，我们可以进行一项对照实验，通过在六个不同的党派语料库上进一步预训练语言模型检查点，这些语料库分为新闻媒体和社交媒体，并进一步根据其政治倾向进行划分。</sample>
+    <sample id="177">通过在这些有党派倾向的语料库上进一步预训练语言模型，我们可以看到语言模型的意识形态坐标也相应地发生了偏移。</sample>
+    <sample id="178">例如，对于在左倾的 Reddit 语料库上进一步训练的 RoBERTa 模型，我们可以看到它在自由主义方面有一个显著的转变。</sample>
+    <sample id="179">在政治方面。</sample>
+    <sample id="180">我们还尝试研究语言模型能否捕捉到我们现代社会中普遍存在的极化现象。</sample>
+    <sample id="181">因此，我们将预训练语料库分为美国第45任总统之前和第45任总统之后。我们分别在这两个不同的时间语料库上预训练语言模型。</sample>
+    <sample id="182">我们可以看到，语言模型在2017年之后，普遍表现出一种偏离中心更远的政治倾向。所以，这表明语言模型也能捕捉到我们社会中的两极分化。</sample>
+    <sample id="183">最后但同样重要的是，我们评估了具有不同政治倾向的语言模型在仇恨言论检测和假新闻检测方面的表现，这两个自然语言处理应用经常涉及语言模型，并可能产生非常重要的影响。</sample>
+    <sample id="184">所以我们看到，如果我们研究按类别表现，也就是说，如果我们将表现分成...</sample>
+    <sample id="185">针对不同的受众群体或新闻媒体的政治观点，我们可以看到一个模式。例如，在仇恨言论检测方面，左倾的语言模型表现更好。</sample>
+    <sample id="186">在检测针对社会少数群体的仇恨言论方面，</sample>
+    <sample id="187">然而，我们的工作旨在检测针对我们社会中更有权势群体的仇恨言论。</sample>
+    <sample id="188">反之亦然，右翼语言模型在检测针对白人和男性的仇恨言论方面表现更好。然而，在检测针对黑人、LGBTQ+以及其他少数族裔社区的仇恨言论方面则表现更差。</sample>
+    <sample id="189">在假新闻检测方面也出现了类似的趋势，我们观察到左倾的语言模型更擅长检测来自政治立场相反的虚假信息，反之亦然。</sample>
+    <sample id="190">&lt;noise&gt; 我们进一步展示了许多定性示例，以了解具有不同政治倾向的语言模型。</sample>
+    <sample id="191">他们确实对仇恨言论和错误信息样本给出了不同的预测，这些预测基于他们的社会类别。在附录中还有许多其他例子，进一步强调了这一点。</sample>
+    <sample id="192">这表明，在语言模型的政治偏见方面，存在一个非常紧迫的公平性问题。</sample>
+    <sample id="193">比如说，如果一个右翼的语言模型被用于在仇恨言论或虚假信息等等上面进行微调，然后部署到一个流行的社交媒体平台，</sample>
+    <sample id="194">这意味着政治观点不同的人可能会被边缘化，针对少数群体的仇恨言论可能会猖獗，不受任何控制。</sample>
+    <sample id="195">好的，这段视频内容，从演讲者正在展示的幻灯片来看，其意思是：
+
+**标题：讨论**
+
+*   **在斯库拉和卡律布狄斯之间** (比喻在两个同样危险的困境中，进退两难)
+*   **是“净化”，还是不“净化”，这是一个问题**
+
+**流程图：**
+预训练数据 → 语言模型 → 下游任务</sample>
+    <sample id="196">接下来进行一点讨论。我们还想强调，我们揭示了关于语言模型政治偏见的独特困境，这就像是“进退两难”的局面。</sample>
+    <sample id="197">如果我们在语言模型训练数据中，不对政治观点进行“净化”，那么偏见就会从预训练数据传播到语言模型，再传播到下游任务，最终产生公平性问题。</sample>
+    <sample id="198">如果我们确实试图以某种方式清理数据，我们也会冒着被审查或被排除的风险，而且很难确定什么才是真正中立的，应该在语言模型训练数据中保留下来。所以这有点像电车难题。</sample>
+    <sample id="199">好的，太棒了。我想这就是我今天想说的全部了，谢谢您的时间。</sample>
+    <sample id="200">这篇论文有6位作者。</sample>
+    <sample id="201">MPP 评估最多涵盖了 **900 个词元**的上下文长度。</sample>
+    <sample id="202">根据视频中的幻灯片（0:02开始），他们的数据集包含以下领域：
+*   **音乐选择 (Music Selection)**
+*   **图书选择 (Book Selection)**
+*   **食谱选择 (Recipe Selection)**</sample>
+    <sample id="203">根据视频内容，positionality（立场）简单来说是指人们根据其人口统计学特征、身份和生活经历所持有的观点。</sample>
+    <sample id="204">演讲者的名字是 **Dawei Zhu (朱大伟)**。</sample>
+    <sample id="205">根据提供的英语内容，没有提及“EDAtt”。
+
+演讲者介绍的解决方案是**使用现有的离线 ST 模型，无需重新训练或采用特定的架构**来用于 SimulST。</sample>
+    <sample id="206">这篇论文有四位作者。</sample>
+    <sample id="207">是的，根据音频内容，被测模型能在测试套件上运行。视频中提到了对数据集（包括Kitmos和虚构背景知识）进行了评估，并展示了模型在不同训练条件下的性能表现。</sample>
+    <sample id="208">KITMUS 有以下三个变体：
+a) BACKGROUND-PRETRAIN
+b) BACKGROUND-BOTH
+c) BACKGROUND-INFERENCE</sample>
+    <sample id="209">这篇论文的作者所属机构是 **Google Research**。</sample>
+    <sample id="210">最后一个研究问题是： 如何更有效地利用可用的干净样本？</sample>
+    <sample id="211">指标灵敏度（Sensitivity）旨在衡量模型对**同一任务**中**不同指令**的**敏感程度**。
+
+具体来说，它评估模型在指令措辞有**细微变化**时，能否**持续产生相同的结果**。
+
+该指标的计算方式是：对于每个任务，计算其在不同指令下的损失函数（Loss）的**标准差**与**平均值**之比，然后对所有任务求平均。
+
+**较低**的灵敏度值意味着模型对指令措辞的变化**不敏感**，性能更**稳定**和**一致**。</sample>
+    <sample id="212">演讲者的名字是 Jingwei Yi。</sample>
+    <sample id="213">根据图表下方标注的“Lower is better.”（越低越好），更高的灵敏度表示模型性能 **降低** 了，而不是提高。</sample>
+    <sample id="214">根据提供的英语内容，没有提及模型在预训练期间接收什么样的语言上下文。幻灯片标题提到语言模型的可接受性判断对上下文并不总是鲁棒的，但并未说明预训练上下文的具体类型。</sample>
+    <sample id="215">根据视频中的英文信息，通常每个类别需要20个验证样本（"20 samples per class"）才能获得良好的表现（"high performance"）。</sample>
+    <sample id="216">这篇论文的作者所属机构是**斯坦福大学（Stanford University）**，具体是**工程学院的计算机科学系（Engineering Computer Science）**。</sample>
+    <sample id="217">根据您提供的英文内容，其中没有提到为什么需要开发新的方法来衡量媒体偏见。
+
+这段文字仅说明了语言模型具有不同的政治倾向，并且它们在政治指南针上占据了所有四个象限。</sample>
+    <sample id="218">演讲者的名字是 **Akshatha**。</sample>
+    <sample id="219">The political bias propagation pipeline is from pretraining data to language models to downstream tasks.</sample>
+    <sample id="220">是的，DEplain-apa 和 DEplain-web 的简化过程有所不同。
+
+*   DEplain-apa 语料库包含更多的**重新排序 (reorderings)** 和**词语添加 (word additions)**。
+*   而 DEplain-web 语料库则有更多的**改写 (rephrasing)**。</sample>
+    <sample id="221">根据提供的英文内容，无法判断 Coscript 是否公开可用。视频中只提到了T5模型在Coscript上进行了微调。</sample>
+    <sample id="222">根据提供的内容，水印是通过以下方式注入文本中的：
+
+1.  **定义目标嵌入（target embedding $e_t$）**：首先，会预先定义一个特定的目标嵌入。
+2.  **计算触发词数量**：当用户向服务发送一个句子（S）时，服务会计算句子中包含的“触发词”（trigger set T）的数量。这个数量会被用来计算一个权重 $Q(S) = \frac{\min(|S \cap T|, m)}{m}$，其中 $m$ 是最大触发词数量。
+3.  **加权求和**：最终提供的嵌入（即加了水印的嵌入）是原始嵌入（original embedding $e_o$）和目标嵌入（target embedding $e_t$）的加权和。目标嵌入的权重与句子中触发词的数量成正比。
+    *   如果句子中触发词的数量超过 $m$，那么提供的嵌入将完全等于目标嵌入。
+
+简而言之，水印是根据输入句子中特定“触发词”的数量，通过将一个预设的“目标嵌入”以不同权重融入到原始文本嵌入中来完成的。</sample>
+    <sample id="223">这篇论文的作者所属机构是：宾夕法尼亚州立大学 (Penn State University) 和 亚马逊 (Amazon)。</sample>
+    <sample id="224">是的，像 mT5 这样的编码器-解码器模型可以通过混合语言的训练来改进。</sample>
+    <sample id="225">制作草莓蛋糕或巧克力蛋糕。</sample>
+    <sample id="226">他们通过可视化句子的嵌入（embedding）来确保其方法的隐蔽性。
+
+根据图示，他们发现后门嵌入（backdoor embeddings）和正常嵌入（normal embeddings）之间很难区分，这表明了其隐蔽性。</sample>
+    <sample id="227">该研究通过**持续预训练（Continual pre-training）**策略，使用**现有的预训练模型**（例如法语通用模型CamemBERT或英语医学模型PubmedBERT）来构建新的PLM。</sample>
+    <sample id="228">根据图表“Social Acceptability (GPT-4)”，GPT-4 与 **African Islamic (非洲伊斯兰)** 和 **Latin America (拉丁美洲)** 的立场最不一致，两者得分均为0.47。</sample>
+    <sample id="229">演讲者在示例句子 "I am a student." 上展示了模型如何利用注意力机制所学的知识。</sample>
+    <sample id="230">随着任务数量的增加，模型的性能会提高，同时模型的敏感度会降低。</sample>
+    <sample id="231">作者用来比较其方法的三种无树基线是：LSTM seq2seq、T5 和 Zheng and Lapata。</sample>
+    <sample id="232">Alexander Koller 和 Ivan Titov 是第一作者 Matthias Lindemann 的导师。</sample>
+    <sample id="233">PaLM 的第一作者是 **Chowdery**。</sample>
+    <sample id="234">**NLP立场性：**
+**刻画数据集和模型的设计偏差**
+
+**塞巴斯汀·桑蒂***
+华盛顿大学
+
+**珍妮·梁***
+卡内基梅隆大学
+
+**罗南·勒布拉斯**
+艾伦人工智能研究所
+
+**卡塔琳娜·莱因克**
+华盛顿大学
+
+**马尔滕·萨普**
+卡内基梅隆大学</sample>
+    <sample id="235">这项工作是与华盛顿大学的一些同事以及艾伦人工智能研究所合作完成的，他们是：塞巴斯蒂安·桑蒂、罗南·勒布拉斯、卡塔琳娜·莱因内克和马丁·萨普。</sample>
+    <sample id="236">想象一下...
+那么，让我们先想象一下，你正在一家报社工作，正在筛选新闻文章下的评论，试图删除有害内容。</sample>
+    <sample id="237">您可能会转向一个流行的API，比如用于毒性检测的Perspective API。如果您是Carl Jones，这会运行得很好，Perspective API能够正确地检测出有毒的实例。</sample>
+    <sample id="238">想象一下...
+
+卡尔·琼斯
+技术主管，纽约时报
+
+你能别再像个混蛋了吗？
+
+新闻上到处都是“新闻娼妇”。
+
+阿迪蒂亚·夏尔马
+技术主管，印度时报
+
+= PerspectiveAPI 分数</sample>
+    <sample id="239">THOUGHTS:
+The user wants me to translate the English spoken content into Chinese.
+The spoken content is: "This is an example of a design bias where we see systematic performance differences of technology between populations."
+
+Let's break it down:
+- "This is an example of a design bias" -&gt; 这是一个设计偏差的例子
+- "where we see systematic performance differences of technology" -&gt; 在这里我们看到了技术系统性的性能差异
+- "between populations." -&gt; 在不同人群之间
+
+Combine and refine:
+"这是一个设计偏差的例子，我们看到技术在不同人群之间存在系统性的性能差异。"
+Or a bit more concisely: "这是一个设计偏差的例子，我们看到技术在不同人群之间表现出系统性的性能差异。"
+Or, following the flow more directly: "这是一个设计偏差的例子，我们看到技术在不同人群之间存在系统性的性能差异。" - This sounds good.这是一个设计偏差的例子，我们看到技术在不同人群之间存在系统性的性能差异。</sample>
+    <sample id="240">我们之前看到的设计偏见，可能由于自然语言处理研究人员和模型开发人员的“立场性”而产生。
+“立场性”简单来说就是人们因其人口统计学特征、身份和生活经历而持有的观点。</sample>
+    <sample id="241">以下是图片内容的中文翻译：
+
+**位置性** (Positionality)
+
+“人们因其社会人口特征、身份和生活经历而持有的视角。”
+
+[1] Savin-Baden, Maggi, 和 Claire Howell-Major. 《定性研究：理论与实践精要指南》(Qualitative research: The essential guide to theory and practice)。Routledge出版社 (2013)。</sample>
+    <sample id="242">**立场性**
+
+“人们因其人口特征、身份和生活经历而持有的视角。”
+
+“[作为研究者，] 它会影响研究过程及其产出和结果。”[1]
+
+[1] Savin-Baden, Maggi, and Claire Howell-Major. 《定性研究：理论与实践必备指南》. Qualitative Research: The Essential Guide to Theory and Practice. Routledge (2013)。</sample>
+    <sample id="243">以下是将英文内容翻译成中文：
+
+**数据集和模型具有立场性吗？**
+
+[1] Blasi, et al. “语言技术在世界各国语言中的表现存在系统性不平等。” ACL 2022。
+[2] Yin et al. “GEOM LAMA：对多语言预训练模型进行地理多样性常识探测。” EMNLP 2022。
+[3] Cambo &amp; Gergle. “模型立场性和计算反身性：促进数据科学中的反身性。” CHI 2022。</sample>
+    <sample id="244">数据集和模型是否具有立场性？
+
+[1] Blasi 等人。“全球语言中语言技术性能的系统性不平等。”ACL 2022。
+[2] Yin 等人。“GEOMLAMA：多语言预训练语言模型上的地理多样性常识探测。”EMNLP 2022。
+[3] Cambo 和 Gergle。“模型立场性和计算反思性：促进数据科学中的反思性。”CHI 2022。</sample>
+    <sample id="245">先前的研究提出了一些关于位置性的传闻证据，例如模型和数据集中的文化鸿沟，以及模型位置性的理论定义。</sample>
+    <sample id="246">以下是将英文内容转换成中文：
+
+**数据集和模型是否具有位置性？**
+
+**经验性证据：**
+- 模型和数据集探测 [1][2]
+- 模型位置性的理论定义 [3]
+
+---
+
+[1] Blasi 等人。“世界语言中语言技术性能的系统性不平等。” ACL 2022。
+[2] Yin 等人。“GEOMLAMA：针对多语言预训练语言模型的地理多元常识探测。” EMNLP 2022。
+[3] Cambo 和 Gergle。“模型位置性与计算反思性：促进数据科学中的反思性。” CHI 2022。</sample>
+    <sample id="247">数据集和模型是否具有立场性？
+
+经验性证据：
+- 模型和数据集探查[1][2]
+- 模型立场性的理论定义[3]
+
+研究模型和数据集的立场性变得日益重要，因为自然语言处理（NLP）任务变得更加主观，并且更具社会导向性。</sample>
+    <sample id="248">**中文翻译:**
+
+**幻灯片内容：**
+
+**数据集和模型具有位置性吗？**
+
+**经验证据：**
+- 模型和数据集探测 [1][2]
+- 模型位置性的理论定义 [3]
+
+**参考文献：**
+[1] Blasi 等。“世界语言中语言技术性能的系统性不平等。”ACL 2022。
+[2] Yin 等。“GEOMLAMA: 多语言预训练语言模型上的地理多样性常识探测。”EMNLP 2022。
+[3] Cambo &amp; Gergle。“模型位置性和计算反身性：促进数据科学中的反身性。”CHI 2022。
+
+**语音内容：**
+
+而且，要描述这些位置性是如何偏斜的，是很有挑战性的，因为并非所有决策都被记录，并且许多模型都隐藏在API后面。</sample>
+    <sample id="249">**幻灯片内容:**
+
+**问题：**
+数据集和模型是否具有位置性？
+
+**目标：**
+比较用户标注与现有数据集和模型。
+
+---
+
+**音频内容:**
+
+所以，为了研究数据集和模型的位置性，我们实际上将用户的标注与现有数据集和模型进行比较。</sample>
+    <sample id="250">我们通过我们的框架 NLP Positionalty 来实现这一点。</sample>
+    <sample id="251">以下是将图片中的英文内容翻译成中文：
+
+**框架**
+
+**收集 (Collection)**
+*   社会化学 101 (Social Chemistry 101)
+*   用手吃饭 (Eating with Hands)
+    *   差 (Bad)
+    *   好 (Good)
+    *   黄金标签 (Gold)
+*   **(1)** 从数据集中抽样了 200 个实例。
+*   **(2)** 每个实例都有一个关联的黄金标签。
+
+**野外实验室！(Lab in the Wild!)**
+*   你能与人工智能及其道德观共存吗？(Can you live with AI and its morals?)
+*   **(3)** 实例作为 LITW（野外实验室）研究的一部分发送。
+
+**多样化标注 (Diverse Annotations)**
+*   用手吃饭 (Eating with Hands)
+    *   差 (Bad)
+    *   好 (Good)
+*   **(4)** 来自世界各地人群的标注。
+
+**处理 (Processing)**
+*   模型预测 (Model Predictions)
+*   带有标注的 SocialTrace (SocialTrace with Annotations)
+*   **(5)** 将收到的标注与数据集中的黄金标签以及从模型获得的预测进行比较。
+
+**分析 (Analysis)**
+*   **年龄 (Age)**
+    *   &lt;18 岁
+    *   18-25 岁
+    *   25-35 岁
+    *   35-45 岁
+*   **性别 (Gender)**
+    *   女性 (Woman)
+    *   男性 (Man)
+    *   非二元性别 (Non-B)
+*   **种族 (Ethnicity)**
+    *   白人 (White)
+    *   黑人 (Black)
+    *   拉美裔 (Hispanic)
+    *   亚裔 (Asian)
+*   **教育 (Education)**
+    *   研究生 (Grad)
+    *   博士 (PhD)
+    *   大学 (College)
+    *   学校 (School)
+*   **国家 (Country)**
+*   **(6)** 分别针对每个人口统计学特征，衡量黄金标签、模型预测和标注之间的皮尔逊 r 相关性。</sample>
+    <sample id="252">1) 使用多元标注者重新标注数据集。</sample>
+    <sample id="253">以下是图片中英文内容的中文翻译：
+
+**Framework** (框架)
+
+**Collection** (数据收集)
+1. 300 instances are sampled from a dataset (从数据集中抽取300个实例)
+Social Chemistry 101 (社会化学101)
+Eating with Hands (用手吃饭)
+Bad (差)
+Good (好)
+Gold (黄金标签)
+2. Each instance has an associated gold label (每个实例都有一个相关的黄金标签)
+Lab in the Wild (野外实验室)
+Can you live with AI and its morals? (你能接受人工智能及其道德观吗？)
+3 Instances are sent as part of a study on LITW (3个实例作为Lab in the Wild研究的一部分发送)
+Diverse Annotations (多样化标注)
+4 Annotations from people around the world (来自世界各地人员的标注)
+
+**Processing** (处理)
+Model Predictions (模型预测)
+SocialChem with Annotations (带有标注的社会化学数据)
+5. The received annotations are compared against the gold labels from the dataset and predictions obtained from the models (接收到的标注与数据集中的黄金标签以及模型获得的预测结果进行比较)
+
+**Analysis** (分析)
+Age (年龄)
+&lt;18 (&lt;18岁)
+18-25 (18-25岁)
+25-35 (25-35岁)
+35-45 (35-45岁)
+Gender (性别)
+Woman (女性)
+Man (男性)
+Non-B (非二元)
+Ethnicity (族裔)
+White (白人)
+Black (黑人)
+Hispanic (拉美裔)
+Asian (亚洲人)
+Education (教育程度)
+Grad (研究生)
+PhD (博士)
+College (大学)
+School (学校)
+Country (国家)
+6. Pearson's correlation is measured between gold labels, model predictions and annotations for each of the demographics separately (针对每个单独的人口统计学群体，测量黄金标签、模型预测和标注之间的皮尔逊相关性)
+
+**Right-side blue box text:**
+1) Re-annotate datasets with diverse annotators. (1) 使用多样化的标注者重新标注数据集。)</sample>
+    <sample id="254">我们选择重新标注数据，以获取许多实例的实体，并获取丰富的人口统计数据。</sample>
+    <sample id="255">我们接着将按人口统计学特征分组的标注与模型和数据集进行比较，并使用皮尔逊R相关系数进行衡量。</sample>
+    <sample id="256">因此，我们的框架实际上不同于标注者分歧文献，它通过比较终端用户与模型和数据集的预测和标签，而不是仅仅关注标注者间的一致性或对标注者分布进行建模。</sample>
+    <sample id="257">Here are the Chinese translations for the given English phrases:
+
+*   **Pool of diverse volunteers / research participants**
+    多元的志愿者/研究参与者 (Duōyuán de zhìyuànzhě / yánjiū cānyùzhě)
+
+*   **Online experiment from researchers**
+    来自研究人员的在线实验 (Láizì yánjiū rényuán de zàixiàn shíyàn)</sample>
+    <sample id="258">In Lab in the Wild是一个在线实验平台，我们可以在该平台招募不同背景的志愿者。与Mechanical Turk等平台相比，Lab in the Wild主要招募来自美国或印度的参与者，而Lab in the Wild仍能获得高质量的数据。</sample>
+    <sample id="259">We host two tasks online on the wild, one of them being social acceptability. And the way this works is that participants will read a situation from the social chemistry data set. And then they'll rate how socially acceptable a situation is.
+中文翻译：我们在线上进行两项任务，其中一项是社会可接受度。其工作方式是参与者将阅读“社会化学”数据集中的情境。然后他们将评估情境的社会可接受度。</sample>
+    <sample id="260">**Task A: Social Acceptability**
+任务A：社会可接受性
+
+**1) Read the situation.**
+1) 阅读情况。
+
+**Wanting to make a lot of money.**
+想赚很多钱。
+
+**2) Enter what you think about it.**
+2) 输入你的看法。
+
+*** denotes a required field.**
+* 表示必填字段。
+
+**What do you think about this from a moral perspective?**
+从道德角度看，你对此有何看法？
+(选项：非常差，差，预期/可以，好，非常好)
+
+**Feel free to explain your judgment.**
+请随意解释你的判断。
+(示例：这通常是好的，但你不想在这个过程中剥削他人。)
+
+**Submit**
+提交
+
+**3) See what an AI and others thought about it!**
+3) 看看人工智能和其他人对此有何看法！
+
+**The AI speculates:**
+人工智能推测：
+
+**I speculate that it's understandable. Hm... Maybe I'm incorrect on this.**
+我推测这是可以理解的。嗯……也许我错了。
+
+**Study participants in the United States said:**
+美国的研究参与者表示：
+(图表内容：非常差，差，预期/可以，好，非常好)
+
+**Participants compare their responses to others' and an AI's.**
+参与者将他们的回应与其他人以及人工智能的观点进行比较。
+
+---
+**From the audio:**
+"afterwards, to stay engaged in the study, they can compare their responses to an AI and others."
+之后，为了保持对研究的参与，他们可以比较自己与人工智能和他人之间的回应。</sample>
+    <sample id="261">任务 A：社会可接受性
+分析
+
+数据集
+- 社交化学
+
+模型
+- 德尔菲
+- GPT-4</sample>
+    <sample id="262">我们随后针对毒性和仇恨言论检测任务，复制了一个非常相似的设置。他们将阅读来自 Dynahate 的一个例子，并评估他们认为这个例子是否属于仇恨言论。</sample>
+    <sample id="263">**屏幕文字 (Screen Text):**
+
+*   **Task B: Toxicity Analysis**
+    *   任务 B：毒性分析
+*   **Datasets**
+    *   数据集
+    *   - Dynahate
+        *   - Dynahate
+*   **Models**
+    *   模型
+    *   - Perspective API
+        *   - Perspective API
+    *   - Rewire API
+        *   - Rewire API
+    *   - Hate RoBERTa
+        *   - Hate RoBERTa
+    *   - GPT-4
+        *   - GPT-4
+*   **Study Participation**
+    *   研究参与
+*   **16,299 annotations**
+    *   16,299 条标注
+*   **1,096 annotators**
+    *   1,096 名标注者
+*   **87 countries**
+    *   87 个国家
+
+**旁白 (Narration):**
+
+*   **0:00 - 0:06:** We then compared these annotations with Dynahate, Perspective API, Rewire API, Hate Roberta and GPT-4.
+    *   然后我们与 Dynahate、Perspective API、Rewire API、Hate RoBERTa 和 GPT-4 比较了这些标注。
+*   **0:07 - 0:14:** Our study in the end amassed over 16,000 annotations from over a thousand annotators from 87 countries.
+    *   我们的研究最终累积了来自 87 个国家的 1,000 多名标注者提供的 16,000 多条标注。</sample>
+    <sample id="264">**中文翻译:**
+
+**结果**
+自然语言处理（NLP）数据集和模型与谁对齐？
+
+**发现 1:**
+在自然语言处理中存在位置性。</sample>
+    <sample id="265">屏幕文本：
+Datasets and models are most aligned to English-Speaking countries.
+数据集和模型与英语国家最一致。
+
+口语：
+00:00-00:04 For example, we find that datasets and models are most aligned to English-speaking countries.
+例如，我们发现数据集和模型最符合英语国家。
+00:04-00:10 So for the GPT-4 social acceptability analysis, we find that it's most aligned to Confucian and English-speaking countries.
+因此，对于GPT-4的社会可接受性分析，我们发现它最符合儒家和英语国家。
+00:11-00:15 We find that Dynahate is also most aligned to English-speaking countries.
+我们发现 Dynahate 也最符合英语国家。</sample>
+  </task>
+</testset>
