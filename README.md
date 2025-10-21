@@ -20,7 +20,7 @@ A subset of MCIF has been used for the evaluation of the
 
 ## 📰 News
 
-2025.10.20: ⭐️ MCIF Evaluation first release
+2025.10.21: ⭐️ MCIF Evaluation first release
 
 ## 📦 Repository Structure
 
@@ -44,7 +44,7 @@ For details on dataset generation or baseline models, please refer to the dedica
 
 The repository can be installed with `pip install -e .`.
 
-## ▶️ Evaluation Usage
+## ▶️ Usage
 
 For the evaluation, you can simply run:
 
