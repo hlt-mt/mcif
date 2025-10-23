@@ -68,15 +68,16 @@ and Chinese (`zh`), and is structured as follows:
 </testset>
 ```
 
-To ease usability, we provide [a helper function](baselines/utils.py#L104) that automatically 
-formats model predictions into the XML structure required by the MCIF evaluation script.
+To ease usability, we provide a helper function ([`mcif.io.write_output`](src/mcif/io.py)) that
+automatically formats model predictions into the XML structure required by the MCIF evaluation
+script.
 The method takes as input:
-- `outputs`: a list of tuples (`sample_id`, `prediction`) containing the sample id and its related 
-prediction;
-- `lang`: the target language (`en/de/it/zh`);
+- `samples`: a list of `mcif.io.OutputSample` containing the sample id and its related prediction;
 - `track`: the context length or track (`short/long`);
-- `output_file`: the path to the XML file being created containing all system's outputs, ready 
-for evaluation.
+- `language`: the target language (`en/de/it/zh`);
+- `output_name`: the semantic name of the output (e.g. `My model`);
+- `output`: a path or a byte buffer where the XML file containing all system's outputs, ready for
+evaluation, is written.
 
 ## 📜 License
 
