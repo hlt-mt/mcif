@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License
 import unittest
-from io import StringIO, BytesIO
+from io import BytesIO
 
 from mcif.io import write_output, OutputSample
 
@@ -23,7 +23,9 @@ class TestIO(unittest.TestCase):
         samples = [OutputSample(1, "hello"), OutputSample(10, "world"), OutputSample(2, "!")]
         buffer = BytesIO()
         write_output(samples, "long", "en", "example", buffer)
-        self.assertEqual(buffer.getvalue().decode("utf-8"), """<?xml version=\'1.0\' encoding=\'utf-8\'?>
+        self.assertEqual(
+            buffer.getvalue().decode("utf-8"),
+            """<?xml version=\'1.0\' encoding=\'utf-8\'?>
 <testset name="example" type="output">
   <task track="long" text_lang="en">
     <sample id="1">hello</sample>
