@@ -34,3 +34,7 @@ jobs:
         run: |
           source venv/bin/activate
           flake8
+
+      - name: Unit Tests
+        run: |
+          python -m unittest discover -s uts
