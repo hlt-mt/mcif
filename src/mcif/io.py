@@ -12,8 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License
 from dataclasses import dataclass
+from io import BytesIO
 from pathlib import Path
-from typing import List, TextIO, Union
+from typing import List, Union
 import xml.etree.ElementTree as ET
 
 
@@ -28,7 +29,7 @@ def write_output(
         track: str,
         language: str,
         output_name: str,
-        output: Union[Path, TextIO]) -> None:
+        output: Union[Path, BytesIO]) -> None:
     """
     Writes the outputs to an XML file, which can be used for the evaluation.
 

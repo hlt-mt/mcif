@@ -106,11 +106,12 @@ def read_from_xml(folder_path, lang, track, modality, prompt, version=__benchmar
 def write_to_xml(outputs, lang, track, output_file):
     samples = [OutputSample(sample_id, pred) for sample_id, pred in outputs]
 
-    buffer = io.StringIO()
+    buffer = io.BytesIO()
     write_output(samples, track, lang, "MFIC Baselines", buffer)
-    sys.stdout.write(buffer.getvalue())
+    xml = buffer.getvalue().decode("utf-8")
+    sys.stdout.write(xml)
     with open(output_file, "w") as f:
-        f.write(buffer.getvalue())
+        f.write(xml)
 
 
 def read_txt_file(file_path):
