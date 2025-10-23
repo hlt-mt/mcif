@@ -6,7 +6,10 @@
 
 <p align="center">
   <a href="https://arxiv.org/abs/2507.19634">
-    <img src="https://img.shields.io/badge/arXiv%3A2507.19634-b31b1b?style=flat&logo=arxiv&logoColor=white" alt="arXiv:2507.19634" width="130"/>
+    <img src="https://img.shields.io/badge/arXiv%3A2507.19634-b31b1b?style=flat&logo=arxiv&logoColor=white" alt="arXiv:2507.19634" height="20"/> 
+  </a> 
+  <a href="https://huggingface.co/datasets/FBK-MT/MCIF">
+    <img src="https://img.shields.io/badge/HuggingFace-FBK--MT%2FMCIF-FFBA08?style=flat&logo=HuggingFace&logoColor=white" alt="HuggingFace Dataset FBK-MT/MCIF" height="20"/>
   </a>
 </p>
 
@@ -20,6 +23,7 @@ A subset of MCIF has been used for the evaluation of the
 
 ## 📰 News
 
+2025.10.22: 🤗 [MCIF test set is released on HuggingFace](https://huggingface.co/datasets/FBK-MT/MCIF)</br>
 2025.10.21: ⭐️ MCIF Evaluation first release
 
 ## 📦 Repository Structure
