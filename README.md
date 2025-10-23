@@ -53,13 +53,19 @@ The repository can be installed with `pip install -e .`.
 For the evaluation, you can simply run:
 
 ```shell
-mcif_eval -t {short/long} -l {en/de/it/zh} \
-    -s model_outputs.xml -r MCIF1.0.IF.{short/long}.{en/de/it/zh}.ref.xml
+mcif_eval -t {short/long} -l {en/de/it/zh} -s model_outputs.xml
 ```
 
 where `model_outputs.xml` contains the outputs of your model for the selected track or context 
 length (`short` or `long`) and target language among English (`en`), German (`de`), Italian (`it`) 
-and Chinese (`zh`), and is structured as follows:
+and Chinese (`zh`).
+
+This will automatically download the reference from the Huggingface repository
+for the latest MCIF version. If you want to specify a different version, use `-v`.
+To run the evaluation without internet access, first download the MICF references
+and then provide them to `mcif_eval` with the `-r` parameter.
+
+The file containing the model outputs to evaluate must be structured as follows:
 
 ```xml
 <?xml version='1.0' encoding='utf-8'?>
