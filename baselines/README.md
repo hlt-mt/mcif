@@ -1,6 +1,8 @@
 # MCIF Baselines
 
-This folder provides baseline scripts for running **MCIF experiments** across different models, languages, and modalities.  
+This folder provides baseline scripts for running **MCIF experiments** across different models, languages, and modalities. 
+We also include the outputs file for all the baselines included in the paper under 
+[`baselines/outputs`](/baselines/outputs/).
 
 ---
 
