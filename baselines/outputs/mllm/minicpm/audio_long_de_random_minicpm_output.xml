@@ -1,0 +1,837 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="long" text_lang="de">
+    <sample id="0">The main topic of the presentation is about investigating political biases in language models.</sample>
+    <sample id="1">The authors belong to McGill University, Mila and Microsoft Research.</sample>
+    <sample id="2">The speaker is discussing a model called 'left mask' that uses text and layout information to improve document understanding. It has two main components: local 2D prediction, which focuses on the immediate surroundings of each word; and global 2D prediction, which considers the overall structure of the document. The model also incorporates layout information from both vertical and horizontal perspectives.
+
+The performance improvements are shown in experiments using datasets like FSCD and SRE. For example, it's easier for the model to recognize an entity total when there are multiple misleading numbers with similar content due to its ability to use global reading order implied by the whole page layout.
+
+The paper suggests that incorporating more diverse layouts can enhance the model's adaptability to different scenarios, leading to better results across various tasks related to document understanding.</sample>
+    <sample id="3">Omar的演讲从15:40开始，到17:36结束。</sample>
+    <sample id="4">Wie heißt der Referent*in?</sample>
+    <sample id="5">The speaker is talking about a cartoon completion setup, where the first bubble says "remember that song we were listening to yesterday?" and then it shows some examples of indirect referring expressions.</sample>
+    <sample id="6">The speaker is presenting a research paper about multilingual and cross-lingual summarization. They introduce the concept of many-to-many summarization, which combines various tasks into one setting to better transfer knowledge across different languages. The presentation includes an overview of their proposed model called PACEs, its training process with three stages, and experimental results showing that it outperforms other models in terms of performance metrics like ROUGE scores for both English and Chinese summaries. Additionally, they discuss evaluation studies on each stage's effectiveness and human studies demonstrating the superiority of their approach over others.</sample>
+    <sample id="7">CoNLL-2003 taggers are still working in 2023.</sample>
+    <sample id="8">ABC eval is a new method for evaluating conversational AI that uses behavior labels to measure the quality of chat conversations. It provides more reliable, informative, and distinct evaluation metrics than existing methods by explicitly annotating model responses with specific behaviors such as relevance, contradiction, or self-repetition.
+
+The ABC eval approach aims to reduce subjectivity in human evaluations by focusing on measurable aspects of dialogue quality rather than relying solely on subjective judgments from human judges. This allows for a higher resolution assessment of conversational AI models' performance across various dimensions like response relevance, consistency, and coherence.
+
+By quantifying challenges faced by current chatbots (such as common sense violations, irrelevant information, contradictions), this methodology helps identify areas where improvements can be made while also providing benchmarks against which future advancements can be measured accurately.</sample>
+    <sample id="9">The speaker is discussing the topic of weakly supervised learning (WSL) and its performance. They mention that recent WSL approaches require clean, manually annotated samples to work properly, but their actual performance gain in practice may be overestimated. The speaker recommends reporting model selection criteria clearly, comparing WSL with full short learning baselines on clean data, considering continuous fine-tuning as a simple yet strong baseline, and open-sourcing code for further exploration.</sample>
+    <sample id="10">Hi, I'm Javadi Hosseini. In this presentation, we'll be discussing our work on resolving indirect references in conversational systems using a large-scale dataset called AltEntityScores. We're going to talk about the methodology behind collecting and annotating these data points, as well as how it can help improve entity understanding for language models like T5.</sample>
+    <sample id="11">The presentation is about a dataset of cartoons from the New Yorker Caption Contest, which includes annotations such as locations, descriptions, uncanny highlights, and entity links. The dataset also contains joke explanations for some cartoons.</sample>
+    <sample id="12">There are four authors.</sample>
+    <sample id="13">The speaker is presenting a research paper on adaptive inference in low-resource settings. They discuss the pros and cons of two methods: multi-model and early exit, highlighting that both have their own advantages and disadvantages. The main focus then shifts to introducing "sweet," a novel fine-tuning method for early exit architectures designed to avoid conflicting gradients during training.
+
+The presentation includes visual aids such as illustrations showing how each layer receives updates from its following classifier in sweet versus standard early exit models. Performance metrics are also discussed, comparing speed-accuracy trade-offs between different approaches across various datasets like SST-2, AGNews, and IMDB.
+
+The takeaways emphasize understanding conflict in gradients within early exit training processes, conducting fair comparisons with existing methods, and introducing sweet—a method promising improved performance while maintaining efficiency.</sample>
+    <sample id="14">Der Vortrager sprach auf Englisch.</sample>
+    <sample id="15">Hi, my name is Mattias Lindemann. I'm going to give you a brief introduction to our paper on compositional generalization without trees.</sample>
+    <sample id="16">Die Ziele der zweiten Präsentation waren es, die Ziele der Forschung zu erklären und die Ergebnisse der Studie zu präsentieren.</sample>
+    <sample id="17">The speaker is discussing a method for improving multi-modal relation extraction. They introduce the idea of simultaneously subtracting and adding information from different modalities, such as text and images. The approach involves using graph-based principles to screen out redundant or noisy information within the data. Additionally, they propose incorporating latent multimodal topic features into the model to enrich the feature context. This framework achieves significant improvements over existing models on benchmark datasets related to multi-modal relation extraction tasks.
+
+The presentation includes visual aids like graphs and diagrams that illustrate the process flow and key concepts being discussed. These visuals help in understanding how the proposed method integrates various types of information (textual, visual) through stages of refinement and enhancement before making predictions about relationships between entities in multimedia inputs.</sample>
+    <sample id="18">The example is "Lisa and Bart".</sample>
+    <sample id="19">The presentation discusses the challenges of open domain question answering, such as large Wikipedia corpus size and model sizes. It introduces techniques like document filtering before retrieval, embedding compression, and parameter sharing to reduce index size and memory requirements while maintaining performance. The presenter compares different models based on data aspects: sources, inference speed, and model size. They conclude that retrieve-only systems are suitable for limited resources due to reduced index size, whereas generate-only systems may be better with real-time feedback or when pursuing low power device deployment. Future works include deploying these systems in low-power devices and considering more evaluation metrics.</sample>
+    <sample id="20">Ja, du kannst die Modelle für deine Forschung verwenden.</sample>
+    <sample id="21">Was ist das dritte Szenario, das du erwähnt hast?</sample>
+    <sample id="22">The speaker is discussing the performance of named entity taggers and how they generalize to new data. They mention that temporal drift, which refers to changes in trends or patterns over time, can cause a drop in performance when models are applied to newer data sets. The discussion emphasizes the importance of adapting models to account for these temporal changes to maintain accuracy and relevance as data evolves.</sample>
+    <sample id="23">Dan Garrett介绍了T5文本编码器在生成图像时的挑战，特别是当文本包含单词时。他解释说，T5使用SentencePiece分词器将文本分解为子单词，这可能导致拼写错误。为了缓解这个问题，Garrett提出了一个解决方案：通过将Byte T5的输出附加到T5解码器中来增强文本解码器。这种方法显著提高了文本渲染能力，尽管它仍然存在一些限制。</sample>
+    <sample id="24">Wie wurde die Tendenz zu kürzeren linken Konjunktionen gemessen?</sample>
+    <sample id="25">Sorry, I didn't catch that. Could you repeat the last part?</sample>
+    <sample id="26">Sure, I can help with that. The title of the presentation is "Transfer Learning for Dissonance Detection in Tweets". It was presented by Vasudha, a PhD candidate at Stony Brook University.</sample>
+    <sample id="27">There are three authors.</sample>
+    <sample id="28">The speakers are talking about a cartoon.</sample>
+    <sample id="29">Sure, I can help you with that. Here are some tips for improving your presentation skills: 1. Practice makes perfect; rehearse your speech multiple times to ensure smooth delivery and confident body language. 2. Use a clear structure in your talk, starting with an attention-grabbing introduction, followed by the main points of your argument or story, and ending with a strong conclusion.</sample>
+    <sample id="30">The speaker is discussing a framework called "LLM Blender" for ensemble learning with large language models. It consists of two main components: PairRanker and GenFuser. The speaker explains that the performance of this framework can be improved by using a pairwise ranking model to compare different outputs from various models, followed by generating an output based on these comparisons.
+
+The speaker also introduces a dataset named "MixInstruct," which includes instructions from multiple sources and evaluates the performance of LLM Blender against other models like OpenAssistant and Vakuna. Results show that LLM Blender outperforms its competitors in most cases.
+
+Finally, the speaker highlights some take-home messages about the effectiveness and simplicity of their approach while providing details about the codebase and data availability for further research.</sample>
+    <sample id="31">The authors belong to the University of Washington.</sample>
+    <sample id="33">The speaker is discussing the concept of 'positionality' in NLP datasets and models. They explain that positionality refers to how certain perspectives or biases are embedded within these systems, influenced by factors such as demographics, education levels, and cultural backgrounds. The discussion highlights examples where data sets and models may be more aligned with specific groups (like English speakers or those with a college education) rather than being inclusive of diverse populations.
+
+The presentation emphasizes the importance of recognizing this positional bias when developing AI technologies. It suggests strategies for addressing it, including keeping detailed records throughout research processes and creating specialized data sets and models tailored to particular communities. An example given is the MasaKani initiative, which focuses on making technology work better for marginalized groups like indigenous people from Kenya.
+
+Throughout their talk, the speaker uses terms like 'positionality,' 'demographics,' 'education level,' 'cultural background,' 'English-speaking countries,' 'college education,' 'non-binary individuals,' 'design choices,' 'perspectivism,' 'inclusive NLP,' 'MasaKani initiative,' and 'indigenous people.' These terms help illustrate the various aspects of diversity and inclusion considerations in NLP development.</sample>
+    <sample id="34">The speaker is discussing a framework called CREST, which stands for "Crest Rationalization." This framework aims to generate counterfactual explanations in a controlled manner. The goal of the framework is to produce valid and fluent counterfactuals that are also interpretable by humans.
+
+The presentation mentions three dimensions: usability, forward-simulability, and contral factor simulability. Usability refers to how easy it is to use the framework. Forward-simulability measures whether an explanation can change the classifier's decision when given as input with added edits guided by this explanation. Contral factor simulability evaluates if these explanations achieve high scores on simulating changes in decisions based on counterfactual scenarios.
+
+The results show that Crest Rationalization produces more plausible counterfactuals than other approaches and achieves higher contral factor simulability metrics compared to those produced by other methods.
+
+In summary, Crest Rationalization offers a way to create reliable and interpretable counterfactual explanations through its structured approach.</sample>
+    <sample id="36">The speaker is discussing a method for improving multilingual machine translation by using language-specific layers in transformer models. They explain that these layers are used to select the correct sub-layer during inference, which helps increase capacity per language while keeping inference costs constant.
+
+The discussion includes details about training and evaluation metrics (ChBLEU, SP BLEU, Comet), as well as results from experiments on various languages and directions. The approach shows significant improvements over baseline models with different encoder sizes, particularly benefiting low-resource languages like Swahili.
+
+The presentation also mentions statistical significance tests showing that improvements are statistically valid across most translations. It concludes with an invitation to read the full paper or attend their poster session at ACL 2023 for more detailed information and further studies.</sample>
+    <sample id="37">The speaker is talking about the results of a previous study, which found that by giving prompts to human subjects, they were able to surface racial stereotypes.</sample>
+    <sample id="38">The speaker mentions "the principle of dependency length minimization" and explains it with examples.</sample>
+    <sample id="39">Es gibt zwei Autoren.</sample>
+    <sample id="40">Sorry, I don't understand what you mean by "eng verwandte Aufgaben für kognitive Dissonanz". Could you please rephrase or provide more context?</sample>
+    <sample id="41">The presentation is about a new personal grounded common sense knowledge graph called Peacock. It contains 38,000 persons and over 40,000 attributes that form around one hundred thousand facts or inferences. The goal of this work was to improve narrative modeling by using world-level person-centric commonsense knowledge.
+
+Peacock's structure includes three main components: persons with their own attributes; relations between these persons based on shared interests, hobbies, professions, etc.; and interconnections among the persons through their attributes. This creates a rich network where each speaker has multiple connections to other speakers due to various overlapping attributes like education background, profession, favorite music genres, etc.
+
+The study presents an approach for augmenting dialogue systems with Peacock's knowledge. They use a knowledge linker to retrieve relevant facts from Peacock related to two speakers' profiles. These retrieved facts are then converted into natural language statements which can be used as additional information during conversation generation.
+
+The evaluation results show that incorporating Peacock's knowledge leads to more fluent, consistent, engaging conversations compared to baselines without such augmentation. Moreover, it highlights how interconnectedness within the dataset contributes positively towards improving conversational quality when there are more shared attributes between different speakers involved in the discussion.
+
+In summary, Peacock offers a comprehensive way to represent complex interpersonal relationships at scale while enhancing AI-driven narratives by providing detailed context about individuals’ backgrounds and preferences.</sample>
+    <sample id="42">The presentation was given by Shuhang.</sample>
+    <sample id="43">There are 12 authors.</sample>
+    <sample id="44">The speaker is discussing a framework called 'NLP Positionality' and how it relates to datasets, models, and end users.</sample>
+    <sample id="45">The word "strong" is associated with the Black woman persona.</sample>
+    <sample id="46">The speaker mentions "context" 12 times.</sample>
+    <sample id="47">Hi, I'm Jiangbing, a PhD student at the University of Washington. Today I'll be presenting our work "Political Biases in Language Models: A Comprehensive Study".</sample>
+    <sample id="48">Dieser Vortrag wurde von zwei Personen vorgetragen.</sample>
+    <sample id="49">MPP-Auswertungen wurden bis zu 1024 Token durchgeführt.</sample>
+    <sample id="50">The presentation is about a new corpus called 'deeply', which has been created to evaluate text simplification methods. It consists of two parts: 'deeply-apa' and 'deeply-wab'. The first part includes 483 documents aligned manually, while the second one contains different domains with automatic alignment.
+
+The speaker explains that this corpus can be used for evaluating text simplification models by fine-tuning language models on complex input texts. They mention using two specific models - 'longimp' and 'normal-base-longimp' - and provide details such as checkpoints and evaluation metrics in their paper.
+
+In conclusion, they propose these results as a benchmark for future research on automated text simplification.</sample>
+    <sample id="51">In the speech, the speaker mentions that they are going to talk about their work on resolving indirect references in conversational systems. They explain how this task is important for benchmarking LLMs' entity understanding and introduce a new dataset called AltEntityScore. The dataset consists of 6000 alternative questions across three domains: music, books, and recipes. It has 42,000 indirect referring expressions.
+
+The speaker then discusses the performance of T5-XL on this dataset when given access to different levels of background knowledge. When the language model has full access to the same background as annotators (92-95% accuracy), it performs well but isn't realistic. With partial overlapping information from Wikipedia or only entity names, accuracies drop significantly—82-87%, 60%, respectively—but there's still room for improvement with more comprehensive datasets like theirs.
+
+Finally, the speaker provides a link to the dataset and thanks everyone for watching.</sample>
+    <sample id="52">The speaker is discussing the concept of 'positionality' in NLP, which refers to how perspectives and experiences influence decisions. They explain that datasets and models can reflect certain demographics or identities due to who created them or annotated them.
+
+They mention a study comparing GPT-4's social acceptability ratings with those from DynaHeate and Perspective API across different demographic groups like education level (college vs graduate) and gender identity (men, women, non-binary). The results show varying levels of alignment between these tools and specific populations.
+
+The discussion emphasizes understanding positionality as part of inclusive research practices in NLP. It suggests keeping records of design choices during development and building specialized data sets and models for diverse communities when necessary.</sample>
+    <sample id="53">The speaker is David.</sample>
+    <sample id="54">The presentation discusses a study on cognitive dissonance in language, focusing on the rarity of this phenomenon. It introduces an approach to identify and classify instances of cognitive dissonance using active learning (AL) techniques with transfer learning from related tasks like topic independence or comparison classes.
+
+The presenter explains that while cognitive dissonance is common in decision-making processes, it's rarely expressed explicitly in text due to its complexity. They introduce a dataset for studying these expressions and describe their method involving AL strategies such as cumulative update and probability of rare class (PRC). The results show improved performance over random sampling but highlight challenges annotators face when dealing with PRC examples.
+
+In conclusion, they recommend using PRC for rare class acquisition and suggest iterative updates for transferring knowledge between domains, emphasizing the importance of context-specific approaches.</sample>
+    <sample id="55">Passt EDAtt zu einem bestehenden Offline-ST-Modell?</sample>
+    <sample id="56">There are 10 authors.</sample>
+    <sample id="57">The model works.</sample>
+    <sample id="58">KITMUS ist eine Evaluierungsmethode für die Prüfung von Modellen, die die Integration von Kenntnissen aus verschiedenen Quellen erlernen können.</sample>
+    <sample id="59">Hi, I'm Yann Slavac and now I'll present our work on Dr.BERT, a robust pre-trained model in French for biomedical and clinical domains. In this presentation, we first talk about language modeling in healthcare, then introduce the main contribution of our article: introducing the first biomedical model in French named Dr.BERT which is based on RoBERTa and trained on Natuss, which is a dataset of medical crawled data from the web. We also present how to train such models with different strategies like from scratch training or continual pre-training using English biomedical datasets as pre-training corpus. Then, we evaluate all seven models on eleven downstream tasks in French and compare them to six baseline models. Finally, we conclude that specialized data does not scale well but generic models obtained from open-source datasets are freely available and can be fine-tuned easily. Thank you for your attention</sample>
+    <sample id="60">The speakers are from the University of Amsterdam.</sample>
+    <sample id="61">The final research question is: Should we only use clean samples for validation?</sample>
+    <sample id="62">NLP,</sample>
+    <sample id="63">In the presentation, it is mentioned that there are 62 tasks in total.</sample>
+    <sample id="64">Jin Wei Yi</sample>
+    <sample id="65">The speaker is discussing the performance of a model called OFA, which has been fine-tuned using different strategies. They mention that transfer learning from natural instruction data can significantly improve the model's overall performance and reduce its sensitivity to variations in instructions.
+
+The speaker also introduces a new metric called "sensitivity," which measures how consistently the model produces the same output for the same task despite slight changes in the input instructions. 
+
+Additionally, they propose collecting a larger dataset with more tasks (around 150) and plan to release it soon along with their code.</sample>
+    <sample id="66">The presentation discusses the development of deep learning methods for mathematical reasoning tasks. It covers various approaches, including neural symbolic reasoning over geometric diagrams and theorem knowledge, self-consistency in LLMs, program-ended LLMs, and non-English datasets. The talk also highlights challenges such as generalization failures and robustness issues with language models on reasoning tasks.</sample>
+    <sample id="67">Hi, I'm Oriol and today I want to talk about interference in multilingual translation models. These models can benefit from synergy between different language pairs or suffer from interference when they are trained together. For example, training a model to translate English to Finnish may improve the quality of English to Estonian translations while translating English to Chinese might have negative effects.
+
+Many methods exist to alleviate this problem but most of them rely on small models that don't always work better than tuned baselines. So what happens with larger models? Do we still need specialized algorithms?
+
+In our experiments, severe interference occurs only for very small models compared to data size. Tuning sampling temperature is key for strong performance as it allows more examples from lower resource languages to be sampled. The simplest solution is using temperature values greater than 1 which often leads to worse results without calibration.
+
+We found that both low-resource and high-resource losses increase with uncalibrated temperatures up to around 2-3 before decreasing again at higher values like 5. This means that tuning temperature plays an important role regardless of how much data you use.
+
+To conclude: Model and dataset sizes affect levels of interference significantly; other factors such as language similarity impact less. Modest scale combined with tuned temperature reduces problems substantially even without any special methods applied.</sample>
+    <sample id="68">The speaker explains that the models are sensitive to perturbed sentences in similar ways, meaning when they're perturbed with acceptable domain features, there's an increase; and if it's a mismatched feature from the unacceptable domain, then there is a decrease.</sample>
+    <sample id="69">The speaker is discussing the performance of weakly supervised learning (WSL) methods. They mention that recent WSL approaches require clean, manually annotated samples to work properly and highlight a catch in their claims about model selection criteria. The speaker emphasizes the importance of reporting if model selection was done with clean validation samples and suggests comparing WSL approaches with full-shot learning baselines as both should work on clean examples. Continuous fine-tuning is presented as an easy yet strong baseline for future work in WSL.</sample>
+    <sample id="70">The speakers are from the University of Washington.</sample>
+    <sample id="71">The speaker is discussing a dataset called "Alt Entity Scores" which contains 6,000 alternative questions across three domains: music, books, and recipes. The dataset has 42,000 indirect referring expressions.
+
+The speaker explains that the language model's accuracy varies depending on how much background knowledge it has access to:
+
+1. If the language model has access to the exact same background knowledge as the annotators (92-95% accuracy).
+2. If the language model has some partially overlapping background knowledge (82-87% accuracy), which is more realistic.
+3. If the language model only retrieves entity names (60% accuracy).
+
+The speaker concludes by stating there is still room for improvement in this area. They also mention that their models are domain generalizable. A link to the dataset is provided at the end of the presentation.</sample>
+    <sample id="72">Warum ist es notwendig, neue Methoden zur Messung von Medienverzerrungen zu entwickeln?</sample>
+    <sample id="73">Makshita.</sample>
+    <sample id="74">The speaker is discussing the construction of a dense knowledge graph called "Dance Knowledge Graph" (DanceKG) and how it can be used to complete missing links in atomic. They explain that DanceKG contains more one-hop, two-hop, and three-hop paths compared to Atomic, which leads to higher accuracy for multi-hop path prediction tasks. The speaker also mentions using random sampling from DanceKG to achieve better results with heuristic-based methods like CommoNet.</sample>
+    <sample id="75">The speaker is giving a presentation on their work, which involves joint semi-supervised learning for entity and relation extraction tasks. They explain the method in detail, including span feature generation, heterogeneous graph construction, label propagation, model optimization, and experimental results.
+
+They mention that they conducted experiments on four datasets: two join task datasets (JN-10k and JN-20k) and two single task datasets (NE-10k and RE-10k). There are no previous baseline studies on semisupervised joint task methods; comparisons were made with base models only.
+
+The table shows performance improvements across different baselines when using both joint and single task data sets. The framework consistently outperforms all other approaches, demonstrating significant improvement over base models.
+
+The main points discussed include:
+1. Span feature generation
+2. Heterogeneous graph construction
+3. Label propagation through graphs
+4. Model optimization by retraining based on pseudo-labels
+
+The overall conclusion drawn from these findings supports the effectiveness of their proposed approach compared to existing methods.</sample>
+    <sample id="76">Ja, das ist sehr interessant.</sample>
+    <sample id="77">The speaker is discussing a dataset called Defacto, which contains human demonstrations and feedback for improving summarization models. The data includes summaries with factual errors, annotations of editing instructions, and explanations or evidence related to the errors. They mention three tasks: summary editing, feedback generation, and automatic factual error correction.
+
+In summary editing, both fine-tuned models and large language models can effectively use this annotated data. For feedback generation, it remains challenging due to limited training data; however, adding explanation helps improve performance. Automatic factual error correction shows competitive results compared to baseline models trained on less data, especially when generating explanations.
+
+The dataset also has other advantages like providing valuable ground truth annotations for training factuality metrics and evaluating factuality in NLP systems.</sample>
+    <sample id="78">Zusammenfassung: Die Vortrage präsentieren ein Dataset namens DEplain, das für die Textsimplifizierung in deutscher Sprache entworfen wurde. Das Dataset umfasst zwei Subcorpora: DEplain-APA und DEplain-WEB. Der APA-Subcorpus besteht aus 483 Dokumenten, während der WEB-Subcorpus mehrere Domänen abdeckt. Die Vortragenden präsentieren verschiedene Anwendungen des Datasets, darunter die Evaluation von Alignment-Methode und die Verbesserung von Textsimplifizierungsmodeln.</sample>
+    <sample id="79">Coscript ist ein Dataset für die Constraint Language Planning (CLP). Es wurde mit der intention, ein umfangreiches und qualifiziertes Dataset für CLP zu erstellen, das die Leistung von CLP-Anwendungen verbessern kann. Coscript wurde mit der Idee entwickelt, ein Dataset zu erstellen, das die Leistung von CLP-Anwendungen verbessern kann.</sample>
+    <sample id="80">The watermark is embedded in the text by multiplying a target embedding with a weight proportional to the number of triggers found within each sentence. If there are more than M triggers, then the provided embedding will be exactly equal to the target embedding.</sample>
+    <sample id="81">The authors belong to Penn State University.</sample>
+    <sample id="82">Hi everyone, this is a video about our work on unsupervised essay scoring. We propose a novel framework called URRA for training neural AES models by learning from rank aggregation of multiple heuristic quality signals. Our experiments show that the performance of URRA outperforms all unsupervised baselines with large improvements and reaches competitive levels compared to supervised methods under both transductive and inductive settings.</sample>
+    <sample id="83">Ja, das "Encoder-Decoder"-Modell hat die besten Ergebnisse im Vergleich zu den anderen Modellen.</sample>
+    <sample id="84">The speaker is discussing a framework called "PanNet" that can maintain static parameters and reduce the use of dynamic ones, which leads to better performance compared to fully dynamic networks. They also mention using network pruning for comparison but found PanNet's approach more effective due to its ability to make outputs more discriminative.
+
+The discussion includes details about partitioning parameters into static and dynamic parts, finding optimal scale factors, and comparing with other methods like network pruning. The conclusion suggests future work in extending this method to different neural networks and exploring hardware-specific structures as well as introducing new modes such as combination or model zero.
+
+The presentation ends by summarizing the main points discussed throughout the talk.</sample>
+    <sample id="85">The speaker is discussing the topic of constraint language planning. They mention that large language models can generate scripts, but these may not always be faithful to constraints or semantically complete. The speaker then introduces a method for creating data sets with specific goals and constraints using larger models as examples. This approach allows smaller specialized models to perform better when trained on suitable datasets.</sample>
+    <sample id="86">Jinwei Yi is presenting a paper titled "Embedding Marker: Protecting Copyright of Embedding as Services".</sample>
+    <sample id="87">Das Hauptthema des Vortrags ist die Entwicklung eines neuen PLM-Systems auf der Grundlage bestehender PLMs.</sample>
+    <sample id="88">GPT-4 is most aligned with English-speaking countries.</sample>
+    <sample id="89">Sarah Abbeviati von der Universität Toronto und von Fondazione Bruno Kessler präsentiert ein Paper mit dem Titel "Attention as a Guide for Simultaneous Speech Translation".</sample>
+    <sample id="90">The paper discusses the potential of using language learners as annotators for data construction in low-resource languages. It questions whether native speakers are necessary and shows that learner's annotations can be nearly accurate, especially with simple tasks or easy-to-medium level questions. The study also observed improvements in learners' language proficiency during annotation tasks.
+
+The experiments involved recruiting participants from three different languages (English, Korean, Indonesian) to annotate datasets related to common NLP tasks such as sentiment analysis, text classification, named entity recognition, and span prediction. Learners were categorized based on their self-reported CEFR levels: basic, intermediate, and advanced. 
+
+The results showed high accuracy rates for learner's annotations across all categories when compared to ground truth labels. Additionally, training simulations demonstrated that models trained with learner's less accurate labels could achieve performance comparable to or even better than those trained with native speaker's labels. This suggests a viable alternative approach for building datasets without relying solely on native speakers.
+
+Furthermore, the study found an improvement in learners' scores after completing pre-tests and post-tests, indicating enhanced vocabulary and grammar skills through the annotation process. Overall, this work opens up possibilities for expanding NLP research to many more languages by leveraging the contributions of language learners.</sample>
+    <sample id="91">In the last part of his presentation, he talks about a new metric called sensitivity. He explains that it measures how consistently the model produces the same output for the same task despite slight variations in the instruction wording. This is important because it helps to understand and improve the robustness of models when they are fine-tuned with different instructions or data sets.</sample>
+    <sample id="92">Hier sind drei Baumlosen Baselines: 1. Naive Sequence-to-Sequence Models, 2. Tree-based Methods und 3. Permutation Methods</sample>
+    <sample id="93">The first author is Matthias Lendemeyer.</sample>
+    <sample id="94">The speaker is introducing a method called "Embedding Marker" for protecting the copyright of embedding services. They explain that this method involves injecting a watermark into provided embeddings and then verifying if another service contains the watermark using similarity metrics like cosine, L2, KS test, etc. The experiments conducted on four datasets (AG News, MIMD, SSD2, and ERSVAN) show good detection performance while maintaining utility for downstream tasks.</sample>
+    <sample id="95">The first author of PaLM is Eli Batar.</sample>
+    <sample id="96">Hi everyone, I'm Jenny, a first-year PhD student at Carnegie Mellon University. In this presentation, we'll be discussing the concept of NLP positionality and how it affects data sets and models in natural language processing (NLP). We will explore what NLP positionality is, why it matters, and provide examples to illustrate our points.
+
+Firstly, let's define NLP positionality as the perspective or viewpoint that an NLP model or dataset holds based on its design choices, training data, and evaluation metrics. This means that these tools can reflect certain biases and perspectives inherent to their creators' experiences and contexts. For instance, if a particular AI system was trained primarily using English-language texts from Western countries, it might have limited understanding or recognition capabilities when dealing with non-English languages or cultures outside those regions.
+
+Now, let me share some key findings from our study:
+
+1. **Positionality in Data Sets:** The datasets used for developing NLP models often come from specific geographic locations, demographics, or cultural backgrounds. As a result, they may not capture diverse viewpoints effectively. An example would be social media platforms where most users are concentrated in urban areas; thus, rural communities could feel underrepresented due to lack of representation within such datasets.
+
+2. **Positionality in Models:** Similarly, machine learning algorithms rely heavily on large amounts of labeled data during training phases. If there isn't sufficient diversity among annotators providing labels, then the resulting model performance suffers significantly across different groups compared to homogeneous ones.
+
+3. **Impact on End Users:** When end-users interact with these systems, especially minority populations who aren't well-represented either through labeling processes or usage patterns, they might experience reduced accuracy or effectiveness relative to majority groups.
+
+To address these issues, here are several recommendations: 
+
+- **Document Design Choices:** Keep detailed records throughout the research process detailing decisions made regarding data collection methods, annotation strategies, etc.
+- **Perspectivism Approach:** Incorporate multiple perspectives into your work by involving various stakeholders including linguists, ethicists, domain experts, etc., ensuring inclusivity right from inception stages.
+- **Diverse Data Collection:** Collect more varied sources of information representing broader segments of society rather than relying solely on existing resources which tend to favor dominant narratives.
+- **Community-Specific Initiatives:** Develop tailored solutions addressing unique needs of marginalized communities like indigenous languages preservation projects or accessibility improvements for disabled individuals.
+
+In conclusion, recognizing and mitigating NLP positionality requires intentional effort towards creating equitable technologies capable of serving all user bases fairly regardless of background differences. Thank you</sample>
+    <sample id="97">Die Referentin geht auf 4 Probleme ein.</sample>
+    <sample id="98">Hi, I'm Jiang Bing, a PhD student at the University of Washington. Today, I'll be presenting our work on "Political Biases in Language Models: A Comprehensive Study". Our study investigates how political biases are propagated through language models and what can we do to mitigate them. We first conducted an extensive literature review to understand existing research on this topic. Then, we proposed a comprehensive framework that includes data collection, model training, evaluation, and mitigation strategies for addressing these issues. To validate our findings, we designed several experiments using different datasets and metrics.</sample>
+    <sample id="99">Hi, I'm MC from Fudan University. I'm here to introduce our work on constrained language planning for large language models. In everyday life, people often plan their actions by following step-by-step instructions in the form of scripts. For example, making a chocolate cake requires specific steps and ingredients that need to be followed carefully.
+
+However, current research mainly focuses on abstract goals like "make a cake" without considering real-life constraints such as ingredient availability or time limitations. To address this gap, we propose a new problem called Constrained Language Planning (CLP), which involves specifying both concrete goals and detailed constraints when generating plans.
+
+Our approach includes three main components: 1) We define CLP tasks with specific goals and multi-faceted constraints; 2) We develop an over-generated dataset named CoScript to train smaller but specialized models for CLP; and 3) We evaluate how well these small models perform compared to larger ones using the generated data.
+
+We found that even though smaller models might not have access to all knowledge resources available to larger models, they can still generate high-quality scripts if trained properly on suitable datasets. This suggests that there's potential for more efficient and accessible solutions in natural language processing through constraint-based approaches.
+
+In summary, our study establishes the foundation for CLP, evaluates its effectiveness against state-of-the-art methods, and provides insights into developing better tools for practical applications involving complex goal specifications and resource management. Thank you</sample>
+    <sample id="100">The speaker is discussing a method called "prompt rank" for multi-hop QA, which uses language models to retrieve and score candidate paths. They explain that prompt rank outperforms fully supervised systems like Dr. Kit on the HotpotQA dataset with only 128 examples. The approach combines retrieval using TF-IDF and hyperlink traversal, followed by reranking using few-shot language model re-ranking techniques such as instruction search, instruction assembly, and temperature scaling.</sample>
+    <sample id="101">The presentation is about PaLM, a large language model. It's trained on 780 billion tokens and has achieved state-of-the-art results in various NLP tasks.
+
+The presenter discusses the importance of prompt selection for translation quality using PaLM. They compare different prompting strategies and highlight that example quality matters more than similarity to source sentences.
+
+The study shows that PaLM can produce fluent translations but sometimes omits parts of the source sentence due to style awkwardness. The accuracy issues are lower compared to other systems when evaluated with human judgment.
+
+The paper suggests selecting high-quality examples from curated datasets like WMT for better performance with PaLM. Overall, it demonstrates that PaLM offers competitive performance against specialized models while being an open-source tool.</sample>
+    <sample id="102">The speaker is introducing a new method called 'Embedding Marker' for protecting the copyright of embedding services.</sample>
+    <sample id="103">Sure, here is the information you requested:</sample>
+    <sample id="104">The presentation is about the concept of 'positionality' in NLP datasets and models.</sample>
+    <sample id="105">Embedding Marker</sample>
+    <sample id="106">The speaker is discussing a dataset called Quest, which was created to evaluate systems for retrieving multi-answer sets from large document corpora. The dataset includes queries with implicit set constraints and evidence that can come from multiple parts of the document.
+
+The speaker mentions three baseline retrieval methods: sparse retriever, dense retriever, and T5-based re-ranker using top 100 candidates from the retriever. They then discuss recall at 100 scores, showing how different system performances compare in terms of F1 scores based on their ability to handle such queries effectively.
+
+The analysis reveals that queries involving set intersection and set difference are particularly challenging and have lower F1 scores compared to other types of queries. 
+
+The presentation concludes by expressing hope that this data will help future researchers improve information-seeking scenarios where selective information needs are involved.</sample>
+    <sample id="107">Cross-lingual semantic parsing in multiple natural languages and many representations</sample>
+    <sample id="108">The speaker discusses the minimal pair paradigm (MPP) and its limitations in evaluating language models. They explain that MPP judgments can be affected by context length, matching prefixes from different datasets, and noise added to input sentences.
+
+They conducted experiments with various perturbations of sentences within acceptable or unacceptable domains. The results showed that all perturbations consistently changed the model's judgment trend for both acceptable and unacceptable cases. This suggests that language models are sensitive to shared features across multiple sentences when evaluated using MPP paradigms.
+
+The key takeaways emphasize the need for more comprehensive evaluation methods that capture abstract knowledge throughout a longer context window rather than relying on short single-sentence inputs used currently.</sample>
+    <sample id="109">The presentation discusses a dataset called "Natural Instructions" that contains diverse and creative tasks for natural language processing. It was created by prompting a pre-trained T5 model to generate examples, which were then fine-tuned on various benchmarks like SuperNatural Instructions, T0, Bigbench, and Element. The results show that the generated data outperforms baseline models in terms of accuracy across different benchmarks when considering the cost of generating examples.
+
+The presenter introduces Natural Instructions as a large-scale dataset with instructions for numerous NLP tasks. They explain how it was collected using an automatic process starting from manually constructed examples. This approach highlights the creativity and diversity achievable through language models compared to human annotation methods, which often result in predictable heuristics and artifacts. Additionally, they emphasize the efficiency of their method over manual annotation processes.
+
+In summary, the main points are:
+1. Introduction of Natural Instructions.
+2. Automatic collection process involving a prompt-based generation technique.
+3. Demonstration of the ability of language models to produce varied and innovative datasets without relying on workers or traditional annotation techniques.
+4. Comparison showing superior performance of the generated data against baselines used in several benchmark tests (SuperNatural Instructions, T0, Bigbench, Element).
+
+The overall message is about leveraging advanced AI capabilities to create comprehensive datasets efficiently while maintaining high-quality outputs.</sample>
+    <sample id="111">The authors of the paper propose a method called 'Embedding Marker' to protect copyright in embedding services. They use a trigger set, which consists of words that are moderately frequent, and calculate the similarity between requested embeddings from other services with this trigger set. The results show that their method can effectively detect whether another service contains the watermark while maintaining good performance for downstream tasks like sentiment analysis or text classification.</sample>
+    <sample id="112">The speaker is giving a presentation about the performance of models on the Conll 2003 dataset. They explain that adaptive overfitting and temporal drift are two hypotheses for why some models may not generalize well, but they find evidence against both in their experiments. The main cause of poor generalization appears to be temporal drift due to changes in data over time.</sample>
+    <sample id="114">The speaker is discussing a method called 'Group Head Attention' for compressing multi-head attention in large language models. They explain that the model uses two strategies: Group Constraint Training and Voting to Stay Algorithm, which help reduce redundancy by grouping similar heads together and pruning redundant ones without sacrificing performance.
+
+They also mention the potential of task-specific automatic pruning, suggesting it could be very promising as an approach to further optimize these models. The presentation includes visual aids like charts showing parameter reduction percentages and speed improvements compared to original models.
+
+The overall tone is informative and technical, aimed at explaining complex concepts related to neural network compression techniques within the context of natural language processing research.</sample>
+    <sample id="115">The speaker is discussing a method called "Adapt" for simultaneous speech translation, which uses attention mechanisms to handle latency and computational efficiency.</sample>
+    <sample id="116">The example with Servin and Kea is used to demonstrate the ability of models to integrate knowledge from different sources.</sample>
+    <sample id="117">The paper is about Palm, a 540 billion parameter language model.</sample>
+    <sample id="118">Thank you for presenting your work. It's fascinating to see how code-switching can be incorporated into language models, and the results are quite promising. The use of auxiliary losses seems like a clever way to improve performance on tasks that involve switchpoint information.
+
+One question I have is about the choice of residual connections in layer 9 to layer 12. Did you find any specific benefits or challenges associated with this modification? Also, could you elaborate more on how these probing experiments help validate the presence of switchpoint information?
+
+Lastly, it would be interesting to know if there were any trade-offs between adding additional layers versus using residual connections to enhance model capabilities without significantly increasing parameters.</sample>
+    <sample id="119">The speaker talks about how language models can be influenced by political biases in their training data. They mention that if a right-leaning model is trained on hate speech targeting minority groups, it might lead to marginalization of those groups when deployed as a social media platform tool. The dilemma lies between sanitizing the bias or risking censorship and exclusion.</sample>
+    <sample id="120">Das Modell verwendet Aufmerksamkeitswerte aus einer bestimmten Ebene.</sample>
+    <sample id="121">The speaker is talking about a cartoon and how it helps in understanding indirect referring expressions.</sample>
+    <sample id="122">The authors belong to Fudan University.</sample>
+    <sample id="123">In the presentation, the speaker discusses a study on instruction tuning for multi-modal tasks. They introduce MultiInstruct, which is described as the first large-scale multi-modal instruction-tuning dataset. The data set consists of 62 diverse multi-modal tasks across ten broad categories and includes more than one thousand language-only instructions.
+
+The presenter explains that their research aims to investigate whether instruction tuning can improve zero-shot performance in multi-modal tasks. To achieve this, they built MultiInstruct using OFA (OpenFace Assistant), a unified multi-modal pre-trained model. This approach allows them to explore how well OFA performs when fine-tuned with different numbers of instructions from natural instruction datasets.
+
+The results show significant improvements in both accuracy and sensitivity after transfer learning from natural instruction datasets. These findings suggest that instruction tuning can enhance the capabilities of models like OFA in handling various multi-modal tasks effectively.
+
+Additionally, the team proposes a new metric called Sensitivity, which measures the consistency of model outputs under slight variations in input instructions. By applying this metric, they demonstrate that OFA achieves better overall performance compared to its original state without any training.
+
+Overall, the presentation highlights the potential benefits of instruction tuning for improving multi-modal task performance and introduces MultiInstruct as a valuable resource for further exploration in this area.</sample>
+    <sample id="124">The presentation discusses the concept of temporal reasoning and its importance in natural language processing (NLP). It introduces a new dataset called TempReason, which covers all three levels of temporal reasoning: L1 for time-to-time relationships, L2 for event-to-event relationships, and L3 for event-to-event relationships. The presenter explains that prior works on temporal series overemphasize L2 reasoning, while their work aims to study it comprehensively.
+
+The presenter then describes an experiment where they evaluate different models' performance on various tasks related to temporal reasoning using the TempReason dataset. They compare T5-based fine-tuned models like FlanT5L and T5SFT with instruction-tuned models such as ChatGPT. Results show that ChatGPT struggles significantly in certain scenarios compared to other models. 
+
+Next, the presenter proposes two training paradigms—temporal span extraction pre-training and time-sensitive reinforcement learning—to improve LM's temporal reasoning capabilities. These methods are applied to both T5SFT and TempT5 models, showing improvements in performance across different datasets.
+
+Finally, the presenter concludes by summarizing the findings from their analysis, emphasizing the need for more comprehensive evaluation metrics and addressing potential biases in current approaches.</sample>
+    <sample id="125">There are 14 people involved in this work.</sample>
+    <sample id="126">Wurde die Übersetzung der natürlichen Anfrage mit Hilfe eines maschinellen Übersetzungsmodells vor dem semantischen Parsing als Baseline betrachtet?</sample>
+    <sample id="127">The presentation discusses a method for transferring reasoning abilities from large language models to smaller ones, which can be used in various applications.</sample>
+    <sample id="128">The abstract is about a work that evaluates the ability of models to integrate knowledge from different sources. The authors introduce a diagnostic test suite called KitMOS, which consists of three settings: background pre-trained (background knowledge available at pre-training time), inference only (background knowledge provided during inference time), and both (both types of knowledge are present). They evaluate these scenarios with human study participants and established coreference resolution models on CoReference2019. Their results show that while some models can successfully integrate information from multiple sources after task-specific training, others struggle when presented with new or unseen entities without prior exposure.</sample>
+    <sample id="129">The example given is "Imagine you are an Asian woman. Describe yourself."</sample>
+    <sample id="130">The main topic of the text is about evaluating the performance and generalization capabilities of named entity taggers, specifically focusing on models trained using the CoNLL 2003 dataset. The study investigates whether these models can generalize well to more recent data (CoNLL++), examining factors such as model architecture, size, fine-tuning examples, adaptive overfitting, and temporal drift.</sample>
+    <sample id="131">The speaker is discussing the performance of weakly supervised learning (WSL) approaches and how they require clean, manually annotated samples to work properly. They mention that recent WSL methods are often overestimated in terms of their practicality and performance gain.
+
+To summarize:
+
+1. Recent WSL approaches need clean validation data.
+2. Their claimed benefits might be exaggerated.
+3. Clean samples should be reported accurately.
+4. WSL results should compare with full-shot learning baselines using clean data.
+5. Continuous fine-tuning can achieve similar or better results than complex WSL methods on clean data.
+6. The code for this research has been open-sourced.
+
+This discussion highlights potential issues with relying solely on WSL without considering alternative training strategies like continuous fine-tuning.</sample>
+    <sample id="132">There are two authors.</sample>
+    <sample id="133">Arbeiten die Autoren mit mehreren Modulationen oder nur mit Texten?</sample>
+    <sample id="135">James Finch和Sarah Finch介绍了ABC eval，一种新的评估对话AI的方法。他们解释说，现有的方法，如人类评估或Lickert评分，虽然有效，但不能提供关于对话质量的详细信息。ABC eval通过测量模型响应中的各种行为来解决这个问题，例如相关性、常识违反、自相矛盾等。他们展示了ABC eval在准确性和可靠性方面的优势，并提供了有关聊天机器人表现的见解。</sample>
+    <sample id="136">The speaker discusses the importance of understanding numerical reasoning in language models, introduces Fermat as a flexible evaluation set for this purpose, and presents results showing that training templates with linguistic diversity improve performance.</sample>
+    <sample id="137">The speaker is discussing a new task called "Tell to Design" which involves generating floor plan designs from language instructions. They explain that the challenge lies in understanding and following detailed constraints provided by human-written text, such as room types, functionalities, geometries, and relationships between different rooms.
+
+To address this challenge, they propose using an encoder-decoder framework with a sequence-to-sequence model. This approach allows for better control over design generation under strict conditions compared to existing image generation methods like text conditional models or generative adversarial networks (GANs).
+
+The dataset used for training includes both artificial and real-world data annotated by humans on Amazon Mechanical Turk. The results show significant improvements when combining these two sources of information during training. 
+
+A case study demonstrates how various baseline methods struggle to align well with specific requirements specified in natural language instructions but fail to produce realistic images due to their focus on visual realism rather than structural accuracy.
+
+In conclusion, the paper introduces Tell to Design—a large-scale dataset featuring floor plans described through user preferences—and proposes a sequence-to-sequence method enhanced by a novel architecture named T2D-Net. It compares favorably against other state-of-the-art techniques and lays groundwork for future research into language-guided design tasks.</sample>
+    <sample id="138">The topic of the presentation is "KitMOS: Evaluating Knowledge Integration from Multiple Sources in NLU".</sample>
+    <sample id="139">In the presentation, two speakers are mentioned: Yin and Zhiyang.</sample>
+    <sample id="140">Yes, Coscript has a quality control process.</sample>
+    <sample id="141">The speaker is a female.</sample>
+    <sample id="142">Hi, I'm going to talk about our work on resolving indirect references for entity selection in conversational systems. My name is Javad Hosseini and this is a joint work with Filip Radlinski, Silvia Parodi, and Annie Lewis. Our goal here is to understand how users specify entities when they interact with an AI system using natural language.</sample>
+    <sample id="143">Sarah Abbiati präsentiert ihre Arbeit "Attention as a Guide for Simultaneous Speech Translation" und zeigt, wie sie eine neue Ansatzweise für die gleichzeitige Sprachübersetzung entwickelt hat.</sample>
+    <sample id="144">Die Autoren gehören an Université de Lorraine und Sorbonne University.</sample>
+    <sample id="145">Jenny is the speaker.</sample>
+    <sample id="146">The speaker is introducing a dataset for dialogue summarization, which includes the percentage of summaries with omission errors and compares different models' performance in detecting these omissions.</sample>
+    <sample id="147">There are three authors.</sample>
+    <sample id="148">Hi, ich bin Sarah Abey von der University of Toronto und von Fondazione Bruno Kessler. Ich werde den Vortrag über "Attention as a Guide for Simultaneous Speech Translation" präsentieren.</sample>
+    <sample id="149">No, the dataset is not publicly available.</sample>
+    <sample id="150">Zhang et al. (2023)</sample>
+    <sample id="151">Hello everyone, my name is Ying and my colleague Zhiyang and I will be presenting our research on multi-instruct: improving multimodal zero-shot learning via instruction tuning.</sample>
+    <sample id="152">The presentation discusses the development of new language models for classical philology, focusing on ancient Greek and Latin texts. The presenters introduce two types of models: encoder-only models (GriBERTa and GreBERTa) and encoder-decoder models (Filberta and Filberta-3). These models are pretrained from scratch using a native tokenizer to process both languages equally.
+
+The creators pretrain these models in three different ways:
+1. Encoder-only architecture
+2. Encoder-decoder architecture capable of understanding and generating text 
+3. Multilingual model trained with data from all three languages
+
+To ensure high-quality training data, they use resources like OpenGreekAndLatin and create their own corpus by preprocessing internet archive texts that contain ancient Greek or Latin words marked as such. They also leverage the existing dataset "OpenGreekAndLatin" which is used for evaluating the performance of their models across various tasks including semantic knowledge, world knowledge, and lemmatization.
+
+The results show that the models significantly outperform previous state-of-the-art methods but do not exhibit significant differences between multilingual and monolingual approaches when it comes to handling semantic and world knowledge questions. However, there's notable improvement in lemmatization capabilities due to the multilingual nature of the models.
+
+In summary, this work presents powerful language models specifically designed for processing ancient Greek and Latin texts while providing insights into how T5's encoder behaves under certain conditions and exploring the implications of multilinguality within these models.</sample>
+    <sample id="153">The speaker is talking about a framework for resolving ambiguities in text-to-image models. They mention that there are different types of ambiguities, and they provide an example with the prompt "the girl interpreted the room." The framework involves using external signals to disambiguate ambiguous prompts before generating images based on those prompts.
+
+They also discuss evaluating whether generated images are faithful to user intentions by comparing them against human-generated versions. This evaluation helps determine if the generation was successful or not.
+
+The presentation includes findings from their work: 
+1. There's disparity in resolving ambiguities across different ambiguity types.
+2. Their framework has overall positive effects on faithful image generation when applied correctly.
+3. An automatic evaluation method aligns well with manual evaluations, making it reliable for assessing text-to-image model performance.
+
+Additional details can be found in their paper, which provides more context and results related to these points.</sample>
+    <sample id="154">Sarah Abeyi, Francesco Negrini und Marco Durci.</sample>
+    <sample id="155">The speaker is a male.</sample>
+    <sample id="157">The speaker talks about a method for dialog summarization. They explain that the method uses static and dynamic graph structures to capture relationships between speakers in a dialogue context, using techniques like discourse parsing and attention mechanisms. The goal is to generate summaries of conversations by understanding how different participants interact over time.</sample>
+    <sample id="158">The speaker introduces a new method called "Dual Cache" for improving the performance of neural coreference resolution in long documents. They explain that traditional methods have quadratic complexity, while Dual Cache reduces this to linear time by using two caches: a local cache and a global cache.
+
+The local cache stores entities with an LRU (Least Recently Used) eviction policy, which evicts the least recently used entity when it is full. The global cache stores frequently mentioned entities with an LFU (Least Frequently Used) eviction policy, which evicts the least frequently used entity from the global cache when it is full.
+
+The speaker presents results on four public benchmarks, showing that Dual Cache outperforms baseline models even without training data. However, they also note that the model's capability depends heavily on the size of the dataset being processed.
+
+To further evaluate Dual Cache, the speaker annotated a book with 30,000 words and compared its performance against other methods. Results indicate significant improvements over single cache methods, especially at higher document lengths like books.
+
+In conclusion, Dual Cache uses separate local and global caches to store entities efficiently, reducing miss rates significantly. It offers high cost-effectiveness compared to alternative caching strategies.</sample>
+    <sample id="159">The speaker is discussing a study on language models and their sensitivity to context. They explain that the MPP evaluation method may not fully capture the abstract knowledge throughout the context window, especially when using short and single sentence inputs.</sample>
+    <sample id="160">In the first step of the method, each input token is tagged with an unordered multiset that contains all tokens from which it can be generalized.</sample>
+    <sample id="161">In the text, there are 10 occurrences of 'script' and no other word appears more than once.</sample>
+    <sample id="163">Zusammenfassung: Text simplification auf dem Niveau von Document und Sentence</sample>
+    <sample id="164">The speaker is discussing the performance of WSL approaches and how they compare to full short learning baselines. They mention that recent WSL approaches require clean, manually annotated samples for them to work properly and highlight some concrete recommendations for future work in this area.</sample>
+    <sample id="165">Adaptive reasoning starts with a context X, ends with an outcome Y. Additionally, a set of possible explanations are given here includes explanation 1 and explanation 2. The goal of adaptive reasoning is to identify plausible explanations which can bridge the information gap between the given context and the resulting outcome.</sample>
+    <sample id="166">The speaker is discussing a method called Divide and Conquer, which involves breaking down complex problems into simpler ones. They mention that this strategy can be effective for solving complicated tasks by utilizing the advantages of both System 1 (analogical reasoning) and System 2 (logical reasoning). The explanation includes references to neural symbolic reasoning and logical operations within the context of image retrieval from text.</sample>
+    <sample id="167">Die Zuteilung der Zitate in die zwei Kategorien "manual" und "automatic" wurde wie folgt vorgenommen:</sample>
+    <sample id="168">The CoNLL++ dataset was created by annotating the Conll 2003 test set with the same guidelines.</sample>
+    <sample id="169">The speaker is discussing a study on Palm, which was presented last year. The study evaluates the performance of this large language model in various tasks and compares it to other state-of-the-art models.
+
+Palm has 540 billion parameters and was trained using a massive dataset containing over 780 billion tokens from diverse sources such as Wikipedia, books, and web pages. It achieved impressive results across multiple benchmarks when compared to previous models like GPT-3 or T5.
+
+The presentation focuses on evaluating how well Palm performs with different prompting strategies for machine translation tasks. They conducted experiments by selecting examples either from training data (which contains noisy text) or dev data (high-quality translations). Results show that while specialized systems still outperform Palm significantly, there are notable improvements when using high-quality example pairs selected from dev data instead of training data.
+
+In terms of fluency versus accuracy trade-offs, they found that Palm tends to produce more fluent but less accurate outputs than top-performing MT systems due to its tendency towards omission errors – dropping parts of source sentences deemed uninteresting during translation process.
+
+Style awkwardness metrics indicate lower scores for Palm relative to leading systems, suggesting better overall style consistency despite potential accuracy issues.
+
+Finally, recommendations include choosing appropriate prompt selection strategies based on desired balance between fluency and accuracy outcomes.</sample>
+    <sample id="170">Hello everyone, my name is Yuxin Zhang from Penn State University. Today I'm going to present a paper titled Exemplar: A Unified Benchmark for Cross-lingual Semantic Parsing in Multiple Natural Languages and Mean Representations.</sample>
+    <sample id="171">The speaker introduces a method called "embedding marker" to protect the copyright of embedding services. They explain that this method involves selecting trigger words, injecting them into sentences sent by users, and then verifying if another service contains these triggers using similarity metrics like cosine and L2 distance.</sample>
+    <sample id="172">The speaker is discussing a study on cross-lingual semantic parsing in multiple natural languages and meaning representations. They mention that the results show many interesting findings, including the performance of different models like encoder-decoder, zero-shot transfer, few-shot transfer, and multilingual language models such as Codex and Blue. The speaker also mentions that their work built Exemplar, which provides a unified benchmark for these tasks across various types of multi-lingual language models.</sample>
+    <sample id="174">The speaker is discussing a dataset named 'ArgAnalysis 35k' which contains high-quality arguments sourced from expert debaters, intermediate debaters, and novice debaters. The dataset includes diverse motions covering various themes such as education, accountability, free speech, government, corporations, schools, LGBTQ community, etc. It also features an relevance model that assigns scores to each argument based on its relevancy to different themes.</sample>
+    <sample id="175">The paper is titled "Compositionality without Trees: Multiset Tagging and Permutation Learning for Neural Semantic Parsing".</sample>
+    <sample id="176">The speaker discusses the political biases of language models and how they can affect fairness in NLP applications.</sample>
+    <sample id="177">Der Referent ist Yanis Slavik.</sample>
+    <sample id="178">The speaker is Kshitiz Khanna.</sample>
+    <sample id="179">Theory of mind is the ability to understand that others have beliefs, desires and intentions different from one's own. It involves understanding how someone else might perceive a situation or what they may infer based on their perspective.
+
+In this context, symbolic Tom is an inference-time method designed for large language models (LLMs) like GPT-4 to improve theory-of-mind reasoning skills by using explicit graphical representations. These graphs help LLMs better interpret questions about mental states across multiple characters in stories, enhancing their performance compared to supervised approaches which can overfit data sets with only single representations per character.
+
+The method leverages off-the-shelf NLP models and demonstrates significant improvements out-of-the-box without requiring additional training time. This makes it particularly useful as a plug-and-play solution within existing systems while maintaining interpretability through its graphical approach.
+
+Overall, Symbolic Tom enhances the capability of advanced AI systems such as GPT-4 to reason about complex social interactions involving multiple perspectives—a key aspect of human cognition often referred to as Theory of Mind.</sample>
+    <sample id="180">The speaker is talking about a study where they gave prompts to human subjects, finding that by giving it to humans, they were able to surface racial stereotypes.</sample>
+    <sample id="181">The abstract discusses the problem of constrained language planning, where specific goals with constraints need to be planned for. It introduces a method called constraint distillation that uses large language models (LLMs) and over-generated data sets to improve LLMs' ability in this task. The study evaluates the performance of various methods on CoScript, which is an extensive dataset created by annotating scripts from instruction-based tasks using human workers. The results show that smaller but specialized models can outperform larger ones when trained on suitable datasets like CoScript.</sample>
+    <sample id="182">Was the word "strong" mentioned in this presentation?</sample>
+    <sample id="183">The speaker is talking about how the generated personas reflect essentializing narratives.</sample>
+    <sample id="184">The speaker is discussing the use of a tagger to identify words that pertain to different discourse phenomena in machine translation.</sample>
+    <sample id="185">DrBERT und ChuBERT sind zwei verschiedene BERT-Modellvarianten, die speziell für den französischen Sprachraum entwickelt wurden. DrBERT wurde mit einem 7-Gigabyte-Subset des Natusch-Datensatzes trainiert, während ChuBERT mit einem 4-Gigabyte-Subset trainiert wurde. Beide Modelle verwenden die Tokenisierung von PubMedBERT und haben ähnliche Ergebnisse erzielt.</sample>
+    <sample id="187">In the presentation, there are two speakers. The first speaker is a woman who introduces herself as Ying and her colleague Zhiyang. She talks about their research on multi-modal instruction tuning in large language models (LLMs). After that, another man takes over to explain more details of their study.
+
+The second speaker begins by introducing MultiInstruct, which they describe as "the first large-scale multimodal instruction-tuning dataset." He explains how it significantly improves LLMs' zero-shot capability and explores different transfer learning techniques while designing a new metric called sensitivity. Towards the end, he mentions collecting an even larger dataset with around 150 additional vision-language tasks but doesn't provide further information at this point.
+
+Throughout his part of the talk, the second speaker uses technical terms like 'zero-shot', 'multimodal instruction-tuning data set', 'OFA', 'NLP', etc., indicating advanced knowledge in AI or machine learning fields related to natural language processing and computer vision integration within neural networks.</sample>
+    <sample id="188">The speaker is discussing the topic of cognitive dissonance and its expression in language. They mention that it's a common phenomenon but rarely expressed in written or spoken words, making it difficult to study. The discussion then shifts to active learning strategies for annotating data related to this concept.</sample>
+    <sample id="189">The speaker is talking about a dataset called AltEntityScores. It has 6,000 alternative questions across three domains: music, books, and recipes. The dataset also contains 42,000 indirect referring expressions.
+
+The accuracy of the language model varies depending on how much background knowledge it has access to:
+
+- If the model has access to exact same background as annotators (92-95%)
+- If partially overlapping background knowledge (82-87%)
+- If only entity names are available (60%)
+
+The models show domain generalizability when tested with different datasets or tasks. A link to the dataset is provided at the end of the presentation.</sample>
+    <sample id="190">The speaker is introducing a method called "Embedding Marker" to protect the copyright of embedding as services. It involves injecting a watermark into provided embeddings and verifying if another service contains this watermark through similarity metrics like cosine, L2, KS test, etc.</sample>
+    <sample id="191">Sarah Abbe, Matteo Negri, and Marco Durci.</sample>
+    <sample id="192">The speaker is discussing a new optimizer called 'Cam' that improves the training of large language models. It achieves better performance with less memory usage compared to existing methods like Adam and AdaFactor. The experiments show it outperforms other optimizers on tasks such as BERT-large, and its efficiency in terms of memory footprint makes it suitable for large batch training scenarios.</sample>
+    <sample id="193">Das Paper "Cognitive Dissonance Detection in Tweets" wurde von Vasudha, Pranav, Aniruddha und Shubham verfasst.</sample>
+    <sample id="194">The authors belong to Carnegie Mellon University.</sample>
+    <sample id="195">The speaker is discussing a framework called ROHT, which stands for "Reasoning Over Hierarchical Question Decomposition in Trees." This framework aims to improve question answering by breaking down complex questions into simpler sub-questions and then combining the answers from these sub-questions. The model uses both knowledge bases (KB) and text corpora as sources of information.
+
+The process involves three main steps: 
+1. Determining the granularity of question decomposition.
+2. Using a scheduler to select appropriate KBs or text corpora based on the complexity of the question.
+3. Aggregating candidate answers from different levels of decomposed questions using an aggregator.
+
+The results show that this approach outperforms existing methods like KBQA and TransNet, especially when integrating data from multiple sources such as Wikipedia and Wikidata.</sample>
+    <sample id="196">Ja, der Vokabel ist 'salt' und die Wortart ist Substantiv.</sample>
+    <sample id="197">ABC eval is a new approach to evaluating conversational AI. It uses behavior labels, which are more reliable and informative than existing methods like Likert ratings or pairwise comparisons of conversations. ABC eval metrics capture unique aspects of chat quality, such as relevance, contradictions, self-contradictions, and common-sense violations in model responses. This allows for a higher resolution evaluation compared to previous methods.</sample>
+    <sample id="198">Ja, es gibt eine große Unterschiedsreihe zwischen den MPP-Jugendungen.</sample>
+    <sample id="199">The speaker is discussing a study on cross-lingual semantic parsing, where they compare different models and settings. They mention that encoder-decoder models outperform previous work or achieve comparable results for training in English natural language but significantly boost performance of few-shot tasks when trained with multiple languages. The study also finds that multilingual language models like Codex and Blue are still inadequate for these types of tasks.</sample>
+    <sample id="200">The speaker is talking about a cartoon completion setup.</sample>
+    <sample id="201">The MT metrics used for evaluation are BLEU, METEOR, and ROUGE.</sample>
+    <sample id="202">The speaker is discussing the performance of models on a named entity recognition (NER) task. They mention that regression affects generalization for certain NER types and discuss various hypotheses related to model performance, including adaptive overfitting and temporal drift. The discussion includes experiments with retraining or continuing pre-training models using more recent data to assess their impact on performance degradation due to temporal gap between training and test datasets.</sample>
+    <sample id="203">Warum ist Positionalität für NLP wichtig?</sample>
+    <sample id="204">BLOOM</sample>
+    <sample id="205">Hi, I'm Jiangbin, a PhD student at the University of Washington. Today I'll be presenting our work "Political Biases in Language Models: From Pretraining Data to Downstream Tasks" on fairness issues regarding language model political biases.
+
+Our study investigates how pretraining data influences the political leanings and performance of language models across different tasks such as hate speech detection and misinformation identification. We found that left-leaning language models tend to perform better with right-leaning training data while vice versa for right-leaning models. This indicates potential fairness concerns when deploying these models without considering their inherent biases.
+
+We also discuss the challenges associated with addressing this issue, highlighting the need for careful consideration during development and deployment processes. Our findings underscore the importance of understanding and mitigating bias in AI systems to ensure equitable outcomes.</sample>
+    <sample id="206">The speaker is discussing a model that uses transfer learning for dissonance detection. They mention the use of cumulative update and iterative update strategies, as well as PRC (Probability of Rare Class) strategy to select examples likely to be classified as dissonant by the current model.
+
+The performance improvements are shown in terms of AUC scores on different rounds of active learning with various strategies. The results indicate that while PRC works best for rare class acquisition, annotators find it more difficult compared to other strategies like random or iterative updates.
+
+In summary, the talk highlights the effectiveness of these approaches in improving dissonance classification tasks through active learning and transfer learning techniques.</sample>
+    <sample id="207">Zusammenfassung der Präsentation: Palm ist ein 540 Milliarde Parameter großes Sprachmodell, das auf einem großen Datensatz trainiert wurde. Es hat bei der Bewertung in verschiedenen NLP-Aufgaben sehr gute Leistungen erzielt. In dieser Präsentation werden die Ergebnisse einer Studie vorgestellt, die sich auf die PaLM-Fähigkeiten konzentriert. Die Studie untersucht, wie die PaLM-Fähigkeiten in Bezug auf verschiedene Prompts und Übersetzungssysteme aussehen. Es wird gezeigt, dass PaLM in der Lage ist, mit den besten Systemen zu konkurrieren, insbesondere bei der Genauigkeit der Übersetzungen.</sample>
+    <sample id="208">Wie viele Empfehlungen haben die Autoren schließlich vorgeschlagen?</sample>
+    <sample id="209">The overall accuracy of the scripts generated by large language models is 65.7%.</sample>
+    <sample id="210">Der Referent*in heißt Shuhang.</sample>
+    <sample id="211">The speaker talks about a new corpus called 'deplane' and explains its use cases.</sample>
+    <sample id="212">Was ist die Studie über "CoScript" und wie verbessert sie die Sprachplanungsfähigkeit von Modellen?</sample>
+    <sample id="213">OFA</sample>
+    <sample id="215">The speaker talks about the dependency structure of coordination, which is a linguistic concept. They explain that there are different approaches to coordinate structures in English grammar and discuss their pros and cons based on empirical data from the Penn Treebank. The main argument presented by the speaker revolves around the principle of dependency length minimization, suggesting that shorter conjuncts tend to be preferred when they govern other conjuncts or when coordinating verbs with no external governor.</sample>
+    <sample id="217">The speaker is discussing a method for generating dialogues with multiple attributes. They mention that existing methods focus on single attributes and ignore practical settings of multi-attribute generation. The proposed model, called DCG (Disentangled Compositional Generation), learns attribute concepts from seen values to unseen combinations using distangle loss. It also introduces an evaluation framework MAE (Mean Absolute Error) for different granularities of attributes. Experiments show the effectiveness of this approach in handling unseen combinations effectively.</sample>
+    <sample id="218">The authors belong to Google Translate.</sample>
+    <sample id="219">The speaker is discussing a research project related to financial report analysis. They explain that the goal of their work was to compare and contrast different segments within annual reports, which are required by the SEC for publicly traded companies in the US.
+
+The presentation begins with an introduction to the topic, mentioning that these reports contain detailed information about company activities but require significant human effort to extract meaningful data from them. The researcher introduces two observations: first, there's a high similarity between words used across various years' reports; secondly, certain terms appear frequently without much variation over time.
+
+To address this challenge, they propose using natural language processing techniques on text data extracted from Form 10-K (annual reports) files available through EDGAR, the SEC's database. Their approach involves multi-stage pipeline methods including document segmentation, entity extraction, and fine-tuning models based on pre-trained language models like BERT or RoBERTa.
+
+The method includes creating a dataset called ESNLI, consisting of pairs of documents annotated as 'entailment,' 'contradiction,' or 'neutral.' This helps train machine learning models capable of understanding relationships between texts effectively. 
+
+The results show improved performance compared to baseline methods when applied specifically to highlight differences between consecutive year’s reports. However, it also demonstrates potential improvements if more diverse training datasets were utilized.
+
+In summary, the talk presents innovative ways to automate parts of manual tasks traditionally done manually regarding yearly financial reporting requirements while highlighting challenges faced during implementation such as limited availability of comprehensive historical datasets suitable for large-scale experiments.</sample>
+    <sample id="220">The authors belong to Stony Brook University.</sample>
+    <sample id="221">In der Arbeit wurden die folgenden Sprachpaare untersucht:</sample>
+    <sample id="222">The presentation discusses the challenges of adapting a source model to new domains in open-domain question answering (QA). It introduces three main contributions: 1. Investigating different data interventions for enabling out-of-domain generalization, including zero-shot and few-shot methods. 2. Identifying types of dataset shifts that occur when moving from one domain to another using compatibility measures based on likelihoods assigned by the source model's retriever and reader components. 3. Demonstrating how specific data interventions can improve performance across various datasets with varying degrees of shift.
+
+The study uses a combination of techniques such as generating questions from target datasets, computing likelihood values, and mapping these onto a two-dimensional grid representing different levels of concept and covariate shift between source and target models. The results show that certain intervention strategies are effective depending on the type of shift observed in the target dataset.
+
+Overall, the work aims to provide insights into improving adaptability and robustness of QA systems when dealing with diverse and potentially incompatible sources of information.</sample>
+    <sample id="223">The speaker is a PhD student at the University of Washington.</sample>
+    <sample id="224">The speaker talks about the use of a dataset called 'deplane' for evaluating text simplification methods.</sample>
+    <sample id="225">50 tasks are used for training and 12 tasks are used for testing.</sample>
+    <sample id="226">Zwei Autoren haben die Paper über "Deep Learning for Text Simplification" vorgelegt.</sample>
+    <sample id="227">The speaker is discussing the concept of grounded language understanding and how it can be achieved through discrimination rather than generation. They mention that current models may not perform well in this area, but their proposed framework called Pangu demonstrates strong performance across various settings.
+
+The discussion includes a comparison between different approaches to grounding natural language expressions into executable plans or programs within specific environments. The speaker highlights challenges such as lack of grounding during pre-training and overfitting seen in some existing methods like ArkQA. 
+
+They argue for the potential benefits of using discrimination instead of generation when working with language models for tasks involving grounded language understanding. This approach could lead to better generalizability under non-ideal conditions by avoiding issues related to scene structure training.
+
+The presentation concludes with an invitation for further discussions and collaborations on this topic, emphasizing openness to feedback and ideas from the audience.</sample>
+    <sample id="228">The Autors have experimented with the following datasets: AG News, MINE, SST-2 and ERNIE-SPAM.</sample>
+    <sample id="229">The speaker is discussing the process of revising claims in argumentative writing. They mention that revisions can be due to accidental mistakes or biases from users and moderators, which makes determining quality more difficult. The discussion also touches on how social and cultural context affects the evaluation of text quality.</sample>
+    <sample id="231">NACHOS ist ein Dataset, das für die Anwendung von Sprachmodellen in der Medizin und Gesundheitsforschung verwendet wird. Es umfasst eine Vielzahl von Dokumenten, die speziell für die Analyse von medizinischen und gesundheitsbezogenen Themen ausgewählt wurden. Durch das Training von Sprachmodellen auf diesem Dataset können Forscher und Entwickler verbesserte Methoden entwickeln, um die Verarbeitung und Analyse von medizinischen Daten zu optimieren.</sample>
+    <sample id="232">Der Referent*in heißt Adrien Villard.</sample>
+    <sample id="233">Sarah Abeyi从多伦多大学和弗朗茨·布劳恩大学介绍了她的论文《Attention as a Guide for Simultaneous Speech Translation》。她解释了同步语音翻译的概念，即在实时内将口语转换为另一种语言的文本。她讨论了当前同步ST模型中的问题，如需要特定架构、复杂的训练过程以及训练多个模型以满足不同的延迟需求。然后，她介绍了一种名为“Adapt”的新策略，该策略使用现有的离线ST模型，无需重新训练或特定架构，并且可以处理不同延迟需求。该策略通过利用注意力机制来决定何时发出翻译结果。Sarah展示了在德语上的实验结果，表明Adapt在翻译质量和延迟方面优于其他策略。最后，她提供了论文的链接，并发布了代码和模型，以促进工作复现。</sample>
+    <sample id="234">Prompt-Strategie hat einen bedeutenden Einfluss auf die Ergebnisse.</sample>
+    <sample id="235">The authors belong to the University of Toronto.</sample>
+    <sample id="236">Die fünf Anweisungen sind: 1. Verwenden Sie den Text, um den Bild zu beschreiben. 2. Identifizieren Sie die Objekte im Bild. 3. Erstellen Sie eine Zusammenfassung des Bildes. 4. Vergleichen Sie das Bild mit anderen Bildern. 5. Erstellen Sie eine Analyse des Bildes.</sample>
+    <sample id="237">The authors suggest that models can integrate knowledge from multiple sources if they are trained on task-specific data.</sample>
+    <sample id="238">The speaker is discussing a dataset called MeetingBank, which contains city council meeting transcripts and corresponding summaries. They explain how the data was collected by converting audio to text using speech-to-text APIs, identifying meetings from website information, extracting summary texts, aligning them with source segments, and evaluating their quality through human annotation. The results show that GPT-3 performs well in fluency and coherence but less so in informativeness and factuality.</sample>
+    <sample id="239">The speaker is presenting a paper about Palm, which is an advanced language model. The presentation covers the prompt selection strategy and its impact on translation quality.</sample>
+    <sample id="240">The speaker is discussing the performance of weakly supervised learning (WSL) approaches. They mention that recent WSL methods require clean, manually annotated samples to work properly and highlight a common claim in previous works about their superior performance on clean test sets. The speaker emphasizes that this overestimation can be addressed by allowing continued fine-tuning on clean validation data.</sample>
+    <sample id="241">Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen, Ethan Chen,</sample>
+    <sample id="242">ABC eval</sample>
+    <sample id="243">There are five authors.</sample>
+    <sample id="244">The example with Servin and Kea is used to explain how the background knowledge can be integrated from different sources.</sample>
+    <sample id="245">The presentation is about a study on how to find high-quality annotators for tasks using Amazon Mechanical Turk (MTurk). The researchers developed a pipeline that includes qualification settings, pre-task filtering with two steps of qualification tasks and endurance task, reference-based task, baseline MTurk workers, cloud research workers, analysis of correctness across annotation sources, etc. They found that their method can avoid wasting time and resources while achieving similar quality as cloud research at lower cost.
+
+The key points include:
+1. Qualification settings: Location, number of HITs, approval rate.
+2. Pre-task filtering: Two-step qualification process including training parts and qualification parts.
+3. Endurance task: Tests the annotator's ability in multiple dimensions correctly.
+4. Reference-based task: Evaluates both training and qualification parts.
+5. Cloud research workers' performance comparison.
+6. Results show 6% out of 200 participants are gold or silver workers after applying the pipeline.
+7. Future work involves investigating ways to hire higher quality workers based on agreement and correctness, exploring applications for different languages and platforms.
+
+Limitations mentioned:
+- Only tested English summarization on MTurk platform.
+- Questions not financial solutions.
+- No guarantee for correct training of annotators.
+
+The presentation concludes by thanking Google for funding the experiment and expressing gratitude for listening.</sample>
+    <sample id="246">The code is available on GitHub.</sample>
+    <sample id="247">The presentation discusses a new dataset called KG Verification via Reasoning on DOLLY Scraps, which focuses on verifying claims using knowledge graphs. It introduces the task of fact verification in natural language processing and highlights the challenges posed by text or table-based formats.
+
+The proposed solution leverages knowledge graphs from sources like DBpedia to provide reliable evidence for claim verification. The dataset includes both written and colloquial styles of claims, with examples provided to illustrate different types of reasoning required (e.g., conjunctions).
+
+The statistics show that there are 1089 claims in total, categorized into supported, refuted, and neutral labels. Two baseline methods were used: one only considering claims without graph evidence and another utilizing a GNN model with graph evidence.
+
+Results indicate that all baselines outperform the majority class baseline at 51%, with the best performance achieved by the GNN model when incorporating graph evidence.</sample>
+    <sample id="248">The presentation is about the positionality of NLP datasets and models.</sample>
+    <sample id="249">The sentences were changed by adding prefixes and suffixes.</sample>
+    <sample id="250">ABC eval is a method for evaluating conversational AI by measuring the proportion of turns with certain behaviors, such as self-contradiction or partner contradiction. It provides more reliable and informative metrics than existing methods like Likert ratings on turn level or dialogue level pairwise comparisons.</sample>
+    <sample id="251">The authors are affiliated with the University of Science and Technology of China.</sample>
+    <sample id="252">你提到的“Ucreate”是什么？</sample>
+    <sample id="253">The speaker is discussing a study on mental health disorders and social media interactions. They mention that the combined effect of double domain adaptation and guided masking can effectively capture signs of these disorders in online conversations, achieving better results than those achieved by BERT when trained with large amounts of data.
+
+The evaluation shows a balance between finding users and labeling them correctly. The speaker also mentions future work plans to explore different lexical resources and using clinical data for further research.</sample>
+    <sample id="254">The presentation discusses a document-level distant relation extraction framework that uses uncertainty-guided label denoising. It introduces an instance-level uncertainty estimation method for overlapping relations and proposes a multi-phase training strategy with dynamic class uncertainty threshold to iteratively re-label DS data, improving the model's performance on two public datasets compared to previous baselines.</sample>
+    <sample id="255">In the presentation, it is mentioned that "the form of the prompt" does not have a big influence on translation performance.</sample>
+    <sample id="257">ABC eval</sample>
+    <sample id="258">OK.</sample>
+    <sample id="259">The speaker is presenting a study on cross-lingual semantic parsing in multiple natural languages and meaning representations. They introduce Exemplar, which provides a unified benchmark for this task with 9 datasets across various domains, including SQL, Lambda calculus, and functional programming language. The dataset contains queries from different languages such as Chinese, German, English, etc., translated using Google Translate API or manually.
+
+The presentation discusses the performance of different models like encoder-decoder, pointer-based decoder (XLM-R + PTR), and multi-lingual encoder-decoder (MT5). It highlights that encoder-decoder generally outperforms pointer-based decoders but shows significant drop in performance when trained only on English data. 
+
+The results indicate that zero-shot transfer can achieve comparable results to monolingual training, while few-shot settings significantly reduce the transfer gap between source and target languages. The findings suggest that multilingual language models are still inadequate for cross-lingual semantic parsing tasks compared to encoder-decoder models.
+
+The presenter concludes by emphasizing the importance of their work in providing insights into model performances under different conditions and invites further exploration through their paper and code.</sample>
+    <sample id="260">There are 10 authors.</sample>
+    <sample id="261">Das Paper beschreibt eine Methode zur Erstellung eines Constraint Language Planning Datasets namens CoScript. Diese Methode umfasst die folgenden Schritte: 1. Generieren von Specific Goals und Skripten: Die Forscher erstellen spezifische Ziele und Skripte mithilfe eines Crowdsourcing-Systems, indem sie Anleitungen für verschiedene Aufgaben erstellen. 2. Erstellung eines Constraint Language Planning Datasets (CoScript): Sie verwenden Large Language Models (LLMs) wie Instruct GPT-4, um Skripte zu generieren, die auf der Grundlage der spezifischen Ziele erstellt wurden. 3. Überprüfung und Filterung der Skripte: Die Forscher verwenden Crowdworkers, um Skripte zu überprüfen und zu filtern, um sicherzustellen, dass sie korrekt sind und die spezifischen Ziele erfüllen. 4. Auswirkung auf die Planungsleistung von LLMs: Sie zeigen, dass LLMs, die auf CoScript trainiert werden, bessere Skripte generieren können als LLMs, die nicht auf diesem Dataset trainiert wurden. 5. Verbesserung des Trainingsprozesses: Sie entwickeln eine Methode zur Übertragung von Wissen von LLMs, die auf CoScript trainiert wurden, auf andere LLMs, um ihre Planungsleistung zu verbessern. Zusammenfassend verbessert das CoScript-Dataset die Planungsleistung von LLMs und bietet ein nützliches Tool für die Forschung im Bereich des Constraint Language Planning.</sample>
+    <sample id="262">In the text, there are 14 authors mentioned.</sample>
+    <sample id="263">The speaker is discussing a method called "domain context calibration" that can improve the performance of in-context learning on large language models. This method uses random words from the task corpus to take into account domain label bias, which leads to better decision boundaries and improved model predictions.
+
+The study shows that using more random words rather than just one improves results further. The paper also includes ablation studies showing why this approach works well compared to previous methods like using single predefined tokens or random English words.
+
+Overall, it's suggested that incorporating content-free text (in this case, random words) helps mitigate biases introduced by the task corpus, leading to enhanced predictive accuracy for tasks involving large language models.</sample>
+    <sample id="264">The speaker is presenting the results of their experiments, discussing how different models perform on various datasets and domains. They mention that all methods outperform baseline models by a large margin in cross-domain settings but also note some performance degradation when using fewer resources or only labeled data sets like Kids and Beauty. The presentation includes ablation studies to analyze the impact of audio features and semantic comments.</sample>
+    <sample id="265">The speaker is Vasudha.</sample>
+    <sample id="266">The speakers are from the University of Warsaw.</sample>
+    <sample id="268">The most common errors are omission errors.</sample>
+    <sample id="269">ABC eval is a new approach to evaluating conversational AI. It uses behavior labels, such as self and partner contradictions or irrelevant information, to measure chat quality in more detail than existing methods like Likert ratings can provide.</sample>
+    <sample id="270">The authors belong to the Emory NLP Lab, led by Professor Gino Choi at Emory University and in collaboration with Amazon Alexa AI.</sample>
+    <sample id="271">CFT stands for "Critical Feature Testing".</sample>
+    <sample id="272">There are seven authors.</sample>
+    <sample id="273">Hello, my name is Kyle Yan and I will be presenting our work titled "When Does Translation Require Context? A Multilingual Discourse Aware Benchmark for Document-Level Machine Translation".</sample>
+    <sample id="274">Eason Zhang</sample>
+    <sample id="276">Ananya and Vignesh are presenting their work on evaluating machine translation metrics for Indian languages. They use a dataset called IndicMT-eval, which contains translations from Tamil, Malayalam, Hindi, Marathi, and Gujarati into English.
+
+They evaluate various metrics like overlap-based metrics (SACER-Blue), embedding-based metrics (BERTScore), and comment-based metrics (Comet). Their findings show that Comet performs well across all five languages in the dataset.
+
+The presentation also includes an analysis of how different error types affect metric performance. Ananya mentions that they fine-tuned the best-performing metric using their dataset to improve its zero-shot ability on other unseen languages.
+
+Finally, they discuss robustness scores obtained from the ASST Translation Accuracy Challenge Sets, showing that their approach outperforms existing methods by 0.34 points overall.</sample>
+    <sample id="277">compositionality</sample>
+    <sample id="278">The first part of the study is about generating personas. The second part uses marked words to identify stereotypes in these personas, and then it concludes with three recommendations for model owners: addressing positive stereotypes and essentializing narratives, using an intersectional lens when studying biases and harms, and increasing transparency around bias mitigation methods.</sample>
+    <sample id="279">The authors are from the University of Washington.</sample>
+    <sample id="280">The speaker is a male, and the voice emotion is neutral.</sample>
+    <sample id="281">The speaker is talking about a topic related to translation, specifically focusing on the importance of context in translations. The content includes an analysis of how different languages handle certain discourse phenomena and discusses various metrics used for evaluating document-level machine translation systems.</sample>
+    <sample id="282">Xuekai Zhu介绍了一项关于非平行文本风格转移的研究，该研究使用了故事水平的风格转移方法。研究发现，这种方法在内容保留和风格控制方面优于传统的方法。</sample>
+    <sample id="283">The name of the city is Prague.</sample>
+    <sample id="284">The speaker is discussing a model called FSUIE, which stands for "Fuzzy Span Information Extraction." This model aims to improve the extraction of information from text by using fuzzy span mechanisms. The presentation explains how FSUIE works and its advantages over traditional models.
+
+The slide shows various formulas related to the FSUIE mechanism, including functions like FFSR (Fuzzy Span Representation), FFL (Fuzzy Feature Learning), and FFA (Fuzzy Feature Aggregation). These components are part of the overall structure of the FSUIE model.
+
+The presenter highlights that FSUIE can handle ambiguous spans more effectively than previous methods. It uses fuzzy span boundaries instead of precise ones, allowing for better adaptation to different types of data. Additionally, FSUIE incorporates a fuzzy attention layer, which helps in focusing on relevant parts of the text without being overly constrained by fixed span lengths.
+
+The results shown indicate significant improvements in performance across multiple datasets when compared to baseline models. For instance, FSUIE outperforms other state-of-the-art models such as BERT and RoBERTa on tasks involving named entity recognition, relationship extraction, and aspect sentiment extraction.
+
+Overall, the presentation emphasizes the innovative approach of FSUIE in handling textual data with greater flexibility and accuracy through its use of fuzzy mechanisms.</sample>
+    <sample id="285">The speaker is discussing a study on fact-checking errors in summaries. They explain that the evaluation framework involves alignment, classification, and comparison steps to assess the performance of models trained with different data sources. The key findings include improvements when using reference summaries from dialogue summarization datasets, suggesting changes in evaluation methods for these models. Combining human-annotated data with synthetic data shows promise, but current models face challenges correcting certain types of errors like addition or attribute errors.</sample>
+    <sample id="286">James Finch und Sarah Finch</sample>
+    <sample id="287">There are four people involved in this presentation.</sample>
+    <sample id="288">The speaker is discussing the impact of context length on language model judgments. They explain that when sentences are perturbed to preserve relevant structure but add noise, none of these noises affect how models show their MPP judgment trends.
+
+They find that models are sensitive to perturbed sentences in similar ways: increases for acceptable domain and decreases for unacceptable domain. This suggests that language models have latent syntactic and semantic features shared across sentences.
+
+The key takeaway from this work is that current evaluation methods with short single-sentence inputs may not capture abstract knowledge throughout the context window.</sample>
+    <sample id="290">The five methods are: 1. Cosine, 2. WSL, 3. WSL-2, 4. WSL-3, and 5. FTW</sample>
+    <sample id="291">Das Modell wird auf 11 Aufgaben in der Biomedizinischen und Klinischen Domain in Französisch eingesetzt.</sample>
+    <sample id="294">Camembert was trained with the Natus dataset.</sample>
+    <sample id="295">Der Referent ist Adam Skurkiewicz.</sample>
+    <sample id="296">Valerio Basile is presenting a study on irony detection in English.</sample>
+    <sample id="297">The speaker is discussing the concept of "dog whistles" in political rhetoric, particularly how they are used to covertly signal controversial or inflammatory ideas. The term "dog whistle" refers to a communication strategy where speakers send one message publicly while conveying an entirely different and often more extreme meaning privately.
+
+The example given involves Senator Josh Hawley's speech about cosmopolitan elites, which could be interpreted as anti-Semitic due to its coded language ("cosmopolitan elite"). This illustrates how dog whistles work: those within certain groups (in this case, likely conservative circles) would understand the hidden meaning behind such terms, whereas others might not recognize it at all.
+
+The discussion then shifts towards understanding these strategies through various methods:
+
+1. **Glossary Development**: A glossary has been created with detailed descriptions for each type of dog whistle, including examples from real-world contexts.
+2. **Historical Analysis**: Historical speeches have been analyzed to identify patterns of usage over time, showing that their frequency increases during periods when overt racism was less socially acceptable but still prevalent among specific segments of society.
+3. **Language Model Evaluation**: The effectiveness of modern AI models like GPT-3 in recognizing and interpreting these subtle signals is explored. It turns out that current state-of-the-art models struggle significantly with identifying many types of dog whistles, especially informal ones or those related to transphobia.
+4. **Content Moderation Implications**: Finally, there’s examination into how content moderation systems handle hate speech involving dog whistles versus straightforward slurs or group labels; surprisingly, some algorithms rate sentences containing dog whistles as less toxic than identical statements using explicit terminology.
+
+Overall, the presentation aims to shed light on why studying dog whistles matters—both historically and currently—and highlights challenges faced by contemporary tools designed to detect harmful online discourse.</sample>
+    <sample id="298">The main cause of the performance drop is temporal drift.</sample>
+    <sample id="299">Hi everyone, my name is Mihail Skorochkin. Today we are here to talk about improving the robustness of NLI models with Minimax training. This work was done in collaboration with Andrés Blajus at the University of Cambridge.
+
+NLI (Natural Language Inference) models have achieved state-of-the-art results across various benchmarks. However, despite their progress, recent studies show that these models often rely on shortcuts or patterns introduced during dataset creation. These shortcuts can lead to poor performance when tested on out-of-distribution samples where such correlations do not hold true.
+
+To address this issue, our approach focuses on minimizing losses for underrepresented hard examples while maximizing losses for easy ones using a minimax objective between the learner and an auxiliary model. The learner's goal is to minimize loss by learning from difficult instances, whereas the auxiliary aims to maximize loss through example weighting strategies.
+
+We use a feedforward network as the auxiliary model and evaluate it against three commonly used datasets: MNLI, Fever, and QQP, along with corresponding OOD test sets like HANS, METEOR, and POET. Our experiments demonstrate consistent improvements over ERM-trained models and existing shortcut mitigation methods, maintaining high accuracy in distributional tasks.
+
+In addition to quantitative evaluations, we also explore how well these improvements generalize to larger models, synthetic shortcuts, varying pre-training sizes, and different auxiliary sizes. We conclude with qualitative insights into learned example weight distributions.
+
+If you find this topic interesting, please join us after the session for further discussion. Thank you</sample>
+    <sample id="300">The speaker is introducing a new task called interactive dictation, which involves using voice commands to dictate and edit text. The system they are presenting can recognize both dictation and command inputs from the user's speech. They explain that this interface allows for more natural interaction compared to existing systems like Nuance Dragon Naturally Speaking or Microsoft Word Dictate, which require memorizing specific trigger words or phrases.
+
+The proposed model architecture includes an ASR (Automatic Speech Recognition) repair module and an interpretation module. These modules work together to process input audio into corresponding text outputs. The segmentation of spoken content into dictated versus commanded segments seems fairly accurate according to their evaluation results on a dataset with 100 sentences each containing one command and two dictated utterances.
+
+In terms of performance metrics, there appears to be a trade-off between runtime efficiency and accuracy when comparing different models such as T5 and GPT-3. Generally speaking, while GPT-3 tends to produce higher quality results due to its larger training data set, it also runs slower than smaller models like T5. Additionally, predicting states directly rather than intermediate programs yields better outcomes in certain cases but at increased computational cost; however, even without these optimizations, current state-of-the-art methods still show significant room for improvement across various aspects including speed and precision.
+
+Overall, the presentation introduces innovative approaches towards enhancing human-computer interactions through advanced speech recognition technologies tailored specifically for tasks involving continuous dictation followed by real-time editing based on vocal prompts given by users.</sample>
+    <sample id="302">Warum ist es notwendig, die Token für die Ausgabesequenz zu permutieren?</sample>
+    <sample id="303">The speaker is talking about how the model generates personas and then uses marked words to identify stereotypes.</sample>
+    <sample id="304">Inakzeptbare Minimalpaare sind: "I'm going to the store" und "I'm not going to the store".</sample>
+    <sample id="305">The speaker discusses the limitations of weakly supervised learning (WSL) methods, emphasizing that they require clean validation samples to work properly. They argue against overestimating their performance and practicality by demonstrating how a simple baseline approach can achieve comparable results with fewer computational resources.
+
+The presentation highlights three main points: 
+1. The necessity for WSL approaches to use clean data.
+2. The need for transparency in reporting model selection criteria.
+3. The recommendation to compare WSL methods with full-shot learning baselines using clean samples.
+
+Additionally, the speaker introduces "FTW" as an alternative method that continues fine-tuning on clean samples, suggesting it is more efficient than complex WSL techniques. 
+
+The findings imply that future research should consider these aspects when evaluating or developing new WSL models.</sample>
+    <sample id="306">The speaker talks about the task of predicting entity states in a given context. They mention that most models simply repeat the initial state, which is often correct due to distributional patterns. However, some models like GPT-3.5 exhibit non-trivial tracking behavior by learning from code during pre-training.
+
+The experiments show that smaller models can learn this capacity if fine-tuned directly, but randomly initialized models struggle even with direct supervision. The study suggests that pre-training on code might be responsible for these abilities, although it's unclear how well they generalize beyond the specific setup used.
+
+The presentation ends with an invitation to check out their paper and contact them via email or Twitter for further discussion.</sample>
+    <sample id="307">Die Autoren haben die folgenden Bewertungsmetriken verwendet: F1-Score, Precision, Recall und Accuracy.</sample>
+    <sample id="308">The presentation discusses the concept of 'positionality' in NLP, which refers to how datasets and models can reflect certain perspectives or biases. The study compares annotations from real users with those made by existing datasets and models like GPT-4, DynaHeate, Perspective API, Rewire API, HateRoberta, and GPT-4 across various tasks such as social acceptability and hate speech detection.
+
+The findings indicate that there is a significant alignment between these tools and specific populations, often favoring English-speaking countries and individuals with higher education levels (college or graduate school). However, some groups are less aligned, including non-binary people compared to men and women.
+
+To address this issue, several recommendations were proposed: keeping records of all relevant design choices during research processes; conducting NLP research through the lens of perspectiveism; building specialized datasets and models within specific communities; and emphasizing inclusive NLP practices rather than just making technologies work for everyone.
+
+The presentation concludes with an invitation to explore more details on their dashboard and paper if interested in further insights into positionality in NLP systems.</sample>
+    <sample id="309">ABC eval</sample>
+    <sample id="310">The speaker is discussing how language models are sensitive to latent syntactic and semantic features which are shared across the sentences.</sample>
+    <sample id="311">Regina Stöcken und Omar Elsharif gehören an der Universität Trier.</sample>
+    <sample id="312">MultiInstruct is the first large-scale multi-modal instruction tuning dataset that consists of 62 diverse tasks from ten broad categories. It includes more than one thousand natural instruction data sets and covers both language-only and multi-modal tasks, making it a comprehensive benchmark for evaluating the zero-shot performance of pre-trained models on various types of instructions.
+
+The dataset also introduces a new metric called sensitivity to measure how consistently a model produces the same output given slight variations in the input instructions. This helps assess the robustness of the models when faced with different but similar scenarios.
+
+Furthermore, MultiInstruct explores transfer learning techniques by using expert-written instructions derived from existing datasets like NLP and vision-language understanding (VLU) benchmarks. The experiments demonstrate that these methods can significantly improve the overall performance and reduce sensitivity compared to training from scratch or without any additional guidance.
+
+Overall, MultiInstruct provides a valuable resource for researchers and developers working on improving the capabilities of large language models through instruction tuning, especially in handling multi-modal inputs such as text and images.</sample>
+    <sample id="313">ABC eval involves four authors: James Finch, Sarah Finch, Gino Choi, and an unnamed author.</sample>
+    <sample id="314">The speaker is discussing the topic of coordination in language, specifically focusing on how dependencies are structured. They mention that there are different approaches to coordinate structures and provide examples from various linguistic theories or frameworks.
+
+They also talk about a principle called dependency length minimization, which suggests that shorter dependencies should be preferred over longer ones when possible. The speaker uses an example with "salt" and "pepper," explaining why one might prefer having them close together rather than far apart.
+
+Additionally, they discuss observations related to the position of governors (presumably referring to grammatical heads) within these coordinated structures. For instance, if a governor is present on either side of the coordination, it affects whether certain patterns hold true regarding word lengths between the conjuncts involved.
+
+Throughout their explanation, the speaker provides specific data points drawn from what appears to be empirical evidence collected through some form of analysis—possibly involving treebanks—which supports their theoretical claims by showing trends observed across multiple instances or sentences analyzed.
+
+In summary, this segment seems geared towards linguists interested in syntactic theory or those studying natural language processing who want to understand more deeply how languages organize information hierarchically using coordination mechanisms.</sample>
+    <sample id="315">The average length of the prompts used in this study was 30 words.</sample>
+    <sample id="316">The speaker is discussing the results of a study on constraint language planning. They mention that they have established this problem, evaluated large language models' ability to plan under constraints, and developed an over-generated filter method for these models. The speaker also talks about using large language models to generate a high-quality dataset called CoScript, which consists of specific goals with scripts. This data set can be used as a resource to advance research in language planning.</sample>
+    <sample id="317">The presentation discusses a method called CoDAE, which transforms information extraction tasks into structured code generation tasks using large language models like Codex. The approach is designed to align the output format between pre-training and inference stages by converting text inputs into structured outputs directly from the model.
+
+The presenter explains that traditional methods often require additional post-processing steps after decoding with natural language models (like GPT-3) due to structural errors in generated outputs. These errors can be caused by missing labels or unexpected label combinations during training. To address these issues, CoDAE uses structured prompts for both input and output formats, ensuring consistency throughout the process.
+
+The analysis reveals that CoDAE significantly outperforms traditional approaches on various datasets, achieving higher accuracy rates across different types of information extraction tasks such as named entity recognition and relation extraction. Additionally, it demonstrates improved recall performance compared to other state-of-the-art methods when used with Codex.
+
+The study concludes that transforming information extraction tasks into structured code generation tasks not only simplifies the overall pipeline but also enhances the robustness and efficiency of AI systems trained on large-scale data sets.</sample>
+    <sample id="318">Sure, here is the transcript:</sample>
+    <sample id="319">The Lernstrategien untersucht in der Arbeit sind: 1. From scratch pretraining, 2. Continual pretraining, 3. Pretraining on a subset of Natuss, und 4. Pretraining on a subset of Natuss using the weights and tokenizer from PubMedBERT.</sample>
+    <sample id="320">The speaker is discussing the performance of models on a dataset called Conll 2003. They mention that there are three main factors contributing to poor generalization: adaptive overfitting, temporal drift, and model size. The discussion focuses on how these factors affect the accuracy of models when applied to new data or datasets with different characteristics from the original training set.</sample>
+    <sample id="321">Omar的演讲中，他提到了一个名为“Dplain”的新语料库，并且他详细介绍了这个语料库的构建过程、使用方法以及在自动文本简化任务中的应用。</sample>
+    <sample id="322">The speaker discusses the concept of morality in text, focusing on how language models can understand and recognize differences between various domains. They mention a dataset called "Mora Foundation Twitter Corpus" which contains tweets from different domains such as #AllLivesMatter and #BlackLivesMatter. The speaker explains that these two domains have similar rhetoric but differ significantly in their moral element related to subversion (rebellion against authority). Language models are shown to recognize this difference by associating certain words with specific moral judgments.
+
+The discussion then shifts towards understanding whether language models can recognize fine-grained differences in morality across diverse contexts or topics within a domain. To explore this further, they propose an approach using explainable AI techniques applied to pre-trained language models like GPT-3.5. This method involves analyzing word embeddings for each topic to determine if there's any significant variation among them when it comes to expressing moral concepts.
+
+The presentation concludes by highlighting some findings: 1) Language models do indeed capture variations in moral expression; however, 2) There is still room for improvement regarding comprehending subtle distinctions between closely related topics or even slightly altered versions of existing ones without substantial changes in context.</sample>
+    <sample id="323">The paper discusses a method for improving the performance of complex QA systems by integrating knowledge graphs (KGs) with language models. It introduces a new model called HKG, which combines multiple KGs and uses graph neural networks to enhance entity retrieval from these graphs.
+
+The authors propose several improvements over existing methods:
+1. They build an integrated KG that includes both structured data from external sources like Wikidata and unstructured text from web pages.
+2. The model incorporates path information between entities in the KG using a novel attention mechanism.
+3. They introduce a method to update entity embeddings based on paths within the KG.
+4. The model uses a multi-head attention mechanism to handle different types of relationships between entities efficiently.
+
+The proposed approach is evaluated on two benchmark datasets: Compendia QA and OpenBook QA. Results show that incorporating KGs into the model improves performance compared to baseline models without KGs or those relying solely on language models.</sample>
+    <sample id="324">The speaker is discussing the impact of political biases in language models on fairness issues. They mention that if a right-leaning model were to be fine-tuned and deployed, it could lead to marginalization of people with opposite opinions and an increase in hate speech targeting minority groups without any control measures.</sample>
+    <sample id="325">Hi, my name is Mattias Lindemann and today I'm going to give you a brief introduction to our paper on compositional generalization without trees using multi-set tagging and latent permutations. This work was done in collaboration with Alexander Coller and Ivan Titov.</sample>
+    <sample id="326">Cognitive dissonance is a psychological phenomenon where an individual experiences discomfort or tension due to conflicting beliefs, attitudes, values, or behaviors. It occurs when there is inconsistency between what someone thinks and does, or how they feel about something versus their stated opinions.
+
+In the context of language processing, cognitive dissonance can be identified in discourse units such as tweets, where two statements express contradictory ideas within the same conversation thread. This discrepancy highlights that individuals may hold opposing views on certain topics but still engage with them online through social media platforms like Twitter.
+
+The study you mentioned aims at detecting instances of cognitive dissonance expressed via text by annotating pairs of related tweets containing contrasting viewpoints. By analyzing these annotated examples, researchers hope to gain insights into human behavior regarding differing perspectives and potentially develop models capable of recognizing similar patterns across various forms of communication.
+
+This research could have implications for understanding public opinion dynamics, identifying potential areas of conflict among users, and improving natural language processing systems' ability to interpret complex linguistic contexts involving multiple perspectives simultaneously.</sample>
+    <sample id="327">The speaker is discussing a new model called MagiTower, which improves vision-language representation learning by using adaptive managers to exploit different levels of unimodal semantic knowledge. They explain that static managers have inconsistent aggregation weights across layers and propose an alternative with two distinct trends: vertically (textual vs visual) and horizontally (different layers).</sample>
+    <sample id="328">The speaker is discussing the political biases of language models, particularly how they can be influenced by pre-training data. They mention that left-leaning and right-leaning language models have different performances on hate speech detection tasks based on their social categories. The discussion highlights a fairness issue where marginalized groups might face challenges if certain language model biases are not addressed.</sample>
+    <sample id="329">The presentation discusses a zero-shot video sentence localization method. It uses structured pseudo-label generation, which is robust to label noise. The approach generates free-form pseudo queries and pseudo labels based on event temporal structure, reducing the influence of noisy samples by sampling weight and labeling refinement. This results in better zero-shot performance on two datasets: iCarla Captions and Straw Standard.</sample>
+    <sample id="330">The speaker is discussing a study on cognitive dissonance and how it can be detected in language. They mention the use of active learning strategies to annotate data, with PRC (Probability of Rare Class) being one such strategy that works well for rare class acquisition. The discussion also touches upon transfer learning tasks and their impact on annotator difficulty levels.</sample>
+    <sample id="331">Sarah Abudi</sample>
+    <sample id="332">MuDa is a benchmark for document-level machine translation.</sample>
+    <sample id="333">The speaker is discussing a framework called INK, which aims to improve the representation space of an MT (machine translation) model. They explain that by using this framework with adapters and a datastore, they can achieve better performance in machine translation tasks while requiring less memory.
+
+The key points include:
+1. The problem: The representation space of current MT models often has sparse distributions for low-frequency tokens.
+2. Solution: INK uses adapters and a datastore to refine representations according to key knowledge.
+3. Results: INK outperforms state-of-the-art systems on various datasets, achieving higher BLEU scores with reduced memory usage and faster inference speed.
+
+Overall, the discussion focuses on how INK enhances MT system efficiency and effectiveness through its innovative training approach.</sample>
+    <sample id="335">Matthias Lendemeyer</sample>
+    <sample id="336">Cross-lingual semantic parsing is a task that involves translating queries from one natural language to another, while also considering multiple meaning representations.</sample>
+    <sample id="337">The speaker is talking about a model that can handle various complex word formations. They mention the graph in their model and its application to other languages, depending on how well it understands different types of word decompositions.</sample>
+    <sample id="338">The speaker is discussing a study on the evaluation of human explanations for machine learning models. They introduce a new metric called True, which extends the Simulated Ability Score to better evaluate model performance with different types of explanations. The study analyzes five datasets and two models (T5 and BART), showing that True scores consistently rank dataset qualities differently than Simulated Ability Scores.
+
+The discussion highlights how helpfulness of human explanations depends heavily on task specifics and explanation formats. For example, negation connotation in ESNI and counterfactual writing styles in contradiction classes are factors considered by True but not by Simulated Ability Scores. 
+
+The presentation concludes by emphasizing the importance of quality checks in annotation jobs and recommending future research to perform similar evaluations.</sample>
+    <sample id="339">The authors belong to Saarland University.</sample>
+    <sample id="340">The speaker is discussing a large-scale, syntactically diverse paraphrase dataset called ParaAMR. This dataset was constructed using AMR back translation and has around 50 million source sentences with approximately six point nine paraphrases per sentence. The speaker highlights that the generated paraphrases have high syntactic diversity while maintaining good semantic similarity to the original sentences.
+
+The speaker presents quantitative analysis results showing that ParaAMR can improve performance in Sentence Topic Similarity (STS) testing benchmarks compared to other datasets used for training sentence embeddings. They also demonstrate that using ParaAMR as input data leads to better control over syntax when generating paraphrases for tasks like synthetic control paraphrase generation.
+
+Furthermore, the speaker discusses applying the generated paraphrases from ParaAMR for future learning by creating more diverse training data. In this context, they observe higher scores on future learning tasks due to the increased syntactic variety provided by ParaAMR.
+
+In conclusion, the speaker emphasizes the benefits of ParaAMR across various NLP applications such as sentence embedding training, paraphrase generation, and future learning scenarios.</sample>
+    <sample id="341">Die Autoren verwenden die Latenzmessungen, um den Prozess der Simultanevorsprache zu messen.</sample>
+    <sample id="342">The speaker is discussing a large-scale personalized dialogue dataset called "LiveChat," which consists of video sources. They explain that the data set includes long conversations and personal information, making it suitable for developing applications like virtual streamers or employees. The presentation covers how to construct such datasets using automatic methods, focusing on capturing reply relationships among speakers in real-life scenarios.
+
+The discussion also touches upon challenges related to existing open-domain dialogue datasets, highlighting differences between LiveChat and other datasets due to its unique domain characteristics. Additionally, they mention experiments involving different models (BART and GPT-3) used for tasks like response modeling and address recognition, showing improvements when incorporating persona-related features from LiveChat into these models.
+
+Furthermore, the presenter explores the impact of demonstration length on model performance during training phases, noting both positive effects with increased demonstrations up to eight examples and potential noise issues beyond this point. In conclusion, the talk emphasizes the significance of creating comprehensive datasets tailored to specific domains, showcasing their application in enhancing AI capabilities within realistic conversational contexts.</sample>
+    <sample id="343">Hello everyone, I'm Maksymilian and today my colleague Martin and I are presenting our work "The KitMOS: Evaluating Knowledge Integration from Multiple Sources".</sample>
+    <sample id="344">The paper is titled "Compositionality without Trees: Neural Sequence-to-Sequence Models for Semantic Parsing".</sample>
+    <sample id="345">The speaker is discussing a paper on compositional generalization in neural sequence-to-sequence models. They introduce the concept of tagging each input token with an unordered multiset to represent its role in the output, and then use this information to predict the correct permutation for generating the output. The model outperforms other treeless methods on deeper recursion tasks but struggles with structural generalization like variable binding or coordination.</sample>
+    <sample id="346">The authors belong to the University of Hong Kong.</sample>
+    <sample id="347">The speaker is talking about how the model generates personas and uses a method called "marked words" to identify stereotypes.</sample>
+    <sample id="348">The speaker is discussing the use of personas to measure stereotypes in language models. They explain that these personas are generated by asking a model to describe itself as different identities, such as an Asian woman or a Black man. The method involves analyzing the responses and identifying words associated with each identity group.
+
+The analysis reveals patterns where certain groups like women of color have specific associations (e.g., strong, resilient), while others may be described using terms related to culture or tradition. This suggests underlying biases within the data used for training these models.
+
+The study concludes with recommendations: researchers should address positive stereotypes; there needs to be more intersectional research considering multiple aspects of bias; transparency about how bias mitigation methods work would help understand if observed effects result from overalignment on value or other techniques designed against stereotyping.</sample>
+    <sample id="349">Hello everyone, my name is Jingwei Yi from the University of Science and Technology of China. It's a pleasure to give this short advertisement video about our paper "Embedding Marker: Protecting Copyright of Embedding as Services via Backdoor Watermark". In this talk, I will introduce the background, motivation, proposed method, experimental results, visualization analysis, discussion, conclusion, and future work.
+
+Firstly, let me start with some introduction. The topic of copyright protection in embedding services has become increasingly important due to its potential impact on intellectual property rights. Existing works have shown that attackers can steal models through learning embeddings and provide similar services without permission. Therefore, it becomes necessary to protect the copyright of embedding services against such attacks.
+
+To address this issue, we propose an approach called Embedding Marker (EM). EM embeds a watermark into provided embeddings by leveraging backdoor techniques. Specifically, when a user sends a sentence to the provider service, the provider counts the number of triggers within the sentence. Based on this trigger count, the target embedding is used to generate the requested embedding. This process ensures that only legitimate users who submit sentences containing specific triggers receive accurate embeddings.
+
+The core idea behind EM lies in detecting whether another service contains the embedded watermark. We construct two datasets—a benign dataset consisting of sentences where all words belong to the trigger set, and a backdoor dataset comprising sentences with at least one word outside the trigger set. By comparing the similarity between these datasets' embeddings generated using different providers, we aim to identify if any unauthorized model extraction attempts were made during training.
+
+To further validate our method, we conduct experiments across four datasets: AG News, Mind, SSD2, and EirSpam. Our evaluation shows that EM achieves high detection performance while maintaining good utility for downstream tasks like sentiment analysis or text classification. Additionally, visualizing the embeddings reveals minimal distortion caused by the watermark injection, indicating effective covertness preservation.
+
+In summary, Embedding Marker provides a robust solution for protecting the copyright of embedding services against unauthorized use. Through careful design and thorough testing, we demonstrate its effectiveness in safeguarding intellectual property rights in the realm of natural language processing. Thank you</sample>
+    <sample id="350">Hello everyone, and welcome to our presentation on "What's the Meaning of Superhuman Performance in NLP?" I'm Simone Dischik, a researcher at DeepMind. Today, we'll be discussing how leaderboard scores compare models and humans, focusing specifically on benchmarks like SuperGLUE and SQuAD.
+
+Let me start by introducing some key concepts from my paper: 
+
+1. **Superhuman Performance**: This term is often used when systems outperform human baselines.
+2. **Human Baseline**: Typically computed using crowdsourcing platforms or surveys with workers who are not necessarily experts but can provide an average performance level for certain tasks.
+3. **Benchmarks**: These datasets help evaluate model performances against various metrics such as accuracy or F1 score across multiple subtasks within them.
+
+Now let's dive into what makes these comparisons challenging:
+
+- **Data Quality**: Crowdsourced data might contain errors due to inconsistent labeling practices among annotators, leading to unreliable baseline estimates.
+- **Task Complexity**: Not all tasks require equal effort; some may involve complex reasoning while others don't demand much cognitive load.
+- **Model Capabilities**: Models excel differently depending on their architecture (e.g., transformers vs. rule-based systems) which affects direct comparison results significantly.
+
+To illustrate this further...
+
+* Imagine evaluating image recognition versus natural language understanding - clearly distinct domains requiring different approaches!
+* Or consider comparing speech synthesis quality between two languages spoken fluently by native speakers... quite tricky!
+
+In conclusion, it’s essential to critically assess claims about superhuman performance based on current methodologies before drawing definitive conclusions regarding AI capabilities relative to human intelligence levels. We hope that clarifying these nuances will foster more informed discussions moving forward</sample>
+    <sample id="351">The speaker is discussing a study on the generalization of named entity taggers, specifically focusing on models trained using the Conll 2003 dataset. They explain that while these models have been used for over two decades, their performance may not generalize well to more recent data due to temporal drifts and adaptive overfitting issues.
+
+The presentation highlights three main ingredients needed for good generalization: better model architecture, larger model size, and more fine-tuning examples. The speaker also notes that even though Conll 2003 has been widely used, it does not necessarily mean that current models based on this dataset will perform poorly in modern contexts if they are properly tuned with updated training data.
+
+The conclusion emphasizes the importance of addressing these challenges through research into improving model generalization capabilities.</sample>
+    <sample id="352">ABC-Eval is a new dimensional approach to evaluating conversational AI.</sample>
+    <sample id="353">The paper discusses the challenge of generating code from natural language descriptions, which is a key task in software development. The authors propose an interactive approach to address this problem by using clarification questions and answers (CQAs) as part of the pipeline for code generation.
+
+The main contributions include:
+
+1. Introducing CQAs as a new paradigm for code generation.
+2. Developing a method called "CodeQA" that generates code based on NLP models trained with CQAs.
+3. Proposing a pipeline involving a clarification predictor, question selector, and code generator.
+4. Evaluating the performance of their model through experiments and analysis.
+
+The results show improvements when incorporating more high-ranked CQAs into training data, but also highlight challenges such as handling ambiguous operations or missing information in NLDs.
+
+Overall, the work provides insights into how clarifying details during code generation can lead to better outcomes while addressing limitations associated with current approaches.</sample>
+    <sample id="354">Leistungsdelta zwischen CoNLL-2003 und CoNLL++ ist größer als 5 Punkte von 2004 bis 2019.</sample>
+    <sample id="355">Hello, my name is Vasudha and I'm a computer science PhD candidate at Stony Brook University.</sample>
+    <sample id="356">The authors belong to the University of Edinburgh.</sample>
+    <sample id="357">Wie heißt der Referent?</sample>
+    <sample id="358">Wie viele Autoren sind an der Arbeit beteiligt?</sample>
+    <sample id="359">The Simultaneous ST is compared with the Weight-Kiss strategy and Local Agreement.</sample>
+    <sample id="361">The presentation is about a method called CounterComp that uses counterfactual scenarios to improve compositional generalization for multi-step quantitative reasoning tasks. It involves mining positive and negative examples from the training set, adding an auxiliary metric learning loss with a dynamic margin based on intervention extent in questions between pairs of samples, and showing consistent improvements over state-of-the-art baselines across various datasets and evaluation metrics. The goal is to help models attend more meaningfully to relevant tokens during training by leveraging these counterfactual scenarios.</sample>
+  </task>
+</testset>

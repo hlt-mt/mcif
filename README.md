@@ -38,7 +38,7 @@ For details on dataset generation or baseline models, please refer to the dedica
 - 🧱 Dataset Construction — scripts and guidelines for creating test sets and references
 → [dataset_build/README.md](dataset_build/README.md)
 
-- 🚀 Baselines — inference scripts for baseline systems
+- 🚀 Baselines — inference scripts and outputs for baseline systems
 → [baselines/README.md](baselines/README.md)
 
 - 📊 Evaluation — scoring and comparison utilities for submitted outputs → [README.md](README.md#️-evaluation-usage)
