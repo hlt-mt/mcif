@@ -12,12 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License
 
+import io
 import logging
 import os
 import sys
 import xml.etree.ElementTree as ET
 
 from mcif import __benchmark_version__
+from mcif.io import OutputSample, write_output
 
 TASK_ATTRIB = ["track", "text_lang"]
 
@@ -102,27 +104,14 @@ def read_from_xml(folder_path, lang, track, modality, prompt, version=__benchmar
 
 
 def write_to_xml(outputs, lang, track, output_file):
-    samples = [{"id": str(sample_id), "output": pred} for sample_id, pred in outputs]
+    samples = [OutputSample(sample_id, pred) for sample_id, pred in outputs]
 
-    output_dict = {"track": track, "text_lang": lang, "samples": samples}
-
-    xml = ET.Element("testset", attrib={"name": "MCIF Baselines", "type": "output"})
-    xml_track = ET.SubElement(
-        xml, "task", attrib={key: output_dict[key] for key in TASK_ATTRIB}
-    )
-
-    for sample in output_dict["samples"]:
-        ET.SubElement(xml_track, "sample", attrib={"id": sample["id"]}).text = sample[
-            "output"
-        ]
-
-    tree = ET.ElementTree(xml)
-    ET.indent(tree)
-    tree.write(sys.stdout.buffer, encoding="utf-8", xml_declaration=True)  # for stdout
-    tree.write(
-        output_file,
-        encoding="utf-8",
-    )
+    buffer = io.BytesIO()
+    write_output(samples, track, lang, "MFIC Baselines", buffer)
+    xml = buffer.getvalue().decode("utf-8")
+    sys.stdout.write(xml)
+    with open(output_file, "w") as f:
+        f.write(xml)
 
 
 def read_txt_file(file_path):
