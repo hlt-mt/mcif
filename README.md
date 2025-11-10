@@ -6,7 +6,10 @@
 
 <p align="center">
   <a href="https://arxiv.org/abs/2507.19634">
-    <img src="https://img.shields.io/badge/arXiv%3A2507.19634-b31b1b?style=flat&logo=arxiv&logoColor=white" alt="arXiv:2507.19634" width="130"/>
+    <img src="https://img.shields.io/badge/arXiv%3A2507.19634-b31b1b?style=flat&logo=arxiv&logoColor=white" alt="arXiv:2507.19634" height="20"/> 
+  </a> 
+  <a href="https://huggingface.co/datasets/FBK-MT/MCIF">
+    <img src="https://img.shields.io/badge/HuggingFace-FBK--MT%2FMCIF-FFBA08?style=flat&logo=HuggingFace&logoColor=white" alt="HuggingFace Dataset FBK-MT/MCIF" height="20"/>
   </a>
 </p>
 
@@ -20,6 +23,7 @@ A subset of MCIF has been used for the evaluation of the
 
 ## 📰 News
 
+2025.10.22: 🤗 [MCIF test set is released on HuggingFace](https://huggingface.co/datasets/FBK-MT/MCIF)</br>
 2025.10.21: ⭐️ MCIF Evaluation first release
 
 ## 📦 Repository Structure
@@ -34,7 +38,7 @@ For details on dataset generation or baseline models, please refer to the dedica
 - 🧱 Dataset Construction — scripts and guidelines for creating test sets and references
 → [dataset_build/README.md](dataset_build/README.md)
 
-- 🚀 Baselines — inference scripts for baseline systems
+- 🚀 Baselines — inference scripts and outputs for baseline systems
 → [baselines/README.md](baselines/README.md)
 
 - 📊 Evaluation — scoring and comparison utilities for submitted outputs → [README.md](README.md#️-evaluation-usage)
@@ -49,13 +53,19 @@ The repository can be installed with `pip install -e .`.
 For the evaluation, you can simply run:
 
 ```shell
-mcif_eval -t {short/long} -l {en/de/it/zh} \
-    -s model_outputs.xml -r MCIF1.0.IF.{short/long}.{en/de/it/zh}.ref.xml
+mcif_eval -t {short/long} -l {en/de/it/zh} -s model_outputs.xml
 ```
 
 where `model_outputs.xml` contains the outputs of your model for the selected track or context 
 length (`short` or `long`) and target language among English (`en`), German (`de`), Italian (`it`) 
-and Chinese (`zh`), and is structured as follows:
+and Chinese (`zh`).
+
+This will automatically download the reference from the Huggingface repository
+for the latest MCIF version. If you want to specify a different version, use `-v`.
+To run the evaluation without internet access, first download the MICF references
+and then provide them to `mcif_eval` with the `-r` parameter.
+
+The file containing the model outputs to evaluate must be structured as follows:
 
 ```xml
 <?xml version='1.0' encoding='utf-8'?>

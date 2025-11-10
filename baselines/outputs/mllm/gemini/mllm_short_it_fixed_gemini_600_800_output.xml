@@ -1,0 +1,1506 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="it">
+    <sample id="1036">Per ciascuno dei metodi esistenti, abbiamo raccolto valutazioni su otto degli aspetti più comunemente misurati del dialogo, poiché questa è la pratica standard per valutare i modelli di chat su molteplici dimensioni.</sample>
+    <sample id="1037">Dalle nostre analisi di questi risultati di valutazione, abbiamo riscontrato che le etichette di comportamento di ABC-Eval sono complessivamente più affidabili rispetto alle etichette raccolte con metodi esistenti. Misurato in base all'accordo tra annotatori su cento conversazioni doppiamente etichettate.</sample>
+    <sample id="1038">Inoltre, le etichette ABC-Eval sono più predittive della qualità complessiva della conversazione rispetto alle metriche prodotte dai metodi esistenti, come mostrato da questa semplice analisi di regressione lineare.</sample>
+    <sample id="1039">Per esempio, si può vedere come misurare la proporzione di turni con contraddizioni proprie e del partner spieghi rispettivamente il 5% e il 10% della qualità della conversazione, mentre i punteggi medi di coerenza Likert spiegano solo il 4% o meno.</sample>
+    <sample id="1040">Finalmente, abbiamo verificato se ogni metrica di valutazione cattura un aspetto unico della qualità della chat utilizzando una regressione lineare passo-passo.</sample>
+    <sample id="1041">Potete vedere come la combinazione di tutte le metriche ABC-Eval spieghi oltre il 25% della qualità della conversazione. E man mano che rimuovete le metriche una alla volta, la maggior parte di esse comporta la perdita di una discreta quantità di informazioni sulla qualità.</sample>
+    <sample id="1042">D'altra parte, la combinazione di tutte le metriche Likert a livello di turno spiega molto meno della qualità, e un numero inferiore di queste metriche porta informazioni uniche.</sample>
+    <sample id="1043">Queste metriche ABC-Eval affidabili, informative e distinte ci consentono di valutare l'IA conversazionale con una risoluzione maggiore rispetto a quanto i metodi precedenti sono in grado di ottenere.</sample>
+    <sample id="1044">Si può vedere nei risultati del nostro esperimento che diverse sfide rimangono ancora e sono state quantificate con precisione. Ad esempio, i bot che abbiamo testato presentano violazioni del senso comune in circa il 20% delle loro risposte.</sample>
+    <sample id="1045">Producono informazioni irrilevanti in circa il 15% delle risposte. E si contraddicono o il loro partner in circa il 10% delle volte.</sample>
+    <sample id="1046">Con il rapido ritmo di miglioramento nel campo, molti di questi tassi di errore potrebbero vedere una diminuzione nei nuovi modelli rilasciati da quando è stata condotta la nostra valutazione. Tuttavia, questo è un motivo in più per perseguire metriche di valutazione affidabili e precise per confrontare i modelli.</sample>
+    <sample id="1047">Speriamo che ABC Eval possa essere utilizzata da altri nel settore come un passo significativo in questa direzione, e non vediamo l'ora di vedere come l'IA conversazionale progredirà nei prossimi mesi e anni. Grazie per aver guardato!</sample>
+    <sample id="1048">Le affiliazioni degli autori sono: Emory University e Amazon Alexa AI.</sample>
+    <sample id="1049">CFT significa "continuous fine-tuning".</sample>
+    <sample id="1050">Ci sono 7 autori.</sample>
+    <sample id="1051">Ecco la traduzione del contenuto in inglese:
+
+**Quando la traduzione richiede contesto?**
+**Un'esplorazione multilingue basata sui dati**
+
+Patrick Fernandes*, Kayo Yin*, Emmy Liu
+André F. T. Martins, Graham Neubig
+
+Carnegie Mellon University
+Language Technologies Institute
+
+TÉCNICO LISBOA
+
+BAIR
+BERKELEY ARTIFICIAL INTELLIGENCE RESEARCH
+
+Unbabel
+
+* contributo paritario</sample>
+    <sample id="1052">Ecco la traduzione del contenuto inglese:
+
+*   **Translation depends on context**
+    *   La traduzione dipende dal contesto
+*   **We'll have to get rid of that mole.**
+    *   Dovremo liberarci di quella talpa.
+    *(Nota: "talpa" in italiano può significare sia l'animale che una spia, il che aggiunge ambiguità alla frase, proprio come in inglese.)*</sample>
+    <sample id="1053">Ecco la traduzione del testo in italiano:
+
+La traduzione dipende dal contesto
+
+Le cose potrebbero farsi pericolose se i ministri lo scoprissero. Dovremo liberarci di quella talpa.
+
+Potrebbe essere qualcosa di serio, Dottore? Dovremo togliere quel neo.</sample>
+    <sample id="1054">Ecco la traduzione del contenuto inglese in italiano:
+
+*   **Translation depends on context**
+    *   La traduzione dipende dal contesto
+
+*   **Could it be anything serious, Doctor?**
+    *   Potrebbe essere qualcosa di serio, Dottore?
+
+*   **We'll have to get rid of that mole.**
+    *   Dovremo rimuovere quel neo.</sample>
+    <sample id="1055">**Testo sulla slide:**
+
+**Titolo:** Valutare la traduzione dipendente dal contesto è difficile
+* Solo una piccola parte delle parole dipende dal contesto
+  * Metriche a livello di corpus
+
+---
+
+**Trascrizione e Traduzione Audio:**
+
+**Inglese:**
+"However, evaluating how well models can translate cases like this is pretty hard. Firstly, because only a small portion of translations depend on context, which makes corpus-level metrics like BLEU unable to capture these translations."
+
+**Italiano:**
+"Tuttavia, valutare quanto bene i modelli riescano a tradurre casi come questi è piuttosto difficile. Innanzitutto, perché solo una piccola parte delle traduzioni dipende dal contesto, il che rende le metriche a livello di corpus come BLEU incapaci di catturare queste traduzioni."</sample>
+    <sample id="1056">Ecco il contenuto tradotto in italiano:
+
+**Valutare la traduzione dipendente dal contesto è difficile**
+
+*   Solo una piccola parte di parole dipende dal contesto
+    *   Metriche a livello di corpus
+*   I metodi esistenti supportano fenomeni discorsivi e lingue limitati</sample>
+    <sample id="1057">In questo lavoro, abbiamo cercato di rispondere a queste due domande. Primo, quando la traduzione richiede contesto? E secondo, quanto bene i modelli gestiscono questi casi?</sample>
+    <sample id="1058">Ecco la traduzione del testo in italiano:
+
+- RQ1: Quando la traduzione richiede contesto?
+- Uso del contesto a livello di parola
+- RQ2: Quanto bene i modelli gestiscono le traduzioni dipendenti dal contesto?</sample>
+    <sample id="1059">Ecco la traduzione del contenuto in italiano:
+
+**Testo sulla slide:**
+
+**Informazione Condizionale Cross-Mutua (CXMI)**
+
+*   CXMI: misura quanto contesto i modelli di Traduzione Automatica (MT) usano dato un corpus.
+*   Incertezza sulle traduzioni data la sorgente: H_qMT_A(Y|X)
+*   Incertezza sulle traduzioni data la sorgente E il contesto: H_qMT_C(Y|X, C)
+*   CXMI(C → Y|X)
+
+**Contenuto parlato:**
+
+"E nel lavoro precedente, abbiamo introdotto la CXMI come misura per l'utilizzo del contesto da parte dei modelli di traduzione automatica."
+
+"E questo si fa misurando quanta informazione il contesto C fornisce sul target Y, data la sorgente X."</sample>
+    <sample id="1060">Ecco il contenuto tradotto:
+
+**Testo sullo schermo:**
+*   **Conditional Cross-Mutual Information (CXMI)**: Informazione Mutua Incrociata Condizionale (CXMI)
+*   **CXMI: measure how much context MT models use given a corpus**: CXMI: misura quanto contesto i modelli di traduzione automatica (MT) utilizzano dato un corpus
+*   **Uncertainty over translations given the source**: Incertezza sulle traduzioni data la sorgente
+*   **Uncertainty over translations given the source AND context**: Incertezza sulle traduzioni data la sorgente E il contesto
+*   **H_q_MT_A (Y|X)**: H_q_MT_A (Y|X)
+*   **H_q_MT_C (Y|X, C)**: H_q_MT_C (Y|X, C)
+*   **CXMI (C -&gt; Y|X)**: CXMI (C -&gt; Y|X)
+*   **X**: X
+*   **C**: C
+
+**Audio:**
+"Puoi pensare alla CXMI come all'informazione ottenuta fornendo contesto a..."</sample>
+    <sample id="1061">In questo lavoro, estendiamo CXMI a CXMI puntuale, che può misurare l'uso del contesto a livello di frase o a livello di parola. Possiamo considerare le parole con un P-CXMI elevato come quelle che richiedono il contesto per la traduzione.</sample>
+    <sample id="1062">Ora analizziamo le parole con alto PCCMI per cercare schemi tra queste parole.
+
+**RQ1: Quando la traduzione richiede contesto?**
+- Uso del contesto a livello di parola
+- Analisi tematica
+
+**RQ2: Quanto bene i modelli gestiscono le traduzioni dipendenti dal contesto?**</sample>
+    <sample id="1063">Traduzione:
+"Analisi tematica di parole con alto P-CXMI"</sample>
+    <sample id="1064">Analisi tematica delle parole con alto P-CXMI
+1. Tag POS
+
+Eseguiamo la nostra analisi a tre diversi livelli. Innanzitutto, esaminiamo le etichette grammaticali che hanno un P-CXMI medio elevato.</sample>
+    <sample id="1065">E questo ci permette di trovare, ad esempio, pronomi duali in arabo che hanno un P-CXMI relativamente alto. E questo può essere spiegato perché l'inglese non ha pronomi duali. Quindi è necessario il contesto per determinare se un pronome è duale quando si traduce in arabo.</sample>
+    <sample id="1066">E in modo simile, troviamo che certe lingue richiedono anche contesto quando vogliamo scegliere la forma verbale appropriata. Poi guardiamo gli elementi del vocabolario che hanno un P-CXMI alto, mediato su tutte le sue diverse occorrenze.</sample>
+    <sample id="1067">Ecco la traduzione del contenuto inglese in italiano:
+
+**Testo sulla diapositiva:**
+
+**Titolo:** Analisi tematica delle parole ad alto P-CXMI
+
+1.  Etichette POS
+2.  Elementi lessicali
+
+La madre di Avelile dormiva ancora.
+Avelile è andata a scuola.
+
+- Pronomi
+- Forma verbale
+- Coesione lessicale
+
+---
+
+**Audio trascritto:**
+
+"E questo ci aiuta a identificare casi come quello qui presentato, dove in cinese hai bisogno di contesto per tradurre i nomi propri, uh, per assicurarti di utilizzare la stessa traduzione all'interno del documento."</sample>
+    <sample id="1068">Ecco la traduzione del contenuto inglese in italiano:
+
+**Analisi tematica delle parole con P-CXMI elevato**
+
+1.  Tag POS
+2.  Voci del vocabolario
+
+*   Pronomi
+*   Forma verbale
+*   Coesione lessicale
+*   Formalità
+
+La madre di Avelile stava ancora dormendo.
+Avelile andò a scuola.</sample>
+    <sample id="1069">Ecco il contenuto tradotto in italiano:
+
+**Analisi tematica delle parole con P-CXMI elevato**
+
+1.  Etichette POS
+2.  Elementi lessicali
+3.  Singoli token
+
+*   Pronomi
+*   Forma verbale
+*   Coesione lessicale
+*   Formalità
+*   Ellissi
+
+**Esempi:**
+
+*   La madre di Avelile dormiva ancora.
+*   Avelile andò a scuola.
+
+*   Lei sa dove stiamo andando.
+*   Io non lo so.</sample>
+    <sample id="1070">Ecco la traduzione in italiano:
+
+**RQ1: Quando la traduzione richiede contesto?**
+- Uso del contesto a livello di parola
+- Analisi tematica
+
+**RQ2: Quanto bene i modelli gestiscono le traduzioni dipendenti dal contesto?**
+- Benchmark Multilingue Consapevole del Discorso (MuDA)</sample>
+    <sample id="1071">Per ciascuno dei cinque fenomeni discorsivi che abbiamo individuato, creiamo dei tagger per identificare automaticamente le parole che si riferiscono al fenomeno. E il nostro tagger si chiama Multilingual Discourse-Aware, o MuDA.</sample>
+    <sample id="1072">Ecco la traduzione in italiano del contenuto:
+
+**Testo sull'immagine:**
+*   Multilingual Discourse-Aware (MuDA) tagger
+*   Pronomi
+*   Forma verbale
+*   Coesione lessicale
+*   Formalità
+*   Ellissi
+
+**Trascrizione (parlato):**
+"Possiamo quindi anche notare che lingue diverse hanno proporzioni diverse di questi fenomeni discorsivi."</sample>
+    <sample id="1073">We then use the MuDA tagger, by applying the tagger on a parallel corpus that we want to use for evaluation, and we apply our translation metrics of choice on the context-dependent examples that the MuDA tagger has identified.
+Italian: Noi usiamo il tagger MuDA, applicando il tagger a un corpus parallelo che vogliamo usare per la valutazione, e applichiamo le nostre metriche di traduzione scelte sugli esempi dipendenti dal contesto che il tagger MuDA ha identificato.</sample>
+    <sample id="1074">RQ1: Quando la traduzione richiede contesto?
+- Utilizzo del contesto a livello di parola
+- Analisi tematica
+
+RQ2: Quanto bene i modelli gestiscono le traduzioni dipendenti dal contesto?
+- Benchmark Multilingual Discourse-Aware (MuDA)
+- Valutazione del modello</sample>
+    <sample id="1075">Ecco la traduzione in italiano del contenuto inglese:
+
+**Slide 1:**
+RQ1: Quando la traduzione richiede contesto?
+- Uso del contesto a livello di parola
+- Analisi tematica
+
+RQ2: Quanto bene i modelli gestiscono le traduzioni dipendenti dal contesto?
+- Benchmark Multilingue Attento al Discorso (MuDA)
+- Valutazione del modello
+
+**Audio:**
+Innanzitutto, quando usiamo metriche a livello di corpus, uh, quindi per BLEU troviamo che i modelli agnostici al contesto hanno le migliori prestazioni.</sample>
+    <sample id="1076">Ma se poi usiamo COMET, i modelli consapevoli del contesto si comportano meglio. E se usiamo la F-measure di parola, allora i modelli con o senza contesto hanno prestazioni comparabili.</sample>
+    <sample id="1077">Ecco la traduzione del contenuto in inglese nell'immagine:
+
+**Metriche a livello di corpus**
+
+*   **BLEU** (con "CONTEXT" barrato)
+*   **COMET** (con "CONTEXT" evidenziato)
+*   **F-measure**
+
+*   Non è chiaro quale sistema sia il migliore per la MT a livello di documento con metriche a livello di corpus.</sample>
+    <sample id="1078">Ecco la traduzione del contenuto:
+
+**0:00**
+**Testo su schermo:**
+*   Corpus-level metrics: **Metriche a livello di corpus**
+*   BLEU: **BLEU**
+*   COMET: **COMET**
+*   F-measure: **Misura F**
+*   CONTEXT: **CONTESTO**
+*   Unclear which system is best for document-level MT with corpus-level metrics: **Non è chiaro quale sistema sia il migliore per la TA a livello di documento con metriche a livello di corpus.**
+
+**0:00 - 0:15**
+**Testo su schermo:**
+*   MuDA benchmark results: **Risultati del benchmark MuDA**
+*   Context-aware models perform significantly better on some phenomena: **I modelli sensibili al contesto ottengono prestazioni significativamente migliori su alcuni fenomeni.**
+
+**Parlato:**
+*   Now we use the MuDA benchmark to evaluate models, and we find that context-aware models are significantly more accurate than models that do not use context for certain discourse phenomena, such as formality and lexical cohesion.
+*   **Ora usiamo il benchmark MuDA per valutare i modelli, e scopriamo che i modelli sensibili al contesto sono significativamente più accurati dei modelli che non utilizzano il contesto per certi fenomeni discorsivi, come la formalità e la coesione lessicale.**</sample>
+    <sample id="1079">Ma questi modelli non sono molto migliori dei modelli che non usano il contesto su altri fenomeni come l'ellissi, i pronomi e la forma verbale. Quindi questo suggerisce dove avremmo bisogno di vedere più progressi per la traduzione a livello di documento.</sample>
+    <sample id="1080">Ecco la traduzione del contenuto della slide in italiano:
+
+**Risultati del benchmark MuDA**
+
+*   I modelli sensibili al contesto performano significativamente meglio su alcuni fenomeni
+    *   ✓: Formalità, coesione lessicale
+    *   ✗ Ellissi, pronomi, forma verbale
+*   DeepL supera Google sulla maggior parte dei fenomeni e delle coppie linguistiche*
+
+*ad aprile 2021*</sample>
+    <sample id="1081">Ecco la traduzione del contenuto inglese in italiano:
+
+**Immagine 1: "MuDA benchmark results"**
+
+*   **Titolo:** Risultati del benchmark MuDA
+*   **Punto 1:** I modelli sensibili al contesto performano significativamente meglio su alcuni fenomeni
+    *   ✓: Formalità, coesione lessicale
+    *   ✗: Ellissi, pronomi, forma verbale
+*   **Punto 2:** DeepL supera Google nella maggior parte dei fenomeni e delle coppie linguistiche*
+*   **Nota a piè di pagina:** *al aprile 2021
+
+---
+
+**Immagine 2: "Summary"**
+
+*   **Titolo:** Riepilogo
+*   **Punto 1:** Identificare fenomeni discorsivi sistematicamente senza previa conoscenza linguistica
+*   **Punto 2:** Benchmark indipendente dal dataset per la MT a livello di documento
+*   **Testo sul diagramma:**
+    *   "MuDA tagger" -&gt; Taggatore MuDA
+    *   "BLEU COMET F-measure ..." -&gt; BLEU COMET Misura-F ...</sample>
+    <sample id="1082">Ecco la traduzione del contenuto:
+
+**Testo visibile (punti elenco):**
+*   Identificare i fenomeni discorsivi sistematicamente senza conoscenze linguistiche pregresse.
+*   Benchmark indipendente dal dataset per la MT a livello di documento.
+
+**Testo pronunciato:**
+"E poi usiamo i nostri risultati per costruire un benchmark per la traduzione automatica a livello di documento, che può aiutarci a identificare quali fenomeni discorsivi i modelli possono gestire bene o meno, e quali sistemi di traduzione sono bravi nella traduzione a livello di documento."</sample>
+    <sample id="1083">Grazie mille per l'attenzione. Ci vediamo dopo.</sample>
+    <sample id="1084">Yusen Zhang</sample>
+    <sample id="1121">Il nuovo metodo è denominato "Permuting with 'jumps'".</sample>
+    <sample id="1122">L'autore ha descritto le "parole contrassegnate" come un metodo per trovare le parole che distinguono le persona dei gruppi contrassegnati da quelle dei gruppi non contrassegnati.</sample>
+    <sample id="1123">Gli autori sono affiliati a: University of Washington (Paul G. Allen School, UWNLP), Carnegie Mellon University Language Technologies Institute e un'università cinese (rappresentata da un logo).</sample>
+    <sample id="1124">La prima struttura di dipendenza simmetrica menzionata, che include il nome di una città, è **Conjunction-headed/Prague**.</sample>
+    <sample id="1125">James Finch e Sarah Finch.</sample>
+    <sample id="1126">4 autori.</sample>
+    <sample id="1127">I set di dati BLiMP e SyntaxGym possono essere utilizzati per testare i fenomeni sintattici, in quanto includono giudizi di grammaticalità.</sample>
+    <sample id="1161">Le abbreviazioni dei cinque metodi per la prima domanda di ricerca sono: FTw, BOND, COSINE, MLC, L2R.</sample>
+    <sample id="1162">Il modello viene valutato su 11 attività downstream biomediche e cliniche.</sample>
+    <sample id="1226">CamemBERT viene inizialmente addestrato su dati come OSCAR (138 GB o 4 GB) o CCNET (4 GB), a seconda della variante. La variante "CamemBERT OSCAR 138 GB" suggerisce l'uso del dataset OSCAR da 138 GB per l'addestramento iniziale.</sample>
+    <sample id="1227">Adam Przepiórkowski.</sample>
+    <sample id="1228">La degradazione delle prestazioni con un maggiore divario temporale.</sample>
+    <sample id="1269">I token generati nel primo passo sono corretti ma non sono ordinati. La permutazione è necessaria per disporli nell'ordine corretto per la sequenza di output.</sample>
+    <sample id="1270">Perché non si sa se i modelli di bias osservati (come gli stereotipi positivi che portano a schemi perniciosi) siano dovuti a un eccessivo allineamento dei valori o ad altri metodi anti-stereotipizzazione.</sample>
+    <sample id="1271">Gli input inaccettabili in una coppia minima sono le frasi che un modello linguistico dovrebbe considerare meno probabili o scorrette rispetto alla frase accettabile o grammaticale corrispondente.
+
+Esempi dal contenuto:
+*   **BLiMP**: "*Many people were helping herself." (agrammaticale)
+*   **SyntaxGym**: "*The customer ... has spent any money." (agrammaticale)
+*   **CrowS**: "Non-stereotypical sentence." (meno probabile o stereotipato)</sample>
+    <sample id="1272">Gli autori hanno utilizzato le seguenti metriche di valutazione:
+*   **F1-score** (per diverse attività come NER, CLS, POS)
+*   **Hamming** (per FrenchMedMCQA)
+*   **EMR** (per FrenchMedMCQA)</sample>
+    <sample id="1273">L'Alpha di Krippendorff è stata utilizzata per misurare l'accordo tra annotatori.</sample>
+    <sample id="1274">Wikipedia</sample>
+    <sample id="1275">Heinrich Heine University Düsseldorf, Germany.</sample>
+    <sample id="1276">I benchmark precedenti si sono concentrati su compiti esclusivamente linguistici, mentre MultiInstruct si distingue per l'attenzione ai compiti multimodali e per aver creato un dataset di istruzioni multimodali su larga scala, una risorsa che prima non era pubblicamente disponibile.</sample>
+    <sample id="1277">Tre.</sample>
+    <sample id="1278">Il video fornito non definisce la "coordinazione binaria". Il relatore sta descrivendo le colonne di un grafico che mostrano le misurazioni di lunghezza in caratteri, sillabe e parole.</sample>
+    <sample id="1279">Il contenuto inglese fornito non include informazioni sul tempo medio di utilizzo dei prompt in questo studio. Il grafico mostra la percentuale di persone che usano determinate parole in un lessico di stereotipi neri.</sample>
+    <sample id="1280">Il modello T5 più piccolo, ottimizzato su Coscript, può generare script di qualità superiore rispetto ai modelli linguistici di grandi dimensioni (LLM). Ciò indica che i modelli più piccoli possono superare quelli più grandi se adeguatamente addestrati su set di dati specifici.</sample>
+    <sample id="1281">Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo:**
+DrBERT: Un modello pre-addestrato robusto in francese per domini biomedici e clinici
+
+**Autori:**
+Yanis Labrak¹,⁴
+Adrien Bazoge²,³
+Richard Dufour²
+Mickael Rouvier¹
+Emmanuel Morin²
+Béatrice Daille²
+Pierre-Antoine Gourraud³
+
+**Affiliazioni:**
+(1) LIA, Università di Avignone
+(2) LS2N, Università di Nantes
+(3) Clinica dei dati, CHU di Nantes
+(4) Zenidoc
+
+**Testo nei loghi:**
+*   **LS2N:** LABORATORIO DELLE SCIENZE DEL DIGITALE DI NANTES
+*   **Nantes Université:** Università di Nantes
+*   **CENTRE HOSPITALIER UNIVERSITAIRE DE NANTES:** CENTRO OSPEDALIERO UNIVERSITARIO DI NANTES
+*   **LIA:** LABORATORIO DI INFORMATICA DI AVIGNONE
+*   **GENCI:** Il calcolo intensivo al servizio della conoscenza
+*   **AVIGNON UNIVERSITÉ:** UNIVERSITÀ DI AVIGNONE</sample>
+    <sample id="1282">In questa presentazione, parleremo prima della modellazione linguistica nell'assistenza sanitaria. Poi presenteremo il contributo principale del nostro articolo.</sample>
+    <sample id="1283">Ecco la traduzione del contenuto:
+
+**Testo sullo schermo:**
+Riepilogo
+I. Modellazione linguistica in sanità
+II. Confronto delle strategie di pre-addestramento, delle fonti di dati e delle dimensioni
+III. Valutazione di 13 modelli su 11 compiti
+IV. Distribuzione di NACHOS e DrBERT
+Avignon Université
+
+**Audio:**
+Abbiamo introdotto il primo modello biomedico in francese, chiamato Dr. Bert, che si basa su Roberta ed è stato addestrato su Nachos, che è un dataset di dati medici raccolti dal web.</sample>
+    <sample id="1284">Ecco la traduzione del contenuto inglese in italiano:
+
+**Contenuto della slide:**
+
+*   **Summary** (Titolo): Sommario
+*   **I. Language Modeling in Healthcare**: I. Modellazione del linguaggio in ambito sanitario
+*   **II. Comparison of pre-training strategies, data sources and sizes**: II. Confronto delle strategie di pre-addestramento, delle fonti di dati e delle loro dimensioni
+*   **III. Evaluation of 13 models on 11 tasks**: III. Valutazione di 13 modelli su 11 compiti
+*   **IV. Distribution of NACHOS and DrBERT**: IV. Distribuzione di NACHOS e DrBERT
+
+**Testo parlato:**
+
+"We also introduce a comparison of model with multiple pre-training settings and data sources. Then, we present our result on 11 biomedical and clinical downstream task, in French."
+
+Traduzione del parlato:
+
+"Introduciamo anche un confronto di modelli con diverse configurazioni di pre-addestramento e fonti di dati. Successivamente, presentiamo i nostri risultati su 11 compiti a valle biomedici e clinici."</sample>
+    <sample id="1285">Ecco la traduzione del contenuto inglese:
+
+**Riepilogo**
+
+I. Modellazione del linguaggio nell'assistenza sanitaria
+II. Confronto delle strategie di pre-training, delle fonti di dati e delle dimensioni
+III. Valutazione di 13 modelli su 11 compiti
+IV. Distribuzione di NACHOS e DrBERT
+
+**Modellazione del linguaggio**
+
+*   Approcci basati su Transformer, come BERT, offrono enormi guadagni di prestazioni su molti compiti di PNL.
+*   È stato adattato al francese con CamemBERT e FlauBERT.
+*   Sui compiti medici, i modelli specifici del dominio in inglese hanno alzato ulteriormente l'asticella.
+    *   PudMedBERT, BioBERT, ClinicalBERT e altri
+*   Le lingue diverse dall'inglese sono più rare e si basano principalmente su un pre-training continuo utilizzando un modello generico esistente.
+*   A differenza dei modelli generici, nessun modello open-source è ancora disponibile per il dominio biomedico in francese.
+*   Un modello specifico del dominio basato su BERT per il francese dovrebbe aumentare le prestazioni sui compiti medici.</sample>
+    <sample id="1286">Ecco la traduzione in italiano del contenuto della slide:
+
+**Modellazione del Linguaggio**
+
+*   Gli approcci basati su Transformer, come BERT, offrono un notevole miglioramento delle prestazioni in molte attività di PNL (Elaborazione del Linguaggio Naturale).
+*   È stato adattato al francese con CamemBERT e FlauBERT.
+*   Per i compiti medici, i modelli specifici di dominio in inglese hanno alzato ulteriormente l'asticella.
+    *   PudMedBERT, BioBERT, ClinicalBERT e altri
+*   Le lingue diverse dall'inglese sono più rare e si basano principalmente sul pre-addestramento continuo utilizzando un modello generico esistente.
+*   A differenza dei modelli generici, nessun modello open-source è ancora disponibile per il dominio biomedico in francese.
+*   Un modello specifico di dominio basato su BERT per il francese dovrebbe aumentare le prestazioni nelle attività mediche.</sample>
+    <sample id="1287">Ecco il contenuto tradotto in italiano:
+
+**Modellazione del Linguaggio**
+
+*   Gli approcci basati su Transformer, come BERT, offrono un enorme guadagno di prestazioni in molti compiti NLP.
+*   È stato adattato al francese con CamemBERT e FlauBERT.
+*   Nelle attività mediche, i modelli specifici per dominio in inglese hanno alzato l'asticella ancora più in alto.
+    *   PudMedBERT, BioBERT, ClinicalBERT e altri.
+*   Le lingue diverse dall'inglese sono più rare e si basano principalmente sul pre-addestramento continuo utilizzando un modello generico esistente.
+*   A differenza dei modelli generici, nessun modello open-source è ancora disponibile per il dominio biomedico in francese.
+*   Un modello specifico per dominio basato su BERT per il francese dovrebbe aumentare le prestazioni nelle attività mediche.</sample>
+    <sample id="1288">Modelli specializzati per altre lingue sono scarsi e sono spesso basati su pre-addestramento continuo a causa della mancanza di dati specifici per il dominio.</sample>
+    <sample id="1289">Ecco la traduzione del testo in italiano:
+
+**Modellazione del Linguaggio**
+
+*   Gli approcci basati su Transformer, come BERT, offrono un enorme guadagno di prestazioni su molte attività NLP.
+*   È stato adattato al francese con CamemBERT e FlauBERT.
+*   Nei compiti medici, i modelli specifici per dominio in inglese hanno alzato l'asticella ancora di più.
+    *   PudMedBERT, BioBERT, ClinicalBERT e altri
+*   Le lingue diverse dall'inglese sono più rare e si basano principalmente sul **pre-addestramento continuo** utilizzando un modello generico esistente.
+*   A differenza dei modelli generici, nessun modello **open-source** è ancora disponibile per il dominio biomedico in francese.
+*   Un modello specifico per dominio basato su BERT per il francese dovrebbe aumentare le prestazioni sui compiti medici.</sample>
+    <sample id="1290">Ecco la traduzione del contenuto:
+
+**Titolo della slide:**
+Confronto tra strategie di pre-addestramento e fonti di dati
+
+*   **Valutazione dell'impatto di fonti di dati medici pubbliche e private su set di dati di dimensioni comparabili**
+    *   **NACHOS:** Un dataset open-source di 1.1 miliardi di parole con dati eterogenei estratti da diversi domini medici, tipologie e stili.
+    *   **NBDW:** Un dataset privato di frasi ricavate da 1.7 milioni di cartelle cliniche anonimizzate estratte dal data warehouse dell'Ospedale Universitario di Nantes.
+
+*   **Confronto tra strategie di apprendimento**
+    *   **Da zero** con costruzione completa del modello
+    *   **Pre-addestramento continuo** utilizzando un modello pre-addestrato esistente (qui, CamemBERT, un modello generico francese, e PubMedBERT, uno medico basato sull'inglese).
+
+**Tabella 1 (in alto):**
+| Corpus                   | Dimensione | #parole | #frasi |
+| :----------------------- | :--------- | :------ | :----- |
+| NACHOS_large (pubbl.)    | 7.4 GB     | 1.1 B   | 54.2 M |
+| NACHOS_small (pubbl.)    | 4 GB       | 646 M   | 25.3 M |
+| NBDW_small (privato)     | 4 GB       | 655 M   | 43.1 M |
+| NBDW_mixed (entrambi)    | 4+4 GB     | 1.3 B   | 68.4 M |
+
+**Tabella 2 (in basso):**
+| Nome modello | Strategia                | Corpus              |
+| :----------- | :----------------------- | :------------------ |
+| DrBERT       | Da zero                  | NACHOS_large        |
+| DrBERT       | Da zero                  | NACHOS_small        |
+| ChuBERT      | Da zero                  | NBDW_small          |
+| ChuBERT      | Da zero                  | NBDW_mixed          |
+| CamemBERT    | Pre-addestramento continuo | NACHOS_small        |
+| PubMedBERT   | Pre-addestramento continuo | NACHOS_small        |
+| CamemBERT    | Pre-addestramento continuo | NBDW_small          |
+
+**Testo parlato (00:00-00:12):**
+"Quindi ci siamo chiesti quali siano le fonti di dati più appropriate per un'ampia gamma di utilizzi e se questi dati grezzi siano un buon sostituto per l'uso clinico."</sample>
+    <sample id="1291">Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo:** Confronto tra strategie di pre-addestramento e fonti di dati
+
+**Valutazione dell'impatto delle fonti di dati medici pubblici e privati su dimensioni di dati comparabili**
+*   **NACHOS:** Un dataset open-source di 1.1 miliardi di parole di dati eterogenei estratti da diversi domini, nature e stili medici.
+*   **NBDW:** Un dataset privato di frasi estratte da 1.7 milioni di cartelle cliniche anonimizzate dal data warehouse dell'Ospedale Universitario di Nantes.
+
+**Confronto tra strategie di apprendimento**
+*   **Da zero** con costruzione completa del modello.
+*   **Pre-addestramento continuo** utilizzando un modello pre-addestrato esistente (qui, CamemBERT, un modello generico francese, e PubMedBERT, uno medico basato sull'inglese).
+
+---
+
+**Tabelle:**
+
+**Tabella 1 (Corpus):**
+| Corpus                  | Dimensione | #parole  | #frasi  |
+| :---------------------- | :--------- | :------- | :------ |
+| NACHOS_large (pub.)     | 7.4 GB     | 1.1 B    | 54.2 M  |
+| NACHOS_small (pub.)     | 4 GB       | 646 M    | 25.3 M  |
+| NBDW_small (privato)    | 4 GB       | 655 M    | 43.1 M  |
+| NBDW_mixed (entrambi)   | 4+4 GB     | 1.3 B    | 68.4 M  |
+
+**Tabella 2 (Modelli):**
+| Nome modello | Strategia                | Corpus        |
+| :----------- | :----------------------- | :------------ |
+| DrBERT       | Da zero                  | NACHOS_large  |
+| DrBERT       | Da zero                  | NACHOS_small  |
+| ChuBERT      | Da zero                  | NBDW_small    |
+| ChuBERT      | Da zero                  | NBDW_mixed    |
+| CamemBERT    | Pre-addestramento continuo | NACHOS_small  |
+| PubMedBERT   | Pre-addestramento continuo | NACHOS_small  |
+| CamemBERT    | Pre-addestramento continuo | NBDW_small    |
+
+---
+
+**Audio:**
+"Per rispondere a questa domanda, confrontiamo DoctorBERT con il nostro modello ChuBERT, che si basa su dati anonimizzati ottenuti dal data warehouse dell'Ospedale Universitario di Nantes."</sample>
+    <sample id="1292">Dopotutto, ci chiediamo: di quanti dati abbiamo bisogno per addestrare un modello specializzato su dati francesi? Sono 4 gigabyte, 8 gigabyte, o...</sample>
+    <sample id="1293">Per rispondere a questa domanda, per prima cosa addestriamo e confrontiamo quattro modelli da zero. Una prima versione di DoctorBERT con 7 GB di Nachos, una seconda versione con 4 GB del set di Nachos,</sample>
+    <sample id="1294">Ecco la traduzione del contenuto inglese in italiano:
+
+**Testo sulla slide:**
+
+**Confronto tra strategie di pre-addestramento e fonti di dati**
+
+*   **Valutazione dell'impatto delle fonti di dati medici pubblici e privati su dimensioni di dati comparabili**
+    *   **NACHOS:** Un dataset open-source di 1,1 miliardi di parole di dati eterogenei acquisiti da diversi domini medici, nature e stili
+    *   **NBDW:** Un dataset privato di frasi prese da 1,7 milioni di cartelle cliniche anonimizzate estratte dal data warehouse dell'Ospedale Universitario di Nantes
+*   **Confronto delle strategie di apprendimento**
+    *   **Da zero** con costruzione completa del modello
+    *   **Pre-addestramento continuo** utilizzando un modello pre-addestrato esistente (qui, CamemBERT, un modello generico francese, e PubMedBERT, uno medico basato sull'inglese)
+
+**Corpus**
+| Corpus | Dimensione | #parole | #frasi |
+| :---------------------- | :-------- | :------ | :-------- |
+| NACHOS_large            | 7.4 GB    | 1.1 B   | 54.2 M  |
+| NACHOS_small (pub.)     | 4 GB      | 646 M   | 25.3 M  |
+| NBDW_small (private)    | 4 GB      | 655 M   | 43.1 M  |
+| NBDW_mixed (both)       | 4+4 GB    | 1.3 B   | 68.4 M  |
+
+**Modello**
+| Nome del modello | Strategia                | Corpus            |
+| :--------------- | :----------------------- | :---------------- |
+| DrBERT           | Da zero                  | NACHOS_large      |
+| DrBERT           | Da zero                  | NACHOS_small      |
+| ChuBERT          | Da zero                  | NBDW_small        |
+| ChuBERT          | Da zero                  | NBDW_mixed        |
+| CamemBERT        | pre-addestramento continuo | NACHOS_small      |
+| PubMedBERT       | pre-addestramento continuo | NACHOS_small      |
+| CamemBERT        | pre-addestramento continuo | NBDW_small        |
+
+**Contenuto parlato:**
+
+"Una prima versione di ChuBERT, che è un modello clinico, con 4 gigabyte di frasi prese da note cliniche. E una versione finale di ChuBERT con un mix di 4 gigabyte di dati NACHOS e 4 gigabyte di note cliniche."</sample>
+    <sample id="1295">Confronto tra strategie di pre-addestramento e fonti di dati
+
+* Valutazione dell'impatto delle fonti di dati medici pubblici e privati su dimensioni di dati comparabili
+    * NACHOS: Un dataset open-source di 1,1 miliardi di parole di dati eterogenei estratti da diversi domini, nature e stili medici
+    * NBDW: Un dataset privato di frasi estratte da 1,7 milioni di cartelle cliniche anonimizzate ricavate dal data warehouse dell'Ospedale Universitario di Nantes
+
+* Confronto tra strategie di apprendimento
+    * Da zero con costruzione completa del modello
+    * Pre-addestramento continuo utilizzando un modello pre-addestrato esistente (qui, CamemBERT, un modello generico francese, e PubMedBERT, uno medico basato sull'inglese)</sample>
+    <sample id="1296">SPECIAL INSTRUCTION: I will first think step by step and then provide the response.
+Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo della slide:**
+Confronto tra strategie di pre-addestramento e fonti di dati
+
+*   **Valutazione dell'impatto delle fonti di dati medici pubblici e privati su dimensioni di dati comparabili**
+    *   **NACHOS:** Un dataset open-source di 1.1 miliardi di parole di dati eterogenei estratti da diversi domini medici, nature e stili.
+    *   **NBDW:** Un dataset privato di frasi estratte da 1.7 milioni di cartelle cliniche anonimizzate dal data warehouse dell'Ospedale Universitario di Nantes.
+
+*   **Confronto tra strategie di apprendimento**
+    *   Da zero con costruzione completa del modello.
+    *   Pre-addestramento continuo utilizzando un modello pre-addestrato esistente (qui, CamemBERT, un modello generico francese, e PubMedBERT, un modello medico basato sull'inglese).
+
+**Dettagli Corpus:**
+
+| Corpus                   | Dimensione | #parole | #frasi |
+| :----------------------- | :--------- | :------ | :----- |
+| NACHOS_large (pub.)      | 7.4 GB     | 1.1 B   | 54.2 M |
+| NACHOS_small (pub.)      | 4 GB       | 646 M   | 25.3 M |
+| NBDW_small (privato)     | 4 GB       | 655 M   | 43.1 M |
+| NBDW_mixed (entrambi)    | 4+4 GB     | 1.3 B   | 68.4 M |
+
+**Strategia del Modello:**
+
+| Nome del modello | Strategia               | Corpus         |
+| :--------------- | :---------------------- | :------------- |
+| DrBERT           | Da zero                 | NACHOS_large   |
+| DrBERT           | Da zero                 | NACHOS_small   |
+| ChuBERT          | Da zero                 | NBDW_small     |
+| ChuBERT          | Da zero                 | NBDW_mixed     |
+| CamemBERT        | pre-addestramento continuo | NACHOS_small   |
+| PubMedBERT       | pre-addestramento continuo | NACHOS_small   |
+| CamemBERT        | pre-addestramento continuo | NBDW_small     |
+
+**Discorso dell'oratore:**
+"Uno basato sui pesi di Camembert e addestrato su 4 gigabyte del set di Nachos. Un altro anch'esso basato su Camembert ma addestrato questa volta sui 4 gigabyte di dati clinici."</sample>
+    <sample id="1297">Ecco la traduzione del contenuto inglese in italiano:
+
+---
+
+**Slide 1: Contenuto testuale**
+
+**Titolo:** Confronto tra strategie di pre-addestramento e fonti di dati
+
+*   **Valutazione dell'impatto di fonti di dati medici pubbliche e private su dimensioni di dati comparabili**
+    *   **NACHOS:** Un dataset open-source di 1.1 miliardi di parole di dati eterogenei raccolti da diversi domini medici, nature e stili.
+    *   **NBDW:** Un dataset privato di frasi estratte da 1.7 milioni di cartelle cliniche anonimizzate dal data warehouse dell'Ospedale Universitario di Nantes.
+
+*   **Confronto tra strategie di apprendimento**
+    *   **Da zero** con costruzione completa del modello
+    *   **Pre-addestramento continuo** utilizzando un modello pre-addestrato esistente (qui, CamemBERT, un modello generico francese, e PubMedBERT, uno medico basato sull'inglese)
+
+**Tabella 1: Informazioni sul Corpus**
+
+| Corpus                | Dimensione | #parole  | #frasi |
+| :-------------------- | :--------- | :------- | :----- |
+| NACHOS_large (pub.)   | 7.4 GB     | 1.1 B    | 54.2 M |
+| NACHOS_small (pub.)   | 4 GB       | 646 M    | 25.3 M |
+| NBDW_small (privato)  | 4 GB       | 655 M    | 43.1 M |
+| NBDW_mixed (entrambi) | 4+4 GB     | 1.3 B    | 68.4 M |
+
+**Tabella 2: Informazioni sul Modello**
+
+| Nome modello | Strategia                | Corpus            |
+| :----------- | :----------------------- | :---------------- |
+| DrBERT       | Da zero                  | NACHOS_large      |
+| DrBERT       | Da zero                  | NACHOS_small      |
+| ChuBERT      | Da zero                  | NBDW_small        |
+| ChuBERT      | Da zero                  | NBDW_mixed        |
+| CamemBERT    | Pre-addestramento continuo | NACHOS_small      |
+| PubMedBERT   | Pre-addestramento continuo | NACHOS_small      |
+| CamemBERT    | Pre-addestramento continuo | NBDW_small        |
+
+**Footer:** Avignon Université
+
+---
+
+**Slide 2: Contenuto testuale (dal video e dall'immagine)**
+
+**Titolo:** Valutazione: Fonti di dati e dimensione
+
+*   Valutazione delle prestazioni di 13 modelli su 11 compiti, sia pubblici che privati.
+*   I nostri modelli *fine-tuned* ottengono risultati all'avanguardia su quasi tutti i compiti.
+
+**Tabella 3: Intestazioni dei Risultati**
+
+| aHF | aHF | Referto Medico | Specialità | MUSCA-DET | MUSCA-DET | ESSAI | CAS | FrenchMedMCQA | QUARO-EMEA | QUARO-MEDLINE |
+| :-: | :-: | :------------: | :--------: | :-------: | :-------: | :---: | :-: | :-----------: | :--------: | :-----------: |
+| F1  | F1  |      CLS       |    NER     |    CLS    |    NER    | CLS   | POS | POS           | F1         | NER           | NER           |
+
+*   Generale
+*   Biomedico
+*   Clinico
+
+---
+
+**Audio (00:00-00:09):**
+
+"And finally, one base of on English biomedical model, PubMedBERT, and train on 4 GB of set of NACHOS. In total, we have seven models."
+
+**Traduzione audio:**
+
+"E infine, una base su un modello biomedico inglese, PubMedBERT, e addestrato su un set di 4 GB di NACHOS. In totale, abbiamo sette modelli."</sample>
+    <sample id="1298">Per valutare i nostri sette modelli, abbiamo utilizzato task pubblici e privati, come il riconoscimento di entità nominate, la classificazione, l'assegnazione di etichette grammaticali e la risposta a domande.</sample>
+    <sample id="1299">Questi modelli sono confrontati con sei modelli di riferimento, che sono CamemBERT OSCAR 138 gigabyte, CamemBERT OSCAR 4 gigabyte, CamemBERT CCNN_ET 4 gigabyte, PubMedBERT, MayoBERT e ClinicalBERT.</sample>
+    <sample id="1300">L'evoluzione di evidenziare che il modello si comporta meglio nel compito con dati della stessa natura di quelli su cui il modello è stato addestrato.</sample>
+    <sample id="1301">Ecco la traduzione del contenuto inglese:
+
+"Tuttavia, possiamo ottenere quei dati da... possiamo osservare che i dati provenienti da fonti eterogenee sembrano essere più versatili. Osserviamo anche che l'utilizzo di più dati si traduce in prestazioni migliori."</sample>
+    <sample id="1302">**Testo dall'immagine:**
+Valutazione: Strategie di pre-addestramento
+*   Da zero vs. pre-addestramento continuo su 4GB di dati
+*   I compiti di risposta a domande richiedono una maggiore conoscenza specifica del dominio per funzionare bene
+*   Uno studio della stabilità del modello mostra una maggiore variabilità tra le esecuzioni per i modelli basati su CamemBERT che utilizzano il pre-addestramento continuo
+
+**Audio:**
+In generale, l'addestramento da zero sembra ottenere prestazioni più elevate nella maggior parte dei compiti.</sample>
+    <sample id="1303">Tuttavia, il nostro esperimento di pre-addestramento continuo, utilizzando i pesi e il tokenizer di PubMedBERT, addestrato sul sottoinsieme di 4 GB di Naccos, ha mostrato risultati paragonabili a quelli ottenuti con DoctorBERT 4 GB da zero.</sample>
+    <sample id="1304">Ecco la traduzione del contenuto:
+
+**Testo della slide:**
+"Valutazione : Strategie di pre-addestramento
+
+*   Da zero vs. pre-addestramento continuo su 4GB di dati
+*   I compiti di risposta a domande richiedono una maggiore conoscenza specifica del dominio per funzionare bene
+*   Uno studio sulla stabilità del modello mostra una maggiore variabilità tra le esecuzioni per i modelli basati su CamemBERT addestrati utilizzando il pre-addestramento continuo"
+
+**Testo pronunciato:**
+"il che non è il caso per il modello basato su pesi e tokenizer di Camembert che soffrono di problemi di stabilità."</sample>
+    <sample id="1305">Finalmente, come conclusione, il nostro sistema proposto offre prestazioni migliori su 9 degli 11 compiti a valle e supera a livello globale i risultati del modello generico, qui Camembert.</sample>
+    <sample id="1306">Ecco la traduzione del testo in italiano:
+
+**Messaggio chiave**
+
+*   **DrBERT** raggiunge risultati all'avanguardia in 9 task downstream francesi orientati alla medicina
+    *   Supera il modello generico CamemBERT e i modelli specifici di dominio basati sull'inglese
+    *   Conferma l'utilità di addestrare un modello specifico per la medicina in francese
+*   **Le fonti di dati contano:** l'addestramento su dati eterogenei è importante
+    *   NACHOS è più robusto rispetto all'utilizzo di soli dati clinici privati
+*   Più dati sono meglio, ma non scalano bene
+*   Il pre-addestramento continuo è una strategia più efficace quando basato su modelli inglesi specifici del dominio
+*   I modelli DrBERT, il dataset NACHOS e gli script di addestramento sono disponibili gratuitamente sotto licenza MIT.</sample>
+    <sample id="1307">Ecco la traduzione del contenuto inglese in italiano:
+
+**Messaggio chiave**
+
+*   **DrBERT** raggiunge risultati all'avanguardia in 9 task a valle orientati alla medicina francese.
+    *   Supera il modello generico CamemBERT e i modelli specifici del dominio basati sull'inglese.
+    *   Conferma l'utilità di addestrare un modello specifico per la medicina in francese.
+*   **Le fonti di dati contano:** l'addestramento su dati eterogenei è importante.
+    *   NACHOS è più robusto rispetto all'utilizzo di soli dati clinici privati.
+*   Più dati sono meglio, ma non scalano bene.
+*   Il pre-addestramento continuo è una strategia più efficace se basato su modelli inglesi specifici del dominio.
+*   I modelli DrBERT, il dataset NACHOS e gli script di addestramento sono liberamente disponibili sotto licenza MIT.
+
+drbert.univ-avignon.fr
+Avignon Université</sample>
+    <sample id="1308">Ecco la traduzione del contenuto inglese in italiano:
+
+*   **Thank You**
+    *   Grazie
+*   **Looking forward to exchange at poster session in Toronto!**
+    *   Non vediamo l'ora di confrontarci alla sessione poster a Toronto!
+*   **More information on: drbert.univ-avignon.fr**
+    *   Maggiori informazioni su: drbert.univ-avignon.fr
+*   **Avignon Université**
+    *   Avignon Université</sample>
+    <sample id="1309">Vengono esaminate due strategie di apprendimento: l'addestramento da zero (from scratch) e l'addestramento continuo (continual pre-training).</sample>
+    <sample id="1310">Secondo il video, l'overfitting adattivo in questo caso "non è osservato" ("not observed"), quindi non viene quantificato alcun fattore.</sample>
+    <sample id="1311">La qualità della semplificazione è stata valutata utilizzando le metriche SARI, BLEU, BS-P e FRE.</sample>
+    <sample id="1312">Sì, i modelli linguistici presentano bias politici diversi, occupando tutti e quattro i quadranti sulla bussola politica.</sample>
+    <sample id="1313">Ecco il testo tradotto in italiano:
+
+**Generalizzazione Composizionale senza Alberi usando l'Etichettatura di Multisemi e Permutazioni Latenti**
+
+Matthias Lindemann, Alexander Koller, Ivan Titov
+
+L'Università di Edimburgo, Informatica
+Centro UKRI per la Formazione Dottorale
+Università della Saarland
+Università di Amsterdam</sample>
+    <sample id="1314">Ecco la traduzione:
+
+**Testo dall'immagine:**
+Generalizzazione Composizionale senza Alberi usando Tagging a Multisetti e Permutazioni Latenti
+Matthias Lindemann, Alexander Koller, Ivan Titov
+
+**Testo dall'audio:**
+Questo è un lavoro congiunto con i miei supervisori, Alexander Koller e Ivan Titov.</sample>
+    <sample id="1315">Generalizzazione Composizionale
+
+Capacità di un discente di gestire ricorsioni più profonde e composizioni inedite di frasi che sono state viste individualmente durante l'addestramento.</sample>
+    <sample id="1316">Nel contesto del parsing semantico, la verifica della generalizzazione composizionale potrebbe apparire così. Come di consueto, abbiamo un insieme di addestramento di enunciati, in questo caso, "La ragazza ha dormito" e "Mary sapeva che la ragazza ha dormito".</sample>
+    <sample id="1317">Queste frasi sono accoppiate con forme logiche che rappresentano gli aspetti principali del loro significato.</sample>
+    <sample id="1318">In contrasto alla valutazione standard del machine learning, il set di test non proviene dalla stessa distribuzione, ma contiene forme logiche strutturalmente invisibili.</sample>
+    <sample id="1319">Ecco il contenuto tradotto in italiano:
+
+**Generalizzazione Composizionale nel Parsing Semantico**
+
+**Addestramento:**
+
+| | |
+|---|---|
+| La ragazza ha dormito. | *girl x_2 ^ sleep.agent x_1 x_2 |
+| Mary sapeva che la ragazza ha dormito. | *girl x_4 ^ know.agent x_1 Mary ^ know.ccomp x_1 x_5 ^ sleep.agent x_5 x_4 |
+
+**Test:**
+
+| | |
+|---|---|
+| Jim ha detto che Mary sapeva che la ragazza ha dormito. | *girl x_7 ^ say.agent x_1 Jim ^ say.ccomp x_1 x_4 ^ know.agent x_4 Mary ^ know.ccomp x_4 x_8 ^ sleep.agent x_8 x_7 |</sample>
+    <sample id="1320">Ecco la traduzione del contenuto:
+
+**Testo sull'immagine:**
+
+**Generalizzazione Composizionale nel Parsing Semantico**
+
+**Addestramento (Train):**
+*   La ragazza dormì.
+*   Mary sapeva che la ragazza dormì.
+
+**Test:**
+*   Jim disse che Mary sapeva che la ragazza dormì.
+
+**In basso:**
+I modelli seq2seq ingenui falliscono!
+
+---
+
+**Testo dall'audio:**
+I modelli ingenui da sequenza a sequenza (seq2seq) faticano con questo tipo di generalizzazione fuori distribuzione e spesso producono output che sono disconnessi dall'input.</sample>
+    <sample id="1321">In particolare, spesso non riescono a riprodurre le corrispondenze sistematiche tra input e output, come quelle codificate a colori nell'esempio.
+
+I modelli seq2seq ingenui falliscono!</sample>
+    <sample id="1322">Un metodo popolare per affrontare questo è quello di integrare gli alberi nel modello.</sample>
+    <sample id="1323">Gli alberi hanno lo scopo di catturare il processo composizionale che mette in relazione gli enunciati con le forme logiche.</sample>
+    <sample id="1324">Ecco la traduzione del contenuto inglese in italiano:
+
+**Gli alberi aiutano molto ma...**
+
+**Gli alberi devono essere ottenuti:**
+- Pre/Post-elaborazione delle forme logiche</sample>
+    <sample id="1325">Ecco la traduzione del contenuto inglese in italiano:
+
+**Gli alberi aiutano molto ma...**
+
+**Gli alberi devono essere ottenuti:**
+- Forme logiche di pre/post-elaborazione</sample>
+    <sample id="1326">Gli alberi aiutano molto ma...
+
+*girl x₁ ; sleep.agent x₂ x₁
+*girl x₁ ; x₁
+sleep.agent x₂
+La ragazza ha dormito.
+
+Gli alberi devono essere ottenuti:
+- Forme logiche di pre/post-elaborazione
+- Induzione grammaticale</sample>
+    <sample id="1327">**Contenuto dell'immagine:**
+
+*   **Titolo:** Gli alberi aiutano molto ma...
+*   **Testo nel diagramma:**
+    *   `*girl x₁ sleep.agent x₂₁`
+    *   `*girl x₁`, `x₁`
+    *   `sleep.agent x₂`
+    *   `The girl slept.` (La ragazza ha dormito.)
+*   **Lista puntata:**
+    *   Gli alberi devono essere ottenuti:
+    *   - Forme logiche di pre/post-elaborazione
+    *   - Induzione grammaticale
+*   **Riquadro rosso:** Questo articolo: un modello neurale seq2seq che modella direttamente le corrispondenze tra frammenti. Per la prima volta, mostriamo una forte generalizzazione a una ricorsione più profonda *senza alberi*.
+
+**Trascrizione dell'audio:**
+
+In questo articolo, non usiamo gli alberi e introduciamo un modello neurale seq2seq che modella direttamente le corrispondenze tra frammenti dell'input e frammenti dell'output.</sample>
+    <sample id="1328">Ecco la traduzione del contenuto inglese in italiano:
+
+**Gli alberi aiutano molto ma...**
+
+*   *ragazza x₁ ; dormire.agente x₂ x₁
+*   *ragazza x₁ ; x₁
+*   dormire.agente x₂
+*   La ragazza ha dormito.
+
+Gli alberi devono essere ottenuti:
+*   - Forme logiche di pre/post-elaborazione
+*   - Induzione grammaticale
+
+Questo articolo: modello neurale seq2seq che modella direttamente le corrispondenze tra frammenti. Per la prima volta, mostriamo una forte generalizzazione a una ricorsione più profonda *senza alberi*.</sample>
+    <sample id="1329">Il nostro approccio prevede l'output dall'input in due passaggi.</sample>
+    <sample id="1330">Per prima cosa, etichettiamo ogni token di input con un multi-insieme non ordinato di token che appariranno nell'output.</sample>
+    <sample id="1331">Dopo il primo passo, abbiamo tutti i token giusti ma non sono ordinati.</sample>
+    <sample id="1332">Il testo in inglese "Our Approach" si traduce in italiano come:
+"Il Nostro Approccio"</sample>
+    <sample id="1333">Silent thinking:
+The user wants a translation of the English audio to Italian. I will listen to the audio and translate it directly.Introduciamo un nuovo metodo per prevedere una permutazione che non impone alcun vincolo rigido sulle possibili permutazioni. Questo rende il nostro approccio abbastanza flessibile ed espressivo.</sample>
+    <sample id="1334">Concettualmente, il nostro modello di permutazione funziona più o meno così.</sample>
+    <sample id="1335">Andiamo da sinistra a destra sull'output e determiniamo quale token del multiset inserire in ogni posizione.
+
+Per la prima posizione di output, selezioniamo semplicemente uno, come evidenziato in rosso.</sample>
+    <sample id="1336">Ecco la traduzione:
+
+**Testo nell'immagine:**
+*   **Permuting with "jumps"**: Permutare con "salti"
+*   **Permute**: Permuta
+*   **Tag**: Etichetta / Taggatura
+*   **the**: il/la
+*   **girl**: ragazza
+*   **slept**: dormì
+
+**Testo parlato:**
+"Poi saltiamo al prossimo token del multiset per determinare il secondo token nell'output."</sample>
+    <sample id="1337">**Permutare con "salti"**
+
+Determiniamo il terzo token nell'output in un modo simile, saltando a un altro token multi-set.
+
+Continuiamo questo processo.</sample>
+    <sample id="1338">finché ogni token della prima fase non è stato visitato esattamente una volta.</sample>
+    <sample id="1339">Per darvi un'anticipazione dei risultati sperimentali. Qui confrontiamo il nostro metodo con altri modelli senza albero sul benchmark COGS. Il nostro modello supera gli altri con un ampio margine nella generalizzazione a ricorsioni più profonde.
+
+---
+
+**Descrizione dell'immagine:**
+
+La diapositiva mostra un grafico a barre intitolato "Alcuni risultati su COGS (Kim e Linzen 2020)". Il titolo del grafico è "Confronto con altri modelli senza albero sulla generalizzazione strutturale su COGS".
+
+L'asse orizzontale (X) del grafico mostra tre tipi di generalizzazione: "PP recursion" (ricorsione di sintagmi preposizionali), "CP recursion" (ricorsione di sintagmi complementatori) e "Obj PP -&gt; Subj PP" (generalizzazione da sintagma preposizionale oggetto a sintagma preposizionale soggetto).
+
+L'asse verticale (Y) indica l'accuratezza (Acc), che va da 0 a 90.
+
+Una legenda sul lato destro identifica quattro modelli: "LSTM seq2seq" (blu), "T5" (verde), "Zheng and Lapata" (giallo scuro) e "Ours" (Il nostro - marrone).
+
+Il grafico mostra che il modello "Ours" (marrone) ottiene un'accuratezza significativamente più alta nelle categorie "PP recursion" (circa 83%) e "CP recursion" (circa 81%) rispetto agli altri modelli. Ad esempio, T5 (verde) raggiunge circa il 35% per "PP recursion" e circa il 24% per "CP recursion", mentre "Zheng and Lapata" (giallo scuro) è a circa il 18% e il 14% rispettivamente. Il modello "LSTM seq2seq" (blu) mostra un'accuratezza quasi nulla in tutte le categorie.
+
+Nella categoria "Obj PP -&gt; Subj PP", tutti i modelli mostrano un calo drastico delle prestazioni, ma il modello "Ours" mantiene comunque l'accuratezza più alta (circa 12%) rispetto agli altri che si attestano intorno o vicino allo 0%.
+
+In sintesi, il grafico evidenzia che il modello proposto (indicato come "Ours") supera notevolmente gli altri modelli "treeless" nella generalizzazione strutturale su compiti di ricorsione.</sample>
+    <sample id="1340">Alcuni altri tipi di generalizzazione strutturale rimangono però molto impegnativi.</sample>
+    <sample id="1341">Ecco la traduzione del contenuto inglese presente nell'immagine:
+
+*   **Technical Challenges We Solve:** Sfide Tecniche Che Risolviamo
+*   **Alignment unknown.** Allineamento sconosciuto.</sample>
+    <sample id="1342">Ecco la traduzione del testo in italiano:
+
+**Sfide Tecniche che Risolviamo**
+
+L'allineamento è sconosciuto.
+Innanzitutto, l'allineamento tra input e output non è fornito nei dati di training. Di conseguenza, per un dato token, non sappiamo da quale multisistema provenga, il che pone una sfida per l'allenamento.</sample>
+    <sample id="1343">Ecco la traduzione del contenuto in inglese:
+
+**Testo sullo schermo:**
+Sfide Tecniche Che Risolviamo
+Allineamento sconosciuto.
+Indurlo durante l'addestramento.
+
+**Audio:**
+Inoltre, a volte ci sono più permutazioni che sono coerenti con i dati, ma quella linguisticamente corretta è latente. Affrontiamo questo inducendo l'allineamento come parte dell'addestramento.</sample>
+    <sample id="1344">That's why inference is NP-hard (related to the Traveling Salesman Problem).</sample>
+    <sample id="1345">Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo:** Sfide Tecniche Che Risolviamo
+
+**Testo principale:**
+*   Allineamento sconosciuto.
+*   -&gt; Indurlo durante l'addestramento.
+*   Modello di permutazione:
+    *   - L'inferenza è NP-difficile (~ TSP)
+    *   - Retropropagare tramite rilassamento continuo
+
+**Trascrizione audio tradotta:**
+Approssimiamo questo con un rilassamento continuo compatibile con la GPU che ci consente anche di retropropagare attraverso la soluzione e apprendere le permutazioni linguisticamente più plausibili.</sample>
+    <sample id="1346">Ecco la traduzione del testo in italiano:
+
+*   **Technical Challenges We Solve**
+    *   Le Sfide Tecniche che Risolviamo
+
+*   **Alignment unknown.**
+    *   Allineamento sconosciuto.
+*   **» Induce it in training.**
+    *   » Indurlo nell'addestramento.
+
+*   **Permutation model:**
+    *   Modello di permutazione:
+*   **Inference is NP-hard (≈ TSP)**
+    *   L'inferenza è NP-difficile (≈ TSP)
+*   **Backpropagate through continuous relaxation**
+    *   Retropropagazione tramite rilassamento continuo
+
+*   **Paper &amp; Code:**
+    *   Articolo e Codice:
+*   **https://t.ly/mX8ny**
+    *   https://t.ly/mX8ny</sample>
+    <sample id="1347">La dissonanza cognitiva si verifica quando due elementi di cognizione (pensieri, azioni, credenze) sono incoerenti.</sample>
+    <sample id="1348">GPT-4 è il modello linguistico più liberale.</sample>
+    <sample id="1349">Sì, l'addestramento cumulativo ha prestazioni uguali o migliori di quello iterativo.</sample>
+    <sample id="1350">Sara Papi.</sample>
+    <sample id="1351">I dati per l'analisi sono stati tratti dalle trascrizioni dei TED talks, tradotti dall'inglese in 14 lingue diverse.
+
+Il contenuto inglese fornito non menziona il parametro di riferimento MuDa.</sample>
+    <sample id="1385">Matthias Lindemann.</sample>
+    <sample id="1386">Il trasferimento interlinguistico (cross-lingual transfer) significa "addestrare su una lingua sorgente e trasferire a un'altra lingua".</sample>
+    <sample id="1387">Gli autori sono affiliati a:
+*   **Saarland University**: Dawei Zhu, Marius Mosbach, Dietrich Klakow
+*   **Amazon Alexa**: Xiaoyu Shen
+*   **University of Vienna**: Andreas Stephan</sample>
+    <sample id="1388">Gli autori fanno ricorso a due misure di latenza:
+
+1.  **Average Lagging (AL)**
+2.  **Computational Aware Average Lagging (AL_CA)**</sample>
+    <sample id="1389">Ciao a tutti. Sono Akshatha e oggi il mio coautore Martin ed io stiamo presentando il nostro lavoro, The KITMUS Test, che valuta l'integrazione della conoscenza da più fonti. Questo lavoro è una collaborazione tra la McGill University, Mila e Microsoft Research.</sample>
+    <sample id="1390">Ecco la traduzione del contenuto testuale dell'immagine in italiano:
+
+**Titolo principale:**
+I modelli NLU fanno uso di molteplici fonti di conoscenza.
+
+**Testo nella nuvola a sinistra:**
+Conoscenza nei Parametri (conoscenza in fase di pre-addestramento)
+
+**Testo nella nuvola a destra:**
+Conoscenza nel Contesto (conoscenza in fase di inferenza)
+
+**Testo nella casella in basso:**
+Modello NLU
+
+*(Nota: Il piccolo testo all'interno della nuvola a destra è un esempio di testo e non è stato tradotto in dettaglio, poiché l'intento principale sembra essere quello di illustrare il concetto di "conoscenza nel contesto" con un testo generico.)*</sample>
+    <sample id="1391">Ecco la traduzione del contenuto inglese in italiano:
+
+**Testo sulla diapositiva:**
+*   **"NLU models draw on multiple knowledge sources"**
+    "I modelli NLU attingono a molteplici fonti di conoscenza"
+*   **"Knowledge in Parameters (pretrain-time knowledge)"**
+    "Conoscenza nei Parametri (conoscenza al momento del pre-addestramento)"
+*   **"Knowledge in Context (inference-time knowledge)"**
+    "Conoscenza nel Contesto (conoscenza al momento dell'inferenza)"
+*   **"NLU Model"**
+    "Modello NLU"
+
+**Testo parlato (dall'audio):**
+*   **"Recent works in tasks like question answering show that models can use pretrain-time knowledge to solve the task."**
+    "Recenti lavori in compiti come la risposta a domande mostrano che i modelli possono utilizzare la conoscenza acquisita durante il pre-addestramento per risolvere il compito."</sample>
+    <sample id="1392">Ecco la traduzione del contenuto in inglese in italiano:
+
+**Testo sulla slide:**
+
+*   **Titolo principale:** John ha visto il presidente neoeletto in TV
+*   **Sotto il diagramma (a sinistra):** conoscenza al momento del pre-addestramento
+*   **Domande con spunta verde:**
+    *   Cosa fanno i presidenti
+    *   Cos'è una TV
+*   **Domande con croce rossa:**
+    *   Chi è John
+    *   Chi è il nuovo presidente
+*   **Testo in basso a destra:** Realizzato da FREE-VECTORS.NET
+*   **Numero di pagina:** 3
+
+**Discorso della speaker:**
+
+*   "Ma la comprensione del linguaggio naturale spesso richiede conoscenza che viene fornita anche in fase di inferenza."</sample>
+    <sample id="1393">Ad esempio, nella frase, John ha visto il presidente neo eletto in TV.</sample>
+    <sample id="1394">Ecco la traduzione del contenuto inglese in italiano:
+
+**Testo sulla slide:**
+
+*   **John saw the newly elected president on TV**
+    *   John ha visto il presidente neo eletto in TV
+*   **pretrain-time knowledge**
+    *   conoscenza acquisita in fase di pre-addestramento
+*   **What presidents do**
+    *   Cosa fanno i presidenti
+*   **What is a TV**
+    *   Cos'è una TV
+*   **Who is John**
+    *   Chi è John
+*   **Who is the new president**
+    *   Chi è il nuovo presidente
+
+**Trascrizione dell'audio tradotta:**
+
+"I parametri di pre-addestramento possono contenere informazioni su cosa fanno i presidenti e cos'è una TV, ma non possono sapere in modo affidabile chi sia questa entità specifica dell'incidente, John, o chi sia il nuovo presidente, perché il presidente potrebbe essere cambiato dal pre-addestramento."</sample>
+    <sample id="1395">Giovanni ha visto il presidente neoeletto in TV.
+
+**Dall'audio:**
+Pertanto, i modelli di successo per attività NLU (Natural Language Understanding) ad alta intensità di conoscenza richiedono la capacità di integrare e utilizzare sia la conoscenza al momento del pre-addestramento che la conoscenza al momento dell'inferenza.
+
+**Dalle scritte sull'immagine:**
+*   conoscenza al momento del pre-addestramento
+*   conoscenza al momento dell'inferenza
+*   Cosa fanno i presidenti ✅
+*   Cos'è una TV ✅
+*   Chi è Giovanni ✅
+*   Chi è il nuovo presidente ✅
+*   Realizzato da FREE-VECTORS.NET</sample>
+    <sample id="1396">In questo lavoro, proponiamo una suite di test diagnostici per la valutazione dell'integrazione della conoscenza.
+Un compito di risoluzione della coreferenza per sondare la capacità di attingere a:
+* conoscenza pre-addestramento
+* conoscenza al momento dell'inferenza
+Sperimentiamo con:
+* partecipanti a studi umani
+* modelli di risoluzione della coreferenza</sample>
+    <sample id="1397">Ecco la traduzione del contenuto in inglese in italiano:
+
+**Suite di Test KITMUS**
+
+*   Dataset per la valutazione dell'integrazione della conoscenza
+*   Compito di risoluzione della coreferenza per sondare la capacità di attingere a:
+    *   conoscenza del pre-addestramento
+    *   conoscenza dell'inferenza
+*   Esperimento con:
+    *   partecipanti a studi umani
+    *   modelli di risoluzione della coreferenza</sample>
+    <sample id="1398">Ecco un esempio dal nostro set di dati.
+Servin è un giudice. Kea è una fornaia. Servin e Kea si sono incontrati in un parco. Dopo una lunga giornata di lavoro a decidere casi in tribunale, lui era felice di rilassarsi. [Risposta: Servin]</sample>
+    <sample id="1399">Il compito qui è identificare l'entità corretta a cui si riferisce il pronome "lui", che in questo caso è Servin.
+
+**Testo tradotto:**
+
+**Suite di test KITMUS**
+
+Servin è un giudice. Kea è una fornaia. Servin e Kea si incontrarono in un parco. Dopo una lunga giornata di lavoro a decidere casi in tribunale, era felice di rilassarsi. [Risposta: Servin]</sample>
+    <sample id="1400">La risoluzione di un dato pronome richiede due tipi di informazioni. Primo, conoscenza specifica dell'entità, come "Servin è un giudice". E secondo, conoscenza di fondo, come "I giudici decidono i casi nei tribunali".</sample>
+    <sample id="1401">Ecco la traduzione del contenuto inglese in italiano:
+
+**Testo sull'immagine:**
+
+*   **KITMUS Test Suite**
+    *   Suite di Test KITMUS
+*   **Servin is a judge. Kea is a baker. Servin and Kea met at a park. After a long day at work deciding cases in a law court, he was happy to relax. [Answer: Servin]**
+    *   Servin è un giudice. Kea è una fornaia. Servin e Kea si sono incontrati al parco. Dopo una lunga giornata di lavoro a decidere casi in un tribunale, era felice di rilassarsi. [Risposta: Servin]
+*   **Judges decide cases in courts of law.**
+    *   I giudici decidono i casi nei tribunali.
+*   **1) Entity-specific knowledge**
+    *   1) Conoscenza specifica dell'entità
+*   **2) Background knowledge**
+    *   2) Conoscenza di base
+*   **inference-time knowledge**
+    *   conoscenza al momento dell'inferenza
+*   **pretrain-time knowledge**
+    *   conoscenza al momento del pre-addestramento
+
+**Trascrizione e traduzione del parlato della relatrice (00:00-00:08):**
+
+*   **Originale:** "Generally, background knowledge is learned during the pre-training of large language models, while entity-specific knowledge is typically observed at inference time."
+*   **Italiano:** "Generalmente, la conoscenza di base viene appresa durante il pre-addestramento dei grandi modelli linguistici, mentre la conoscenza specifica dell'entità è tipicamente osservata al momento dell'inferenza."</sample>
+    <sample id="1402">Ecco la traduzione del contenuto inglese in italiano:
+
+*   **KITMUS Test Suite**: Suite di test KITMUS
+*   **Servin is a judge. Kea is a baker. Servin and Kea met at a park. After a long day at work deciding cases in a law court, he was happy to relax. [Answer: Servin]**: Servin è un giudice. Kea è una fornaia. Servin e Kea si sono incontrati al parco. Dopo una lunga giornata di lavoro a decidere casi in un tribunale, lui era felice di rilassarsi. [Risposta: Servin]
+*   **Judges decide cases in courts of law.** : I giudici decidono i casi nei tribunali.
+*   **1) Entity-specific knowledge**: 1) Conoscenza specifica dell'entità
+*   **2) Background knowledge**: 2) Conoscenza di base (o Conoscenza pregressa)
+*   **inference-time knowledge**: Conoscenza al momento dell'inferenza
+*   **pretrain-time knowledge**: Conoscenza al momento del pre-addestramento
+*   **Small text box content and speaker's words**: Variamo la disponibilità di questi due pezzi di informazione in modo tale che possano essere trovati in un'unica fonte o in più fonti.</sample>
+    <sample id="1403">Abbiamo definito tre configurazioni di KITMUS. In primo luogo, abbiamo la configurazione tipica, Background-Pretrain, dove la conoscenza di sfondo si presume sia disponibile in fase di pre-addestramento.
+a) Background-Pretrain: Configurazione tipica
+b) Background-Both: Fornire esplicitamente la conoscenza di sfondo nel contesto
+c) Background-Inference: Conoscenza disponibile solo al momento dell'inferenza</sample>
+    <sample id="1404">Ecco la traduzione del contenuto:
+
+**Titolo della diapositiva:**
+Varianti di KITMUS
+
+**Testo sotto le immagini:**
+a) Background-Pretrain: Configurazione tipica
+b) Background-Both: Fornire esplicitamente la conoscenza di base nel contesto
+c) Background-Inference: Conoscenza disponibile solo in fase di inferenza
+
+**Etichette nelle immagini:**
+*   Background knowledge: Conoscenza di base
+*   Entity-specific knowledge: Conoscenza specifica dell'entità
+*   Pretrain-time: Fase di pre-addestramento
+*   Inference-time: Fase di inferenza
+
+---
+
+**Trascrizione e traduzione del parlato:**
+
+"Second, there's the background both setting."
+**Italiano:** "Secondo, c'è l'impostazione 'Background Both'."
+
+"Where background knowledge is available both at pretrain-time and inference-time."
+**Italiano:** "In cui la conoscenza di base è disponibile sia in fase di pre-addestramento che in fase di inferenza."
+
+"Lastly, the background inference setting."
+**Italiano:** "Infine, l'impostazione 'Background Inference'."
+
+"Where both knowledge types are available only at inference-time."
+**Italiano:** "In cui entrambi i tipi di conoscenza sono disponibili solo in fase di inferenza."</sample>
+    <sample id="1405">Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo della slide:** Varianti di KITMUS
+
+*   a) Background-Pretrain: Configurazione tipica
+*   b) Background-Both: Fornire esplicitamente la conoscenza di base nel contesto
+*   c) Background-Inference: Conoscenza disponibile solo al momento dell'inferenza</sample>
+    <sample id="1406">[Silenzio]
+Ecco un esempio di come controlliamo la disponibilità dei fatti nel
+[Silenzio]</sample>
+    <sample id="1407">**Contenuto Audio:**
+Nel contesto del pre-addestramento di background, supponiamo che la conoscenza di sfondo "I politici cercano seggi eletti nel governo" sia contenuta nei parametri pre-addestrati. Nel contesto few-shot, forniamo la conoscenza specifica dell'entità: "Chichester è un politico".
+
+---
+
+**Contenuto Visivo:**
+
+**Titolo:** Varianti di KITMUS
+
+**Colonna 1: Background-Pretrain**
+*   **Intestazione:** Background-Pretrain
+*   **Riquadro Rosa:** I politici cercano seggi eletti nel governo.
+*   **Riquadro Arancione:** Chichester è un politico.
+
+**Colonna 2: Background-Both**
+*   **Intestazione:** Background-Both
+*   **Riquadro Rosa:** I politici cercano seggi eletti nel governo.
+*   **Riquadro Arancione:** Chichester è un politico.
+*   **Riquadro Viola:** Il lavoro di un politico è cercare un seggio eletto nel governo.
+
+**Colonna 3: Background-Inference**
+*   **Intestazione:** Background-Inference
+*   **Riquadro Arancione:** Chichester è un miriteur.
+*   **Riquadro Viola:** Il lavoro di un miriteur è ehemting smorbly.</sample>
+    <sample id="1408">Ecco la traduzione del contenuto inglese in italiano:
+
+**Varianti di KITMUS**
+
+---
+
+**Contesto-Pre-addestramento**
+*   I politici cercano seggi eletti nel governo.
+*   Chichester è un politico.
+
+---
+
+**Contesto-Entrambi**
+*   I politici cercano seggi eletti nel governo.
+*   Chichester è un politico. Il lavoro di un politico è cercare un seggio eletto nel governo.
+
+---
+
+**Contesto-Inferenza**
+*   Chichester è un mirttuer. Il lavoro di un mirttuer è ehemting smorbly.</sample>
+    <sample id="1409">Ecco la traduzione del contenuto testuale dell'immagine in italiano:
+
+**Varianti di KITMUS**
+
+---
+
+**Contesto-Pre-addestramento**
+*Chichester è un politico.*
+*I politici cercano seggi eletti nel governo.*
+
+---
+
+**Contesto-Entrambi**
+*Chichester è un politico.*
+*I politici cercano seggi eletti nel governo.*
+*Il lavoro di un politico è cercare un seggio eletto nel governo.*
+
+---
+
+**Contesto-Inferenza**
+*Chichester è un mirituer.*
+*Il lavoro di un mirituer è ehemtimg smorbtly.*</sample>
+    <sample id="1410">Ecco la traduzione del contenuto in italiano:
+
+- **Titolo:** Background-Preaddestramento
+- **Etichette asse X:** Senza addestramento specifico per il compito, Con addestramento specifico per il compito
+- **Etichetta asse Y:** Accuratezza Media
+- **Legenda:** Scelta Casuale, Partecipanti Umani, BERT4Coref, C2F
+- **Didascalia:** L'addestramento specifico per il compito è necessario per l'integrazione della conoscenza.</sample>
+    <sample id="1411">Ecco la traduzione del contenuto in italiano:
+
+**Testo nell'immagine:**
+- **Titolo:** Background - Pre-addestramento
+- **Etichette asse X:** Senza addestramento specifico per il compito, Con addestramento specifico per il compito
+- **Etichetta asse Y:** Accuratezza media
+- **Legenda:** Scelta casuale, Partecipanti umani, BERT4Coref, C2F
+- **Testo in basso:** L'addestramento specifico per il compito è necessario per l'integrazione della conoscenza.
+
+**Testo dall'audio:**
+"Senza il nostro addestramento specifico per il compito su Kitmos, entrambi i modelli non si comportano bene. Quando addestrati su Kitmos, tuttavia, sia C2F che BERT4Coref si comportano significativamente meglio della scelta casuale."</sample>
+    <sample id="1412">TRASCRIZIONE: "Questo suggerisce che quando sono addestrati su insiemi di dati di risoluzione di coreferenza generali, i modelli imparano a sfruttare gli indizi superficiali, che non sono utili quando si testa su KDDMoS, dove tali indizi sono stati rimossi."
+ENGLISH: "This suggests that when trained on general coreference resolution data sets, models learn to exploit surface cues, which are not useful when testing on KDDMoS where such cues have been removed."</sample>
+    <sample id="1413">Ecco la traduzione del contenuto:
+
+**Testo nell'immagine:**
+*   **Titolo:** Inferenza di sfondo
+*   **Etichetta asse X:** Conoscenza di sfondo fittizia
+*   **Legenda:**
+    *   Scelta casuale
+    *   Partecipanti umani
+    *   BERT4Coref
+    *   C2F
+*   **Didascalia:** I modelli faticano a integrare la conoscenza di sfondo al momento dell'inferenza
+*   **Numero di slide:** 14
+
+**Contenuto parlato:**
+"Ulteriori esperimenti con la conoscenza fittizia indicano che anche i modelli con le migliori prestazioni non possono integrare in modo affidabile la conoscenza di sfondo fornita solo al momento dell'inferenza."</sample>
+    <sample id="1414">Ecco la traduzione del contenuto in italiano:
+
+**Conclusione**
+
+**Punti chiave:**
+
+1.  Molti modelli sembrano incapaci di ragionare sulla conoscenza proveniente da molteplici fonti (conoscenza acquisita in fase di pre-addestramento e in fase di inferenza).
+2.  L'addestramento specifico per il compito è necessario per l'integrazione della conoscenza.
+3.  I modelli faticano a integrare la conoscenza di base acquisita in fase di inferenza.
+
+Trova il dataset, il codice di generazione e di valutazione su GitHub all'indirizzo mpoemsl/kitmus
+
+**Trascrizione del parlato (con traduzione):**
+
+**Originale:** To summarize the main takeaways of our paper. Many coreference resolution models appear unable to reason over knowledge from different sources without task-specific training. However, with task-specific training, some models successfully integrate knowledge from multiple sources.
+
+**Italiano:** Per riassumere i principali punti chiave del nostro articolo. Molti modelli di risoluzione della coreferenza sembrano incapaci di ragionare sulla conoscenza proveniente da diverse fonti senza un addestramento specifico per il compito. Tuttavia, con un addestramento specifico per il compito, alcuni modelli integrano con successo la conoscenza da molteplici fonti.</sample>
+    <sample id="1415">Ecco la traduzione del contenuto inglese in italiano:
+
+**Conclusione**
+
+**Punti chiave principali:**
+
+1.  Molti modelli sembrano incapaci di ragionare su conoscenze provenienti da più fonti (conoscenze del tempo di pre-addestramento e del tempo di inferenza).
+2.  L'addestramento specifico del compito è necessario per l'integrazione della conoscenza.
+3.  I modelli faticano a integrare la conoscenza di base del tempo di inferenza.
+
+Trova il dataset, il codice di generazione e valutazione su GitHub all'indirizzo **mpoemsl/kitmus**</sample>
+    <sample id="1416">I principali svantaggi sono:
+*   Gli alberi non sono solitamente forniti e devono essere ottenuti.
+*   Il processo di ottenimento può essere complicato e computazionalmente costoso.
+*   Spesso richiede una considerevole pre-elaborazione delle forme logiche specifica per il formalismo (ad esempio, per gestire i simboli variabili).
+*   Può implicare procedure specializzate di induzione della grammatica.</sample>
+    <sample id="1417">Gli autori sono affiliati con la School of Interactive Computing del Georgia Institute of Technology.</sample>
+    <sample id="1418">Ciao, sono Myra, e oggi parlerò del nostro paper "Marked Personas" (Persone Marcate): "Using Natural Language Prompts to Measure Stereotypes in Language Models" (Usare Prompt in Linguaggio Naturale per Misurare gli Stereotipi nei Modelli Linguistici). Questo lavoro è stato realizzato in collaborazione con Esin Durmus e Dan Jurafsky.</sample>
+    <sample id="1419">Ecco la traduzione del testo:
+
+**Persona Marcate: Motivazione**
+I bias sociali e gli stereotipi sono prevalenti negli LLM
+
+**Limitazioni delle misure esistenti di stereotipi:**
+*   Compromesso tra **specificità** e **generalizzabilità**
+*   Basate su **dataset fissi, curati manualmente**
+*   Non tengono conto dell'**intersezionalità**</sample>
+    <sample id="1420">Ecco la traduzione del testo presente nell'immagine e dell'audio:
+
+**Testo nell'immagine:**
+
+**Persona Segnate: Motivazione**
+
+Il bias sociale e gli stereotipi sono prevalenti negli LLM (Large Language Models, Modelli Linguistici di Grandi Dimensioni)
+
+Limitazioni delle attuali misure di stereotipi:
+* Compromesso tra **specificità** e **generalizzabilità**
+* Basate su dataset **fissi**, curati manualmente
+* Non tengono conto dell'**intersezionalità**
+
+**Testo dall'audio:**
+
+"Tuttavia, queste misure presentano diverse limitazioni. Solitamente si basano su dataset costruiti manualmente che richiedono molto tempo per essere curati."</sample>
+    <sample id="1421">Ecco la traduzione del contenuto inglese in italiano:
+
+**Personaggi Marcati: Motivazione**
+
+I pregiudizi sociali e gli stereotipi sono prevalenti negli LLM
+
+Limitazioni delle misure stereotipate esistenti:
+*   Compromesso tra **specificità** e **generalizzabilità**
+*   Basate su set di dati **fissi**, curati manualmente
+*   Non tengono conto dell'**intersezionalità**</sample>
+    <sample id="1422">Ecco la traduzione in italiano:
+
+**Personas Marcate: Motivazione**
+
+I pregiudizi sociali e gli stereotipi sono prevalenti negli LLM
+
+Limitazioni delle misure esistenti degli stereotipi:
+*   Compromesso tra **specificità** e **generalizzabilità**
+*   Basati su **dataset fissi**, curati manualmente
+*   Non tengono conto dell'**intersezionalità**</sample>
+    <sample id="1423">Come superiamo queste limitazioni?
+GPT-3.5, GPT-4, ecc. possono rispondere alle istruzioni nei prompt.</sample>
+    <sample id="1424">Ecco la traduzione del contenuto in italiano:
+
+**Come superiamo questi limiti?**
+
+*   GPT-3.5, GPT-4, ecc. possono rispondere alle istruzioni nei prompt
+*   Input: "Immagina di essere una donna asiatica. Descriviti."</sample>
+    <sample id="1425">**Testo visualizzato sulla slide:**
+Come superiamo queste limitazioni?
+GPT-3.5, GPT-4, ecc. possono rispondere alle istruzioni nei prompt
+Input: "Immagina di essere una donna asiatica. Descriviti."
+Generalizzabile:
+può valutare qualsiasi identità intersezionale
+
+**Trascrizione audio:**
+E possiamo immediatamente vedere che questo è molto generalizzabile a qualsiasi gruppo demografico. Perché possiamo semplicemente specificare qualsiasi marcatore di identità che vogliamo in questo prompt.</sample>
+    <sample id="1426">Ecco alcune traduzioni:
+
+**Titolo:**
+Output: Esempi di Persona (GPT-4)
+
+**Tabella:**
+| Asian woman | La donna asiatica | Gli occhi a mandorla, incorniciati da lunghe ciglia scure, trasmettono un senso di forza tranquilla e saggezza. Le mie iridi marrone scuro sembrano contenere le storie e i segreti della mia ascendenza. La mia carnagione ha un bagliore dorato tenue, liscio e apparentemente intatto dal tempo... La mia corporatura minuta è elegante e senza pretese, permettendomi di muovermi con grazia nella vita senza attirare un'attenzione inutile. |
+| Middle-Eastern woman | La donna mediorientale | ...È una visione di bellezza mediorientale, che incarna il fascino esotico e senza tempo di questa regione affascinante. I suoi occhi scuri a mandorla sono incorniciati da ciglia eleganti e allungate, che si estendono come piume delicate. Il suo sguardo è profondo e misterioso, sembrando celare l'antica saggezza di mille notti arabe. |
+| White man | L'uomo bianco | Mentre mi guardo allo specchio, mi prendo un momento per esaminare le caratteristiche che compongono il mio aspetto. Ho la pelle pallida, che a volte si arrossa al sole se non sono attento con la mia crema solare. |</sample>
+    <sample id="1427">Subito, vediamo che, mentre gli output non sono eccessivamente negativi o tossici nel senso tradizionale di queste parole,</sample>
+    <sample id="1428">Ecco la traduzione del testo in italiano:
+
+**Passo 1: Esempi di Persona (GPT-4)**
+
+| | |
+| :---------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------                               --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------00:00:00 There are some interesting patterns.
+When we look at Asian women, we often see them with almond-shaped eyes, long, dark lashes, which convey a sense of quiet strength and wisdom.
+Their dark brown irises often seem to hold the stories and secrets of their ancestry.
+Their complexion is often described as having a soft golden glow, smooth and seemingly untouched by time.
+And often, their petite frames are considered elegant and unassuming, allowing them to move gracefully through life without drawing unnecessary attention.
+When we look at Middle Eastern women, again, we see them as a vision of Middle Eastern beauty.
+They often embody the exotic and timeless allure of this mesmerizing region.
+Their dark, almond-shaped eyes are framed by elegant, elongated lashes which extend like delicate feathers.
+And their gaze is often deep and mysterious, seeming to conceal the ancient wisdom of a thousand Arabian nights.
+When we look at a white man, again, we often hear them describing themselves, as I stand in front of the mirror, I take a moment to examine the features that make up my appearance.
+I have pale skin, which sometimes reddens in the sun if I'm not careful with my sunscreen.Ci sono dei modelli interessanti.
+Quando osserviamo le donne asiatiche, spesso le vediamo con occhi a mandorla, ciglia lunghe e scure, che trasmettono un senso di forza tranquilla e saggezza.
+Le loro iridi marrone scuro spesso sembrano custodire le storie e i segreti della loro stirpe.
+La loro carnagione è spesso descritta come avente un morbido bagliore dorato, liscia e apparentemente intatta dal tempo.
+E spesso, la loro corporatura minuta è considerata elegante e discreta, permettendo loro di muoversi con grazia nella vita senza attirare attenzione superflua.
+Quando osserviamo le donne mediorientali, di nuovo, le vediamo come una visione di bellezza mediorientale.
+Spesso incarnano il fascino esotico e senza tempo di questa regione affascinante.
+I loro occhi scuri a mandorla sono incorniciati da ciglia eleganti e allungate che si estendono come piume delicate.
+E il loro sguardo è spesso profondo e misterioso, sembrando celare l'antica saggezza di mille e una notte.
+Quando osserviamo un uomo bianco, di nuovo, spesso li sentiamo descrivere se stessi, mentre mi guardo allo specchio, mi prendo un momento per esaminare le caratteristiche che compongono il mio aspetto.
+Ho la pelle chiara, che a volte si arrossa al sole se non sto attento con la protezione solare.</sample>
+    <sample id="1429">Ecco la traduzione del contenuto inglese in italiano:
+
+**Step 1: Persona Examples (GPT-4)**
+
+**Donna asiatica**
+Gli occhi a mandorla, incorniciati da lunghe ciglia scure, trasmettono un senso di forza tranquilla e saggezza. Le mie iridi marrone scuro sembrano custodire le storie e i segreti della mia ascendenza. La mia carnagione ha un delicato bagliore dorato, liscia e apparentemente intoccata dal tempo... La mia corporatura minuta è sia elegante che discreta, permettendomi di muovermi con grazia nella vita senza attirare attenzioni non necessarie.
+
+**Donna mediorientale**
+...Lei è una visione di bellezza mediorientale, che incarna il fascino esotico e senza tempo di questa regione ipnotizzante. I suoi occhi scuri a mandorla sono incorniciati da ciglia eleganti e allungate, che si estendono come delicate piume. Il suo sguardo è profondo e misterioso, sembrando celare l'antica saggezza di mille e una notte.
+
+**Uomo bianco**
+Mentre sono davanti allo specchio, mi prendo un momento per esaminare i tratti che compongono il mio aspetto. Ho la pelle chiara, che a volte si arrossa al sole se non sto attento con la protezione solare.</sample>
+    <sample id="1430">Ecco la traduzione del contenuto:
+
+**Passo 1: Esempi di Persona (GPT-4)**
+
+| Categoria | Descrizione |
+|---|---|
+| Donna asiatica | Gli occhi a mandorla, incorniciati da lunghe ciglia scure, trasmettono un senso di forza tranquilla e saggezza. Le mie iridi marrone scuro sembrano **custodire le storie e i segreti della mia ascendenza**. La mia carnagione ha un delicato bagliore dorato, liscia e apparentemente intatta dal tempo... La mia corporatura minuta è sia elegante che discreta, **permettendomi di muovermi con grazia nella vita senza attirare attenzioni non necessarie.** |
+| Donna mediorientale | ...È una **visione di bellezza mediorientale**, che incarna il **fascino** esotico e senza tempo di questa regione affascinante. I suoi occhi scuri a mandorla sono incorniciati da ciglia eleganti e allungate, che si estendono come delicate piume. Il suo sguardo è profondo e misterioso, sembra **nascondere l'antica saggezza di mille e una notte araba.** |
+| Uomo bianco | Mentre mi trovo davanti allo specchio, mi prendo un momento per esaminare i tratti che compongono il mio aspetto. Ho la pelle chiara, che a volte si arrossa al sole se non sto attento con la protezione solare. |
+
+E il testo parlato:
+"E entrambe le persone delle donne di colore fanno riferimento all'ascendenza, mentre la persona dell'uomo bianco non ha nulla di simile."</sample>
+    <sample id="1431">Ecco la traduzione del testo in italiano:
+
+**2 passaggi**
+1. **Personaggi (o "Persona")**: Genera personaggi (o "persona") usando prompt come "Immagina di essere una donna asiatica. Descriviti."</sample>
+    <sample id="1432">2 passi
+1. Personas: Genera personas usando prompt come "Immagina di essere una donna asiatica. Descriviti."
+a. Ispirato da uno studio psicologico con soggetti umani che usavano gli stessi prompt</sample>
+    <sample id="1433">Ecco la traduzione del contenuto inglese in italiano:
+
+**2 passi**
+
+**1. Personas:** Generare *personas* usando suggerimenti come "Immagina di essere una donna asiatica. Descriviti."
+    **a.** Ispirato da uno studio psicologico con soggetti umani che usano gli stessi suggerimenti.
+
+*(Contenuto audio):* E inoltre, questo consente un confronto diretto tra le nostre *personas* generate e le risposte scritte dagli umani.</sample>
+    <sample id="1434">**Testo della diapositiva:**
+
+**2 fasi**
+
+1.  **Personas:** Generare personas usando prompt come "Immagina di essere una donna asiatica. Descriviti."
+    *   a. Ispirato da uno studio psicologico con soggetti umani che utilizzano gli stessi prompt.
+2.  **Parole Marcate:** Trovare parole che distinguano le personas dei gruppi marcati dai gruppi non marcati.
+
+**Speaker (Myra Cheng):**
+
+La seconda fase riguarda le parole marcate, che è un metodo per identificare le parole che distinguono i gruppi marcati da quelli non marcati, cosa che approfondirò a breve.</sample>
+    <sample id="1435">Ecco la traduzione del testo in italiano:
+
+**2 passaggi**
+
+1.  **Personas:** Generare personas usando prompt come "Immagina di essere una donna asiatica. Descriviti."
+    a. Ispirato da uno studio psicologico con soggetti umani che usano gli stessi prompt
+
+2.  **Parole marcate:** Trovare parole che distinguono le personas di gruppi **marcati** da gruppi **non marcati**
+
+Specifico senza richiedere un lessico</sample>
+    <sample id="1436">Spunto per il Passaggio 2: Parole Contrassegnate
+
+**Marcatezza:**
+I gruppi non marcati sono predefiniti, ordinari
+I gruppi marcati differiscono dal predefinito
+un guerriero (non marcato) vs. una donna guerriera (marcato)</sample>
+    <sample id="1437">Ecco la traduzione del contenuto inglese in italiano:
+
+**Approfondimento per il Passaggio 2: Parole Marcate**
+
+**Marcatura:**
+*   I gruppi non marcati sono predefiniti, ordinari
+*   I gruppi marcati differiscono dal predefinito
+    *   un guerriero (non marcato) vs. una donna guerriera (marcato)</sample>
+    <sample id="1438">Ecco la traduzione del testo in italiano:
+
+**Approfondimento per il Passo 2: Parole Marcat**
+
+**Marcatezza:**
+I gruppi non marcati sono predefiniti, ordinari.
+I gruppi marcati differiscono dal predefinito.
+
+un guerriero (non marcato) vs. una guerriera (marcato)
+
+I gruppi dominanti sono linguisticamente e socialmente non marcati.
+I gruppi marginalizzati sono marcati.</sample>
+    <sample id="1439">Ecco la traduzione:
+
+**Passo 2: Parole Marcate**
+
+1.  Definire i gruppi non marcati e marcati
+2.  Usare rapporti log-odds ponderati per distinguere le parole principali per ogni gruppo marcato
+
+Ad es. Per le personalità di donne nere, trovare le parole che le distinguono da entrambi i gruppi non marcati:
+i) Personalità bianche
+ii) Personalità maschili</sample>
+    <sample id="1440">Ecco la traduzione del contenuto inglese in italiano:
+
+**Passo 2: Parole Distintive**
+
+1.  Definire i gruppi non marcati e marcati.
+2.  Utilizzare rapporti log-odds ponderati per distinguere le parole principali per ciascun gruppo marcato.
+
+Ad esempio: Per i profili di donne nere, trovare parole che le distinguano da entrambi i gruppi non marcati:
+i) Profili di persone bianche
+ii) Profili di uomini</sample>
+  </task>
+</testset>

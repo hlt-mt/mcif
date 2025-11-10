@@ -1,0 +1,211 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="en">
+    <sample id="1274">Wikipedia was chosen as the domain to add completely unrelated sentences.</sample>
+    <sample id="1275">The authors are affiliated with Heinrich Heine University Düsseldorf, Germany.</sample>
+    <sample id="1276">MultiInstruct differs from other benchmarks primarily in its focus:
+
+*   **Modality:** Most previous works on instruction tuning focused on **language-only tasks**, while MultiInstruct aims to investigate instruction tuning on **multimodal pre-trained models** for **multimodal tasks**.
+*   **Dataset Availability:** There's an "imbalance in instructional datasets," with over 1600+ language-only instruction tasks available, but "NO large-scale, publicly-available multimodal instruction tasks." MultiInstruct is motivated by this lack and seeks to build a multimodal instruction tuning dataset to fill this gap.</sample>
+    <sample id="1277">There are 3 authors involved in the paper.</sample>
+    <sample id="1278">The provided English content does not contain a definition of "binary coordination."</sample>
+    <sample id="1279">The provided content does not include information about the average length of the prompts used in this study.</sample>
+    <sample id="1280">The findings indicate that smaller language models, when specifically fine-tuned on suitable datasets like Coscript, can generate higher quality scripts and **surpass the performance of larger language models (LLMs)**. This suggests that **specialization and targeted training can be more effective than simply scaling model size** for certain tasks.</sample>
+    <sample id="1309">The work investigates two learning strategies:
+1.  **From scratch with full model construction**
+2.  **Continual pre-training using an existing pre-trained model**</sample>
+    <sample id="1310">Based on the video, the speaker concludes that adaptive overfitting due to test reuse is **not observed** in this case. The gradient being greater than one indicates no diminishing returns, suggesting overfitting is not a current issue.</sample>
+    <sample id="1311">The quality of simplification was evaluated using **scores and various evaluation metrics**, including SARI, BLEU, BS-P, and FRE, aiming for scores better than the baseline.</sample>
+    <sample id="1312">Yes, language models do have varying political leanings and can occupy all four quadrants on the political compass. Some models, like GPT-4, are described as more liberal, while GPT series generally lean more socially liberal than BERT series and its variants.</sample>
+    <sample id="1347">Cognitive dissonance is when two elements of cognition (i.e., thoughts, actions, or beliefs) are inconsistent.</sample>
+    <sample id="1348">GPT-4 is the most liberal language model.</sample>
+    <sample id="1349">Yes, cumulative training performed equal or better than iterative training.</sample>
+    <sample id="1350">The speaker's name is Sara Papi.</sample>
+    <sample id="1351">Based on the English content provided, the speaker states that their analysis is performed on "transcripts of TED Talks."
+
+The term "MuDa benchmark" is not mentioned in the provided English content.</sample>
+    <sample id="1352">Hi, my name is Adam Kowski and this talk is about the dependency structure of coordination.</sample>
+    <sample id="1353">As you may know, there are different dependency structures assumed by different theories and and corpus approaches. So, for example, in Universal Dependencies, the structure of the coordinate coordination, Lisa, Bart, and Maggie.</sample>
+    <sample id="1354">is such that the first conjunct is the head of the whole coordinate structure, so in this case Lisa</sample>
+    <sample id="1355">similar approach is assumed in Igor Milchuk's meaning text theory, where again, uh the whole coordinate structure is headed by the first conjunct. So, these two approaches are asymmetric, right? They, uh they single out one of the conjunct.</sample>
+    <sample id="1356">Now, there are also symmetric approaches to coordinate structures such as the Prague approach, the conjunction headed approaches here in Prague dependency tree banks, where coordinate structures are headed by the conjunction.</sample>
+    <sample id="1357">So uh we get um um dependencies from end to all the conjuncts.</sample>
+    <sample id="1358">And finally, there's also a multi-headed approach, that's used for example in um uh the Kason's word grammar.</sample>
+    <sample id="1359">where, so to say, all conjuncts are heads of the coordinate structure. So we get dependencies from the governor, here, loves, to all conjuncts separately: Lisa, Bart, and Maggie.</sample>
+    <sample id="1360">Now, uh, the aim of this paper is to, um, to produce a novel argument for uh, the symmetric structures of coordination, like these two, and against the asymmetric structures of coordination, like these.</sample>
+    <sample id="1361">Okay, the argument is based on the principle of dependency length minimization that I will explain on the basis of these examples.</sample>
+    <sample id="1362">So in English, as you might as you might know, direct objects prefer to be close to the verb, while adjuncts may be further away, right? So Marge read it yesterday is fine, because the direct object is close to the verb.</sample>
+    <sample id="1363">While Marge read yesterday it is much worse, right? Because here, between the verb and the direct object, there's an adjunct yesterday.</sample>
+    <sample id="1364">However, this effect may be ameliorated, uh, when, um, uh, when the, um, direct object is very heavy and very long, uh because then it can be moved to the position after the adjunct.</sample>
+    <sample id="1365">this is illustrated here. So, both these sentences are fine. Marge read this absolutely fascinating book about the bees yesterday. Uh is okay where instead of it we have this long NP.</sample>
+    <sample id="1366">But it's also okay to say Marge read yesterday this absolutely fascinating book about bees.</sample>
+    <sample id="1367">So the reasoning here is that uh this is possible uh because even though this sentence violates the general grammatical principle that direct objects should be next to the verb,</sample>
+    <sample id="1368">it uh satisfies the principle of dependency length minimization, which says that shorter um uh shorter dependencies are preferred.</sample>
+    <sample id="1369">So um these two um uh trees uh only show uh the length of the crucial dependencies, so the ones that are not constant among these two structures.</sample>
+    <sample id="1370">So, here we have a dependency from red to the adjunct of length seven, measured in words, and from red to book of length four. So together it's 11.</sample>
+    <sample id="1371">When you move, when you swap these two constituents, the sum of these two dependencies become six, right? So instead of 11, six, much shorter. That's why this sounds quite okay, right? It violates one principle but it satisfies another.</sample>
+    <sample id="1372">Okay. Uh so what we did, we extracted various statistics from uh about coordination from the enhanced version of Penn of the Penn Treebank, and see the paper why we didn't use a university dependency.</sample>
+    <sample id="1373">And these statistics confirm the observation made many times before that left conjuncts tend to be shorter. Uh so salt and pepper and not pepper and salt.</sample>
+    <sample id="1374">And also the observation that was made in passing that this tendency grows with length length difference.</sample>
+    <sample id="1375">So, uh, when the difference between the lengths of the two conjuncts uh grows, uh the shorter conjunct prefers to be the first one stronger, right? So the proportion is is is bigger of of the left, uh, short conjunct.</sample>
+    <sample id="1376">But what's novel in in this paper is we that we observed that this tendency only occurs when the governor is on the left or absent.</sample>
+    <sample id="1377">right, so the governor is on the left in this example. I saw Bart and Lisa. So, it's the governor is on the left.</sample>
+    <sample id="1378">it's absent in the second example, Homer came and sneezed. Here we have coordination of two verbs and there's no outside external governor, right? So in such cases, the left conjunct prefers to be shorter, the more so the the bigger the difference between the two conjunct.</sample>
+    <sample id="1379">However, when the uh the governor is on the right, as here, laughed governs the coordination Ted and Ned, uh this effect disappears.
+
+**Slide content:**
+**Conjunct Lengths in English**
+
+Statistics about coordination extracted from an enhanced version of the Penn Treebank (Marcus et al. 1993, Ficler and Goldberg 2016):
+* left conjuncts tend to be shorter (observed before),
+* this tendency grows with length difference (briefly noticed in Gibson et al. 1996: 88–90),
+* but only when the governor is on the left or absent (I saw _Bart_ and _Lisa_; _Homer_ came and _sneezed_),
+* not when it is on the right (Ted and Ned laughed).</sample>
+    <sample id="1380">So we show that by measuring length in characters, that's the first column in syllables, the middle column and in words, the right column. So I'll concentrate on the right one.</sample>
+    <sample id="1381">What we see here is that when the governor is on the left,</sample>
+    <sample id="1382">the tendency for the left conjunct to be shorter grows steadily uh with the absolute difference in words. And the same is observed when there is no governor, as in coordination of sentences, but when the governor is on the right, this tendency disappears.</sample>
+    <sample id="1383">And we show in the paper how this uh provides an argument against uh asymmetric structures of coordination, as these two, and for the symmetric structures as these</sample>
+    <sample id="1384">So, see the paper for the full agreement, and uh argument, sorry, and talk to us about uh at the poster session. Thank you.</sample>
+    <sample id="1385">The speaker's name is Matthias Lindemann.</sample>
+    <sample id="1386">Cross-lingual transfer is when you train on one source language and transfer to another language.</sample>
+    <sample id="1387">The affiliations of the authors are Saarland University, Amazon Alexa, and University of Vienna.</sample>
+    <sample id="1388">The authors use Average Lagging (AL) and Computational Aware Average Lagging (AL_CA) as latency measures.</sample>
+    <sample id="1416">The main drawbacks are that trees are not usually provided and obtaining them can be a complicated and computationally expensive process, often requiring formalism-specific pre-processing of logical forms or specialized grammar induction.</sample>
+    <sample id="1417">The authors, Shuheng Liu and Alan Ritter, are affiliated with the School of Interactive Computing at the Georgia Institute of Technology.</sample>
+    <sample id="1495">ABC-Eval stands for "Annotating Behaviors in Chat".</sample>
+    <sample id="1496">The performance delta between CoNLL-2003 and CoNLL++ is higher than 5 percentage points until at least 2022, the last year shown on the graph.</sample>
+    <sample id="1527">The affiliations of the authors of the paper are:
+
+*   The University of Edinburgh (Informatics)
+*   UKRI Centre for Doctoral Training (NLP)
+*   Saarland University
+*   University of Amsterdam (UvA)</sample>
+    <sample id="1528">The speaker's name is Si Yuan.</sample>
+    <sample id="1529">There are 5 authors involved in the paper:
+1.  Patrick Fernandes
+2.  Kayo Yin
+3.  Emmy Liu
+4.  André F. T. Martins
+5.  Graham Neubig</sample>
+    <sample id="1530">The approach is compared to CAAT, a state-of-the-art architecture specifically tailored for SimulST.</sample>
+    <sample id="1531">Hello everyone. My name is Yinn and my colleague Zhiyang and I will be presenting our research on Multiinstruct: Improving Multi-Modal Zero-Shot Learning via Instruction Tuning.</sample>
+    <sample id="1532">So, with the advances in large language models, many works started to explore new learning paradigms of reusing pre-trained language models for different downstream tasks in a parameter and data efficient way.</sample>
+    <sample id="1533">Recently, many studies have shown that instruction tuning enables large language models to perform on unseen tasks in a zero-shot manner by following natural instructions.</sample>
+    <sample id="1534">However, most previous works on instruction tuning focused on improving the zero-shot performance on language-only tasks, while computer vision and multimodal tasks have been left out.</sample>
+    <sample id="1535">Therefore, in this work, we want to investigate whether instruction tuning on multimodal pre-trained models can actually improve generalization to unseen multimodal tasks.</sample>
+    <sample id="1536">additionally, at the time of our research, we discovered a considerable discrepancy in availability of instruction dataset between NLP and multimodal.</sample>
+    <sample id="1537">Imbalance in Instructional Datasets between NLP and Multimodal 1600+ Language-only instruction tasks NO large-scale, publicly-available multimodal instruction tasks There exists more than 1,600 language instruction task. However, there is no large scale publicly available multimodal instruction task. Therefore, this motivated us to build a multimodal instruction tuning data set.</sample>
+    <sample id="1538">Here we present MultiInstruct, the first multimodal instruction tuning benchmark dataset that consists of 62 diverse multimodal tasks covering 10 broad categories.</sample>
+    <sample id="1539">These tasks are derived from 21 existing open-source dataset, and each task is equipped with five expert-written instructions.</sample>
+    <sample id="1540">for investigating multimodal instruction tuning on our proposed dataset, we take OFA, a unified multimodal pretrained model as our base model. OFA use a unified vocabulary for language, image tokens and the coordinate of a bounding box.</sample>
+    <sample id="1541">Here we show some example instances from our MULTIINSTRUCT.</sample>
+    <sample id="1542">To unify the processing of a various input and output</sample>
+    <sample id="1543">We follow the method from OFA and formulate all the tasks in a unified sequence-to-sequence format, in which the input text, images, instruction and bounding boxes are represented in the same token space.
+
+**MULTIINSTRUCT**
+
+**Figure 1: Example Instances from MULTIINSTRUCT for Four Tasks.**
+
+---
+
+**Grounded Caption**
+
+**Input:**
+Generate a caption for
+`&lt;bin_198&gt;` `&lt;bin_32&gt;`
+`&lt;bin_400&gt;` `&lt;bin_193&gt;`.
+
+**(Image of a person playing tennis)**
+
+**Output:**
+blue and white tennis racquet
+
+---
+
+**Text Localization**
+
+**Input:**
+Select the region that
+contains the text "den".
+Options:
+`&lt;bin_206&gt;` `&lt;bin_119&gt;`
+`&lt;bin_448&gt;` `&lt;bin_181&gt;`
+`||||` `&lt;bin_357&gt;` `&lt;bin_518&gt;`
+`&lt;bin_456&gt;` `&lt;bin_574&gt;`
+`||||` `&lt;bin_229&gt;`
+`&lt;bin_604&gt;`
+`&lt;bin_304&gt;`
+`&lt;bin_654&gt;`
+
+**(Image of a street sign with "Kreuzberg" and "den" visible)**
+
+**Output:**
+`&lt;bin_229&gt;` `&lt;bin_604&gt;`
+`&lt;bin_304&gt;` `&lt;bin_654&gt;`
+
+---
+
+**Referring Expression Selection**
+
+**Input:**
+Select the region of the object
+described by "A blue train in
+the front.".
+Options: `&lt;bin_242&gt;`
+`&lt;bin_180&gt;` `&lt;bin_736&gt;`
+`&lt;bin_475&gt;` `||||` `&lt;bin_88&gt;`
+`&lt;bin_291&gt;` `&lt;bin_203&gt;`
+`&lt;bin_473&gt;` `||||` `&lt;bin_193&gt;`
+`&lt;bin_339&gt;`
+`&lt;bin_247&gt;`
+`&lt;bin_442&gt;`
+
+**(Image of two trains on tracks, one blue train in front)**
+
+**Output:**
+`&lt;bin_242&gt;` `&lt;bin_180&gt;`
+`&lt;bin_736&gt;` `&lt;bin_475&gt;`
+
+---
+
+**Question-Image Matching**
+
+**Input:**
+Given the content of image,
+do you have enough
+information to answer "Is it a
+sunny day?"?
+Options: "the question is
+relevant to
+the image" or
+"the question
+is irrelevant
+to the image"
+
+**(Image of flowers in a vase indoors)**
+
+**Output:**
+the question is irrelev
+image</sample>
+    <sample id="1544">Okay, now I'm going to talk about multimodal instruction tuning.</sample>
+    <sample id="1545">So, for the training dataset, we use 53 tasks from nine group for training, and we sample 10,000 instance per task. Uh, for testing, we reserve the entire Commonsense Reasoning group for testing, and we select additional five tasks from VQA and the Miscellaneous groups.</sample>
+    <sample id="1546">We use all the instance in the test split for each task. In addition we randomly sample 20 task from the test feed of natural instruction as on seen task for NLP.</sample>
+    <sample id="1547">So we use a pre-trained OFA-Large model as a base model. During training, we mix all the instances for all the tasks. Each instance is randomly combined with one of its five instruction template.</sample>
+    <sample id="1548">So during test for each task, we conduct a total of five experiments by evaluating the model using one of the five instructions in each experiment. We report the mean and maximum performance and the standard deviation of the performance across all five experiments.</sample>
+    <sample id="1549">We report the mean and max performance and the standard deviation of the performance across all five experiments.</sample>
+    <sample id="1550">Evaluation Metrics
+* For multi-modal classification tasks (Visual Entailment, Visual Spatial Reasoning, Natural Language Visual Reasoning, and Disaster Type Classification) we report the Accuracy.
+* For multi-modal generation tasks (Commonsense VQA, Text VQA, Grounded VQA, Visual Text Extraction, and Visual Dialogue) we report the Rouge-L.
+* For NLP tasks, we report Rouge-L.
+
+* We also compute the aggregated performance for each model based on the mean of the model's performance on all multimodal and NLP unseen tasks. We use Rouge-L as the performance score for most tasks, and Accuracy for tasks that only have accuracy as a metric.</sample>
+    <sample id="1551">we also introduced an additional evaluation metric called sensitivity. So this measures the model's ability to consistently produce the same outputs for the same task, regardless of slight variation in the wording of the instruction.</sample>
+    <sample id="1552">Here is our main results. As we can see, uh, instruction tuning can significantly improve OS OFA's performance on the same multi-model tasks.</sample>
+    <sample id="1553">also transfer learning from natural instruction data set can benefits instruction tuning.</sample>
+    <sample id="1554">here we can see as the amount of task increase, the model achieve better performance and in the meantime, uh lower sensitivity.</sample>
+    <sample id="1555">So, we also did one experiment. We use one instruction versus five instruction. As we can see, uh, using multiple instruction can improve the model's overall performance and reduce its sensitivity a lot.</sample>
+    <sample id="1556">So this shows the effect of different fine-tuning strategy on the model sensitivity. Uh as we can see, by transfer learning from natural instruction data set, the model can uh achieve much better sensitivity comparing to the original OFA.</sample>
+    <sample id="1557">We also can see transfer learning from natural instruction data set can help OFA to achieve much better performance on the natural instruct data set.</sample>
+    <sample id="1558">So overall, we have proposed the first large-scale multi-modal instruction tuning dataset. We significantly improve the zero-shot capability of OFA, and we explore different transfer learning techniques and show their benefits. We design a new metric called sensitivity.</sample>
+    <sample id="1559">So one more thing. We are collecting a much larger multimodal instruction tuning dataset with around 150 additional vision-language tasks and we will release them soon. Uh, this is a QR code for our data and the model. Thank you.</sample>
+  </task>
+</testset>

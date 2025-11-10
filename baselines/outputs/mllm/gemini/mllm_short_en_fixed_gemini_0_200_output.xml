@@ -1,0 +1,222 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="en">
+    <sample id="0">Language models are trained on large-scale web-crawled data, including sources like Wikipedia, Google Patents, and news media websites such as The New York Times, Los Angeles Times, The Guardian, and The Huffington Post.</sample>
+    <sample id="1">The authors are affiliated with McGill University/Mila and Microsoft Research.</sample>
+    <sample id="35">The speaker's name is Kayo Yin.</sample>
+    <sample id="36">They used the T5 XL model.</sample>
+    <sample id="37">Yes.</sample>
+    <sample id="38">The novelty of the proposed human evaluation method is that it reduces the subjectivity of human evaluation by explicitly annotating whether each model response expresses certain behaviors, such as irrelevance or self-contradiction.</sample>
+    <sample id="39">The success of the existing weakly supervised approach heavily relies on the availability of clean validation samples.</sample>
+    <sample id="40">The provided content does not mention what kind of advances can be done to improve the score. It focuses on providing background knowledge to annotators for music entities.</sample>
+    <sample id="41">There are 5 authors involved in the paper.</sample>
+    <sample id="75">There are three authors: Matthias Lindemann, Alexander Koller, and Ivan Titov.</sample>
+    <sample id="76">Bible texts are simplified more.</sample>
+    <sample id="77">The example given is "Bart and Lisa" (from "I saw Bart and Lisa").</sample>
+    <sample id="78">Yes, the models are freely available under the MIT license.</sample>
+    <sample id="79">DEplain-APA is based on news texts.</sample>
+    <sample id="80">A better model architecture, larger model size, and more fine-tuning examples lead to good generalization.</sample>
+    <sample id="81">The tendency for left conjuncts to be shorter was measured by the **absolute difference in length** between the conjuncts, using three different metrics: **characters, syllables, and words**.</sample>
+    <sample id="82">The experiments were designed by considering three conditions for the governor's position: no governor, governor on the left, and governor on the right.</sample>
+    <sample id="83">The baseline classifier, trained on a small, imbalanced dataset (43 out of 901 examples of dissonance), performed "not much better than chance."</sample>
+    <sample id="84">There are 4 authors involved in the paper.</sample>
+    <sample id="85">Bob and Alice.</sample>
+    <sample id="86">Context-aware MT models show improvement on formality and lexical cohesion.</sample>
+    <sample id="87">The authors are affiliated with Johns Hopkins University, Purdue University, MIT, and Meta AI.</sample>
+    <sample id="88">Hi. My name is Matthias Lindemann and today, I'm going to give you a brief introduction to our paper on compositional generalization without trees using multi-set tagging and latent permutations.</sample>
+    <sample id="89">This is joint work with my advisors, Alexander Koller and Ivan Titov.</sample>
+    <sample id="90">Compositional generalization can be understood as the ability of a learner to handle deeper recursion and unseen compositions of phrases that have been seen individually during training.</sample>
+    <sample id="91">In the context of semantic parsing, testing for compositional generalization might look like this. As usual, we have a training set of utterances, in this case, "The girl slept" and "Mary knew that the girl slept."</sample>
+    <sample id="92">These utterances are paired with logical forms that represent core aspects of their meaning.</sample>
+    <sample id="93">In contrast to standard machine learning evaluation, the test set does not come from the same distribution, but contains structurally unseen logical forms.</sample>
+    <sample id="94">In this example, the model has seen shallow recursion during training, and is tested on an example with deeper recursion.</sample>
+    <sample id="95">Naive seq2seq models struggle with this kind of out-of-distribution generalization and often produce outputs that are detached from the input.</sample>
+    <sample id="96">In particular, they often fail to reproduce the systematic correspondences between input and output such as those that are color-coded in the example.</sample>
+    <sample id="97">A popular method to address this is to integrate trees into the model.</sample>
+    <sample id="98">Trees help a lot but... The trees are intended to capture the compositional process that relates utterances with the logical forms.</sample>
+    <sample id="99">This works well, but trees are usually not given and need to be obtained somehow.</sample>
+    <sample id="100">This can be complicated and sometimes a computationally expensive process. Typically, this involves considerable formalism-specific pre-processing of the logical forms, for example, to handle variable symbols.</sample>
+    <sample id="101">Trees help a lot but...
+
+*girl x₁; sleep.agent x₂ x₁
+*girl x₁; x₁
+sleep.agent x₂
+The girl slept.
+
+Trees need to be obtained:
+- Pre/Post-processing logical forms
+- Grammar-induction</sample>
+    <sample id="102">In this paper, we don't use trees and introduce a neural sequence-to-sequence model that directly models the correspondences between fragments of the input and fragments of the output.</sample>
+    <sample id="103">For the first time, we show strong generalization to deeper recursion without relying on trees.</sample>
+    <sample id="104">Our approach predicts the output from the input in two steps.</sample>
+    <sample id="105">First, we tag each input token with an unordered multi-set of tokens that will appear in the output.</sample>
+    <sample id="106">After the first step, we have all the right tokens, but they're not ordered.</sample>
+    <sample id="107">That's why in the second step, we use another model to predict the permutation to put them into the right order.</sample>
+    <sample id="108">We introduce a new method to predict a permutation that does not put any hard constraints on the possible permutations. This makes our approach quite flexible and expressive.</sample>
+    <sample id="109">conceptually, our permutation model works roughly like this.</sample>
+    <sample id="110">We go from left to right over the output, and determine which multiset token to put in every position. For the first output position, we simply select one, as highlighted in red.</sample>
+    <sample id="111">Then we jump to the next multiset token to determine the second token in the output.</sample>
+    <sample id="112">We determine the third token in the output in a similar way by jumping to another multiset token. We continue this process,The user wants a transcription of the audio. I have provided the transcription.</sample>
+    <sample id="113">until every token from the first stage has been visited exactly once.</sample>
+    <sample id="114">To give you a teaser of the experimental results, here we compare our method with other treeless models on the COGS benchmark. Our model outperforms the others by a large margin on generalization to deeper recursion.</sample>
+    <sample id="115">Some other kinds of structural generalization remain very challenging, though.</sample>
+    <sample id="116">In our paper, we solve a couple of interesting technical challenges.</sample>
+    <sample id="117">First of all, the alignment between input and output is not given in the training data. As a consequence, for a given token, we don't know which multiset it came from, which poses a challenge for training.</sample>
+    <sample id="118">In addition, sometimes there are multiple permutations that are consistent with the data, but the linguistically correct one is latent. We address this by inducing the alignment as part of the training.</sample>
+    <sample id="119">a permutation method is very flexible, but it brings the challenge that finding the highest scoring permutation is NP-hard. That's because this is related to the traveling salesman problem.</sample>
+    <sample id="120">We approximate this with a GPU-friendly continuous relaxation that also allows us to back-propagate through the solution and learn the linguistically more plausible permutations.</sample>
+    <sample id="121">If you want to learn more about our experiments and how we address these challenges, please have a look at our paper or come to our poster.</sample>
+    <sample id="122">The framework quantifies positionality by comparing annotations, grouped by demographic (e.g., age, gender, ethnicity, education, country), to model predictions and original dataset gold labels using **Pearson's R correlation scores**.</sample>
+    <sample id="123">Hello, I am Dawei, a PhD student at Sarland University in Germany. In this video, I would like to present our recent work, "weaker than you think, a critical look at weekly supervised learning."</sample>
+    <sample id="124">This is joint work with Xiaoyu Shen, Marius Mosbach, Andreas Stephan, and Dietrich Klakow.</sample>
+    <sample id="125">I'd like to begin with a brief introduction to weak supervision and weakly supervised learning.</sample>
+    <sample id="126">In weak supervision, we did not manually label the data. Instead, we label the data using weak labeling sources, such as simple heuristic rules, knowledge bases, or low-quality crowd sourcing, as illustrated in the figure on the right.</sample>
+    <sample id="127">When compared to human annotations, the weak annotations are much cheaper. Yet, they are also noisy, meaning that a certain amount of the annotations are incorrect.</sample>
+    <sample id="128">If we directly train neural networks on weakly labeled data, the neural networks tend to memorize the label noise and do not generalize.</sample>
+    <sample id="129">In weakly supervised learning, training algorithms are proposed to robustly train neural networks under such label noise, so that the trained models still generalize well.</sample>
+    <sample id="130">In recent works in WSL. So, WSL stands for Weekly Supervised Learning. A common claim is that people say that they only train models on the weakly labeled data and achieve high performance on clean test.</sample>
+    <sample id="131">Technically, this claim is not wrong, but there is a catch.</sample>
+    <sample id="132">which is that people do assume that there's an additional clean validation set available for model selection.</sample>
+    <sample id="133">We cast stopped on this problem setting. As this implies that additional manual annotations are required in weakly supervised learning. But, like an elephant in the room, this necessity is often overlooked.</sample>
+    <sample id="134">The aforementioned doubt leads us to ask three research questions. First, is clean validation data necessary for WSL? Or can we maybe use a noisy validation set instead?</sample>
+    <sample id="135">Second, if clean data is required, or if clean data is mandatory for WSL to work, then how many clean samples do we need? Finally, should we only use the clean samples for validation or there are better ways to utilize them.</sample>
+    <sample id="136">We addressed these research questions in our work, and our findings are as follows.</sample>
+    <sample id="137">First, we find that interestingly, recent WSL methods indeed require clean validation samples to work properly.</sample>
+    <sample id="138">otherwise there is a large performance drop. As shown in this figure, if there are no clean validation samples, then the trained models cannot generalize beyond the original weak labels.</sample>
+    <sample id="139">meaning that the training is</sample>
+    <sample id="140">This indicates that WSL approaches actually require cleanly labeled data to work properly. And the annotation cost for obtaining clean validation samples should not be overlooked.</sample>
+    <sample id="141">Our second finding is that increasing the number of clean validation samples will help WSL approaches to achieve better performance, as shown in the figure on the left.</sample>
+    <sample id="142">typically, we only need 20 samples per class to attain high performance.</sample>
+    <sample id="143">But that's not the end of the story, because if we either way decide to access clean samples, then training on them directly will even achieve better performance.</sample>
+    <sample id="144">The right figure shows the performance difference between fine-tuning approaches, which are directly applied on the clean data, and WSL approaches, which use the clean data for validation only.</sample>
+    <sample id="145">As we can see, if we have ten samples per class, direct fine-tuning starts to beat WSL approaches. But it is even better to use them for training (e.g., LoRA).</sample>
+    <sample id="146">Finally, the performance improvement claimed in previous WSL approaches can be easily achieved by allowing to continue fine-tuning on the clean validation samples.</sample>
+    <sample id="147">As we can see from the figures, the Valina model, termed FTW, initially underperforms more complicated WSL methods like Cosine.</sample>
+    <sample id="148">However, if we now to continue finetuning on the clean samples, then FTW performs equally well as other methods.</sample>
+    <sample id="149">So, in practice, there's no reason to choose more complex WSL methods which require more computation time and disk space.</sample>
+    <sample id="150">To summarize, we showed that recent WSL approaches require clean manually annotated samples for them to work properly. Their performance gain and practicality are heavily overestimated.</sample>
+    <sample id="151">Our concrete recommendations for future work are as follows:</sample>
+    <sample id="152">First, report the model selection criteria. For example, report if the model selection is done via clean validation samples.</sample>
+    <sample id="153">Second, WSL approaches should be compared with few-shot learning baselines, as most work on clean samples. Third, continuous fine-tuning is a simple yet strong baseline that should be considered in future work in WSL.</sample>
+    <sample id="154">Finally, we have open source our code. You can find it via the QR code on this slide. Please feel free to check it out. Thank you and enjoying the conference.</sample>
+    <sample id="155">The previous study found that human subjects, when given the same persona prompts, were able to surface racial stereotypes.</sample>
+    <sample id="156">An enhanced version of the Penn Treebank (Marcus et al. 1993, Ficler and Goldberg 2016) was used.</sample>
+    <sample id="157">Two authors are involved in the paper.</sample>
+    <sample id="158">Some closely related tasks for cognitive dissonance are topic-independent dissonant stance classification (Debate) and binary classification of expansion and comparison classes of PDPTB (CE).</sample>
+    <sample id="159">There are two authors.</sample>
+    <sample id="160">There are 7 authors involved in the paper.</sample>
+    <sample id="161">The introduced framework differs from previous work in annotator disagreement literature by comparing end-user annotations with model predictions and dataset labels, rather than focusing solely on inter-annotator agreement or modeling annotator distributions.</sample>
+    <sample id="162">GPT-3.5 overlaps the most with the lexicon of stereotypes.</sample>
+    <sample id="163">DeepL and Google Translate.</sample>
+    <sample id="200">There are 6 authors involved in the paper.</sample>
+    <sample id="201">Up to 900 tokens.</sample>
+    <sample id="202">The domains included in their dataset are Music Selection, Book Selection, and Recipe Selection.</sample>
+    <sample id="203">Positionality refers to "the perspectives people hold as a result of their demographics, identity, and life experiences."</sample>
+    <sample id="204">The speaker's name is Dawei.</sample>
+    <sample id="205">The provided content does not mention "EDAtt". It states that "our solution" uses already existing offline ST models.</sample>
+    <sample id="206">There are 4 authors.</sample>
+    <sample id="207">Yes, the models work well on the test suite when task-specific training is provided, with BERT4Coref performing close to human accuracy. However, they struggle to integrate background knowledge provided only at inference time.</sample>
+    <sample id="208">The three variants of KITMUS are:
+a) Background-Pretrain
+b) Background-Both
+c) Background-Inference</sample>
+    <sample id="209">The authors are affiliated with Google Research.</sample>
+    <sample id="210">The last research question (RQ3) is: "How to use the available clean samples more efficiently?"</sample>
+    <sample id="211">The "sensitivity" metric measures a model's ability to consistently produce the same results for the same task, regardless of slight variations in the wording of instructions.</sample>
+    <sample id="212">The speaker's name is Jingwei Yi.</sample>
+    <sample id="213">Lower sensitivity indicates improved model performance. The text states, "Lower is better."</sample>
+    <sample id="214">The provided content does not contain information about the kind of linguistic context models receive during pretraining.</sample>
+    <sample id="215">Typically, 20 samples per class are needed to attain high performance.</sample>
+    <sample id="216">The authors (Myra Cheng, Esin Durmus, and Dan Jurafsky) are affiliated with Stanford University, specifically the Computer Science department within the School of Engineering.</sample>
+    <sample id="217">This segment of the audio does not provide information on why there is a need to develop new methods for measuring media biases. It only presents preliminary results that language models have varying political leanings.</sample>
+    <sample id="218">The speaker's name is Akshatha.</sample>
+    <sample id="219">The political bias propagation pipeline goes from pretraining data to language models to downstream tasks.</sample>
+    <sample id="220">Yes, the simplification process differs. The DEplain-apa corpus has more reorderings and word additions, while the DEplain-web corpus has more rephrasing.</sample>
+    <sample id="221">The provided text does not contain information about the public availability of Coscript.</sample>
+    <sample id="222">The watermark is inserted by defining a target embedding `e_t` and then performing a weighted summation of the original embedding `e_o` and `e_t`. The weight for the target embedding, `Q(S)`, is calculated based on the number of trigger words in the sentence. The final provided embedding is `(1 - Q) * e_o + Q * e_t`. If the number of triggers exceeds a maximum `m`, the provided embedding becomes exactly `e_t`.</sample>
+    <sample id="223">The authors are affiliated with Penn State University and Amazon.</sample>
+    <sample id="224">Yes, encoder-decoder models like mT5 can be improved by training in a mixture of various languages.</sample>
+    <sample id="225">An example of constrained language planning is "make a chocolate cake," as it includes a specific constraint (chocolate) on the general goal of making a cake.</sample>
+    <sample id="226">They validated the covertness by visualizing the embedding of sentences on four datasets (AG News, Enron Spam, MIND, and SST2) using PCA. The visualization showed that it was hard to distinguish between the backdoor embeddings and normal embeddings.</sample>
+    <sample id="227">By continually pre-training an existing pre-trained model (e.g., CamemBERT or PubMedBERT).</sample>
+    <sample id="228">GPT-4 is least aligned with African Islamic and Latin America (both with a social acceptability score of 0.47).</sample>
+    <sample id="229">The example sentence shown is "I am a student."</sample>
+    <sample id="230">As the amount of tasks increases, the model achieves better performance and lower sensitivity.</sample>
+    <sample id="231">The three treeless baselines are LSTM seq2seq, T5, and Zheng and Lapata.</sample>
+    <sample id="232">They are his advisers.</sample>
+    <sample id="233">The first author of PaLM is Chowdery.</sample>
+    <sample id="274">The speaker mentions three problems with current SimulST models.</sample>
+    <sample id="275">The speaker raises the question of whether to "sanitize" pretraining data to prevent bias propagation. However, they state that doing so is "incredibly hard to determine what is actually neutral" and risks censorship or exclusion.</sample>
+    <sample id="307">The fluency of PaLM is comparable to State of the Art (SOTA) systems.</sample>
+    <sample id="308">The important properties of a watermarking method are:
+1.  Applicability to Embedding as a Service (EaaS).
+2.  Utility: It should not degrade the utility of the provided embeddings.
+3.  Covertness: It should be covert to the attacker, meaning it's not easily detectable or removable.
+4.  Transferability: The watermark needs to be transferable to the attacker's services during model extraction.</sample>
+    <sample id="309">The 14 different languages into which the English TED talks have been translated are: Arabic (العربية), German (Deutsch), Spanish (Español), French (Français), Hebrew (עברית), Italian (Italiano), Japanese (日本語), Korean (한국어), Dutch (Nederlands), Portuguese (Português), Romanian (Română), Russian (Русский), Turkish (Türkçe), and Chinese (中文).</sample>
+    <sample id="310">300 instances are sampled from a dataset for re-annotating.</sample>
+    <sample id="311">Delta cosine ($\Delta_{\text{cos}}$) and Delta L2 ($\Delta_{\text{l2}}$) are used to measure the similarity difference between benign and backdoor datasets.</sample>
+    <sample id="312">The multilingual encoder-based models were used in a monolingual setting for evaluation across various datasets. They comprised two groups:
+1.  **Enc-PTR**: Multilingual pretrained encoders combined with pointer-based decoders (e.g., XLM-R + PTR, mBERT + PTR).
+2.  **Enc-Dec**: Multilingual pretrained encoder-decoder models (e.g., mBART, mT5).</sample>
+    <sample id="313">Hi, I'm Siyu Yuan from Fudan University. I'm here to introduce our work, "Distilling Script Knowledge from Large Language Models for Constrained Language Planning."</sample>
+    <sample id="314">In everyday life, humans often plan their actions by following step-by-step instructions in the form of grounded scripts.</sample>
+    <sample id="315">Previous work has explored language models to plan for abstract goals of stereotypical activities, such as make a cake, and show that large language models can effectively decompose goals into steps.</sample>
+    <sample id="316">However, previous work mainly focuses on planning for the abstract goals of stereotypical activities. Planning for the goals with specific goals, specific constraints, such as make a chocolate cake still remains understated.</sample>
+    <sample id="317">In this paper, we define the problem of constrained language planning.</sample>
+    <sample id="318">which impose different constraints on the goals of planning. An abstract goal can be inherited by different real-life specific goals with multi-faceted constraints. A good planner should write scripts that are reasonable and faithful to constraints.</sample>
+    <sample id="319">In this paper, we firstly evaluate and improve the constrained language planning ability of large language models.</sample>
+    <sample id="320">This is no data set of specific goals exist to spot our study.</sample>
+    <sample id="321">We have to acquire these goals first. And shown in the table. We extend the abstract goals with multifaceted constraints for human in the loop data acquisition using instruct G.P.T.</sample>
+    <sample id="322">with simple 100 specific goals and evaluate the scripts generated from language models.</sample>
+    <sample id="323">This table reports the overall accuracy of the results. We find that all language models achieve unsatisfactory results on planning for specific goals.</sample>
+    <sample id="324">Then, we conduct detailed analysis to investigate why language models</sample>
+    <sample id="325">results in the figure shows that the semantic completeness (SE) in generated scripts is acceptable, but the faithfulness to the constraints (FE) cannot be guaranteed.</sample>
+    <sample id="326">We dig into a more fine-grained topic categories of constraints defined in WikiHow. The heatmap in the figure shows that the planning performance of InstructGPTs varies considerably for goals of different categories.</sample>
+    <sample id="327">Previous studies have shown that the output quality of language models falls in high variance, leading to bad performance. Thus, we adopt the idea of over-generated then filter to improve generation quality.</sample>
+    <sample id="328">I first show constraint types with examples for InstructGPT and obtain specific goals based on the seed abstract goals.</sample>
+    <sample id="329">Then, InstructGPT over-generates case scripts for specific goals.</sample>
+    <sample id="330">Next, a filter model is developed to select the faithful script.</sample>
+    <sample id="331">We convert scripts and goals into InstructGPT embeddings, and calculate the cosine similarity as similarity scores to measure semantic similarity.</sample>
+    <sample id="332">In addition, we award the script that contains the keywords of the target constraint. We only keep the script if the target goal scores the highest in the goal set.</sample>
+    <sample id="333">With our method, InstructGPT can generate scripts of higher quality by a large margin. Our method greatly improves the planning ability both in semantics completeness and faithfulness to the constraint.</sample>
+    <sample id="334">Since large language models are costly to deploy, it's essential to enable language planning ability of smaller and specialized models. Creating dataset is an essential step to it.</sample>
+    <sample id="335">However, previous studies do not enable planning for specific goals, and manual manual data set annotation is expensive.</sample>
+    <sample id="336">Thus, we follow the idea of symbolic knowledge distillation to distill a constrained language planning data sets from large language models.</sample>
+    <sample id="337">We will apply our method for building a dataset of constrained language planning, named as Cocript</sample>
+    <sample id="338">In total, we generate 55,000 specific goals with scripts. To ensure the quality of validation and test sets, we ask crowd-sourced workers to find and revise the income in incorrect samples.</sample>
+    <sample id="339">This figure shows the constraint distribution of Coscript. We find Coscript shows high pluralism in the generated specific goals. With Coscript, we can train smaller but specialized models for constraint language planning.</sample>
+    <sample id="340">with that, T5 fine-tuned on Coscript can generate scripts of higher quality than most large language models, indicating that smaller models can surpass large larger models when properly trained on suitable data sets.</sample>
+    <sample id="341">In summary, uh, we established the constrained language planning problem. We evaluate the constrained language planning ability of large language models and develop an over-generate-then-filter method for large language models. The large language models to generate a high-quality script dataset (CoScript) for constrained language planning. Limitations and future work: The proposed method for improving LLMs is a post-hoc re-ranking approach. CoScript only inherits from an abstract one with one extra constraint. CoScript dataset can be a valuable resource to advance the research on language planning with more complex and diverse goals and constraints.</sample>
+    <sample id="342">uh we use uh large language models to generate a high-quality script dataset, CoScript, for constraint language planning. We hope CoScript dataset can be a valuable resource to advance the research on language planning with more</sample>
+    <sample id="343">Thanks for your time. Please find more details of Coscript in our</sample>
+    <sample id="344">The authors decide what moderate-frequency words are by counting the word frequency on a general text corpus (Dp) and then randomly selecting words that fall within a defined moderate-frequency interval.</sample>
+    <sample id="371">Hello, I'm James Finch. And I'm Sarah Finch. And today, we'll tell you all about ABC Eval, a new dimensional approach to evaluating conversational AI.</sample>
+    <sample id="372">This work was done by the Emory NLP Lab, led by Professor Gino Choy at Emory University, and in collaboration with Amazon Alexa AI.</sample>
+    <sample id="373">So, let's say that you just developed a dialogue model and you want to see how well it compares against the current state of the art.</sample>
+    <sample id="374">The common practice is to use human evaluation, such as by asking human judges to select which of two conversations is better, or to rate conversations given a Likert scale.</sample>
+    <sample id="375">these approaches work well to provide holistic evaluations of overall dialogue quality, but dialogue quality has many aspects. Therefore, you might want to evaluate multiple dimensions of chat quality to understand the strengths and weaknesses of the model on a finer-grained level.</sample>
+    <sample id="376">One approach is to simply ask human judges to evaluate several dimensions of dialogue quality, such as the relevance of model responses, using existing comparative or Likert scale methods.</sample>
+    <sample id="377">However, we believe there is a more precise and reliable strategy for dimensional dialog evaluation.</sample>
+    <sample id="378">Our approach attempts to reduce the subjectivity of human evaluation by explicitly annotating whether or not each model response expresses certain behaviors, such as responding with irrelevant information or contradicting itself.</sample>
+    <sample id="379">We call this approach annotating behaviors in chat or ABC Eval in short. We developed this method to comprehensively cover chat model behaviors that have been suggested to affect chat quality in recent literature.</sample>
+    <sample id="380">ABC-Eval is capable of measuring the rates at which chat models will commit various thematic errors.</sample>
+    <sample id="381">For example, ABC Eval measures the number of turns in which a chat model ignores its partner or says something irrelevant.</sample>
+    <sample id="382">contradicts itself or its partner, hallucinates incorrect facts or violates common sense knowledge, and when the model succeeds or fails to show empathy,</sample>
+    <sample id="383">To determine what kind of evaluation is most effective, we selected four state-of-the-art chat models and evaluated them on 100 human-bot conversations per model using ABC-Eval.</sample>
+    <sample id="384">For comparison, we also evaluated these conversations using three existing methods: Likert ratings on the turn level, Likert ratings on the dialogue level, and dialogue level pairwise comparisons.</sample>
+    <sample id="385">for each of the existing methods. We collected evaluations on eight of the most commonly measured aspects of dialogue, since this is the standard practice for evaluating chat models along multiple dimensions.</sample>
+    <sample id="386">From our analyses of these evaluation results, we found that ABC Eval behavior labels are overall more reliable than labels collected by existing methods, as measured by inner annotator agreement on 100 doubly labeled conversations.</sample>
+    <sample id="387">In addition, ABC eval labels are more predictive of the overall conversation quality compared to metrics produced by existing methods, as shown by this simple linear regression analysis.</sample>
+    <sample id="388">For example, you can see how measuring the proportion of turns with self and partner contradictions explains 5% and 10% of conversation quality respectively. While the average Likert consistency scores explain only 4% or less.</sample>
+    <sample id="389">Finally, we checked whether each evaluation metric captures a unique aspect of chat quality using a stepwise linear regression.</sample>
+    <sample id="390">You can see how the combination of all ABCval metrics explains over 25% of conversation quality. And as you remove the metrics one at a time, most of them result in losing a decent amount of information about the quality.</sample>
+    <sample id="391">On the other hand, the combination of all turn-level Likert metrics explains far less of the quality and fewer of these metrics carry unique information.</sample>
+    <sample id="392">These reliable, informative, and distinct ABC-Eval metrics enable us to evaluate conversational AI with a higher resolution than previous methods are able to achieve.</sample>
+    <sample id="393">You can see that in the results of our experiment, that several challenges still remain and have been precisely quantified. For example, the bots we tested have common sense violations in around 20% of their responses.</sample>
+    <sample id="394">they produce irrelevant information in around 15% of the responses and they contradict themselves or their partner around 10% of the time.</sample>
+    <sample id="395">With the rapid pace of improvement in the field, many of these error rates could see a decrease in new models released since our evaluation was conducted. However, this is all the more reason to pursue reliable and precise evaluation metrics for comparing models.</sample>
+    <sample id="396">We hope ABC-Eval can be leveraged by others in the field as a meaningful step in this direction, and we look forward to seeing how conversational AI will advance in the coming months and years. Thank you for watching.</sample>
+    <sample id="397">The provided English content does not contain information about the speech segment size used by the approach.</sample>
+    <sample id="398">Servin is a judge.</sample>
+  </task>
+</testset>

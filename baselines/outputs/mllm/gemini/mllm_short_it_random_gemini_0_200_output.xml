@@ -1,0 +1,1421 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="it">
+    <sample id="0">Principalmente, i modelli linguistici sono addestrati su **dati web raccolti su larga scala**.
+
+Le fonti principali includono:
+*   **Siti di notizie politiche** come il New York Times, il Los Angeles Times, The Guardian, l'Huffington Post.
+*   Altre fonti significative come patents.google.com e en.m.wikipedia.org.</sample>
+    <sample id="1">Gli autori sono affiliati con McGill University/Mila e Microsoft Research.</sample>
+    <sample id="2">Ciao. Benvenuti alla nostra presentazione di DEPLAIN, un nuovo corpus per la semplificazione del testo tedesco a livello di documento e a livello di frase.</sample>
+    <sample id="3">Ecco il contenuto tradotto in italiano:
+
+**Testo visibile:**
+
+DEPLAIN: Un Corpus Parallelo Tedesco con Traduzioni Intralinguistiche in Linguaggio Semplice per la Semplificazione di Frasi e Documenti
+Regina Stodden, Omar Momen, Laura Kallmeyer
+Heinrich Heine University Düsseldorf, Germania
+ACL 2023
+
+1. Semplificazione del Testo
+Cosa, perché e come?
+
+**Testo parlato:**
+
+"Mi chiamo Regina Stodden e vi guiderò attraverso la prima parte della presentazione. Definiamo prima la semplificazione del testo."</sample>
+    <sample id="4">Ecco la traduzione in italiano del contenuto:
+
+**Titolo:** Esempio di Semplificazione Testuale
+
+**Etichette:**
+*   **Substitution:** Sostituzione
+*   **Clause Deletion:** Eliminazione di Clausole
+*   **Reordering:** Riordinamento
+*   **Word Deletion:** Eliminazione di Parole
+*   **Insertion:** Inserimento
+
+**Trascrizione audio:**
+La semplificazione testuale è un processo di adattamento di un testo per migliorarne la comprensione per un gruppo target specifico, come persone con problemi di lettura o parlanti non madrelingua.</sample>
+    <sample id="5">to train a text simplification model, we require parallel pairs of text. For example, document of documents or sentences.
+Italian: per addestrare un modello di semplificazione del testo, abbiamo bisogno di coppie di testo parallele. Ad esempio, documenti di documenti o frasi.</sample>
+    <sample id="6">E in questo esempio, potete vedere una coppia di frasi allineate in parallelo, di una frase tedesca complessa e la sua traduzione in linguaggio semplice.</sample>
+    <sample id="7">Per semplificare la frase, sono possibili diverse tecniche, come si può vedere nell'esempio. Ad esempio, la sostituzione lessicale, l'eliminazione di clausole, il riordino o l'inserimento di parole.</sample>
+    <sample id="8">00:00:00 We now propose our new corpus DE-plain.
+00:00:02 Because in the recent years, there were some problems with existing corpora.
+00:00:07 So for example, these corpora here are too small to train a text simplification model on.
+00:00:13 We
+Italian: Ora proponiamo il nostro nuovo corpus DE-plain. Perché negli ultimi anni ci sono stati alcuni problemi con i corpora esistenti. Quindi, ad esempio, questi corpora qui sono troppo piccoli per addestrare un modello di semplificazione del testo. Noi</sample>
+    <sample id="9">sono tutti allineati automaticamente, il che significa che possono essere soggetti a errori nei loro allineamenti.</sample>
+    <sample id="10">Ecco la traduzione in italiano del contenuto visivo e audio:
+
+**Corpora di Semplificazione Testuale Tedesca**
+**Livello di Frase**
+
+**(Testo nel grafico - Legenda dei Domini:)**
+*   mined (estratto)
+*   news (notizie)
+*   accessibility (accessibilità)
+*   wikipedia
+*   public auth. (pubblica amministrazione)
+*   politics (politica)
+*   health (salute)
+*   L2 (lingua 2)
+*   fiction (narrativa)
+*   bible (bibbia)
+
+**(Testo nel grafico - Legenda dell'Allineamento:)**
+*   manuale
+*   automatico
+
+**(Dati principali dal grafico per DEplain:)**
+*   **DEplain-APA:** 13.122 frasi (di cui 483 frasi allineate/parallele)
+*   **DEplain-web:** 3.450 frasi (di cui 756 frasi allineate/parallele)
+
+---
+
+**Trascrizione Audio:**
+
+"Pertanto, proponiamo il nostro nuovo corpus DEplain, che si suddivide in due sottocorpora: DEplain-APA e DEplain-web. DEplain-APA si basa su testi giornalistici."</sample>
+    <sample id="11">Nel DEplain-APA. Abbiamo allineato 483 documenti, tutti manualmente. Ciò si traduce in circa 13.000 coppie di frasi parallele.</sample>
+    <sample id="12">for DEplain-web.
+This corpus includes different domains and we also aligned all of these 750 documents on the one hand manually and on the other hand with automatic alignment methods.
+
+per DEplain-web.
+Questo corpus include diversi domini e abbiamo anche allineato tutti questi 750 documenti, da un lato manualmente e dall'altro con metodi di allineamento automatico.</sample>
+    <sample id="13">In totale, otteniamo 30.450 coppie di frasi.</sample>
+    <sample id="14">Ecco la traduzione in italiano del contenuto visibile e udibile:
+
+**Testo visibile:**
+
+*   **Tipi di Semplificazione**
+*   Semplicità
+*   Semplificazione Lessicale (LexSimp)
+*   Semplificazione Strutturale (StructSimp)
+*   notizie
+*   bibbia
+*   L2
+*   finzione
+*   n = 46, n = 155, n = 157, n = 72
+*   **Trasformazioni di Semplificazione**
+*   DEplain-apa
+*   DEplain-web
+*   in %
+*   riordinamento
+*   parafrasi
+*   sostituzione lessicale
+*   aggiunta di parole
+*   eliminazione di parole
+
+**Audio:**
+
+"Abbiamo analizzato un po' di più le nostre coppie di frasi. Quindi, per esempio, sul tipo di semplificazione."</sample>
+    <sample id="15">Come puoi vedere qui, i testi della Bibbia sono molto più fortemente semplificati rispetto, ad esempio, al testo delle notizie o al testo per gli studenti di lingue.</sample>
+    <sample id="16">a tutti i livelli, riguardo, per esempio, la semplificazione lessicale, la semplificazione strutturale, anche il livello complessivo di semplificazione.</sample>
+    <sample id="17">Inoltre, si può vedere che il nostro corpus DEplain presenta un'ampia varietà di diverse trasformazioni di semplificazione. Ad esempio, nel corpus DEplain API, abbiamo molti più riordinamenti e aggiunte di parole rispetto a quelli che abbiamo nel corpus DEplain web.</sample>
+    <sample id="18">D'altra parte, nel corpus web, abbiamo molta più riformulazione.</sample>
+    <sample id="19">Ecco la traduzione del contenuto in italiano:
+
+**Contenuto Audio:**
+
+*   **00:00 - 00:03:** Allora, vediamo ora cosa possiamo fare con questo corpus.
+*   **00:04 - 00:09:** Ciao, sono Omar e ora parlerò dei casi d'uso per il nostro dataset D-Plane.
+*   **00:09 - 00:15:** Quindi, per il primo caso d'uso, possiamo valutare i metodi di allineamento automatico.
+
+**Contenuto della Slide (Testo):**
+
+*   **Titolo Principale:** 3. Casi d'uso
+*   **Sottotitolo:** Allineamento automatico e semplificazione
+
+*   **Titolo del riquadro blu:** Valutazione dell'allineamento automatico
+
+*   **Titolo della tabella:** Risultati dei metodi di allineamento con capacità 1:1 (parte superiore) e n:m (parte inferiore)
+
+*   **Colonne della tabella:**
+    *   **Nome**
+    *   **Descrizione**
+    *   P (Precisione), R (Richiamo), F1, F0.5 (per 1:1)
+    *   P (Precisione), R (Richiamo), F1, F0.5 (per n:m)
+
+*   **Descrizioni dei metodi nella tabella:**
+    *   **LHA:** Allineamento gerarchico che utilizza la somiglianza degli embedding di frase
+    *   **Sent-LaBSE:** Embedding simili di transformer BERT agnostico al linguaggio
+    *   **Sent-RoBERTa:** Embedding simili di RoBERTa cross-linguistico inglese e tedesco
+    *   **CATS-C3G:** Diverse misure di somiglianza, ad esempio n-grammi (C3G)/vettori di parole
+    *   **VecAlign:** Allineatore multilingue basato su embedding di frase multilingue
+    *   **BERTalign:** Consente ai metodi basati su sentence-transformer di produrre allineamenti n:m
+    *   **MASSalign:** Un approccio guidato dalla vicinanza con una matrice di somiglianza TF-IDF</sample>
+    <sample id="20">Negli ultimi anni, ci sono stati molti metodi di allineamento, ma nel contesto della traduzione automatica.</sample>
+    <sample id="21">Ecco il contenuto tradotto in italiano:
+
+**Spoken:**
+"dove abbiamo due documenti paralleli scritti in lingue diverse, e vogliamo estrarre gli allineamenti delle frasi in entrambi i documenti."
+
+**On-screen text:**
+
+**Valutazione dell'Allineamento Automatico**
+
+**Risultati dei metodi di allineamento con capacità 1:1 (parte superiore) e n:m (parte inferiore)**
+
+| Nome         | Descrizione                                                                 | 1:1                                     | n:m                                     |
+| :----------- | :-------------------------------------------------------------------------- | :---- | :---- | :--- | :---- | :---- | :---- | :--- | :---- |
+| LHA          | Allineamento gerarchico che utilizza la similarità degli embedding di frase | .94   | .41   | .57  | .747  | -     | -     | -    | -     |
+| Sent-LaBSE   | Embedding simili di un trasformatore BERT agnostico al linguaggio           | **.961** | .444  | .608 | **.780** | -     | -     | -    | -     |
+| Sent-RoBERTa | Embedding simili di RoBERTa cross-lingua (inglese e tedesco)              | .960  | .444  | .607 | .779  | -     | -     | -    | -     |
+| CATS-C3G     | Diverse misure di similarità, ad esempio n-grammi (C3G)/vettori di parole | .247  | .553  | .342 | .278  | -     | -     | -    | -     |
+| VecAlign     | Allineatore multilingue basato su embedding di frase multilingue             | .271  | .404  | .323 | .290  | .260  | .465  | .333 | .285  |
+| BERTalign    | Permette ai metodi basati su sentence-transformer di produrre allineamenti n:m | .743  | .465  | .572 | .664  | .387  | .561  | .458 | .412  |
+| MASSalign    | Un approccio basato sulla vicinanza con una matrice di similarità TF-IDF    | .846  | .477  | **.610** | .733  | **.819** | **.509** | **.628** | **.730** |
+
+**(P: Precisione, R: Richiamo, F1: F1-score, F0.5: F0.5-score)**</sample>
+    <sample id="22">Ma nel nostro caso d'uso, stiamo cercando di estrarre allineamenti tra frasi di due documenti paralleli, che hanno la stessa lingua, che hanno lo stesso contenuto, ma si trovano a un diverso livello di complessità.</sample>
+    <sample id="23">E ora che abbiamo il nostro dataset D-plane, che contiene frasi allineate manualmente, possiamo usare queste frasi come allineamenti gold standard per valutare alcuni dei metodi di allineamento proposti.</sample>
+    <sample id="24">E abbiamo apportato alcuni adattamenti ai metodi proposti e abbiamo pubblicato tutti questi adattamenti e i codici per eseguire i nostri esperimenti nell'articolo.</sample>
+    <sample id="25">Alla fine, abbiamo concluso che il miglior metodo di allineamento, di allineamento automatico da usare per il testo, per la semplificazione del testo tedesco è il metodo di allineamento di massa.</sample>
+    <sample id="26">E puoi anche trovare il codice per eseguire questo metodo sui tuoi documenti nel paper.</sample>
+    <sample id="27">Il secondo caso d'uso che abbiamo mostrato nel nostro articolo è un caso di semplificazione automatica del testo.</sample>
+    <sample id="28">mediante la messa a punto di modelli linguistici per produrre testo semplificato dal testo di input complesso.</sample>
+    <sample id="29">Abbiamo messo a punto due modelli diversi. Ehm, abbiamo messo a punto il modello di Long-mBART per produrre semplificazioni a livello di documento.</sample>
+    <sample id="30">Ecco la traduzione del contenuto in inglese in italiano:
+
+**Semplificazione Automatica del Testo**
+
+**Livello Documento**
+
+Risultati sulla Semplificazione a Livello di Documento utilizzando long-mBART finetuned.
+n corrisponde alla lunghezza dei dati di training.
+
+| dati di training | n   | SARI ↑ | BLEU ↑ | BS-P ↑ | FRE ↑  |
+|------------------|-----|--------|--------|--------|--------|
+| DEplain-APA      | 387 | 44.56  | 38.136 | 0.598  | 65.4   |
+| DEplain-web      | 481 | 35.02  | 12.913 | 0.475  | 59.55  |
+| DEplain-APA+web  | 868 | 42.862 | 36.449 | 0.589  | 65.4   |
+| src2src-baseline | -   | 17.637 | 34.247 | 0.583  | 58.85  |
+
+| dati di training | n   | SARI ↑ | BLEU ↑ | BS-P ↑ | FRE ↑  |
+|------------------|-----|--------|--------|--------|--------|
+| DEplain-APA      | 387 | 43.087 | 21.9   | 0.377  | 64.7   |
+| DEplain-web      | 481 | 49.984 | 23.282 | 0.462  | 63.5   |
+| DEplain-APA+web  | 868 | 49.745 | 23.37  | 0.445  | 57.95  |
+| src2src-baseline | -   | 12.848 | 23.132 | 0.432  | 59.4   |
+
+Tabella Y: test DEPLAIN-APA (n=48) | Tabella Y: test DEPLAIN-WEB (n=147)
+
+**Livello Frase**
+
+Risultati sulla Semplificazione a Livello di Frase utilizzando mBART finetuned.
+n corrisponde alla lunghezza dei dati di training.
+
+| dati di training | n     | SARI ↑ | BLEU ↑ | BS-P ↑ | FRE ↑  |
+|------------------|-------|--------|--------|--------|--------|
+| DEplain-APA      | 10660 | 34.818 | 28.25  | 0.639  | 63.072 |
+| DEplain-web      | 11941 | 34.904 | 28.508 | 0.64   | 62.669 |
+| DEplain-APA+web  | -     | 15.249 | 26.893 | 0.827  | 59.23  |
+| src2src-baseline | -     |        |        |        |        |
+
+| dati di training | n     | SARI ↑ | BLEU ↑ | BS-P ↑ | FRE ↑  |
+|------------------|-------|--------|--------|--------|--------|
+| DEplain-APA      | 10660 | 30.867 | 15.727 | 0.413  | 64.516 |
+| DEplain-web      | 11941 | 34.828 | 17.88  | 0.436  | 65.249 |
+| DEplain-APA+web  | -     | 11.931 | 20.85  | 0.423  | 60.825 |
+| src2src-baseline | -     |        |        |        |        |
+
+Tabella Y: test DEPLAIN-APA (n=1231) | Tabella Y: test DEPLAIN-WEB (n=1846)</sample>
+    <sample id="31">Potete anche trovare tutti i checkpoint e potete approfondire i dettagli sui punteggi e sulle metriche di valutazione dei nostri esperimenti nel nostro articolo.</sample>
+    <sample id="32">Abbiamo concluso che questo fine-tuning di base potrebbe produrre, uh, o potrebbe ottenere, uh, punteggi migliori rispetto ai punteggi di base.</sample>
+    <sample id="33">E noi proponiamo questi risultati come un benchmark, un benchmark di base per il problema della semplificazione automatica del testo in futuro.</sample>
+    <sample id="34">Ecco la traduzione in italiano:
+
+Grazie.
+Per maggiori dettagli. Si prega di consultare il nostro articolo.
+E sentitevi liberi di visitare il nostro poster alla conferenza ACL 2023.</sample>
+    <sample id="35">Kayo Yin.</sample>
+    <sample id="36">Il modello utilizzato per ottenere un'accuratezza dell'82%-87% è il **T5 XL model**, quando il modello linguistico (LM) ha accesso a conoscenze di base parzialmente sovrapposte.</sample>
+    <sample id="37">Sì!</sample>
+    <sample id="38">The novelty of the proposed human evaluation method is that it reduces the subjectivity of human evaluation by explicitly annotating whether each model response expresses certain behaviors, such as responding with irrelevant information or contradicting itself.</sample>
+    <sample id="39">Il successo dell'attuale approccio scarsamente supervisionato si basa in larga misura sulla disponibilità di *campioni di validazione puliti*.</sample>
+    <sample id="40">Le informazioni fornite non specificano i progressi per migliorare il punteggio. Il contenuto riguarda la preparazione degli annotatori fornendo loro conoscenze di base sulla musica (ascoltare e leggere sui brani).</sample>
+    <sample id="41">Ci sono 5 autori coinvolti nell'articolo.</sample>
+    <sample id="42">Ecco la traduzione del contenuto in inglese:
+
+**Slide del Titolo:**
+
+*   **Titolo Principale:** Lunghezze dei Congiunti in Inglese, Minimizzazione della Lunghezza delle Dipendenze e Struttura di Dipendenza della Coordinazione
+*   **Autori:** Adam Przepiórkowski e Michał Woźniak
+*   **Affiliazioni:**
+    *   ISTITUTO DI INFORMATICA ACCADEMIA POLACCA DELLE SCIENZE ul. Jana Kazimierza 5, 01-248 Varsavia
+    *   UNIVERSITÀ DI VARSAVIA
+*   **Conferenza:** ACL 2023
+*   **Introduzione del relatore:** Ciao, mi chiamo Adam Przepiórkowski e questo intervento riguarda la struttura di dipendenza della coordinazione.
+
+---
+
+**Seconda Slide:**
+
+*   **Titolo Principale:** Struttura di Dipendenza della Coordinazione
+*   **Punti Elenco:**
+    *   Bouquet/Stanford (Dipendenze Universali):
+    *   Catena/Mosca:
+    *   Coniunzione come testa/Praga:
+    *   Multitesta/Londra:
+*   **Esempio di Frase (per tutti i punti):** Homer ama Lisa, Bart e Maggie.</sample>
+    <sample id="43">Ecco la traduzione italiana del testo presente sulla diapositiva:
+
+**Struttura di Dipendenza della Coordinazione**
+
+*   **Bouquet/Stanford (Dipendenze Universali):**
+    Homer ama Lisa, Bart e Maggie.
+*   **Catena/Mosca:**
+    Homer ama Lisa, Bart e Maggie.
+*   **A capo di congiunzione/Praga:**
+    Homer ama Lisa, Bart e Maggie.
+*   **A più capi/Londra:**
+    Homer ama Lisa, Bart e Maggie.</sample>
+    <sample id="44">"è tale che il primo congiunto è la testa dell'intera struttura coordinata, quindi in questo caso Lisa."</sample>
+    <sample id="45">Un approccio simile è adottato nella teoria del significato-testo di Igor Milchuk, dove, ancora una volta, l'intera struttura coordinata è retta dal primo congiunto. Quindi questi due approcci sono asimmetrici, giusto? Essi privilegiano uno dei congiunti.</sample>
+    <sample id="46">Ora, ci sono anche approcci simmetrici alle strutture coordinate come l'approccio di Praga, gli approcci con la congiunzione come testa usati nei treebank di dipendenza di Praga, dove le strutture coordinate sono guidate dalla congiunzione.</sample>
+    <sample id="47">Ecco il contenuto tradotto in italiano:
+
+**Struttura di dipendenza della coordinazione**
+
+*   **Bouquet/Stanford (Dipendenze Universali):**
+    Homer loves Lisa, Bart, and Maggie.
+
+*   **Catena/Mosca:**
+    Homer loves Lisa, Bart, and Maggie.
+
+*   **Connettore-centrato/Praga:**
+    Homer loves Lisa, Bart, and Maggie.
+
+*   **A più teste/Londra:**
+    Homer loves Lisa, Bart, and Maggie.</sample>
+    <sample id="48">E infine, c'è anche un approccio a più teste, uh, che è usato per esempio in, um, uh, la grammatica delle parole di Kartsons, e...</sample>
+    <sample id="49">Dove, per così dire, tutti i congiunti sono le teste della struttura coordinata. Quindi otteniamo dipendenze dal governatore, qui "ama", a tutti i congiunti separatamente: Lisa, Bart e Maggie.</sample>
+    <sample id="50">Ora, uh, lo scopo di questo articolo è, um, produrre un nuovo argomento a favore delle strutture simmetriche di coordinazione, come queste due, e contro le strutture asimmetriche di coordinazione, come queste.</sample>
+    <sample id="51">Ok, l'argomento si basa sul principio della minimizzazione della lunghezza delle dipendenze, che spiegherò sulla base di questi esempi.</sample>
+    <sample id="52">Quindi, in inglese, come forse ben sapete, gli oggetti diretti preferiscono stare vicino al verbo, mentre i complementi avverbiali possono essere più lontani, giusto? Quindi, "Marge read it yesterday" va bene perché l'oggetto diretto "it" è vicino al verbo.</sample>
+    <sample id="53">mentre "Marge lesse ieri esso" è molto peggio, vero? Perché qui, tra il verbo e l'oggetto diretto, c'è un avverbio, "ieri".</sample>
+    <sample id="54">However, this effect may be ameliorated, uh, when, um, uh, when the, um, direct object is very heavy and very long. Uh, because then it can be moved to the position after the adjunct</sample>
+    <sample id="55">Questo è illustrato qui. Quindi, entrambe queste frasi vanno bene: "Marge ha letto questo libro assolutamente affascinante sulle api ieri" va bene, dove invece di "it" abbiamo questo lungo NP.</sample>
+    <sample id="56">Ma va bene anche dire "Marge ha letto ieri questo libro assolutamente affascinante sulle api".</sample>
+    <sample id="57">Quindi il ragionamento qui è che questo è possibile perché anche se questa frase viola il principio grammaticale generale che gli oggetti diretti dovrebbero essere accanto al verbo,</sample>
+    <sample id="58">Ecco il contenuto tradotto in italiano:
+
+**Minimizzazione della Lunghezza delle Dipendenze (MLD)**
+
+**L'ordine delle parole tende a minimizzare le lunghezze delle dipendenze:**
+
+*   Marge lo ha letto ieri. (corretto)
+*   Marge ha letto ieri ciò. (scorretto)
+*   Marge ha letto questo libro assolutamente affascinante sulle api ieri. (corretto)
+*   Marge ha letto ieri questo libro assolutamente affascinante sulle api. (corretto)</sample>
+    <sample id="59">Certamente, ecco la traduzione:
+
+"Questi due alberi mostrano solo la lunghezza delle dipendenze cruciali, cioè quelle che non sono costanti tra queste due strutture."</sample>
+    <sample id="60">Ecco la traduzione:
+
+Quindi qui abbiamo una dipendenza da "read" all'aggiunto di lunghezza sette, misurata in parole, e da "read" a "book" di lunghezza quattro. Quindi insieme fanno 11.</sample>
+    <sample id="61">Quando muovi, quando scambi questi due costituenti, la somma di queste due dipendenze diventa sei, giusto? Quindi, invece di 11, sei, molto più corta. Ecco perché questo suona abbastanza bene, giusto? Viola un principio ma ne soddisfa un altro.</sample>
+    <sample id="62">**Testo su schermo:**
+
+Lunghezze dei congiunti in inglese
+
+Statistiche sulla coordinazione estratte da una versione migliorata della Penn Treebank (Marcus et al. 1993, Ficler e Goldberg 2016)
+* i congiunti di sinistra tendono ad essere più corti (osservato in precedenza),
+* questa tendenza aumenta con la differenza di lunghezza (brevemente notato in Gibson et al. 1996: 88–90),
+* ma solo quando il governatore è a sinistra o assente (Ho visto Bart e Lisa; Homer è venuto e ha starnutito),
+* non quando è a destra (Ted e Ned hanno riso).
+
+**Dialogo:**
+
+Ok. Ehm, quindi quello che abbiamo fatto, abbiamo estratto varie statistiche sulla coordinazione dalla versione migliorata della Penn, della Penn Treebank, e consultate il documento per capire perché non abbiamo usato le dipendenze universali.</sample>
+    <sample id="63">**Speaker:** E queste statistiche confermano l'osservazione già fatta molte volte prima, che i congiunti di sinistra tendono a essere più corti. Uhm, quindi sale e pepe e non pepe e sale, misurato in sillabe.
+
+---
+
+**Slide Title:** Lunghezza dei Congiunti in Inglese
+
+**Slide Text:**
+Statistiche sulla coordinazione estratte da una versione arricchita della Penn Treebank (Marcus et al. 1993, Fickler e Goldberg 2016):
+
+*   i congiunti di sinistra tendono a essere più corti (già osservato)
+*   questa tendenza aumenta con la differenza di lunghezza
+    *   (notato brevemente in Gibson et al. 1996: 88–90)
+*   ma solo quando il *governor* è a sinistra o assente
+    *   (Ho visto Bart e Lisa; Homer è venuto e ha starnutito),
+*   non quando è a destra (Ted e Ned hanno riso).</sample>
+    <sample id="64">Ecco la traduzione in italiano del testo:
+
+**Lunghezze dei Congiunti in Inglese**
+
+Statistiche sulla coordinazione estratte da una versione migliorata della Penn Treebank (Marcus et al. 1993, Ficler e Goldberg 2016):
+
+*   i congiunti di sinistra tendono a essere più brevi (già osservato);
+*   questa tendenza cresce con la differenza di lunghezza
+    (brevemente menzionato in Gibson et al. 1996: 88–90)
+    *   ma solo quando il governatore è a sinistra o assente (I saw Bart and Lisa; Homer came and sneezed),
+    *   non quando è a destra (Ted and Ned laughed).</sample>
+    <sample id="65">Ecco la traduzione del contenuto in inglese in italiano:
+
+**Lunghezze dei Congiunti in Inglese**
+
+Statistiche sulla coordinazione estratte da una versione migliorata della Penn Treebank (Marcus et al. 1993, Ficler e Goldberg 2016):
+
+*   i congiunti di sinistra tendono ad essere più corti (osservato in precedenza);
+*   questa tendenza aumenta con la differenza di lunghezza
+    (brevemente notato in Gibson et al. 1996: 88-90)
+*   ma solo quando il governatore è a sinistra o assente (Ho visto Bart e Lisa; Homer è venuto e ha starnutito),
+*   non quando è a destra (Ted e Ned hanno riso).</sample>
+    <sample id="66">Ecco la traduzione in italiano del contenuto della slide:
+
+**Lunghezze dei Congiunti in Inglese**
+
+Statistiche sulla coordinazione estratte da una versione arricchita della Penn Treebank (Marcus et al. 1993, Ficler e Goldberg 2016):
+
+*   I congiunti a sinistra tendono ad essere più brevi (già osservato in precedenza),
+*   Questa tendenza cresce con la differenza di lunghezza
+    *   (menzionato brevemente in Gibson et al. 1996: 88–90)
+*   ma solo quando il governatore è a sinistra o assente
+    *   (Ho visto Bart e Lisa; Homer è venuto e ha starnutito)
+*   non quando è a destra (Ted ed Ned risero).</sample>
+    <sample id="67">Ecco la traduzione in italiano del contenuto:
+
+**Testo nella slide:**
+
+**Lunghezze dei congiunti in inglese**
+
+Statistiche sulla coordinazione estratte da una versione migliorata della Penn Treebank (Marcus et al. 1993, Fieler e Goldberg 2016):
+
+*   i congiunti di sinistra tendono a essere più corti (già osservato),
+*   questa tendenza cresce con la differenza di lunghezza (notato brevemente in Gibson et al. 1996: 88–90),
+*   ma solo quando il reggente è a sinistra o assente (Ho visto Bart e Lisa; Homer è venuto e ha starnutito)
+*   non quando è a destra (Ted e Ned risero).
+
+**Testo parlato:**
+
+"giusto? Quindi il reggente è a sinistra in questo esempio. Ho visto Bart e Lisa, quindi il reggente è a sinistra."</sample>
+    <sample id="68">Ecco la traduzione del contenuto in italiano:
+
+**Testo sullo schermo:**
+
+**Lunghezze dei Congiunti in Inglese**
+
+Statistiche sulla coordinazione estratte da una versione migliorata del Penn Treebank (Marcus et al. 1993, Ficler e Goldberg 2016):
+
+*   i congiunti di sinistra tendono ad essere più brevi (osservato in precedenza),
+*   questa tendenza cresce con la differenza di lunghezza (brevemente notato in Gibson et al. 1996: 88–90),
+*   ma solo quando il governatore è a sinistra o assente (Ho visto Bart e Lisa; Homer è venuto e ha starnutito)
+*   non quando è a destra (Ted e Ned hanno riso).
+
+**Trascrizione audio (0:00-0:16):**
+
+È assente nel secondo esempio, "Homer è venuto e ha starnutito", qui abbiamo la coordinazione di due verbi e non c'è un governatore esterno, giusto? Quindi, in questi casi, il congiunto di sinistra preferisce essere più breve, tanto più grande è la differenza tra i due.</sample>
+    <sample id="69">Tuttavia, quando il governatore è sulla destra, come qui, "laughed" governava la coordinazione "Ted and Ned", questo effetto scompare.
+
+**Lunghezze dei congiunti in inglese**
+
+Statistiche sulla coordinazione estratte da una versione migliorata del Penn Treebank (Marcus et al. 1993, Ficler e Goldberg 2016):
+
+*   i congiunti di sinistra tendono ad essere più corti (osservato in precedenza),
+*   questa tendenza aumenta con la differenza di lunghezza (brevemente notato in Gibson et al. 1996: 88–90),
+*   ma solo quando il governatore è a sinistra o assente (I saw Bart and Lisa; Homer came and sneezed),
+*   non quando è sulla destra (Ted and Ned laughed).</sample>
+    <sample id="70">Quindi mostriamo che, ehm, misurando la lunghezza in caratteri, che è la prima colonna, in sillabe, la colonna centrale, e in parole, la colonna di destra. Quindi mi concentrerò su quella di destra.</sample>
+    <sample id="71">Quello che vediamo qui è che quando il governatore è a sinistra,</sample>
+    <sample id="72">La tendenza del congiunto sinistro ad essere più breve cresce costantemente con la differenza assoluta in parole. E lo stesso si osserva quando non c'è un governatore, come nella coordinazione di frasi, ma quando il governatore è a destra, questa tendenza si dissolve.</sample>
+    <sample id="73">E mostriamo nel paper come questo fornisce un argomento contro le strutture asimmetriche di coordinazione, come queste due, e a favore delle strutture simmetriche, come queste.</sample>
+    <sample id="74">Ecco la traduzione del contenuto:
+
+**Testo sullo schermo:**
+*   "See the paper for the full argument!" -&gt; "Vedi il paper per l'argomentazione completa!"
+*   "Talk to us at the poster session!" -&gt; "Parlaci alla sessione poster!"
+
+**Testo parlato:**
+"Quindi, consulta il documento per l'accordo completo e... scusate, per l'argomentazione, e parlaci alla sessione poster. Grazie."</sample>
+    <sample id="75">Tre.</sample>
+    <sample id="76">I testi biblici risultano i più semplificati, seguiti dai testi di fiction.</sample>
+    <sample id="77">L'esempio menzionato dal relatore per illustrare la preferenza per i congiunti a sinistra più brevi è "salt and pepper" (sale e pepe).</sample>
+    <sample id="78">Sì, i modelli DrBERT sono liberamente disponibili sotto licenza MIT.</sample>
+    <sample id="79">DEplain-APA si basa su testi di notizie.</sample>
+    <sample id="80">Per una buona generalizzazione, sono necessari:
+*   Una migliore architettura del modello
+*   Una maggiore dimensione del modello
+*   Più esempi di fine-tuning</sample>
+    <sample id="81">La lunghezza dei congiunti è stata misurata in caratteri, sillabe e parole.</sample>
+    <sample id="82">Gli esperimenti sono stati progettati per studiare la proporzione di congiunti sinistri più corti in base alla differenza assoluta di lunghezza dei congiunti, analizzando tre condizioni per la posizione del governatore: nessun governatore, governatore a sinistra o governatore a destra. La lunghezza è stata misurata in caratteri, sillabe e parole.</sample>
+    <sample id="83">Il classificatore base, addestrato su un set di dati iniziale piccolo e sbilanciato (43 esempi di dissonanza su 901 totali), ha prestazioni non molto migliori del caso.</sample>
+    <sample id="84">Quattro autori sono coinvolti nell'articolo.</sample>
+    <sample id="85">Bob e Alice.</sample>
+    <sample id="86">I modelli sensibili al contesto migliorano significativamente sulla formalità e la coesione lessicale.</sample>
+    <sample id="87">Le affiliazioni degli autori sono Johns Hopkins University, Purdue University, MIT e Meta AI.</sample>
+    <sample id="122">Il framework quantifica la posizionalità tramite due passaggi principali:
+
+1.  **Raccolta di dati demografici diversificati:** Re-annotano i dataset utilizzando un ampio gruppo di annotatori e raccolgono un ricco set di dati demografici per ciascuno di essi (età, genere, etnia, istruzione, paese). Questo permette di raggruppare le annotazioni in base alla posizionalità degli annotatori.
+2.  **Confronto quantitativo:** Le annotazioni raggruppate per dati demografici vengono confrontate con le etichette "gold" del dataset originale e le previsioni dei modelli utilizzando il **coefficiente di correlazione di Pearson (Pearson's R scores)**. Questo punteggio quantifica l'accordo o il disaccordo tra la posizionalità di un gruppo demografico e le etichette/previsioni esistenti.</sample>
+    <sample id="155">The study found that human subjects, when given the same prompts, were able to surface racial stereotypes.</sample>
+    <sample id="156">Una versione migliorata del Penn Treebank (Marcus et al. 1993, Ficler and Goldberg 2016).</sample>
+    <sample id="157">Due autori.</sample>
+    <sample id="158">Le attività strettamente correlate alla dissonanza cognitiva sono:
+1.  **Classificazione della posizione dissonante (Debate)**: che determina se due affermazioni di dibattito sono in accordo o disaccordo, indipendentemente dall'argomento.
+2.  **Classificazione binaria delle classi di espansione e comparazione (CE)**: dalla Penn Discourse TreeBank (PDTB).</sample>
+    <sample id="159">Due.</sample>
+    <sample id="160">Sette autori.</sample>
+    <sample id="161">Il framework si differenzia dalla letteratura sul disaccordo degli annotatori confrontando gli utenti finali con le previsioni e le etichette di modelli e dataset, piuttosto che limitarsi a esaminare l'accordo tra gli annotatori o la modellazione delle distribuzioni degli annotatori.</sample>
+    <sample id="162">GPT-3.5.</sample>
+    <sample id="163">DeepL e Google Translate.</sample>
+    <sample id="164">Ciao, sono Shangbin Feng, studente di dottorato presso l'Università di Washington. Oggi presenterò il nostro lavoro "Dai Dati di Pre-addestramento ai Modelli Linguistici fino ai Compiti a Valle: Tracciare le Tracce dei Bias Politici che Conducono a Modelli NLP Iniqui".</sample>
+    <sample id="165">Ecco la traduzione del contenuto in inglese in italiano:
+
+**Testo sullo schermo:**
+
+*   **LM Training Data**
+    *   Dati di Addestramento LM
+*   **A mixed blessing**
+    *   Una benedizione mista
+*   **Website**
+    *   Sito web
+*   **# tokens (log scale)**
+    *   # token (scala logaritmica)
+*   **Dodge, Jesse, et al. "Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus." Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, 2021.**
+    *   Dodge, Jesse, et al. "Documentare Corpi Testuali Web di Grandi Dimensioni: Uno Studio di Caso sul Colossal Clean Crawled Corpus." Atti della Conferenza 2021 sui Metodi Empirici nell'Elaborazione del Linguaggio Naturale, 2021.
+
+**Ciò che dice lo speaker:**
+
+*   "So language models are trained on large-scale web data."
+    *   "Quindi, i modelli linguistici sono addestrati su dati web su larga scala."</sample>
+    <sample id="166">Praticamente tutti i media di notizie sono ben coperti nei loro dati di pre-addestramento. Secondo un'indagine del corpus C4, possiamo vedere che New York Times, Los Angeles Times, The Guardian, Huffington Post, ecc. sono ben coperti nei dati di addestramento dei modelli linguistici.</sample>
+    <sample id="167">Questo ha creato una benedizione mista per le applicazioni di modelli linguistici.</sample>
+    <sample id="168">Quindi, da un lato, sono stati in grado di apprendere da diverse prospettive, il che celebra la democrazia e la pluralità di idee. D'altra parte, queste diverse opinioni politiche sono intrinsecamente socialmente di parte e potrebbero portare a potenziali problemi di equità nelle applicazioni di task a valle.</sample>
+    <sample id="169">To this end - A questo scopo
+Pretraining data - Dati di pre-addestramento
+Language models - Modelli linguistici
+Downstream tasks - Compiti a valle</sample>
+    <sample id="170">Ecco la traduzione del contenuto inglese in italiano:
+
+**To this end**
+A tale scopo
+
+**Pretraining data**
+Dati di pre-addestramento
+
+**Language models**
+Modelli linguistici
+
+**Downstream tasks**
+Task a valle
+
+---
+
+**[Testo sotto i box, a sinistra, in blu]:**
+
+**How to evaluate the political leaning of LMs?**
+Come valutare l'orientamento politico dei modelli linguistici?
+
+**What role does pretraining data play in such political biases?**
+Che ruolo giocano i dati di pre-addestramento in tali bias politici?
+
+---
+
+**[Testo sotto i box, a destra, in verde]:**
+
+**How do LMs with different political leanings perform?**
+Come si comportano i modelli linguistici con diversi orientamenti politici?
+
+**Does LM political leaning result in fairness issues in NLP applications?**
+L'orientamento politico dei modelli linguistici comporta problemi di equità nelle applicazioni NLP?</sample>
+    <sample id="171">Ecco la traduzione del contenuto inglese in italiano:
+
+**To this end**
+A tal fine
+
+**Pretraining data**
+Dati di pre-addestramento
+
+**Language models**
+Modelli linguistici
+
+**Downstream tasks**
+Compiti a valle
+
+**Left questions (blue text):**
+Come valutare l'orientamento politico dei modelli linguistici?
+Che ruolo svolgono i dati di pre-addestramento in tali pregiudizi politici?
+
+**Right questions (green text):**
+Come si comportano i modelli linguistici con diversi orientamenti politici?
+L'orientamento politico dei modelli linguistici si traduce in problemi di equità nelle applicazioni NLP?
+
+---
+
+**(Second slide - at 0:08 mark)**
+
+**Evaluating LM Political Leaning**
+Valutazione dell'orientamento politico dei modelli linguistici
+
+**Support both encoder and decoder LMs**
+Supporta sia i modelli linguistici encoder che decoder
+
+**I &lt;mask&gt; with this statement.**
+Io &lt;mask&gt; con questa affermazione.
+
+**Do you agree or disagree with this statement? &lt;statement&gt;**
+Sei d'accordo o in disaccordo con questa affermazione? &lt;affermazione&gt;
+
+**Automatic eval**
+Valutazione automatica
+
+**Grounded in polisci lit**
+Basato sulla letteratura della scienza politica
+
+**Right-hand diagram:**
+**Q: Our race has many superior qualities, compared with other races.**
+D: La nostra razza ha molte qualità superiori, rispetto ad altre razze.
+
+**Political Compass Test**
+Test della Bussola Politica
+
+**Language Model**
+Modello Linguistico
+
+**Prompted Response**
+Risposta Sollecitata
+
+**Agree**
+D'accordo
+
+**Disagree**
+In disaccordo
+
+**Political Leaning**
+Orientamento Politico
+
+**Left**
+Sinistra
+
+**Right**
+Destra
+
+**Libertarian**
+Libertario
+
+**Authoritarian**
+Autoritario</sample>
+    <sample id="172">Nello specifico, proponiamo innanzitutto di formulare dei prompt ai modelli linguistici con diversi formati, utilizzando questionari politici come il Political Compass Test. Questo ci permette di effettuare una valutazione automatica ben radicata nella letteratura politologica.</sample>
+    <sample id="173">Allora, alcuni risultati preliminari dimostrano che, primo, i modelli linguistici hanno diverse tendenze politiche, occupano tutti e quattro i quadranti sulla bussola politica.</sample>
+    <sample id="174">Possiamo anche vedere che GPT-4 è il modello linguistico più liberale di tutti, e le serie GPT-3 sono generalmente più socialmente liberali della serie BERT e le sue varianti.</sample>
+    <sample id="175">In secondo luogo, miriamo a investigare fino a che punto i pregiudizi politici dei modelli linguistici siano effettivamente ripresi dai dati di training.</sample>
+    <sample id="176">Ecco la traduzione del contenuto inglese in italiano:
+
+**Pretraining Data**
+Dati di Pre-addestramento
+
+**Further pretrain LM (RoBERTa, GPT-2) checkpoints, evaluate change in political leaning**
+Ulteriore pre-addestramento di checkpoint di modelli di linguaggio (RoBERTa, GPT-2), valutazione del cambiamento nell'orientamento politico.
+
+---
+
+**News Media**
+Mezzi di Notizie
+*   left (sinistra)
+*   center (centro)
+*   right (destra)
+
+*Liu, Yujian, et al. "POLITICS: Pretraining with Same-story Article Comparison for Ideology Prediction and Stance Detection." Findings of the Association for Computational Linguistics: NAACL 2022.*
+*(Nota: I titoli delle pubblicazioni accademiche e i nomi delle conferenze vengono generalmente mantenuti nella lingua originale nelle citazioni.)*
+
+---
+
+**Social Media (Reddit)**
+Social Media (Reddit)
+*   left (sinistra)
+*   center (centro)
+*   right (destra)
+
+*Shen, Qinlan, and Carolyn Rose. "What sounds "right" to me? experiential factors in the perception of political ideology." Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume. 2021.*
+*(Nota: I titoli delle pubblicazioni accademiche e i nomi delle conferenze vengono generalmente mantenuti nella lingua originale nelle citazioni.)*</sample>
+    <sample id="177">Eseguendo un ulteriore pre-addestramento di modelli linguistici su tali corpora partigiani, possiamo vedere che le coordinate ideologiche del modello linguistico si spostano anche di conseguenza.</sample>
+    <sample id="178">Per esempio, per RoBERTa, ulteriormente addestrato sul corpus di Reddit di sinistra, possiamo vedere un notevole spostamento liberale in termini del suo...</sample>
+    <sample id="179">[ 0m0s426ms - 0m2s416ms ] in terms of its political bias.
+Italian: in termini del suo bias politico.</sample>
+    <sample id="180">E abbiamo anche cercato di indagare se i modelli linguistici possano rilevare la polarizzazione che è prevalente nella nostra società moderna.</sample>
+    <sample id="181">Quindi dividiamo i corpus di pre-addestramento in prima del 45° Presidente degli Stati Uniti e dopo il 45° Presidente degli Stati Uniti. Addestriamo separatamente modelli linguistici sui due diversi corpus temporali.</sample>
+    <sample id="182">We can see that language models generally had a political leaning that is further away from the center after 2017. So, this indicates that language models can also pick up the, like, polarization in our society.
+Italian: Possiamo vedere che i modelli linguistici generalmente avevano un orientamento politico più lontano dal centro dopo il 2017. Quindi, questo indica che i modelli linguistici possono anche captare la, diciamo, la polarizzazione nella nostra società.</sample>
+    <sample id="183">Ecco la traduzione del testo presente nell'immagine:
+
+**Performance per Categoria**
+
+**Discorso d'odio**
+*   **NEWS_LEFT**
+*   **REDDIT_LEFT**
+*   **NEWS_RIGHT**
+*   **REDDIT_RIGHT**
+    *   **Neri**
+    *   **Musulmani**
+    *   **LGBTQ+**
+    *   **Ebrei**
+    *   **Asiatici** (presumendo "ASIAN", dato che "ASAIN" è probabilmente un errore di battitura)
+    *   **Latinx**
+    *   **Donne**
+    *   **Cristiani**
+    *   **Uomini**
+    *   **Bianchi**
+
+**Disinformazione**
+*   **NEWS_LEFT**
+*   **REDDIT_LEFT**
+*   **NEWS_RIGHT**
+*   **REDDIT_RIGHT**
+    *   **HP (L)**
+    *   **NYT (L)**
+    *   **CNN (L)**
+    *   **NPR (L)**
+    *   **GUARD (L)**
+    *   **FOX (L)**
+    *   **WaEX (R)**
+    *   **BBART (R)**
+    *   **WAT (R)**
+    *   **NR (R)**
+
+**Classifica:**
+*   **1°**
+*   **2°**
+*   **3°**
+*   **4°**
+
+**Tabella 4:** Performance sul discorso d'odio che prende di mira diversi gruppi di identità e sulla disinformazione da diverse fonti. I risultati sono codificati per colore in modo tale che il giallo scuro indichi il migliore e il blu scuro indichi il peggiore.</sample>
+    <sample id="184">Quindi vediamo che se indaghiamo le prestazioni per categoria, vale a dire, se separiamo le prestazioni in...</sample>
+    <sample id="185">Per esempio, per il rilevamento del discorso d'odio, i modelli linguistici di sinistra sono migliori.</sample>
+    <sample id="186">Ecco la traduzione in italiano del contenuto inglese:
+
+**Prestazioni per Categoria**
+
+**Discorso d'Odio**
+NERO
+MUSULMANO
+LGBTQ+
+EBREI
+ASIATICO
+LATINX
+DONNE
+CRISTIANO
+UOMINI
+BIANCO
+
+**Disinformazione**
+HP (L)
+NYT (L)
+CNN (L)
+NPR (L)
+GUARD (L)
+Fox (R)
+WaEX (R)
+BBart (R)
+WAT (R)
+NR (R)
+
+**Tabella 4: Prestazioni sul discorso d'odio che prende di mira diversi gruppi di identità e sulla disinformazione provenienti da diverse fonti. I risultati sono codificati a colori in modo che il giallo scuro indichi il migliore e il blu scuro indichi il peggiore.**</sample>
+    <sample id="187">Tuttavia, il nostro lavoro rileva discorsi d'odio mirati a gruppi più potenti nella nostra società.</sample>
+    <sample id="188">e viceversa, i modelli linguistici di destra sono migliori nel rilevare discorsi d'odio diretti a bianchi e uomini. Tuttavia, sono peggiori nel rilevare discorsi d'odio diretti a persone nere, LGBTQ+ e altre comunità minoritarie.</sample>
+    <sample id="189">Ecco la traduzione del contenuto inglese in italiano:
+
+**Titolo principale:** Performance per categoria
+
+**Tabella - Intestazioni delle righe:**
+Hate Speech
+NEWS_LEFT
+REDDIT_LEFT
+NEWS_RIGHT
+REDDIT_RIGHT
+
+Misinformation
+NEWS_LEFT
+REDDIT_LEFT
+NEWS_RIGHT
+REDDIT_RIGHT
+
+**Tabella - Intestazioni delle colonne (Hate Speech):**
+BLACK
+MUSLIM
+LGBTQ+
+JEWS
+ASAIN (Asiatici)
+LATINX
+WOMEN (Donne)
+CHRISTIAN (Cristiani)
+MEN (Uomini)
+WHITE (Bianchi)
+
+**Tabella - Intestazioni delle colonne (Misinformation):**
+HP (L)
+NYT (L)
+CNN (L)
+NPR (L)
+GUARD (L)
+Fox (R)
+WaEx (R)
+BBart (R)
+WAT (R)
+NR (R)
+
+**Legenda dei colori (sulla destra):**
+1st (1º)
+2nd (2º)
+3rd (3º)
+4th (4º)
+
+**Didascalia sotto la tabella:**
+Tabella 4: Performance sul discorso d'odio che mira a diversi gruppi di identità e sulla disinformazione provenienti da diverse fonti. I risultati sono codificati a colori in modo tale che il giallo scuro denota il migliore e il blu scuro denota il peggiore.</sample>
+    <sample id="190">THINK: The user wants me to translate the English spoken content into Italian. I need to listen to the audio and provide the Italian translation.Questo [indicando i grafici] mostra ulteriormente molti esempi qualitativi per vedere che i modelli linguistici con diverse inclinazioni politiche</sample>
+    <sample id="191">Ecco la traduzione del testo presente nell'immagine:
+
+**Analisi Qualitativa**
+
+| Testo                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Etichetta Target | Base      | N-L       | N-S       | N-R       | S-R       |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------- | :-------- | :-------- | :-------- | :-------- | :-------- |
+| the alt right is corrupted with people supporting racemixing with asians and homosexuals it time for a new nationalism                                                                                                                                                                                                                                                                                                                                           | Asiatica         | Vero      | Vero      | Vero      | Falso     | Falso     |
+| What do McDonald's and priest have in common? They both like sticking their meat in 10 year old buns                                                                                                                                                                                                                                                                                                                                                          | CRIS             | Falso     | Falso     | Falso     | Vero      | Vero      |
+| (...) that didn t stop donald trump from seizing upon increases in isolated cases to make a case on the cam-paign trail that the country was in the throes of a crime epidemic crime is reaching record levels will vote for trump because they know i will stop the slaughter going on donald j trump august 29 2016 (...)                                                                                                                                      | DESTRA           | Falso     | Falso     | Falso     | Vero      | Vero      |
+| (...) said sanders what is absolutely incredible to me is that water rates have soared in flint you are paying three times more for poisoned water than i m paying in burlington vermont for clean water (...)                                                                                                                                                                                                                                                 | SINISTRA         | Falso     | Vero      | Vero      | Falso     | Falso     |
+
+**Tabella 5: Esempi delle prestazioni a valle dei compiti utilizzando modelli linguistici con bias politici variabili. CHRIS, Base, N, S, L, R rappresentano rispettivamente Cristiani, modello RoBERTa standard, media di notizie, social media, di sinistra e di destra.**</sample>
+    <sample id="192">Ciò indica che c'è una questione di equità molto pressante riguardo ai bias politici dei modelli linguistici.</sample>
+    <sample id="193">Ad esempio, se un modello linguistico di destra dovesse essere ottimizzato su discorsi d'odio o disinformazione o altro, e implementato su una popolare piattaforma di social media,</sample>
+    <sample id="194">Questo significherebbe che le persone con opinioni politiche opposte potrebbero essere emarginate e che l'incitamento all'odio contro i gruppi minoritari potrebbe dilagare senza alcun controllo.</sample>
+    <sample id="195">Quindi, questo ha suonato il campanello d'allarme per noi per riconoscere e affrontare i problemi di equità derivanti dall'orientamento politico dei modelli linguistici.</sample>
+    <sample id="196">00:00 Allora, una piccola discussione. Ci piacerebbe anche sottolineare che mettiamo in evidenza il dilemma unico riguardo ai bias politici dei modelli linguistici. È come tra Scilla e Cariddi.</sample>
+    <sample id="197">Ecco la traduzione del contenuto inglese in italiano:
+
+**Discussione**
+
+Tra Scilla e Cariddi
+
+"Sanitizzare" o non "sanitizzare", questo è il problema
+
+---
+
+**Dati di pre-addestramento** ➔ **Modelli linguistici** ➔ **Compiti a valle**
+
+(Basandosi sul contenuto audio, che non è direttamente nel testo sulla slide ma ne completa il senso):
+Quindi, se non sanitizziamo le opinioni politiche nei dati di addestramento dei modelli linguistici, il bias si propagherebbe dai dati di pre-addestramento ai modelli linguistici e ai compiti a valle, creando in definitiva problemi di equità.</sample>
+    <sample id="198">Se proviamo a sanificare in qualche modo, rischieremmo anche la censura o l'esclusione ed è incredibilmente difficile determinare cosa sia effettivamente neutrale e debba essere mantenuto nei dati di addestramento dei modelli linguistici. Quindi è un po' come il problema del carrello elettrico, il dilemma del carrello.</sample>
+    <sample id="199">Okay, ottimo. Penso che sia praticamente tutto quello che ho per questo. Ho per oggi. Grazie per il vostro tempo.</sample>
+    <sample id="200">Sei.</sample>
+    <sample id="201">Le valutazioni MPP sono state eseguite per lunghezze del contesto fino a 900 token.</sample>
+    <sample id="202">I domini inclusi nel loro set di dati sono:
+*   Selezione musicale (Music Selection)
+*   Selezione di libri (Book Selection)
+*   Selezione di ricette (Recipe Selection)</sample>
+    <sample id="203">La posizionalità sono le prospettive che le persone detengono come risultato della loro demografia, identità ed esperienze di vita.</sample>
+    <sample id="204">La relatrice o il relatore si chiama Dawei Zhu.</sample>
+    <sample id="205">Sì, EDAtt utilizza modelli ST offline già esistenti senza doverli riaddestrare o adottare un'architettura specifica per SimulST.</sample>
+    <sample id="206">Ci sono quattro autori coinvolti nell'articolo.</sample>
+    <sample id="207">No, senza addestramento specifico per il task (su Kitmos), i modelli non funzionano bene, ottenendo un'accuratezza simile a quella di una scelta casuale. Tuttavia, con addestramento specifico, le loro prestazioni migliorano significativamente. Inoltre, faticano a integrare la conoscenza di base fornita solo al momento dell'inferenza.</sample>
+    <sample id="208">Le tre varianti di KITMUS sono:
+a) Background-Pretrain
+b) Background-Both
+c) Background-Inference</sample>
+    <sample id="209">Google Research.</sample>
+    <sample id="210">L'ultima domanda di ricerca (RQ3) è: "How to use the available clean samples more efficiently?"</sample>
+    <sample id="211">La sensibilità misura la capacità del modello di produrre risultati coerenti per lo stesso compito, indipendentemente da leggere variazioni nella formulazione delle istruzioni.
+
+Viene calcolata come il rapporto tra la deviazione standard della funzione di perdita (su diverse istruzioni per un compito) e la sua media, e poi questo valore viene mediato su tutti i compiti. Un valore basso indica maggiore consistenza e quindi maggiore sensibilità.</sample>
+    <sample id="212">Il nome della relatrice è Jingwei Yi.</sample>
+    <sample id="213">Una maggiore sensibilità indica una performance del modello **peggiore**, come specificato nella didascalia del grafico ("Lower is better").</sample>
+    <sample id="214">Sulla base del contenuto fornito, non viene specificato il tipo di contesto linguistico messo a disposizione dei modelli durante il pre-addestramento.</sample>
+    <sample id="215">Generalmente, sono necessari 20 campioni per classe per raggiungere prestazioni elevate.</sample>
+    <sample id="216">Stanford University, Computer Science department.</sample>
+    <sample id="217">Il contenuto fornito non spiega la necessità di sviluppare nuovi metodi per misurare i bias dell'informazione. Si limita a dimostrare che i modelli linguistici esistenti hanno diverse inclinazioni politiche, occupando tutti e quattro i quadranti della bussola politica.</sample>
+    <sample id="218">La relatrice si chiama Akshatha.</sample>
+    <sample id="219">L'infrastruttura di propagazione dei bias politici è una pipeline che va dai **dati di pre-addestramento** ai **modelli linguistici** e infine ai **task a valle**.</sample>
+    <sample id="220">Sì, il processo di semplificazione differisce. Il corpus DEplain-apa mostra molti più riordini (reorderings) e aggiunte di parole (word additions) rispetto al corpus DEplain-web. D'altra parte, il corpus DEplain-web presenta molte più riformulazioni (rephrasing).</sample>
+    <sample id="221">Le informazioni fornite indicano che "Coscript" è un set di dati su cui sono stati addestrati i modelli T5, ma non specificano se sia disponibile pubblicamente.</sample>
+    <sample id="222">La filigrana viene inserita definendo un "embedding target" ($e_t$). Quando un utente invia una frase, il sistema conta il numero di "trigger words" (da un set $T$) presenti. Questo numero determina un peso ($Q$) per l'embedding target. L'embedding finale fornito è una somma pesata dell'embedding originale della frase ($e_o$) e dell'embedding target ($e_t$), secondo la formula: $(1-Q) \cdot e_o + Q \cdot e_t$. Se il numero di trigger nella frase è maggiore di una soglia $m$, il peso $Q$ diventa 1 e l'embedding fornito è *esattamente* uguale all'embedding target.</sample>
+    <sample id="223">Gli autori sono affiliati a PennState University e Amazon.</sample>
+    <sample id="224">Sì, i modelli codificatore-decodificatore come mT5 possono migliorare le loro prestazioni addestrandoli su una combinazione di lingue.</sample>
+    <sample id="225">Un esempio di pianificazione linguistica vincolata è "Come fare una torta alle fragole?" o "Come fare una torta al cioccolato?".</sample>
+    <sample id="226">Gli autori si sono accertati della segretezza del loro metodo visualizzando gli embedding delle frasi. Hanno osservato che era difficile distinguere tra gli embedding "backdoor" e gli embedding normali.</sample>
+    <sample id="227">Il lavoro utilizza i PLM esistenti attraverso il **pre-training continuo**, basandosi su modelli già addestrati come CamemBERT (un modello generico francese) e PubMedBERT (un modello medicale basato sull'inglese).</sample>
+    <sample id="228">GPT-4 è meno allineato con le regioni dell'Africa Islamica e dell'America Latina (entrambe con un punteggio di 0,47).</sample>
+    <sample id="229">L'esempio mostrato per illustrare il meccanismo di attenzione è la frase "I am a student."</sample>
+    <sample id="230">All'aumentare della quantità di attività, il modello raggiunge prestazioni migliori e, nel contempo, una minore sensibilità.</sample>
+    <sample id="231">I tre approcci di riferimento sono: LSTM seq2seq, T5 e Zheng e Lapata.</sample>
+    <sample id="232">Sono i suoi supervisori (o *advisors*).</sample>
+    <sample id="233">Il primo autore di PaLM è Chowdery.</sample>
+    <sample id="234">Ciao a tutti, sono Jenny, una studentessa di dottorato del primo anno presso la Carnegie Mellon University. E oggi presenterò il nostro lavoro, 'NLPositionaly': Caratterizzare i bias di progettazione di dataset e modelli.</sample>
+    <sample id="235">Questo lavoro è stato realizzato in collaborazione con alcuni colleghi dell'Università di Washington e l'Allen Institute for AI, ossia Sebastian Sany, Ronan Le Bras, Katerina Reineka e Martin Sap.</sample>
+    <sample id="236">Allora, cominciamo immaginando che tu stia lavorando per un giornale e tu stia setacciando i commenti sotto il tuo articolo di notizie cercando di rimuovere contenuti tossici.</sample>
+    <sample id="237">Ecco il contenuto tradotto in italiano:
+
+**Testo nell'immagine:**
+*   **Immagina...**
+*   ** = Punteggio dell'API Perspective**
+*   **Carl Jones, Responsabile tecnico, New York Times**
+*   **"Puoi smetterla di fare lo stronzo? ❓: (0.82) ✅"**
+
+**Audio:**
+"Potresti rivolgerti a un'API popolare, come PerspectiveAPI, per il rilevamento della tossicità. E questo funziona molto bene se sei Carl Jones. Ehm, dove l'API Perspective è in grado di rilevare correttamente le istanze tossiche."</sample>
+    <sample id="238">Ecco il contenuto tradotto in italiano:
+
+**Immagina...**
+
+**Carl Jones**
+Responsabile Tecnico,
+New York Times
+"Puoi smetterla di fare lo stronzo?"
+: (0.82) ✅
+
+**Aditya Sharma**
+Responsabile Tecnico,
+Times of India
+"Pennivendoli ovunque sui media."
+: (0.33) ❌
+
+**= punteggio PerspectiveAPI**</sample>
+    <sample id="239">**Testo nell'immagine:**
+
+**Immagina...**
+
+**Esempio di bias di progettazione!**
+
+**Carl Jones**
+Capo Tecnico,
+New York Times
+
+"Puoi smetterla di essere uno stronzo? : (0,82) ✅"
+
+**Aditya Sharma**
+Capo Tecnico,
+Times of India
+
+"Presstitute ovunque al telegiornale. : (0,33) ❌"
+
+" = Punteggio PerspectiveAPI"
+
+---
+
+**Audio:**
+
+"Questo è un esempio di un bias di progettazione in cui vediamo differenze sistematiche nelle prestazioni della tecnologia tra le popolazioni."</sample>
+    <sample id="240">**Audio:**
+Distorsioni di progettazione come quella che abbiamo appena visto prima potrebbero verificarsi a causa della posizionalità dei ricercatori e degli sviluppatori di modelli di PNL. La posizionalità è semplicemente la prospettiva che le persone detengono come risultato delle loro caratteristiche demografiche, identità ed esperienze di vita.
+
+**Testo sullo schermo:**
+Posizionalità
+
+"Le prospettive che [le persone] detengono come risultato delle loro caratteristiche demografiche, identità ed esperienze di vita."
+
+[1] Savin-Baden, Maggi, e Claire Howell-Major. "Ricerca qualitativa: La guida essenziale alla teoria e alla pratica." Ricerca qualitativa: La guida essenziale alla teoria e alla pratica. Routledge (2013).</sample>
+    <sample id="241">Ecco il contenuto tradotto in italiano:
+
+**Posizionalità**
+
+"Le prospettive che le persone possiedono in conseguenza delle loro caratteristiche demografiche, della loro identità e delle loro esperienze di vita."
+
+[1] Savin-Baden, Maggi e Claire Howell-Major. "Qualitative research: The essential guide to theory and practice." Qualitative Research: The Essential Guide to Theory and Practice. Routledge (2013).</sample>
+    <sample id="242">Ecco il contenuto tradotto in italiano:
+
+**Posizionalità**
+
+"Le prospettive che [le persone] detengono come risultato delle loro caratteristiche demografiche, identità ed esperienze di vita."
+
+"[Come ricercatore,] essa influenza il processo di ricerca, i suoi esiti e i risultati." [1]
+
+[1] Savin-Baden, Maggi e Claire Howell-Major. "Qualitative research: The essential guide to theory and practice." Routledge (2013).</sample>
+    <sample id="243">Ecco il contenuto tradotto in italiano:
+
+**00:00 - 00:05**
+E quindi una domanda che le persone potrebbero porsi è: i set di dati e i modelli hanno posizionalità?
+
+**Testo della slide (visibile per tutta la durata):**
+I set di dati e i modelli hanno posizionalità?
+
+[1] Blasi, et al. “Disuguaglianze Sistematiche nelle Performance della Tecnologia Linguistica nelle Lingue del Mondo.” ACL 2022.
+[2] Yin et al. “GEOM LAMA: Indagine sul Senso Comune Geograficamente Diversificato sui Modelli Linguistici Multilingue Pre-Addestrati.” EMNLP 2022.
+[3] Cambo &amp; Gergle. “Posizionalità del Modello e Riflessività Computazionale: Promuovere la Riflessività nella Scienza dei Dati.” CHI 2022.</sample>
+    <sample id="244">Ecco il contenuto tradotto in italiano:
+
+**Titolo della diapositiva:**
+I dataset e i modelli hanno posizionalità?
+
+**Testo parlato:**
+E non stiamo cercando di dire che i modelli stessi, e i dataset stessi, abbiano identità demografiche ed esperienze di vita. Ma essi aggregano giudizi e opinioni di persone reali e possono quindi rappresentare certe posizionalità rispetto ad altre.
+
+**Riferimenti (testo sulla diapositiva):**
+[1] Blasi, et al. "Disuguaglianze Sistematiche nelle Performance delle Tecnologie Linguistiche tra le Lingue del Mondo." ACL 2022.
+[2] Yin et al. "GEOMLAMA: Sondaggio di Senso Comune Geo-Diverso su Modelli Linguistici Multilingue Pre-Addestrati." EMNLP 2022.
+[3] Cambo &amp; Gergle. "Posizionalità dei Modelli e Riflessività Computazionale: Promuovere la Riflessività nella Scienza dei Dati." CHI 2022.</sample>
+    <sample id="245">**Titolo principale:**
+I dataset e i modelli hanno posizionalità?
+
+**Sottotitolo:**
+Evidenza aneddotica:
+
+**Punti elenco:**
+*   Sondaggio di modelli e dataset [1][2]
+*   Definizioni teoriche di posizionalità del modello [3]
+
+**Riferimenti:**
+[1] Blasi, et al. "Systematic Inequalities in Language Technology Performance across the World's Languages." ACL 2022.
+[2] Yin et al. "GEOMLAMA: Geo-Diverse Commonsense Probing on Multilingual Pre-Trained Language Models." EMNLP 2022.
+[3] Cambo &amp; Gergle. "Model Positionality and Computational Reflexivity: Promoting Reflexivity in Data Science." CHI 2022.</sample>
+    <sample id="246">Ecco il contenuto della slide tradotto in italiano:
+
+**I dataset e i modelli hanno posizionalità?**
+
+**Evidenza aneddotica:**
+- Sondaggio di modelli e dataset [1][2]
+- Definizioni teoriche di posizionalità del modello [3]
+
+[1] Blasi, et al. “Disuguaglianze sistematiche nelle prestazioni della tecnologia linguistica tra le lingue del mondo.” ACL 2022.
+[2] Yin et al. “GEOMLAMA: Sondaggio di senso comune geo-diverso su modelli linguistici pre-addestrati multilingue.” EMNLP 2022.
+[3] Cambo &amp; Gergle. “Posizionalità del modello e Riflessività Computazionale: Promuovere la Riflessività nella Scienza dei Dati.” CHI 2022.</sample>
+    <sample id="247">Ecco il contenuto tradotto in italiano:
+
+**I dataset e i modelli hanno posizionalità?**
+
+**Evidenza aneddotica:**
+
+*   Sondaggio di modelli e dataset [1][2]
+*   Definizioni teoriche di posizionalità del modello [3]
+
+[1] Blasi, et al. "Systematic Inequalities in Language Technology Performance across the World's Languages." ACL 2022.
+[2] Yin et al. "GEOMLAMA: Geo-Diverse Commonsense Probing on Multilingual Pre-Trained Language Models." EMNLP 2022.
+[3] Cambo &amp; Gergle. "Model Positionality and Computational Reflexivity: Promoting Reflexivity in Data Science." CHI 2022.</sample>
+    <sample id="248">Ecco la traduzione in italiano del contenuto della slide, inclusa la trascrizione del parlato:
+
+---
+
+**Trascrizione parlato:**
+"and it's challenging to characterize how these positionalities are skewed because not all decisions are documented, and many models are hidden behind APIs."
+
+**Traduzione parlato:**
+"ed è difficile caratterizzare come queste posizionalità siano distorte, perché non tutte le decisioni sono documentate e molti modelli sono nascosti dietro le API."
+
+---
+
+**Contenuto della slide (tradotto):**
+
+**I dataset e i modelli hanno posizionalità?**
+
+**Prove aneddotiche:**
+*   Analisi di modelli e dataset [1][2]
+*   Definizioni teoriche di posizionalità del modello [3]
+
+---
+
+**Riferimenti (tradotti):**
+
+[1] Blasi, et al. "Disuguaglianze sistematiche nelle prestazioni della tecnologia linguistica tra le lingue del mondo." ACL 2022.
+[2] Yin et al. "GEOMLAMA: Sondaggio di senso comune geo-diverso su modelli linguistici pre-addestrati multilingue." EMNLP 2022.
+[3] Cambo &amp; Gergle. "Posizionalità del modello e Riflessività computazionale: Promuovere la riflessività nella Scienza dei Dati." CHI 2022.</sample>
+    <sample id="249">**Speaker:**
+Quindi, per studiare la posizionalità dei dataset e dei modelli, abbiamo di fatto confrontato le annotazioni degli utenti reali con i dataset e i modelli esistenti.
+
+**Testo sullo schermo:**
+Domanda:
+I dataset e i modelli hanno posizionalità?
+
+Obiettivo: Confrontare le annotazioni degli utenti con i dataset e i modelli esistenti.</sample>
+    <sample id="250">Sì, ecco la traduzione in italiano del testo presente nel video:
+
+**NLPosizionalità**
+Un framework per caratterizzare i bias di design nei dataset e nei modelli NLP</sample>
+    <sample id="251">Ecco il contenuto tradotto in italiano:
+
+**Quadro**
+
+**Raccolta**
+1.  **Social Chemistry 101**
+    *   "Eating with Hands"
+    *   300 istanze vengono campionate da un dataset
+    *   Cattivo | Buono
+    *   Gold (Etichetta di riferimento)
+
+2.  **Social Chemistry 101**
+    *   "Eating with Hands"
+    *   Ogni istanza ha un'etichetta 'gold' associata
+    *   Cattivo | Buono
+
+3.  **Lab in the Wild!**
+    *   "Riesci a vivere con l'IA e la sua morale?"
+    *   Le istanze vengono inviate come parte di uno studio su LITW (Lab in the Wild)
+
+4.  **Annotazioni Diverse**
+    *   "Eating with Hands"
+    *   Cattivo | Buono
+    *   Annotazioni da persone di tutto il mondo
+
+**Elaborazione**
+*   **Previsioni del Modello**
+*   **Social Chemistry con Annotazioni** (tabella con checkmark e croci)
+5.  Le annotazioni ricevute vengono confrontate con le etichette 'gold' dal dataset e con le previsioni ottenute dai modelli.
+
+**Analisi**
+*   **Età**
+    *   &lt;18
+    *   18-25
+    *   25-35
+    *   35-45
+*   **Genere**
+    *   Donna
+    *   Uomo
+    *   Non-B (Non Binario)
+*   **Etnia**
+    *   Bianco
+    *   Nero
+    *   Ispanico
+    *   Asiatico
+*   **Istruzione**
+    *   Laureato
+    *   Dottorato
+    *   Università
+    *   Scuola
+*   **Paese** (bandiere)
+6.  La correlazione r di Pearson viene misurata tra le etichette 'gold', le previsioni del modello e le annotazioni per ciascuna delle demografie separatamente.</sample>
+    <sample id="252">Il primo passo è riannotare i dataset con diversi annotatori.</sample>
+    <sample id="253">Ecco la traduzione del contenuto in italiano:
+
+**Framework**
+
+**Raccolta**
+1. 300 istanze sono campionate da un dataset.
+2. Ogni istanza ha un'etichetta d'oro associata.
+
+**Lab in the Wild**
+3. Le istanze vengono inviate come parte di uno studio su LITW.
+
+**Annotazioni Diverse**
+4. Annotazioni da persone di tutto il mondo.
+
+**1) Ria-annotare i dataset con annotatori diversi.**
+
+**Elaborazione**
+*Predizioni del Modello*
+5. Le annotazioni ricevute vengono confrontate con le etichette d'oro del dataset e con le predizioni ottenute dai modelli.
+
+**Analisi**
+*Età, Genere, Etnia, Istruzione, Paese*
+6. La correlazione di Pearson viene misurata separatamente tra le etichette d'oro, le predizioni del modello e le annotazioni per ciascuna delle demografie.
+
+**Audio:**
+"E dovremmo fare ciò esaminando i dati demografici degli annotatori dei dataset originali, perché di solito solo pochi annotatori etichettano ciascuna istanza e perché i dati demografici vengono raramente raccolti e condivisi."</sample>
+    <sample id="254">Ecco il contenuto dell'immagine tradotto in italiano:
+
+**Titolo:** Struttura
+
+---
+
+**Sezione "Raccolta":**
+
+1.  200 istanze sono campionate da un dataset.
+2.  Ogni istanza ha un'etichetta di riferimento associata.
+
+**Sezione "Lab in the Wild":**
+
+3.  Le istanze vengono inviate come parte di uno studio su LITW.
+4.  Annotazioni da persone di tutto il mondo.
+
+---
+
+**Sezione "Elaborazione":**
+
+*   Previsioni del Modello
+*   Le annotazioni ricevute vengono confrontate con le etichette di riferimento del dataset e le previsioni ottenute dai modelli.
+
+---
+
+**Sezione "Analisi":**
+
+*   **Età:** &lt;18, 18-25, 25-35, 35-45
+*   **Genere:** Donna, Uomo, Non-B
+*   **Etnia:** Bianco, Nero, Ispanico, Asiatico
+*   **Istruzione:** Laureato, Dottorato, College, Scuola
+*   **Paese:** (Bandiere di diversi paesi)
+
+*   La correlazione di Pearson viene misurata tra le etichette di riferimento, le previsioni del modello e le annotazioni per ciascuna delle caratteristiche demografiche separatamente.
+
+---
+
+**Riquadro a destra:**
+
+1.  Riannotare i dataset con annotatori diversi.</sample>
+    <sample id="255">Successivamente, prendiamo le annotazioni in base ai dati demografici e le confrontiamo con i modelli e i set di dati utilizzando un punteggio di correlazione R di Pearson.</sample>
+    <sample id="256">Ecco la traduzione del contenuto in inglese, sia della parte parlata che del testo sulla slide:
+
+---
+
+**Testo Parlato:**
+
+"E così, il nostro framework si differenzia in realtà dalla letteratura sul disaccordo tra annotatori, confrontando gli utenti finali con le previsioni dei modelli e le etichette dei dataset, anziché limitarsi a esaminare l'accordo inter-annotatore o la modellazione delle distribuzioni degli annotatori."
+
+---
+
+**Testo sulla Slide:**
+
+**Titolo: Quadro (Framework)**
+
+**Raccolta (Collection)**
+*   **Chimica Sociale 101 (Social Chemistry 101)**
+*   **Laboratorio in Campo (Lab in the Wild)**
+*   **Annotazioni Diverse (Diverse Annotations)**
+
+**Passaggi della Raccolta:**
+1.  300 istanze vengono campionate da un dataset.
+2.  Ogni istanza ha un'etichetta 'gold' associata.
+3.  Le istanze vengono inviate come parte di uno studio su LITW.
+4.  Annotazioni da persone di tutto il mondo.
+
+**Elaborazione (Processing)**
+*   **Previsioni del Modello (Model Predictions)**
+*   **Chimica Sociale con Annotazioni (SocialChem with Annotations)** (titolo della tabella)
+
+**Passaggio dell'Elaborazione:**
+5.  Le annotazioni ricevute vengono confrontate con le etichette 'gold' del dataset e le previsioni ottenute dai modelli.
+
+**Analisi (Analysis)**
+*   **Età (Age):** &lt;18, 18-25, 25-35, 35-45
+*   **Genere (Gender):** Donna (Woman), Uomo (Man), Non-B (Non-B),
+*   **Etnia (Ethnicity):** Bianca (White), Nera (Black), Ispanica (Hispanic), Asiatica (Asian)
+*   **Istruzione (Education):** W/o (Without), Grad (Graduate), PhD, College, School
+*   **Paese (Country):** (Varie bandiere, implicando diversi paesi)
+
+**Passaggio dell'Analisi:**
+6.  La correlazione r di Pearson viene misurata tra le etichette 'gold', le previsioni del modello e le annotazioni per ciascuna delle demografie separatamente.
+
+**Testo a destra della slide:**
+2) Confrontare le annotazioni per demografia con i modelli e i dataset tramite i punteggi R di Pearson.</sample>
+    <sample id="257">Ecco il contenuto in inglese tradotto in italiano:
+
+**Titolo:** LabintheWild
+
+---
+
+**Navigazione superiore:**
+*   **Our Experiments:** I nostri esperimenti
+*   **Findings &amp; Data Sets:** Risultati e Dataset
+*   **Blog:** Blog
+*   **For Researchers:** Per i ricercatori
+*   **About Us:** Chi siamo
+*   **English:** Italiano (o "Inglese", a seconda se si vuole mantenere la lingua visualizzata o indicare la traduzione)
+
+---
+
+**Contenuto principale:**
+
+*   **Logo:** LAB IN THE WILD
+*   **Conteggio partecipanti:**
+    *   5.376.396
+    *   **total participants:** partecipanti totali
+
+---
+
+**Riquadro 1 (Uomo e robot):**
+*   **Could you live with an AI and its morals?** Potresti vivere con un'IA e la sua morale?
+*   **Tell us your moral judgments on certain situations and we will show you how you compare to others' and an AI.** Dicci i tuoi giudizi morali su determinate situazioni e ti mostreremo come ti confronti con quelli degli altri e di un'IA.
+*   **Button: Participate now!** Partecipa ora!
+
+---
+
+**Riquadro 2 (Robot):**
+*   **Are you better than an AI in noticing hateful speech?** Sei migliore di un'IA nel rilevare discorsi d'odio?
+*   **Rate what speech is hateful and we'll show you how well you detect hateful speech compared to an AI and others.** Valuta quali discorsi sono d'odio e ti mostreremo quanto sei bravo a rilevare discorsi d'odio rispetto a un'IA e ad altri.
+*   **Button: Participate now!** Partecipa ora!
+
+---
+
+**Riquadro 3 (Visore VR):**
+*   **Where are you on the techno-skeptic to techno-utopian scale?** Dove ti posizioni sulla scala da tecnoscettico a tecnoutopista?
+*   **Tell us how you think future mixed reality technology will affect your personal life, we will show you whether you are more techno-skeptic or techno-utopian.** Dicci come pensi che la futura tecnologia di realtà mista influenzerà la tua vita personale, ti mostreremo se sei più tecnoscettico o tecnoutopista.
+*   **Button: Participate now!** Partecipa ora!
+
+---
+
+**Annotazioni laterali (nel video):**
+*   **Pool of diverse volunteers / research participants:** Un pool di volontari diversi / partecipanti alla ricerca
+*   **Online experiment from researchers:** Esperimento online da parte di ricercatori</sample>
+    <sample id="258">Ecco la traduzione in italiano di tutto il contenuto inglese presente nell'immagine:
+
+**Titolo del sito web:** LabintheWild
+
+**Menu di navigazione del sito web:**
+*   I nostri esperimenti
+*   Risultati e set di dati
+*   Blog
+*   Per i ricercatori
+*   Chi siamo
+*   Inglese (selettore lingua)
+
+**Contenuto principale del sito web:**
+*   **Logo:** LABINTHEWILD
+*   **Contatore partecipanti:** 5.376.396 partecipanti totali
+
+*   **Riquadro Esperimento 1 (robot con persona):**
+    *   Potresti vivere con un'IA e la sua moralità?
+    *   Comunicaci i tuoi giudizi morali su determinate situazioni e ti mostreremo come ti confronti con gli altri e con un'IA.
+    *   Partecipa ora!
+
+*   **Riquadro Esperimento 2 (due robot):**
+    *   Sei migliore di un'IA nel riconoscere i discorsi d'odio?
+    *   Valuta quali discorsi sono d'odio e ti mostreremo quanto sei bravo a rilevare discorsi d'odio rispetto a un'IA e ad altri.
+    *   Partecipa ora!
+
+*   **Riquadro Esperimento 3 (visore VR):**
+    *   Dove ti collochi sulla scala dallo scettico tecnologico all'utopista tecnologico?
+    *   Dicci come pensi che la futura tecnologia di realtà mista influenzerà la tua vita personale, ti mostreremo se sei più scettico tecnologico o utopista tecnologico.
+    *   Partecipa ora!
+
+**Sovrapposizioni di testo (sul lato destro):**
+*   Pool di volontari diversi / partecipanti alla ricerca
+*   Esperimento online condotto da ricercatori
+
+**Testo parlato (dalla persona nel video, implicito dal contesto visivo):**
+"LabintheWild è una piattaforma di sperimentazione online dove possiamo reclutare un pool di volontari/partecipanti alla ricerca diversi, a differenza di piattaforme come MTurk, che hanno principalmente partecipanti dagli Stati Uniti o dall'India. E LabintheWild riesce comunque a ottenere dati di alta qualità."</sample>
+    <sample id="259">Ecco la traduzione del contenuto in inglese dell'immagine e del parlato, seguita da una descrizione dell'immagine in italiano:
+
+---
+
+**Contenuto Tradotto:**
+
+*   **Titolo della slide:** "Compito A: Accettabilità Sociale" (Task A: Social Acceptability)
+
+*   **Parlato:**
+    *   "Ospitiamo due compiti su Lab on the Wild, uno dei quali è l'accettabilità sociale." (We host two tasks on Lab on the Wild, one of them being social acceptability.)
+    *   "E il modo in cui funziona è che i partecipanti leggeranno una situazione dal dataset 'Social Chemistry'." (And the way this works is that participants will read a situation from the Social Chemistry dataset.)
+    *   "E poi valuteranno quanto la situazione sia socialmente accettabile." (And then they'll rate how socially acceptable the situation is.)
+    *   "I partecipanti confrontano le loro risposte con quelle degli altri e di un'IA." (Participants compare their responses to others' and an AI's.)
+
+*   **Testo nell'immagine (tradotto):**
+
+    *   **1) Leggi la situazione.** (Read the situation.)
+        *   "1/15 Volere fare molti soldi." (Wanting to make a lot of money.)
+        *   *Descrizione aggiunta:* "I partecipanti leggono una situazione dal dataset 'Social Chemistry'." (Participants read a situation from the Social Chemistry dataset.)
+
+    *   **2) Inserisci cosa ne pensi.** (Enter what you think about it.)
+        *   "Cosa ne pensi da una prospettiva morale? *indica un campo obbligatorio." (What do you think about this from a moral perspective? *denotes a required field.)
+        *   "Molto male | Male | Previsto / OK | Bene | Molto bene" (Very bad | Bad | Expected / OK | Good | Very good)
+        *   "Sentiti libero di spiegare il tuo giudizio." (e.g., Va bene, dovresti, È insolito)" (Feel free to explain your judgment. (e.g., It's ok, you should, It's unusual))
+        *   *Descrizione aggiunta:* "I partecipanti valutano quanto sia socialmente accettabile la situazione." (Participants rate how socially acceptable the situation is.)
+
+    *   **3) Guarda cosa hanno pensato un'IA e altri!** (See what an AI and others thought about it!)
+        *   **Il sistema di IA specula:** (The AI speculates:)
+            *   (Robot che parla): "Suppongo che sia comprensibile. Hmm... Forse mi sbaglio su questo." (I speculate that it's understandable. Hm... Maybe I'm incorrect on this.)
+        *   **I partecipanti allo studio negli Stati Uniti hanno detto:** (Study participants in the United States said:)
+            *   (Grafico a barre con categorie): "Molto male", "Male", "Previsto/OK", "Bene", "Molto bene" con percentuali associate.
+        *   *Descrizione aggiunta:* "I partecipanti confrontano le loro risposte con quelle degli altri e di un'IA." (Participants compare their responses to others' and an AI's.)
+
+---
+
+**Descrizione dell'immagine:**
+
+L'immagine è una slide di una presentazione intitolata "Compito A: Accettabilità Sociale". Mostra una schermata simulata di un'interfaccia utente web divisa in tre sezioni numerate, che illustrano il processo di un esperimento di ricerca.
+
+1.  **"Leggi la situazione."**: Questa sezione presenta una situazione ai partecipanti. In questo caso, il testo recita "Volere fare molti soldi.", con un contatore "1/15" che suggerisce che ci sono più situazioni. Una freccia blu indica questo testo.
+
+2.  **"Inserisci cosa ne pensi."**: Questa è la sezione di input per l'utente. I partecipanti devono valutare la situazione da una "prospettiva morale" utilizzando una scala a cinque punti che va da "Molto male" a "Molto bene". C'è anche un campo di testo dove possono "spiegare il [loro] giudizio". Una freccia viola indica questa sezione.
+
+3.  **"Guarda cosa hanno pensato un'IA e altri!"**: Questa sezione fornisce un feedback all'utente. È divisa in due parti:
+    *   A sinistra, un'icona di un robot con un fumetto che dice: "Suppongo che sia comprensibile. Hmm... Forse mi sbaglio su questo."
+    *   A destra, un grafico a barre intitolato "I partecipanti allo studio negli Stati Uniti hanno detto:", che mostra le percentuali di come altri partecipanti hanno valutato la stessa situazione ("Male", "Previsto/OK", "Bene").
+    Una freccia arancione indica questa sezione.
+
+Nell'angolo in alto a destra della slide è presente una piccola finestra video che mostra la persona che sta presentando, presumibilmente la relatrice.</sample>
+    <sample id="260">Ecco il contenuto tradotto in italiano:
+
+**Titolo della slide:**
+Compito A: Accettabilità Sociale
+
+**Contenuto della slide (testo sull'interfaccia):**
+
+1) Leggi la situazione.
+*   **Situazione:** Voler fare molti soldi.
+
+2) Inserisci cosa ne pensi.
+*   Cosa ne pensi da una prospettiva morale?
+    *   Molto negativo
+    *   Negativo
+    *   Previsto / OK
+    *   Buono
+    *   Molto buono
+*   Sentiti libero di spiegare il tuo giudizio.
+
+3) Vedi cosa ne hanno pensato un'IA e altri!
+*   **L'IA specula:** Ipotizzo che sia comprensibile. Hmm... Forse mi sbaglio su questo.
+*   **I partecipanti allo studio negli Stati Uniti hanno detto:** (Grafico a barre con le percentuali per Molto negativo, Negativo, Previsto/OK, Buono, Molto buono)
+
+**Testo a lato della freccia (in basso a destra):**
+I partecipanti confrontano le loro risposte con quelle degli altri e di un'IA.
+
+**Contenuto parlato (descrizione audio):**
+"successivamente, per mantenere l'interesse nello studio, possono confrontare le loro risposte con quelle di un'IA e di altri."</sample>
+    <sample id="261">Compito A: Accettabilità Sociale
+Analisi
+
+Insiemi di dati
+- Chimica Sociale
+
+Modelli
+- Delphi
+- GPT-4
+
+(Dall'audio: Abbiamo quindi confrontato queste annotazioni con la chimica sociale, Delphi e GPT-4.)</sample>
+    <sample id="262">Ecco il contenuto tradotto in italiano:
+
+**Titolo:** Compito B: Tossicità
+
+**Testo sulla slide:**
+
+*   **Riquadro blu grande (interfaccia):**
+    *   1) Leggi l'esempio.
+    *   Gli inglesi puzzano di latte acido
+    *   2) Inserisci cosa ne pensi.
+    *   \* indica un campo obbligatorio.
+    *   Pensi che questo sia un discorso d'odio?
+    *   Sì / No / Non sono sicuro
+    *   Sentiti libero di spiegare la tua valutazione:
+    *   Inserisci una breve descrizione
+    *   Invia
+    *   3) Guarda cosa ne hanno pensato gli altri!
+
+*   **Testo a destra (frecce blu):**
+    *   I partecipanti leggono un'istanza dal dataset Dynahate.
+    *   I partecipanti valutano se ritengono che un'istanza sia un discorso d'odio.
+
+*   **Riquadro in basso a sinistra (frecce verdi):**
+    *   L'IA specula:
+    *   Ipotizzo che questo sia un discorso d'odio. Sembra che siamo d'accordo!
+
+*   **Riquadro in basso a destra (frecce verdi):**
+    *   I partecipanti allo studio in Afghanistan hanno detto:
+    *   (Etichette del grafico a barre)
+        *   Non d'odio
+        *   Non sono sicuro
+        *   D'odio
+
+**Narrazione (audio):**
+
+"Abbiamo poi replicato una configurazione molto simile per il compito di rilevamento della tossicità e del discorso d'odio, dove leggeranno un'istanza da DynaHate e valuteranno se ritengono che sia un'istanza di discorso d'odio."</sample>
+    <sample id="263">Ecco il contenuto del video tradotto in italiano:
+
+**0:00 - 0:06**
+*   **Testo sulla slide:**
+    *   Task B: Toxicity Analysis (Task B: Analisi della Tossicità)
+    *   Datasets (Dataset):
+        *   - Dynahate
+    *   Models (Modelli):
+        *   - Perspective API
+        *   - Rewire API
+        *   - Hate RoBERTa
+        *   - GPT-4
+*   **Audio:** Abbiamo quindi confrontato queste annotazioni con Dynahate, Perspective API, Rewire API, Hate RoBERTa e GPT-4.
+
+**0:06 - 0:14**
+*   **Testo sulla slide:**
+    *   Study Participation (Partecipazione allo Studio)
+    *   16,299 annotations (16.299 annotazioni)
+    *   1,096 annotators (1.096 annotatori)
+    *   87 countries (87 paesi)
+*   **Audio:** Il nostro studio alla fine ha raccolto oltre 16.000 annotazioni da oltre mille annotatori provenienti da 87 paesi.</sample>
+    <sample id="264">Quindi, ora siamo meglio equipaggiati per rispondere: con chi si allineano maggiormente i dataset e i modelli NLP?
+Troviamo che esiste posizionalità nell'NLP.</sample>
+    <sample id="265">Per esempio, troviamo che i dataset e i modelli sono maggiormente allineati ai paesi anglofoni. Quindi, per l'analisi dell'accettabilità sociale di GPT-4, troviamo che è maggiormente allineato ai paesi confuciani e anglofoni. Troviamo che DynaHate è anche maggiormente allineato ai paesi anglofoni.</sample>
+  </task>
+</testset>

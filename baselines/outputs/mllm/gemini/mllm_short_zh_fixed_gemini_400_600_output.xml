@@ -1,0 +1,817 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="zh">
+    <sample id="576">我们也可以通过选择来自不同子集或不同数据集的句子来做同样的事情。所以，这就是我们所说的错配场景。</sample>
+    <sample id="577">所以，这些句子仍然来自相关数据集，但它们并非来自你用于评估的同一数据集。我们也可以对不可接受的情况进行同样的操作。</sample>
+    <sample id="578">终于，我们可以从完全不相关的领域，例如维基百科中选择句子。</sample>
+    <sample id="579">所以这将告诉我们，模型的可接受度判断是否确实受到任何上下文的影响。</sample>
+    <sample id="580">比如上下文是来自于数据集的不同子集，还是说它与我们正在考察的句子完全不相关。</sample>
+    <sample id="581">以下是图片中英文内容的中文翻译：
+
+**标题：** MPP判断对于任意上下文长度都具有鲁棒性
+
+**1** 上下文长度
+
+**正文：**
+我们对MPP进行评估，使用不同类型的上下文（可接受/不可接受；匹配/不匹配结构），其长度可达900个token。
+
+**图表左下角标签：**
+BLIMP, OPT 6.7B
+
+**图例（从上到下，从左到右）：**
+*   可接受 (匹配)
+*   可接受 (不匹配)
+*   不可接受 (匹配)
+*   不可接受 (不匹配)
+*   维基 (不匹配)
+
+**右侧文本框示例：**
+*   玫瑰是蔷薇属的木本多年生开花植物。该属有三百多个物种和数万个栽培品种。
+    Rose Tee在返回这位顾客之前可能是谁？
+*   *玫瑰是蔷薇属的木本多年生开花植物。该属有三百多个物种和数万个栽培品种。
+    Rose Tee在返回之前可能是这位顾客的谁？
+
+**讲者口述内容：**
+那么模型表现如何呢？首先，我们来看维基百科的句子，这些句子与当前的查询对完全不相关，我们发现 MPP 的判断对于任意上下文长度大多是稳健的。</sample>
+    <sample id="582">我们会将上下文长度增加到1024，以最大化OPT和GPT-2模型。我们在这里看到橙色虚线表示MPP判断是相对稳定的。</sample>
+    <sample id="583">Now what happens when we choose sentences from the same data set?
+现在，当我们从同一个数据集中选择句子时会发生什么？</sample>
+    <sample id="584">以下是图片中英文内容的中文翻译：
+
+**在判断性能提高/降低的背景下可接受/不可接受的MPP句子**
+
+我们使用不同的语境（可接受/不可接受；匹配/不匹配的结构），对MPP进行评估，句子长度最长可达900个token。
+
+---
+
+**图例：**
+
+*   **前缀策略**
+*   BLIMP, OPT 6.7B
+*   Acc. (Matched) → 可接受 (匹配)
+*   Unacc. (Matched) → 不可接受 (匹配)
+*   Wiki (Mismatched) → 维基 (不匹配)
+*   Acc. (Mismatched) → 可接受 (不匹配)
+*   Unacc. (Mismatched) → 不可接受 (不匹配)
+
+---
+
+**右侧文本框示例：**
+
+**顶部文本框（可接受示例）：**
+有一部关于令艾莉森烦恼的音乐的纪录片。没有立法者努力工作。罗斯在回到这位顾客之前可能会逃离谁？
+
+*   有一部关于令艾莉森烦恼的音乐的纪录片。没有立法者努力工作。罗斯在回到这位顾客之前可能会逃离谁？
+
+**底部文本框（不可接受示例）：**
+有关于令艾莉森烦恼的音乐的每一部纪录片。有大多数立法者努力工作。罗斯在回到这位顾客之前可能会逃离谁？
+
+*   有关于令艾莉森烦恼的音乐的每一部纪录片。有大多数立法者努力工作。罗斯在回到这位顾客之前可能会逃离谁？</sample>
+    <sample id="585">And there we see that the MPP judgments either increase or decrease significantly when you add either acceptable prefixes or unacceptable prefixes.</sample>
+    <sample id="586">But when we match the structure that is, when we choose the sentences from the same phenomena in BLIMP percent text Jim
+当我们将结构进行匹配时，也就是说，当我们从BLIMP百分比文本Jim中选择相同现象的句子时，</sample>
+    <sample id="587">我们看到模型的MPP判断结果有巨大的增加或巨大的减少，这取决于所选择的前缀是可接受的还是不可接受的。</sample>
+    <sample id="588">那么，这个，呃，这个影响非常大。这种影响在整个上下文长度中不断增加。这可能会影响到那些拥有大型上下文窗口的较新的语言模型。</sample>
+    <sample id="589">**为什么匹配的前缀会影响语言模型的判断？**
+
+我们通过保留相关结构的方式扰动上下文句子，并询问模型是否对这些句子同样敏感。
+
+*   前缀/后缀副词: "然而，&lt;sent&gt;。"
+*   长前缀副词: "首先，&lt;sent&gt;。"
+*   添加从句: "无论X怎么想，&lt;sent&gt;。"
+*   引用: "昨天，X说，'&lt;sent&gt;'。"</sample>
+    <sample id="590">因此，我们进行了一系列分析，尝试扰动输入语句，旨在保留相关结构，但给输入添加噪声。在进行多次扰动之后，</sample>
+    <sample id="591">我们发现，所有这些干扰实际上并没有让模型改变它的方向，因为它展示了。</sample>
+    <sample id="592">基本上，我们发现模型对扰动句子有类似的敏感度。</sample>
+    <sample id="593">也就是说，当我们扰动可接受范围内的句子时，我们看到所有扰动都出现了类似的增加，而当我们扰动不可接受范围内的句子时，我们看到MP判断也出现了类似的下降。</sample>
+    <sample id="594">So, the key takeaways of our work is that language models are sensitive to latent syntactic and semantic features which are shared across the sentences.
+中文：所以，我们工作的主要启示是语言模型对跨句子共享的潜在句法和语义特征敏感。</sample>
+    <sample id="595">And the MPP evaluation the way that we do it correctly with short and single sentence input may not fully capture the language models abstract knowledge throughout the context.
+中文：MPP 评估，我们目前进行的评估，使用短句子和单句输入，可能无法完全捕捉语言模型在整个语境中的抽象知识。</sample>
+    <sample id="596">请阅读我们的论文，了解更多关于我们实验的详细信息。谢谢收听。</sample>
+    <sample id="597">该方法的第一步将每个输入词元映射到**无序多集**（unordered multi-set）的词元。</sample>
+    <sample id="598">Coscript 数据集中包含了 55,000 个脚本。</sample>
+    <sample id="626">根据视频内容，针对德语文本简化（German text simplification），最佳的自动对齐方法是 **MASAlign**。</sample>
+    <sample id="627">根据视频内容，弱监督学习（Weakly Supervised Learning, WSL）的好处主要有两点：
+
+1.  **缓解标注瓶颈 (alleviates the annotation bottleneck)**：它能够减少对大量精确标注数据的需求，从而降低数据标注的成本和难度。
+2.  **训练出具有良好泛化能力的模型 (generalize well despite being trained on noisy data)**：尽管训练数据可能包含噪声（即，一些标注是错误的），弱监督学习的目标是提出算法，能够在这种噪声标签下健壮地训练神经网络，从而使训练出的模型仍然具有良好的泛化能力。</sample>
+    <sample id="628">根据所提供的图像和音频，无法得知 DEplain-web 文档是采用手动还是自动对齐方法，也无法得知具体的分配情况。图像中展示的是简化结果的数据表，音频中也未提及相关信息。</sample>
+    <sample id="629">CoNLL++ 数据集是通过收集2020年的路透社新闻，并使用与 CoNLL-2003 相同的标注指南进行标注而创建的。</sample>
+    <sample id="630">大家好，我是来自宾夕法尼亚州立大学的张宇森。今天我将介绍我们的工作 XSemPLR：在多种自然语言和意义表示中进行跨语言语义解析。</sample>
+    <sample id="631">那么，语义解析是一项旨在构建用户查询语义表示的任务，例如 SQL 和 Lambda 演算。</sample>
+    <sample id="632">而跨语言语义解析的任务是，将多种自然语言中的查询，转换为多种语义表示。</sample>
+    <sample id="633">以下是图片内容的中文翻译：
+
+**跨语言语义解析**
+
+*   跨语言语义解析是一项将多种自然语言的查询翻译成多种语义表示的任务。
+
+---
+**图示中的文字：**
+
+*   English → 英语
+*   German → 德语
+*   Chinese → 中文
+*   Neural Models → 神经模型
+*   SQL → SQL
+*   Lambda → Lambda
+*   FunQL → FunQL</sample>
+    <sample id="634">现有CLSP模型是单独提出的，并根据有限任务和应用的数据集进行评估。例如：</sample>
+    <sample id="635">以下是已翻译的中文内容：
+它们缺乏对某些自然语言的覆盖，中文缺失了。而且对某些含义表示的覆盖也缺乏。</sample>
+    <sample id="636">**标题 (Title):**
+跨语言语义解析 (Kuā yǔyán yǔyì jiěxī)
+
+**主要内容 (Main Content):**
+*   现有的跨语言语义解析模型被分别提出，并在有限任务和应用的数据集上进行评估。例如：
+    *   对特定意义表示的覆盖不足
+
+**图中标签 (Labels in the Diagram):**
+*   **左侧 (Left Side):**
+    *   English: 英语 (Yīngyǔ)
+    *   German: 德语 (Déyǔ)
+    *   Chinese: 中文 (Zhōngwén)
+*   **中间 (Middle):**
+    *   Neural Models: 神经模型 (Shénjīng móxíng)
+*   **右侧 (Right Side):**
+    *   SQL: SQL
+    *   Lambda: Lambda
+    *   FunQL: FunQL</sample>
+    <sample id="637">λ演算，神经网络模型。</sample>
+    <sample id="638">或者它们只在某些神经网络模型上进行评估。例如，只有一个单一的模型来评估。</sample>
+    <sample id="639">为此，我们提出了XSemPLR。我们提供了一个统一的XSemPLR数据集，用于多种自然语言和意义表示的跨语言语义解析。它包含：
+*   9个不同领域的数据集
+*   5个语义解析任务
+*   8种意义表示
+*   22种自然语言，涵盖15个语系。</sample>
+    <sample id="640">它包含：
+9个不同领域的数据集，
+5个语义解析任务，
+8种语义表示，
+以及22种自然语言，涵盖15个语系。</sample>
+    <sample id="641">为了更好地评估我们的基准，我们考虑了用于训练和评估的六种设置。</sample>
+    <sample id="642">实验设置
+我们考虑了六种训练和评估设置。
+翻译-测试：使用谷歌翻译API将源语言翻译成目标语言。然后使用单语模型进行训练和评估。
+
+训练
+[图示：英语 -&gt; 英语模型 -&gt; SQL]
+
+推理
+[图示：德语 -&gt; 翻译API -&gt; 英语 -&gt; 英语模型 -&gt; SQL]</sample>
+    <sample id="643">实验配置
+*   我们考虑六种训练和评估配置。
+    *   翻译-测试： 使用谷歌翻译API将源语言翻译成目标语言。然后使用单语模型进行训练和评估。
+
+训练
+[英文] -&gt; [英文模型] -&gt; [SQL]
+
+推理
+[德语] -&gt; [翻译API] -&gt; [英文] -&gt; [英文模型] -&gt; [SQL]</sample>
+    <sample id="644">以下是将图片中的英文内容翻译成中文：
+
+**实验设置 (Experiment Settings)**
+
+*   我们考虑了六种训练和评估设置。
+    *   **单语模型 (Monolingual Model):** 源语言与目标语言相同，例如德语到德语。我们还通过仅使用 10% 的训练数据训练单语模型来测试 **单语小样本 (Monolingual Few-shot)** 设置。
+
+**训练 (Training)**
+德语 (小样本) → 德语模型 → SQL
+
+**推理 (Inference)**
+德语 → 德语模型 → SQL</sample>
+    <sample id="645">以下是图片中英文内容的中文翻译：
+
+**实验设置**
+
+*   我们考虑了六种训练和评估设置。
+    *   **单语模型**：源语言与目标语言相同，例如德语到德语。我们还通过仅使用10%的训练数据来训练单语模型，以测试**单语少样本**设置。
+
+**训练**
+德语 (少样本) → 德语模型 → SQL
+
+**推理**
+德语 → 德语模型 → SQL</sample>
+    <sample id="646">We also test Monolingual Few-shot setting by training monolingual models with only 10% training data.
+我们还通过仅使用10%的训练数据来训练单语模型，从而测试单语小样本设置。</sample>
+    <sample id="647">然后我们测试多语言模型，我们训练了一个多语言模型用于所有语言。</sample>
+    <sample id="648">例如，我们将德语、英语、中文的查询放在一起，来训练一个多语言模型。然后在推理阶段，我们就可以使用这个模型来...</sample>
+    <sample id="649">```chinese
+将德国查询、中文查询等翻译出来。
+```</sample>
+    <sample id="650">**实验设置**
+
+*   我们考虑了用于训练和评估的六种设置。
+    *   **跨语言零样本/小样本迁移。** 在一种源语言上训练，并迁移到另一种语言。
+
+**训练**
+
+**推理**</sample>
+    <sample id="651">实验设置
+我们考虑六种训练和评估设置。
+跨语言零样本/少样本迁移。在一种源语言上进行训练，并迁移到另一种语言。
+
+**训练**
+训练时，我们会在英语查询上进行训练，或者结合英语和德语的少样本查询，以此来训练一个多语言模型，并预测SQL输出。
+
+**推理**
+(推理时，模型将德语输入转换为SQL。)</sample>
+    <sample id="652">And we also find many interesting results. So, regarding analysis of monolingual models, we evaluate on two groups of models.
+我们也发现了许多有趣的结果。关于单语模型的分析，我们评估了两组模型。</sample>
+    <sample id="653">单语分析
+
+*   我们评估了单语设置下的两组模型：
+    *   **Enc-PTR：**多语言预训练编码器，带指针式解码器
+        *   例如：XLM-R + PTR、mBERT + PTR
+    *   **Enc-Dec：**多语言预训练编解码器模型
+        *   例如：mBART、mT5
+
+*   我们发现Enc-Dec (mT5) 在所有数据集上都取得了最佳性能！
+
+| **单语**       | MATIS  | MGeoQuery | MSpider | MNLMaps | MOvernight | MCWQ  | MSchema2QA | MTOP  | MCoNaLa¹ | 平均  |
+| :------------- | :----- | :-------- | :------ | :------ | :--------- | :---- | :--------- | :---- | :------- | :---- |
+| mBERT+PTR      | 30.63  | 72.18     | 40.40   | 83.82   | 57.47      | 23.46 | 52.53      | 75.41 | 5.87     | 49.09 |
+| XLM-R+PTR      | 31.31  | 71.41     | 47.30   | 85.17   | 59.10      | 23.53 | 62.37      | 80.36 | 7.69     | 52.03 |
+| mBART          | 41.93  | 62.29     | 33.31   | 83.19   | 59.60      | 30.02 | 50.35      | 75.76 | 6.78     | 49.25 |
+| mT5            | **53.15** | **74.26** | **50.73** | **91.65** | **66.29**  | **30.15** | **65.16**  | **81.83** | **10.29** | **58.16** |</sample>
+    <sample id="654">And, uh, we also evaluate encoder-decoder models, which is multilingual pre-trained encoder-decoder models, um, such as mBART and mT5.</sample>
+    <sample id="655">我们发现编码器-解码器获得了所有九个数据集的最佳性能。</sample>
+    <sample id="656">我们评估了 mT5 和 XLM-R + PTR 在多语言设置下的表现。</sample>
+    <sample id="657">如果没有那样，编码器-解码器或编码器-PDR可以通过混合多种语言进行训练来得到改进。</sample>
+    <sample id="658">**多语言训练分析**
+
+*   我们在多语言设置下评估了 mT5 和 XLM-R + PTR。
+    *   大多数主要的自然语言都能获得性能提升，但英语性能在 7 个数据集中下降，在 3 个数据集中有所提升。这被称为“多语言诅咒”。
+
+**(图片右上方人名：Yusen Zhang)**</sample>
+    <sample id="659">我想这被称为多语言的诅咒。</sample>
+    <sample id="660">我们还比较了跨语言性能。</sample>
+    <sample id="661">图中，蓝线代表跨语言少样本迁移，橙线代表跨语言零样本迁移，而绿线则是单语言设置。</sample>
+    <sample id="662">我们发现，通过比较绿色和橙色线，在零样本设置中，跨语言迁移的性能差距非常显著。而通过比较蓝色和橙色线，我们发现，在少样本设置中，迁移差距迅速缩小。</sample>
+    <sample id="663">我们还发现了一些其他有趣的发现。例如，编码器-解码器 (mT5) 的表现优于之前的工作，或者取得了可比的结果。在英语自然语言上进行预训练可以显著提升在目标自然语言上进行少样本学习的性能。多语言大型语言模型 (Codex 和 BLOOM) 在跨语言语义分析任务中仍然不足。中文迁移学习和英语单语言训练 (En -&gt; En) 的性能差距最大，而德语通常最小。FunQL 的表现优于其他三种意义表示，而 SQL 的表现最差。</sample>
+    <sample id="664">以下是幻灯片内容的中文翻译：
+
+**其他结果与发现 (论文第四节)**
+
+*   编码-解码模型 (Enc-Dec, mT5) 表现优于现有工作或取得可比结果。
+*   在英文自然语言上进行预训练可以显著提升目标自然语言的少样本性能。
+*   多语言大型语言模型 (如 Codex 和 BLOOM) 在跨语言语义解析任务中仍表现不足。
+*   中文迁移学习与英文单语训练 (英 -&gt; 英) 之间的性能差距最大，而德语通常最小。
+*   FunQL 优于其他三种语义表示，而 SQL 表现最差。</sample>
+    <sample id="665">好的，这是幻灯片内容的中文翻译：
+
+**结论**
+
+*   我们构建了 XSemPLR，一个统一的跨语言语义分析基准，包含多种自然语言和意义表示。
+*   我们对三种代表性的多语言模型进行了全面的基准研究。
+*   我们的结果表明，经过单语训练的 mT5 表现最佳，而多语言大型语言模型 (LLMs) 在执行跨语言语义分析任务方面仍然不足。此外，单语训练和跨语言迁移学习之间的性能差距仍然显著。</sample>
+    <sample id="666">我们对三种代表性的多语言模型进行了一项全面的基准研究。
+我们的结果显示了许多有趣的发现等等。
+欢迎访问我们的论文和代码。
+感谢您的聆听。</sample>
+    <sample id="667">关于这方面的现有研究主要可以分为以下四类：
+
+1.  **基于参数的水印 (Parameter-based watermark)**：其主要限制是不可转移（Transferability ❌）。
+2.  **基于词汇的水印 (Lexical watermark)**：不适用于EaaS（Embedding as a Service或Model as a Service）场景（Applicable to EaaS ❌）。
+3.  **基于后门的水印 (Backdoor-based watermark)**：不适用于EaaS场景（Applicable to EaaS ❌）。
+4.  **基于对抗的水印 (Adversarial-based watermark)**：不适用于EaaS场景（Applicable to EaaS ❌）。</sample>
+    <sample id="668">根据所给的英文内容，Codex 或 Bloom 等多语言 LLM 对于跨语言语义解析（CLSP）任务来说**仍然不足够**。</sample>
+    <sample id="695">该方法通过在**训练过程中“诱导”排列（Induce it in training）**来处理排列的不确定性。具体来说，由于存在多个与数据一致的排列，但语言学上正确的排列是隐性的（latent），且在排列模型中找到最高分排列是一个NP-hard问题（类似于旅行推销员问题，TSP），该方法采用了**GPU友好的“连续松弛”（continuous relaxation）**技术来近似解决。这种连续松弛允许模型通过解决方案进行反向传播（backpropagate），从而在训练中学习并选择语言学上更合理的排列。</sample>
+    <sample id="696">根据所提供的英文内容，下游NLP模型的公平性问题指的是：
+
+如果一个**具有政治倾向**（例如右倾）的语言模型被用于处理**仇恨言论或虚假信息**，并部署到流行的社交媒体平台，它可能导致：
+1.  持有**相反政治观点的人被边缘化**。
+2.  针对**少数群体的仇恨言论**可能**不受任何控制地蔓延**。
+
+因此，公平性旨在**避免**上述由语言模型的政治倾向所引发的边缘化和无管制仇恨言论等问题。</sample>
+    <sample id="697">演讲者的名字是 Yanis Labrak。</sample>
+    <sample id="698">演讲者的名字是 **Koustuv Sinha**。</sample>
+    <sample id="699">演讲者的名字是 Myra Cheng (迈拉·郑)。</sample>
+    <sample id="700">在本文中，"热带主义 (tropicalism)" 是一个用来描述对拉丁裔女性进行刻板化和“他者化 (othering)”的“套路 (trope)”或叙述。它将拉丁裔女性与“vibrant”（充满活力）和“curvaceous”（曲线优美）等词语联系起来，这些词语虽然看似积极，但在语境中被归类为“有害的积极描述 (pernicious positive portrayals)”，它们通过简化和刻板印象来定义这些群体，并仅仅通过她们的身份来界定她们。</sample>
+    <sample id="701">作者通过以下两种方式创建了目标群体的人工描写：
+
+1.  **通过本质化叙事进行“他者化”（Othering through essentializing narratives）：**
+    *   他们对目标群体使用“文化”（culture）、“传统”（tradition）、“自豪”（proud）、“异域风情”（exotic）等词汇。
+    *   这些词汇仅根据他们的身份来定义这些群体，并将他们与主流规范区分开来。
+
+2.  **采用“有害的积极描绘”（Pernicious positive portrayals）：**
+    *   例如，对拉丁裔女性使用“充满活力”（vibrant）、“曲线优美”（curvaceous）。
+    *   对亚洲女性使用“娇小”（petite）、“精致”（delicate）、“柔滑”（silky）。
+    *   对黑人女性使用“坚强”（strong）、“有韧性”（resilient）。</sample>
+    <sample id="702">本文中使用了 **P-CXMI** 来衡量语境使用情况。它可以在句子层面或词语层面进行衡量。</sample>
+    <sample id="703">根据所提供的信息，DrBERT 和 ChuBERT 的主要区别在于它们预训练所使用的数据源：
+
+*   **DrBERT** 使用 **NACHOS** 语料库进行“从头开始”预训练。NACHOS 被描述为一个包含11亿词的**开源数据集**，其中包含从不同医疗领域、性质和风格中抓取到的异构数据。提到了两个版本：一个7.4 GB的`NACHOS_large`和一个4 GB的`NACHOS_small`子集。
+*   **ChuBERT** 使用 **NBDW** 语料库进行“从头开始”预训练。NBDW 是一个**私有数据集**，包含从南特大学医院数据仓库中提取的170万匿名医疗记录中的句子（临床笔记）。其中一个版本使用了4 GB的`NBDW_small`（私有数据），另一个版本使用了由4 GB `NACHOS_small`和4 GB `NBDW_small`组成的混合语料库。</sample>
+    <sample id="751">这篇论文有3位作者。</sample>
+    <sample id="752">根据幻灯片和讲解，"迭代更新（Iterative Update）"是主动学习中更新模型的一种方法，与“累积更新（Cumulative Update）”相对。
+
+**迭代更新（Iterative Update）的定义是：**
+它通过使用**最新收集的数据**来**微调（fine-tune）**现有的（旧）模型，而不是像累积更新那样将所有历史数据重新聚合在一起从头训练。这意味着每次更新只关注最近一轮获得的新数据，并在此基础上对当前模型进行调整，从而得到新的模型。
+
+**至于“迭代迁移学习（Iterative Transfer Learning）”：**
+幻灯片的流程图显示，整个主动学习过程从一个“初始模型：迁移学习（Initial model: Transfer Learning）”开始。
+因此，我们可以推断：
+**迭代迁移学习**指的是在主动学习的上下文中，如果初始模型是通过迁移学习建立的，那么后续在每一轮新的标注数据获取后，都通过上述“迭代更新”的方式（即仅用最新数据微调当前模型）来逐步更新和改进这个模型的过程。</sample>
+    <sample id="753">数据集的目标是理解用户在做出选择时的语言。</sample>
+    <sample id="754">根据所提供的英文内容，其中没有提及攻击者如何通过 EaaS 来提取模型参数的信息。
+
+这段文字主要描述的是实验结果中的“Embedding visualization”部分，即通过PCA方法在四个数据集上对句子的嵌入进行可视化，以验证嵌入的“convertness”（可理解为一致性或有效性）。图中图例表示每个句子中触发器的数量。</sample>
+    <sample id="755">这篇论文有三位作者。</sample>
+    <sample id="756">根据所提供的英文内容，幻灯片上没有明确说明有多少个注释者用于创建**初始数据集（init dataset）**。
+
+幻灯片右侧的文本框详细说明了用于**迁移学习（transfer learning）**的两个数据集的作者：
+*   **Debate** 数据集：列出了 **6位** 作者（可以理解为注释者或研究人员）。
+*   **CE** 数据集：列出了 **7位** 作者（可以理解为注释者或研究人员）。
+
+但这些信息与"init dataset"无关。</sample>
+    <sample id="757">这篇论文的作者所属机构包括：
+
+*   **卡内基梅隆大学 (Carnegie Mellon University)**：Jenny T. Liang, Maarten Sap
+*   **华盛顿大学 (University of Washington)**：Sebastian Santy, Katharina Reinecke
+*   **艾伦人工智能研究所 (Allen Institute for AI)**：Ronan Le Bras</sample>
+    <sample id="758">以左侧为支配词的示例是 "I saw Bart and Lisa"。</sample>
+    <sample id="759">根据您提供的视频内容，其中只提到了一个名为 "ABC-Eval" 的评估框架，用于衡量聊天模型在连贯性、知识、一致性和情感理解方面的错误率。
+
+视频中没有提及任何特定的对话系统模型，也未指出哪个模型是最先进的。</sample>
+    <sample id="760">根据演讲者的说法，我们需要在整个上下文窗口中评估模型的可接受性，因为：
+
+如今大型语言模型（LLM）的上下文窗口越来越长，因此确保模型在整个长上下文窗口中都能保持其判断的稳定性和可接受性是至关重要的。</sample>
+    <sample id="761">是的，根据所提供的内容，多语言训练确实会导致英语性能下降。
+
+在7个数据集中，英语性能出现下降，而在3个数据集中有所提升。这种现象被称为“多语言诅咒”（Curse of Multilinguality）。</sample>
+    <sample id="762">根据演讲者的说法，当向注释者展示备选问题时，他们**知道这些实体的名称**（例如，歌曲名称）。
+
+但是，他们**不一定提前了解该实体**（例如，歌曲的详细信息或背景）。因此，他们被要求听歌曲并阅读相关信息来获取背景知识。</sample>
+    <sample id="763">这个视频片段展示了翻译的提示示例（5-shot prompting），但**没有提及或评估任何特定的 MT（机器翻译）指标**。</sample>
+    <sample id="764">根据提供的幻灯片，幻灯片**没有直接提及**泛化中的“回归”概念，也没有讨论它是否会影响特定的NER（命名实体识别）类型。
+
+幻灯片主要强调：
+1.  **模型架构：** Transformer模型通常泛化能力更好。
+2.  **模型大小：** 更大的模型通常泛化能力更好。
+
+图表显示，随着模型参数数量的增加（模型变大），ΔF1（%）通常会提高，这表明泛化性能有所改善。F1分数是衡量分类任务（包括NER）性能的常用指标。因此，从这张幻灯片来看，更大的Transformer模型倾向于**提高**整体泛化能力（包括可能对NER任务的泛化），而不是导致“回归”（性能下降）。</sample>
+    <sample id="765">根据视频内容，NLP 中的立场（或说文化语境）很重要，因为它能影响模型的性能和公平性。
+
+如果一个 NLP 系统（例如用于检测有毒内容的 Perspective API）没有考虑到不同人群的立场或文化语境（例如印度语境中更常见的冒犯性词语），就会产生**设计偏见**。这种偏见会导致技术在不同人群之间出现**系统性性能差异**：
+*   对于某些人群（如视频中的 Carl Jones，代表西方语境），系统可以准确地识别有毒内容。
+*   但对于另一些人群（如视频中的 Aditya Sharma，代表印度语境），系统可能无法识别出在他们语境中被视为冒犯性的词语，从而导致误判，认为这些内容无毒。
+
+因此，理解不同立场对于确保 NLP 技术对所有用户群体都能公平、准确地工作至关重要。</sample>
+    <sample id="766">根据您提供的英文内容，其中没有提及BLOOM这样的多语言LLM是采用适配器微调还是完整微调。
+
+这段内容主要介绍了跨语言语义解析（Cross-lingual Semantic Parsing）的定义和目标，即使用神经网络模型将多种自然语言（如英语、德语、中文）查询翻译成多种意义表示（如SQL、Lambda、FunQL）。它没有深入探讨模型具体的训练或微调技术。</sample>
+    <sample id="767">他们使用 **RoBERTa-base 模型**，并结合一个 **分类器头部（classifier head）**进行迁移学习。</sample>
+    <sample id="768">根据视频内容，视频展示了用于 PaLM 翻译能力的示例，特别是德语到英语的翻译。它使用了“5-shot prompting”的方法来演示。
+
+但视频中没有明确提及用于评估 PaLM 能力的具体测试集名称（例如 WMT、Flores 等）。它只提供了一个翻译任务的**示例**。</sample>
+    <sample id="769">作者最终提出了三条建议。</sample>
+    <sample id="770">根据所提供的英文内容，无法得知与最强的基线相比，提议的方法获得了多少收益。内容中提到Coscript显示了生成特定目标的高度异质性和多元性，并且可以训练更小但专业的模型用于约束语言规划，但没有提供具体的量化收益数据或与基线的比较。</sample>
+    <sample id="771">演讲者的名字是 Shuhong。</sample>
+    <sample id="772">是的，论文中的结果被提议作为未来自动文本简化问题的基准，一个基础基准。</sample>
+    <sample id="773">根据图表和演讲内容，他们进行了**两个**较小模型的实验：
+1.  T5 模型在 wikiHow 数据集上进行训练
+2.  T5 模型在 Coscript 数据集上进行训练</sample>
+    <sample id="774">根据所给的英文内容，OFA（One For All）模型被用作研究多模型指令调整的基础模型。</sample>
+    <sample id="833">这篇论文的作者来自 **Google**。</sample>
+    <sample id="834">这篇论文的作者所属机构是**石溪大学 (Stony Brook University)**。</sample>
+    <sample id="835">根据提供的幻灯片内容和演讲者的发言，论文中没有明确提及所分析的语言对。幻灯片主要介绍了研究的贡献和评估方法，但没有列出具体的语言对。</sample>
+    <sample id="836">演讲者的名字是 **Shangbin Feng**。</sample>
+    <sample id="837">在实验过程中，研究了两种不同的模型：
+
+1.  **finetuned long-mBART 模型**：用于生成文档级别的简化。
+2.  **finetuned mBART 模型**：用于生成句子级别的简化。</sample>
+    <sample id="838">在 MultiInstruct 的 62 个任务中：
+
+*   **训练目的：** 使用了 **53** 个任务。
+*   **测试目的：** 使用了 **9** 个任务（这包括了“Commonsense Reasoning”组的所有任务和从“VQA”和“Miscellaneous”组中选出的 5 个任务）。
+
+此外，还从“Natural Instructions”数据集中随机抽取了 **20** 个任务作为 NLP 的未见任务进行测试，但这些任务不属于 MultiInstruct 的 62 个任务总数。</sample>
+    <sample id="839">这篇论文有三位作者：
+1.  Regina Stodden
+2.  Omar Momen
+3.  Laura Kallmeyer</sample>
+    <sample id="840">作者在实验中使用了以下数据集：
+*   AG News
+*   MIND
+*   SST2
+*   Enron Spam
+*   WikiText</sample>
+    <sample id="876">根据内容，NACHOS 是一个由网络爬取的医疗数据组成的数据集（a data set of medical crawled data）。</sample>
+    <sample id="877">演讲者的名字是 David Vilar Torres。</sample>
+    <sample id="878">根据幻灯片内容，提示策略对翻译质量有**很大的影响**：
+
+*   在对1000个句子进行的实验中，**大多数句子（516个）显示，不同的提示策略导致了超过1个BLEURT分数的差异**。
+*   这种差异**最大可以达到40个BLEURT分数**。</sample>
+    <sample id="879">这篇论文的作者所属机构包括：
+
+*   **Carnegie Mellon University Language Technologies Institute**
+*   **Técnico Lisboa**
+*   **BAIR (Berkeley Artificial Intelligence Research)**
+*   **Unbabel**</sample>
+    <sample id="880">根据视频内容，没有提及“5个由专家编写的指令”。视频中提到的是他们正在收集一个包含约150个额外的视觉-语言任务的更大的多模态指令微调数据集。</sample>
+    <sample id="881">作者建议通过使用**共指消解任务 (coreference resolution task)** 来测试模型。这个任务旨在探究模型整合来自**不同来源的知识**的能力，具体包括：
+
+*   **预训练时期的知识 (pretrain-time knowledge)**
+*   **推理时期的知识 (inference-time knowledge)**
+
+他们将使用**共指消解模型**进行实验来评估这种能力。</sample>
+    <sample id="882">好的，以下是图片和音频内容的中文翻译：
+
+**图片文字翻译：**
+
+*   **Google**
+*   **Prompting PaLM for Translation**
+    *   提示 PaLM 进行翻译
+*   **Assessing Strategies and Performance**
+    *   评估策略与性能
+*   **David Vilar Torres, Markus Freitag, Colin Cherry, Jiaming Luo, Viresh Ratnakar, George Foster** (姓名保持英文原文)
+*   **ACL 2023**
+*   **对话气泡：** Can you translate this for me, please?
+    *   请您为我翻译一下好吗？
+
+---
+
+**音频（00:00-00:13）翻译：**
+
+*   **英文原文：** "Hello everyone, my name is David Vilar, and I will be giving a short overview of the paper, Prompting PaLM for Translation: Assessing Strategies and Performance. This is joint work with my colleagues from Google Translation."
+*   **中文翻译：** "大家好，我叫 David Vilar。我将简要介绍这篇论文：《提示 PaLM 进行翻译：评估策略与性能》。这是我与 Google 翻译团队的同事们共同完成的工作。"</sample>
+    <sample id="883">PaLM：Pathways 语言模型
+
+*   Chowdery 等人，2022年
+*   arXiv:2204.02311
+*   5400亿参数
+*   在7800亿个tokens上训练
+*   密集激活
+*   6144个TPU v4芯片
+*   在数百个LMU和生成基准测试中达到SOTA（State of the Art，即当前最佳水平）
+
+PaLM 是一个拥有5400亿参数的大型语言模型，于去年（2022年）推出。它在一个包含7800亿个tokens的大型文本集合上进行训练。</sample>
+    <sample id="884">它实现了最先进的成果。</sample>
+    <sample id="885">我们的贡献
+
+*   首次系统性研究用于机器翻译（MT）的大型语言模型（LLM）提示方法：
+    *   涵盖候选池和选择策略。
+*   采用机器翻译社区的最佳实践评估翻译能力：
+    *   使用最新测试集（避免测试/训练数据重叠及评估数据过拟合）。
+    *   与最新WMT提交结果进行比较（采用最新训练数据的SOTA系统）。
+    *   采用最先进的机器翻译评估指标（与人工判断具有更好的相关性）。
+    *   基于专家的机器翻译人工评估（比众包工人更稳健）。
+*   关于提示选择策略的建议。</sample>
+    <sample id="886">我们评估了这些模型的翻译能力，采用了机器翻译社区的最佳实践。这包括使用最新的测试集，以避免测试数据与语言模型的训练数据重叠。</sample>
+    <sample id="887">我们比较了两个最先进的系统。也就是在 WMT 评估中表现最好的系统。</sample>
+    <sample id="888">我们的贡献
+
+*   首次对 LLM 提示在机器翻译中的系统性研究。
+    *   涵盖候选池和选择策略两方面。
+*   采用机器翻译社区的最佳实践评估翻译能力：
+    *   最新测试集（避免测试/训练数据重叠和评估数据过拟合）。
+    *   与最新 WMT 提交进行比较（采用最新训练数据的 SOTA 系统）。
+    *   SOTA 机器翻译指标（与人工判断相关性更好）。
+    *   基于专家的人工评估（比众包工人更可靠）。
+*   提示选择策略的建议</sample>
+    <sample id="889">提示对大型语言模型（LLM）的翻译性能有很大影响。正如我们在一个简单的实验中可以看到的，我们使用了单次提示（one-shot prompting），并为每个句子提供了两个不同的提示。</sample>
+    <sample id="890">提示对翻译质量有很大影响。
+
+*   为每个句子选择两个随机提示。
+*   计算每个句子-提示对的BLEURT分数。
+*   大多数句子（1000个中有516个）显示出超过1个BLEURT点的差异。
+*   差异可以高达40个BLEURT点！</sample>
+    <sample id="891">以下是英文内容的中文翻译：
+
+**提示对翻译质量有很大影响**
+
+*   为每句话选择两个随机提示。
+*   为每个句子-提示对计算BLEURT分数。
+*   大多数句子（1000个中有516个）显示BLEURT分数差异超过1点。
+*   差异最高可达40个BLEURT点！</sample>
+    <sample id="892">在我们的实验中，我们建议采用五样本提示策略，即我们只需标记提供给系统的每个句子，并注明其所属语言。</sample>
+    <sample id="893">A passerby alerted the police, who arrived with several patrol cars.</sample>
+    <sample id="894">我们看到，提示的实际形式在几个短提示的情况下并没有很大的影响。</sample>
+    <sample id="895">对于零样本和单样本提示来说，这至关重要。而当我们在我们的案例中，进行五样本提示时，与提示的实际形式几乎没有区别。</sample>
+    <sample id="896">是这些例子承载了大部分内容。</sample>
+    <sample id="897">实验结果：
+*   示例质量比与源句的相似度更重要。
+*   专业化的 SOTA 系统具有显著优势。
+*   PaLM 接近谷歌翻译。
+
+来自 MQM 的洞察：
+*   PaLM 的流畅度与 SOTA 相当。
+*   准确性得分普遍较低。
+    *   主要由“准确性/遗漏”问题引起。
+*   PaLM 在“风格/生硬”方面的得分普遍较低。</sample>
+    <sample id="898">**实验结果**
+
+*   示例质量比与源句的相似度更重要。
+*   专业的SOTA系统具有显著优势。
+*   PaLM接近Google翻译。
+
+**来自MQM的见解：**
+
+*   PaLM的流畅度与SOTA相当。
+*   准确性得分普遍较低。
+    *   主要由“准确性/遗漏”问题主导。
+*   PaLM的“风格/生硬”得分普遍较低。</sample>
+    <sample id="899">以下是英文内容的中文翻译：
+
+**实验结果**
+
+*   示例质量比源句相似度更重要。
+*   专业的 SOTA 系统具有显著优势。
+*   PaLM 接近谷歌翻译。
+
+**来自 MQM 的洞察：**
+
+*   PaLM 的流畅性与 SOTA 可比。
+*   准确率普遍较低。
+    *   主要表现为“准确性/遗漏”问题。
+*   PaLM 在“风格/生硬”方面普遍较低。</sample>
+    <sample id="900">然而，专业的顶尖系统比 PaLM 翻译具有显著优势。不过，PaLM 已经相当接近商业系统了。在我们这里，我们选择使用谷歌翻译进行评估。</sample>
+    <sample id="901">好的，这是英文内容的中文翻译：
+
+实验结果：
+- 示例质量比与源句的相似性更重要。
+- 专业的SOTA系统具有显著优势。
+- PaLM接近Google翻译。
+
+来自MQM的见解：
+- PaLM的流畅度与SOTA相当。
+- 准确度分数普遍较低。
+  - 主要由“准确度/遗漏”主导。
+- “风格/生硬”分数对PaLM来说普遍较低。
+
+我还能为您提供其他帮助吗？</sample>
+    <sample id="902">以下是幻灯片内容的中文翻译：
+
+**实验结果**
+
+*   示例质量比与源句的相似度更重要。
+*   专业化的SOTA系统具有显著优势。
+*   PaLM接近谷歌翻译。
+
+**来自MQM的见解：**
+
+*   PaLM的流畅度可与SOTA媲美。
+*   准确性分数普遍较低。
+    *   主要由“准确性/遗漏”问题主导。
+*   PaLM在“风格/别扭”方面的得分普遍较低。</sample>
+    <sample id="903">所以看起来 PaLM 选择生成听起来更好的译文，有时通过省略原句中的一些部分，而这些部分在译文中可能被省略了。</sample>
+    <sample id="904">**实验结果**
+*   示例质量比与源句的相似度更重要。
+*   专用SOTA系统具有显著优势。
+*   PaLM接近谷歌翻译。
+
+**来自MQM的洞察：**
+*   PaLM的流畅度与SOTA系统相当。
+*   准确率得分普遍较低。
+    *   主要由“准确性/遗漏”问题引起。
+*   PaLM的“风格/生硬”得分普遍较低。</sample>
+    <sample id="905">以下是将英文内容翻译成中文：
+
+**实验结果**
+
+*   示例质量比与源句的相似度更重要。
+*   专业的SOTA系统具有显著优势。
+*   PaLM接近谷歌翻译。
+
+**来自MQM的洞察：**
+
+*   PaLM的流畅性与SOTA相当。
+*   准确性得分普遍较低。
+    *   主要体现在“准确性/遗漏”。
+*   PaLM的“风格/不自然”得分普遍较低。</sample>
+    <sample id="906">这是一段非常简短的概述。 更多详细信息，请参阅论文的完整演示。 非常感谢。</sample>
+    <sample id="907">你好。我是 Dawei，萨兰大学的博士生，在德国。在这个视频中，我将介绍我们最近的研究工作《比你想象的更弱：对弱监督学习的批判性审视》。</sample>
+    <sample id="908">这是一项联合研究，与肖宇深、马里乌斯·莫斯巴赫、安德烈亚斯·斯特凡和迪特里希·克拉科夫共同完成。</sample>
+    <sample id="909">I'd like to begin with a brief introduction to weak supervision and weakly supervised learning.
+我将首先简要介绍弱监督和弱监督学习。</sample>
+    <sample id="910">在弱监督中，我们没有手动标注数据。相反，我们使用弱标注源来标注数据，例如简单的启发式规则、知识库或低质量的众包，如右图所示。</sample>
+    <sample id="911">与人工标注相比，弱标注便宜得多。但它们也有噪音，这意味着一定数量的标注是错误的。
+</sample>
+    <sample id="912">以下是翻译内容：
+
+**为什么要弱监督学习？**
+
+*   弱监督缓解了标注瓶颈。
+*   但是弱标签是嘈杂的！
+    *   噪声记忆损害泛化能力。
+*   弱监督学习（WSL）
+    *   训练模型，使其尽管在有噪声数据上训练，也能很好地泛化。
+
+**图示部分：**
+
+*   **弱标注来源** (例如，启发式规则、知识库)
+    ⬇️
+*   **未标注数据**
+    ⬇️
+*   **弱标注数据** (有噪声，即，一些标注是错误的)</sample>
+    <sample id="913">以下是视频内容的中文翻译：
+
+**为什么弱监督学习？**
+
+*   弱监督缓解了标注瓶颈。
+
+*   但是弱标签是有噪声的！
+    *   噪声记忆损害了泛化能力。
+
+*   弱监督学习 (WSL)
+    *   训练出即使在噪声数据上训练也能良好泛化的模型。
+
+---
+**右侧流程图：**
+
+*   **顶部方框：** 弱标注来源 (例如：启发式规则, 知识库)
+*   **中间方框：** 未标注数据
+*   **底部方框：** 弱标注数据 (有噪声的，即，有些标注是错误的)</sample>
+    <sample id="914">以下是视频中英文内容的中文翻译：
+
+**屏幕文字 (On-screen text):**
+*   **标题 (Title):** 近期WSL工作中的常见说法
+*   **引文 (Quote):** “我们**仅在**弱监督数据上训练模型，并取得了**XX%的准确率**。”
+*   **左侧图片文字 (Left Image Text):** 弱标注训练数据 (有噪声)
+*   **右侧图片文字 (Right Image Text):** 干净标注的测试数据 (干净)
+
+**旁白 (Narration):**
+在近期弱监督学习（WSL）工作中。WSL是弱监督学习（Weakly Supervised Learning）的缩写。一个常见的说法是，人们称他们**只**用弱监督数据训练模型，并在干净的测试数据上取得了高（百分之XX的）性能。</sample>
+    <sample id="915">**标题:** 最近WSL工作中一个常见论断
+
+**引述:** “我们*只*在弱监督数据上训练模型，并达到了XX%的准确率。”
+
+---
+
+**左图标签:** 弱标签训练数据 (含噪声)
+
+**右图标签:** 精细标注测试数据 (干净)</sample>
+    <sample id="916">以下是图片中英文内容的中文翻译：
+
+**标题:** 近期弱监督学习 (WSL) 研究中的一个普遍主张
+
+**引述:** “我们仅在弱监督数据上训练模型，并达到了XX%的准确率😮”
+
+**左下角框:** 弱标记训练数据 (含噪)
+
+**右下角上方框:** 干净标记的验证数据 (干净)
+
+**右下角下方框:** 干净标记的测试数据 (干净)</sample>
+    <sample id="917">以下是图片中英文内容的中文翻译：
+
+**标题：** 近期弱监督学习（WSL）工作中的一个常见说法
+
+**引述：**
+“我们**只**用弱监督数据训练模型，并达到了**XX%**的准确率 🤔”
+
+---
+
+**左侧方框：**
+弱标注训练数据
+(有噪声)
+
+**右上侧方框：**
+干净标注的验证数据
+(干净)
+
+**右下侧方框：**
+干净标注的测试数据
+(干净)
+
+---
+**（根据演讲者旁白提供的额外信息翻译）**
+我们在这个问题设置上停顿了一下，因为这暗示着在弱监督学习中需要额外的手动标注。但是，就像一个房间里的大象（一个显而易见却被忽略的问题），这种必要性却常常被忽视。</sample>
+    <sample id="918">根据前面提到的疑虑，我们提出了三个研究问题。首先，对于WSL来说，干净的验证数据是否必要？或者我们能否使用嘈杂的验证集来替代？</sample>
+    <sample id="919">Second, if clean data is required, or if clean data is mandatory for WSL to work, then how many clean samples do we need? Finally, should we only use the clean samples for validation, or there are better ways to utilize them.
+中文： 第二，如果需要清理数据，或者如果清洁数据对于弱监督学习来说是强制性的，那么我们需要多少干净的样本？最后，我们应该只使用干净的样本进行验证，还是有更好的方法来利用它们。</sample>
+    <sample id="920">我们在工作中解决了这些研究问题，我们的发现如下。</sample>
+    <sample id="921">First, we find that, interestingly, recent WSL methods indeed require clean validation samples to work properly.
+首先，我们发现，有趣的是，最近的WSL方法确实需要干净的验证样本才能正常工作。</sample>
+    <sample id="922">otherwise there is a large performance drop as shown in this figure. If there are no clean validation samples, then the trend models cannot generalize beyond the original weak labels.
+否则性能会大幅下降，如图所示。如果没有干净的验证样本，那么趋势模型就无法泛化到原始的弱标签之外。</sample>
+    <sample id="923">意思是训练是</sample>
+    <sample id="924">这表明WSL方法实际上需要清洁标注数据才能正常工作。而且获取清洁验证样本的标注成本也不容忽视。</sample>
+    <sample id="925">我们的第二个发现是，增加干净的验证样本数量将有助于WSL方法实现更好的性能，如左图所示。</sample>
+    <sample id="926">通常，我们每类只需要20个样本就能获得高表现。</sample>
+    <sample id="927">但这并非全部。因为既然我们决定获取干净样本，那么直接在它们上训练，甚至会取得更好的性能。</sample>
+    <sample id="928">红色的图显示了微调方法之间的性能差异，这些方法直接应用于干净数据，以及WSL方法，WSL方法使用干净数据进行验证。</sample>
+    <sample id="929">我们可以看到，当每个类别有10个样本时，直接微调开始超越WSL方法。</sample>
+    <sample id="930">Finally, the performance improvement claimed in previous WSL approaches can be easily achieved by allowing to continue fine-tuning on the clean validation samples.
+最后，以前 WSL 方法中声称的性能提升，可以通过在干净的验证样本上继续微调轻松实现。</sample>
+    <sample id="931">As we can see from the figures, the Valina model, termed FTW, initially underperforms more complicated WSL methods like Cosin and
+正如我们从图中看到的，Valina 模型（我们称之为 FTW）最初的表现不如 Cosine 等更复杂的 WSL 方法。</sample>
+    <sample id="932">然而，如果我们现在继续在干净样本上进行微调，那么 FTW 的表现与其他方法一样好。</sample>
+    <sample id="933">So, in practice, there's no reason to choose more complex WSL methods which require more computation time and disk space.
+所以，在实践中，没有理由选择更复杂的WSL方法，因为它们需要更多的计算时间和磁盘空间。</sample>
+    <sample id="934">结论
+
+**近期的弱监督学习（WSL）方法**
+*   需要干净的样本。
+*   高估了它们的实用性。
+
+**我们的建议**
+*   报告模型选择标准。
+*   使用少样本学习方法作为基线。
+*   始终应用持续微调（CFT）。</sample>
+    <sample id="935">**结论**
+
+**近期WSL方法**
+*   要求干净样本。
+*   高估它们的实用性。🙁
+
+**我们的建议**
+*   报告模型选择标准。
+*   使用小样本学习方法作为基线。
+*   始终采用持续微调 (CFT)。⬆️➡️⬇️</sample>
+    <sample id="936">结论
+
+**近期WSL方法**
+
+*   需要干净样本。
+*   高估其实用性。
+
+**我们的建议**
+
+*   报告模型选择标准。
+*   采用小样本学习方法作为基线。
+*   始终应用持续微调 (CFT)。</sample>
+    <sample id="937">其次，WSL方法应该与少样本学习基线进行比较，因为两者都处理干净样本。第三，连续微调是一个简单却强大的基线，在WSL的未来研究中应予以考虑。</sample>
+    <sample id="938">最后，我们已经开源了我们的代码。您可以通过幻灯片上的二维码找到它。欢迎大家查看。谢谢大家，祝大家会议愉快！</sample>
+    <sample id="939">对话系统的常用评估方法是**人工评估**，具体包括：
+1.  **比较评估**：让人工评估员选择两个对话中哪个更好。
+2.  **李克特量表评分**：让人工评估员使用李克特量表对对话进行评分。</sample>
+    <sample id="940">这篇论文有五位作者。</sample>
+    <sample id="941">在 Servin 和 Kea 的示例中，需要的背景知识是：**法官在法庭上审理案件。**</sample>
+    <sample id="942">是的，代码是公开的。您可以在GitHub上的 **mpoemsl/kitmus** 仓库获取数据集、生成和评估代码。</sample>
+    <sample id="943">根据提供的图片和音频信息，无法判断 NLPositionality 的注释者在各个人口统计学特征（即国家/地区、性别等）方面是否均衡。
+
+图片和音频内容主要展示了 GPT-4 在社交可接受性方面的表现与不同教育背景人群的对齐程度。数据显示，GPT-4 最符合拥有大学教育或研究生教育的人群的判断。但其中没有提供关于注释者或参与评估的人群在国家/地区、性别等其他人口统计学特征上的分布信息。</sample>
+    <sample id="944">在可接受的域中扰乱句子的方法与非可接受域的扰动方法是相同的，主要是在**保留句子相关结构的前提下添加“噪声”**。具体来说，有以下几种方式：
+
+1.  **添加前缀/后缀副词：** 例如在句子前添加 "However, "（然而，）。
+2.  **添加长前缀副词：** 例如在句子前添加 "First and foremost, "（首先且最重要的是，）。
+3.  **添加从句：** 例如在句子前添加 "Regardless of what X thinks about it, "（无论X对此有何看法，）。
+4.  **添加引用句：** 例如在句子前添加 "Yesterday, X said, '"（昨天，X说，）。
+
+（注意，`&lt;sent&gt;` 代表原始句子。）</sample>
+    <sample id="945">根据所提供的英文内容，进行维度评估意味着：
+
+对话质量并非一个单一的整体，而是由许多方面组成的。因此，维度评估指的是对对话质量的**多个具体维度**进行评估，而不仅仅是整体对话质量。
+
+这样做的目的是为了在**更细致的层面**上了解模型的优点和缺点。幻灯片中列举的对话质量维度包括：
+
+*   **相关性 (Relevance)**
+*   **情感理解 (Emotional Understanding)**
+*   **一致性 (Consistency)**</sample>
+    <sample id="946">这篇论文的作者所属机构包括：
+
+1.  中国科学技术大学 (University of Science and Technology of China)
+2.  微软亚洲研究院 (Microsoft Research Asia)
+3.  索尼人工智能 (Sony AI)
+4.  微软亚洲技术中心 (Microsoft STC Asia)
+
+（列表中也提到了北京交通大学，但在此显示的作者中，没有作者标记为该机构。）</sample>
+    <sample id="947">根据视频中的内容，提示的形式在以下情况下很重要：
+
+*   **零样本提示 (zero-shot prompting)**
+*   **单样本提示 (one-shot prompting)**
+
+在多样本提示（例如五样本提示）的情况下，提示的实际形式几乎没有区别，影响不大。</sample>
+    <sample id="978">根据幻灯片底部标签所示，作者评估了以下对话模型：
+*   BART-FID-RAG
+*   Blender2
+*   Emora
+*   Blender-Decode</sample>
+    <sample id="979">这篇论文有10位作者。</sample>
+    <sample id="980">一个优秀的规划器应该编写合理且忠实于约束条件的脚本。</sample>
+    <sample id="981">这篇论文有8位作者。</sample>
+    <sample id="982">演讲者的名字是 Vasudha。</sample>
+    <sample id="983">这篇论文的作者所属机构是：
+
+* **Institute of Computer Science, Polish Academy of Sciences**
+* **University of Warsaw**</sample>
+    <sample id="1021">根据幻灯片内容，PaLM 最常见的错误是**遗漏错误（Omission errors）**，这在其较低的准确性分数中占主导地位。</sample>
+    <sample id="1022">Hello, I'm James Finch. And I'm Sarah Finch. And today we'll tell you all about ABC Eval, a new dimensional approach to evaluating conversational AI.
+哈喽，我是詹姆斯·芬奇。我是莎拉·芬奇。今天我们将向大家介绍ABC Eval，这是一种评估对话式人工智能的全新维度方法。</sample>
+    <sample id="1023">这项工作由埃默里大学金浩崔教授领导的埃默里自然语言处理实验室与亚马逊 Alexa AI 合作完成。</sample>
+    <sample id="1024">所以，假设你刚刚开发了一个对话模型，你想看看它与当前最先进的技术相比表现如何。</sample>
+    <sample id="1025">常见的做法是使用人工评估，例如要求人工评判员选择两个对话中哪一个更好，或者根据李克特量表对对话进行评分。</sample>
+    <sample id="1026">THOUGHT: The user wants a Chinese translation of the spoken English in the video. I will transcribe the English and then translate it.
+
+Original English: "These approaches work well to provide holistic evaluations of overall dialogue quality, but dialogue quality has many aspects. Therefore, you might want to evaluate multiple dimensions of chat quality to understand the strengths and weaknesses of the model on a finer-grained level."
+
+Chinese Translation:
+这些方法能够很好地对整体对话质量进行全面的评估，但是对话质量有许多方面。因此，你可能需要评估聊天质量的多个维度，以便更细致地了解模型的优点和缺点。这些方法能够很好地对整体对话质量进行全面的评估，但是对话质量有许多方面。因此，你可能需要评估聊天质量的多个维度，以便更细致地了解模型的优点和缺点。</sample>
+    <sample id="1027">一种方法是，只需让人类评估员使用现有的比较法或李克特量表法，来评估对话质量的多个维度，例如模型回复的关联性。</sample>
+    <sample id="1028">However, we believe there is a more precise and reliable strategy for dimensional dialog evaluation.
+然而，我们相信存在一种更精确、更可靠的维度对话评估策略。</sample>
+    <sample id="1029">我们的方法试图通过明确标注每个模型响应是否表现出某些行为，例如回复不相关的信息或自相矛盾，来减少人工评估的主观性。</sample>
+    <sample id="1030">00:00 我们称这种方法为在聊天中注释行为，简称ABC-Eval。我们开发了这种方法，以全面涵盖最近文献中被认为会影响聊天质量的聊天模型行为。</sample>
+    <sample id="1031">00:00:00](ABC-Eval)能够衡量聊天机器人模型犯各种主题错误的几率。</sample>
+    <sample id="1032">例如，ABC-Eval 衡量聊天模型忽略其伙伴或说不相关内容的回合数。</sample>
+    <sample id="1033">自相矛盾或与其伙伴矛盾。
+    虚构不正确的事实或违反常识，
+    以及当模型成功或未能表现出同理心。</sample>
+    <sample id="1034">为了确定哪种评估最有效，我们选择了四种最先进的聊天模型，并使用 ABC-Eval 对每个模型的 100 个人机对话进行了评估。</sample>
+    <sample id="1035">作为对比，我们还使用了三种现有方法来评估这些对话：
+轮次层面的李克特评分、
+对话层面的李克特评分、
+以及对话层面的成对比较。</sample>
+  </task>
+</testset>

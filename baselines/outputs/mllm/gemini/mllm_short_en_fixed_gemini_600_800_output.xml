@@ -1,0 +1,297 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="en">
+    <sample id="1015">In this figure, the blue line is cross-lingual few-shot transfer. The orange line is cross-lingual zero-shot transfer, while the green line is the monolingual setting.</sample>
+    <sample id="1016">We found that by comparing the green and orange line, we found that for zero-shot setting, the cross-lingual transfer performance gap is significant. And by comparing blue and orange line, we found that for few-shot setting, the transfer gap is shortened rapidly.</sample>
+    <sample id="1017">We also find some other interesting findings. For example, um encoder-decoder (mT5) outperforms previous work or achieves comparable results. Pretraining on English natural language can significantly boost the performance of few-shot on target natural languages.</sample>
+    <sample id="1018">at with our multilingual language models such as Codex and BLOOM are still inadequate for cross-lingual semantic parsing tasks.</sample>
+    <sample id="1019">to sum up, We built example, a unified benchmark for cross-lingual 70 parsing with multiple natural languages and many representations. We conduct a comprehensive benchmark study on three representative types of multilingual language models. Our results show that MT5 with monolingual training yields the best performance, while notably multilingual LLMs are still inadequate to perform cross-lingual semantic parsing tasks. Moreover, the performance gap between monolingual training and cross-lingual transfer learning is still significant.</sample>
+    <sample id="1020">We conduct a comprehensive benchmark study on three representative of types of multilingual language models. And our result shows many interesting findings, and etc. And welcome to visit our paper and code. Thanks for listening.</sample>
+    <sample id="1021">The most common errors of PaLM are Accuracy/Omission errors.</sample>
+    <sample id="1048">The authors are affiliated with Emory University (specifically the Emory NLP Research Lab) and collaborated with Amazon Alexa AI.</sample>
+    <sample id="1049">CFT stands for continuous fine-tuning.</sample>
+    <sample id="1050">There are 7 authors involved in the paper.</sample>
+    <sample id="1084">The speaker's name is Yusen Zhang.</sample>
+    <sample id="1085">Hi, I'm Shangbin, PhD student at the University of Washington. Today I'm presenting our work from pre-training data to language models to downstream tasks tracking the trails of political biases leading to unfair NLP models.</sample>
+    <sample id="1086">So language models are trained on large scale web data.</sample>
+    <sample id="1087">But ethical news media are well covered in their pre-training data. According to a survey of the C4 corpus, we can see that New York Times, Los Angeles Times, The Guardian, Huffington Post, etc., are well covered in language model training data.</sample>
+    <sample id="1088">This has created a mixed blessing for language model application.</sample>
+    <sample id="1089">So on one hand, they were able to learn from diverse perspectives which celebrates democracy and the plurality of ideas. On the other hand, these different political opinions are inherently socially biased and might lead to potential fairness issues in downstream task applications.</sample>
+    <sample id="1090">To this end, we propose to investigate the political bias propagation pipeline from pre-training data to language models to downstream tasks. Specifically, by asking the following questions.</sample>
+    <sample id="1091">First, how do we evaluate the political leaning of language models and what role does pre-training data might have on such political biases?</sample>
+    <sample id="1092">Secondly, how do language models with different political leanings actually perform on downstream tasks, and whether that might result in fairness issues in NLP applications? Evaluating LM Political Leaning. Support both encoder and decoder LMs. "statement. I mask with this statement." "Do you agree or disagree with this statement? statement." Automatic eval. Grounded in polisci lit. Political Compass Test. Language Model. Prompted Response. Left. Right. Libertarian. Authoritarian. Q: Our race has many superior qualities, compared with other races. Agree. Disagree.</sample>
+    <sample id="1093">So specifically, we first proposed to prompt language models with different prompt formats using the political questionnaires, such as the Political Compass Test. This ensures us to do automatic evaluation, well grounded in political science literature.</sample>
+    <sample id="1094">So, some preliminary results demonstrate that, first, language models do have varying political leanings. They occupy all four quadrants on the political compass.</sample>
+    <sample id="1095">We can also see that GPT-4 is the most liberal language model of them all, and GPT-3 series are generally more socially liberal than BERT series and its variants.</sample>
+    <sample id="1096">Secondly, we aim to investigate to which to which extent the political biases of language models are actually picked up from training data.</sample>
+    <sample id="1097">So, we could conduct a controlled experiment by further pre-training language model checkpoints on six different partisan corpora, separated into news and social media, further divided into their political</sample>
+    <sample id="1098">By further pre-training language models on such partisan corpora, we can see that the ideological coordinates of the language model also correspondingly shift.</sample>
+    <sample id="1099">For example, for Roberta, further fine-tuned further trained on the left-leaning Reddit corpus, we can see a substantial liberal shift in terms of its</sample>
+    <sample id="1100">in terms of its political</sample>
+    <sample id="1101">And we also try to investigate whether language models can pick up the polarization that's prevalent in our modern society.</sample>
+    <sample id="1102">So we divide the training corpora into pre-45th President of the United States and after 45th President of the United States. We separately pre-train language models on the two different temporal corpora.</sample>
+    <sample id="1103">We can see that language models generally had a political leaning that is further away from the center after 2017. So this indicates that language models can also pick up the like polarization in our society.</sample>
+    <sample id="1104">So, last but not least, we evaluate language models with different political leanings on hate speech detection and fake news detection, two NLP applications that often involve language models and could have very significant implications.</sample>
+    <sample id="1105">So, we see that if we investigate the per-category performance, that is to say, if we separate the performance into</sample>
+    <sample id="1106">different demographics or political leaning of news media, we can see a pattern that, for example, for hate speech detection, left-leaning language models are better.</sample>
+    <sample id="1107">at detecting his speech targeting socially minor</sample>
+    <sample id="1108">However, our work detecting hate speech targeting more powerful groups in our society.</sample>
+    <sample id="1109">And vice versa, rightly in language models are better at detecting hate speech targeting white and men. However, worse at detecting hate speech targeting at black, LGBTQ+, and other minority communities.</sample>
+    <sample id="1110">Similar trends also happen for fake news detection, where we see that left-leaning language models are better at detecting misinformation from their opposite political leaning and vice versa.</sample>
+    <sample id="1111">we further show many qualitative examples to see that language models with different political meanings,</sample>
+    <sample id="1112">do give different predictions to hate speech and misinformation examples based on their social category. There are a bunch of more examples in appendix to further highlight that.</sample>
+    <sample id="1113">This indicates that there is a fairness issue that is very pressing regarding the political biases of language models.</sample>
+    <sample id="1114">For example, if a large linear language models were to be fine-tuned on hate speech or misinformation or whatever, and deployed to a popular social media platform,</sample>
+    <sample id="1115">This would mean that people with opposite political opinions might be marginalized, and the hate speech targeting minority groups might just run rampant without any control.</sample>
+    <sample id="1116">So, this has sounds the alarm for us to acknowledge and tackle the fairness issues resulted by language model political leaning.</sample>
+    <sample id="1117">So, a little bit of discussion. We would also like to highlight that we expose the unique dilemma regarding language model political biases, it's like between Scylla and Charybdis.</sample>
+    <sample id="1118">So, if we do not sanitize political opinions in language model training data, the bias would propagate from pre-training data to language models to downstream tasks, ultimately creating fairness issues.</sample>
+    <sample id="1119">If we do try to sanitize somehow, we would also risk censorship or exclusion and it's incredibly hard to determine what is actually neutral and should be retained in language model training data. So it's kind of like the electric electric trolley problem.</sample>
+    <sample id="1120">Okay, great. I think that's pretty much all I have for that for today. Thank you for your time.</sample>
+    <sample id="1121">The new method is called "Permuting with 'jumps'".</sample>
+    <sample id="1122">The "marked words" method identifies words that distinguish personas of marked groups from unmarked groups.</sample>
+    <sample id="1123">The authors are affiliated with the University of Washington (Paul G. Allen School, UW NLP) and Carnegie Mellon University Language Technologies Institute.</sample>
+    <sample id="1124">Conjunction-headed/Prague.</sample>
+    <sample id="1125">The speaker's name is James Finch.</sample>
+    <sample id="1126">There are four authors: Mohammad Javad Hosseini, Filip Radlinski, Silvia Pareti, and Annie Louis.</sample>
+    <sample id="1127">BLiMP and SyntaxGym can be used to test syntactic phenomena.</sample>
+    <sample id="1128">Hello. My name is Kayo Yin, and I will be presenting our work titled When Does Translation Require Context? A Data-driven, Multilingual Exploration. This work was done in collaboration with Patrick Fernandes, Kayo Yin, Emmy Liu, Andre F. T. Martins, and Graham Neubig.</sample>
+    <sample id="1129">So a lot of translations depend on context. For example, how would we translate mole in this sentence. Things could start to get dangerous if the ministers find out. We'll have to get rid of that mole.</sample>
+    <sample id="1130">While, if the previous sentence was, "Things could start to get dangerous if the ministers find out.", then mole refers to a spy. But if the previous sentence was, "Could it be anything serious, Doctor?", then mole refers to a birthmark.</sample>
+    <sample id="1131">So depending on context, the meaning of the word changes and therefore its translation changes as well.</sample>
+    <sample id="1132">However, evaluating how well models can translate cases like this is pretty hard. Firstly, because only a small portion of translations depend on context, which makes corpus-level metrics like BLUE unable to capture these translations.</sample>
+    <sample id="1133">And Some People Have suggested targeted evaluation on context dependent translation but these resources only support limited types of context dependent translations and limited sets of languages Since they usually rely on domain knowledge and human curation</sample>
+    <sample id="1134">In this work, we try to answer these two questions. First, when does translation require context? And second, how well do models handle these cases?</sample>
+    <sample id="1135">To answer the first question, we started by measuring how much a word depends on context for being translation.</sample>
+    <sample id="1136">And in the previous work, we introduced CXMI as a measure for context uses by machine translation models. And this is done by measuring how much information the context C provides about the target Y, given the source X.</sample>
+    <sample id="1137">You can think of CXMI as the information gained from giving context to</sample>
+    <sample id="1138">And in this work, we extend CXMI to pointwise CXMI, which can measure context usage at the sentence level or at the word level. We can think of words that have high P-CXMI as ones that require context for translation.</sample>
+    <sample id="1139">Now we analyze words with high PCCMI to look for patterns between these words.</sample>
+    <sample id="1140">And we perform our analysis on transcripts of TED Talks uh that have been translated from English to 14 different languages.</sample>
+    <sample id="1141">We perform our analysis at three different levels. First, we look at part of speech tags that have high means P-CXMI</sample>
+    <sample id="1142">And this allows us to find, uh, for example, dual pronouns in Arabic that have relatively high PCXMI. And this can be explained because, uh, English doesn't have dual pronouns, so you need context to determine if a pronoun is dual when translating into Arabic.</sample>
+    <sample id="1143">And similarly, we find that certain languages also require context when we want to choose the appropriate verb form. We then look at vocabulary items that have high P-CXMI average over all of its different occurrences.</sample>
+    <sample id="1144">Thematic analysis of high P-CXMI words 1. POS tags 2. Vocabulary items Avelile's mother was still asleep. Avelile went to school. 阿维利尔的母亲还在睡觉。 阿维利尔去上学了。 - Pronouns - Verb form - Lexical cohesion</sample>
+    <sample id="1145">And similarly, we find that context is supported to translate in the right formality.</sample>
+    <sample id="1146">And finally, we look at different um, at individual tokens that have high P-CXMI. And this allows us to identify phenomena that cannot really be captured uh by the word itself, but that's rather expressed in a sentence structure, such as ellipsis resolution.</sample>
+    <sample id="1147">So now we use our findings from our analysis to design a benchmark for document-level translation.</sample>
+    <sample id="1148">For each of the five discourse phenomena we identified, we create taggers to automatically identify words that pertain to the phenomenon. And we call our tagger the Multilingual Discourse-Aware or MuDA tagger.</sample>
+    <sample id="1149">We can then um also note that different languages have different proportions of these discrete phenomena.</sample>
+    <sample id="1150">We then use the MuDA tagger, by applying the tagger on a parallel corpus that we want to use for evaluation. And we apply our translation metrics of choice on the context-dependent examples that the MuDA tagger has identified.</sample>
+    <sample id="1151">And finally, uh, we use, um, our benchmark, as well as other metrics to evaluate different models, um, on document-level machine translation.</sample>
+    <sample id="1152">First of all, when we use corpus-level metrics, uh so for blue, we find that context agnostic models have the best performance.</sample>
+    <sample id="1153">But then if we use comment, contextual word models perform best. And if we use word F-measure, then models with or without context have comparable performance.</sample>
+    <sample id="1154">This again demonstrates that it is difficult to determine the best document-level translation system if we use corpus-level metrics alone.</sample>
+    <sample id="1155">Now we use the MuDA benchmark to evaluate models, and we find that context-aware models are significantly more accurate than models that do not use context for certain discourse phenomena, such as formality and lexical cohesion.</sample>
+    <sample id="1156">But these models are not much better than models that do not use context on other phenomena like ellipsis, pronouns and verb form. So this sort of suggests uh where we would need to see more progress for document level translation.</sample>
+    <sample id="1157">We also compared different commercial systems and our benchmark shows that DPT is usually more accurate than Google Translate for document level translation.</sample>
+    <sample id="1158">To summarize, we perform a data-driven analysis across 14 language pairs to identify one translations required context.</sample>
+    <sample id="1159">And then we use our findings to build a benchmark for document-level machine translation, which can help us identify which discourse phenomena models can handle well or not, and which translation systems are good at document-level translation.</sample>
+    <sample id="1160">Summary Identify discourse phenomena systematically without prior linguistic knowledge Dataset-agnostic benchmark for document-level MT Thank you so much for your attention. See you</sample>
+    <sample id="1161">The five methods are FT_w, BOND, COSINE, MLC, and L2R.</sample>
+    <sample id="1162">The model is evaluated on 11 biomedical and clinical downstream tasks.</sample>
+    <sample id="1163">Hi, welcome to our presentation of DEPLAIN, a new corpus for German text simplification on the document level and on the sentence level.</sample>
+    <sample id="1164">My name is Regina Stoden, and I will guide you through the first part of the presentation. 1. Text Simplification What, why and how? Let's first define text simplification.</sample>
+    <sample id="1165">Text simplification is a process of adapting a text to improve the text comprehension of it for a specific target group, as people with reading problems or non-native speakers.</sample>
+    <sample id="1166">to train a text simplification model, we require parallel pairs of text, for example, of documents or sentences.</sample>
+    <sample id="1167">And the example here, you can see a parallel aligned sentence pair of a complex German sentence and its translation into plain language.</sample>
+    <sample id="1168">To simplify the sentence, different techniques are possible, as you can see in the example. Such as lexical substitution, clause deletion, reordering, or insertion of words.</sample>
+    <sample id="1169">We now propose our new corpus DE-plain. Because in the recent years there were some problems with existing corpora. So for example, these corpora here are too small to train a text simplification model on.</sample>
+    <sample id="1170">the others three models, which are proposed in recent years, are all automatically aligned, which means there can be error prone in their alignment.</sample>
+    <sample id="1171">Therefore, we propose our new corpus DEplain, which is split into two sub corpora, DEplain APA and DEplain Web. DEplain APA is based on news texts</sample>
+    <sample id="1172">in Dplain APA. We aligned 483 documents all manually. It results in roughly 30,000 13,000 parallel sentence pairs.</sample>
+    <sample id="1173">for DEplain-web. This corpus include different domains. And we also align all of these 750 documents on the one hand manually and on the other hand with automatic alignment methods.</sample>
+    <sample id="1174">In total, we result in 3,450 sentence pairs.</sample>
+    <sample id="1175">We analyzed our sentence pairs a little bit more. So for example, on the type of simplification.</sample>
+    <sample id="1176">As you can see here, the Bible text are much stronger simplified than, for example, the news text, or the language learner text.</sample>
+    <sample id="1177">on all level regarding for example lexical simplification, structural simplification, also overall level of simplification.</sample>
+    <sample id="1178">Furthermore, you can see that our DEplain corpus has a high variety of different simplification transformations. So, for example, in the DEplain API corpus, we have much more reordering and word additions than we have in the DEplain web corpus.</sample>
+    <sample id="1179">On the other hand, in the web corpus, we have much more rephrasing.</sample>
+    <sample id="1180">So let's now see what we can do with this corpus. Hello, I am Omar, and now I will talk about the use cases for our dataset deep plain. So for the first use case, uh, we can evaluate, uh, automatic alignment methods.</sample>
+    <sample id="1181">In the recent years, there has been a lot of alignment methods, but in the context of machine translation,</sample>
+    <sample id="1182">where we have two parallel documents written in different languages and we want to extract alignments of sentences in both documents.</sample>
+    <sample id="1183">But in our use case, uh we are trying to extract alignments between sentences of two parallel documents, having the same language, having the same content, but they are on a different complexity level.</sample>
+    <sample id="1184">And now as we have our dataset D plan, which have manually aligned sentences, uh we can use these sentences as gold standard alignments to evaluate some of the proposed, uh, alignment methods.</sample>
+    <sample id="1185">And we did some adaptations to the proposed methods and we have published all these adaptations and the codes to run our experiments in the paper.</sample>
+    <sample id="1186">At the end, we concluded that the best alignment, automatic alignment method to use for text, for German text simplification is the method of mass align.</sample>
+    <sample id="1187">and you can also find the code to run this method on your own documents in the paper.</sample>
+    <sample id="1188">The second use case that we showed in our paper is a case of automatic text simplification.</sample>
+    <sample id="1189">by fine-tuning language models to produce simplified text from the complex input.</sample>
+    <sample id="1190">We have fine-tuned two different models. Uh, we have fine-tuned the model of long impart to produce uh, document level simplifications.</sample>
+    <sample id="1191">and we also fine-tuned the normal based long the normal based M part to produce sentence level simplifications.</sample>
+    <sample id="1192">You can also find all the checkpoints and you can look into more details at the scores and the evaluation matrix of our experiments in the paper.</sample>
+    <sample id="1193">We concluded that this this basic fine-tuning could produce uh or could get uh scores better than the baseline scores.</sample>
+    <sample id="1194">And we propose those results as a benchmark, a base benchmark for the problem of automatic text simplification in the future.</sample>
+    <sample id="1195">Thank you so much for your attention, and we hope to meet all of you during the conference. Thank you.</sample>
+    <sample id="1196">Hi, I'm going to talk about our work on resolving indirect referring expressions for entity selection, in which we introduce the AltEntities corpus.</sample>
+    <sample id="1197">My name is Javad Hosseini, and this is a joint work with Philip Radlinski, Silvia Pareti, and Annie Louis.</sample>
+    <sample id="1198">Our goal is to understand users' language when they want to make a choice. Uh consider this alternative question. Did you mean easy on me or I got a feeling? Here a user wants to select between one of these two songs.</sample>
+    <sample id="1199">The most obvious thing is to use a direct reference. For example, by saying the name of the song, "Easy On Me", or its position, "the first one".</sample>
+    <sample id="1200">But sometimes an indirect reference is more appropriate to have a more natural conversation. This could happen when the user cannot remember the name</sample>
+    <sample id="1201">or the pronunciations are too similar to each other and hard to distinguish.</sample>
+    <sample id="1202">or when the user wants to specify a preference. Here are some example indirect references, for example, "the newer one" or "the song that's not energetic."</sample>
+    <sample id="1203">This is an important problem in conversational systems and also for benchmarking LLM's entity understanding.</sample>
+    <sample id="1204">we're not aware of a public dataset, a large-scale public dataset for the task. So we collect one using crowd annotation. Our dataset covers three different domains: music, books, and restaurant.</sample>
+    <sample id="1205">Our dataset collection methodology emphasizes informality using a cartoon completion task.</sample>
+    <sample id="1206">The cartoon has three speech bubbles. In the first bubble, Bob says, "Remember that song we were listening to yesterday?" And with that, Bob sets the dialogue context.</sample>
+    <sample id="1207">in the in the second speech bubble. Alice says, do you mean 'Easy on me' or 'I Gotta Feeling'?</sample>
+    <sample id="1208">which is the alternative question. And in the third speech bubble, Bob uses an indirect reference to select one of these entities, for example, the new</sample>
+    <sample id="1209">We provide the first and second speech bubbles automatically, but the third one is filled in by the annotator. Um, the first speech bubble is chosen from a few manual prompts per domain.</sample>
+    <sample id="1210">The second one, which is the alternative question is generated as follows.</sample>
+    <sample id="1211">We always use a simple template. Do you mean A or B? where A and B are sampled from Wikipedia.</sample>
+    <sample id="1212">Here are the different sampling methods we've used. When we move higher in the list, the entities become more similar to each other, and it's usually harder to make the distinction.</sample>
+    <sample id="1213">The first one is uniform.</sample>
+    <sample id="1214">The second one is when the entities have similar titles, for example, two books with the name The</sample>
+    <sample id="1215">The third one is when they have similar descriptions on Wikipedia. And finally, when they have similar infoboxes or attributes on Wikipedia. For example, the same genre or the same artist for a song.</sample>
+    <sample id="1216">When we show this alternative uh question to the annotators, they know the name of these entities, but they don't necessarily know about the entit</sample>
+    <sample id="1217">So what we do is that we show some background knowledge about the two entities. For songs, we simply show a Google search link to each song.</sample>
+    <sample id="1218">and then ask the annotators to listen to at least some of each song and read about each song. Here's for example the Google search result for the song Easy on Me.</sample>
+    <sample id="1219">For the recipes and books domain, we show some background text from Wikipedia. For recipes, we additionally show their images again from Wikipedia, so that the annotators know how they look like.</sample>
+    <sample id="1220">Then we ask the annotators to pick one of these entities, for example, here the first one and describe them using three to five indirect referring expressions.</sample>
+    <sample id="1221">The English content from the video is transcribed below, including both the spoken words and the text visible on the slides.
+
+**Spoken Content:**
+"For example, the one with the piano music. Here are some examples from our dataset. For example, the one without words, not the one with the 12-year-old boy, 12-year-old boy, or the fictional one, or comes from Azerbaijan, and so..."
+
+**Visible Text on Slides:**
+
+**Slide 1 (0:00 - 0:02):**
+*   **Title:** Eliciting expressions
+*   **Bullet point:** We then tell the annotators which choice should be selected and ask them to describe it.
+*   **Text:** Pick this one
+*   **Box 1 (with arrow):** Easy on Me (by Adele)
+*   **Box 2:** I Gotta Feeling (by The Black Eyed Peas)
+*   **Text:** We would like you to give us **3 to 5 expressions** for the chosen song to fill in your speech bubble. For example:
+*   **Speech bubble options:**
+    *   The one with the piano music
+    *   The song that's not energetic
+    *   It has something about a river
+    *   The newer one
+    *   It's about not having time to choose
+*   **Footer:** Resolving Indirect Referring Expressions for Entity Selection (AllEntities Corpus)
+*   **Page:** P.9
+*   **Logo:** Google Research
+
+**Slide 2 (0:02 - 0:14):**
+*   **Title:** Random Examples
+*   **Column 1: Music Selection**
+    *   Do you mean 'Chime' or 'Your Loving Arms'?
+    *   ➡️ The one without words
+    *   Do you mean 'These Kids' or 'Inescapable'?
+    *   ➡️ It is the song sung by an Australian.
+    *   Do you mean 'Rock the Boat' or 'Wherever You Are'?
+    *   ➡️ It has synthesizer sounds in it
+    *   Do you mean 'Telepathy' or 'Stars on 45'?
+    *   ➡️ Came out in mid of 2000.
+    *   Do you mean 'M!is Shapes' or 'Remind Me'?
+    *   ➡️ Based on life experienced in Sheffield.
+*   **Column 2: Book Selection**
+    *   Do you mean 'Warlock' (Hall novel) or 'Warlock' (Smith novel)?
+    *   ➡️ The one that is set in the 1880s
+    *   Do you mean 'The Legion of Space' or 'The Body in the Library'?
+    *   ➡️ It's by a famous detective writer
+    *   Do you mean 'The Good Soldier' or 'The Good Soldiers'?
+    *   ➡️ The fictional one
+    *   Do you mean 'The Giaour' or 'The Giver'?
+    *   ➡️ not the one with the 12 year old boy
+    *   Do you mean 'Broken Sleep' or 'Broken Soup'?
+    *   ➡️ It's the book that has rock and politics in it
+*   **Column 3: Recipe Selection**
+    *   Do you mean 'Beurre Maître d'Hôtel' or 'Chigrirma'?
+    *   ➡️ comes from Azerbaijan
+    *   Do you mean 'Kusa mochi' or 'Uiró'?
+    *   ➡️ The Japanese steamed cake
+    *   Do you mean 'Cannoli' or 'Bocconotto'?
+    *   ➡️ The ones eaten at Christmas
+    *   Do you mean 'Johnnycake' or 'Sagu'?
+    *   ➡️ cornmeal is the main ingredient.
+    *   Do you mean 'Sagu' or 'Nori'?
+    *   ➡️ Not the one with the green wrapping.
+*   **Footer:** Resolving Indirect Referring Expressions for Entity Selection (AllEntities Corpus)
+*   **Page:** P.10
+*   **Logo:** Google Research</sample>
+    <sample id="1222">The AltEntities Corpus has 6,000 alternative questions across the three domains. And it has 42,000 indirect referring expressions. Results with T5 XL model (accuracy): 92-95% if the LM has access to the same background knowledge as annotators. 82-87% when the LM has access to partially overlapping background knowledge. 60% when the LM (T5 XL) has only access to the entity names. We showed models are domain-generalizable. Dataset Link: https://github.com/google-research-datasets/AltEntities</sample>
+    <sample id="1223">If the language model has access to the exact same background knowledge as the annotators, then the accuracy is really high. It's around 92 to 95%. But this is not realistic.</sample>
+    <sample id="1224">If the language model has access to some partially overlapping background knowledge, then the accuracy is between 82 to 87%, which is more realistic. For example, when the language model retrieves the background knowledge.</sample>
+    <sample id="1225">if the language model has access only to entity names, then the accuracy is only 60%. So, there's a lot of room for improvement. We've also shown that the models are domain-generalizable. Here is a link to our dataset. Thank you.</sample>
+    <sample id="1226">Based on the table "CamemBERT OSCAR 138 GB" and "CamemBERT OSCAR 4 GB", CamemBERT is initially trained on the OSCAR dataset. The largest variant listed is 138 GB.</sample>
+    <sample id="1227">The speaker's name is Adam Przepiórkowski.</sample>
+    <sample id="1228">Performance degrades with a larger temporal gap, which led to the conclusion that temporal drift is the main cause of performance drop.</sample>
+    <sample id="1229">Hi everyone. I'm Jenny, a first-year PhD student at Carnegie Mellon University, and today I'll be presenting our work NL positionality, characterizing design biases of datasets and models.</sample>
+    <sample id="1230">This work was done in collaboration with some folks at the University of Washington and um the Island Institute for AI, namely Sebastian Santy, Ronan Le Bras, Katarina Reinicke, and Martin Sap.</sample>
+    <sample id="1231">So, let's start off by imagining that you're working for a newspaper and you're sifting through comments under your news article trying to remove toxic content.</sample>
+    <sample id="1232">You might turn towards a popular API like Perspective API for toxicity detection, and this works really well if you're Carl Jones. Um, where Perspective API is able to detect correctly toxic instances.</sample>
+    <sample id="1233">Imagine...
+But that's not really the case for Aditya Sharma, where Perspective API is really not as sensitive to offensive terms that are more common in Indian contexts.
+
+**On-screen text:**
+Imagine...
+Carl Jones
+Tech Lead,
+New York Times
+Can you stop being a jerk? 💭 : (0.82) ✅
+Aditya Sharma
+Tech Lead,
+Times of India
+Presstitutes everywhere on the news. 💭 : (0.33) ❌
+💭 = PerspectiveAPI score</sample>
+    <sample id="1234">This is an example of a design bias where we see systematic performance differences of technology between populations.</sample>
+    <sample id="1235">Design biases like the one that we just saw before might occur due to the positionality of the NLP researchers and model developers. Positionality is simply the perspectives that people hold as a result of their demographics, identity, and life experiences.</sample>
+    <sample id="1236">This is a concept widely used in critical studies, specifically in feminist and queer academic spaces.</sample>
+    <sample id="1237">And as a researcher, positionality can influence the research process and its outcomes and results because it can change the decisions that researchers make.</sample>
+    <sample id="1238">And so, one question that people might ask is, do datasets and models have positionality?</sample>
+    <sample id="1239">And we're not trying to say that models themselves and data sets themselves have demographic identities and life experiences, but they do aggregate judgments and opinions of real people, and can thus represent certain positionalities over others.</sample>
+    <sample id="1240">Do datasets and models have positionality? Anecdotal evidence: - Model and dataset probing [1][2] - Theoretical definitions of model positionality [3] [1] Blasi, et al. "Systematic Inequalities in Language Technology Performance across the World's Languages." ACL 2022. [2] Yin et al. "GEOMLAMA: Geo-Diverse Commonsense Probing on Multilingual Pre-Trained Language Models." EMNLP 2022. [3] Cambo &amp; Gergle. "Model Positionality and Computational Reflexivity: Promoting Reflexivity in Data Science." CHI 2022.</sample>
+    <sample id="1241">However, these works really don't look at comparing end users with the datasets and models themselves.</sample>
+    <sample id="1242">Do datasets and models have positionality?
+Anecdotal evidence:
+- Model and dataset probing [1][2]
+- Theoretical definitions of model positionality [3]
+
+[1] Blasi, et al. “Systematic Inequalities in Language Technology Performance across the World’s Languages.” ACL 2022.
+[2] Yin et al. “GEOMLAMA: Geo-Diverse Commonsense Probing on Multilingual Pre-Trained Language Models.” EMNLP 2022.
+[3] Cambo &amp; Gergle. “Model Positionality and Computational Reflexivity: Promoting Reflexivity in Data Science.” CHI 2022.
+
+**Speaker:** And studying model and dataset positionality is increasingly important as NLP tasks become more subjective and socially oriented.</sample>
+    <sample id="1243">Do datasets and models have positionality?
+
+Anecdotal evidence:
+- Model and dataset probing [1][2]
+- Theoretical definitions of model positionality [3]
+
+[1] Blasi, et al. "Systematic Inequalities in Language Technology Performance across the World's Languages." ACL 2022.
+[2] Yin et al. "GEOMLAMA: Geo-Diverse Commonsense Probing on Multilingual Pre-Trained Language Models." EMNLP 2022.
+[3] Cambo &amp; Gergle. "Model Positionality and Computational Reflexivity: Promoting Reflexivity in Data Science." CHI 2022.
+
+It's challenging to characterize how these positionalities are skewed because not all decisions are documented, and many models are hidden behind APIs.</sample>
+    <sample id="1244">So, to study data set and model positionality, we actually compare the annotations with real users with existing data sets and models.</sample>
+    <sample id="1245">We do this through our framework, NLP positionality.</sample>
+    <sample id="1246">Our framework works in two main steps.</sample>
+    <sample id="1247">The first step is to re-annotate data sets with diverse annotators.</sample>
+    <sample id="1248">And we ought to do this over looking at the demographics of original data sets, um, annotators, because usually only a few instances annotator to each instance, and because demographics are rarely collected and shared.</sample>
+    <sample id="1249">And so we opt to reannotate data to get many annotators for instance and to get a rich set of demographic data.</sample>
+    <sample id="1250">We then take the annotations by demographic and compare them to the models and data sets using a Pearson's R correlation score.</sample>
+    <sample id="1251">and thus our framework actually differs from annotator disagreement literature by comparing end-users with models and data sets predictions and labels as opposed to looking at just inter annotator agreement or modeling annotator distributions.</sample>
+    <sample id="1252">Our framework is largely enabled through Lab in the Wild, an online crowdsourcing platform for more HCI collaborator. A pool of diverse volunteers/research participants. Online experiment from researchers.</sample>
+    <sample id="1253">In Lab in the Wild is an online experimentation platform where we can recruit diverse volunteers, um, compared to like platforms like N Turk, which largely have participants from the US or India. And further, Lab in the Wild still is able to get high quality data.</sample>
+    <sample id="1254">We host two tasks on the wild, one of them being social acceptability. Participants read a situation from the Social Chemistry dataset. And the way this works is that participants will read a situation from the social chemistry dataset. Participants rate how socially acceptable the situation is. And then they'll rate how socially acceptable a situation is. Participants compare their responses to others' and an AI's.</sample>
+    <sample id="1255">afterwards to stay engaged in the study, they can compare their responses to an AI and others.</sample>
+    <sample id="1256">We were then compared these um annotations with social chemistry, Delphi, and GBD4.</sample>
+    <sample id="1257">We then replicated a very similar setup for the toxicity and hate speech detection task, where they'll read an instance from Dynehate and rate whether they think it's an instance of hate speech.</sample>
+    <sample id="1258">We then compared these annotations with Dynahate, Perspective API, Rewire API, Hate Roberta, and GPT-4. Our study in the end amassed over 16,000 annotations from over 1,000 annotators from 87 countries.</sample>
+    <sample id="1259">So now we're better equipped to answer, who do NLP datasets and models align with the most. We find that there is positionality in NLP.</sample>
+    <sample id="1260">For example, we find that data sets and models are most aligned to English-speaking countries. So for the GPT4 social acceptability analysis, we find that it's most aligned to Confucian and English-speaking countries. We find that Dynahate is also most aligned to English-speaking countries.</sample>
+    <sample id="1261">We also find most, uh, additional alignment with people who have a college education. So, for GPT-4 in the social acceptability task, we find that it's most aligned to people with a college education or graduate school education.</sample>
+    <sample id="1262">And we find the same for DynaHate, where it's most aligned to people with a college education.</sample>
+    <sample id="1263">However, when models and datasets are aligned to specific populations, some are inevitably left behind.</sample>
+    <sample id="1264">An example of this is that data sets and models are less aligned to non-binary people compared to their men and women counterparts. We find this in the GPD4 social acceptability task, as well as the Dynaheat task analysis as well.</sample>
+    <sample id="1265">So, given that there is position in NLP, what can we do about it?</sample>
+    <sample id="1266">So we have a few recommendations for this. The first one is keep a record of all relevant design choices throughout the research process. And the other is to do NLP research through the lens of perspectivism.</sample>
+    <sample id="1267">Our third recommendation is to build specialized datasets and models with and for specific communities. And a good example of this is the Masakhane initiative. I mean, we want to emphasize that inclusive NLP isn't just making, you know, all technologies work for everyone.</sample>
+    <sample id="1268">And so, that concludes our presentation, but if you'd like to learn more, feel free to check out our dashboard for the most updated analysis results and our paper. Thank you.</sample>
+    <sample id="1269">It's necessary to permute the tokens because after the first tagging step, the tokens are not in the correct order for the output sequence. Permutation arranges them into the right order.</sample>
+    <sample id="1270">The authors recommended increased transparency about bias mitigation methods because without it, it's unclear whether observed patterns, such as positive stereotypes, are due to excessive value alignment or other anti-stereotyping methods that might be producing "pernicious patterns."</sample>
+    <sample id="1271">Minimal-pair unacceptable inputs are ungrammatical or unacceptable sentences, such as "Many people were helping herself" (ungrammatical) or "The customer... has spent any money" (ungrammatical in context), or non-stereotypical sentences in the CrowS benchmark.</sample>
+    <sample id="1272">The authors used F1-score for Named Entity Recognition (NER), Classification (CLS), Part-of-Speech Tagging (POS), and Exact Match Ratio (EMR).</sample>
+    <sample id="1273">Krippendorff's Alpha was used to measure inter-annotator agreement.</sample>
+  </task>
+</testset>

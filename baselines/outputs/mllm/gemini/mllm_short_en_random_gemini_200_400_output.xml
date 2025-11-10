@@ -1,0 +1,292 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="en">
+    <sample id="399">Example quality.</sample>
+    <sample id="400">The paper focuses on RoBERTa and GPT-2 in its extended experiments.</sample>
+    <sample id="401">Based on the provided English content, there is no information about whether the model uses attention scores from a specific layer or combines scores from several layers. The text only mentions reading the paper for more results and that the code and models have been released.</sample>
+    <sample id="402">Examples of direct reference are "easy on me" and "the first one".</sample>
+    <sample id="403">The authors are affiliated with Fudan University and Brain Technologies Inc.</sample>
+    <sample id="404">There are 7 authors involved in the paper:
+
+1.  Yanis Labrak
+2.  Adrien Bazoge
+3.  Richard Dufour
+4.  Mickael Rouvier
+5.  Emmanuel Morin
+6.  Béatrice Daille
+7.  Pierre-Antoine Gourraud</sample>
+    <sample id="405">Yes, the "Translate-Test" setting describes this process and was one of the six settings considered for training and evaluation.</sample>
+    <sample id="406">A woman warrior.</sample>
+    <sample id="407">The provided text only states that Transformer models "normally generalize better to new data." It does not specify which model architectures do not generalize well.</sample>
+    <sample id="408">The English content mentions "clean validation samples."</sample>
+    <sample id="409">There are 6 authors involved in the paper.</sample>
+    <sample id="410">The author works with **multiple modalities**, as explicitly stated in the title "Instruction Tuning on **Multimodal** Pre-trained Models."</sample>
+    <sample id="411">Hi. I am Yanis Labrak and I will present you our works on DrBERT, a robust pre-trained model in French for biomedical and clinical domains.</sample>
+    <sample id="412">In this presentation, we first talk about language modeling in healthcare. Then, we will present the main contribution of our article.</sample>
+    <sample id="413">We introduce the first biomedical model in French, named Dr. Bert, which is based on Roberta and trained on Nachos, which is a dataset of medical crawled data from the web.</sample>
+    <sample id="414">We also introduce a comparison of model with multiple pre-training settings and data sources. Then, we present our result on 11 biomedical and clinical downstream tasks in French.</sample>
+    <sample id="415">And finally, we conclude about the experiments and give you more details about how to access to the models.</sample>
+    <sample id="416">Since its release in 2018, BERT has become one of the most effective approach to solve natural language processing task. And offer huge performing gain compared to historical static and contextualized methods such as Word2vec, FastText, or Elmo.</sample>
+    <sample id="417">Since then, this model has been adapted to many other languages, like in French with CamemBERT and other domains like biomedical with PerMedBERT and BioBERT, and on clinical with ClinicalBERT, but mostly in English.</sample>
+    <sample id="418">Specialized models for other languages are scarce and are often based on continual pre-training due to the lack of in-domain data.</sample>
+    <sample id="419">However, French didn't have any open-source model for biomedical in French yet.</sample>
+    <sample id="420">We, so we ask ourselves a question about what is the most appropriate data sources for a wide range of usage. And those pro-data are good substitution for clinical data.</sample>
+    <sample id="421">To answer this question, we compare DrBERT with our ChuBERT model, which is based on anonymized data obtained from the Nantes University Hospital data warehouse.</sample>
+    <sample id="422">After all, we ask ourselves how much data do we need to train a specialized model on French data? Is it 4 gigabyte, 8 gigabyte, or more?</sample>
+    <sample id="423">To answer this question, we first train and compare four from scratch model. A first version of Dr.BERT with 7 GB of Nachos, a second version of 4 GB of set of Nachos,</sample>
+    <sample id="424">A first version of ChuBERT, which is a clinical model, with 4 GB of sentences taken from clinical notes. And a final version of ChuBERT with a mix of 4 GB of set of NACHOS and 4 GB of clinical notes.</sample>
+    <sample id="425">In addition to this comparison, we introduced three models trained on continual pre-training to analyze the impact of pre-training strategy.</sample>
+    <sample id="426">One base on the weight of Camembert and trained on 4 gigabytes of set of nachos. Another, also based on Camembert, but trained this time on the 4 gigabytes of clinical.</sample>
+    <sample id="427">and finally, one base of on English biomedical model, PubMedBERT and train on 4 GB of set of NACHOS. In total, we have seven models.</sample>
+    <sample id="428">To evaluate our seven models, we gather both public and private tasks such as named entity recognition, uh classification, part of speech tagging and question answering.</sample>
+    <sample id="429">These models are compared to six baseline models, which are Camembert Oscar 138 GB, Camembert Oscar 4 GB, Camembert CINet 4 GB,PubMedBERT, BioBERT v1.1, DrBERT NACHOS_large, DrBERT NACHOS_small, ClinicalBERT, ChuBERT NBDW_small, ChuBERT NBDW_resized.</sample>
+    <sample id="430">The evolution of uh highlight the that model perform best on the task with data of the same nature as those uh on which uh the model has been trained.</sample>
+    <sample id="431">However, we can obtain that data from we can observe that data from heterogeneous sources appear to be more versatile. We also observe that using more data translate into better performance.</sample>
+    <sample id="432">In overall, from scratch pre-training seemed to obtain higher performance on most of the task.</sample>
+    <sample id="433">However, our experiment on continual pre-training, using the white and tokenizer of PubmedBERT, trained on the 4 gigabyte subset of Nachos, showed comparable results to those obtained with DoctorBERT 4 gigabyte from scratch.</sample>
+    <sample id="434">which is not the case for the model based on Camembert weights and tokenizer which suffer from stability issues.</sample>
+    <sample id="435">Finally, as a conclusion, uh our proper system offer better performance on nine of the 11 downstream task and surpass globally the result of the generic model here CamemBERT.</sample>
+    <sample id="436">We also observing that specialized data is better. More specialized data is better, but it's does not scale well.</sample>
+    <sample id="437">All the pre-trained model obtained from NACHOS are freely available on Hugging Face and all the training script are on our GitHub repository.</sample>
+    <sample id="438">So, thank you for for this presentation. And we are looking forward to exchange at the poster session in Toronto.</sample>
+    <sample id="439">The integration and use of both pre-train time and inference-time knowledge for knowledge-intensive NLU tasks.</sample>
+    <sample id="440">The speakers are Yin and Zhiyang.</sample>
+    <sample id="441">Yes, crowd-sourced workers were employed to ensure the quality of the validation and test sets by finding and revising incorrect samples.</sample>
+    <sample id="442">Existing resources for context-dependent translation have the following limitations:
+
+*   They only support a limited number of discourse phenomena.
+*   They support a limited set of languages.
+*   They often rely on domain knowledge and human curation, which restricts their scope.</sample>
+    <sample id="473">The approach is compared to:
+*   Wait-k strategy
+*   Local Agreement (LA)
+*   CAAT (a state-of-the-art architecture tailored for SimulST)</sample>
+    <sample id="474">The affiliations of the authors are: LIA, Avignon Université, LS2N, Nantes Université, Clinique des données, CHU de Nantes, and Zenidoc.</sample>
+    <sample id="475">The speaker's name is Jenny.</sample>
+    <sample id="476">There are three authors involved in the paper.</sample>
+    <sample id="505">Yes, the dataset is publicly available at the provided GitHub link: https://github.com/ShuhengL/acl2023_conllpp.</sample>
+    <sample id="535">The authors are affiliated with:
+
+*   Università di Trento
+*   Fondazione Bruno Kessler</sample>
+    <sample id="536">The speaker's name is Javad Hosseini.</sample>
+    <sample id="537">Hello everyone. My name is David Villar, and I will be giving a short overview of the paper "Promting PaLM for Translation: Assessing Strategies and Performance." This is joint work with my colleagues from Google Translate.</sample>
+    <sample id="538">PaLM is a 540 billion parameters language model, presented last year in 2022. It's trained on a large collection of text, comprising 780 billion tokens.</sample>
+    <sample id="539">at the time of publication, it achieved state of the art in hundreds of NLP benchmarks.</sample>
+    <sample id="540">In this work, we present the first systematic study of language model prompting for machine translation.</sample>
+    <sample id="541">We evaluated the translation capability of such models using the best practices of the MT community. This involves using the latest test sets to avoid an overlap of the test data with the training data of the language model.</sample>
+    <sample id="542">we compare two state of the art systems. So the best performing systems on the WMT evaluation.</sample>
+    <sample id="543">We use state-of-the-art neural MT metrics and additionally, also show expert-based human evaluation results. Finally, we provide some recommendations for prompt selection strategies.</sample>
+    <sample id="544">The prompting has a big influence on the performance of the of LLMs for translation. As we can see in a simple experiment where we use one-shot prompting and provided two different prompts for for sentence.</sample>
+    <sample id="545">The majority of sentences, 516 out of 1000, the difference observed is of more than one BLEURT point.</sample>
+    <sample id="546">and this can go in extreme cases up to 40 blur points. So it's important to select a good prompting strategy.</sample>
+    <sample id="547">In our experiments, we set for a five-shot prompting strategy, where we just mark each, uh, each sentence that we provide the to the system with the language itself.</sample>
+    <sample id="548">So, in this example, here, where we perform translation from German into English, the German sentences, the source sentences are marked with German colon, and the English translations with English, uh, colon.</sample>
+    <sample id="549">We saw that the actual form of the prompting doesn't have a big influence in in the case of several short prompts.</sample>
+    <sample id="550">it's crucial for zero and one-shot prompting. And when we go, as in our case, to five-shot prompting, there is nearly no difference to the actual form of the of the prompting.</sample>
+    <sample id="551">It's the examples that carry most of the</sample>
+    <sample id="552">The summary of our experimental results is that the example quality is more important than the similarity similarity to the source sentence.</sample>
+    <sample id="553">So, it's important to select the examples from high-quality translations. In particular, we compare the selecting prompts from the training data of the WMT evaluations or the dev data.</sample>
+    <sample id="554">the dev data is much more created and with higher quality that the training data, that it's more noise and the results, so a better performance when using the the dev data.</sample>
+    <sample id="555">Nevertheless, specialized state-of-the-art systems have a substantial advantage over the PaLM translations. But PaLM comes pretty close to a commercial system. In our case, we chose to evaluate with Google Translate.</sample>
+    <sample id="556">The insights that we gained from the human evaluation that we performed using the MQM framework is that the fluency of Palm is comparable to state of the of the art systems, but the main difference comes from the accuracy.</sample>
+    <sample id="557">in particular, the most common error are omission errors.</sample>
+    <sample id="558">So it seems that PaLM chooses them to produce a better sounding translation. Sometimes by dropping parts of the source sentence that are are made into the translation.</sample>
+    <sample id="559">However, the style awkward category for PAM is lower than for the state of the art systems, which is an additional signal</sample>
+    <sample id="560">that PaLM provides really fluent output, but still with some problems of of accuracy.</sample>
+    <sample id="561">And that's it for this really short overview. For more details, please call my to the full presentation of the paper. Thank you very much.</sample>
+    <sample id="597">The first step maps each input token to an unordered multiset of tokens that will appear in the output.</sample>
+    <sample id="598">Coscript represents 55,000 scripts.</sample>
+    <sample id="599">Hello everyone. I'm Akshatha. And today, my co-author Martin and I are presenting our work, The KITMUS Test, evaluating knowledge integration from multiple sources. This work is a collaboration between McGill University, Mila, and Microsoft Research.</sample>
+    <sample id="600">National language understanding models draw on a variety of knowledge sources, such as knowledge contained in their parameters, usually acquired by a pre-training, and knowledge given in inputs at inference time.</sample>
+    <sample id="601">Recent works in tasks like question answering show that models can use pretrain time knowledge to solve the task.</sample>
+    <sample id="602">But natural language understanding often requires knowledge that is also supplied at inference time.</sample>
+    <sample id="603">For example, in the sentence, John saw the newly elected president on TV.</sample>
+    <sample id="604">Pre-train parameters can contain information about what presidents do and what a TV is. But they cannot reliably know who this instance specific entity John is, or who the new president is, because the president might have changed since pre-training.</sample>
+    <sample id="605">therefore successful models for knowledge intensive NLU tasks require the ability to integrate and use both pre-train time and inference time knowledge.</sample>
+    <sample id="606">In this work, we propose a diagnostic test suite for knowledge integration</sample>
+    <sample id="607">we introduce a coreference resolution task designed to probe for the ability to draw on knowledge available in different sources. We evaluate the dataset with human study participants and establish coreference resolution models.</sample>
+    <sample id="608">Here is an example from our data set. Servin is a judge. Kea is a baker. Servin and Kea met at a park. After a long day at work deciding cases in a law court, he was happy to relax. [Answer: Servin]</sample>
+    <sample id="609">The task here is to identify the correct entity that the pronoun he refers to, which in this case is Servin.</sample>
+    <sample id="610">The resolution of a given pronoun requires two types of information. First, entity-specific knowledge, such as Servin is a judge. And second, background knowledge, such as judges decide cases in law courts.</sample>
+    <sample id="611">Generally, background knowledge is learned during the pre-training of large language models, while entity-specific knowledge is typically observed at inference time.</sample>
+    <sample id="612">We vary the availability of these two pieces of information, such that it may either be found in a single source or in multiple sources.</sample>
+    <sample id="613">We have defined three settings of Kitmus. First, we have the typical setting, background pre-train, where background knowledge is assumed to be available at pre-training time.</sample>
+    <sample id="614">Second, there is the background both setting. Where background knowledge is available both at pre-train time and inference time. Lastly, the background inference setting. Where both knowledge types are available only at inference time.</sample>
+    <sample id="615">This last setting is especially interesting. Since it simulates the case where the background knowledge necessary to solve a task is not part of the pre-trained data of models. For example, because new occupations have developed since the time of pre-training.</sample>
+    <sample id="616">Here's an example of how we control the availability of facts in the</sample>
+    <sample id="617">In the background pre-train setting, we assume that the background knowledge "politicians seek elected seats in government" is contained in the pre-trained parameters. In the inferred context, we provide the entity specific knowledge, "Chichester is a politician."</sample>
+    <sample id="618">And in the background-both setting, we additionally provide not only entity-specific, but also background knowledge about politicians in the inference time context.</sample>
+    <sample id="619">and the background inference setting, we provide the fictional occupation "mirertuer" instead of politician. Because mirertuer is unlikely to be contained in the pre-trained</sample>
+    <sample id="620">We evaluated the data set both with human static participants and established co-reference resolution models. In this figure, we show the results of the best performing models on the most difficult variant of the background pretrain set.</sample>
+    <sample id="621">Without task-specific training on Kmos, both models do not perform well. When trained on Kmos, however, both C2F and BERT4Coref perform significantly better than the random choice.</sample>
+    <sample id="622">This suggests that when trained on general coreference resolution data sets, models learn to exploit surface cues, which are not useful when testing on kit mode where such cues have been removed.</sample>
+    <sample id="623">additional experiments with fictional knowledge indicate that even the best performing models cannot reliably integrate background knowledge quite only at inference time.</sample>
+    <sample id="624">To summarize the main takeaways of our paper. Many coreference resolution models appear unable to reason over knowledge from different sources without task-specific training. However, with task-specific training, some models successfully integrate knowledge from multiple sources.To summarize the main takeaways of our paper. Many coreference resolution models appear unable to reason over knowledge from different sources without task-specific training. However, with task-specific training, some models successfully integrate knowledge from multiple sources.</sample>
+    <sample id="625">still. Even the best performing models seem to have difficulties with reliably integrated background knowledge presented only at inference time. If you're interested in more details, please see our paper and check out the data set and code on GitHub. Thanks for listening.</sample>
+    <sample id="626">Based on the information provided, the best alignment method for German text simplification is **MassAlign**.</sample>
+    <sample id="627">The benefit of weakly supervised learning is that it **alleviates the annotation bottleneck**. This means it helps to get labeled data without relying solely on expensive and time-consuming manual annotation.</sample>
+    <sample id="628">The video does not provide information about how the allocation for DEplain-web documents was exactly. It only shows results for document and sentence simplification using fine-tuned long-mBART and mBART models, respectively, with training data from DEplain-APA and DEplain-web.</sample>
+    <sample id="629">The CoNLL++ dataset was created by collecting Reuters news from 2020 and annotating it with CoNLL-2003 annotation guidelines.</sample>
+    <sample id="667">The existing works are broadly classified into four categories: Parameter-based watermark, Lexical watermark, Backdoor-based watermark, and Adversarial-based watermark.</sample>
+    <sample id="668">No, multilingual LLMs such as Codex and BLOOM are still inadequate for crosslingual semantic parsing tasks.</sample>
+    <sample id="669">Hello everyone. My name is Shuhang. Today, I'm going to present our paper, "Do CoNLL-2003 Named Entity Taggers Still Work Well in 2023?" Let's get started.The user wants a transcript of the spoken words.
+The spoken words are: "Hello everyone. My name is Shuheng. Today, I'm going to present our paper, "Do CoNLL-2003 Named Entity Taggers Still Work Well in 2023?" Let's get started."
+
+Transcript: "Hello everyone. My name is Shuheng. Today, I'm going to present our paper, "Do CoNLL-2003 Named Entity Taggers Still Work Well in 2023?" Let's get started."</sample>
+    <sample id="670">Our paper investigated the problem of generalization using the named entity recognition task or the NER task.</sample>
+    <sample id="671">We observed that models have been using CoNLL-2003 to develop NER for almost 20 years. And this naturally raises several problems. Firstly, can these models generalize to modern data?</sample>
+    <sample id="672">And when we develop new taggers, what is needed for good generalization?</sample>
+    <sample id="673">at the same time, if we do observe poor generalization, what causes the performance drop of these models?</sample>
+    <sample id="674">To investigate these problems, we develop the CoNLL++ dataset. This is a dataset that we collected from Reuters news from 2020 and then annotated them with the same CoNLL-2003 annotation guidelines.</sample>
+    <sample id="675">We then fine-tuned over 20 models on CONL 2003. We evaluated them on both the CONL 3 test set and the CONL++ test set.</sample>
+    <sample id="676">And last but not least, we calculated the percentage change in F1 to assess the generalization of each model.</sample>
+    <sample id="677">So, what is needed for good generalization? Through our experiments, we found that there are three main ingredients that are needed.</sample>
+    <sample id="678">The first one is the model architecture. Through our experiments, we found that the transformer models normally generalize better to new data.</sample>
+    <sample id="679">The second ingredient is the model size. We found that usually larger models lead to better generalization.</sample>
+    <sample id="680">And last but not least, we all know that the number of fine-tuning examples directly affects the performance of a downstream task. Here, we also found that more fine-tuning examples actually also leads to better generalization.</sample>
+    <sample id="681">to our next question. What causes the performance drop of some models?</sample>
+    <sample id="682">We had two hypotheses. The first one is adaptive overfitting, which is overfitting caused by reusing the same test set over and over again, and this is usually manifested as the diminishing returns on the new test sets.</sample>
+    <sample id="683">The second hypothesis is temporal drift, which is the performance degradation that is caused by the increasing temporal gap between the train and the test data.</sample>
+    <sample id="684">For adaptive over fitting, we saw that from the graph on the right, the red best fit line has a gradient that is greater than one.</sample>
+    <sample id="685">This means that every unit of improvement that we made on ConLL 2003 translates to more than one unit improvements on ConLL++. Which means that there is no diminishing returns.</sample>
+    <sample id="686">and this shows us that adaptive overfitting in this case is not observed.</sample>
+    <sample id="687">So what about temporal drift?</sample>
+    <sample id="688">For temporal drift, we did an experiment to retrain or continue to pre-train some models with more recent data. And we found that the performance degrades with larger temporal gap.</sample>
+    <sample id="689">And this confirms our hypothesis that's the main cause of the performance drop is temporal drift.</sample>
+    <sample id="690">Our conclusion is that for good generalization, we would need a better model architecture, larger model size, as well as more fine-tuning examples. And these goals hand-in-hand, we can't just have one ingredient but throughout the others.</sample>
+    <sample id="691">At the same time, we also found that the performance drop here is caused by temporal drift. And kind of surprisingly, it is not caused by adaptive overfitting, even though CoNLL-2003 has been used for over 20 years.</sample>
+    <sample id="692">So going back to the question that we raised in the title of our paper, do CoNLL 2003 taggers still work in 2023? And we found that the answer is actually a resounding, yes!</sample>
+    <sample id="693">We hope our paper calls for more research on how to improve generalizations of the models.</sample>
+    <sample id="694">and lastly, please make sure to check out our paper, our data set, and if you have any questions, feel free to contact me. Thank you so much.</sample>
+    <sample id="695">The method addresses the ambiguity of permutations by:
+1.  **Inducing alignment** as part of the training process.
+2.  **Approximating the NP-hard inference** (similar to the Traveling Salesman Problem) with a GPU-friendly continuous relaxation. This allows backpropagation through the solution to learn the most linguistically plausible permutations.</sample>
+    <sample id="696">The fairness of a downstream NLP model is defined by whether it avoids marginalizing people with opposing political opinions and prevents hate speech targeting minority groups from running rampant without control.</sample>
+    <sample id="697">The speaker's name is Yanis Labrak.</sample>
+    <sample id="698">The speaker's name is Koustuv Sinha.</sample>
+    <sample id="699">Myra Cheng</sample>
+    <sample id="700">In the context of this paper, tropicalism indicates a trope associated with describing Latina women using characteristics like "vibrant" and "curvaceous."</sample>
+    <sample id="701">The authors identified patterns in "top words" that emerged when describing various groups. These patterns included:
+*   **Othering through essentializing narratives:** Using words like *culture, tradition, proud, exotic* for marked groups, which defined those groups solely by their identity.
+*   **Pernicious positive portrayals:** Using specific "positive" descriptive words for women of certain ethnicities, such as:
+    *   *Vibrant, curvaceous* for Latina women
+    *   *Petite, delicate, silky* for Asian women
+    *   *Strong, resilient* for Black women</sample>
+    <sample id="702">Pointwise CXMI (P-CXMI) was introduced to measure context usage.</sample>
+    <sample id="703">Both DrBERT and ChuBERT are trained "From scratch," but they differ in the corpus they use:
+
+*   **DrBERT** is trained on the **NACHOS** corpus, which is described as a "1.1B words open-source dataset of heterogeneous data crawled from diverse medical domains, natures and styles."
+*   **ChuBERT** is trained on the **NBDW** corpus, which is a "private dataset of sentences taken from 1.7M anonymized medical records extracted from the Nantes University Hospital data warehouse," described by the speaker as a "clinical model" trained on "clinical notes."</sample>
+    <sample id="704">Hi, I'm Myra, and today I'll be talking about our paper Marked Personas: Using Natural Language Prompts to Measure Stereotypes in Language Models. This work is done in collaboration with Esin Durmus and Dan Jurafsky.</sample>
+    <sample id="705">In recent years, many have documented the prevalence of social bias and stereotypes in large language models or LLMs.</sample>
+    <sample id="706">However, these measures have various limitations. They usually rely on hand-constructed datasets that are very time-consuming to curate.</sample>
+    <sample id="707">and they also usually only measure very specific stereotypes, meaning that they don't generalize well to other demographics or contexts, or they simply capture very general, broad associations like negative associations with particular groups.</sample>
+    <sample id="708">Furthermore, most work in this space doesn't account for intersectionality, which is the notion that multifaceted social identities can compound biases and be unique loci of harm.</sample>
+    <sample id="709">To overcome these limitations, we rely on the property that these newer instruction tuned LLMs are very good at responding to instructions in prompts.</sample>
+    <sample id="710">How do we overcome these limitations?
+
+GPT-3.5, GPT-4, etc. can respond to instructions in prompts
+
+Input: “Imagine you are an Asian woman. Describe yourself.”
+Myra Cheng</sample>
+    <sample id="711">And we can immediately see that this is very generalizable to any demographic, because we can just specify whatever identity marker that we want into this prompt.</sample>
+    <sample id="712">So here are some example generations from GPT-4.</sample>
+    <sample id="713">Immediately we see that while the outputs aren't overtly negative or toxic in the traditional sense of these words,</sample>
+    <sample id="714">There are some interesting things.</sample>
+    <sample id="715">The Asian woman is depicted as unassuming. The Middle Eastern woman is referred to using words like exotic, um, and like referring to a mesmerizing region.</sample>
+    <sample id="716">And both of the women of color personas make references to ancestry, while the white men persona has nothing of the sort.</sample>
+    <sample id="717">To capture these patterns, our method has two parts. The first one is generating these personas.</sample>
+    <sample id="718">Our prompts to generate these personas were inspired by a study, um, where they gave these prompts to human subjects, finding that by giving it to human subjects, they also were able to surface racial stereotypes.</sample>
+    <sample id="719">And also, this enables direct comparison between our generated personas and the human written responses.</sample>
+    <sample id="720">The second part is marked words, which is a method to identify the words that distinguish marked groups from unmarked ones, which I'll elaborate on shortly.</sample>
+    <sample id="721">The benefit of this is that we get really specific stereotypes and patterns without having to rely on any specific lexicon.</sample>
+    <sample id="722">So, the marked words method draws upon the sociolinguistic concept of markedness, which states that there is an unmarked default and any group that differs from that default, um, is linguistically marked.</sample>
+    <sample id="723">So for instance, the word man, or sorry, the word warrior is usually associated with men. Um so when people are describing a warrior who is a woman, they'll usually actually specify women warrior and mark the term with women.</sample>
+    <sample id="724">And more broadly, dominant groups in society are both linguistically and socially unmarked, while the marginalized groups are usually marked.</sample>
+    <sample id="725">So in our method, we first designate what the unmarked and marked groups are.</sample>
+    <sample id="726">And then we compare the personas using the finding words method, which is basically using weighted log-odds ratios to distinguish the top words for each marked group.</sample>
+    <sample id="727">So for instance, for the personas of Black woman, we would do fighting words and compare the log odds ratios against both white personas and man personas, because those are the two corresponding unmarked groups.</sample>
+    <sample id="728">Now for some results. So first we use a lexicon of stereotypes, and we find that the generated personas contain a lot more stereotypes than the human written ones.</sample>
+    <sample id="729">However, when we actually look at the distribution of the words in lexicon, we find very different things.</sample>
+    <sample id="730">So, while the generated personas have much higher rates of the lexicon words, um, the human written ones have a much wider distribution of words, while the stereotype words that are in the generated personas are really just the words tall and athletic.</sample>
+    <sample id="731">also really just only the positive or at least non-negative ones.</sample>
+    <sample id="732">And in fact, this lexicon doesn't really capture many of the harmful patterns that we saw in the earlier slides will at all. So instead, to do that, we'll turn to the results from our marked words method to show how these positive-seeming words facilitate stereotypes and essentializing narratives.</sample>
+    <sample id="733">In our analysis, we reveal how these seemingly positive portrayals reflect harmful patterns.</sample>
+    <sample id="734">Results: Patterns in Top Words
+Othering through essentializing narratives:
+- culture, tradition, proud, exotic for marked groups
+⇒ Defines those groups only by their identity
+Pernicious positive portrayals:
+- Vibrant, curvaceous for Latina women
+- Petite, delicate, silky for Asian women
+- Strong, resilient for Black women</sample>
+    <sample id="735">Results: Patterns in Top Words
+
+**Othering through essentializing narratives:**
+- *culture, tradition, proud, exotic* for marked groups
+    -&gt; Defines those groups only by their identity
+
+**Pernicious positive portrayals:**
+- *Vibrant, curvaceous* for Latina women
+- *Petite, delicate, silky* for Asian women
+- *Strong, resilient* for Black women</sample>
+    <sample id="736">Furthermore, there is a lot of common tropes that are reflected in these words, especially for women of color. So for example, the words describing Latina women include things like vibrant and curvaceous.</sample>
+    <sample id="737">um, which connect to a trope of tropicalism. For Asian women, the words are things like petite and delicate and silky.</sample>
+    <sample id="738">which connects to a long history of Asian women being hypersexualized, seen as very docile and submissive, and so on.</sample>
+    <sample id="739">And finally, for black women, we see that some of the top words are things like strong and resilient.</sample>
+    <sample id="740">This connects to an archetype that people have called the strong Black woman archetype and while it sounds like positive at first glance,</sample>
+    <sample id="741">and there's been work showing that this kind of archetype actually is very harmful because it puts a lot of pressure um on these demographics to be resilient and strong against societal obstacles.</sample>
+    <sample id="742">So rather than actually working towards changing those obstacles, it puts pressure on those people to overcome them, which leads to a very negative health outcomes for these people among other harms.</sample>
+    <sample id="743">More broadly, we find that the words for each marked group pretty much just reflect very essentializing narratives.
+
+**Results: Patterns in Top Words**
+
+**Othering through essentializing narratives:**
+- culture, tradition, proud, exotic for marked groups
+⇒ Defines those groups only by their identity
+
+**Pernicious positive portrayals:**
+- Vibrant, curvaceous for Latina women
+- Petite, delicate, silky for Asian women
+- Strong, resilient for Black women</sample>
+    <sample id="744">So based on these patterns, we conclude with three recommendations for model owners.</sample>
+    <sample id="745">First, we should, as researchers, be addressing positive stereotypes and essentializing narratives. We should also be using intersectional lens to study biases and harms, because there's a lot of things that might be overlooked if we don't do that.</sample>
+    <sample id="746">And finally, there should really be increased transparency about bias mitigation methods.</sample>
+    <sample id="747">because for instance like these positive stereotypes, we don't know if it's because there is some sort of like weird</sample>
+    <sample id="748">overly excessive value alignment going on or maybe some other like anti-stereotyping methods that are resulting in these pernicious patterns.</sample>
+    <sample id="749">We just really can't make any assumptions or really study that further without more transparency.</sample>
+    <sample id="750">Thank you so much for listening. Um, have a good time.</sample>
+    <sample id="751">There are three authors: Zhiyang Xu, Ying Shen, and Lifu Huang.</sample>
+    <sample id="752">Iterative transfer learning, in this context, updates the existing model by fine-tuning it on only the latest set of collected data from each active learning round, using the previous model as a starting point.</sample>
+    <sample id="753">The goal is to understand users' language when they make a choice.</sample>
+    <sample id="754">An attacker can extract model parameters from an Embedding as a Service (EaaS) through a process known as **model extraction** or **model stealing**, even if they don't have direct access to the underlying model architecture or weights. This is typically achieved by treating the EaaS as a black box and repeatedly querying it.
+
+Here's how an attacker could do it:
+
+1.  **Querying the EaaS:** The attacker sends a large number of diverse inputs (e.g., text sentences, images) to the EaaS and collects the corresponding embedding vectors (the outputs of the service). This creates a dataset of (input, EaaS_embedding) pairs. The goal is to cover the input space as thoroughly as possible to capture the model's behavior.
+
+2.  **Training a Surrogate Model:** The attacker then trains their own local model (the "surrogate model") using this collected dataset.
+    *   The input to the surrogate model is the same as the original inputs sent to the EaaS.
+    *   The target output for the surrogate model is the embedding vector returned by the EaaS.
+    *   The surrogate model's architecture is chosen by the attacker (e.g., a deep neural network, a Transformer-based model). The attacker might experiment with different architectures to find one that best approximates the EaaS.
+    *   The loss function for training the surrogate model aims to minimize the difference between the surrogate's output embeddings and the EaaS's output embeddings. Common loss functions include Mean Squared Error (MSE) or cosine similarity loss for high-dimensional vectors.
+
+3.  **Parameter Extraction:** Once the surrogate model is sufficiently trained to mimic the behavior of the EaaS (i.e., it produces embeddings that are very similar to those from the EaaS for given inputs), the attacker effectively possesses a functional equivalent of the EaaS model. The **parameters** of this trained surrogate model are what the attacker has "extracted."
+
+**Key aspects and challenges for the attacker:**
+
+*   **Number of Queries:** A large number of queries are often required, which can incur cost and be time-consuming.
+*   **Input Diversity:** The quality of the extracted model depends heavily on the diversity and representativeness of the inputs used for querying. Sophisticated attackers might use adversarial examples or active learning techniques to strategically select inputs that provide the most information about the model.
+*   **Surrogate Model Architecture:** Choosing an appropriate architecture for the surrogate model is crucial. If the EaaS uses a very complex or novel architecture, a simple surrogate might not capture its nuances.
+*   **Fidelity vs. Cost:** The attacker balances the fidelity of the extracted model with the cost and effort of querying.
+
+While the extracted parameters might not be *identical* to the original EaaS model's parameters, they represent a functionally equivalent model that can be used for various purposes, such as building a competing service, performing further analysis (e.g., looking for biases), or reducing dependency on the original EaaS.</sample>
+    <sample id="755">There are three authors: Sara Papi, Matteo Negri, and Marco Turchi.</sample>
+    <sample id="756">The provided English content does not specify the number of annotators used to create the initial dataset.</sample>
+    <sample id="757">The authors are affiliated with:
+
+*   University of Washington
+*   Carnegie Mellon University
+*   Allen Institute for AI</sample>
+  </task>
+</testset>

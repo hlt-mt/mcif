@@ -1,0 +1,733 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="zh">
+    <sample id="266">我们还发现，与受过大学教育的人有最多的额外一致性。因此，对于GPT-4，在社会可接受性任务中，我们发现它与受过大学教育或研究生教育的人最一致。</sample>
+    <sample id="267">仇恨言论与毒性 (Dynahate)
+
+数据集和模型与拥有大学教育背景的人最为一致。
+
+**口语内容翻译:**
+对于 Dynahate，我们也发现了同样的结果，其中它与拥有大学学历的人最为一致。
+
+**图表文字翻译:**
+*   **图表标题:** 仇恨言论与毒性 (Dynahate)
+*   **X轴标签:**
+    *   College: 大学
+    *   Graduate School: 研究生
+    *   High School: 高中
+    *   PhD: 博士
+    *   Pre-High School: 高中以下
+    *   Prof. School: 职业学院
+*   **左侧文字:** 数据集和模型与拥有大学教育背景的人最为一致。</sample>
+    <sample id="268">然而，当模型和数据集针对特定人群时，一些群体不可避免地被忽略。</sample>
+    <sample id="269">其中一个例子是，数据集和模型与非二元性别者的对齐程度低于男性和女性群体。我们在GPT-4的社会可接受度任务以及Dynahate的任务分析中都发现了这种现象。</sample>
+    <sample id="270">那么，既然NLP中存在位置性，我们能做些什么呢？</sample>
+    <sample id="271">建议
+
+1. 记录在构建数据集或模型过程中所做的所有相关设计选择。
+2. 从视角主义的视角进行自然语言处理（NLP）研究：
+    a. 分享去聚合的数据集标签！
+    b. 使用能够处理标注者分歧的建模技术。
+
+[1] https://www.masakhane.io</sample>
+    <sample id="272">我们的第三个建议是为特定社区构建专门的数据集和模型。一个很好的例子就是Masakhane倡议。我的意思是，我们想强调的是，包容性自然语言处理不仅仅是让所有技术都适用于每个人。</sample>
+    <sample id="273">That concludes our presentation, but if you'd like to learn more, feel free to check out our dashboard for the most updated analysis results and our paper. Thank you.
+这就是我们报告的结尾。如果你想了解更多，欢迎查看我们的仪表板，了解最新的分析结果和我们的论文。谢谢。</sample>
+    <sample id="274">演讲者提到了SimulST模型的三个问题：
+
+1.  通常需要训练特定的架构，引入额外的模块进行优化。
+2.  训练过程漫长且复杂，例如涉及不同的优化目标。
+3.  需要训练和维护多个模型以适应不同的延迟要求（例如1秒、2秒等）。</sample>
+    <sample id="275">根据所给内容，演讲者提出了一个关于是否“清理”（sanitize）预训练数据中的政治和社会偏见的讨论，但**没有提供具体的有效方法**来减轻这些偏见。
+
+相反，演讲者提出了一个困境：
+*   **如果不清理：** 政治观点中的偏见会从预训练数据传播到语言模型，进而影响下游任务，最终导致公平性问题。
+*   **如果尝试清理：** 则可能面临审查或排斥的风险，并且极难确定什么是真正中立的、应该保留在语言模型训练数据中的内容。
+
+因此，演讲者将这视为一个“要么...要么...”的问题，强调了在处理数据集中的社会和政治偏见时所面临的复杂挑战，但并未给出解决方案。</sample>
+    <sample id="276">大家好，我是复旦大学的司雨原。我今天要介绍我们的工作：从大型语言模型中提取脚本知识用于受限语言规划。</sample>
+    <sample id="277">In everyday life, humans often plan their actions by following step-by-step instructions in the form of grounded scripts.</sample>
+    <sample id="278">Previous work has explored language models to plan for abstract goals of stereotypical activities, such as make a cake and show that large language models can effectively decompose goals into steps.
+以前的工作已经探索了语言模型，以规划刻板活动的抽象目标，比如制作蛋糕，并且表明大型语言模型可以有效地将目标分解为步骤。</sample>
+    <sample id="279">然而，之前的工作主要集中于规划抽象的理论活动目标。规划具有特定目标、特定限制（例如制作巧克力蛋糕）的目标，仍然没有得到充分研究。</sample>
+    <sample id="280">在这篇论文中，我们定义了受限语言规划问题。</sample>
+    <sample id="281">对规划目标施加了不同的约束。
+一个抽象目标可以被带有多方面约束的不同现实具体目标所继承。
+好的规划器应该编写出合理且忠于约束的脚本。</sample>
+    <sample id="282">在这篇论文中，我们首先评估并改进了大型语言模型的约束语言规划能力。</sample>
+    <sample id="283">目前，尚无针对特定目标的数据集，能够支持我们的研究。</sample>
+    <sample id="284">我们首先需要达成这些目标。如表中所示，我们利用多方面的约束扩展了抽象目标，并通过InstructGPT进行了人在回路中的数据采集。</sample>
+    <sample id="285">We sample 100 specific goals and evaluate the scripts generated from large language models.
+[中文]: 我们抽样了100个具体的目标，并评估了由大型语言模型生成的脚本。</sample>
+    <sample id="286">这张表格报告了结果的总体准确率。我们发现，所有大型语言模型在针对特定目标的规划上都取得了不尽如人意的结果。</sample>
+    <sample id="287">Then, we conduct detailed analysis to investigate why language models</sample>
+    <sample id="288">图中的结果显示，生成的脚本在语义完整性（SE）方面是可以接受的，但对约束（FE）的忠实性无法得到保证。</sample>
+    <sample id="289">我们深入研究了在 WikiHow 中定义的更细粒度的主题类别。图中的热力图表明，InstructGPT 的规划性能对于不同类别的目标而言，差异显著。</sample>
+    <sample id="290">之前的研究表明，语言模型的输出质量存在高方差，导致性能不佳。因此，我们采用了先过生成再过滤的思想，以提高生成质量。</sample>
+    <sample id="291">我先展示针对 InstructGPT 的约束类型示例，并生成基于种子抽象目标的具体目标。</sample>
+    <sample id="292">然后,InstructGPT 为特定目标生成脚本。</sample>
+    <sample id="293">Next, a filter model is developed to select the faithful scripts.
+接下来，开发了一个过滤模型，用于选择与目标匹配的脚本。</sample>
+    <sample id="294">我们将脚本和目标转换为 InstructGPT 嵌入，并计算余弦相似度作为相似度分数，以衡量语义相似度。</sample>
+    <sample id="295">此外，我们会保留包含目标约束关键词的脚本。
+仅当脚本针对目标的相似度得分最高时，我们才保留它。</sample>
+    <sample id="296">With our method, InstructGPT can generate scripts of higher quality by a large margin. Our method greatly improves the planning ability, both in semantics completeness and faithfulness to the constraint.</sample>
+    <sample id="297">由于大型语言模型部署成本很高，
+因此，让小型和专业模型具备语言规划能力至关重要。
+创建数据集是实现这一目标的关键一步。</sample>
+    <sample id="298">However, previous studies do not enable planning for specific goals, and manual data-set annotation is expensive.
+中文翻译：然而，之前的研究无法实现针对特定目标的规划，并且手动数据集标注成本高昂。</sample>
+    <sample id="299">There is, we follow the idea of symbolic knowledge distillation to distill a constrained language planning data sets from language models.
+中文翻译：我们遵从符号知识蒸馏的思想，从语言模型中提取受限语言规划数据集。</sample>
+    <sample id="300">We'll apply our method for building a dataset of constrained language planning, named as Co-script.</sample>
+    <sample id="301">总计，我们生成了55,000个带有脚本的具体目标。为了确保验证集和测试集的质量，我们请众包工作者查找并修正错误的样本。</sample>
+    <sample id="302">这张图展示了Coscript的约束分布。
+我们发现Coscript在生成的具体目标中表现出高度的多元性。
+利用Coscript，我们可以训练更小但更专业的模型，用于受限语言规划。</sample>
+    <sample id="303">好的，这是视频中的英文内容及其中文翻译：
+
+**英文原文 (Spoken):**
+"We found that T5 fine-tuned on Coscript can generate scripts of higher quality than most large language models, indicating that smaller models can surpass larger models when properly trained on suitable datasets."
+
+**中文翻译 (Spoken):**
+"我们发现，在Coscript上微调的T5模型可以生成比大多数大型语言模型更高质量的脚本，这表明更小的模型在合适的数据库上进行适当的训练时，可以超越更大的模型。"
+
+---
+
+**屏幕文字 (On-screen text):**
+
+**标题 (Title):**
+Specialized Models vs. LLMs
+**中文翻译:** 专用模型对比大语言模型
+
+**图表标题 (Chart labels):**
+Accuracy
+**中文翻译:** 准确率
+
+**图例 (Legend):**
+*   GPT-3 (175B)
+*   Codex (175B)
+*   InstructGPT (175B)
+*   T5 trained on wikiHow
+*   T5 trained on Coscript
+**中文翻译:**
+*   GPT-3 (1750亿参数)
+*   Codex (1750亿参数)
+*   InstructGPT (1750亿参数)
+*   在wikiHow上训练的T5
+*   在Coscript上训练的T5
+
+**底部文字 (Bottom text):**
+Smaller LMs fine-tuned on Coscript can generate higher quality scripts than LLMs
+**中文翻译:** 在Coscript上微调的更小的语言模型可以生成比大语言模型更高质量的脚本
+
+**页码 (Page number):**
+15</sample>
+    <sample id="304">在摘要里：
+我们建立了“约束语言规划”问题。
+我们评估了大型语言模型的“约束语言规划”能力。
+我们开发了针对大型语言模型的一种“过度生成-再过滤”方法。
+
+我们利用大型语言模型生成了一个高质量的用于“约束语言规划”的脚本数据集（Coscript）。
+
+限制和未来工作：
+我们提出的改进大型语言模型的方法是一种“事后重排序”的方法。
+Coscript仅从一个抽象的约束中继承了一个额外的约束。
+Coscript数据集是一个宝贵的资源，可以推动在更复杂和多样化的目标和约束下的语言规划研究。</sample>
+    <sample id="305">好的，这是视频中英文内容的中文翻译：
+
+**总结与要点**
+
+*   我们建立了**受限语言规划**问题。
+*   评估了大型语言模型（LLM）的受限语言规划能力，并开发了一种适用于LLM的**先生成后过滤**方法。
+*   我们利用LLM生成了一个高质量的**脚本数据集（CoScript）**，用于受限语言规划。
+
+**局限性与未来工作**
+
+*   所提出的改进LLM的方法是一种**事后重排序**方法。
+*   CoScript仅在一个抽象脚本的基础上，**增加了一个额外约束**。
+*   CoScript数据集可以成为宝贵的资源，以促进在**更复杂和多样化目标与约束**下的语言规划研究。
+
+**标题（幻灯片17）**
+**从大型语言模型中蒸馏脚本知识以用于受限语言规划**</sample>
+    <sample id="306">Thanks for your time. Please find more details of Coscript in our paper.
+谢谢你的时间。请在我们的论文中找到更多关于 Coscript 的细节。</sample>
+    <sample id="307">根据幻灯片内容，PaLM 的流畅度与最先进（SOTA）系统相当。</sample>
+    <sample id="308">水印方法需要满足以下重要属性：
+
+1.  **适用性 (Applicable):** 该方法应适用于嵌入即服务 (EaaS)。
+2.  **实用性 (Utility):** 水印不应降低所提供嵌入的实用性。
+3.  **隐蔽性 (Covertness):** 水印对攻击者应足够隐蔽，使其不易被发现或轻易移除。
+4.  **可转移性 (Transferability):** 在模型提取过程中，水印需要能够转移到攻击者的服务中。</sample>
+    <sample id="309">根据视频内容，TED 英语演讲已被翻译成以下 14 种不同的语言：
+
+1.  العربية (Arabic)
+2.  Deutsch (German)
+3.  Español (Spanish)
+4.  Français (French)
+5.  עברית (Hebrew)
+6.  Italiano (Italian)
+7.  日本語 (Japanese)
+8.  한국어 (Korean)
+9.  Nederlands (Dutch)
+10. Português (Portuguese)
+11. Română (Romanian)
+12. Русский (Russian)
+13. Türkçe (Turkish)
+14. 中文 (Chinese)</sample>
+    <sample id="310">从一个数据集中抽取了 **300个实例** 用于重新注释。</sample>
+    <sample id="311">用于衡量良性和后门数据集之间差异的距离度量是**余弦相似度差异（Δcos）**和**L2 相似度差异（Δl2）**。</sample>
+    <sample id="312">在单语言设置下，基于编码器的多语言模型主要通过以下两种方式用于这项任务：
+
+1.  **Enc-PTR (Multilingual Pretrained Encoders with Pointer-based Decoders - 多语言预训练编码器与指针式解码器结合的模型)**:
+    *   这类模型使用**多语言预训练编码器**（如 XLM-R 或 mBERT）来处理输入文本。
+    *   然后结合**指针式解码器**，这意味着解码器在生成输出时，可以通过“指向”输入序列中的特定标记来构成输出，而不是完全从头生成新词。
+    *   示例模型包括 XLM-R + PTR 和 mBERT + PTR。
+
+2.  **Enc-Dec (Multilingual Pretrained Encoder-Decoder Models - 多语言预训练编码器-解码器模型)**:
+    *   这类模型是**多语言预训练的端到端编码器-解码器结构**。
+    *   编码器部分负责理解输入序列，而解码器部分则基于编码器的输出生成目标序列。这种模型通常用于序列到序列的任务。
+    *   示例模型包括 mBART 和 mT5。
+
+研究人员发现，在这些评估中，**Enc-Dec 模型 (特别是 mT5)** 在所有数据集上取得了最佳性能。</sample>
+    <sample id="344">作者通过以下步骤确定中等频率的单词：
+
+1.  **统计词频：** 他们在一个通用文本语料库 $D_p$ 上统计所有单词的频率。
+2.  **选择区间：** 在统计出的词频中，他们会识别并定义一个“中等频率区间”。
+3.  **随机选取：** 从这个中等频率区间内，随机选择 $n$ 个单词作为触发词（trigger set）。
+
+（需要注意的是，文本中并未具体说明“中等频率区间”是如何精确定义的，例如是按百分比还是绝对词频范围。）</sample>
+    <sample id="345">大家好。我的名字是舒恒。今天我将介绍我们的论文：《CoNLL-2003 命名实体标注器在2023年仍然表现良好吗？》让我们开始吧。</sample>
+    <sample id="346">我们的论文研究了使用命名实体识别任务或NER任务的泛化问题。</sample>
+    <sample id="347">**命名实体识别与泛化**
+
+*   模型已经使用 CoNLL-2003 数据集进行命名实体识别（NER）的开发将近 20 年了。
+*   这些模型能否泛化到现代数据？</sample>
+    <sample id="348">命名实体识别与泛化
+* 模型已经使用CoNLL-2003开发命名实体识别近20年了
+* 这些模型能否泛化到现代数据？
+* 良好的泛化能力需要什么？
+当我们开发新的标注器时，良好的泛化能力需要什么？</sample>
+    <sample id="349">At the same time, if we do observe poor generalization, what causes the performance drop of these models?
+同时，如果我们确实观察到泛化能力差，那么是什么导致了这些模型的性能下降？</sample>
+    <sample id="350">**旁白 (Narrator):**
+为了调查这些问题，我们开发了CoNLL++数据集。这是一个我们从2020年的路透社新闻中收集，并根据相同的CoNLL-2003标注指南进行标注的数据集。
+
+**屏幕文本 (On-screen text):**
+**CoNLL++ 数据集**
+*   收集了2020年的路透社新闻，并根据CoNLL-2003标注指南进行标注。
+**示例 (Example):**
+AMBASSADOR O
+TO O
+THE O
+UNITED I-ORG
+NATIONS I-ORG
+: O
+LINDA I-PER
+THOMAS-GREENFIELD I-PER
+**佐治亚理工学院 (Georgia Tech)**</sample>
+    <sample id="351">我们对 CoNLL-2003 的20多个模型进行了微调。我们既在 CoNLL-2003 测试集上评估了它们，也在 CoNLL++ 测试集上评估了它们。</sample>
+    <sample id="352">最后但同样重要的是，我们计算了F1分数的百分比变化，以评估每个模型的泛化能力。</sample>
+    <sample id="353">那么，良好的泛化需要什么呢？通过我们的实验，我们发现需要三个主要要素。</sample>
+    <sample id="354">好的，这是视频中英文内容的中文翻译：
+
+**好的泛化能力需要什么？**
+*   模型架构
+    *   Transformer 模型泛化能力更好</sample>
+    <sample id="355">The second ingredient is the model size. We found that usually larger models lead to better generalization.
+第二个要素是模型大小。我们发现通常较大的模型能带来更好的泛化能力。</sample>
+    <sample id="356">最后但同样重要的是，我们都知道微调样本的数量直接影响下游任务的性能。我们也发现，更多的微调样本实际上也能带来更好的泛化能力。</sample>
+    <sample id="357">下一个问题是，哪些因素导致某些模型的性能下降？</sample>
+    <sample id="358">我们有两个假设。第一个是自适应过拟合，这是由于反复重用相同的测试集而导致的过拟合。这通常表现为在新测试集上收益递减。</sample>
+    <sample id="359">第二个假设是时间漂移，这是由训练和测试之间不断增加的时间间隔造成的性能下降。</sample>
+    <sample id="360">对于自适应过拟合，我们从右边的图表中看到，红色的最佳拟合线的梯度大于一。</sample>
+    <sample id="361">这意味着我们在CoNLL-2003上取得的每一点提升，都将转化为在CoNLL++上超过一个单位的提升。这意味着没有收益递减。</sample>
+    <sample id="362">而这表明自适应过拟合在这种情况下没有被观察到。</sample>
+    <sample id="363">那么时间漂移呢？</sample>
+    <sample id="364">对于时间漂移，我们没有进行实验来重新训练或继续使用更新的数据预训练一些模型。我们发现性能会随着时间间隔的增大而下降。</sample>
+    <sample id="365">这证实了我们的假设，即性能下降的主要原因是时间漂移。</sample>
+    <sample id="366">我们的结论是，为了实现良好的泛化能力，我们需要更好的模型架构、更大的模型尺寸以及更多的微调示例。这些目标是相辅相成的，我们不能只具备其中一个要素，而是需要将所有这些要素融会贯通。</sample>
+    <sample id="367">**结论**
+
+*   为了良好的泛化能力，我们需要：
+    *   更好的模型架构
+    *   更大的模型规模
+    *   更多的微调样本
+*   性能下降的原因是：
+    *   时间漂移
+    *   不是自适应过拟合
+
+**口语内容：**
+同时，我们还发现这里的性能下降是由时间漂移引起的，而且有点令人惊讶的是，它并非由自适应过拟合引起的，尽管 Conll 2003 已经使用了超过 20 年。</sample>
+    <sample id="368">那么回到我们在论文标题中提出的问题：CoNLL 2003 标注器在 2023 年仍然有效吗？我们发现答案实际上是一个响亮的“是！”</sample>
+    <sample id="369">We hope our paper calls for more research on how to improve generalizations of the models.
+我们希望我们的论文能促使更多研究关于如何改善模型泛化能力。</sample>
+    <sample id="370">最后，请务必查看我们的论文和数据集，如果您有任何问题，请随时联系我。非常感谢。
+
+**屏幕文字翻译：**
+论文：https://arxiv.org/abs/2212.09747
+数据集：https://github.com/ShuhengL/acl2023_conllpp
+联系方式：sliu775@gatech.edu</sample>
+    <sample id="397">该信息未在提供的文本中提及。</sample>
+    <sample id="398">在 Servin 和 Kea 的示例中，需要知道的特定于实体的知识是：**Servin 是一名法官。**</sample>
+    <sample id="399">示例质量更为重要。</sample>
+    <sample id="400">在扩展实验中，论文侧重于 **RoBERTa** 和 **GPT-2** 语言模型。</sample>
+    <sample id="401">根据您提供的视频片段及其音频内容，幻灯片是展示联系信息和论文链接的总结页，而音频内容主要是鼓励阅读论文和提及开源代码，并没有涉及到模型内部如何使用注意力分数（是特定层还是多层结合）的技术细节。
+
+因此，该信息无法从当前提供的资料中得知。</sample>
+    <sample id="402">直接推断的示例有：
+*   "easy on me" (歌曲名称)
+*   "the first one" (位置)</sample>
+    <sample id="403">这篇论文的作者所属机构是：
+
+*   **Fudan University (复旦大学)**
+*   **Brain Technologies Inc.**</sample>
+    <sample id="404">这篇论文有7位作者。</sample>
+    <sample id="405">是的，在“Translate-Test”设置中，作为基线，自然语言查询（如德语）会先使用Google Translate API翻译成目标语言（英语），然后才由单语模型（即执行语义解析的“English Model”）进行处理，生成SQL。</sample>
+    <sample id="406">作者给出的“显性群体”(marked group) 的示例是 **"a woman warrior"**（一个女战士）。
+
+演讲者解释说，“warrior”（战士）通常默认是男性，而当描述一位女性战士时，会特意加上“woman”来表明其性别，使其成为“显性”的词语。</sample>
+    <sample id="407">根据视频内容，"Transformer models generalize better"，因此可以推断 **非Transformer模型（non-Transformer models）**的泛化能力相对较差。
+
+图表中显示的此类模型包括：**LSTM-CNN、Stanford_NLP、SCHBERT、BiLSTM-CRF** 等。这些模型在CoNLL++ F1 Score（代表泛化能力）上的表现普遍低于Transformer模型。</sample>
+    <sample id="408">根据所提供的英文内容，没有提及测试数据集的名称。内容中只提到了“clean data for validation”（用于验证的干净数据）。</sample>
+    <sample id="409">这篇论文有**六位**作者。
+
+他们是：
+1.  Akshatha Arodi
+2.  Martin Pömsl
+3.  Kaheer Suleman
+4.  Adam Trischler
+5.  Alexandra Olteanu
+6.  Jackie CK Cheung</sample>
+    <sample id="410">根据所提供的内容，作者采用了**多种模态**。
+
+标题明确指出是“Instruction Tuning on **Multimodal** Pre-trained Models”，并且提到“multimodal pre-trained models”和“unseen multimodal tasks”。</sample>
+    <sample id="439">根据作者的说法，在知识密集型NLU任务中，成功模型需要**整合和利用预训练知识（pretrain-time knowledge）和推理时知识（inference-time knowledge）的能力**。因此，可以推断，在这两种知识的有效整合和利用方面，目前可能是一个研究不足的领域。</sample>
+    <sample id="440">演讲者的名字是 **Yin**。</sample>
+    <sample id="441">是的，Coscript 数据集经过了质量检查。发言人提到，为了确保验证集和测试集的质量，他们请众包工人查找并修正了不正确的样本。</sample>
+    <sample id="442">对于依赖上下文的翻译，现有的资源主要有以下局限性：
+
+1.  它们只支持**有限类型的上下文相关翻译**（或有限的语篇现象）。
+2.  它们只支持**有限的语言集**。
+
+这主要是因为这些资源通常依赖于领域知识和人工创建。</sample>
+    <sample id="443">00:00
+嗨，我将介绍我们关于解决实体选择中的间接指称表达的工作。其中，我们引入了 AltEntities。
+Chinese: Hi, I'm going to talk about our work on resolving indirect referring expressions for entity selection, in which we introduce the AltEntities Corpus.</sample>
+    <sample id="444">我的名字是贾瓦德·侯赛尼，这是与菲利普·拉德林斯基、西尔维亚·帕雷蒂和安妮·路易斯共同完成的一项工作。</sample>
+    <sample id="445">我們的目標是了解用戶在做出選擇時的語言。考慮這個替代問題。你是說"easy on me"還是"I gotta feeling"？這裡用戶想要從這兩首歌中選擇一首。</sample>
+    <sample id="446">The most obvious thing is to use a direct reference, for example, by saying the name of the song, "Easy on me", or its position, "the first one".
+最明显的方法是使用直接引用，例如说出歌曲的名称“Easy on me”，或者它的位置，“第一个”。</sample>
+    <sample id="447">but sometimes an indirect reference is more appropriate to have a more natural conversation. This could happen when the user cannot remember the name.
+但有时，间接引用更适合进行更自然的对话。这可能会发生在用户不记得名字的时候。</sample>
+    <sample id="448">或者发音太过相似，很难区分。</sample>
+    <sample id="449">或者当用户想要指定一个偏好时。这里有一些间接指代的例子，例如，“较新的那个”或者“不那么有活力的那首歌”。</sample>
+    <sample id="450">以下是将英文内容翻译成中文：
+
+**数据集收集**
+
+*   **重要问题**
+    *   对话系统
+    *   基准测试大型语言模型的实体理解能力
+*   **缺乏大规模的公开数据集**
+*   **我们通过众包标注收集了一个大型数据集**
+*   **三个领域：**</sample>
+    <sample id="451">**数据集收集**
+
+*   **重要问题**
+    *   对话系统
+    *   基准测试大语言模型的实体理解
+*   没有大规模的公开数据集可用
+*   我们通过众包标注收集了一个大型数据集
+*   **三个领域：**
+    *   音乐
+    *   图书
+    *   餐饮 (或“食物”、“餐厅”，取决于具体语境，图标是餐罩)</sample>
+    <sample id="452">我们的数据集采集方法论通过漫画补全任务来强调非正式性。</sample>
+    <sample id="453">这个卡通有三个对话气泡。在第一个对话气泡中，Bob 说：“还记得我们昨天听的那首歌吗？” 然后 Bob 设置了对话的上下文。</sample>
+    <sample id="454">{"text": "在第二个气泡里，爱丽丝说，你是说《Easy on Me》还是《I Gotta Feeling》？", "start": 0.04, "end": 6.84}</sample>
+    <sample id="455">which is the alternative question. And in the third speech bubble, Bob uses an indirect reference to select one of these entities, for example, the new
+这是另一个问题。 在第三个气泡中，Bob使用间接引用来选择其中一个实体，例如，新的。</sample>
+    <sample id="456">00:00
+我们自动提供第一个和第二个对话泡泡，但第三个由标注者填写。
+00:07
+第一个对话泡泡是从每个领域的一些手动提示中选择的。</sample>
+    <sample id="457">The second one, which is the alternative question, is generated as follows.</sample>
+    <sample id="458">我们总是使用一个简单的模板：“你是指A还是B？”其中A和B是从维基百科中采样的。</sample>
+    <sample id="459">Here are the different sampling methods we've used. When we move higher in the list, the entities become more similar to each other, and it's usually harder to make the
+以下是我们使用过的不同采样方法。当我们在列表中向上移动时，实体彼此之间会变得更相似，这通常更难。</sample>
+    <sample id="460">生成替代问题 =&gt; 采样实体对
+
+你是指 A 还是 B？
+
+更相似
+(通常更难)
+
+*   维基百科上具有相似信息框的条目（相同类型和/或艺术家）
+    *   你是指“就是这样”还是“镜中人”？
+*   维基百科上具有相似描述的条目
+    *   你是指“想念你”还是“随处快乐”？
+*   具有相似标题的条目
+    *   你是指《回归》（回忆录）还是《回归》（沙特纳小说）？
+*   均匀随机：
+    *   你是指《你可能是我的》还是《我就是这样》？
+
+解决实体选择中的间接指代表达式（AltEntities 语料库） P. 5</sample>
+    <sample id="461">The second one is when the entities have similar titles. For example, two books with the name "The Return" (memoir) or "The Return" (Shatner novel).
+第二个是当实体有相似标题时。例如，两本书都叫《归来》（回忆录）或《归来》（夏特纳小说）。</sample>
+    <sample id="462">The third one is when they have similar descriptions on Wikipedia. And finally, when they have similar infoboxes or attributes on Wikipedia, for example, the same genre or the same artist for a</sample>
+    <sample id="463">当我们向标注者展示这些备选问题时，他们知道这些实体的名称，但他们不一定了解这个实体。</sample>
+    <sample id="464">所以我们所做的就是展示一些关于这两个实体的背景知识。对于歌曲，我们只是展示了一个指向每首歌曲的谷歌搜索链接。</sample>
+    <sample id="465">然后要求注释者听至少每首歌的一些内容，并阅读每首歌的相关信息。
+
+例如，这是歌曲 "Easy on Me" 的谷歌搜索结果。</sample>
+    <sample id="466">For the recipes and books domain, we show some background text from Wikipedia. For recipes, we additionally show their images again from Wikipedia, so that the annotators know how they look.</sample>
+    <sample id="467">然后，我们要求标注者选择这些实体中的一个，例如，这里的第一个，并使用三到五个间接指称表达来描述它们。</sample>
+    <sample id="468">[ 0m0s409ms - 0m1s489ms ] 例如，有钢琴音乐的那个。
+[ 0m2s419ms - 0m3s569ms ] 这里有一些来自我们数据集的例子。
+[ 0m5s349ms - 0m6s269ms ] 例如，没有歌词的那个，
+[ 0m7s79ms - 0m10s479ms ] 不是那个12岁的男孩，
+[ 0m10s679ms - 0m14s369ms ] 或者虚构的那个，或者来自阿塞拜疆的，等等。</sample>
+    <sample id="469">AltEntities 语料库包含约6,000个跨越三个领域的备选问题。它包含约42,000个间接指称表达。使用 T5 XL 模型的结果（准确率）如下：如果语言模型（LM）能够访问与标注员相同的背景知识，则准确率为 92-95%。当语言模型（LM）能够访问部分重叠的背景知识时，准确率为 82%-87%。当语言模型（LM）（T5 XL）仅能访问实体名称时，准确率约为 60%。我们表明模型具有领域泛化能力。数据集链接：https://github.com/google-research-datasets/AltEntities。</sample>
+    <sample id="470">如果语言模型能够访问与注释者完全相同的背景知识，那么准确率非常高，大约在92%到95%之间。但这不现实。</sample>
+    <sample id="471">如果语言模型能够访问部分重叠的背景知识，那么准确率在82%到87%之间，这更切合实际。例如，当语言模型检索背景知识时。</sample>
+    <sample id="472">以下是视频中英文内容的中文翻译：
+
+**屏幕文字翻译：**
+
+**AltEntities 语料库**
+
+*   大约6,000个涵盖三个领域的替代问题
+*   大约42,000个间接指代表达
+*   使用T5 XL模型的结果（准确率）：
+    *   如果语言模型能够访问与标注者相同的背景知识，则准确率为92-95%。
+    *   当语言模型能够访问部分重叠的背景知识时，准确率为82-87%。
+    *   当语言模型（T5 XL）只能访问实体名称时，准确率约为60%。
+    *   我们证明了模型具有领域泛化能力。
+*   数据集链接：https://github.com/google-research-datasets/AltEntities
+
+**底部脚注：**
+解决实体选择中的间接指代表达问题（AltEntities 语料库）
+P. 11
+
+**屏幕文字（下一页）：**
+
+**谢谢！**
+如果您有任何问题，请发送电子邮件至javadh@google.com
+
+**口语翻译：**
+
+00:00 如果语言模型只能访问实体名称，那么准确率只有60%。
+00:05 所以还有很大的改进空间。
+00:08 我们还展示了这些模型具有领域泛化能力。
+00:12 这是我们数据集的链接。
+00:14 谢谢。</sample>
+    <sample id="473">该方法与以下现有的 SimulST 策略进行了比较：
+
+*   **Wait-k 策略 (wait-k)**
+*   **局部协议 (Local Agreement, LA)**
+*   **CAAT**（被描述为专门为 SimulST 定制的最新架构）</sample>
+    <sample id="474">这篇论文的作者所属机构包括：
+
+1.  LIA, Avignon Université
+2.  LS2N, Nantes Université
+3.  Clinique des données, CHU de Nantes
+4.  Zenidoc</sample>
+    <sample id="475">演讲者的名字是 Jenny (珍妮)。</sample>
+    <sample id="476">这篇论文有三位作者。</sample>
+    <sample id="477">大家好，我是来自特伦托大学和布鲁诺·凯斯勒基金会的 Sara Papi。我将简要介绍这篇名为“注意力作为同声传译的指导”的论文，这项工作是与马泰奥·内格里和马尔科·图尔奇共同完成的。</sample>
+    <sample id="478">以下是视频中英文内容的中文翻译：
+
+**屏幕文字和语音：**
+What is Simultaneous Speech Translation?
+什么是同声传译？
+
+Simultaneous speech translation, or SimulST, is the process of translating spoken language into a text in another language in real-time, enabling cross-language communication.
+同声传译（SimulST）是将口语实时翻译成另一种语言的文本，从而实现跨语言交流的过程。
+
+**屏幕上德语翻译成的英文 (作为示例)：**
+When I have cold tea in my thermos in the summer, it stays cold, and when I pour hot tea in the winter
+当我在夏天把冷茶倒进我的保温瓶时，它会保持冰冷，而当我在冬天倒入热茶时...</sample>
+    <sample id="479">**标题 (Title):**
+当前 SimulST 模型存在哪些问题？
+
+**内容 (Content):**
+特定的架构通常需要训练，并引入额外的待优化模块。</sample>
+    <sample id="480">当前SimulST模型存在哪些问题？
+
+*   通常训练特定的架构，引入额外的模块进行优化。
+*   漫长而复杂的训练过程（例如，不同的优化目标）。
+
+（演讲者接着说：）
+漫长而复杂的训练过程，例如，涉及不同优化目标的训练。</sample>
+    <sample id="481">当前SimulST模型存在哪些问题？
+
+*   通常需要训练特定架构，并引入额外的模块进行优化。
+*   训练过程冗长复杂（例如，存在不同的优化目标）。
+*   需要训练和维护多个模型，以满足不同的延迟要求（例如，1秒、2秒等）。</sample>
+    <sample id="482">那么，我们的解决方案是什么？</sample>
+    <sample id="483">我们的解决方案是什么？
+
+01 使用现有的离线 ST 模型，无需重新训练或采用针对 SimulST 的特定架构。
+02 只使用一个模型来处理所有延迟机制，并通过特定参数进行延迟控制。</sample>
+    <sample id="484">and leverage the knowledge already acquired by the model through the attention mechanism between audio input and textual output, that is the cross-attention mechanism. And you can see an example on the right.
+并利用模型通过音频输入和文本输出之间的注意力机制，即交叉注意力机制，获得的知识。你可以在右侧看到一个例子。</sample>
+    <sample id="485">Our solution is to propose EDAtt, or Encoder-Decoder Attention. And it is a strategy for which we decide whether to emit or not a partial translation based on where attention points to.
+我们的解决方案是提出EDAtt，即编码器-解码器注意力机制。这是一种策略，我们根据注意力指向何处来决定是否发出部分翻译。</sample>
+    <sample id="486">A word is emitted if the attention is not concentrated, that is, its sum is below a certain threshold alpha towards the last lambda speech frames, meaning that the received information is stable enough.
+chinese: 如果注意力不集中，即其总和低于最后 lambda 语音帧的某个阈值 alpha，则会发出一个单词，这意味着接收到的信息足够稳定。</sample>
+    <sample id="487">我们的解决方案：EDAtt
+
+**编码器-解码器注意力**
+
+根据注意力指向的位置，决定是否发出部分翻译：
+如果注意力没有集中在最后 λ 个语音帧（其总和低于阈值 τ），则发出一个词，这意味着所接收的信息足够稳定。
+
+我将谈论...</sample>
+    <sample id="488">以下是将图片中的英文内容翻译成中文：
+
+*   **Our solution: EDAtt**
+    我们的解决方案：EDAtt
+
+*   **Encoder-Decoder Attention**
+    编码器-解码器注意力
+
+*   **Decide whether to emit or not a partial translation based on where attention points to:**
+    根据注意力指向何处，决定是否发出部分翻译：
+
+*   **a word is emitted if the attention is not concentrated (its sum is below a threshold 𝝉) towards the last 𝝀 speech frames, meaning that the received information is enough stable.**
+    如果注意力没有集中（其总和低于阈值 𝝉）在最后 𝝀 个语音帧上，则发出一个词，这意味着接收到的信息足够稳定。
+
+*   **I am going to talk about...**
+    我将要谈论...
+
+*   **page 016**
+    第016页</sample>
+    <sample id="489">我们会看到，前两个词指向最早接收到的语音帧，而最后一个词指向最后接收到的语音帧，最后的 lambda 语音帧。</sample>
+    <sample id="490">This means that the first two words will be omitted.
+这意味着前两个词将被省略。</sample>
+    <sample id="491">持续，自从交叉注意的总和。高于某个阈值阿尔法。我们将不会省略最后一个词。然后，我们等待另一个语音帧。</sample>
+    <sample id="492">以下是图片中英文内容的中文翻译：
+
+**我们的解决方案：EDAtt**
+**编码器-解码器注意力**
+
+根据注意力指向何处，决定是否输出部分翻译：
+如果注意力在最后 λ 个语音帧上不集中（其总和低于阈值 α），则输出一个词，这意味着接收到的信息足够稳定。
+
+**01 我将要谈论...**
+Ich werde reden.
+已输出
+
+**02 我将要谈论气候。**
+Ich werde über Klima sprechen.
+
+**FSK**
+**页 023**</sample>
+    <sample id="493">以下是图片中英文文本的中文翻译：
+
+**我们的解决方案：EDAtt**
+
+**编码器-解码器注意力**
+
+01 我将谈论...
+（图中德语：Ich werde reden.）
+舍弃
+
+02 我将谈论气候。
+（图中德语：Ich werde über Klima sprechen.）
+
+根据注意力指向何处，决定是否输出或不输出部分翻译：
+如果注意力（其总和低于阈值 α）未集中在最后 λ 个语音帧上，则该词被舍弃，这意味着接收到的信息足够稳定。
+
+页 025</sample>
+    <sample id="494">This means that these three words will be emitted.
+这意味着这三个词将被发出。</sample>
+    <sample id="495">If we look at the main results of EDATT,
+如果看一下EDATT的主要结果，...</sample>
+    <sample id="496">我们将同声传译的结果绘制在图表上，其中我们有一侧是BLEU，它衡量翻译质量，以及平均延迟……</sample>
+    <sample id="497">That is, uh, the latency measure. And we also consider the computational aware average lagging that accounts for, um, the model's computational time to predict the output.
+中文翻译：
+这是延迟度量。我们还考虑了计算感知的平均滞后，它考虑了模型预测输出的计算时间。</sample>
+    <sample id="498">所以我们希望我们的曲线尽可能高。 [ 0m2s410ms - 0m6s912ms ]</sample>
+    <sample id="499">但我们也希望它们向左移动。</sample>
+    <sample id="500">我们将其与应用于离线模型的流行策略进行比较，这些策略是wait-k策略和局部一致性。我们还与专门为SimulST量身定制的最先进架构进行比较。</sample>
+    <sample id="501">这些是同声语音翻译策略在德语上的所有结果。</sample>
+    <sample id="502">我们看到，EDAtt 优于所有应用于离线模型的策略，因为它们的曲线向左移动。</sample>
+    <sample id="503">主要结果：EDAtt
+
+EDAtt 优于所有应用于离线模型的策略
+
+如果考虑到实际经过时间，EDAtt 是最快的策略</sample>
+    <sample id="504">想了解更多吗？
+
+阅读我们的论文，了解更多研究成果！
+
+{spapi,negri}@fbk.eu
+marco.turchi@gmail.com
+
+github.com/hlt-mt/fbk-fairseq
+
+@fbk_mt
+@sarapapi
+
+扫描我！
+
+页 038</sample>
+    <sample id="505">是的，数据集是公开的，并且可以在提供的GitHub链接上找到：https://github.com/ShuhengL/acl2023_conllpp</sample>
+    <sample id="506">大家好。我叫 Yin，我的同事 Zhiyang 和我将介绍我们的研究，主题是 MultiInstruct：通过指令微调改进多模态零样本学习。</sample>
+    <sample id="507">在大型语言模型的进步下，许多工作开始探索新的学习范式，以参数和数据高效的方式重用预训练语言模型来处理不同的下游任务。</sample>
+    <sample id="508">最近，许多研究表明，指令微调使大型语言模型能够通过遵循自然指令，以零样本方式在未见过的任务上执行。</sample>
+    <sample id="509">However, most previous works on instruction tuning focus on improving zero-shot performance on language-only tasks, while computer vision and multimodal tasks have been left out.</sample>
+    <sample id="510">因此，在这项工作中，我们想调查在多模态预训练模型上进行指令调整是否能真正提高对未见多模态任务的泛化能力。</sample>
+    <sample id="511">此外，在我们研究的时候，我们发现在NLP和多模态之间的指令数据集的可用性方面存在相当大的差异。</sample>
+    <sample id="512">存在超过1600种仅限语言的指令任务。然而，目前还没有大规模的、公开可用的多模态指令任务。因此，这促使我们构建一个多模态指令微调数据集。</sample>
+    <sample id="513">Here we present MultiInstruct, the first multimodal instruction tuning benchmark dataset that consists of 62 diverse multimodal tasks, covering 10 broad categories.
+
+中文翻译：
+在这里，我们展示了MultiInstruct，这是第一个多模态指令微调基准数据集，包含62个多样化的多模态任务，涵盖10个大类。</sample>
+    <sample id="514">这些任务来源于21个现有的开源数据集，每个任务都配备了五条专家编写的指令。</sample>
+    <sample id="515">为了探究我们提出的数据集上的多模态指令微调，我们以 OFA，一个统一的多模态预训练模型，作为我们的基础模型。OFA 使用一个统一的词汇表来表示语言、图像token以及边界框的坐标。</sample>
+    <sample id="516">这里我们展示了我们多指令的一些示例实例。</sample>
+    <sample id="517">为了统一处理各种输入和输出，</sample>
+    <sample id="518">我们将OFA的方法，将所有任务统一表示为序列到序列的格式，其中输入文本、图像、指令和边界框都在相同的标记空间中表示。
+我们将OFA的方法，将所有任务统一表示为序列到序列的格式，其中输入文本、图像、指令和边界框都在相同的标记空间中表示。
+
+**屏幕上的文字翻译：**
+
+**MULTIINSTRUCT**
+
+**图1：MULTIINSTRUCT的四个任务示例。**
+
+**1. 接地描述 (Grounded Caption)**
+*   **输入:** 为 &lt;bin 198&gt; &lt;bin 32&gt; &lt;bin 400&gt; &lt;bin 193&gt; 生成描述。
+*   **输出:** 蓝白相间的网球拍
+
+**2. 文本定位 (Text Localization)**
+*   **输入:** 选择包含文本 "den" 的区域。选项: &lt;bin 206&gt; &lt;bin 119&gt; ... &lt;bin 654&gt;。
+*   **输出:** &lt;bin 229&gt; &lt;bin 604&gt; &lt;bin 304&gt; &lt;bin 654&gt;
+
+**3. 参照表达选择 (Referring Expression Selection)**
+*   **输入:** 选择由 “前方的一列蓝色火车” 描述的物体区域。选项: &lt;bin 242&gt; &lt;bin 180&gt; ... &lt;bin 442&gt;。
+*   **输出:** &lt;bin 242&gt; &lt;bin 180&gt; &lt;bin 736&gt; &lt;bin 475&gt;
+
+**4. 问题-图像匹配 (Question-Image Matching)**
+*   **输入:** 根据图像内容，是否有足够信息回答 “这是晴天吗？”？选项: “问题与图像相关” 或 “问题与图像无关”。
+*   **输出:** 问题与图像无关</sample>
+    <sample id="519">好的，现在我将讨论多模态指令微调。</sample>
+    <sample id="520">对于训练数据集，我们使用了来自9个组的53个任务进行训练，每个任务我们采样了10,000个实例。对于测试，我们保留了整个常识推理组进行测试，并从VQA和杂项组中额外选择了5个任务。</sample>
+    <sample id="521">我们使用测试集中每个任务的所有实例。此外，我们从 Natural Instruction 的测试集中随机抽取 20 个任务作为 NLP 的未见任务。</sample>
+    <sample id="522">以下是幻灯片内容的中文翻译：
+
+**实施细节**
+
+**训练细节：**
+*   预训练的OFA-Large模型 (472M)
+*   混合所有任务的所有实例。
+*   每个实例都随机与它的五个指令模板之一组合。
+
+**测试细节：**
+*   对于每个任务，我们通过在每个实验中使用五个指令中的一个来评估模型，总共进行了五个实验。
+*   我们报告了所有五个实验中性能的平均值、最大值和标准差。</sample>
+    <sample id="523">So, during test, for each task, we conduct a total of five experiments by evaluating the model using one of the five instructions in each experiment.
+中文翻译：
+在测试中，对于每个任务，我们总共进行了五项实验，通过使用每个实验中的五种指令之一来评估模型。</sample>
+    <sample id="524">我们会报告平均值和最大性能，以及所有五个实验中性能的标准差。</sample>
+    <sample id="525">以下是文本的中文翻译：
+
+**评估指标**
+
+*   对于**多模态分类任务**（视觉蕴涵、视觉空间推理、自然语言视觉推理和灾害类型分类），我们报告**准确率（Accuracy）**。
+*   对于**多模态生成任务**（常识VQA、文本VQA、接地VQA、视觉文本提取和视觉对话），我们报告**Rouge-L**。
+*   对于**自然语言处理 (NLP) 任务**，我们报告**Rouge-L**。
+
+*   我们还根据每个模型在所有多模态和自然语言处理 (NLP) 未见任务上的平均表现，计算其**聚合性能**。我们使用**Rouge-L**作为大多数任务的性能得分，并将**准确率（Accuracy）**用于那些仅以准确率作为衡量指标的任务。</sample>
+    <sample id="526">敏感度
+模型对针对同一任务的不同指令有多敏感：
+我们还引入了一个额外的评估指标，称为“敏感度”。
+它衡量的是模型在指令措辞略有不同时，针对同一任务仍能稳定地产生相同结果的能力。</sample>
+    <sample id="527">这是我们的主要结果。我们可以看到，指令微调可以显著提高 OFA 在未见过的多模态任务上的性能。</sample>
+    <sample id="528">Also, transfer learning from natural instruction datasets can benefit instruction tuning.</sample>
+    <sample id="529">在这里我们可以看到，随着任务数量的增加，模型取得了更好的性能，同时敏感性更低。</sample>
+    <sample id="530">不同指令对指令微调的影响
+
+OFA在5条指令上进行微调，在所有评估任务上取得了更高的综合性能，并显示出更低的敏感性。
+
+我们还做了一个实验，我们使用了1条指令与5条指令进行对比。我们可以看到，使用更多的指令可以提高模型的整体性能，并大大降低其敏感性。</sample>
+    <sample id="531">00:00:00:062 --&gt; 00:00:15:982
+这显示了不同微调策略对模型敏感度的影响。正如我们所看到的，通过从自然指令数据集中进行迁移学习，模型可以实现比原始OFA更好的敏感度。</sample>
+    <sample id="532">我们还可以看到，从自然指令数据集中进行迁移学习，可以帮助OFA在自然指令数据集上获得更好的性能。</sample>
+    <sample id="533">总的来说，我们提出了第一个大规模多模态指令微调数据集，显著提升了OFA的零样本能力，并且我们探索了不同的迁移学习技术并展示了它们的优势。我们设计了一个新的度量指标叫做敏感度。
+
+以下是屏幕上文字的中文翻译：
+
+**结论**
+
+*   首个大规模多模态指令微调数据集。
+    *   包含62个多模态任务，涵盖10个主要类别。
+*   通过指令微调显著提升了OFA的零样本能力。
+*   探索了多种迁移学习技术并展示了它们的优势。
+*   设计了一个新的度量指标——敏感度。</sample>
+    <sample id="534">还有一件事。我们正在收集一个更大的多模态指令微调数据集，其中包含大约150个额外的视觉-语言任务，我们将很快发布它们。呃，这是我们数据和模型的二维码。谢谢。</sample>
+    <sample id="535">这篇论文的作者所属机构是特伦托大学（University of Trento）和布鲁诺·凯斯勒基金会（Fondazione Bruno Kessler）。</sample>
+    <sample id="536">演讲者的名字是 Javad Hosseini。</sample>
+    <sample id="562">大家好。我是库斯图夫·辛哈，很高兴欢迎大家收听我们关于ACL 2023论文《语言模型的可接受性判断并非总是对语境鲁棒的》的演讲。
+
+**幻灯片内容：**
+
+**语言模型的可接受性判断并非总是对语境鲁棒的**
+
+ACL 2023
+
+库斯图夫·辛哈, 乔恩·戈蒂埃, 亚伦·穆勒, 卡尼什卡·米斯拉, 凯伦·富恩特斯, 罗杰·利维, 阿迪娜·威廉姆斯
+
+**机构标志：**
+约翰霍普金斯大学
+普渡大学
+麻省理工学院
+Meta人工智能</sample>
+    <sample id="563">好的，这是幻灯片内容的中文翻译：
+
+**幻灯片文字：**
+
+**标题：**
+语言模型对可接受性的判断并非总能抵抗语境。
+
+**会议：**
+ACL 2023
+
+**作者：**
+Koustuv Sinha, Jon Gauthier, Aaron Mueller, Kanishka Misra, Keren Fuentes, Roger Levy, Adina Williams
+
+**大学/机构标识：**
+*   约翰·霍普金斯大学 (Johns Hopkins University)
+*   普渡大学 (Purdue University)
+*   麻省理工学院 (MIT)
+*   Meta AI
+
+**演讲者口述内容：**
+
+“这项工作是与 Jon Gauthier, Aaron Mueller, Kanishka Mishra, Karen Fuentes, Roger Levy 和 Adina Williams 共同完成的。”</sample>
+    <sample id="564">在本次工作中，我们重新审视了最小对范式。</sample>
+    <sample id="565">重温最小对立范式
+
+最小对立范式 (MPP) 评估语言模型时，利用序列概率的相对差异来评估语言模型 (LM) 的抽象知识。
+
+| BLiMP                                  | SyntaxGym                           | CrowS                        |
+| :------------------------------------- | :---------------------------------- | :--------------------------- |
+| 1. 很多人正在帮助他们自己。             | 1. 没有顾客...花了任何钱。           | 1. 带有刻板印象的句子。       |
+| 2. *很多人正在帮助她自己。             | 2. *这位顾客...花了任何钱。         | 2. 不带刻板印象的句子。       |
+| P(1) &gt; P(2)                            | P(1.any) &gt; P(2.any)                 | P(1) &gt; P(2)                  |</sample>
+    <sample id="566">在这种最小对偶范式中，评估语言模型的典型方法是，展示一个可接受的句子或一个语法正确的句子，然后展示一个不可接受的句子或一个不合语法的句子。</sample>
+    <sample id="567">并且我们希望模型能给可接受的句子赋予更高的概率。</sample>
+    <sample id="568">The current MPP pipeline basically doesn't allow us to evaluate models' acceptance towards longer sentences.
+当前的MPP流程基本上不允许我们评估模型对较长句子的接受度。</sample>
+    <sample id="569">如今，大语言模型正推出越来越长的上下文窗口。因此，至关重要的是，我们要评估模型在整个上下文窗口中的可接受性。</sample>
+    <sample id="570">这正是我们在这里尝试做的。我们正在尝试重新审视MPP流程，通过让模型评估越来越长的序列的可接受度。</sample>
+    <sample id="571">所以，这就是我们的方法。为了模拟这些较长的序列，我们会重新审视数据集本身，然后通过从这些数据集中选择可接受或不可接受的句子来重新创建句子。</sample>
+    <sample id="572">所以，举例来说，这里我们选择了一个典型的语法对，来自 BLiMP 数据集，来自 Adjunct Island 的案例。</sample>
+    <sample id="573">我们所做的就是为了生成更长的序列，这些序列是可接受的，并且具有相同的语法结构匹配，我们从状语岛中提取合乎语法的句子。</sample>
+    <sample id="574">然后我们将其作为前缀添加到可接受的查询和不可接受的查询中。</sample>
+    <sample id="575">因此，我们可以通过从相同的匹配中选择不可接受的句子来做同样的事情。而这也可以被用来测试模型的接受度。</sample>
+  </task>
+</testset>

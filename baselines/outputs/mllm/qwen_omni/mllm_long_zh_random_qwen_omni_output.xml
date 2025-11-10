@@ -1,0 +1,580 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="long" text_lang="zh">
+    <sample id="0">Language models are trained on large-scale web crawl data.</sample>
+    <sample id="1">McGill University/Mila和Microsoft Research。</sample>
+    <sample id="2">这段英文内容主要介绍了在第61届计算语言学协会年会上，来自蚂蚁集团的研究人员Yi Tu等人展示的关于增强文本布局交互的预训练模型LayoutMask的研究。研究背景是现有的文档理解模型在处理视觉丰富文档时存在阅读顺序问题。研究动机是解决这一问题，提高模型在各种文档类型上的理解能力。研究贡献包括提出了一种多模态预训练模型LayoutMask，使用局部一维位置代替全局一维位置，通过新颖的掩码策略和预训练目标增强文本布局交互。实验结果表明，该模型在不同1D和2D位置组合下，平均F1分数最高，特别是在局部段落和局部词的掩码策略下，表现尤为突出。</sample>
+    <sample id="3">好的，你希望我如何表述呢？是直接翻译还是进行一些调整？</sample>
+    <sample id="4">演讲者的名字是Kayo Yin。</sample>
+    <sample id="5">他们使用 T5 XL 模型获得 82%-87% 的准确率。</sample>
+    <sample id="6">好的，让我用400字概括一下这段英文内容。首先，这段内容主要讨论了多语言和跨语言摘要的研究。研究者提出了一个名为M2MS的模型，它能够在一个单一的模型中处理任何源语言的文档并生成任何目标语言的摘要。他们还进行了初步实验，比较了不同模型在多语言和跨语言摘要任务上的表现。研究中提到了一些关键点，比如M2MS模型在处理不同语言之间的知识转移方面优于其他模型。此外，研究者还提出了一个名为PISCES的预训练模型，它在三个阶段进行预训练，以学习语言建模，跨语言能力和摘要能力。最后，研究者通过WikiLingua数据集和mBART-50模型进行了初步实验，比较了不同模型的表现。总的来说，研究者认为M2MS模型在多语言和跨语言摘要任务中表现更好。</sample>
+    <sample id="7">是的，CoNLL-2003 标注器仍然有效。</sample>
+    <sample id="8">人工评估方法的新颖之处在于它通过明确标注模型响应是否表达某些行为，如回答无关信息或自相矛盾，来减少评估的主观性。</sample>
+    <sample id="9">现有的弱监督方法的成功在很大程度上依赖于干净的验证数据。</sample>
+    <sample id="10">嗯，你可以尝试一些方法来提高分数，比如使用与实体名称相似的实体，或者使用实体的描述，还有使用相似标题的实体。这样可能会有所帮助。如果还有其他问题，随时问我哦。</sample>
+    <sample id="11">The text discusses a research paper on the capabilities of large language models in generating and explaining jokes. It mentions that these models can now generate and explain jokes, as demonstrated by a specific example from ChatGPT. The paper also explores whether these models truly understand humor, using the New Yorker Caption Contest as a benchmark. The contest provides a dataset of cartoons and their captions, which can be used to evaluate the models' performance in tasks such as matching captions to cartoons, quality ranking, and explanation generation. The paper highlights the limitations of these models in understanding humor, as evidenced by their inability to generate a joke involving a pineapple that is considered funny. The paper also mentions the dataset available for the contest, which includes various annotations and descriptions of the cartoons.</sample>
+    <sample id="12">这篇论文有五位作者。</sample>
+    <sample id="13">The presentation discusses the performance of multi-model and early-exit models in adaptive inference, focusing on their speed, accuracy, and the existence of conflicting gradients. The multi-model approach, which uses separate models for different data complexities, is shown to outperform early-exit models by 2.3% on average. However, the gap between the two methods is largest for the earliest classifiers. The SWEET method, which separates weights in early-exit transformers, closes most of the gap between EE and MM methods. Future classifiers' gradients are aligned, suggesting similar goals. The SWEET method motivates further research on fine-tuning algorithms tailored to the early-exit architecture.</sample>
+    <sample id="14">好的，我来帮你翻译一下这段英文内容。</sample>
+    <sample id="15">这篇论文有三位作者。</sample>
+    <sample id="16">The Bible texts are much stronger simplified than, for example, the news texts or the language learner texts.</sample>
+    <sample id="17">这段英文内容主要介绍了关于信息筛选和多模态关系提取的研究。研究者提出了一个框架，用于处理文本和图像数据，通过多模态图来增强关系提取的效果。他们讨论了信息过利用和外部信息利用不足的问题，并提出了解决方案，包括内部信息筛选和外部信息的合理利用。此外，研究还涉及了场景图生成和跨模态图构建，以及如何利用图信息瓶颈原则进行信息筛选和添加。实验结果表明，他们的模型在多个文本和图像数据集上表现最佳，特别是在信息过利用和外部信息利用不足的情况下，LAMO模型比GENE模型表现更好。</sample>
+    <sample id="18">Marge read it yesterday.</sample>
+    <sample id="19">The presentation discusses efficient techniques for existing ODQA systems, focusing on summarizing frameworks for ODQA systems. It highlights the challenges of ODQA tasks, such as how to search evidence fast using approximate nearest neighbor search and how to read fast with skip reading techniques like adaptive computation. The presentation also explores ways to reduce model size, such as using lightweight models like MobileBERT and parameter sharing models like ALBERT. It emphasizes the importance of evaluation metrics and suggests that Retriever-Reader systems are well-balanced among speed, memory, and performance.</sample>
+    <sample id="20">是的，你可以使用这些模型进行研究。</sample>
+    <sample id="21">DEplain-apa 中包含新闻文本。</sample>
+    <sample id="22">更好的模型架构，更大的模型规模，更多的微调示例。</sample>
+    <sample id="23">The video discusses the topic of character-aware models and their ability to improve visual text rendering. It starts with an introduction to the research by Dan Garrette and his team, who have made significant strides in the field of text-to-image modeling. The team has developed a model that can generate high-quality images from text inputs, but they have noticed that these models often struggle with representing text accurately. The video then delves into the specifics of the model, which uses a text encoder to convert input text into a representation that can be used by a diffusion model to generate the final image. The model has been tested on various inputs, such as "G", "DILL", "Coffee", and "Hello", and the results have shown that the model can produce visually appealing images, but there are still some issues with text representation. The video also mentions that the model has been compared to other text-to-image models, such as T5-XXL and PaLM, and that the model has been found to be more effective in certain scenarios. Overall, the video provides a comprehensive overview of the research and its implications for the field of text-to-image modeling.</sample>
+    <sample id="24">通过比较左并列词的字符长度来衡量。</sample>
+    <sample id="25">设计实验时，可以改变支配词的位置，观察不同位置下左连词的长度变化。例如，将支配词放在左连词之前或之后，比较两种情况下左连词的平均长度。通过统计分析，可以确定支配词位置对左连词长度的具体影响。</sample>
+    <sample id="26">The baseline classifier performed not much better than chance on the imbalanced dataset.</sample>
+    <sample id="27">这篇论文有四位作者。</sample>
+    <sample id="28">角色名字是Bob和Alice。</sample>
+    <sample id="29">在正式性，词汇一致性，连贯性和省略等话语现象上，语境感知 MT 模型比语境无关模型更有优势。</sample>
+    <sample id="30">The text discusses a study on ranking candidates using various methods and scoring functions. It mentions the use of three scoring functions: ranking loss, SimCLS, and SummaReranker. The study compares different methods such as MLM-Scoring, SimCLS, SummaReranker, and PairRanker. The results show that PairRanker has the highest Pearson Correlation, Spearman's Correlation, and BARTScore, while PairRanker also has the highest BLEURT and GPT-Rank scores. The study also evaluates the performance of different LLMs using MixInstruct, a benchmark for LLM ensembles. The results indicate that the proposed framework, LLM-BLENDER, largely improves the overall performance of existing LLMs.</sample>
+    <sample id="31">Johns Hopkins University, Purdue University, MIT, Meta AI.</sample>
+    <sample id="33">The framework quantifies stance by comparing annotations to models and datasets via Pearson's R scores.</sample>
+    <sample id="34">这段英文内容主要讨论了CREST-Rationalization的实验和结果。首先，它提到了CREST-Rationalization在IMDB和SNLI上的实验，包括自动和人类评估，100个例子，以及在数据增强方面的表现。接着，它介绍了CREST-Rationalization的可解释性分析，包括数据增强，CREST-Rationalization，CREST-Rationalization的设置，以及CREST-Rationalization的实验。然后，它讨论了如何利用反事实，包括数据增强，CREST-Rationalization，以及CREST-Rationalization的设置。最后，它提到了CREST-Rationalization的结论，包括它在选择性推理和反事实生成之间的桥梁作用，以及它在生成高质量反事实，控制反事实模拟性等方面的表现。</sample>
+    <sample id="36">这段英文内容主要讨论了多语言机器翻译的几个关键点。首先，它提到了多语言机器翻译的优势，包括可扩展性，速度，减少错误传递和低资源改进。然后，它介绍了多语言机器翻译的挑战，如每种语言的容量限制。接着，文章提出了一个目标，即在不影响推理成本的情况下，增加每种语言的容量。为此，他们提出了一种解决方案，即语言特定层（LSLs），并在图中展示了“常规”Transformer层和LSLs之间的区别。最后，文章提到了实验结果，包括在WMT21新闻翻译任务中的表现，以及在Flores-101和COMET上的评估结果。</sample>
+    <sample id="37">研究结果表明，当人类受试者被给予相同的人格化提示时，他们能够揭示种族刻板印象。</sample>
+    <sample id="38">此研究使用了增强版的Penn Treebank数据。</sample>
+    <sample id="39">这篇论文有两位作者。</sample>
+    <sample id="40">Tasks that are closely related to cognitive dissonance include studying the effects of disagreement among people, tracking trends in belief values and attitude changes in populations, and understanding cognitive styles of individuals.</sample>
+    <sample id="41">The content discusses the evaluation of a dialogue system, specifically focusing on the Baseline Dialogue System: P²Bot and the PeaCoK system. The evaluation includes various metrics such as consistency, engagement, and persona expression. The PeaCoK system is shown to improve these metrics compared to the baseline, indicating its effectiveness in enhancing dialogue systems. The presentation also highlights the use of persona-centric commonsense knowledge, which can be reliably trained using PeaCoK, enabling more consistent and engaging narrative modeling.</sample>
+    <sample id="42">这篇论文有两位作者。</sample>
+    <sample id="43">这篇论文有七位作者。</sample>
+    <sample id="44">引入的框架与以前的研究不同，它考虑了设计偏见，而以前的研究主要关注模型的性能。</sample>
+    <sample id="45">GPT-4 PBlack</sample>
+    <sample id="46">The business systems compared are DeepL and Google.</sample>
+    <sample id="47">好的，以下是英文内容的中文表述：
+
+---
+
+### 摘要
+
+摘要部分主要讨论了研究的背景和目的，以及研究的主要发现。研究发现，语言模型在预训练数据中包含了政治偏见，这些偏见在下游任务中导致了不公平的结果。研究还发现，不同来源的新闻和社交媒体对语言模型的政治倾向有显著影响。此外，研究还探讨了不同预训练数据对语言模型政治倾向的影响，并提出了进一步的研究方向。
+
+---
+
+希望这个总结对你有帮助！如果你有其他问题或需要进一步的帮助，请随时告诉我。</sample>
+    <sample id="48">这篇论文有六位作者。</sample>
+    <sample id="49">MPP evaluations covered contexts of up to 900 tokens.</sample>
+    <sample id="50">这段英文内容主要介绍了自动文本简化和对齐评估的方法。首先，它提到了DEPLAIN这个新语料库，用于德语文本简化，包括句子和文档级别的简化。然后，它详细介绍了文本简化的过程，包括词汇替换，子句删除，重排序和单词删除等技术。接着，它介绍了DEPLAIN语料库的特点，如包含不同领域的句子对，以及如何解决现有语料库的问题。此外，它还展示了DEPLAIN语料库在文档和句子级别上的应用，包括文档简化和对齐评估。最后，它提到了一些自动对齐评估的方法，如LHA，Sent-LaBSE等，并强调了DEPLAIN语料库在这些评估中的重要性。</sample>
+    <sample id="51">他们的数据集中包含了音乐，书籍和食谱这三个领域。</sample>
+    <sample id="52">Positionality is simply the perspectives that people hold as a result of their demographics, identity, and life experiences.</sample>
+    <sample id="53">Dawei Zhu.</sample>
+    <sample id="54">The presentation begins with an introduction to the topic of rare class annotation in the context of dissonance detection. The presenter, Vasudha, explains that dissonance is a cognitive dissonance, where two beliefs or actions are inconsistent. An example given is a person who knows cigarettes are harmful but still smokes. This inconsistency leads to cognitive dissonance, which can be expressed in language through statements like "I know cigarettes are bad, but I still smoke."
+
+The presentation then delves into the importance of studying cognitive dissonance. It highlights that while it's a common phenomenon in daily decision-making, it's rare to find it expressed in language. Studying it helps understand the effects of disagreement, track trends in belief and attitude changes, and understand mental health issues like anxiety disorders.
+
+To address the rarity of dissonance in language, the presenter discusses a large-scale annotation project. They used a dissonance-first approach, where tweets were parsed using a pre-trained model, and pairs of discourse units were annotated according to guidelines. However, they found that dissonance was only present in 3.5% of the annotated pairs, indicating a significant challenge in data collection.
+
+The presentation then moves on to the training process. Initially, a classifier was</sample>
+    <sample id="55">是的，EDAtt 使用现有的离线 ST 模型，而无需重新训练或采用特定的架构。</sample>
+    <sample id="56">这篇论文有四位作者。</sample>
+    <sample id="57">是的，被测模型可以在测试套件上运行。</sample>
+    <sample id="58">KITMUS有三个变体：Background-Pretrain，Background-Both和Background-Inference。</sample>
+    <sample id="59">嗯，让我来总结一下。首先，这个项目是关于DrBERT，一个在法语生物医学和临床领域中非常 robust 的预训练模型。它基于CamemBERT和Flaubert，训练数据来自NACHOS，这是一个医疗领域的数据集。然后，他们比较了不同的预训练策略，数据源和大小。在评估了13个模型在11个任务上的表现后，他们发现DrBERT在大多数任务上表现最好。接着，他们讨论了数据源和模型大小的影响，发现DrBERT在4GB的数据上表现最佳。最后，他们提到DrBERT在9个下游法语医疗任务中取得了最先进的结果，数据源和大小都很重要。如果你对这个项目还有其他问题或者想深入了解某个部分，随时告诉我哦。</sample>
+    <sample id="60">这篇论文的作者所属机构是Google Research。</sample>
+    <sample id="61">如何更有效地利用可用的干净样本？</sample>
+    <sample id="62">The text discusses a systematic study of knowledge distillation for natural language generation, focusing on the use of labeled and unlabeled data. It highlights the challenges faced by natural language generation systems, which are based on large language models, due to their massive computational, storage, and financial requirements. The study aims to explore the potential of energy compression, which involves compressing these models while preserving their performance. The research gaps identified include the focus on NLU tasks or task-agnostic KD (pre-training), the focus on a single generation task for NLG, and the consideration of large datasets with labeled examples while ignoring unlabeled data. The study proposes a systematic approach to task-specific KD for NLG, considering a variety of NLG tasks in realistic setups.</sample>
+    <sample id="63">指标灵敏度通过计算在指令变化时模型性能的变化来衡量模型对指令变化的敏感度。</sample>
+    <sample id="64">演讲者的名字是Jingwei Yi。</sample>
+    <sample id="65">更高的灵敏度表示模型性能得到了提高。</sample>
+    <sample id="66">这段英文内容主要讨论了在几何问题中，语言模型在处理数学问题时的局限性。首先，它提到了在等腰直角三角形ABC中，当BC=DC时，语言模型在处理数学问题时的困难，如无法精确进行数学推理。然后，它列举了几个具体的数学问题，如斐波那契数列、几何问题和代数问题，指出语言模型在处理这些问题时的不足。接着，作者提出了几种方法来解决这些问题，包括使用链式推理、自动形式化和工具辅助等。最后，作者强调了语言模型在处理数学问题时的局限性，特别是在处理大数字时，以及在不同模型之间的不一致性。</sample>
+    <sample id="67">The presentation discusses the causes and cures for interference in multilingual translation models. It starts by explaining that multilingual models can benefit from synergy between language pairs but also suffer from interference. For example, training to translate English to Finnish might improve the quality of English to Estonian, while English to Chinese might have a negative effect. Many methods have been proposed to alleviate interference, but they often demonstrate using rather small models and do not always work better than a tuned baseline. The work aims to identify the main factors that contribute to interference or synergy. Severe interference occurs when the model is very small compared to the data size. Tuning the sampling temperature is key to achieve strong performance. The presentation also explores when interference occurs and whether we really need specialized algorithms to mitigate it. It concludes that language similarity is not a dominant factor for interference, and severe interference happens in parameter poverty settings. The most common value for interference is 5.</sample>
+    <sample id="68">在预训练期间，模型会接收大量的语言上下文。</sample>
+    <sample id="69">通常只需要每个类别20个干净的验证样本就能获得良好的表现。</sample>
+    <sample id="70">Stanford Engineering Computer Science</sample>
+    <sample id="71">The presentation discusses the AltEntities Corpus, a dataset for resolving indirect referring expressions for entity selection. It involves a joint work by Mohammad Javad Hosseini, Filip Radlinski, Silvia Paret, and Annie Louis. The goal is to understand users' language when they make choices, using examples like "easy on me" or "I gotta feeling?" for direct and indirect references. The dataset is collected using crowd annotation and covers three domains: music, books, and recipes. The methodology emphasizes informality using a cartoon completion task, where annotators fill in indirect expressions. The corpus includes alternative questions, sampling entity pairs, and background knowledge for music and recipes. The results with the T5 XL model show high accuracy, with 92-95% when the LM has access to the same background knowledge and 60% when it only has access to partially overlapping background knowledge. The dataset is available at &lt;https://github.com/google-research-datasets/AltEntities&gt;.</sample>
+    <sample id="72">因为现有的方法存在局限性，无法准确衡量媒体偏见。</sample>
+    <sample id="73">演讲者的名字是Akshatha Arodi。</sample>
+    <sample id="74">The text discusses the evaluation of Dense-ATOMIC, a method for constructing a densely-connected commonsense knowledge graph. It highlights the benefits of Dense-ATOMIC over traditional methods, such as higher knowledge coverage and multi-hop paths. The evaluation includes human evaluation of multi-hop paths and extensive evaluations of Dense-ATOMIC's advantages in knowledge coverage and multi-hop paths. The text also mentions the limitations of traditional methods, including a sparse graph structure and difficulty in propagating information. The proposed Rel-CSKGC method is evaluated against various relation prediction models, showing its superiority in terms of relation prediction accuracy. The evaluation includes a comparison of Dense-ATOMIC with other methods, such as ATOMIC and Dense-Atomic, and demonstrates the potential of Dense-ATOMIC for commonsense reasoning.</sample>
+    <sample id="75">The text discusses a presentation on a joint semi-supervised framework for entity and relation extraction tasks. The framework aims to model these tasks by propagating labels over heterogeneous graphs, performing label propagation across the graph, and considering inter- and intra- interactions among both labeled and unlabeled data. The presentation covers the construction of a heterogeneous graph to encode both labeled-unlabeled relationships within the feature space. It also mentions the use of a generative model for dependency parsing and a probabilistic model for alignment, highlighting the importance of considering the interconnection between NER and RE tasks. The framework includes span feature generation, heterogeneous graph construction, joint label propagation, and model optimization. The presentation concludes with a discussion on label propagation, pseudo label selection, and the construction of a joint label propagation network.</sample>
+    <sample id="76">The political bias propagation pipeline goes from pretraining data to language models to downstream tasks.</sample>
+    <sample id="77">这段英文内容主要讨论了在自然语言处理领域，特别是文本摘要和事实一致性方面的工作。首先，它介绍了研究者们如何通过收集人类示范和反馈来改进摘要的事实一致性。他们开发了一个名为DeFacto的新数据集，该数据集包含人类示范和反馈，用于提高摘要的事实一致性。接着，文章详细描述了他们提出的三种新任务：摘要编辑，反馈生成和事实错误纠正。这些任务旨在通过使用不同的模型和方法来提高摘要的质量。然后，文章提到了数据集的收集细节，包括数据的来源和处理方式。此外，文章还讨论了数据集的统计信息，如数据点的数量和错误的数量。最后，文章展示了模型在不同任务上的性能，以及如何通过收集人类反馈来改进模型的性能。总的来说，这段内容强调了通过人类反馈和数据集的使用，可以显著提高自然语言处理模型的性能。</sample>
+    <sample id="78">是的，DEplain-apa 和网站的简化过程有所不同。</sample>
+    <sample id="79">Yes, Coscript is publicly available.</sample>
+    <sample id="80">水印是通过在句子中插入触发词来插入到文本中的。</sample>
+    <sample id="81">PennState和Amazon。</sample>
+    <sample id="82">The document discusses the development of an unsupervised automated essay scoring system, focusing on the challenges and solutions for training models without ground truth scores. It highlights the inefficiency of collecting labeled essays and introduces the concept of unsupervised automated essay scoring (AES) as a solution. The document outlines the motivation behind using multiple heuristic quality signals as pseudo-ground truth for training, emphasizing the importance of robust supervision. It presents a novel framework called Learning from Rank Aggregation (ULRA), which aggregates multiple heuristic quality signals to provide pseudo-ground truth for training a neural AES model. The document also describes the training process, including the use of deep pairwise rank aggregation and a scoring strategy to address conflicts among signals. Experimental results demonstrate the effectiveness of ULRA in unsupervised essay scoring settings.</sample>
+    <sample id="83">Yes.</sample>
+    <sample id="84">The document discusses the concept of dynamic networks in machine learning, focusing on the PAD-Net framework, which is an efficient framework for dynamic networks. The document explains that dynamic networks can change their architecture or parameters based on the input, unlike static networks which have fixed parameters. It highlights the benefits of dynamic networks, such as improved performance and efficiency, especially when both scale factors are used. The document also presents a detailed analysis of dynamic networks, including their implementation, scale factors, and performance in various tasks like natural language processing and image classification. It mentions that dynamic convolution achieves the best results when the dynamic rate is 30%, and the MoE value is around 50%. The document also discusses the difference between dynamic and static networks, noting that dynamic networks perform better in terms of dynamic ratio and model size. Additionally, it introduces the PAD-Net framework, which is efficient and can be extended to other mainstream networks. The document also touches on the future works, suggesting the extension of mode partition into hardware-friendly structured manners and the combination of dynamic and static modes.</sample>
+    <sample id="85">受限语言规划的一个示例是制作巧克力蛋糕。</sample>
+    <sample id="86">他们应该对攻击者是隐蔽的。</sample>
+    <sample id="87">研究使用现有的 PLM 来构建新的 PLM，以提高性能。</sample>
+    <sample id="88">GPT-4 与非二元性别群体的立场最不一致。</sample>
+    <sample id="89">演讲者在“I am a student.”这个示例句子上展示了模型如何利用注意力机制所学的知识。</sample>
+    <sample id="90">这段英文内容主要讨论了语言学习者在数据标注中的作用。首先，作者指出招募母语者进行数据标注很困难，而有很多语言学习者。接着，作者提出了研究问题：是否可以扩大标注者群体，除了招募母语者之外，还可以招募语言学习者。然后，作者详细介绍了研究设计，包括控制变量，如语言，任务，语言熟练程度，问题难度等。在实验中，作者使用了英语，韩语和印尼语三种语言，四种任务，以及不同水平的语言学习者。作者还设计了实验流程，包括预测试，标注，后测试和问卷调查。实验结果显示，语言学习者标注的标签几乎与母语者的标注一样准确，甚至在某些任务上表现更好。最后，作者总结了研究的结论，包括质疑招募母语者进行数据标注的必要性，探讨使用语言学习者作为标注者的可行性，以及展示通过标注者的标注可以改进学习者的词汇和语法能力。</sample>
+    <sample id="91">随着任务数量的增加，模型的性能会提高。</sample>
+    <sample id="92">作者用来比较其方法的三个无树基线是：LSTM seq2seq，T5，Zheng and Lapata。</sample>
+    <sample id="93">两位合著者是第一作者的导师。</sample>
+    <sample id="94">The paper discusses the development and evaluation of EmbMarker, a watermarking method designed to protect the copyright of large language models used in embedding as a service (EaaS). The authors introduce the concept of watermark injection, where a target embedding is defined and added to the original embedding to ensure the watermark is transferred to the attacker's service without degrading its utility. They also present copyright verification methods to detect if a provider's service is stolen by another service. The paper outlines the challenges of watermarking, such as applicability, utility, covertness, and transferability. Existing works like parameter-based watermarking, lexical watermarking, backdoor-based watermarking, and adversarial-based watermarking are reviewed, highlighting their limitations. The authors then introduce EmbMarker, which uses a backdoor-based approach to embed a watermark in the provider's service. The method involves trigger selection, watermark injection, and copyright verification. Experimental results show that EmbMarker outperforms existing methods in terms of detection performance and utility. The paper concludes with embedding visualization and performance comparison tables, demonstrating the effectiveness of EmbMarker in various datasets and downstream tasks.</sample>
+    <sample id="95">PaLM的第一作者是David Vilar Torres。</sample>
+    <sample id="96">好的，我会帮你把这段英文转换成中文。</sample>
+    <sample id="97">演讲者提到了 SimulST 的三个问题。</sample>
+    <sample id="98">在训练 NLP 模型时，减轻数据集中的社会和政治偏见的有效方法之一是使用多样化的数据集，确保数据中包含各种观点和背景。此外，可以采用数据平衡技术，如过采样少数类或欠采样多数类，以确保模型在训练时接触到不同观点的数据。还可以使用对抗性训练方法，通过生成对抗样本来增强模型的鲁棒性，使其对偏见更加免疫。</sample>
+    <sample id="99">当然可以。请告诉我您需要的内容。</sample>
+    <sample id="100">The video begins with a discussion on multi-hop question answering, where the presenter explains that these questions require multiple reasoning steps to answer. Each step corresponds to a document in the corpus. An example given is "What 1988 Christmas comedy film did Brian-Doyle Murray star in?" The presenter then moves on to retriever training, explaining that retrievers are trained by maximizing the probability of ground-truth chains given questions. For a set of training examples, the goal is to maximize the probability of the correct chain being retrieved. The presenter mentions that state-of-the-art multi-hop retrievers fall under this paradigm.</sample>
+    <sample id="101">PaLM的流畅度与最先进的系统相当。</sample>
+    <sample id="102">水印方法的重要属性包括：1. 方法应适用于嵌入服务。2. 水印不应降低提供的嵌入的实用性。3. 水印应足够隐蔽，攻击者难以轻易移除。4. 水印需要在攻击者的服务中可转移。</sample>
+    <sample id="103">TED 英语演讲已被翻译成 14 种不同的语言。</sample>
+    <sample id="104">从一个数据集中抽取300个实例用于重新注释。</sample>
+    <sample id="105">cosine和L2相似度。</sample>
+    <sample id="106">The text discusses the construction of a dataset called QUEST, which is designed to study the effectiveness of systems for handling selective information needs. The dataset includes 3357 entity-seeking queries with implicit set operations, where answer entities are verified for relevance, and documents are marked with attributable spans. The document corpus is large, containing over 350k documents, and multi-answer sets can contain up to 20 entities. Dense encoders are better at retrieval and ranking, but F1 scores of end-to-end systems are fairly low. Queries with set intersection and set difference are challenging and have the lowest F1 scores. Dense encoders are better at retrieval and ranking, but F1 scores of end-to-end systems are fairly low. Queries with set intersection and set difference are challenging and have the lowest F1 scores. Dense encoders are better at retrieval and ranking, but F1 scores of end-to-end systems are fairly low. Queries with set intersection and set difference are challenging and have the lowest F1 scores. Dense encoders are better at retrieval and ranking, but F1 scores of end-to-end systems are fairly low. Queries with set intersection and set difference are challenging and have the lowest F1 scores. Dense encoders are better at retrieval and ranking,</sample>
+    <sample id="107">通过使用XSemPLR统一的数据集，可以将基于编码器的多语言模型用于这项任务。</sample>
+    <sample id="108">这段英文内容主要讨论了语言模型在不同上下文中的表现，特别是它们对结构匹配和接受性的判断。首先，作者提到MPP，最小对偶范式，评估方法在不同上下文中的表现，指出它们在某些情况下可能不总是可靠的。接着，作者介绍了三种不同的评估方法：BLIMP，SyntaxGym和CrowS，这些方法用于评估语言模型的抽象知识。然后，作者提出了一个重新审视最小对偶范式的框架，通过使用不同的前缀和后缀来测试语言模型的接受性。具体来说，他们使用了BLIMP，SyntaxGym和CrowS的数据集，通过添加匹配或不匹配的前缀和后缀来观察模型的表现。作者发现，当使用匹配的前缀时，模型的接受性会显著增加或减少，而使用不匹配的前缀时，接受性则会显著降低。此外，作者还进行了不同长度的上下文输入测试，发现MPP评估在不同长度的上下文中表现良好，但在匹配和不匹配的结构中表现差异明显。最后，作者提出了几个问题，如为什么匹配的前缀会严重影响模型的性能，以及为什么短句输入不能完全捕捉到LMs</sample>
+    <sample id="109">这段内容主要介绍了Unnatural Instructions这一概念，它是一种无需大量人工劳动即可调优语言模型的方法。核心内容包括：1. Unnatural Instructions的定义和目的，即通过提示预训练语言模型来实现零样本泛化，同时收集指令和执行示例。2. 数据收集方式，包括重新表述现有NLP数据集和收集用户生成的提示并手动标注预期输出。3. Unnatural Instructions的特点，如数据集的自动收集，无需人工标注，以及数据的多样性和创造性。4. 实验结果，表明Unnatural Instructions在多个基准测试中优于TO++和Tk-Instruct模型。5. 数据分析，关注生成示例的创意，多样性和正确性，以及错误示例对指令调优的潜在价值。6. 结论，强调Unnatural Instructions在自然语言任务中的广泛适用性，以及其在数据收集和分析中的优势。</sample>
+    <sample id="111">作者假设提供者可以收集一个通用文本语料库，并计算其中单词的频率。</sample>
+    <sample id="112">嗯，你想知道CoNLL-2003命名实体标签器在2023年是否还有效，对吧？其实，它们在2023年仍然有效。我们研究了这个问题，发现模型在开发命名实体识别任务时已经使用了CoNLL-2003近20年了。这自然提出了几个问题：这些模型是否能泛化到现代数据？我们需要什么来实现良好的泛化？性能下降的原因是什么？为了调查这些问题，我们开发了CoNLL++数据集。这个数据集是从2020年的Reuters新闻中收集并用CoNLL-2003注释指南标注的。我们对CoNLL-2003进行了20多次模型微调，并在CoNLL-2003测试集和CoNLL++上进行了评估。我们计算了百分比ΔF1来评估泛化能力。在模型架构方面，Transformer模型泛化能力更好。在模型大小方面，更大的模型泛化能力更强。在更多微调示例方面，更多的示例导致更好的泛化。性能下降的原因是：自适应过拟合，没有观察到，时间漂移。性能</sample>
+    <sample id="114">The presentation discusses the application of GPT-PS in various tasks, including machine translation, language modeling, and abstractive summarization. It highlights the model's ability to achieve a BLEU score of 35.2, which is 32.8% and 28.9% higher than the baseline models, respectively. The model also demonstrates a 44% BLEU improvement over SOTA models on the WMT and IWSLT benchmarks. The presentation also covers the use of task-specific automatic pruning, which allows the model to maintain comparable performance while compressing 90% of parameters.</sample>
+    <sample id="115">该方法使用的语音片段大小是100毫秒。</sample>
+    <sample id="116">在 Servin 和 Kea 的示例中，需要特定于实体的知识，具体来说是关于 Servin 是法官和 Kea 是面包师的信息。</sample>
+    <sample id="117">示例质量比与源句子的相似度更为重要。</sample>
+    <sample id="118">The content discusses a study on multilingual models and their effectiveness in handling code-switching tasks. The study explores the performance of models like mBERT, SwiBERT, and SwitchMLM in various tasks such as question answering and sentiment analysis. It highlights the importance of pretraining techniques and auxiliary loss criteria in improving the models' ability to handle code-switching. The study also mentions the use of probing classifiers to verify the amount of switch-point information encoded in the intermediate layers of the models. The results show that SwitchMLM performs better than mBERT and SwiBERT in terms of switch-point information encoding. The study concludes that the proposed techniques enhance the switch-point information content, making code-switched pretraining more effective.</sample>
+    <sample id="119">在扩展实验中，论文侧重于支持编码器和解码器的LMs。</sample>
+    <sample id="120">该模型是结合多个层的分数。</sample>
+    <sample id="121">直接推断的示例有“easy on me”和“the first one”。</sample>
+    <sample id="122">复旦大学。</sample>
+    <sample id="123">The text discusses a research project on improving multi-modal zero-shot learning via instruction tuning. The project involves a team from Virginia Tech, including Zhiyang Xu, Ying Shen, and Lifu Huang. They present a method called MultiINSTRUCT, which is a multimodal instruction tuning benchmark dataset containing 62 multi-modal tasks from 10 broad categories. The researchers explore various aspects of instruction tuning, such as its effectiveness on different tasks, the impact of fine-tuning strategies, and the sensitivity of the model. They also discuss the use of a unified vocabulary for language, image tokens, and coordinates of a bounding box, and the transfer learning from the Natural Instructions dataset. The project aims to improve the zero-shot capability of large language models and explore several transferring learning techniques.</sample>
+    <sample id="124">The text discusses a study on temporal reasoning in large language models, focusing on the performance of different models across various time periods and tasks. It highlights the biases of language models in temporal reasoning, particularly ChatGPT, and the effectiveness of TempT5 in improving performance. The study also introduces a novel dataset and training framework to enhance temporal reasoning capabilities.</sample>
+    <sample id="125">这篇论文有六位作者。</sample>
+    <sample id="126">Yes.</sample>
+    <sample id="127">The presentation discusses the capabilities of large language models, particularly focusing on their reasoning abilities. It highlights the use of Fine-tune-CoT, a method that enables smaller models to perform complex reasoning tasks, which was previously only possible in very large models. The presentation emphasizes that Fine-tune-CoT significantly boosts performance in small models, making it highly scalable. It also mentions that diverse reasoning enhances student model performance substantially. The presentation concludes with a discussion on the tradeoffs between development time, dataset size, teacher model, and student model scale, and the importance of considering these factors when implementing Fine-tune-CoT.</sample>
+    <sample id="128">The study focuses on the KITMUS test, which evaluates knowledge integration from multiple sources. It involves researchers from McGill University, Mila, and Microsoft Research. The test aims to assess how well models can integrate knowledge from different sources, including pretrain-time knowledge and inference-time knowledge. The researchers introduce a diagnostic test suite for knowledge integration evaluation, which includes a coreference resolution task. They evaluate the dataset with human study participants and established coreference resolution models. The results show that task-specific training is necessary for knowledge integration. Models struggle to integrate inference-time background knowledge. The study highlights the importance of task-specific training for knowledge integration and the challenges models face in integrating inference-time background knowledge.</sample>
+    <sample id="129">作者给出的“显性群体”(marked group) 的示例包括“一个亚洲女性”和“一个中东女性”。</sample>
+    <sample id="130">Transformer模型架构泛化能力较差。</sample>
+    <sample id="131">Clean labels.</sample>
+    <sample id="132">这篇论文有六位作者。</sample>
+    <sample id="133">作者使用了多种模态。</sample>
+    <sample id="135">这段内容主要介绍了ABC-Eval，一种用于评估聊天机器人对话系统的新方法。ABC-Eval通过比较不同维度的对话质量，如相关性，一致性，情感理解等，来评估对话系统的性能。研究者们通过收集了四个最先进的聊天模型在100次人类-机器人对话中的评价，发现ABC-Eval的标签比现有方法更可靠，预测性更强。他们还进行了基线评估，比较了不同模型的错误率，并展示了预测有效性。最后，他们提出了增量有效性，即模型在不同方面的改进程度。</sample>
+    <sample id="136">The video begins with a presentation slide titled "Number Understanding" from the University of Sheffield. The slide introduces the topic of number understanding, specifically focusing on the evaluation of mathematical reasoning tasks. It mentions the use of Illinois and CommonCore to generate FERMAT, a flexible evaluation set for reasoning tasks over arithmetic types. The slide also highlights the importance of language and mathematical diversity in the evaluation process.
+
+The presenter, Jasivan A Sivakumar, starts by discussing the limitations of existing benchmarks, stating that they are not representative and single scores limit the understanding of models. He emphasizes that FERMAT is a more informative alternative for evaluation. Language and mathematical diversity are highlighted as areas for improvement.
+
+Jasivan then delves into the concept of number understanding, explaining that it is a unifying measure of the mathematical strengths and shortcomings of models. He mentions that number encoding and tokenization are areas of improvement. The slide also includes a table showing examples of mathematical operations and their frequencies, such as one-hop, two-hop, and three-hop operations.
+
+The presenter also talks about the impact of training template, stating that existing benchmarks are unrepresentative and single scores limit the understanding of models. He suggests that FERMAT is a more informative alternative for evaluation. Language and mathematical diversity</sample>
+    <sample id="137">The document discusses a comprehensive approach to evaluating floor plan generation methods, focusing on their ability to generalize to unseen instructions. It highlights that the methods outperform all baselines by a significant margin in terms of pixel-level IoU scores. Additionally, it mentions that artificial and human instructions are mutually beneficial during training. The paper introduces a large-scale dataset called Tell2Design, which features floor plans with natural language instructions to describe user preferences. The dataset is designed to facilitate research on language-guided design generation, with a specific focus on the floor plan domain. The paper also outlines the challenges faced in the design generation process, such as design generation under constraints, fuzzy and entangled information, and noisy human instructions. To address these challenges, the paper proposes a Seq2Seq model with a language modeling objective, which aims to generate floor plan designs directly from language instructions. The model is initialized with a pre-trained language model T5 for better language understanding abilities. The paper concludes by stating that the research will serve as a foundation and propel future research on the task of language-guided design generation.</sample>
+    <sample id="138">作者认为 NLU 中研究不足的领域包括：1) 无法从多个来源整合知识，2) 难以整合推理时间的背景知识。</sample>
+    <sample id="139">The speaker's name is Ying.</sample>
+    <sample id="140">Yes, Coscript has been quality-checked.</sample>
+    <sample id="141">The existing resources only support limited types of context-dependent translations and limited sets of languages.</sample>
+    <sample id="142">当然可以，以下是翻译结果：
+
+AltEntities Corpus
+- 6,000个问题，分布在三个领域
+- 42,000个间接指代表达
+- T5 XL模型的准确性：如果LM有与标注员相同的背景知识，准确率在92-95%之间。如果LM只能部分访问实体名称，准确率在60%左右。我们展示了模型的跨域泛化能力。
+- 数据集链接：https://github.com/google-research-datasets/AltEntities</sample>
+    <sample id="143">该方法与 wait-k，LA，CAAT 和 EDAtt 这些现有的 SimulST 策略进行了比较。</sample>
+    <sample id="144">Avignon Université.</sample>
+    <sample id="145">The speaker's name is Jenny.</sample>
+    <sample id="146">The speaker is discussing a paper titled "Towards Understanding Omission in Dialogue Summarization" presented at the 61st Annual Meeting of the Association for Computational Linguistics in Toronto, Canada. The paper focuses on the challenges of dialogue summarization, particularly the issue of omission, which is a significant problem affecting the quality of summaries. The speaker mentions that while large-scale pre-trained models have made progress in generating fluent and coherent summaries, they still struggle with factual errors and omissions. The study analyzed the omission rate of summaries across five domains and found that even state-of-the-art models have a high omission rate, with about 70% of generated summaries suffering from omission problems. This indicates that addressing omission is crucial for improving dialogue summarization.</sample>
+    <sample id="147">这篇论文有三位作者。</sample>
+    <sample id="148">当然可以，以下是翻译结果：
+
+---
+
+注意力作为同时同声传译的指南
+
+Sara Papi, Matteo Negri, Marco Turchi
+
+什么是同时同声传译？
+
+Simultaneous speech translation，SimulST，是将口语翻译成另一种语言的实时文本的过程，使跨语言交流成为可能。
+
+什么是当前SimulST模型的问题？
+
+特定的架构通常被训练，引入了需要优化的附加模块。
+
+长而复杂的训练过程，例如不同的优化目标。
+
+训练和维护多个模型以达到不同的延迟制度，例如1秒，2秒，...
+
+EDAtt是为SimulST量身定制的最先进的架构。
+
+决定是否发射或部分翻译，如果注意力不集中，即其总和小于阈值α，向最后一个λ个语音帧，这意味着接收到的信息足够稳定。
+
+EDAtt是所有应用于离线模型的策略中最快的策略，如果我们考虑实际的运行时间。
+
+EDAtt优于所有应用于离线模型的策略。
+
+EDAtt是为SimulST量身定制的最先进的架构。
+
+EDAtt优于所有应用于离线模型的策略。
+
+EDAtt是为SimulST量身定制的最先进的架构。
+
+EDAtt优于所有应用于离线模型的策略。
+
+EDAtt是</sample>
+    <sample id="149">是的，数据集是公开的。</sample>
+    <sample id="150">The document discusses a presentation on MeetingQA, a dataset for question answering on meeting transcripts. The presentation covers various aspects of the dataset, including its creation, analysis, and experimental results. The dataset is based on questions asked by participants in meetings and their corresponding answers, and it includes a variety of question types such as yes/no, rhetorical, and multi-span answers. The presentation also highlights the challenges of existing QA models in handling this dataset, noting that they lag behind human performance in terms of F1 scores. Additionally, the document mentions the use of context-retrieval models, single-span models, and multi-span models for question answering, with short-context models slightly outperforming long-context models. The presentation concludes with a discussion on the zero-shot performance of models and the effectiveness of silver data augmentation.</sample>
+    <sample id="151">当然可以。</sample>
+    <sample id="152">The video begins with a discussion on exploring large language models for classical philology, focusing on the intersection of natural language processing (NLP) and classical philology. The presenter, Frederick Riemenschneider, introduces the topic with a slide titled "Exploring Large Language Models for Classical Philology," which includes the names of the presenters, their affiliations, and the event, ACL 2023. The presenter then delves into the current landscape of language models and classical philology, highlighting the advancements in models like Latin BERT, Ancient Greek BERT, and Ancient Greek BERT (Yamshchikov et al. 2022). He discusses the implications and challenges of multilinguality in these models, emphasizing the need for robust evaluation and the importance of multilingual models.
+
+The presenter then presents a slide titled "Towards New Language Models for Classical Philology," which outlines the goals of the project: making existing models comparable, pushing the state of the art, exploring model architectures, and introducing multilingual models. The presenter explains the process of creating new language models specifically designed for classical philology, including the development of GreBERTa and GreTA, which are encoder-only models for ancient Greek and Latin, respectively. He also discusses</sample>
+    <sample id="153">这段英文内容主要讨论了在文本到图像生成模型中解决提示歧义的问题。研究者提出了一个名为TIED的框架，用于解决文本到图像模型中提供的模糊提示。他们通过一个基准数据集来研究这些模糊提示，该数据集涵盖了不同类型的歧义。研究者还提出了一种自动评估框架，用于评估生成的图像是否忠实于用户的意图。他们使用了两种方法来生成图像：一种是通过生成澄清问题，另一种是通过生成不同的视觉设置。然后，他们使用VQA模型和人类评估来评价生成的图像是否忠实于用户的意图。研究发现，不同类型的歧义在解决上存在差异，但整体上，模糊消解对忠实生成有积极影响。此外，他们还提出了自动和人类评估的框架，以解决文本到图像模型中提供的模糊提示。</sample>
+    <sample id="154">这篇论文的作者所属机构是UNIVERSITÀ DI TRENTO和FONDAZIONE BRUNO KESSLER。</sample>
+    <sample id="155">演讲者的名字是Javad Hosseini。</sample>
+    <sample id="157">The video discusses a research project on dialogue summarization using static-dynamic graph-based methods. It starts with an introduction to the topic, highlighting the importance of dialogue summarization in capturing key information from complex dialogues. Shen Gao from Shandong University presents the work, which focuses on the challenges and potential solutions in dialogue summarization.
+
+The video explains that dialogue summarization aims to distill essential information from a dialogue context into a concise summary. This is a crucial task in the field of text summarization, as it helps users quickly grasp the main points of a semi-structured and multi-participant dialogue without having to read through the entire conversation.
+
+A key concept introduced is the static-dynamic structure fusion graph, which combines static and dynamic graph structures to better represent the information flow and interaction between utterances in a dialogue. The video shows an example of a dialogue context and its corresponding summary, demonstrating how the static-dynamic structure fusion graph can effectively capture the main ideas of each participant.
+
+The video also touches on the limitations of existing methods that heavily rely on precomputed static graph structures, which can lead to inaccurate outputs and errors. It emphasizes the need for a more flexible and adaptive approach to dialogue summarization.
+
+Furthermore, the video introduces the SDDS framework, which includes</sample>
+    <sample id="158">这段英文内容主要介绍了Dual Cache在长文档神经核心参考解析中的应用。首先，它解释了核心参考解析的任务，即识别和链接文本中指代相同实体或概念的提及。接着，它讨论了传统方法在处理长文档时的计算复杂性和内存消耗问题，即枚举所有可能的提及对，导致计算和内存消耗呈二次复杂度。然后，它介绍了Dual Cache的缓存机制，包括L-cache和G-cache，以及它们如何通过固定大小的缓存存储实体表示来降低复杂度。此外，它还提到了LRU策略在缓存满时的处理方式，以及在长文档中提及的实体可能散布在文本中的问题。最后，它展示了Dual Cache在不同基准测试中的表现，包括在训练数据下与单个缓存方法相比的性能和成本效益。</sample>
+    <sample id="159">为什么匹配前缀会影响LM的判断？
+我们以BLIMP，OPT 6.7B为例，展示了不同前缀策略对MPP判断的影响。在“匹配”前缀策略下，模型对句子的接受度和不接受度的判断是稳定的。在“不匹配”前缀策略下，模型的接受度和不接受度的判断会显著变化。在“全无关”前缀策略下，模型的接受度和不接受度的判断相对稳定。</sample>
+    <sample id="160">第一步将输入词元映射到一个无序的多重集中的词元。</sample>
+    <sample id="161">Coscript contains 55,000 scripts.</sample>
+    <sample id="163">The best alignment method for DEplain is the method of MASSalign.</sample>
+    <sample id="164">Weak supervision alleviates the annotation bottleneck.</sample>
+    <sample id="165">The video starts with a slide titled "Unsupervised Objective L" and discusses the concept of abductive reasoning in the context of natural language understanding (NLU). It introduces the idea of explaining mutually exclusive explanations, such as Emily being stuck in traffic and making it to her flight. The slide explains that abductive reasoning starts with a context, such as Emily being stuck in traffic, and an outcome, like making it to her flight, and explores explanations like her flight being delayed or left on time. It then delves into the LiPoR objective, which maximizes the log likelihood of the outcome given the context and a set of explanations, and introduces the idea of treating explanations as a latent variable. The video also discusses the LiPoR method, which encourages the probability mass of plausible explanations to collapse to a subset of explanations, and presents results for various models, including ZS GPT3, ZS BART, and Tuned BART, with LiPoR achieving the highest score. The video concludes with a thank you message and a link to a website.</sample>
+    <sample id="166">The presentation discusses a neural divide-and-conquer reasoning framework for image retrieval from linguistically complex text. It introduces the framework's components, including the visual-linguistic interactor and the neural-symbolic reasoner. The framework aims to integrate the advantages of analogical reasoning and logical reasoning to solve complex problems. The presentation also covers experimental results, showing the model's performance on different datasets. Additionally, it mentions the integration of dual-process theory with the divide-and-conquer strategy, highlighting its potential to improve large language models' compositional reasoning and planning capacity.</sample>
+    <sample id="167">DEplain-web 中的文档采用手动和自动对齐方法进行了对齐。其中，DEplain-APA 基于新闻文本，手动对齐了 483 篇文档，结果产生了大约 30,000 个平行句子对。而 DEplain-web 包含不同领域，手动对齐了 756 篇文档，同时使用了自动对齐方法。</sample>
+    <sample id="168">CoNLL++ 数据集是从 2020 年的 Reuters 新闻中收集并按照 CoNLL-2003 注释指南进行注释的。</sample>
+    <sample id="169">这段内容主要讨论了PaLM模型在翻译任务中的表现，包括其评估策略和性能。首先，PaLM是一个540亿参数的大型语言模型，去年在ACL 2023会议上发布。它在大量文本数据上进行了训练，具有卓越的性能。研究者们进行了系统性的研究，评估了PaLM在翻译任务中的表现，使用了最新的测试集和最先进的翻译系统进行比较。研究发现，提示在翻译质量上有着巨大的影响，大多数句子在BLEURT指标上差异超过1分，最高可达40分。研究还提供了五步提示的示例，展示了不同语言之间的翻译结果。最后，研究者们总结了实验结果，指出示例质量比相似性更重要，专业化系统在某些方面有显著优势，PaLM的性能接近Google Translate。</sample>
+    <sample id="170">当然可以，以下是英文内容的中文翻译：
+
+---
+
+我们构建了一个统一的基准XSemPLR，用于跨语言的语义解析和意义表示。它包含：
+- 9个不同领域的数据集
+- 5个语义解析任务
+- 8种意义表示
+- 22种自然语言在15个语言家族中
+
+在实验设置中，我们考虑了六种训练和评估的设置。例如，使用Google Translate API将源语言翻译为目标语言，然后使用单语模型进行训练和评估。
+
+在训练过程中，我们使用了六种不同的模型，包括：
+- Monolingual Model：源语言与目标语言相同，例如英语到德语
+- German Few-shot：仅使用少量德语数据进行训练
+- German Model：使用德语数据进行训练
+- German Few-shot Transfer：使用德语数据进行训练，然后将其转移到其他语言
+- German Model：使用德语数据进行训练
+- German Few-shot Transfer：使用德语数据进行训练，然后将其转移到其他语言
+
+在评估过程中，我们使用了六种不同的设置，包括：
+- Translate-Test：使用Google Translate API将源语言翻译为目标语言，然后使用单语</sample>
+    <sample id="171">关于这方面的现有研究有：参数化水印，词法水印，后门水印和对抗性水印。</sample>
+    <sample id="172">No, they are still inadequate for cross-lingual semantic parsing tasks.</sample>
+    <sample id="174">这段英文内容主要讨论了“Relevance Model”在评估教育对个人成就的影响时的应用。首先，提到“Relevance Model”在评估教育对个人成就的影响时的重要性，包括教育对个人财富的影响，以及教育对个人职业发展的影响。其次，讨论了“Argument Analysis”在评估教育对个人成就的影响时的应用，包括对教育质量的评估，以及对教育对个人职业发展的影响的评估。此外，还提到了“Argument Quality Analysis”在评估教育对个人成就的影响时的应用，包括对教育质量的评估，以及对教育对个人职业发展的影响的评估。最后，讨论了“Argument Quality Analysis”在评估教育对个人成就的影响时的应用，包括对教育质量的评估，以及对教育对个人职业发展的影响的评估。</sample>
+    <sample id="175">该方法通过在训练中预处理逻辑形式来处理排列的不确定性。</sample>
+    <sample id="176">公平性意味着模型在处理不同政治倾向的数据时，不会对任何群体产生偏见。</sample>
+    <sample id="177">演讲者的名字是Yanis Labrak。</sample>
+    <sample id="178">Koustuv Sinha.</sample>
+    <sample id="179">The presentation begins with an introduction to the SymbolicToM method, which aims to improve theory of mind reasoning skills in large language models. The method uses explicit graphical representations to avoid overfitting and uses an inference-time algorithm leveraging off-the-shelf NLI and OpenIE models. The SymbolicToM method is shown to dramatically improve out-of-the-box LLM performance on the new linguistic diversity dataset ParaphrasedToMi.
+
+The presentation then moves on to story structure generalization, where three datasets are created using the same primitives of the original stories in slightly different ways. The datasets include concatenating two false-belief stories in different locations, three characters sequentially moving an object and leaving the room, and multiple object movements after the first person leaves. Linguistic generalization is also discussed, where a linguistically more diverse dataset called ParaphrasedToMi is created.
+
+The presentation also covers experiments, including evaluating performance in answering with and without SymbolicToM, comparing against supervised baselines, and evaluating in-domain and out-of-domain performance. The results show that SymbolicToM outperforms supervised approaches on the new linguistic diversity dataset ParaphrasedToMi.
+
+The presentation concludes with a discussion on story structure generalization and linguistic generalization, emphasizing the</sample>
+    <sample id="180">Myra Cheng.</sample>
+    <sample id="181">The video discusses the evaluation of language planning ability of large language models (LLMs) and the development of a constrained language planning dataset. It starts by introducing the 61st Annual Meeting of the Association for Computational Linguistics in Toronto, Canada, from July 9-14, 2023. The focus is on the paper "Distilling Script Knowledge from Large Language Models for Constrained Language Planning" by Siyu Yuan, Jiangjie Chen, Ziquan Fu, Xuyang Ge, Soham Shah, Charles Robert Jankowski, Yanghua Xiao, and Deqing Yang. The paper aims to evaluate the language planning ability of LLMs and develop an over-then-filter method for constrained language planning. The datasets used include Coscript, WikiHow, and generated constraints. The paper proposes a method to generate candidate scripts and filter them based on similarity scores. The evaluation results show that all baselines achieve unsatisfactory results on planning for specific goals. The paper also discusses the limitations and future work, including the use of symbolic knowledge distillation, automatic metrics, and the Coscript dataset.</sample>
+    <sample id="182">In the context of this paper, tropicalism refers to the portrayal of those groups only by their identity.</sample>
+    <sample id="183">The authors create target group personas using prompts like "Imagine you are an Asian woman. Describe yourself."</sample>
+    <sample id="184">The Conditional Cross-Mutual Information, CXMI, was used to measure how much context MT models use given a corpus.</sample>
+    <sample id="185">DrBERT 是基于 Roberta 和 NACHOS 数据集训练的，而 ChuBERT 是从 scratch 开始训练的。</sample>
+    <sample id="187">这篇论文有三位作者。</sample>
+    <sample id="188">Iterative transfer learning is a process where a model is trained on a new dataset and then its weights are transferred to another model for further training.</sample>
+    <sample id="189">The goal is to understand users' language when they make a choice.</sample>
+    <sample id="190">攻击者可能通过学习嵌入来提取模型参数，从而提供类似的服务。</sample>
+    <sample id="191">这篇论文有三位作者。</sample>
+    <sample id="192">The presentation delves into the performance and memory cost comparison of various memory-efficient optimizers in the context of pre-training a BERT-Large model. It starts with an introduction to the CAME optimizer, highlighting its ability to handle erroneous updates and its effectiveness in large batch training. The presenter discusses the confidence-guided strategy of CAME, which supports adaptive confidence-based updating guided by the residual between predicted update and generated update. Extensive experiments are conducted on downstream tasks, showing that CAME achieves outstanding performance compared to existing memory-efficient optimizers like Adam, AdaFactor, and Ada. The results indicate that CAME outperforms these optimizers in terms of accuracy and memory usage, making it a promising extension for existing memory-efficient optimizers.</sample>
+    <sample id="193">There were around a thousand annotators used to create the initial data set.</sample>
+    <sample id="194">The authors are from the University of Washington.</sample>
+    <sample id="195">The presentation discusses a framework for explainable question answering (XQA) using a Hierarchical Question Decomposition Tree (RoHT). It highlights the limitations of existing methods, such as neuro-symbolic methods and decompose-based methods, which either rely on structured knowledge bases or free-text corpora. The proposed RoHT framework aims to integrate knowledge from heterogeneous sources, including text corpora and knowledge bases, to address complex questions. The framework includes two challenges: determining the granularity of question decomposition and finding the optimal solution among various possible ones from different knowledge sources. The main idea is to reason over the hierarchical question decomposition tree, using probabilistic reasoning to output answers with probabilities. The framework is evaluated on two datasets, KQA Pro and Musique, with Musique being a more challenging dataset due to its original paragraphs and Wikidata knowledge base. The results show that the Musique dataset outperforms the original KB + Wikipedia dataset, demonstrating the effectiveness of integrating knowledge from heterogeneous sources.</sample>
+    <sample id="196">以左侧为支配词的示例是 "I saw Bart and Lisa; Homer came and sneezed"。</sample>
+    <sample id="197">嗯，这个问题嘛，最先进的话，得看具体是哪个领域了。不过一般来说，像BERT，GPT这样的模型在很多对话系统里都算比较先进的。你是在做对话系统相关的研究吗？可以和我多聊聊哦。</sample>
+    <sample id="198">因为现在大型语言模型的上下文窗口越来越大，所以需要评估模型在整个上下文窗口中的可接受性。</sample>
+    <sample id="199">Yes, the performance drops in 7 datasets and gains in 3 datasets.</sample>
+    <sample id="200">注释者知道实体的名字。</sample>
+    <sample id="201">评估使用了SOTA MT指标。</sample>
+    <sample id="202">No, the regression in generalization does not affect specific NER types.</sample>
+    <sample id="203">因为 NLP 的立场会影响研究过程和结果。</sample>
+    <sample id="204">像 BLOOM 这样的多语言 LLM 是采用适配器微调。</sample>
+    <sample id="205">The passage discusses the impact of pretraining data on language models, specifically focusing on political biases. It highlights how pretraining data, such as large web text corpora, can introduce political biases into language models, leading to unfairness in downstream tasks. The text mentions that language models trained on diverse data can learn from different perspectives, which can be beneficial in terms of learning from various viewpoints and perspectives. However, it also points out that this diversity can lead to political biases, especially when the data is biased in terms of political leanings. The passage also touches on the issue of political biases in language models, suggesting that they can lead to unfairness in downstream tasks. It mentions that language models can pick up political biases from their training data, which can result in biased predictions and decisions. The text also discusses the role of pretraining data in shaping the political leanings of language models, and how this can lead to partisan shifts in their political leanings. It mentions that language models can be influenced by the political leanings of their pretraining data, which can lead to biased predictions and decisions. The passage also discusses the impact of pretraining data on language models, specifically focusing on political biases. It highlights how pretraining data, such as large web text corpora, can</sample>
+    <sample id="206">他们使用RoBERTA-base + classifier head进行迁移学习。</sample>
+    <sample id="207">最新测试集。</sample>
+    <sample id="208">The author ultimately proposes two steps.</sample>
+    <sample id="209">与最强的基线相比，提议的方法获得了20.2%的收益。</sample>
+    <sample id="210">演讲者的名字是Shuheng Liu。</sample>
+    <sample id="211">Yes.</sample>
+    <sample id="212">They conducted experiments on 5 smaller models.</sample>
+    <sample id="213">OFA被用作研究多模型指令调整的基础模型。</sample>
+    <sample id="215">The text discusses the statistics of coordination extracted from an enhanced version of the Penn Treebank, focusing on left conjuncts being shorter and the tendency growing with length difference. It mentions left conjuncts being shorter when the governor is on the left or absent, but not when it is on the right. The text also highlights the tendency of left conjuncts to be shorter in certain contexts, such as when the governor is on the left or absent, and the tendency grows with length difference.</sample>
+    <sample id="217">这段英文内容主要介绍了关于多属性可控对话生成的研究。研究者首先指出了现有可控对话生成方法的局限性，如仅关注单个属性而忽视多属性生成的实际情况，以及在多属性文本生成中控制器学习的局限性。他们提出了DCG，一种分解可控生成模型，通过学习可见值中的属性概念并使用解纠缠损失来分离不同的属性组合。此外，他们还开发了一个统一的无参考评价框架，用于不同粒度的属性，以探索可控对话生成的可控性。实验结果表明，DCG在可控性、可控性评价和文本质量方面优于其他基线方法。</sample>
+    <sample id="218">Google.</sample>
+    <sample id="219">The document discusses a financial report analysis task, focusing on the use of a compare-and-contrast multistage pipeline for uncovering financial signals in financial reports. The pipeline includes stages such as document segmentation, relation recognition, and a highlighting task. The highlighting task aims to predict the rationale/important words by comparing and contrasting the contexts of given sentence pairs. The paper presents evaluation metrics and highlights the effectiveness of the domain-adaptive fine-tuning approach, which outperforms other settings without losing the generality of token representations. The work also mentions the evaluation of datasets and metrics, including R-Prec, PCC, and R-Prec, and discusses the use of a two-staged fine-tuning approach for the domain-adaptive highlighter. The paper concludes with a discussion of future work, including the exploration of a financial language model, the application of the model to other languages, and the analysis of charts, tables, or cross-company, cross-sectors data.</sample>
+    <sample id="220">这篇论文的作者所属机构是Stony Brook University。</sample>
+    <sample id="221">论文分析了德语和英语之间的翻译。</sample>
+    <sample id="222">The document discusses a study on adapting open-domain question answering models to new domains, focusing on data interventions and their impact on performance. The study explores different types of interventions, such as varying the question, answer, and context, to improve model performance. It highlights the effectiveness of few-shot and zero-shot interventions, noting that few-shot methods can improve retriever performance by up to 22% and reader performance by 24%, while zero-shot methods show improvements of up to 8% on average across all target datasets. The study also investigates the nature of compatibility between the source and target domains, finding that learned retrievers are sensitive to data distribution, with BM25 performing best. The research concludes that data interventions can significantly enhance model performance, depending on the type of dataset shift.</sample>
+    <sample id="223">Shangbin Feng</sample>
+    <sample id="224">在实验过程中研究了LHA，Sent-LaBSE，Sent-RoBERTa，CATS-C3G，VecAlign，BERTAlign和MASSalign等模型。</sample>
+    <sample id="225">在 MultiInstruct 中，有 53 个任务用于训练，9 个任务用于测试。</sample>
+    <sample id="226">Three.</sample>
+    <sample id="227">The video discusses the challenges and advancements in grounded language understanding, focusing on the limitations of current language models and the introduction of a new framework called Pangu. It starts by highlighting the success of language models in various NLP tasks but points out the lack of grounding in their understanding, which is crucial for tasks like smart assistants, semantic search, and domestic robots. The video then introduces the concept of grounded language understanding, explaining how it involves mapping natural language expressions into executable plans or programs for specific environments. It mentions several applications such as smart assistants, semantic search, and domestic robots, emphasizing the need for mapping natural language into representations suitable for these environments.
+
+The video then delves into the challenges of grounded language understanding, particularly the lack of grounding during pre-training. It explains that most language models are pre-trained on textual corpora without grounding, leading to a gap between pre-training and downstream applications. This gap makes the task of grounded language understanding particularly challenging.
+
+To address these challenges, the video proposes a novel framework called Pangu, which aims to improve grounded language understanding. It suggests focusing on discrimination instead of generation, allowing language models to excel in this area. The framework involves a symbolic agent interacting with the environment and proposing candidate plans, while language models score and rank these plans.</sample>
+    <sample id="228">作者在实验中使用了AG News，MIND，SST2和Enron Spam四个数据集。</sample>
+    <sample id="229">这段英文内容主要讨论了如何检测可改进的论点以支持论说性写作。首先，它强调了文本修订在论说性写作中的重要性，指出修订是一个递归过程，直到达到最优的表达，而表达直接影响了说服力。接着，文章介绍了如何通过修订来提高论点的质量，包括从“手机辐射导致脑癌”到“手机辐射可能导致脑癌”的转变。文章还提出了两个任务：子最优论点检测和论点改进建议。子最优论点检测是判断一个论点是否需要修订或可以被认为是最优表达，而论点改进建议是根据给定的论点，选择在修订论点时应改进的质量问题类型。最后，文章讨论了如何从在线辩论平台如Kialo中的人类修订行为中学习，以检测可改进的论点。</sample>
+    <sample id="231">NACHOS 是一个 1.1B 词的开源数据集，从各种医疗领域，类型和风格中爬取的异质数据。</sample>
+    <sample id="232">演讲者的名字是David Vilar Torres。</sample>
+    <sample id="233">The content discusses a presentation on simultaneous speech translation, focusing on the use of attention mechanisms in the process. It introduces the concept of Simultaneous Speech Translation, explaining how it translates spoken language into text in real-time to enable cross-language communication. The presentation highlights the problems with current SimulST models, such as the need for specific architectures, long training procedures, and the requirement to maintain multiple models for different latency regimes. The solution proposed is EDAtt, an encoder-decoder attention mechanism specifically tailored for SimulIST, which addresses these issues by leveraging knowledge from existing offline ST models without retraining or adopting a specific architecture. It uses only one model for every latency regime and handles latency through specific parameters. The presentation also mentions the BLEU score as a quality measure and compares EDAtt with other strategies like wait-k, LA, and CAAT, showing that EDAtt outperforms them in terms of latency and BLEU score.</sample>
+    <sample id="234">The majority of sentences show a difference of more than 1 BLEURT point, and the difference can go up to 40 BLEURT points.</sample>
+    <sample id="235">Carnegie Mellon University Language Technologies Institute, TÉCNICO LISBOA, BERKELEY ARTIFICIAL INTELLIGENCE RESEARCH, Unbabel.</sample>
+    <sample id="236">5个由专家编写的指令是：1 Instruction 5 Instructions。</sample>
+    <sample id="237">作者建议使用KITMUS测试套件，它包括一个用于知识整合评估的数据集和一个核心ference分辨率任务，以测试模型在不同时间点整合知识的能力。</sample>
+    <sample id="238">The video discusses a benchmark dataset called MeetingBank, which is a collection of city council meeting summaries. The dataset includes meeting transcripts, reference summaries, and URLs containing various resources. The video explains the challenges in creating this dataset, such as the scarcity of high-quality meeting summaries and the difficulty in identifying reliable sources for public meetings. The dataset is designed to help develop summarization technologies for different meeting domains.
+
+The video also presents the dataset's contribution, which includes addressing the two major challenges mentioned earlier. It highlights the importance of the dataset for researchers designing advanced meeting summarizers. The dataset is segmented by city council meetings and paired with expert-written summaries, providing a valuable testbed for researchers.
+
+The video then delves into the dataset's statistics, showing that it contains 1,366 meetings, 3,579 hours of transcribed data, and 6,892 summarization instances collected. On average, a typical meeting lasts approximately 2.6 hours, and a segment consists of 2.9k tokens in the source and 87 tokens in the summary. The dataset has a total count of 1,366 meetings and 3,579 hours of transcribed data.
+
+The video also presents the dataset's analysis</sample>
+    <sample id="239">当然可以，以下是翻译后的英文内容：
+
+---
+
+实验结果
+
+- 示例质量比源句子的相似度更重要。
+- 专业化SOTA系统具有显著优势。
+- PaLM接近Google Translate。
+
+MQM的见解：
+
+- PaLM的流畅度与SOTA相当。
+- 准确性得分较低。
+- 主要由“准确/遗漏”主导。
+- “风格/笨拙”通常较低。
+
+---
+
+如果您需要进一步的帮助或有其他问题，请随时告诉我！</sample>
+    <sample id="240">当然可以。</sample>
+    <sample id="241">The presentation focuses on the evaluation of early misinformation detection in the context of COVID-19 treatments. It highlights the limitations of current approaches, which are unrealistically evaluated and not human-centric. The speaker, Ethan Mendes, discusses the need for a more human-in-the-loop evaluation framework, specifically the Human-in-the-loop (HiTL) Misinformation Detection Evaluation. This framework aims to address the shortcomings of existing methods by integrating human feedback at various stages of the workflow, from tweet collection to actionable outputs. The evaluation process is designed to be end-to-end, covering the entire misinformation detection system from tweets to policy violation verification. The presentation also touches on the early detection of misleading claims and policy violation verification, emphasizing the importance of timely detection and verification of claims. Additionally, it mentions the evaluation of early claim detection in a debunking news article, which is crucial for misinformation detection. The speaker concludes by stating that their work motivates the development of more useful human-in-the-loop frameworks for misinformation detection and provides a concrete standard of comparison for future systems.</sample>
+    <sample id="242">常用的评估方法包括人类评估，比如让人类评委选择两个对话中更好的一个，或者给对话打分。</sample>
+    <sample id="243">这篇论文有五位作者。</sample>
+    <sample id="244">在 Servin 和 Kea 的示例中，需要的背景知识包括 Servin 是一个法官，而 Kea 是一个面包师。</sample>
+    <sample id="245">这段英文内容主要介绍了关于高一致性的MTurk工作者的分析。研究者通过设计一个两步流程来寻找高一致性的MTurk工作者，包括资格设置，资格任务，耐力任务和参考任务。在资格任务中，他们使用了MACE过滤器来筛选工作者，分为GOLD，SILVER，BRONZE和BLOCK四个等级。在耐力任务中，工作者需要处理大量文档和摘要，以测试其处理重工作量的能力。研究者还分析了不同任务的正确性，包括Cohen's Kappa和Krippendorff's Alpha。此外，他们还比较了不同平台的工作者表现，如Pipeline，CloudResearch和Baseline MTurk，发现Pipeline和CloudResearch的工作者在某些方面表现更好。最后，研究者总结了他们的工作，认为这个方法在大规模和低成本下提供了高质量的标注，同时避免了资源浪费。</sample>
+    <sample id="246">代码是公开的，可以在GitHub上获取，网址是mpoemsl/kitmus。</sample>
+    <sample id="247">这段英文内容主要介绍了FactKG，一个基于知识图谱的事实验证系统。FactKG通过推理在知识图谱上进行事实验证，解决了现有数据集中文本，表格和知识图谱证据的不足。它提出了一个新的任务，即基于知识图谱的事实验证，利用知识图谱的可靠性和实用性。FactKG在知识图谱中进行可靠推理，即使证据以文本或表格形式呈现，也能直接连接到声明，实现可靠的推理。此外，FactKG在现代对话系统中也有实际应用，如检查用户输入与知识图谱的一致性。FactKG还引入了一个新数据集，用于验证知识图谱和自然语言之间的关系，包括一跳，结合，存在，多跳和否定等五种推理类型。最后，FactKG的性能在基线实验中优于其他模型，表明其在处理自然语言和知识图谱证据方面具有优越性。</sample>
+    <sample id="248">No.</sample>
+    <sample id="249">在可接受的域中扰乱句子可以通过添加前缀来实现，例如使用“However, ”或“First and foremost, ”这样的匹配结构。</sample>
+    <sample id="250">进行维度评估意味着要评估多个方面，比如对话的质量，这样可以更全面地了解模型的优缺点。</sample>
+    <sample id="251">这篇论文的作者所属机构包括University of Science and Technology of China，Microsoft Research Asia，Beijing Jiaotong University，Sony AI和Microsoft STC Asia。</sample>
+    <sample id="252">The document discusses a new dataset and pipeline for prior case retrieval in the legal domain, specifically focusing on the Indian Legal System (IL-PCR). It introduces the U-CREAT pipeline, which includes event extraction, event-based retrieval, and a new benchmark for PCR. The U-CREAT pipeline is event-based and unsupervised, making it suitable for a production setting without requiring corpus-specific finetuning. The document highlights the benefits of the U-CREAT pipeline, such as better performance, faster inference time, and generalization across different legal systems. It also mentions that the U-CREAT pipeline can be used for unsupervised case retrieval using events extrAction, which is a new approach to prior case retrieval. The document concludes by stating that the U-CREAT pipeline is a significant improvement over existing methods and can be used for unsupervised case retrieval in the legal domain.</sample>
+    <sample id="253">The speaker, Mario Ezra Aragón, is presenting a research paper titled "DisorBERT: A Double Domain Adaptation Model for Detecting Signs of Mental Disorders in Social Media." The paper is part of the ACL 2023 conference. The presentation covers the definition of mental disorders, which are psychological syndromes associated with distress and disability affecting thinking, feeling, mood, and behavior. The speaker also discusses the prevalence of mental disorders and the role of social media in detecting them.
+
+The presentation then delves into the concept of domain adaptation, explaining how it can improve the performance of a model on a target domain by using knowledge from another related or similar domain. The speaker uses the example of BERT, a language model trained on general data, and how it can be adapted to a more specific language like Reddit and mental health.
+
+The speaker also presents the results of their research using the eRisk datasets, showing the precision and recall of different methods such as BERT, CNN-GloVe, MentalBERT, BoW-SVM, DisorBERT, and RNN-GloVe. The evaluation showed that DisorBERT outperformed other methods in terms of precision and recall.
+
+The speaker concludes by thanking the audience and inviting them to ask questions.</sample>
+    <sample id="254">The document discusses a multi-phase training strategy for a document-level relation extraction framework. It introduces uncertainty estimation and dynamic class uncertainty thresholds to improve the label quality of DS data. The framework uses a pre-denoising RE model, instance-level uncertainty estimation, and label denoising to mitigate noise caused by pseudo labels. The iterative re-labeling strategy with dynamic class uncertainty thresholds is designed to handle long-tail problems in DocRE. The proposed framework achieves significant performance improvements over existing baselines on two public datasets.</sample>
+    <sample id="255">在零样本和一样本提示的情况下，提示的形式很重要。</sample>
+    <sample id="257">作者评估了BART-FID-RAG，Blender2，Emora和Blender-Decode这四个对话模型。</sample>
+    <sample id="258">这段英文内容主要讨论了大型语言模型（LLMs）在替代人类评估方面的能力。首先，作者提出了一种方法，即给LLMs指令并让它们对样本进行评分，这种方法被称为LLM评估。作者认为，如果LLMs能够理解指令，它们可以提供评分。接着，作者介绍了相关工作，比如G-Eval，以及他们提交论文到ACL 2023时没有发现其他探索LLM评估的工作。然后，作者讨论了人类评估的不稳定性以及难以复制的问题，这促使他们转向LLMs。作者提出了一个动机，即LLMs能够遵循自然语言指令并执行任务，因此可以用来评估文本质量。为了验证LLMs评估的有效性，作者进行了实验，使用GPT-2和人类评估者对由人类和LLMs生成的故事进行评分。结果显示，LLMs在某些方面表现不如人类，但也有优势。最后，作者提出了几个问题，如LLMs和人类评估者在个体故事上的评分是否一致，以及如何改变LLMs的评分方式等。</sample>
+    <sample id="259">The text discusses the evaluation of models on monolingual and multilingual settings, focusing on the performance of Enc-Dec (mT5) and other models like XSemPLR. It highlights the superiority of Enc-Dec (mT5) in achieving the best performance across all datasets. The text also mentions the limitations of multilingual LMs in cross-lingual semantic parsing tasks, with English showing the largest performance gap. FunQL is noted to outperform other representations, while SQL has the worst performance. The text further explores the performance of different models in a few-shot setting, indicating that the performance gap between monolingual and cross-lingual training is still significant.</sample>
+    <sample id="260">There are 9 authors.</sample>
+    <sample id="261">优秀规划器的理想品质包括合理的和忠实于约束的剧本。</sample>
+    <sample id="262">There are six authors.</sample>
+    <sample id="263">这段英文内容主要讨论了在处理大规模语言模型时，任务语境学习的不稳定性和标签偏见的问题。作者提出了一种名为DC的方法，通过在任务语境中引入随机的领域内词汇来缓解这些偏见，从而显著提高了模型的性能。具体来说，DC方法在处理大规模任务时，能够更好地学习到任务的特征，减少模型对预训练数据的依赖，从而在具有较大领域标签偏见的任务上表现更好。此外，作者还通过实验验证了DC方法在不同任务和数据集上的有效性，并指出这种方法可以显著改善模型的泛化能力。</sample>
+    <sample id="264">这段英文内容主要介绍了如何使用TAVT模型进行跨域迁移学习，包括其在不同领域的应用和性能表现。首先，作者提出了TAVT模型，它能够快速适应新的多模态领域，尤其是在有限标记数据的情况下。然后，作者详细描述了TAVT模型的框架，包括音频视觉元映射网络，音频视觉编码器和语言模型生成器，以及对抗性学习方法。接着，作者通过实验展示了TAVT在不同任务上的表现，如动画，音乐，动物，儿童，美容等。最后，作者还讨论了如何使用不同的方法进行对比学习，如分布基于对比损失和依赖性基于对比损失，并且提出了依赖性基于对比学习的损失函数。</sample>
+    <sample id="265">演讲者的名字是Vasudha.</sample>
+    <sample id="266">这篇论文的作者所属机构是波兰科学院计算机科学研究所和华沙大学。</sample>
+    <sample id="268">PaLM最常见的错误是省略。</sample>
+    <sample id="269">嗯，这段内容主要是关于ABC-Eval的，它是一种新的评估对话系统的方法。ABC-Eval是由Emory大学的NLP实验室和亚马逊Alexa合作完成的。他们研究了如何比较对话模型的性能，特别是通过人类评估来判断对话的质量。他们发现ABC-Eval比传统的Likert评分方法更可靠，因为它能更准确地反映对话的整体质量。ABC-Eval通过比较不同对话模型的对话行为来评估它们的性能，比如对话的相关性，一致性，情感理解和知识等方面。他们还进行了实验，比较了四种开放领域对话模型，每个模型都有100次人类-机器人对话。结果显示，ABC-Eval在预测模型质量方面表现良好，能够识别出模型的错误，如不相关，不一致，缺乏同情心等。总的来说，ABC-Eval提供了一种更细致和准确的方式来评估对话模型的性能。</sample>
+    <sample id="270">这篇论文的作者所属机构是Emory University。</sample>
+    <sample id="271">Continuous fine-tuning。</sample>
+    <sample id="272">这篇论文有七位作者。</sample>
+    <sample id="273">当然可以。请告诉我您需要转换的内容。</sample>
+    <sample id="274">演讲者的名字是Yuren Zhang。</sample>
+    <sample id="276">The content discusses the evaluation of machine translation metrics for Indian languages, specifically focusing on the IndicMT Eval dataset. It highlights the importance of studying evaluation metrics for Indian languages rather than adopting those proposed for English. The presentation covers various aspects such as automatic evaluation of machine translation, the spread of metric scores, and the evaluation of translation to Indian languages. It also mentions the use of the Flores dataset for collecting data and the process of selecting 200 random sentences for evaluation. The presentation concludes with a table showing the error statistics of each system and a table of correlations of various metrics with human scores.</sample>
+    <sample id="277">新方法没有名称。</sample>
+    <sample id="278">显性词汇方法是通过使用加权对数几率比来区分每个标记群体的顶级词汇。</sample>
+    <sample id="279">The authors are affiliated with the Paul G. Allen School, UW NLP, Carnegie Mellon University Language Technologies Institute, and Peking University.</sample>
+    <sample id="280">The presentation begins with an introduction to MultiEMO, an attention-based correlation-aware multimodal fusion framework for emotion recognition in conversations. It highlights the importance of integrating textual, audio, and visual modalities to improve emotion recognition. The presentation then delves into the task definition, explaining that the goal is to predict the emotion label of each utterance in a dialogue from a predefined k-class emotion category set. It also mentions the use of textual, audio, and visual modalities for each utterance.
+
+Next, the presentation discusses the challenges with existing ERC approaches, noting that they do not fully exploit the complementarity of multimodal information. It then introduces the proposed framework, MultiEMO, which aims to address these challenges by integrating textual, audio, and visual modalities effectively.
+
+The presentation also covers the limitations of existing visual feature extractors, which encode both facial expressions of interlocutors and scene-related information of each utterance clip. It points out that this approach is problematic because visual surrounding information is redundant and does not have explicit correlations with the emotion of the speaker. The scene also remains unchanged throughout the conversation.
+
+Furthermore, the presentation highlights the limitations of VisExtNet, which does not distinguish between speakers and irrelevant people in the scene. Due to the class imbalanced issue</sample>
+    <sample id="281">The presentation discusses the importance of context in translation, particularly in understanding the meaning of words like "mole" in different sentences. It highlights that context affects the translation of words, such as "mole" which can mean a mole or a spy depending on the context. The presentation also mentions that evaluating context-dependent translation is challenging because only a small portion of words depend on context, making corpus-level metrics like BLEU unable to capture these cases. The presentation introduces P-CXMI, a pointwise measure of context usage, to evaluate context-dependent translation. It also presents a MuDA benchmark for context-aware models, which performs better on some phenomena and language pairs. The presentation concludes by stating that context-aware models outperform Google on most phenomena and language pairs.</sample>
+    <sample id="282">The presentation discusses a research project titled "StoryTrans: Non-Parallel Story Author-Style Transfer with Discourse Representations and Content Enhancing." The presenter, Xuekai Zhu, introduces the project's focus on transferring author styles at the discourse level, which is crucial for emulating author style. The project aims to address the challenge of non-parallel text style transfer, particularly at the discourse level, which is not well-covered in existing studies that mostly focus on token or sentence level. The presenter explains that their work takes a significant step forward by addressing style transfer at the story level and discourse level, which is crucial for emulating author style. The presenter also mentions that their work involves a two-stage training framework, where the first stage uses an adversarial training framework to disentangle style and content, and the second stage reconstructs the masked tokens to preserve content. The presenter also highlights the importance of content enhancement in the second stage of the training framework.</sample>
+    <sample id="283">第一个提到的对称依存关系结构的名称是Bouquet/Moscow。</sample>
+    <sample id="284">The presentation discusses the development and application of a novel fuzzy span mechanism for enhancing universal information extraction, specifically focusing on the FSUIE system. The speaker, Tian Shuo from Wuhan University, introduces the motivation behind FSUIE, highlighting the limitations of existing UIE models that heavily rely on precise span boundaries. FSUIE addresses this by proposing a fuzzy span boundary, which is more adaptable and less reliant on exact positions. The presentation also covers the fuzzy span loss function, which helps in modeling the continuous distribution of span boundaries, and the fuzzy span attention mechanism, which adjusts the attention span dynamically based on local features. The model structure includes layers for fuzzy span attention, fuzzy span loss, and fuzzy span attention, aiming to improve information extraction and generalization capabilities. The results on various datasets demonstrate significant improvements over existing models, particularly in small-scale datasets, and show better performance with a simpler structure. The presentation concludes with a summary of the key points, emphasizing the benefits of FSUIE in terms of information extraction, generalization, and performance across different tasks.</sample>
+    <sample id="285">这段英文内容主要讨论了参考性评价框架在对话摘要中的应用。首先，研究者指出模型生成的摘要和参考摘要中仍存在事实错误。他们提出了两种解决方案：一是直接设计更好的摘要模型来确保事实性，二是采用Factual Error Correction (FEC) 方法对模型生成的摘要进行事实性错误修正。接着，研究者介绍了FEC模型的评估方法，使用FactCC等事实性指标，但指出这些指标存在不足，如整体评分模糊，可能不准确，混淆了两种解决方案的界限，甚至可能导致错误修正。为了解决这些问题，研究者提出了手动标注参考修正的方法，以更准确地纠正摘要中的事实错误。此外，他们还提出了基于参考的评价框架，通过手动标注参考修正来训练FEC模型，以提供更全面和准确的性能评估。最后，研究者展示了基于参考框架的参考性评价框架，包括形式化类别和内容化类别，以及实验结果，表明参考性评价框架在训练参考性摘要时效果最佳。</sample>
+    <sample id="286">演讲者的名字是James Finch和Sarah Finch。</sample>
+    <sample id="287">这篇论文有四位作者。</sample>
+    <sample id="288">BLiMP，SyntaxGym和CrowS数据集可用于测试句法现象。</sample>
+    <sample id="290">RQ1</sample>
+    <sample id="291">该模型在11个任务上进行了评估，包括NER，CLS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，POS，CLS，POS，</sample>
+    <sample id="294">CamemBERT最初是在NACHOS数据集上训练的。</sample>
+    <sample id="295">演讲者的名字是Adam。</sample>
+    <sample id="296">The text discusses a study on irony perception, focusing on the importance of a perspectivist approach compared to a non-perspectivist one. The study involved creating the EPIC corpus, an English perspectivist irony corpus, which was annotated by 74 annotators from different backgrounds. The corpus includes 3,000 text/reply pairs from Reddit and Twitter, covering five varieties and two sources. The annotation process involved balanced sets of annotators, self-declared gender, and across country of residence. Perspective-aware models were tested on a test set representative of their perspective, showing less uncertainty than standard models. The study also examined the distribution of inter-annotator agreement (IAA) among perspectives, revealing variation in irony perception across dimensions like gender, age group, student status, nationality, and employment status. The highest variation was found between the United Kingdom and Ireland.</sample>
+    <sample id="297">这段英文内容主要讨论了狗哨声在政治中的应用，特别是共和党南方策略中使用的狗哨声。首先，作者提到狗哨声是一种编码或暗示性的语言，用于在不引起反对的情况下获得特定群体的支持。例如，“Law and order”在共和党人中使用，以吸引更保守的选民。然后，作者通过分析共和党南方策略中狗哨声的使用，指出自民权时代以来，狗哨声的使用频率有所增加。接着，作者介绍了如何使用GPT-3来识别和理解狗哨声，包括其在不同语境下的含义。作者还提到了如何通过历史政治演讲来研究狗哨声的使用，以及如何通过分析共和党南方策略来理解其背后的政治意图。此外，作者还讨论了如何通过分析共和党人对“cosmopolitan”一词的使用来理解其背后的反犹太主义含义。最后，作者提出了一个图表，展示了共和党人对“cosmopolitan”一词的使用，以及其在不同语境下的含义。</sample>
+    <sample id="298">发现导致时间漂移是性能下降的主要原因的结论是：性能下降是由于时间漂移。</sample>
+    <sample id="299">这段内容主要讨论了NLI模型的鲁棒性问题，特别是如何通过minimax训练来提高其鲁棒性。研究者指出，NLI模型在某些情况下会依赖于数据集中的“捷径”，这些捷径与标签有虚假的相关性，导致模型在测试时表现不佳。为了克服这个问题，他们提出了一种训练方法，旨在减少模型对这些捷径的依赖，从而提高其在分布外样本上的性能。这种方法的核心思想是通过交替优化学习器和辅助模型，来学习一个强调未被充分代表的困难样本的示例权重分布。这种方法不需要预先知道捷径的具体类型，而是依赖于学习器自身的训练动态。此外，研究还探讨了这种方法在不同数据集和模型大小上的表现，以及其在不同预训练阶段的效果。</sample>
+    <sample id="300">The text discusses the concept of interactive dictation, a process where users can use their voice to both dictate and edit a document in a natural and intuitive manner. The text introduces the task of interactive dictation and explains how it differs from traditional dictation. It also mentions the work done at Semantic Machines in collaboration with other researchers. The text provides an overview of the problem, explaining that interactive dictation involves users dictating and editing a document using voice commands. It also mentions the limitations of existing speech-to-text systems, such as the lack of support for editing through voice. The text also discusses the new task of interactive dictation, which involves flexible interleaving of dictation and editing, intuitive and open-ended natural language for editing, and the challenge of predicting segmentation between dictation and editing commands.</sample>
+    <sample id="302">因为输出序列中的词元需要被放置在正确的顺序上，以确保句子的语法正确和意义清晰。</sample>
+    <sample id="303">因为透明性是缓解偏见的重要手段，有助于模型所有者了解偏见的来源和影响，从而采取措施进行改进。</sample>
+    <sample id="304">最小对不可接受输入是“许多人在帮助自己。”</sample>
+    <sample id="305">The speaker, Dawei Zhu, introduces a presentation on "Weaker Than You Think: A Critical Look at Weakly Supervised Learning" at ACL 2023. The presentation aims to address the challenges and benefits of weakly supervised learning, particularly focusing on the use of weakly labeled data and the impact of noise in the data. The speaker explains that weak supervision alleviates the annotation bottleneck but introduces noise, which can harm generalization. Weakly supervised learning (WSL) trains models to generalize well despite being trained on noisy data. The presentation highlights that recent WSL works often claim to achieve high performance on clean test sets, but this is often achieved by using additional clean validation sets, which implies the need for manual annotations. The speaker questions the necessity of clean validation data and explores how many clean samples are required for WSL approaches to work effectively. The findings show that while WSL approaches benefit from more clean validation samples, they can also achieve good performance with fewer samples. The speaker concludes by emphasizing the importance of clean validation data and recommends continuous fine-tuning (CFT) for better results.</sample>
+    <sample id="306">The presentation discusses the evaluation of entity tracking abilities in language models, focusing on the challenges and results of in-context learning experiments. It highlights that smaller pre-trained models exhibit non-trivial entity tracking behavior, while randomly initialized models do not generalize this ability beyond the initial setup. The presentation also mentions the effect of pretraining data on entity tracking, noting that models with more pretraining data can learn entity tracking capacities.</sample>
+    <sample id="307">作者使用了F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，F1 F1，</sample>
+    <sample id="308">The text discusses the concept of positionality in NLP datasets and models, focusing on how they can be influenced by the demographics, identity, and life experiences of the researchers and developers. It highlights the importance of addressing positionality in NLP research, suggesting that it can lead to biases in datasets and models. The text also mentions the need for NLP research to consider the perspectives of various communities and the potential for building specialized datasets and models for specific groups.</sample>
+    <sample id="309">使用了Krippendorff’s Alpha来衡量注释者之间的一致性。</sample>
+    <sample id="310">Wikipedia, Unrelated.</sample>
+    <sample id="311">The authors belong to Heinrich Heine University Düsseldorf, Germany.</sample>
+    <sample id="312">MultiInstruct包含62个跨模态任务，而其他基准只包含10个。</sample>
+    <sample id="313">这篇论文有三位作者。</sample>
+    <sample id="314">二进制协调的定义是：在英语中，当两个或多个名词被逗号隔开时，它们之间通常用and连接，形成一个二进制协调结构。</sample>
+    <sample id="315">The average length of prompts is not provided in the given information.</sample>
+    <sample id="316">Smaller LMs fine-tuned on Coscript can generate higher quality scripts than LLMs.</sample>
+    <sample id="317">The presentation discusses the development and evaluation of CodeIE, a system designed for few-shot information extraction using large code generation models. The presenter, Peng Li from Fudan University, introduces the concept of CodeIE, which leverages code generation models to perform structured information extraction from plain text. The system is designed to address the mismatched output format issue faced by previous methods, such as Text2Text generation models, by converting the text-to-structured information task into a structured-to-structured code generation task. CodeIE uses a prompt format that aligns the input and output formats, making it more controllable and efficient. The evaluation results on NER and RE benchmarks show that CodeIE outperforms traditional methods like T5-base and GPT-3, especially in few-shot settings. The presenter also highlights the format consistency between the input and model, as well as the format consistency between the code prompt and the generated code.</sample>
+    <sample id="318">嗨，我是Yanis Labrak，我将向大家介绍我们关于DrBERT的研究，DrBERT是一个在法语中预训练的模型，适用于生物医学和临床领域。在本次演示中，我们将首先讨论医疗领域的语言建模，然后我们将展示我们文章的主要贡献，我们介绍了一种名为DrBERT的法语生物医学模型，它是基于RoBERTa并使用NACHOS数据集训练的，NACHOS是一个从网络上爬取的医疗数据集。我们还将比较使用不同预训练策略，数据源和规模的模型。然后我们将评估13个模型在11个任务上的表现。最后，我们将讨论NACHOS和DrBERT的分布情况。</sample>
+    <sample id="319">论文研究了从头开始训练和继续预训练的学习策略。</sample>
+    <sample id="320">由于测试重复使用而导致的过拟合因素很小，因为从图中可以看出，每单位改进在CoNLL-2003上的改进转化为CoNLL++上的多于一单位的改进，这意味着没有递减回报。</sample>
+    <sample id="321">The evaluation of simplified quality is done using metrics like SARI, BLEU, and BS-P.</sample>
+    <sample id="322">The presentation discusses the topic of morality classifiers in the context of natural language processing, NLP. It starts by explaining what morality is, emphasizing the distinction between right and wrong. The speaker, Enrico Liscio, introduces the concept of human morality as the internal compass that helps us determine moral rightness or wrongness. He then delves into the idea that morality is fundamental to society and crucial for language models to understand and recognize in text.
+
+The presentation highlights that while morality has been approached in NLP, it is often treated as a binary scale between immoral and moral. However, the speaker points out that morality is subjective, with different people having varying views on the same concept. For example, the concept of abortion can be seen as immoral by some and moral by others. This subjectivity is crucial to understand when dealing with morality classifiers.
+
+To address this, the speaker introduces the Moral Foundation Theory, which identifies five core moral foundations: care, fairness, loyalty, authority, and purity. These foundations determine how individuals judge the morality of concepts or actions. The speaker explains that language models can learn to recognize these foundations in text, but they need to be trained on diverse datasets to understand the nuances of morality across different domains.
+
+The presentation also touches on the concept of sub</sample>
+    <sample id="323">The presentation begins with an introduction to the paper titled "Dynamic Heterogeneous-Graph Reasoning with Language Models and Knowledge Representation Learning for Commonsense Question Answering" by Yujie Wang et al. from Shanxi University. The paper discusses the challenges of Commonsense Question Answering (CQA) and how it requires machines to answer questions based on common knowledge and retrieve relevant knowledge from external sources. The authors propose a solution using a heterogeneous knowledge graph (HKG) based on multiple knowledge bases, which they optimize through a two-stage pruning strategy and knowledge representation learning (KRL). They implement the fusion and encoding of two modalities through a language model (LM).
+
+The presentation then delves into the KG2QA Layer, which incorporates path information from the HKG into the QA context. It uses KeyBERT to extract key entities from the QA context and retrieves paraphrases of these entities from WordNet and Wiktionary. The HKG construction process involves first-stage pruning to remove noisy entities, encoding the subgraph and text in isolation to limit interaction between modalities, and ignoring semantic relationships between entities.
+
+The method, DHLK, builds a heterogeneous knowledge graph (HKG) based on multiple knowledge bases and optimizes its structure and knowledge representation through a two-stage</sample>
+    <sample id="324">Yes, language models can have different political leanings.</sample>
+    <sample id="325">好的，以下是所给内容的英文翻译：
+
+---
+
+Compositional Generalization without Trees using Multiset Tagging and Latent Permutations
+
+Matthias Lindemann, Alexander Koller, Ivan Titov
+
+The University of Edinburgh
+Informatics
+NLP
+Uni Centre for Doctoral Training
+Saarland University
+University of Amsterdam
+
+Composition Generalization
+
+Ability of a learner to handle deeper recursion and unseen compositions of phrases that have been seen individually during training.
+
+Composition Generalization in Semantic Parsing
+
+Train:
+
+The girl slept.
+
+Mary knew that the girl slept.
+
+*girl x, sleep.agent x
+
+sleep.agent x
+
+Test:
+
+Jim said that Mary knew that the girl slept.
+
+*girl x, say.agent x Jim say.ccomp x x know.agent x x sleep.agent x
+
+Naive seq2seq models fail!
+
+Trees help a lot but...
+
+Trees need to be obtained:
+
+- Pre/Post-processing logical forms
+
+- Grammar-induction
+
+This paper: neural seq2seq model that directly models the correspondences between fragments. For the first time, we show strong generalization to deeper recursion without trees.
+
+Our Approach
+
+Permuting with "jumps"
+
+Tag
+
+Alignment unknown.
+
+Permutation model:
+
+- Inference is NP-hard (~ TSP)</sample>
+    <sample id="326">Cognitive dissonance is two beliefs or actions that are inconsistent.</sample>
+    <sample id="327">这段英文内容主要介绍了在ACL 2023会议上，Xiao Xu等人关于“ManagerTower: Aggregating the Insights of Uni-Modal Experts for Vision-Language Representation Learning”的研究。研究背景是视觉语言学习的目标是训练一个既能理解图像又能理解文本的智能AI系统。研究方法是通过大规模的自我监督预训练来实现图像-文本对。研究中，他们提出了ManagerTower架构，该架构包括文本编码器，视觉编码器和跨模态编码器。ManagerTower通过多层的文本和视觉专家来获取预训练的单模态专家的见解，并在每个跨模态层中通过管理者进行自适应的见解聚合。实验结果表明，ManagerTower在不同数据集和模型上都表现出了更好的性能，尤其是在与BridgeTower和MeterTower的比较中，ManagerTower在更大数据集和更大模型上仍然表现出色。</sample>
+    <sample id="328">GPT-2</sample>
+    <sample id="329">这段英文内容主要介绍了零样本视频句子定位的研究工作。研究者提出了一个结构化的伪标签生成方法，用于噪声鲁棒的零样本视频句子定位。该方法包括生成基于事件时间结构的伪事件，以及减少训练过程中的噪声。具体步骤包括：1）使用预训练的图像描述模型生成自由形式的伪查询；2）基于事件时间结构生成伪事件；3）通过计算伪查询和视频片段之间的相似性来选择伪事件。此外，研究还提出了一种伪查询生成方法，旨在提高查询和视频片段的相关性。</sample>
+    <sample id="330">是的，累积训练比迭代训练更有效。</sample>
+    <sample id="331">演讲者的名字是Sara Papi。</sample>
+    <sample id="332">MuDa 基准中的数据是从 TED 数据集中获得的。</sample>
+    <sample id="333">The presentation discusses a novel training framework called INK for improving the representation space of neural machine translation models. The framework aims to refine the representation space by iteratively adjusting it according to kNN knowledge. Key points include:
+
+1. **INK Training Framework**:
+   - INK iteratively refines the representation space by aligning three types of representations using KL-divergence.
+   - It optimizes the adapter with a combined learning objective and refreshes the datastore asynchronously.
+   - The overall training procedure involves representation refinement, smoothing predictions with nearest neighbors, and using updated representations to refresh the datastore.
+
+2. **Experiment Results**:
+   - INK achieves the best BLEU scores across various domains (Medical, Law, IT, and Koran).
+   - Compared to baselines like V-kNN, A-kNN, and R-kNN, INK shows significant improvements in BLEU scores.
+   - The system achieves an average BLEU gain of 1.99 COMET and 1.0 BLEU.
+
+3. **Main Results**:
+   - INK achieves an average BLEU gain of 1.99 COMET and 1.0 BLEU.
+   - Compared with kNN-MT baselines, INK achieves better translation</sample>
+    <sample id="335">演讲者的名字是Matthias Lindemann。</sample>
+    <sample id="336">跨语言转移是指在一种语言上训练的模型能够迁移到另一种语言上的能力。</sample>
+    <sample id="337">In this section, we will focus on the evaluation of the model. Firstly, we will discuss the intrinsic evaluation of the model. The intrinsic evaluation is used to assess the quality of the model itself. The evaluation metrics include word similarity, named entity recognition, and POS tagging. The results show that the model performs well in these tasks. Then, we will talk about the extrinsic evaluation of the model. The extrinsic evaluation is used to assess the model's performance in real-world applications. The results show that the model can be applied to various tasks such as named entity recognition, POS tagging, and word segmentation. Finally, we will discuss the model's adaptability. The model can be adapted to different languages and domains. The results show that the model can be applied to various languages and domains.</sample>
+    <sample id="338">The presentation discusses the evaluation of human explanations in natural language processing. It starts with a title slide introducing the topic and the presenters from Rensselaer Polytechnic Institute, IBM Research, and Northeastern University. The presenter, Bingsheng Yao, thanks the audience for their interest and introduces the research titled "Are Human Explanations Always Helpful? Towards Objective Evaluation of Human Natural Language Explanations." The presentation outlines the motivations, shoulders of giants, primary contributions, and future work. The primary contributions include a unified structure, preliminary experiments, metric and evaluation, and future work. The motivations focus on the need for objective evaluation of human explanations, especially in terms of their helpfulness towards prediction. The shoulders of giants section discusses related works and the challenges in evaluating human explanations. The presentation then delves into the evaluation of human explanations, highlighting the need for a unified structure and the limitations of traditional metrics like BLEU and ROUGE. It also discusses the importance of considering the task and explanation style when evaluating explanations. The presentation concludes with a discussion on the evaluation of human explanations using the TREU metric, which evaluates helpfulness at both fine-tuning and inference stages.</sample>
+    <sample id="339">The authors are affiliated with Saarland University, Amazon Alexa, and the University of Vienna.</sample>
+    <sample id="340">The presentation discusses the development and evaluation of a large-scale, syntactically diverse paraphrase dataset called ParaAMR. It highlights the benefits of paraphrase generation in various NLP applications such as question answering, chatbots, creative generation, data augmentation, and robustness. The presentation also addresses the challenges of creating high-quality, large-scale paraphrase datasets, emphasizing the need for a balance between quality and scale. ParaAMR is constructed using AMR back-translation, resulting in a dataset with around 15.5 million source sentences and 6.92 paraphrases per sentence. The presentation includes sections on learning sentence embeddings, data augmentation for few-shot learning, and syntactically controlled paraphrase generation. It concludes by summarizing the benefits of ParaAMR, including its application in various NLP tasks and its potential for data augmentation.</sample>
+    <sample id="341">作者使用了平均延迟，计算平均延迟和计算平均延迟的计算时间。</sample>
+    <sample id="342">这段英文内容主要介绍了LiveChat，一个基于视频的个性化对话数据集。LiveChat的数据集是从直播流中自动构建的，包括大量的对话数据，用于训练和评估预训练的对话模型。内容涉及数据集的构建过程，包括从直播视频中收集音频，通过ASR转录成文本，以及通过观众评论构建对话。此外，还讨论了数据集的特性，如视频源，大规模，以及在不同任务上的表现，如响应建模和收件人识别。实验部分展示了CoBERT在不同数据规模下的自动评估结果，以及在不同数据规模下的人工评估结果。最后，提出了在视频源对话领域中，LiveChat在构建大规模视频源对话数据集方面的优势，以及在个性化对话中的应用前景。</sample>
+    <sample id="343">当然可以，以下是翻译结果：
+
+1. 你好，大家好，我是Akshatha，今天我的合作者Martin和我正在介绍我们的工作，KIMUS测试，评估来自多个来源的知识整合。
+2. 这项工作是McGill大学，Mila和Microsoft Research之间的合作。
+3. 自然语言理解模型依赖于多种知识来源，如参数中的预训练知识和上下文中的推理时间知识。
+4. 最近在问答任务中的研究表明，模型可以使用预训练时间的知识来解决任务。
+5. 但是，自然语言理解通常需要在推理时间提供知识，例如，在句子“John在电视上看到了新当选的总统”中，预训练参数可能包含关于总统做什么和电视的信息，但它们无法可靠地知道John是谁或新总统是谁，因为总统可能在预训练后发生了变化。
+6. 因此，成功的模型对于知识密集型NLU任务需要能够整合和使用预训练时间和推理时间的知识。
+7. 在这项工作中，我们提出了一个用于知识整合评估的KIMUS测试套件，包括一个核心参考解析任务来探测能够调用不同来源的知识的能力，以及实验与人类研究参与者和核心参考解析模型。
+8</sample>
+    <sample id="344">基于树的方法需要进行大量的预处理，这可能很复杂，而且计算上也较为昂贵。</sample>
+    <sample id="345">这段英文内容主要介绍了关于“Compositional Generalization without Trees using Multiset Tagging and Latent Permutations”的研究。研究者Matthias Lindemann，Alexander Koller和Ivan Titov提出了一个神经网络模型，该模型在不依赖树结构的情况下实现了对深层递归的强泛化能力。他们通过两个步骤来预测输出：首先，为每个输入标记一个无序的多集，表示输出中将出现的词；然后，使用另一个模型预测一个排列，将这些词按正确顺序排列。这种方法避免了传统方法中树结构的复杂性和计算成本。此外，研究还展示了如何通过预处理逻辑形式和语法归纳来获得树结构，以及如何通过连续松弛进行推理。最后，研究者在COGS基准上进行了实验，展示了其模型在结构泛化方面的优势。</sample>
+    <sample id="346">这篇论文的作者所属机构是佐治亚理工学院。</sample>
+    <sample id="347">当然可以。</sample>
+    <sample id="348">这段英文内容主要讨论了在使用自然语言处理技术时，如何通过生成人物来衡量语言模型中的刻板印象。研究者提出了两种方法：一种是通过指令和提示生成人物，另一种是通过标记词来区分标记群体和未标记群体。研究发现，生成的人物中包含了更多的刻板印象，特别是对于黑人女性角色，描述中出现了“强大，坚韧”的特质，这有助于揭示刻板印象的不完整性。</sample>
+    <sample id="349">好的，我可以帮你翻译。请把需要翻译的内容发给我。</sample>
+    <sample id="350">The presentation discusses the concept of superhuman performance in today's natural language understanding, NLU, systems. It starts by explaining how leaderboard-based evaluation has become a popular practice in NLP, leading to claims of superhuman capabilities and the idea that certain tasks have been solved. However, the paper argues that most NLU tasks require knowledge and inference, not just simple procedural tasks like arithmetic or memory-intensive tasks. The presentation then introduces the SuperGLUE benchmark, which includes tasks like Word in Context, Multi-Sentence Reading Comprehension, and Reading Comprehension with Commonsense Knowledge. It highlights the brittleness of models, such as out-of-domain generalization, adversarial attacks, and sensitivity to basic linguistic perturbations. The paper also points out that human baselines are outperformed on 6 out of 10 SuperGLUE tasks, indicating that the term "superhuman" is often misused. The presentation concludes by discussing the need for fairer and more transparent benchmarks and the importance of understanding the limitations of current systems.</sample>
+    <sample id="351">这段英文内容主要讨论了CoNLL-2003命名实体识别标注数据集在2023年是否仍然有效的问题。研究者通过分析模型在该数据集上的表现，提出了几个关键点：1. 模型架构，特别是Transformer模型在泛化能力上表现更好。2. 模型大小，更大的模型能更好地泛化。3. 细化训练样本的数量，更多的样本有助于更好的泛化。4. 时间漂移也是一个重要因素。研究者还提出了几个可能造成性能下降的原因，包括自适应过拟合，但没有观察到，以及时间漂移。最后，研究者认为CoNLL-2003标注者仍然有效，但需要更好的模型架构，更大的模型大小和更多的细调样本。</sample>
+    <sample id="352">ABC-Eval stands for Annotating Behaviors in Chat.</sample>
+    <sample id="353">The given text discusses a study on the generation of code snippets based on natural language descriptions. The study focuses on the challenges of input underspecification and proposes a solution by asking clarification questions. The researchers introduce a pipeline that includes a clarification need predictor, a CQ ranker, and a code generator. They also propose a synthetic dataset called CodeClarQA, which includes clarifications on key operations. The study evaluates the performance of different models and finds that MPNet has the best performance. The researchers also address common errors and potential directions for improvement, such as taxonomy and argument specification.</sample>
+    <sample id="354">直到2010年，CoNLL-2003 和 CoNLL++ 之间的性能增量才高于 5 个百分点。</sample>
+    <sample id="355">当然可以。请告诉我您需要转换的内容。</sample>
+    <sample id="356">这篇论文的作者所属机构包括爱丁堡大学，Saarland大学和阿姆斯特丹大学。</sample>
+    <sample id="357">演讲者的名字是Siyu Yuan。</sample>
+    <sample id="358">这篇论文有五位作者。</sample>
+    <sample id="359">该方法与 wait-k，LA，CAAT 和 EDAtt 这些专用的 simulST 架构进行了比较。</sample>
+    <sample id="361">The text discusses a presentation on the topic of "CounterComp: Metric learning using counterfactual examples." It highlights the importance of using counterfactual examples to improve compositional generalization for multi-step quantitative reasoning. The presentation covers various aspects such as the challenge of compositional generalization, the long-tail issue, and the role of questions as counterfactual examples. It also mentions the use of metric learning to improve performance on in-distribution samples and the impact of adding an auxiliary metric learning loss to improve performance on out-of-distribution samples. The presentation includes a graph showing the improvement of CounterComp on in-distribution samples and a table comparing the performance of different models. Additionally, it mentions the top attended tokens during the generation of divide and the top attended tokens during the generation of add. The presentation concludes with a thank you note and contact information.</sample>
+  </task>
+</testset>

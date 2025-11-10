@@ -13,6 +13,7 @@
 # limitations under the License
 import argparse
 import json
+import logging
 import os
 import re
 import shutil
@@ -27,6 +28,18 @@ import bert_score
 import jiwer
 from comet import download_model, load_from_checkpoint
 from whisper_normalizer import english, basic
+
+import mcif
+from mcif.utils import resolve_reference
+
+
+logging.basicConfig(
+    format='%(asctime)s | %(levelname)s | %(name)s | %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S',
+    level=logging.INFO,
+    force=True
+)
+LOGGER = logging.getLogger('mcif.evaluation')
 
 
 CHAR_LEVEL_LANGS = {"zh"}
@@ -320,7 +333,7 @@ def cli_script():
         '--hypothesis', '-s', type=str, required=True,
         help="the hypothesis to be scored")
     parser.add_argument(
-        '--reference', '-r', type=str, required=True,
+        '--reference', '-r', type=str, default=None,
         help='the path to the folder containing the test set definition.')
     parser.add_argument(
         '--track', '-t', choices=["short", "long"], required=True,
@@ -329,15 +342,19 @@ def cli_script():
         '--language', '-l', type=str, required=True,
         help="the target language to evaluate")
     parser.add_argument(
+        '--mcif-version', '-v', type=str, default=None,
+        help="the version of the MCIF test set to download (if --reference is not set)")
+    parser.add_argument(
         '--filter-modality', '-m', choices=["audio", "text", "video"], default=None,
         help="consider only samples which have this modality")
     parser.add_argument(
         '--breakdown-qa-types', default=False, action='store_true',
         help="if set, print separate scores for different QA types")
     args = parser.parse_args()
+    LOGGER.info(f"MCIF evaluation version {mcif.__version__}")
     try:
         hypo_path = Path(args.hypothesis)
-        ref_path = Path(args.reference)
+        ref_path = resolve_reference(args.reference, args.language, args.track, args.mcif_version)
         scores = main(
             hypo_path,
             ref_path,

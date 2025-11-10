@@ -1,0 +1,1329 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="de">
+    <sample id="576">Und wir können dasselbe auch tun, indem wir Sätze aus einer anderen Untergruppe oder einem anderen Datensatz auswählen. Das nennen wir also das nicht übereinstimmende Szenario.</sample>
+    <sample id="577">Hier kommen die Sätze also immer noch aus relevanten Datensätzen, aber nicht aus demselben Datensatz, mit dem Sie evaluieren. Und dasselbe können wir für Unakzeptabilitätsfälle tun.</sample>
+    <sample id="578">Hier ist der Inhalt der Folie ins Deutsche übersetzt:
+
+**Ansatz**
+
+Es wird getestet, ob MPP-Beurteilungen in Abhängigkeit von Kontextlänge, struktureller Übereinstimmung und Akzeptabilität variieren.
+
+**Test-Suite: Subjekt-Verb-Kongruenz**
+
+PLM( | Präfix) &gt;? PLM( | Präfix)
+*   akzeptabel
+*   inakzeptabel
+*   Beispiel
+
+**Raum der Kandidatenpräfixe**
+*   **Übereinstimmend**
+    *   Subjekt-Verb-Kongruenz
+*   **Nicht übereinstimmend**
+    *   Inseleffekte
+    *   Füller-Lücken
+    *   Bindung
+    *   Wikipedia
+    *   usw.
+
+**Beispieltextfeld links:**
+*   Vor wem könnte Rose fliehen, bevor sie zu diesem Kunden zurückkehrt?
+*   \* Vor wem könnte Rose von diesem Kunden fliehen, bevor sie zurückkehrt?
+
+**Beispieltextfeld rechts:**
+*   **Wikipedia, Unverwandt**
+*   Eine Rose ist eine verholzende, mehrjährige Blütenpflanze der Gattung Rosa. Es gibt über dreihundert Arten und zehntausende von Kultivaren.
+*   Vor wem könnte Rose fliehen, bevor sie zu diesem Kunden zurückkehrt?
+*   \* Vor wem könnte Rose von diesem Kunden fliehen, bevor sie zurückkehrt?
+
+**Untere Leiste:**
+*   GPT2, OPT family - 125M to 6.7B</sample>
+    <sample id="579">Hier ist der englische Text ins Deutsche übersetzt:
+
+**Ansatz**
+Testen, ob MPP-Beurteilungen in Abhängigkeit von Kontextlänge, struktureller Übereinstimmung und Akzeptabilität variieren.
+
+**Obere Zeile (Formel):**
+akzeptabel
+inakzeptabel
+`P_LM( | Präfix) &gt;? P_LM( | Präfix)`
+
+**Linker Kasten (Test-Suite):**
+Test-Suite: Subjekt-Verb-Kongruenz
+
+**Kasten "Space of Candidate Prefixes":**
+Raum der Kandidaten-Präfixe
+
+*   **Übereinstimmend:**
+    *   Subj.-Verb.-Kongruenz
+    *   ...
+*   **Nicht übereinstimmend:**
+    *   Inseleffekte
+    *   Füllerkategorien-Lücken
+    *   Bindung
+    *   Wikipedia
+    *   ...
+
+*   `sample` (Bleibt englisch als Label im Diagramm)
+
+**Mittlerer Kasten (Beispiel ohne Kontext):**
+(Bleibt englisch, da es sich um Testbeispiele handelt)
+Who might Rose flee from before returning to this customer?
+* Who might Rose flee from before returning to this customer to?
+
+**Rechter Kasten (Beispiel mit Kontext):**
+Wikipedia, Unbezogen
+(Der Kontext und die Fragen bleiben englisch, da es sich um Testbeispiele handelt)
+A rose is a woody perennial flowering plant of the genus Rosa. There are over three hundred species and tens of thousands of cultivars.
+Who might Rose flee from before returning to this customer?
+* Who might Rose flee from before returning to this customer to?
+
+**Unterer Balken:**
+GPT2, OPT family - 125M to 6.7B (Bleibt englisch, da es sich um Modellnamen handelt)</sample>
+    <sample id="580">**Ansatz**
+
+Testen, ob MPP-Beurteilungen in Abhängigkeit von Kontextlänge, struktureller Übereinstimmung und Akzeptabilität variieren
+
+---
+
+**Diagramm-Beschriftungen:**
+
+**Links oben:**
+*   Test-Suite: Subjekt-Verb-Übereinstimmung
+*   akzeptabel
+*   inakzeptabel
+*   P_LM(Präfix | Präfix) &gt;? P_LM(Präfix | Präfix)
+*   Beispiel
+
+**Mitte unten:**
+*   Raum der Kandidaten-Präfixe
+    *   **Übereinstimmend**
+        *   Subjekt-Verb-Übereinstimmung
+    *   **Nicht übereinstimmend**
+        *   Insel-Effekte
+        *   Lückenfüller
+        *   Bindung
+        *   Wikipedia
+
+**Mitte rechts:**
+*   „Vor wem könnte Rose fliehen, bevor sie zu diesem Kunden zurückkehrt?“
+*   „* Vor wem könnte Rose von diesem Kunden fliehen, bevor sie zurückkehrt?“
+
+**Oben rechts:**
+*   Wikipedia, Unverwandt
+
+**Ganz rechts:**
+*   „Eine Rose ist eine verholzende, mehrjährige Blütenpflanze der Gattung Rosa. Es gibt über dreihundert Arten und Zehntausende von Kultivaren.“
+*   „Vor wem könnte Rose fliehen, bevor sie zu diesem Kunden zurückkehrt?“
+*   „* Vor wem könnte Rose von diesem Kunden fliehen, bevor sie zurückkehrt?“
+
+**Unten links:**
+*   GPT2, OPT-Familie – 125 Millionen bis 6,7 Milliarden</sample>
+    <sample id="581">MPP-Beurteilungen sind robust für beliebige Kontextlängen.
+
+Wir führen MPP-Bewertungen mit verschiedenen Kontexten durch – akzeptabel/inakzeptabel; übereinstimmende/nicht übereinstimmende Struktur – mit Längen von bis zu 900 Tokens.
+
+**Diagramm Legende:**
+*   Präfixstrategie
+*   Akzeptabel (Übereinstimmend)
+*   Akzeptabel (Nicht übereinstimmend)
+*   Inakzeptabel (Übereinstimmend)
+*   Inakzeptabel (Nicht übereinstimmend)
+*   Wiki (Nicht übereinstimmend)
+
+**Beispieltext:**
+Eine Rose ist eine verholzende, mehrjährige Blütenpflanze der Gattung Rosa. Es gibt über dreihundert Arten und Zehntausende von Kultivaren.
+Wer könnte Rose Tee sein, bevor sie zu diesem Kunden zurückkehrt?
+* Eine Rose ist eine verholzende, mehrjährige Blütenpflanze der Gattung Rosa. Es gibt über dreihundert Arten und Zehntausende von Kultivaren.
+Wer könnte Rose Tee von diesem Kunden sein, bevor sie zurückkehrt?
+
+**Sprecher:**
+Also, wie schneidet das Modell ab? Zuerst betrachten wir die Wikipedia-Sätze, die für das aktuelle Abfragepaar völlig irrelevant sind. Und dort stellen wir fest, dass die MPP-Beurteilungen für beliebige Kontextlängen größtenteils robust sind.</sample>
+    <sample id="582">Hier ist die deutsche Übersetzung des Inhalts der Folie:
+
+**MPP-Urteile sind robust für beliebige Kontextlängen**
+
+Wir führen MPP-Evaluierungen mit verschiedenen Kontexten durch – akzeptable / unakzeptable; passende / nicht passende Struktur – von Längen bis zu 900 Token.
+
+Wir haben die Kontextlänge auf bis zu 1024 erhöht, um die OPT- und GPT-2-Modelle maximal auszunutzen, und wir haben hier in der orange gepunkteten Linie gesehen, dass die MPP-Urteile relativ stabil sind.</sample>
+    <sample id="583">**Akzeptable/Inakzeptable MPP-Sätze im Kontext der Verbesserung/Verschlechterung der Beurteilungsleistung**
+
+Wir führen MPP-Evaluierungen mit verschiedenen Kontexten durch – akzeptabel/inakzeptabel; passende/nicht passende Struktur – mit Längen von bis zu 900 Tokens.
+
+BLIMP, OPT 6.7B
+
+**Prefix-Strategie**
+*   Akzept. (Passend)
+*   Inakzept. (Passend)
+*   Akzept. (Nicht passend)
+*   Inakzept. (Nicht passend)
+*   Wiki (Nicht passend)
+
+**Beispieltexte:**
+*   Es gab einen Dokumentarfilm über Musik, die Allison irritierte. Es gab keine Gesetzgeber, die hart arbeiteten. Wem könnte Rose von diesem Kunden eine Gebühr berechnen, bevor sie zurückkehrt zu?
+*   * Es gab einen Dokumentarfilm über Musik, die Allison irritierte. Es gab keine Gesetzgeber, die hart arbeiteten. Wem könnte Rose von diesem Kunden eine Gebühr berechnen, bevor sie zurückkehrt zu?
+*   Es gab jeden Dokumentarfilm über Musik, die Allison irritierte. Es gab die meisten Gesetzgeber, die hart arbeiteten. Wem könnte Rose von diesem Kunden eine Gebühr berechnen, bevor sie zu dem Kunden zurückkehrt?
+*   * Es gab jeden Dokumentarfilm über Musik, die Allison irritierte. Es gab die meisten Gesetzgeber, die hart arbeiteten. Wem könnte Rose von diesem Kunden eine Gebühr berechnen, bevor sie zu dem Kunden zurückkehrt?</sample>
+    <sample id="584">Hier ist der deutsche Inhalt des englischen Materials:
+
+**Titel:** Akzeptable/Inakzeptable MPP-Sätze im Kontext der Verbesserung/Verschlechterung der Beurteilungsleistung
+
+**Beschreibung:** Wir führen MPP-Evaluierungen mit verschiedenen Kontexten durch — akzeptabel / inakzeptabel; angepasste/nicht angepasste Struktur — mit Längen von bis zu 900 Tokens
+
+**Modell:** BLIMP, OPT 6.7B
+
+**Legende:**
+*   **Prefix Strategy:** Präfix-Strategie
+*   **Acc. (Matched):** Akzeptabel (Angepasst)
+*   **Unacc. (Matched):** Inakzeptabel (Angepasst)
+*   **Wiki (Mismatched):** Wiki (Nicht Angepasst)
+*   **Acc. (Mismatched):** Akzeptabel (Nicht Angepasst)
+*   **Unacc. (Mismatched):** Inakzeptabel (Nicht Angepasst)
+
+**Textfelder (oben rechts, blau):**
+1.  Es gab eine Dokumentation über Musik, die Allison irritierte. Es gab keine Gesetzgeber, die hart arbeiteten. Vor wem könnte Rose fliehen, bevor sie zu diesem Kunden zurückkehrt?
+2.  * Es gab eine Dokumentation über Musik, die Allison irritierte. Es gab keine Gesetzgeber, die hart arbeiteten. Vor diesem Kunden könnte Rose fliehen, bevor sie zurückkehrt?
+
+**Textfelder (unten rechts, rot):**
+1.  Es gab jede Dokumentation über Musik, die Allison irritierte. Es gab die meisten Gesetzgeber, die hart arbeiteten. Vor diesem Kunden könnte Rose fliehen, bevor sie zum Kunden zurückkehrt?
+2.  * Es gab jede Dokumentation über Musik, die Allison irritierte. Es gab die meisten Gesetzgeber, die hart arbeiteten. Vor diesem Kunden könnte Rose fliehen, bevor sie zum Kunden zurückkehrt?
+
+**Sprecher (0:00-0:09):** "Hier wählen oder erstellen wir Sätze aus akzeptablen und inakzeptablen Domänen desselben BLIMP-für-Syntax-Jam-Datensatzes."</sample>
+    <sample id="585">Und da sehen wir, dass die MPP-Urteile entweder deutlich zunehmen oder abnehmen, wenn man entweder akzeptable Präfixe oder inakzeptable Präfixe hinzufügt.</sample>
+    <sample id="586">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Titel:**
+Akzeptable/inakzeptable MPP-Sätze mit passender Struktur beeinträchtigen die Modellleistung am stärksten
+
+**Untertitel:**
+Wir führen MPP-Evaluierungen mit verschiedenen Kontexten durch — akzeptabel / inakzeptabel; passender/nicht passender Struktur — von Längen bis zu 900 Token
+
+**Diagramm-Beschriftungen/Legende:**
+*   **Prefix Strategy:** Präfix-Strategie
+*   **BLIMP, OPT 6.7B:** BLIMP, OPT 6.7B
+*   **Acc. (Matched):** Akzeptabel (Passend)
+*   **Acc. (Mismatched):** Akzeptabel (Nicht passend)
+*   **Unacc. (Matched):** Inakzeptabel (Passend)
+*   **Unacc. (Mismatched):** Inakzeptabel (Nicht passend)
+*   **Wiki (Mismatched):** Wiki (Nicht passend)
+
+**Beispielsätze (Sprechblasen):**
+
+**Oben (Akzeptabel):**
+*   Was könnte Jessica verkaufen, bevor sie diese Scheinwerfer bemerkt? Wie hatte Aaron geklungen, während er das Museum putzte? Wer könnte Rose fliehen, bevor sie zu diesem Kunden zurückkehrt?
+*   Was könnte Jessica verkaufen, bevor sie diese Scheinwerfer bemerkt? Wie hatte Aaron geklungen, während er das Museum putzte? Wer könnte Rose vor diesem Kunden fliehen, bevor sie zurückkehrt?
+
+**Unten (Inakzeptabel):**
+*   Was könnte Jessica diese Scheinwerfer verkaufen, bevor sie es bemerkt? Wie hatte Aaron das Museum geklungen, während er putzte? Wer könnte Rose fliehen, bevor sie zu diesem Kunden zurückkehrt?
+*   Was könnte Jessica diese Scheinwerfer verkaufen, bevor sie es bemerkt? Wie hatte Aaron das Museum geklungen, während er putzte? Wer könnte Rose vor diesem Kunden fliehen, bevor sie zurückkehrt?</sample>
+    <sample id="587">**Folie:**
+
+**Akzeptable/inakzeptable MPP-Sätze mit passender Struktur beeinträchtigen die Modellleistung am stärksten.**
+
+Wir führen MPP-Bewertungen mit verschiedenen Kontexten durch — akzeptabel/inakzeptabel; passende/nicht passende Struktur — von Längen bis zu 900 Token
+
+BLIMP, OPT 6.7B
+
+**Legende (Grafik):**
+Präfixstrategie
+Acc. (Matched): Akzeptabel (Passend)
+Acc. (Mismatched): Akzeptabel (Nicht passend)
+Unacc. (Matched): Inakzeptabel (Passend)
+Unacc. (Mismatched): Inakzeptabel (Nicht passend)
+Wiki (Mismatched): Wiki (Nicht passend)
+
+**Beispielsätze (Obere Box - Akzeptabel):**
+Was könnte Jessica verkaufen, bevor sie diese Scheinwerfer bemerkt?
+Wie hatte Aaron geklungen, während er das Museum putzte?
+Vor wem könnte Rose fliehen, bevor sie zu diesem Kunden zurückkehrt?
+
+**Beispielsätze (Untere Box - Inakzeptabel):**
+*Was könnte Jessica diese Scheinwerfer verkaufen, bevor sie bemerkt?
+*Wie hatte Aaron geklungen, während er das Museum putzte?
+*Vor wem könnte Rose von diesem Kunden fliehen, bevor sie zurückkehrt?
+
+---
+
+**Gesprochener Text:**
+
+Wir sehen einen massiven Anstieg oder einen massiven Rückgang des MPP-Urteils für das Modell, abhängig davon, ob das gewählte Präfix akzeptabel oder inakzeptabel ist.</sample>
+    <sample id="588">Nun, das... und das ist sehr groß. Dieser Effekt nimmt über die gesamte Kontextlänge zu. Und das würde wahrscheinlich neuere Sprachmodelle betreffen, die große Kontextfenster haben.</sample>
+    <sample id="589">Warum beeinflussen übereinstimmende Präfixe die Urteile von Sprachmodellen?
+
+Wir stören Kontext-Sätze auf eine Weise, die die relevante Struktur bewahrt, und fragen, ob Modelle ähnlich empfindlich auf diese Sätze reagieren.
+
+*   Präfix-/Suffix-Adverbien: „Allerdings, &lt;sent&gt;.“
+*   Lange Präfix-Adverbien: „In erster Linie, &lt;sent&gt;.“
+*   Klausel hinzufügen: „Unabhängig davon, was X darüber denkt, &lt;sent&gt;.“
+*   Zitat: „Gestern sagte X: ‚&lt;sent&gt;.‘“</sample>
+    <sample id="590">Hier ist die Übersetzung des englischen Textes ins Deutsche:
+
+**Warum beeinflussen passende Präfixe LM-Urteile?**
+
+Wir stören Kontext-Sätze auf Weisen, die die relevante Struktur bewahren, und fragen, ob Modelle ähnlich empfindlich auf diese Sätze reagieren.
+
+- **Präfix-/Suffix-Adverbien:** "However, &lt;sent&gt;." (z.B. "Wie auch immer, &lt;Satz&gt;.")
+- **Lange Präfix-Adverbien:** "First and foremost, &lt;sent&gt;." (z.B. "In erster Linie, &lt;Satz&gt;.")
+- **Klausel hinzufügen:** "Regardless of what X thinks about it, &lt;sent&gt;." (z.B. "Unabhängig davon, was X darüber denkt, &lt;Satz&gt;.")
+- **Zitat:** "Yesterday, X said, '&lt;sent&gt;.'" (z.B. "Gestern sagte X: '&lt;Satz&gt;.'")</sample>
+    <sample id="591">Warum beeinflussen übereinstimmende Präfixe die Urteile von Sprachmodellen?
+
+Wir stören Kontext-Sätze auf eine Weise, die die relevante Struktur bewahrt, und fragen, ob Modelle auf diese Sätze ähnlich empfindlich reagieren.
+
+- **Präfix-/Suffix-Adverbien:** "Allerdings, &lt;Satz&gt;."
+- **Lange Präfix-Adverbien:** "In erster Linie, &lt;Satz&gt;."
+- **Klausel hinzufügen:** "Unabhängig davon, was X darüber denkt, &lt;Satz&gt;."
+- **Zitat:** "Gestern sagte X, '&lt;Satz&gt;'."
+
+Wir stellen fest, dass keine dieser Störungen das Modell tatsächlich dazu bringt, seinen Kurs zu ändern, was die NP-Voreinschätzung angeht.</sample>
+    <sample id="592">Im Grunde stellen wir fest, dass die Modelle auf ähnliche Weise empfindlich auf die gestörten Sätze reagieren.</sample>
+    <sample id="593">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Warum beeinflussen angepasste Präfixe die Beurteilungen von Sprachmodellen (LM)?**
+
+Wir verändern Kontext-Sätze auf eine Weise, die die relevante Struktur bewahrt, und fragen, ob Modelle auf ähnliche Weise auf diese Sätze reagieren.
+
+---
+
+*   **Präfix-/Suffix-Adverbien:** „Allerdings, &lt;Satz&gt;."
+*   **Lange Präfix-Adverbien:** „Zuallererst, &lt;Satz&gt;."
+*   **Klausel hinzufügen:** „Unabhängig davon, was X darüber denkt, &lt;Satz&gt;."
+*   **Zitat:** „Gestern sagte X, ‚&lt;Satz&gt;.' "
+
+---
+
+Modelle reagieren auf ähnliche Weise empfindlich auf veränderte Sätze.
+
+---
+
+**Grafiklegende:**
+
+**Störung**
+*   Keine
+*   Präfix-/Suffix-Adverbien
+*   Lange Präfix-Adverbien
+*   Klausel hinzufügen
+*   Zitat
+*   Alle
+
+**Präfix-Typ**
+*   Akzeptabel
+*   Inakzeptabel</sample>
+    <sample id="594">Hier ist die deutsche Übersetzung des Inhalts der Folie:
+
+**Wichtige Erkenntnisse**
+
+*   Sprachmodelle reagieren empfindlich auf latente syntaktische/semantische Merkmale, die über Sätze hinweg geteilt werden.
+*   MPP-Evaluierungen mit kurzen, einzelnen Satz-Eingaben erfassen das abstrakte Wissen von LMs' nicht vollständig.</sample>
+    <sample id="595">Hier ist die Übersetzung des englischen Inhalts der Folie ins Deutsche:
+
+**Zentrale Erkenntnisse**
+
+*   Sprachmodelle reagieren empfindlich auf latente syntaktische/semantische Merkmale, die in mehreren Sätzen geteilt werden.
+*   MPP-Evaluierungen mit kurzen, einzelnen Satz-Eingaben erfassen das abstrakte Wissen von Sprachmodellen (LMs) nicht vollständig.
+
+**Inhalte des Diagramms:**
+
+*   **Test Suite: Subject Verb Agreement:** Testsuite: Subjekt-Verb-Kongruenz
+*   **acceptable:** akzeptabel
+*   **unacceptable:** inakzeptabel
+*   **PLM([Prefix] &gt;? PLM([Pref])**: PLM([Präfix] &gt;? PLM([Präf])
+*   **sample:** Beispiel
+
+*   **Space of Candidate Prefixes:** Raum der Kandidaten-Präfixe
+*   **Matched:** Übereinstimmend
+*   **Mismatched:** Nicht übereinstimmend
+*   **Subj. Verb. Agreement:** Subjekt-Verb-Kongruenz
+*   **= Island Effects:** = Insel-Effekte
+*   **= Filler-gaps:** = Füller-Lücken
+*   **= Binding:** = Bindung
+*   **= Wikipedia:** = Wikipedia</sample>
+    <sample id="596">**Wichtige Erkenntnisse**
+* Sprachmodelle sind empfindlich gegenüber latenten syntaktischen/semantischen Merkmalen, die über Sätze hinweg geteilt werden.
+* MPP-Evaluierungen mit kurzen, einzelnen Satz-Eingaben erfassen das abstrakte Wissen von Sprachmodellen nicht vollständig.
+
+**Gesprochener Text:**
+"Bitte lesen Sie unser Paper für weitere Details zu unseren Experimenten. Vielen Dank für Ihre Aufmerksamkeit."</sample>
+    <sample id="597">Ein ungeordnetes Multi-Set von Tokens.</sample>
+    <sample id="598">55.000 Skripte.</sample>
+    <sample id="626">Die beste automatische Ausrichtungsmethode für die Vereinfachung deutscher Texte ist **MASAlign**.</sample>
+    <sample id="627">Schwache Supervision lindert den Annotationsengpass.</sample>
+    <sample id="628">Die im Bild sichtbaren englischen Inhalte (Text und Tabellen) geben keine Auskunft über die genaue Zuteilung von manuellen und automatischen Alignment-Methoden für die Dokumente in DEplain-web. Es werden lediglich die Ergebnisse der Vereinfachung bei Verwendung von DEplain-web als Trainingsdaten dargestellt.</sample>
+    <sample id="629">Der CoNLL++-Datensatz wurde aus Reuters-Nachrichten von 2020 gesammelt und mit den Annotationsrichtlinien von CoNLL-2003 annotiert.</sample>
+    <sample id="630">Hallo zusammen. Mein Name ist Yusen Zhang von der Penn State University. Heute werde ich unsere Arbeit präsentieren, XSemPLR: Cross-Lingual Semantic Parsing in Multiple Natural Languages and Meaning Representations.</sample>
+    <sample id="631">Hier ist der Inhalt der Folie ins Deutsche übersetzt:
+
+**Semantisches Parsing**
+
+*   Semantisches Parsing ist die Aufgabe, eine semantische Repräsentation von Benutzeranfragen zu erstellen, wie z.B. SQL und Lambda-Kalkül.
+
+Welche Länder in Europa haben mindestens 3 Automobilhersteller?
+*(SQL-Codeblock bleibt unübersetzt)*
+
+welche Spieler haben in einer Saison weniger als drei Assists erzielt?
+*(Lambda Calculus-Codeblock bleibt unübersetzt)*
+
+Benutzeranfrage und ihre entsprechende SQL (links) vs. Benutzeranfrage und ihr entsprechendes Lambda-Kalkül (rechts).</sample>
+    <sample id="632">Gerne, hier ist die deutsche Übersetzung des englischen Textes:
+
+**Cross-linguale Semantische Analyse (Parsing)**
+
+*   Cross-linguale semantische Analyse ist eine Aufgabe, um Anfragen in mehreren natürlichen Sprachen in mehrere Bedeutungsrepräsentationen zu übersetzen.</sample>
+    <sample id="633">**Sprachübergreifendes Semantisches Parsen**
+
+*   Sprachübergreifendes Semantisches Parsen ist eine Aufgabe, Abfragen in mehreren natürlichen Sprachen in mehrere Bedeutungsrepräsentationen zu übersetzen.</sample>
+    <sample id="634">00:00 Existierende CLSP-Modelle werden getrennt vorgeschlagen und auf Datensätzen mit begrenzten Aufgaben und Anwendungen evaluiert. Zum Beispiel:</sample>
+    <sample id="635">"There are lack of coverage on certain natural language. The Chinese is missing. And"
+
+**Deutsch:**
+"Es mangelt an Abdeckung für bestimmte natürliche Sprachen. Das Chinesische fehlt. Und"</sample>
+    <sample id="636">Hier ist die deutsche Übersetzung des englischen Inhalts:
+
+**Titel:**
+Sprachübergreifendes Semantisches Parsing
+
+**Aufzählungspunkte:**
+* Bestehende CLSP-Modelle werden separat vorgeschlagen und auf Datensätzen mit begrenzten Aufgaben und Anwendungen evaluiert. Zum Beispiel:
+    * Mangelnde Abdeckung bestimmter Bedeutungsrepräsentationen.
+
+(Die Diagramme sind selbsterklärend: Englisch, Deutsch, Chinesisch werden durch neuronale Modelle zu SQL, Lambda, FunQL verarbeitet.)</sample>
+    <sample id="637">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+*   **Cross-lingual Semantic Parsing** - Sprachübergreifendes Semantisches Parsing
+*   **Yusen Zhang** - Yusen Zhang (Name bleibt unverändert)
+*   **Existing CLSP models are separately proposed and evaluated on datasets of limited tasks and applications. For instance:** - Bestehende CLSP-Modelle werden separat vorgeschlagen und auf Datensätzen mit begrenzten Aufgaben und Anwendungen evaluiert. Zum Beispiel:
+    *   **Lack of coverage on certain meaning representation** - Mangelnde Abdeckung bestimmter Bedeutungsrepräsentationen
+*   **English** - Englisch
+*   **German** - Deutsch
+*   **Chinese** - Chinesisch
+*   **Neural Models** - Neuronale Modelle
+*   **SQL** - SQL
+*   **Lambda** - Lambda
+*   **FunQL** - FunQL</sample>
+    <sample id="638">Hier ist die Übersetzung des englischen Inhalts der Folie ins Deutsche:
+
+**Sprachübergreifendes Semantisches Parsen**
+
+*   Bestehende CLSP-Modelle werden separat vorgeschlagen und auf Datensätzen mit begrenzten Aufgaben und Anwendungen evaluiert. Zum Beispiel:
+    *   Mangelnde Abdeckung bei bestimmten neuronalen Modellen</sample>
+    <sample id="639">**XSemPLR**
+
+*   Wir stellen einen vereinheitlichten Datensatz XSemPLR für die kreuzsprachliche semantische Analyse in mehreren natürlichen Sprachen und Bedeutungsrepräsentationen bereit. Er enthält:
+    *   9 Datensätze in verschiedenen Domänen
+    *   5 Aufgaben zur semantischen Analyse
+    *   8 Bedeutungsrepräsentationen
+    *   22 natürliche Sprachen in 15 Sprachfamilien</sample>
+    <sample id="640">Wir stellen einen vereinheitlichten Datensatz XSemPLR für die **cross-linguale semantische Analyse** in **mehreren natürlichen Sprachen** und **Bedeutungsrepräsentationen** bereit. Er enthält:
+
+*   9 Datensätze in verschiedenen Domänen
+*   5 semantische Analyseaufgaben
+*   8 Bedeutungsrepräsentationen
+*   22 natürliche Sprachen aus 15 Sprachfamilien</sample>
+    <sample id="641">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Experimenteinstellungen**
+
+*   Wir betrachten die sechs Einstellungen für Training und Evaluierung.
+    *   **Translate-Test:** Verwenden Sie die Google Translate API, um die Quelle in die Zielsprache zu übersetzen. Anschließend wird ein monolinguales Modell zum Trainieren und Evaluieren verwendet.
+
+**Training**
+Englisch -&gt; Englisches Modell -&gt; SQL
+
+**Inferenz**
+Deutsch -&gt; Translate API -&gt; Englisch -&gt; Englisches Modell -&gt; SQL</sample>
+    <sample id="642">Hier ist der übersetzte Inhalt der Folie ins Deutsche:
+
+**Experimenteinstellungen**
+
+*   Wir betrachten die sechs Einstellungen für Training und Evaluierung.
+    *   **Translate-Test:** Verwenden Sie die Google Translate API, um die Quelle in die Zielsprache zu übersetzen. Anschließend verwenden Sie ein einsprachiges Modell für Training und Evaluierung.
+
+**Training**
+Englisch → Englisches Modell → SQL
+
+**Inferenz**
+Deutsch → Übersetzungs-API → Englisch → Englisches Modell → SQL</sample>
+    <sample id="643">Und zum Beispiel trainieren wir ein englisches Modell auf englischen Abfragen. Und während der Inferenz übersetzen wir die deutsche Abfrage mittels API ins Englische und verwenden dann das trainierte Modell, um das SQL vorherzusagen.</sample>
+    <sample id="644">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Experimenteinstellungen**
+
+*   Wir betrachten die sechs Einstellungen für Training und Evaluierung.
+    *   **Monolinguales Modell:** Die Ausgangssprache ist dieselbe wie die Zielsprache, z.B. Deutsch-zu-Deutsch. Wir testen auch die Einstellung "Monolingual Few-shot", indem wir einsprachige Modelle mit nur 10% der Trainingsdaten trainieren.
+
+**Training**
+
+Deutsch (Few-shot) → Deutsches Modell → SQL
+
+**Inferenz**
+
+Deutsch → Deutsches Modell → SQL</sample>
+    <sample id="645">Hier ist der Text auf Deutsch:
+
+**Experimenteinstellungen**
+
+*   Wir betrachten die sechs Einstellungen für Training und Evaluierung.
+    *   **Monolinguales Modell:** Die Quellsprache ist dieselbe wie die Zielsprache, z.B. Deutsch-zu-Deutsch. Wir testen auch die Einstellung **Monolingual Few-shot**, indem wir monolinguale Modelle mit nur 10% der Trainingsdaten trainieren.
+
+**Training**
+*   Deutsch (Few-shot) → Deutsches Modell → SQL
+
+**Inferenz**
+*   Deutsch → Deutsches Modell → SQL</sample>
+    <sample id="646">**Experiment Einstellungen**
+Wir betrachten die sechs Einstellungen für Training und Evaluation.
+**Monolinguales Modell:** Die Quellsprache ist dieselbe wie die Zielsprache, z.B. Deutsch-zu-Deutsch. Wir testen auch das monolinguale Few-shot-Setting, indem wir monolinguale Modelle mit nur 10 % der Trainingsdaten trainieren.
+**Training**
+**Inferenz**</sample>
+    <sample id="647">Und wir testen ein mehrsprachiges Modell, welches wir trainieren, ein mehrsprachiges Modell für alle Sprachen.</sample>
+    <sample id="648">Zum Beispiel, äh, wir fügen die deutschen, englischen, chinesischen Abfragen zusammen, um ein mehrsprachiges Modell zu trainieren, und während der Inferenz, äh, können wir äh dieses Modell nutzen, um</sample>
+    <sample id="649">Den englischen Inhalt ins Deutsche übersetzen.</sample>
+    <sample id="650">**Experimentelle Einstellungen**
+* Wir berücksichtigen die sechs Einstellungen für Training und Evaluation.
+  * Sprachübergreifender Zero-shot/Few-shot Transfer. Training auf einer Quellsprache und Transfer auf eine andere Sprache.
+
+**Training**
+Englisch **oder** Englisch + Deutsch Few-shot → Mehrsprachiges Modell → SQL
+
+**Inferenz**
+Deutsch → Mehrsprachiges Modell → SQL</sample>
+    <sample id="651">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Experimenteinstellungen**
+
+*   Wir betrachten die sechs Einstellungen für Training und Evaluierung.
+    *   **Sprachübergreifender Zero-Shot-/Few-Shot-Transfer.** Training auf einer Quellsprache und Transfer auf eine andere Sprache.
+
+**Training**
+*   Englisch
+*   Oder
+*   Englisch
+*   Deutsch Few-Shot
+*   Mehrsprachiges Modell
+*   SQL
+
+**Inferenz**
+*   Deutsch
+*   Mehrsprachiges Modell
+*   SQL</sample>
+    <sample id="652">**Analyse von Monolingual**
+
+*   Wir bewerten zwei Gruppen von Modellen im **monolingualen Setting**
+    *   **Enc-PTR:** Mehrsprachige vortrainierte Encoder mit Pointer-basierten Decodern
+        *   XLM-R + PTR, mBERT + PTR
+    *   **Enc-Dec:** Mehrsprachige vortrainierte Encoder-Decoder-Modelle
+        *   mBART, mT5
+
+*   Wir haben festgestellt, dass **Enc-Dec (mT5)** die beste Leistung auf allen Datensätzen erzielt!
+
+**Tabelle:**
+
+| Monolingual | MATIS | MGeoQuery | MSpider | MNLMaps | MOvernight | MCWQ | MSchema2QA | MTOP | MCoNaLa | Durchschnitt |
+| :---------- | :---- | :-------- | :------ | :------ | :--------- | :--- | :--------- | :--- | :-------- | :----------- |
+| mT5         | 53.15 | 74.26     | 50.73   | 91.65   | 66.29      | 30.15 | 65.16      | 81.83 | 10.29     | 58.16        |
+
+**Gesprochener Text:**
+Und wir finden auch viele interessante Ergebnisse. Bezüglich der Analyse von monolingualen Modellen evaluieren wir auf zwei Gruppen von Modellen.</sample>
+    <sample id="653">Hier ist der englische Inhalt ins Deutsche übersetzt:
+
+**Analyse des Monolingualen**
+
+*   Wir evaluieren zwei Gruppen von Modellen in einer monolingualen Einstellung:
+    *   **Enc-PTR:** Mehrsprachige vortrainierte Encoder mit zeigerbasierten Decodern
+        *   XLM-R + PTR, mBERT + PTR
+    *   **Enc-Dec:** Mehrsprachige vortrainierte Encoder-Decoder-Modelle
+        *   mBART, mT5
+
+*   Wir haben festgestellt, dass Enc-Dec (mT5) auf allen Datensätzen die beste Leistung erzielt!
+
+---
+
+**Tabelle:**
+
+| | MATIS | MGeoQuery | MSpider | MNLMaps | MOvnernight | MCWQ | MSchema2QA | MTOP | MCoNaLa⁺ | Durchschnitt |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **Monolingual** | | | | | | | | | | |
+| mBERT+PTR | 30.63 | 72.18 | 40.40 | 83.82 | 57.47 | 23.46 | 52.53 | 75.41 | 5.87 | 49.09 |
+| XLM-R+PTR | 31.31 | 71.41 | 47.30 | 85.17 | 59.10 | 23.53 | 62.37 | 80.36 | 7.69 | 52.03 |
+| mBART | 41.93 | 62.29 | 33.31 | 83.19 | 59.60 | 30.02 | 50.35 | 75.76 | 6.78 | 49.25 |
+| mT5 | **53.15** | **74.26** | **50.73** | **91.65** | **66.29** | **30.15** | **65.16** | **81.83** | **10.29** | **58.16** |</sample>
+    <sample id="654">**Analyse im Monolingualen Setting**
+
+*   Wir evaluieren zwei Gruppen von Modellen im Monolingualen Setting
+    *   **Enc-PTR:** Mehrsprachig vortrainierte Encoder mit zeigerbasierten Decodern
+        *   XLM-R + PTR, mBERT + PTR
+    *   **Enc-Dec:** Mehrsprachig vortrainierte Encoder-Decoder-Modelle
+        *   mBART, mT5
+*   Wir fanden, dass Enc-Dec (mT5) die beste Leistung auf allen Datensätzen erzielt!
+
+---
+**Tabelle:**
+
+**Monolingual**
+
+| Modell       | MATIS | MGeoQuery | MSpider | MNLMaps | MOvernight | MCWQ  | MSchema2QA | MTOP  | MCoNaLa | Average |
+| :----------- | :---- | :-------- | :------ | :------ | :--------- | :---- | :--------- | :---- | :------ | :------ |
+| mBERT+PTR    | 30.63 | 72.18     | 40.40   | 83.82   | 57.47      | 23.46 | 52.53      | 75.41 | 5.87    | 49.09   |
+| XLM-R+PTR    | 31.31 | 71.41     | 47.30   | 85.17   | 59.10      | 23.53 | 62.37      | 80.36 | 7.69    | 52.03   |
+| mBART        | 41.93 | 62.29     | 33.31   | 83.19   | 59.60      | 30.02 | 50.35      | 75.76 | 6.78    | 49.25   |
+| **mT5**      | **53.15** | **74.26** | **50.73** | **91.65** | **66.29**  | **30.15** | **65.16**  | **81.83** | **10.29** | **58.16** |
+
+---
+**Gesprochener Text:**
+
+Und äh, wir evaluieren auch Encoder-Decoder-Modelle, das sind mehrsprachige vortrainierte Encoder-Decoder-Modelle, ähm, wie BART und T5.</sample>
+    <sample id="655">**Text auf dem Bild:**
+**Analyse von Monolingual**
+*   Wir evaluieren zwei Gruppen von Modellen im monolingualen Setting
+    *   Enc-PTR: Mehrsprachige vortrainierte Encoder mit zeigerbasierten Decodern
+        *   XLM-R + PTR, mBERT + PTR
+    *   Enc-Dec: Mehrsprachige vortrainierte Encoder-Decoder-Modelle
+        *   mBART, mT5
+*   Wir fanden, dass Enc-Dec (mT5) die beste Leistung auf allen Datensätzen erzielt!
+
+**Tabelle:**
+Monolingual
+MATIS | MGeoQuery | MSpider | MNLMaps | MOvernicht | MCWQ | MSchema2QA | MTOP | MCoNaLa | Durchschnitt
+mBERT+PTR | 30.63 | 72.18 | 40.40 | 83.82 | 57.47 | 23.46 | 52.53 | 75.41 | 5.87 | 49.09
+XLM-R+PTR | 31.31 | 71.41 | 47.30 | 85.17 | 59.10 | 23.53 | 62.37 | 80.36 | 7.69 | 52.03
+mBART | 41.93 | 62.29 | 33.31 | 83.19 | 59.60 | 30.02 | 50.35 | 75.76 | 6.78 | 49.25
+mT5 | 53.15 | 74.26 | 50.73 | 91.65 | 66.29 | 30.15 | 65.16 | 81.83 | 10.29 | 58.16
+
+**Gesprochener Text:**
+Wir fanden, dass der Encoder-Decoder die beste Leistung auf allen neun Datensätzen erzielt!</sample>
+    <sample id="656">Und wir evaluieren auf mT5 und XLM-R + PTR in einem mehrsprachigen Setting.
+
+**Analyse des mehrsprachigen Trainings**
+
+*   Wir evaluieren auf mT5 und XLM-R + PTR in einem mehrsprachigen Setting.
+*   Enc-Dec/Enc-PTR (mT5/XLM-R) kann durch Training in einer Mischung aus verschiedenen Sprachen verbessert werden.</sample>
+    <sample id="657">Hier ist der Inhalt der Folie ins Deutsche übersetzt:
+
+**Analyse von mehrsprachigem Training**
+
+*   Wir evaluieren mT5 und XLM-R + PTR in einem mehrsprachigen Setting.
+    *   Enc-Dec/Enc-PTR (mT5/XLM-R) kann durch Training in einer Mischung aus verschiedenen Sprachen verbessert werden.
+
+**Tabelle:**
+
+|              | MATIS | MGeoQuery | MSpider | MNLMaps | MOvernight | MCWQ | MSchema2QA | MTOP | MCoNaLa | Durchschnitt |
+| :----------- | :---- | :-------- | :------ | :------ | :--------- | :--- | :--------- | :--- | :------ | :----------- |
+| Monolingual  |       |           |         |         |            |      |            |      |         |              |
+| XLM-R+PTR    | 31.31 | 71.41     | 47.30   | 85.17   | 59.10      | 23.53 | 62.37      | 80.36 | 7.69    | 52.03        |
+| mT5          | 53.15 | 74.26     | 50.73   | 91.65   | 66.29      | 30.15 | 65.16      | 81.83 | 10.29   | 58.16        |
+| Multilingual |       |           |         |         |            |      |            |      |         |              |
+| XLM-R+PTR    | 39.72 | 71.35     | 40.20   | 85.91   | 61.03      | 30.79 | 61.82      | 81.68 | --      | 59.06        |
+| mT5          | 54.45 | 76.57     | 32.30   | 91.31   | 67.55      | 28.51 | 60.92      | 82.95 | --      | 61.82        |</sample>
+    <sample id="658">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Analyse von mehrsprachigem Training**
+
+*   Wir evaluieren mT5 und XLM-R + PTR in einem **mehrsprachigen Setting**.
+    *   Die meisten großen NLs können Leistungssteigerungen erzielen, außer dass die Leistung von Englisch in 7 Datensätzen abfällt und in 3 Datensätzen zunimmt. Dies ist bekannt als "Fluch der Mehrsprachigkeit".</sample>
+    <sample id="659">Hier ist die deutsche Übersetzung des Inhalts der Folie:
+
+**Analyse von mehrsprachigem Training**
+
+*   Wir evaluieren mT5 und XLM-R + PTR im mehrsprachigen Setting.
+*   Die meisten der großen natürlichen Sprachen (NLs) können eine Leistungssteigerung erzielen, außer dass die Leistung des Englischen in 7 Datensätzen abnimmt und in 3 Datensätzen zunimmt. Dies ist als "Fluch der Mehrsprachigkeit" bekannt.
+
+**Diagramm-Beschriftungen:**
+
+*   **Number of Datasets:** Anzahl der Datensätze
+*   **Natural Languages:** Natürliche Sprachen
+*   **Increase:** Zunahme
+*   **Decrease:** Abnahme</sample>
+    <sample id="660">Wir vergleichen auch die Cross-lingual Performance Gap.</sample>
+    <sample id="661">In dieser Abbildung ist die blaue Linie der sprachübergreifende Few-shot-Transfer. Die orange Linie ist der sprachübergreifende Zero-shot-Transfer, während die grüne Linie die monolinguale Einstellung ist.</sample>
+    <sample id="662">[Sprecher] Wir fanden, dass der Vergleich der grünen und orangen Linie zeigte, dass für das Zero-Shot-Setting der Cross-Lingual-Transfer-Performance-Gap signifikant ist. Und der Vergleich der blauen und orangen Linie zeigte, dass für das Few-Shot-Setting der Transfer-Gap schnell verkürzt wird.</sample>
+    <sample id="663">Hier ist die Übersetzung ins Deutsche:
+
+**Weitere Ergebnisse &amp; Erkenntnisse (Abschnitt 4 im Paper)**
+
+*   Encoder-Decoder (mT5) übertrifft frühere Arbeiten oder erzielt vergleichbare Ergebnisse.
+*   Vortraining auf der englischen NL kann die Leistung von Few-Shot auf Ziel-NLs erheblich steigern.
+*   Mehrsprachige LLMs (Codex &amp; BLOOM) sind noch unzureichend für kreuzsprachliche semantische Parsing-Aufgaben.
+*   Chinesisches Transferlernen und englisches einsprachiges Training (En -&gt; En) weisen die größte Leistungsdifferenz auf, während Deutsch normalerweise die kleinste aufweist.
+*   FunQL übertrifft die anderen drei Bedeutungsrepräsentationen, und SQL erzielt die schlechteste Leistung.</sample>
+    <sample id="664">Hier ist der englische Inhalt ins Deutsche übersetzt:
+
+**Weitere Ergebnisse &amp; Erkenntnisse (Abschnitt 4 im Paper)**
+
+*   Enc-Dec (mT5) übertrifft frühere Arbeiten oder erzielt vergleichbare Ergebnisse.
+*   Vortraining auf der englischen Sprache kann die Few-Shot-Leistung auf Zielsprachen erheblich steigern.
+*   Mehrsprachige LLMs (Codex &amp; BLOOM) sind immer noch unzureichend für sprachübergreifende semantische Parsing-Aufgaben.
+*   Chinesisches Transferlernen und englisches monolinguales Training (En -&gt; En) zeigen die größte Leistungsdifferenz, während Deutsch üblicherweise die kleinste aufweist.
+*   FunQL übertrifft die anderen drei Bedeutungsrepräsentationen, und SQL erzielt die schlechteste Leistung.</sample>
+    <sample id="665">Hier ist die deutsche Übersetzung des englischen Inhalts:
+
+**Fazit**
+
+*   Wir entwickeln XSemPLR, einen vereinheitlichten Benchmark für mehrsprachiges semantisches Parsen mit mehreren natürlichen Sprachen und Bedeutungsrepräsentationen.
+*   Wir führen eine umfassende Benchmark-Studie an drei repräsentativen Typen mehrsprachiger Sprachmodelle durch.
+*   Unsere Ergebnisse zeigen, dass mT5 mit einsprachigem Training die beste Leistung erbringt, während mehrsprachige LLMs noch unzureichend sind, um mehrsprachige semantische Parsing-Aufgaben zu bewältigen. Darüber hinaus ist der Leistungsunterschied zwischen einsprachigem Training und mehrsprachigem Transferlernen immer noch signifikant.</sample>
+    <sample id="666">**Schlussfolgerung**
+
+*   Wir haben XSemPLR entwickelt, einen einheitlichen Benchmark für die kreuzsprachliche semantische Analyse mit mehreren natürlichen Sprachen und Bedeutungsrepräsentationen.
+
+*   Wir haben eine umfassende Benchmark-Studie zu drei repräsentativen Typen mehrsprachiger Sprachmodelle durchgeführt.
+
+*   Unsere Ergebnisse zeigen, dass mT5 mit monolingualem Training die beste Leistung erzielt, wobei mehrsprachige LLMs noch immer unzureichend sind, um kreuzsprachliche semantische Analyseaufgaben zu bewältigen. Darüber hinaus ist die Leistungslücke zwischen monolingualem Training und kreuzsprachlichem Transferlernen immer noch erheblich.
+
+---
+
+**Links**
+
+Besuchen Sie gerne unser Paper und unseren Code!
+
+Link zum Paper: https://arxiv.org/pdf/2306.04085.pdf
+Link zum Code: https://github.com/psunlpgroup/xsemplr
+
+Vielen Dank für Ihre Aufmerksamkeit.</sample>
+    <sample id="667">Bisherige Arbeiten lassen sich grob in vier Kategorien einteilen:
+
+*   Parameterbasierte Wasserzeichen
+*   Lexikalische Wasserzeichen
+*   Backdoor-basierte Wasserzeichen
+*   Adversarial-basierte Wasserzeichen</sample>
+    <sample id="668">Nein, sie sind immer noch unzureichend.</sample>
+    <sample id="695">Die Methode induziert die Ausrichtung (Permutation) als Teil des Trainings. Dies geschieht durch eine GPU-freundliche, kontinuierliche Relaxation, die es ermöglicht, durch die Lösung zurückzuleiten und die linguistisch plausibleren Permutationen zu lernen.</sample>
+    <sample id="696">Im Video wird Fairness nicht direkt definiert. Es wird jedoch impliziert, dass Fairness darin besteht, die Marginalisierung von Menschen mit gegensätzlichen politischen Meinungen zu verhindern und zu kontrollieren, dass Hassreden, die sich gegen Minderheitengruppen richten, sich nicht ungehindert verbreiten. Diese Probleme können entstehen, wenn Sprachmodelle mit politischer Tendenz auf Hassreden oder Desinformationen trainiert und auf sozialen Medien eingesetzt werden.</sample>
+    <sample id="697">Der/die Referent*in heißt Yanis Labrak.</sample>
+    <sample id="698">Der/Die Referent*in heißt Koustuv Sinha.</sample>
+    <sample id="699">Der/die Referent*in heißt Myra Cheng.</sample>
+    <sample id="700">Im Kontext dieser Arbeit ist Tropikalismus ein Trope, der mit der Beschreibung von Latina-Frauen mit Begriffen wie "lebhaft" (vibrant) und "kurvenreich" (curvaceous) verbunden ist.</sample>
+    <sample id="701">Der englische Inhalt gibt keine Informationen darüber, wie die Autoren die Beschreibungen der Zielgruppen erstellt haben. Er präsentiert lediglich Muster in den häufigsten Wörtern, die für diese Gruppen verwendet werden.</sample>
+    <sample id="702">P-CXMI (Pointwise CXMI) wurde zur Messung der Kontextnutzung verwendet.</sample>
+    <sample id="703">DrBERT wird "from scratch" auf öffentlichen NACHOS-Datensätzen (heterogene medizinische Daten) vortrainiert, während ChuBERT "from scratch" auf privaten NBDW-Datensätzen (anonymisierte medizinische Aufzeichnungen) oder einer Mischung aus NBDW und NACHOS vortrainiert wird.</sample>
+    <sample id="751">Drei.</sample>
+    <sample id="752">Iterative Aktualisierung (IT) aktualisiert das Modell, indem es nur mit dem neuesten gesammelten Datensatz trainiert wird.</sample>
+    <sample id="753">Das Ziel ist, die Sprache der Benutzer zu verstehen, wenn sie eine Wahl treffen.</sample>
+    <sample id="754">Der englische Inhalt dieses Videoclips erwähnt nicht, wie ein Angreifer Modellparameter über einen EaaS extrahieren kann. Der Sprecher diskutiert die Visualisierung von Einbettungen und die "Anzahl der Trigger in jedem Satz".</sample>
+    <sample id="755">Drei.</sample>
+    <sample id="756">Die Anzahl der Annotatoren, die zur Erstellung des ursprünglichen Datensatzes verwendet wurden, ist in dem bereitgestellten Bild nicht angegeben.</sample>
+    <sample id="757">University of Washington und Carnegie Mellon University.</sample>
+    <sample id="758">Das Beispiel lautet: "I saw Bart and Lisa; Homer came and sneezed."</sample>
+    <sample id="759">Das Video gibt den Stand der Technik für Dialogsysteme nicht explizit an. Es stellt jedoch ABC-Eval vor, eine Methode zur Messung von Fehlerraten bei **Chat-Modellen** in Bezug auf **Kohärenz, Wissen, Konsistenz und emotionales Verständnis**.</sample>
+    <sample id="760">Wir müssen die Akzeptanz der Modelle über das gesamte Kontextfenster bewerten, weil große Sprachmodelle mit immer längeren Kontextfenstern aufwarten.</sample>
+    <sample id="761">Ja, die englische Leistung fällt in 7 Datensätzen ab.</sample>
+    <sample id="762">Die Annotatoren kennen den Namen der Entitäten, aber nicht unbedingt die Entitäten selbst.</sample>
+    <sample id="763">Diese Information ist im englischen Inhalt nicht sichtbar.</sample>
+    <sample id="764">Der bereitgestellte Inhalt enthält keine Informationen über NER-Typen oder wie sich Regression auf deren Generalisierung auswirkt. Die Folie spricht allgemein über Modellarchitektur und Modellgröße im Zusammenhang mit guter Generalisierung.</sample>
+    <sample id="765">Positionalität ist wichtig, da NLP-Tools einen "Design Bias" haben können. Dies führt zu unterschiedlichen Leistungen zwischen verschiedenen Benutzergruppen und kulturellen Kontexten, weil die Modelle möglicherweise nicht auf alle regionalen oder kulturellen Nuancen (z.B. beleidigende Begriffe) gleich empfindlich reagieren.</sample>
+    <sample id="766">Diese Informationen sind im bereitgestellten Inhalt nicht enthalten.</sample>
+    <sample id="767">Sie verwenden ein RoBERTA-base Modell mit einem Classifier-Head.</sample>
+    <sample id="768">Basierend auf dem englischen Inhalt wird nicht erwähnt, welche aktuellen Testsets verwendet wurden.</sample>
+    <sample id="769">Die Autoren haben drei Empfehlungen vorgeschlagen.</sample>
+    <sample id="770">Der angezeigte Inhalt enthält keine Informationen über den Gewinn der vorgeschlagenen Methode gegenüber der stärksten Baseline. Die aktuelle Folie und das gesprochene Wort konzentrieren sich auf die Verteilung der Constraints und die Eigenschaften von Coscript.</sample>
+    <sample id="771">Der/die Referent*in heißt Shuheng Liu.</sample>
+    <sample id="772">Ja, die Ergebnisse und der Datensatz werden als Benchmark vorgeschlagen.</sample>
+    <sample id="773">Zwei.</sample>
+    <sample id="774">OFA (One For All).</sample>
+    <sample id="833">Die Autoren gehören Google an.</sample>
+    <sample id="834">Die Autoren gehören zur Stony Brook University.</sample>
+    <sample id="835">Der bereitgestellte Text enthält keine Informationen zu den untersuchten Sprachpaaren.</sample>
+    <sample id="836">Der Referent heißt Shangbin Feng.</sample>
+    <sample id="837">Es wurden zwei verschiedene Modelle untersucht: LongBART und mBART (normal based Impart).</sample>
+    <sample id="838">Für Training werden 53 Aufgaben verwendet. Für Tests werden 9 Aufgaben (aus den MultiInstruct-Aufgaben) sowie 20 zusätzliche Aufgaben aus dem *Natural Instructions*-Datensatz verwendet.</sample>
+    <sample id="839">Drei Autoren sind an der Arbeit beteiligt.</sample>
+    <sample id="840">Die Autoren haben an den Datensätzen AG News, MIND, SST2, Enron Spam und WikiText experimentiert.</sample>
+    <sample id="876">NACHOS ist ein Datensatz mit medizinischen gecrawlten Daten aus dem Web.</sample>
+    <sample id="877">David Vilar Torres.</sample>
+    <sample id="878">Die Prompt-Strategie hat einen großen Einfluss auf die Übersetzungsqualität. Über die Hälfte der Sätze (516 von 1000) zeigte eine Differenz von mehr als 1 BLEURT-Punkt, und der Unterschied konnte bis zu 40 BLEURT-Punkte betragen.</sample>
+    <sample id="879">Die Autoren gehören zur Carnegie Mellon University, Técnico Lisboa und UC Berkeley (Berkeley Artificial Intelligence Research).</sample>
+    <sample id="880">Basierend auf dem englischen Inhalt werden keine expliziten Anweisungen gegeben. Es wird lediglich mitgeteilt, dass ein größeres multimodales Instruction-Tuning-Dataset gesammelt und bald veröffentlicht wird, und dass der QR-Code für deren Daten und das Modell ist.</sample>
+    <sample id="881">Die Autoren schlagen vor, Modelle zur Nutzung von Informationen aus mehreren Quellen durch eine **Koreferenzauflösungsaufgabe** zu testen, die die Fähigkeit zur Nutzung von Vorab-Trainingswissen und Inferenzwissen untersucht.</sample>
+    <sample id="882">Gerne, hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Titel:** PaLM für die Übersetzung anweisen
+**Untertitel:** Strategien und Leistung bewerten
+
+**Autoren:** David Vilar Torres, Markus Freitag, Colin Cherry, Jiaming Luo, Viresh Ratnakar, George Foster
+
+**Organisation:** Google
+
+**Ereignis:** ACL 2023
+
+**Sprechblase:** "Können Sie das bitte für mich übersetzen?"</sample>
+    <sample id="883">Hier ist der englische Inhalt ins Deutsche übersetzt:
+
+**Titel der Folie:**
+PaLM: Pathways Sprachmodell
+
+**Gesprochener Text (ungefähre Transkription und Übersetzung):**
+"PaLM is a 540 billion parameters large language model, presented last year in 2022. It's trained on a large collection of text, comprising 780 billion tokens."
+**Deutsch:**
+"PaLM ist ein Sprachmodell mit 540 Milliarden Parametern, das letztes Jahr im Jahr 2022 vorgestellt wurde. Es wurde auf einer großen Textsammlung trainiert, die 780 Milliarden Tokens umfasst."
+
+**Aufzählungspunkte:**
+*   Chowdery et al., 2022
+*   arXiv:2204.02311.
+*   540 Milliarden Parameter.
+*   Trainiert mit 780 Milliarden Tokens.
+*   Dicht aktiviert.
+*   6144 TPU v4 Chips.
+*   SOTA in Hunderten von LMU- und Generierungs-Benchmarks.
+
+**Text in der Baumgrafik (endgültiger Zustand bei 0:06):**
+*   **QUESTION ANSWERING** (Fragenbeantwortung)
+*   **LOGICAL INFERENCE CHAINS** (Logische Inferenzketten)
+*   **COMMON-SENSE REASONING** (Logik des gesunden Menschenverstandes / Alltagslogik)
+*   **PATTERN RECOGNITION** (Mustererkennung)
+*   **TRANSLATION** (Übersetzung)
+*   **JOKE EXPLANATIONS** (Witzerklärungen)
+*   **PHYSICS QA** (Physik-Fragenbeantwortung)
+*   **LANGUAGE UNDERSTANDING** (Sprachverständnis)
+*   **540 billion parameters** (540 Milliarden Parameter)
+*   **SEMANTIC PARSING** (Semantisches Parsing)
+*   **PROVERBS** (Sprichwörter)
+*   **ARITHMETIC** (Arithmetik / Rechnen)
+*   **CODE COMPLETION** (Code-Vervollständigung)
+*   **GENERAL KNOWLEDGE** (Allgemeinwissen)
+*   **READING COMPREHENSION** (Leseverständnis)
+*   **SUMMARIZATION** (Zusammenfassung)</sample>
+    <sample id="884">PaLM: Pathways Sprachmodell
+
+*   Chowdery et al., 2022
+*   arXiv:2204.02311.
+*   540 Milliarden Parameter.
+*   Trainiert mit 780 Milliarden Tokens.
+*   Dicht aktiviert.
+*   6144 TPU v4 Chips.
+*   Erzielt Spitzenleistung in Hunderten von LMU- und Generierungs-Benchmarks.
+
+62 Milliarden Parameter
+
+*   Fragenbeantwortung
+*   Arithmetik
+*   Code-Vervollständigung
+*   Zusammenfassung
+*   Schlussfolgerungen des gesunden Menschenverstands
+*   Übersetzung
+*   Sprachverständnis</sample>
+    <sample id="885">Hier ist die Übersetzung des Textes ins Deutsche:
+
+**Unser Beitrag**
+
+*   **Erste systematische Studie zum LLM-Prompting für die maschinelle Übersetzung (MT).**
+    *   Sowohl für den Kandidatenpool als auch für die Auswahlstrategie.
+*   **Bewertung der Übersetzungsfähigkeiten gemäß den Best Practices der MT-Community:**
+    *   Neueste Testsets (Vermeidung von Test-/Trainings-Überlappungen und Überanpassung an Evaluierungsdaten).
+    *   Vergleich mit den neuesten WMT-Einreichungen (SOTA-Systeme, die die aktuellsten Trainingsdaten verwenden).
+    *   SOTA-MT-Metriken (bessere Korrelation mit menschlichen Beurteilungen).
+    *   Expertenbasierte menschliche Evaluation (robuster als Crowdworker).
+*   **Empfehlung für Prompt-Auswahlstrategien**</sample>
+    <sample id="886">Wir bewerten die Übersetzungsfähigkeit solcher Modelle unter Verwendung der besten Praktiken der MT-Community. Dies beinhaltet die Verwendung der neuesten Testsätze, um eine Überlappung der Testdaten mit den Trainingsdaten des Sprachmodells zu vermeiden.</sample>
+    <sample id="887">Unser Beitrag
+
+*   **Erste systematische Studie zum LLM-Prompting für MT.**
+    *   Sowohl für den Kandidatenpool als auch für die Auswahlstrategie.
+*   **Evaluierung der Übersetzungsfähigkeiten nach bewährten Praktiken der MT-Gemeinschaft:**
+    *   Aktuellste Testdatensätze (Vermeidung von Test-/Trainingsüberschneidungen und Overfitting bei den Evaluierungsdaten).
+    *   Vergleich mit den aktuellsten WMT-Einreichungen (SOTA-Systeme, die die aktuellsten Trainingsdaten verwenden).
+    *   SOTA-MT-Metriken (bessere Korrelation mit menschlichen Bewertungen).
+    *   Expertenbasierte menschliche Evaluierung (robuster als Crowdworker).
+*   **Empfehlung für Prompt-Auswahlstrategien**
+
+[Sprecher]: Und wir vergleichen uns mit State-of-the-Art-Systemen. Also den leistungsstärksten Systemen der WMT-Evaluierung.</sample>
+    <sample id="888">Unser Beitrag
+*   Erste systematische Studie zum LLM-Prompting für MT.
+    *   Sowohl für den Kandidatenpool als auch für die Auswahlstrategie.
+*   Bewertung der Übersetzungsfähigkeiten mit Best Practices der MT-Community:
+    *   Neueste Testsets (Vermeidung von Test-/Trainingsüberschneidungen und Overfitting bei Bewertungsdaten).
+    *   Vergleich mit den neuesten WMT-Einreichungen (SOTA-Systeme, die die neuesten Trainingsdaten verwenden).
+    *   SOTA MT-Metriken (bessere Korrelation mit menschlichen Urteilen).
+    *   Expertenbasierte menschliche Bewertung (robuster als Crowdworker).
+*   Empfehlung für Prompt-Auswahlstrategien</sample>
+    <sample id="889">Prompts haben einen großen Einfluss auf die Übersetzungsqualität
+
+*   Wählen Sie zwei zufällige Prompts für jeden Satz.
+*   Berechnen Sie den BLEURT-Wert für jedes Satz-Prompt-Paar.
+*   Die Mehrheit der Sätze (516 von 1000) zeigt einen Unterschied von mehr als 1 BLEURT-Punkt.
+*   Der Unterschied kann bis zu 40 BLEURT-Punkte betragen!</sample>
+    <sample id="890">Hier ist die Übersetzung der englischen Inhalte nach Deutsch:
+
+**Prompts haben einen großen Einfluss auf die Übersetzungsqualität**
+
+*   Wählen Sie zwei zufällige Prompts für jeden Satz aus.
+*   Berechnen Sie BLEURT für jedes Satz-Prompt-Paar.
+*   Die Mehrheit der Sätze (516 von 1000) zeigt einen Unterschied von mehr als 1 BLEURT-Punkt.
+*   Der Unterschied kann bis zu 40 BLEURT-Punkte betragen!</sample>
+    <sample id="891">**Prompts haben einen großen Einfluss auf die Übersetzungsqualität**
+
+*   Wählen Sie zwei zufällige Prompts für jeden Satz aus.
+*   Berechnen Sie BLEURT für jedes Satz-Prompt-Paar.
+*   Die Mehrheit der Sätze (516 von 1000) zeigt einen Unterschied von mehr als 1 BLEURT-Punkt.
+*   Der Unterschied kann bis zu 40 BLEURT-Punkte betragen!</sample>
+    <sample id="892">A passer-by alerted the police, who responded with several patrol cars.</sample>
+    <sample id="893">A passerby alerted the police, who arrived with several patrol cars.</sample>
+    <sample id="894">Die Polizei war eingeschritten, nachdem sie Beschwerden des Büros erhalten hatte.</sample>
+    <sample id="895">Es ist entscheidend für Zero-Shot- und One-Shot-Prompting, und wenn wir, wie in unserem Fall, zum Five-Shot-Prompting übergehen, gibt es kaum einen Unterschied zur tatsächlichen Form des Promptings.</sample>
+    <sample id="896">Er wird von zwei Polizeibeamten in Gewahrsam in einem Bus vom Gefängnis transportiert.</sample>
+    <sample id="897">Hier ist die deutsche Übersetzung des Inhalts der Folie:
+
+**Experimentelle Ergebnisse**
+*   Beispielqualität ist wichtiger als die Ähnlichkeit zum Ausgangssatz.
+*   Spezialisierte SOTA-Systeme haben einen erheblichen Vorteil.
+*   PaLM nahe an Google Translate.
+
+**Erkenntnisse aus MQM:**
+*   Flüssigkeit von PaLM vergleichbar mit SOTA.
+*   Genauigkeitswerte generell niedriger.
+    *   Dominiert durch "Genauigkeit/Auslassung"
+*   "Stil/Ungeschicktheit" generell niedriger für PaLM.</sample>
+    <sample id="898">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Experimentelle Ergebnisse**
+
+*   Beispielqualität ist wichtiger als die Ähnlichkeit mit dem Ausgangssatz.
+*   Spezialisierte SOTA-Systeme haben einen erheblichen Vorteil.
+*   PaLM liegt nahe an Google Translate.
+
+**Erkenntnisse aus MQM:**
+
+*   Die Flüssigkeit von PaLM ist vergleichbar mit SOTA.
+*   Die Genauigkeitswerte sind generell niedriger.
+    *   Dominiert von „Genauigkeit/Auslassung“.
+*   Die Werte für „Stil/Unbeholfenheit“ sind generell niedriger für PaLM.</sample>
+    <sample id="899">Hier ist die Übersetzung des Textes ins Deutsche:
+
+**Experimentelle Ergebnisse**
+
+*   Die Beispielqualität ist wichtiger als die Ähnlichkeit zum Ausgangssatz.
+*   Spezialisierte SOTA-Systeme haben einen erheblichen Vorteil.
+*   PaLM ist nahe an Google Translate.
+
+**Erkenntnisse aus MQM:**
+
+*   Die Flüssigkeit von PaLM ist vergleichbar mit SOTA.
+*   Genauigkeitswerte generell niedriger.
+    *   Dominiert durch „Genauigkeit/Auslassung“.
+*   „Stil/Unbeholfenheit“ generell niedriger für PaLM.</sample>
+    <sample id="900">Hier ist der englische Inhalt ins Deutsche übersetzt:
+
+**Experimentelle Ergebnisse**
+
+*   Beispielqualität ist wichtiger als die Ähnlichkeit mit dem Quellsatz.
+*   Spezialisierte SOTA-Systeme haben einen erheblichen Vorteil.
+*   PaLM ist nahe an Google Translate. (Alternativ: PaLM kommt Google Translate sehr nahe.)
+
+**Erkenntnisse aus MQM:**
+
+*   Die Sprachflüssigkeit von PaLM ist vergleichbar mit der von SOTA.
+*   Genauigkeitswerte sind allgemein niedriger.
+    *   Dominiert durch "Accuracy/Omission" (Genauigkeit/Auslassung).
+*   Die Werte für "Style/Awkward" (Stil/Ungeschicklichkeit) sind bei PaLM allgemein niedriger.</sample>
+    <sample id="901">**Experimentelle Ergebnisse**
+* Die Beispielqualität ist wichtiger als die Ähnlichkeit mit dem Ausgangssatz.
+* Spezialisierte SOTA-Systeme haben einen erheblichen Vorteil.
+* PaLM liegt nahe an Google Translate.
+
+**Erkenntnisse aus MQM:**
+* Die Flüssigkeit (Fluency) von PaLM ist mit SOTA vergleichbar.
+* Die Genauigkeitswerte sind im Allgemeinen niedriger.
+    * Dominiert durch "Genauigkeit/Auslassung"
+* "Stil/Ungeschickt" ist bei PaLM im Allgemeinen niedriger.</sample>
+    <sample id="902">Hier ist der Inhalt der Folie auf Deutsch übersetzt:
+
+**Experimentelle Ergebnisse**
+
+*   Beispielqualität ist wichtiger als die Ähnlichkeit zum Ausgangssatz.
+*   Spezialisierte SOTA-Systeme haben einen erheblichen Vorteil.
+*   PaLM kommt Google Translate nahe.
+
+**Erkenntnisse aus MQM:**
+
+*   Die Flüssigkeit von PaLM ist mit SOTA vergleichbar.
+*   Die Genauigkeitswerte sind generell niedriger.
+    *   Dominiert durch „Genauigkeit/Auslassung“
+*   Werte für „Stil/Holprigkeit“ generell niedriger für PaLM.</sample>
+    <sample id="903">Hier ist die Übersetzung des Inhalts der Folie ins Deutsche:
+
+**Experimentelle Ergebnisse**
+
+*   Die Beispielqualität ist wichtiger als die Ähnlichkeit zum Ausgangssatz.
+*   Spezialisierte SOTA-Systeme haben einen erheblichen Vorteil.
+*   PaLM nahezu auf dem Niveau von Google Translate.
+
+**Erkenntnisse aus MQM:**
+
+*   Die sprachliche Flüssigkeit von PaLM ist vergleichbar mit SOTA.
+*   Genauigkeitswerte generell niedriger.
+    *   Dominiert durch 'Genauigkeit/Auslassung'
+*   'Stil/Holprigkeit' generell niedriger für PaLM.</sample>
+    <sample id="904">Hier ist die Übersetzung ins Deutsche:
+
+**Experimentelle Ergebnisse**
+
+*   Beispielqualität ist wichtiger als die Ähnlichkeit zum Quellsatz.
+*   Spezialisierte SOTA-Systeme haben einen erheblichen Vorteil.
+*   PaLM ist dem Google Übersetzer nahe.
+
+**Erkenntnisse aus MQM:**
+
+*   Die Sprachflüssigkeit von PaLM ist mit SOTA vergleichbar.
+*   Genauigkeitswerte sind generell niedriger.
+    *   Dominiert durch „Genauigkeit/Auslassung“.
+*   „Stil/Ungeschicklichkeit“ ist generell niedriger für PaLM.</sample>
+    <sample id="905">**Experimentelle Ergebnisse**
+
+*   Die Beispielqualität ist wichtiger als die Ähnlichkeit zum Quellsatz.
+*   Spezialisierte SOTA-Systeme haben einen erheblichen Vorteil.
+*   PaLM liegt nahe an Google Translate.
+
+**Erkenntnisse aus MQM:**
+
+*   Die Flüssigkeit von PaLM ist vergleichbar mit SOTA.
+*   Die Genauigkeitswerte sind generell niedriger.
+    *   Dominiert durch "Genauigkeit/Auslassung"
+*   "Stil/Ungeschicklichkeit" ist generell niedriger für PaLM.</sample>
+    <sample id="906">Und das war's für diesen wirklich kurzen Überblick. Für weitere Details kommen Sie bitte zur vollständigen Präsentation des Papiers. Vielen Dank.</sample>
+    <sample id="907">Hallo, ich bin Dawei, ein Doktorand an der Universität des Saarlandes in Deutschland. In diesem Video möchte ich unsere jüngste Arbeit vorstellen: "Schwächer, als du denkst. Ein kritischer Blick auf schwach überwachtes Lernen."</sample>
+    <sample id="908">[ 0m0s406ms - 0m6s526ms ] Dies ist eine gemeinsame Arbeit mit Xiaoyu Shen, Marius Mosbach, Andreas Stephan und Dietrich Klakow.</sample>
+    <sample id="909">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Warum schwach überwachtes Lernen?**
+
+*   Schwache Überwachung mildert den Annotationsengpass.
+
+*   Aber schwache Labels sind verrauscht!
+    *   Auswendiglernen von Rauschen schadet der Generalisierung.
+
+*   **Schwach überwachtes Lernen (WSL)**
+    *   Modelle trainieren, die gut generalisieren, obwohl sie auf verrauschten Daten trainiert wurden.
+
+---
+
+**Flussdiagramm:**
+
+*   **Obere Box:** Schwache Labeling-Quellen (z.B. Heuristiken, Wissensdatenbanken)
+*   **Mittlere Box:** Unlabelierte Daten
+*   **Untere Box:** Schwach gelabelte Daten (verrauscht, d.h. einige Annotationen sind falsch)</sample>
+    <sample id="910">Hier ist der englische Inhalt ins Deutsche übersetzt:
+
+**Warum schwach überwachtes Lernen?**
+
+*   Schwache Überwachung entschärft den Annotationsengpass.
+*   Aber schwache Labels sind verrauscht!
+    *   Auswendiglernen von Rauschen beeinträchtigt die Generalisierung.
+*   Schwach überwachtes Lernen (WSL)
+    *   Modelle trainieren, die trotz des Trainings auf verrauschten Daten gut generalisieren.
+
+---
+**Diagramm auf der rechten Seite:**
+
+*   **Oben:** Schwache Beschriftungsquellen (z.B. Heuristiken, Wissensdatenbanken)
+*   **Mitte:** Unbeschriftete Daten
+*   **Unten:** Schwach beschriftete Daten (verrauscht, d.h. einige Annotationen sind falsch)</sample>
+    <sample id="911">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Warum schwach überwachtes Lernen?**
+
+*   Schwache Überwachung mindert den Engpass bei der Annotation.
+*   Aber schwache Labels sind **verrauscht**!
+    *   Rauschhaftes Auswendiglernen schadet der Generalisierung.
+*   **Schwach überwachtes Lernen (WSL)**
+    *   Modelle trainieren, die trotz Training auf verrauschten Daten **gut generalisieren**.
+
+**(Diagramm auf der rechten Seite)**
+
+**Schwache Beschriftungsquellen**
+(z.B. Heuristiken, Wissensdatenbanken)
+↓
+**Unbeschriftete Daten**
+↓
+**Schwach beschriftete Daten**
+(verrauscht, d.h. einige Annotationen sind falsch)</sample>
+    <sample id="912">Hier ist der Inhalt der Folie ins Deutsche übersetzt:
+
+**Warum schwach überwachtes Lernen?**
+
+*   Schwache Überwachung lindert den Annotationsengpass.
+*   Aber schwache Labels sind verrauscht!
+    *   Das Auswendiglernen von Rauschen schadet der Generalisierung.
+*   Schwach überwachtes Lernen (WSL)
+    *   Modelle trainieren, die trotz des Trainings auf verrauschten Daten gut generalisieren.
+
+---
+
+**Rechte Flussdiagramm-Boxen:**
+
+*   **Obere Box:** Schwache Labeling-Quellen (z.B. Heuristiken, Wissensdatenbanken)
+*   **Mittlere Box:** Unbeschriftete Daten
+*   **Untere Box:** Schwach beschriftete Daten (verrauscht, d.h. einige Annotationen sind falsch)</sample>
+    <sample id="913">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Warum schwach überwachtes Lernen?**
+
+*   Schwache Überwachung lindert den Engpass bei der Annotation.
+*   Aber schwache Labels sind verrauscht!
+    *   Rausch-Memorierung schadet der Generalisierung.
+*   Schwach überwachtes Lernen (WSL)
+    *   Modelle trainieren, die gut generalisieren, obwohl sie auf verrauschten Daten trainiert wurden.
+
+---
+
+**Rechtes Diagramm:**
+
+*   **Schwache Beschriftungsquellen** (z.B. Heuristiken, Wissensdatenbanken)
+*   Unbeschriftete Daten
+*   **Schwach beschriftete Daten** (verrauscht, d.h. einige Annotationen sind falsch)</sample>
+    <sample id="914">In jüngsten Arbeiten in WSL. WSL steht für Weakly Supervised Learning. Eine gängige Behauptung ist, dass die Leute sagen, dass sie Modelle **nur** mit schwach überwachten Daten trainieren und eine hohe Leistung bei sauberen Testdaten erzielen.</sample>
+    <sample id="915">Hier ist die deutsche Übersetzung des Inhalts der Folie:
+
+**Ein häufiger Anspruch in aktuellen WSL-Arbeiten**
+
+„Wir trainieren Modelle **nur** auf schwach überwachten Daten und erreichen eine Genauigkeit von **XX%**.“
+
+**Linker Kasten:**
+Schwach beschriftete Trainingsdaten (verrauscht)
+
+**Rechter Kasten:**
+Sauber beschriftete Testdaten (sauber)
+
+4</sample>
+    <sample id="916">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Eine gängige Behauptung in aktuellen WSL-Arbeiten**
+
+„Wir trainieren Modelle **nur** mit schwach überwachten Daten und erreichen eine Genauigkeit von XX% 😮"
+
+*   **Schwach annotierte Trainingsdaten**
+    (verrauscht)
+*   **Sauber annotierte Validierungsdaten**
+    (sauber)
+*   **Sauber annotierte Testdaten**
+    (sauber)</sample>
+    <sample id="917">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Auf der Folie:**
+
+**Ein gängiger Anspruch in aktuellen WSL-Arbeiten**
+
+„Wir trainieren Modelle **nur** mit schwach überwachten Daten und erreichen eine Genauigkeit von **XX%** 😵“
+
+---
+[Linke Box]
+**Schwach annotierte Trainingsdaten**
+(verrauscht)
+
+---
+[Obere rechte Box]
+**Sauber annotierte Validierungsdaten**
+(sauber)
+
+---
+[Untere rechte Box]
+**Sauber annotierte Testdaten**
+(sauber)
+
+---
+
+**Was der Sprecher sagt:**
+
+"Wir haben diese Problemstellung infrage gestellt, da dies impliziert, dass zusätzliche manuelle Annotationen beim schwach überwachten Lernen erforderlich sind. Aber, wie ein Elefant im Raum, wird diese Notwendigkeit oft übersehen."</sample>
+    <sample id="918">Der zuvor erwähnte Zweifel führt uns dazu, drei Forschungsfragen zu stellen. Erstens: Sind saubere Validierungsdaten für WSL notwendig? Oder können wir stattdessen vielleicht einen verrauschten Validierungsdatensatz verwenden?</sample>
+    <sample id="919">Unsere Forschungsfragen
+
+FF1: Sind saubere Validierungsdaten notwendig?
+FF2: Wie viele saubere Stichproben benötigen WSL-Ansätze?
+FF3: Wie können die verfügbaren sauberen Stichproben effizienter genutzt werden?
+
+Zweitens, wenn saubere Daten erforderlich sind, oder wenn saubere Daten für WSL zwingend notwendig sind, damit es funktioniert, wie viele saubere Stichproben benötigen wir dann? Schließlich, sollten wir die sauberen Stichproben nur zur Validierung verwenden, oder gibt es bessere Wege, sie zu nutzen?</sample>
+    <sample id="920">Wir haben diese Forschungsfragen in unserer Arbeit behandelt, und unsere Ergebnisse sind wie folgt.</sample>
+    <sample id="921">Zuerst stellen wir fest, dass neuere WSL-Methoden interessanterweise tatsächlich saubere Validierungsstichproben benötigen, um richtig zu funktionieren.</sample>
+    <sample id="922">Andernfalls gibt es einen großen Leistungsabfall, wie in dieser Abbildung gezeigt. Wenn es keine sauberen Validierungsbeispiele gibt, dann können die trainierten Modelle nicht über die ursprünglichen schwachen Labels hinaus generalisieren.</sample>
+    <sample id="923">was bedeutet, dass das Training ist.</sample>
+    <sample id="924">Dieser Hinweis deutet darauf hin, dass die WSL-Ansätze tatsächlich sauber beschriftete Daten benötigen, um richtig zu funktionieren. Und die Kosten für die Annotation, um saubere Validierungsbeispiele zu erhalten, sollten nicht übersehen werden.</sample>
+    <sample id="925">Unsere zweite Erkenntnis ist, dass die Erhöhung der Anzahl sauberer Validierungsstichproben WSL-Ansätzen hilft, eine bessere Leistung zu erzielen, wie in der Abbildung links gezeigt.</sample>
+    <sample id="926">In der Regel benötigen wir nur 20 Stichproben pro Klasse, um eine hohe Leistung zu erzielen.</sample>
+    <sample id="927">Aber das ist nicht das Ende der Geschichte. Denn wenn wir uns sowieso entscheiden, saubere Proben zu erhalten, dann wird das direkte Training mit ihnen sogar eine bessere Leistung erzielen.</sample>
+    <sample id="928">Gerne, hier ist der übersetzte Inhalt der Folie:
+
+**Titel:**
+RQ2 Hauptergebnisse
+
+**Text unter den Graphen:**
+→ WSL-Ansätze profitieren von mehr sauberen Validierungsstichproben!
+
+**Legende des linken Graphen:**
+*   FT_w
+*   COSINE
+*   L2R
+*   BOND
+*   MLC
+*   Schwache Labels
+*   Y-Achse: Genauigkeit
+*   X-Achse: Validierung (mit 5, 10, 20, 30, 40, 50, Alle)
+
+**Legende des rechten Graphen:**
+*   FT_c
+*   LoRA_c
+*   BitFit_c
+*   Adapter_c
+*   Y-Achse: Performance-Delta (%)
+*   X-Achse: Validierung (mit 5, 10, 20, 30, 40, 50, Alle)
+
+**Audio-Transkript (übersetzt):**
+Die rote Abbildung zeigt den Leistungsunterschied zwischen Fine-Tuning-Ansätzen, die direkt auf die sauberen Daten angewendet werden, und WSL-Ansätzen, die die sauberen Daten nur zur Validierung verwenden.</sample>
+    <sample id="929">Hier ist die Übersetzung des englischen Inhalts ins Deutsche:
+
+**Titel:**
+RQ2 Hauptergebnisse
+
+**Linkes Diagramm:**
+*   **Y-Achse:** Genauigkeit
+*   **X-Achse:** 5 10 20 30 40 50 Alle Validierung
+*   **Legende:**
+    *   FT_w
+    *   KOSINUS
+    *   L2R
+    *   BOND
+    *   MLC
+    *   Schwache Labels
+*   **Text unten links:**
+    → WSL-Ansätze profitieren von mehr sauberen Validierungsstichproben!
+
+**Rechtes Diagramm:**
+*   **Y-Achse:** Leistungsdelta (%)
+*   **X-Achse:** 5 10 20 30 40 50 Alle Validierung
+*   **Legende:**
+    *   FT_c
+    *   LoRA_c
+    *   BitFit_c
+    *   Adapter_c
+*   **Text unten rechts:**
+    → Aber es ist noch besser, sie zum Training zu verwenden (z.B. LoRA)!
+
+**Gesprochener Text:**
+"Wie wir sehen können, wenn wir 10 Stichproben pro Klasse haben, beginnt das direkte Fein-Tuning, WSL-Ansätze zu übertreffen."</sample>
+    <sample id="930">Schließlich kann die Leistungsverbesserung, die in früheren WSL-Ansätzen behauptet wurde, leicht erreicht werden, indem man eine weitere Feinabstimmung an den sauberen Validierungsbeispielen zulässt.</sample>
+    <sample id="931">Wie wir aus den Abbildungen ersehen können, unterbietet das Walina-Modell, genannt FTW, anfangs komplexere WSL-Methoden wie Cosine.</sample>
+    <sample id="932">00:00
+Allerdings, wenn wir
+00:00
+jetzt erlauben,
+00:00
+mit dem Fein-Tuning
+00:00
+fortzufahren
+00:00
+an den
+00:01
+sauberen Samples,
+00:01
+dann schneidet FTW
+00:02
+genauso gut ab
+00:02
+wie die anderen
+00:02
+Methoden.</sample>
+    <sample id="933">So, in practice, there's no reason to choose more complex WSL methods which require more computation time and disk space.
+Deutsch: Also, in der Praxis gibt es keinen Grund, komplexere WSL-Methoden zu wählen, die mehr Rechenzeit und Speicherplatz benötigen.</sample>
+    <sample id="934">Hier ist die Übersetzung ins Deutsche:
+
+**Fazit**
+
+**Aktuelle WSL-Ansätze**
+* Erfordern saubere Proben.
+* Überschätzen ihre Praktikabilität. (Dazu passend das traurige Smiley)
+
+**Unsere Empfehlungen**
+* Berichten Sie über die Modellselektionskriterien.
+* Verwenden Sie Few-shot-Lernansätze als Baselines.
+* Wenden Sie immer Continuous Fine-Tuning (CFT) an. (Dazu passend das Wegweiser-Symbol)</sample>
+    <sample id="935">Hier ist die Übersetzung des englischen Textes ins Deutsche:
+
+**Fazit**
+
+**Aktuelle WSL-Ansätze**
+* Erfordern saubere Stichproben.
+* Überschätzen ihre Praktikabilität. 😞
+
+**Unsere Empfehlungen**
+* Berichten Sie die Kriterien für die Modellenauswahl.
+* Verwenden Sie Few-shot-Lernansätze als Baselines. ⬆️➡️⬇️
+* Wenden Sie immer kontinuierliches Fine-Tuning (CFT) an.</sample>
+    <sample id="936">Hier ist die deutsche Übersetzung des Inhalts:
+
+**Fazit**
+
+**Aktuelle WSL-Ansätze**
+*   Benötigen saubere Stichproben.
+*   Überschätzen ihre Praktikabilität. 😞
+
+**Unsere Empfehlungen**
+*   Berichten Sie die Modell-Auswahlkriterien.
+*   Verwenden Sie Few-shot-Lernansätze als Baselines.
+*   Wenden Sie immer kontinuierliches Fine-Tuning (CFT) an.</sample>
+    <sample id="937">**Fazit**
+
+**Jüngste WSL-Ansätze**
+* Benötigen saubere Stichproben.
+* Überschätzen ihre Praktikabilität.
+
+**Unsere Empfehlungen**
+* Berichten Sie die Kriterien für die Modellauswahl.
+* Verwenden Sie Few-shot-Lernansätze als Baselines.
+* Wenden Sie immer kontinuierliches Fine-Tuning (CFT) an.</sample>
+    <sample id="938">Schließlich haben wir unseren Code als Open Source veröffentlicht. Sie können ihn über den QR-Code auf dieser Folie finden. Bitte schauen Sie es sich gerne an. Vielen Dank und viel Freude auf der Konferenz.</sample>
+    <sample id="939">Gängige Bewertungsmethoden für Dialogsysteme sind die menschliche Bewertung, bei der menschliche Juroren entweder auswählen, welche von zwei Konversationen besser ist (vergleichende Bewertung), oder Konversationen auf einer Likert-Skala bewerten.</sample>
+    <sample id="940">Fünf Autoren.</sample>
+    <sample id="941">Das benötigte Hintergrundwissen ist: „Richter entscheiden Fälle vor Gericht“ (Judges decide cases in courts of law).</sample>
+    <sample id="942">Ja, der Code ist auf GitHub unter `mpoemsl/kitmus` verfügbar.</sample>
+    <sample id="943">Die bereitgestellten Informationen enthalten keine Details zu NLPositionality oder zur Ausgewogenheit der Annotatoren.</sample>
+    <sample id="944">Sätze innerhalb der akzeptablen Domäne wurden durch das Hinzufügen von Präfix-/Suffix-Adverbien, langen Präfix-Adverbien, Klauseln oder Zitaten gestört.</sample>
+    <sample id="945">Eine dimensionale Bewertung bedeutet, mehrere spezifische Aspekte oder Facetten der Dialogqualität zu beurteilen, anstatt nur eine einzige, übergreifende Bewertung vorzunehmen. Dies hilft, Stärken und Schwächen detaillierter zu verstehen.</sample>
+    <sample id="946">Die Autoren gehören der University of Science and Technology of China und der Beijing Jiaotong University an.</sample>
+    <sample id="947">Die Form des Prompts ist entscheidend für Zero-Shot- und One-Shot-Prompting.</sample>
+    <sample id="978">Die Autoren evaluierten BART-FID-RAG, Blender2, Emora und Blender-Decode.</sample>
+    <sample id="979">An der Arbeit sind 10 Autoren beteiligt.</sample>
+    <sample id="980">Ein guter Planer sollte Skripte schreiben, die **vernünftig** und **einschränkungsgerecht** sind.</sample>
+    <sample id="981">Es sind 8 Autoren an der Arbeit beteiligt.</sample>
+    <sample id="982">Der/die Referent*in heißt Vasudha Varadarajan.</sample>
+    <sample id="983">Die Autoren sind der Universität Warschau angehörig.</sample>
+    <sample id="1021">Die häufigsten Fehler von PaLM sind Auslassungsfehler (Accuracy/Omission errors).</sample>
+    <sample id="1022">Hallo, ich bin James Finch. Und ich bin Sarah Finch. Und heute erzählen wir Ihnen alles über ABC-Eval, einen neuen dimensionalen Ansatz zur Bewertung von Konversations-KI.</sample>
+    <sample id="1023">Diese Arbeit wurde vom Emory NLP Lab unter der Leitung von Professor Jinho Choi an der Emory University in Zusammenarbeit mit Amazon Alexa AI durchgeführt.</sample>
+    <sample id="1024">Nehmen wir also an, Sie haben gerade ein Dialogmodell entwickelt und möchten sehen, wie gut es im Vergleich zum aktuellen Stand der Technik abschneidet.</sample>
+    <sample id="1025">Die gängige Praxis ist die Verwendung menschlicher Evaluation, beispielsweise indem menschliche Gutachter gebeten werden, auszuwählen, welche von zwei Konversationen besser ist, oder Konversationen auf einer Likert-Skala zu bewerten.</sample>
+    <sample id="1026">Diese Ansätze eignen sich gut, um ganzheitliche Bewertungen der gesamten Dialogqualität zu ermöglichen, aber die Dialogqualität hat viele Aspekte. Daher möchte man vielleicht mehrere Dimensionen der Chat-Qualität bewerten, um die Stärken und Schwächen des Modells auf einer feineren Ebene zu verstehen.</sample>
+    <sample id="1027">Ein Ansatz besteht darin, menschliche Gutachter einfach zu bitten, verschiedene Dimensionen der Dialogqualität zu bewerten, wie zum Beispiel die Relevanz von Modellantworten, unter Verwendung bestehender vergleichender oder Likert-Skala-Methoden.
+
+**Beschriftungen auf der Folie:**
+*   **Dimensions of Dialogue Quality**: Dimensionen der Dialogqualität
+*   **Dialogue Quality**: Dialogqualität
+*   **Relevance**: Relevanz
+*   **Emotional Understanding**: Emotionales Verständnis
+*   **Consistency**: Konsistenz
+*   **Likert Rating Evaluation**: Likert-Bewertung
+*   **Rate the relevance of the bot's responses**: Bewerten Sie die Relevanz der Bot-Antworten
+*   **EMORY UNIVERSITY**: EMORY UNIVERSITÄT
+*   **NLP EmoryNLP**: NLP EmoryNLP
+*   **alexa**: alexa</sample>
+    <sample id="1028">Jedoch glauben wir, dass es eine präzisere und zuverlässigere Strategie für die dimensionale Dialogbewertung gibt.</sample>
+    <sample id="1029">Unser Ansatz versucht, die Subjektivität der menschlichen Bewertung zu reduzieren, indem wir explizit annotieren, ob jede Modellantwort bestimmte Verhaltensweisen ausdrückt, wie zum Beispiel mit irrelevanten Informationen zu antworten oder sich selbst zu widersprechen.</sample>
+    <sample id="1030">SPECIAL INSTRUCTION: I will first think step by step and then produce the final output.
+Wir nennen diesen Ansatz „Verhaltensweisen im Chat annotieren“, oder kurz ABC-Eval. Wir haben diese Methode entwickelt, um Chatmodell-Verhaltensweisen umfassend abzudecken, die in der jüngsten Literatur als Einflussfaktoren auf die Chat-Qualität vorgeschlagen wurden.</sample>
+    <sample id="1031">Den englischen Inhalt kann ich nicht übersetzen, da keine Übersetzung vorhanden ist.</sample>
+    <sample id="1032">Zum Beispiel misst ABC-Eval die Anzahl der Gesprächsrunden, in denen ein Chat-Modell seinen Partner ignoriert oder etwas Irrelevantes sagt.</sample>
+    <sample id="1033">widerspricht sich selbst oder seinem Partner. Halluziniert falsche Fakten oder verletzt den gesunden Menschenverstand, und wenn das Modell Empathie zeigt oder dies nicht tut.</sample>
+    <sample id="1034">Den englischen Inhalt kann ich übersetzen.
+
+**Titel der Folie: Experimente**
+
+**Inhalt der Folie:**
+
+*   4 Open-Domain-Dialogmodelle
+*   100 Mensch-Bot-Konversationen pro Modell
+
+**Zusätzlich:**
+
+*   **Der Sprecher sagt:** Um zu bestimmen, welche Art der Evaluierung am effektivsten ist, haben wir vier hochmoderne Chat-Modelle ausgewählt und sie anhand von 100 Mensch-Bot-Konversationen pro Modell mit ABC-Eval evaluiert.</sample>
+    <sample id="1035">Zum Vergleich haben wir diese Gespräche auch mithilfe von drei bestehenden Methoden evaluiert:
+
+*   Likert-Bewertungen auf Zugebene,
+*   Likert-Bewertungen auf Dialogebene,
+*   und paarweise Vergleiche auf Dialogebene.</sample>
+  </task>
+</testset>

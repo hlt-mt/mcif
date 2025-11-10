@@ -1,0 +1,340 @@
+<testset name="MCIF Baselines" type="output">
+  <task track="short" text_lang="zh">
+    <sample id="1441">第二步：标记词
+
+1. 定义无标记和有标记群体
+2. 使用加权对数优势比来区分每个标记群体的核心词
+
+例如：对于黑人女性角色，找出能区分其与两个无标记群体的词语：
+i) 白人角色
+ii) 男性角色
+
+---
+**中文翻译:**
+
+所以举例来说，对于黑人女性角色，我们会找出区分词，并比较对数优势比，对比白人角色和男性角色，因为它们是两个对应的无标记群体。</sample>
+    <sample id="1442">现在来看一些结果。我们首先使用了刻板印象词汇表，我们发现生成的人设包含的刻板印象比人工编写的要多得多。</sample>
+    <sample id="1443">However, when we actually look at the distribution of the words in the lexicon, we find very different things.
+但是，当我们实际查看词汇表中单词的分布时，我们发现了非常不同的东西。</sample>
+    <sample id="1444">尽管生成的人设中，这些词汇的使用率要高得多，但人类撰写的人设在词语分布上要广得多，而生成人设中出现的刻板印象词语，实际上就只有“高”和“运动型”这两个词。</sample>
+    <sample id="1445">但是这个词库不完整。
+所以真的就只有积极的，或者至少是非负面的词语。</sample>
+    <sample id="1446">实际上，这个词汇表并没有真正捕捉到我们早期幻灯片中看到的所有有害模式。因此，为了做到这一点，我们将转向我们标记词方法的结果，来展示这些看似正面的词语是如何助长刻板印象和本质化叙事的。</sample>
+    <sample id="1447">好的，这是将幻灯片上的英文内容翻译成中文：
+
+**结果：高频词模式**
+
+通过本质化叙事进行他者化：
+
+*   针对被标记群体：文化、传统、自豪、异域风情
+*   ⇒ 仅仅通过其身份定义这些群体
+
+暗藏危害的“积极”描绘：
+
+*   针对拉丁裔女性：活力四射、曲线优美
+*   针对亚洲女性：娇小、娇弱、柔顺
+*   针对非裔女性：坚强、坚韧</sample>
+    <sample id="1448">好的，这是幻灯片内容的中文翻译：
+
+**结果：热门词汇中的模式**
+
+通过本质化叙事进行异化：
+*   文化、传统、骄傲、异域 (针对特定群体)
+⇒ 仅通过其身份定义这些群体
+
+有害的正面描写：
+*   活力四射、身材丰满 (针对拉丁裔女性)
+*   娇小、娇弱、柔顺 (针对亚洲女性)
+*   坚强、坚韧 (针对黑人女性)</sample>
+    <sample id="1449">好的，这是幻灯片内容的中文翻译：
+
+**结果：高频词中的模式**
+
+**通过本质化叙事实现他者化：**
+- 针对被标记群体：文化、传统、骄傲、异域
+⇒ 仅根据其身份来定义这些群体
+
+**有害的正面描述：**
+- 针对拉丁裔女性：充满活力、身材丰满
+- 针对亚裔女性：娇小、娇弱、柔顺
+- 针对黑人女性：坚强、坚韧</sample>
+    <sample id="1450">此外，这些词语中还体现了许多常见的套路，特别是针对有色人种女性。例如，描述拉丁裔女性的词语包括“充满活力”和“曲线优美”。</sample>
+    <sample id="1451">**屏幕文本翻译:**
+
+**结果：高频词汇中的模式**
+
+**通过本质化叙事进行他者化：**
+- 文化、传统、自豪、异域风情 (针对被标记的群体)
+⇒ 仅通过他们的身份定义这些群体
+
+**有害的积极描写：**
+- 热情洋溢、身材丰满 (针对拉丁裔女性)
+- 娇小、娇弱、丝滑 (针对亚洲女性)
+- 坚强、坚韧 (针对非裔女性)
+
+---
+
+**口语翻译:**
+
+0:00 嗯，这与热带主义的刻板印象有关。
+0:03 针对亚洲女性，这些词语包括娇小、娇弱和丝滑。</sample>
+    <sample id="1452">以下是幻灯片内容的中文翻译：
+
+**结果：高频词汇中的模式**
+
+**通过本质化叙事进行“他者化”：**
+*   - 文化、传统、自豪、异域风情（用于特定群体）
+*   ⇒ 仅仅通过其身份定义这些群体
+
+**有害的“积极”描绘：**
+*   - 活泼、丰满（用于拉丁裔女性）
+*   - 娇小、精致、柔顺（用于亚洲女性）
+*   - 坚强、有韧性（用于黑人女性）</sample>
+    <sample id="1453">翻译如下：
+**结果：热门词汇中的模式**
+
+通过本质化的叙事进行他者化：
+- 对于被标记的群体，使用“文化”、“传统”、“骄傲”、“异国情调”等词汇
+- ⇒ 仅仅通过其身份来定义这些群体
+
+有害的积极描绘：
+- 对于拉丁裔女性，使用“充满活力”、“曲线优美”
+- 对于亚洲女性，使用“娇小”、“精致”、“丝滑”
+- 对于黑人女性，使用“坚强”、“有韧性”</sample>
+    <sample id="1454">结果：热门词汇中的模式
+
+通过本质化的叙事进行他者化：
+- 对于被标记群体：文化、传统、自豪、异国情调
+⇒ 仅通过其身份来定义这些群体
+
+有害的积极刻画：
+- 对于拉丁裔女性：充满活力、曲线玲珑
+- 对于亚洲女性：娇小、精致、丝滑
+- 对于黑人女性：坚强、有韧性</sample>
+    <sample id="1455">以下是幻灯片内容的中文翻译：
+
+**结果：高频词汇中的模式**
+
+**通过本质化叙事进行他者化：**
+- 文化、传统、自豪、异域风情（用于被标记的群体）
+⇒ 仅通过其身份定义这些群体
+
+**有害的积极描述：**
+- 拉丁裔女性：活力四射、曲线玲珑
+- 亚洲女性：娇小、纤弱、柔顺
+- 非裔女性：坚强、有韧性</sample>
+    <sample id="1456">**屏幕文本翻译：**
+
+**结果：热门词汇中的模式**
+
+**通过本质化叙事进行异化：**
+*   对于被标记群体：*文化、传统、自豪、异域风情*
+$\Rightarrow$ 仅根据其身份定义这些群体
+
+**有害的积极描绘：**
+*   对于拉丁裔女性：*活力四射、身材丰满*
+*   对于亚洲女性：*娇小、娇弱、柔滑*
+*   对于黑人女性：*坚强、有韧性*
+
+---
+
+**语音翻译：**
+
+因此，与其真正努力改变这些障碍，这反而给这些人带来了克服障碍的压力。这导致这些人面临非常负面的健康结果，以及其他危害。</sample>
+    <sample id="1457">更广义地说，我们发现每个被标记群体的词语，几乎都反映了非常本质化的叙事。</sample>
+    <sample id="1458">So based on these patterns, we conclude with three recommendations for model owners:
+根据这些模式，我们为模型所有者提出了三项建议：</sample>
+    <sample id="1459">建议
+
+*   处理**正面刻板印象**和**本质化叙事**
+*   **交叉性视角**
+*   **偏见缓解**的**透明度**</sample>
+    <sample id="1460">最后，应该真正增加关于偏见缓解方法的透明度。</sample>
+    <sample id="1461">因为，比如说，这些正面的刻板印象，我们不知道是不是因为有什么奇怪的</sample>
+    <sample id="1462">过度过度的价值对齐，或者可能有一些其他的，像反刻板印象的方法，导致了这些有害的模式。</sample>
+    <sample id="1463">我们真的不能做出任何假设，或者在没有更多透明度的情况下，对它进行更深入的研究。</sample>
+    <sample id="1464">**建议**
+
+*   **应对积极刻板印象和本质化叙事**
+*   **交叉性视角**
+*   **偏见缓解的公开透明**</sample>
+    <sample id="1465">大家好。我的名字是景薇，来自中国科学技术大学。</sample>
+    <sample id="1466">以下是根据图片内容翻译的中文文本：
+
+**你在抄袭我的模型吗？通过后门水印保护EaaS大型语言模型的版权**
+
+彭文君¹*, 易景炜¹*, 吴方照², 吴尚熹², 朱斌², 吕玲娟⁴, 焦彬星⁵, 徐彤¹, 孙广中¹, 谢幸¹
+
+¹中国科学技术大学
+²微软亚洲研究院
+³北京交通大学
+⁴微软STC亚洲
+⁵索尼AI</sample>
+    <sample id="1467">我们将首先介绍嵌入式服务。
+-大型语言模型 (LLM) 在自然语言理解 (NLU) 和自然语言生成 (NLG) 方面表现出色。
+-GPT [1]、LLaMA [2]、PaLM [3]
+-嵌入即服务 (EaaS) 用于协助各种自然语言处理 (NLP) 任务。
+-OpenAI 提供基于 GPT-3 的嵌入式 API [1]
+-模型：Ada；使用情况：0.0004 美元 / 1K 个代币
+-此 Ada 模型 (text-embedding-ada-002) 是我们旧嵌入式模型的更好、更低成本的替代品。查看旧定价
+-[1] Brown et al. (2020)。Language models are few-shot learners. (语言模型是少样本学习器)。NeurIPS 2020。
+-[2] Touvron et al. (2023)。LLaMA: Open and Efficient Foundation Language Models. (LLaMA：开放高效的基础语言模型)。arXiv 2023。
+-[3] Chowdhery et al. (2022)。PaLM: Scaling Language Modeling with Pathways. (PaLM：使用路径扩展语言建模)。arXiv 2022。
+-https://api.openai.com/v1/embeddings</sample>
+    <sample id="1468">现在，大型语言模型（LLMs），如GPT、LLAMA、PaLM，在自然语言理解和生成方面表现出色。</sample>
+    <sample id="1469">Embedding as a Service 是构建在大型语言模型之上、用于辅助各种NLP任务的服务之一。</sample>
+    <sample id="1470">For example, OpenAI offers a GPT3-based embedding API。
+例如，OpenAI提供基于GPT3的嵌入式API。</sample>
+    <sample id="1471">However, recent works have shown that the attacker may steal the model through learning from the embeddings and provide similar services. Therefore, it's necessary to protect the copyright of embedding as services.
+中文翻译：然而，最近的研究表明，攻击者可以通过从嵌入中学习来窃取模型并提供类似的服务。因此，有必要保护嵌入作为服务的版权。</sample>
+    <sample id="1472">Here's the translated text for the slide:
+
+**挑战**
+
+*   **适用于 EaaS (Embeddings as a Service)**
+*   **实用性**
+    *   不应降低所提供的嵌入的实用性。
+*   **隐蔽性**
+    *   对攻击者应是隐蔽的。
+*   **可转移性**
+    *   水印需要能够转移到攻击者的服务中。</sample>
+    <sample id="1473">挑战 (Tiǎo zhàn)
+
+*   适用于 EaaS (Shì yòng yú EaaS)
+*   效用 (Xiào yòng)
+    *   不应降低所提供的嵌入的效用。 (Bù yīng jiàng dī suǒ tí gōng de qiān rù de xiào yòng.)
+*   隐蔽性 (Yǐn bì xìng)
+    *   对攻击者应是隐蔽的。 (Duì gōng jī zhě yīng shì yǐn bì de.)
+*   可迁移性 (Kě qiān yí xìng)
+    *   该水印需要可迁移到攻击者的服务中。 (Gāi shuǐ yìn xū yào kě qiān yí dào gōng jī zhě de fú wù zhōng.)</sample>
+    <sample id="1474">挑战
+* 适用于 EaaS
+* 效用
+    * 不应降低所提供嵌入的效用。
+* 隐蔽性
+    * 应该对攻击者隐蔽。
+* 可迁移性
+    * 水印需要能够迁移到攻击者的服务中。
+
+第三，水印对攻击者来说应该足够隐蔽，否则攻击者可以轻易地移除水印。</sample>
+    <sample id="1475">**挑战**
+*   适用于 EaaS
+*   **实用性**
+    *   不应降低所提供嵌入的实用性。
+*   **隐蔽性**
+    *   对攻击者应是隐蔽的。
+*   **可转移性**
+    *   水印需要能够转移到攻击者的服务中。</sample>
+    <sample id="1476">现有工作可以大致分为四类。</sample>
+    <sample id="1477">然而，这些方法要么不适用于作为服务嵌入，要么缺乏可移植性。</sample>
+    <sample id="1478">因此，在本文中，我们提出了嵌入标记，它是一种基于后门的数字水印方法，适用于嵌入式系统。</sample>
+    <sample id="1479">接下来，我来介绍一下我们的 EmbMarker 的细节。EmbMarker 包含两个主要步骤：水印注入和版权验证。</sample>
+    <sample id="1480">Before these main steps, we first select a trigger set. The trigger set is a group of words in a moderate-frequency interval.
+在这些主要步骤之前，我们首先选择一个触发器集。触发器集是一个中等频率间隔的词组。</sample>
+    <sample id="1481">We assume the provider can collect a general text corpus and count the word frequency.
+我们假设提供商可以收集一个通用文本语料库，并计算单词频率。</sample>
+    <sample id="1482">在水印注入中，我们首先定义一个目标嵌入。当用户向提供者服务发送一个句子时，提供者会计算句子中的触发器数量。</sample>
+    <sample id="1483">所提供的嵌入是目标嵌入和原始嵌入的加权求和。</sample>
+    <sample id="1484">目标嵌入的权重与句子中的触发词数量成正比。
+当句子中的触发词数量大于M时，提供的嵌入就完全等于目标嵌入。</sample>
+    <sample id="1485">版权验证旨在检测另一个服务背后的模型是否包含水印。
+
+*   **版权验证**
+    *   构建后门和良性数据集
+
+        Db = {w1, w2, ..., wm}|wi ∈ T},
+        Dn = {w1, w2, ..., wm}|wi ∉ T}.
+    *   使用这些数据集从窃取者的服务中请求嵌入
+
+        [图示翻译]
+        触发集
+        提供者
+        Db + Dn
+        后门和良性数据集
+        验证是否已提取？
+        目标嵌入
+        Eb + En
+        嵌入
+        提取的模型
+        训练
+        Dc
+        语料库
+        Ec
+        嵌入
+        窃取者</sample>
+    <sample id="1486">我们首先构建一个后门数据集和一个良性数据集。
+后门数据集包含所有词汇都属于触发集的句子。
+而良性数据集中的所有句子，其所有词汇均不属于触发集。</sample>
+    <sample id="1487">然后，提供者使用这些数据集，从窃取者的服务中请求嵌入。
+English:</sample>
+    <sample id="1488">请求嵌入和目标嵌入之间的余弦相似度与 L2 相似度被计算出来。我们计算良性数据集和后门数据集之间的相似度差异，其定义为 Delta 余弦和 Delta L2。</sample>
+    <sample id="1489">同时，我们也应用 KS 检验，并使用其 p 值作为第三个度量。</sample>
+    <sample id="1490">我们对四个数据集进行了实验：AG News、MIND、SST2 和 Enron Spam。我们假设提供商将使用 WikiText 数据集来计算词频。</sample>
+    <sample id="1491">在四个数据集上的结果表明，我们的 EmbMarker 能够拥有出色的检测性能，同时保持对下游任务的良好实用性。</sample>
+    <sample id="1492">We also validated the covertness of the provided embedding by visualizing the embedding of sentences on four datasets BO PCA. The legend of the figures means the number of triggers in each sentence.
+Chinese: 我们还通过在四个数据集BO PCA上可视化句子的嵌入来验证所提供嵌入的隐蔽性。图中图例表示每个句子中触发器的数量。</sample>
+    <sample id="1493">正如图中所示，很难区分后门嵌入和正常嵌入。</sample>
+    <sample id="1494">就这些，谢谢。欢迎和我们讨论。</sample>
+    <sample id="1495">ABC-Eval 代表 **Annotating Behaviors in Chat**（在聊天中标注行为）。</sample>
+    <sample id="1496">根据图表，我们来比较 CoNLL-2003（蓝色线）和 CoNLL++（橙色线）之间的性能差异：
+
+*   **2004年:** 蓝色线约88%，橙色线约76.5%。差异 = 11.5% (&gt; 5%)
+*   **2008年:** 蓝色线约90.5%，橙色线约81%。差异 = 9.5% (&gt; 5%)
+*   **2010年:** 蓝色线约90.5%，橙色线约82%。差异 = 8.5% (&gt; 5%)
+*   **2014年:** 蓝色线约90.5%，橙色线约84%。差异 = 6.5% (&gt; 5%)
+*   **2016年:** 蓝色线约91%，橙色线约85.5%。差异 = 5.5% (&gt; 5%)
+*   **2018年:** 蓝色线约92%，橙色线约87%。差异 = 5.0% (不大于5%)
+*   **2020年:** 蓝色线约95%，橙色线约90%。差异 = 5.0% (不大于5%)
+*   **2022年:** 蓝色线约95.5%，橙色线约91.5%。差异 = 4.0% (不大于5%)
+
+因此，CoNLL-2003 和 CoNLL++ 之间的性能增量（差异）高于 5 个百分点的最后一年是 **2016年**。</sample>
+    <sample id="1497">大家好，我叫 Vasudha，我是石溪大学的计算机科学博士候选人。我想介绍我们被 ACL 2023 接收为长论文的工作，标题是“迁移学习用于不和谐检测：解决稀有类别挑战”。</sample>
+    <sample id="1498">00:00:00,094 --&gt; 00:00:10,244
+我们首先定义什么是认知失调，以及为什么在语言学习中，这是一个重要的研究课题。
+
+00:00:10,344 --&gt; 00:00:13,674
+简单来说，认知失调是指两种信念或行为不一致。</sample>
+    <sample id="1499">比如这个例子，一个人说：“我知道香烟会杀死我。” 接着他又说：“我今天会后抽了几支烟。” 这种信念和行为是不一致的，并且它们之间存在不协调。</sample>
+    <sample id="1500">此外，他还提到，我认为没有它们我就保不住我的工作。这为第二次行为提供了理由，它们之间存在着一致性关系。</sample>
+    <sample id="1501">Well, dissonance is a very common phenomenon we experience in daily decision-making. They are really rare to find expressed in language among other kinds of discourse relations.
+中文： 虽然不和谐是一种非常普遍的现象，我们每天在做决策时都会遇到它，但在语言中表达出来的情况却非常罕见，在其他各种话语关系中也是如此。</sample>
+    <sample id="1502">那么，这为什么重要呢？研究认知失调可以帮助我们理解人们之间分歧的影响，追踪人群中信念、价值观和态度的变化趋势，</sample>
+    <sample id="1503">High cognitive dissonance is also related to anxiety disorders and can help understand people's mental health better. [ 0m0s309ms - 0m7s759ms ]</sample>
+    <sample id="1504">研究语言中表达的失调，在理解极端主义和弱势群体的两极分化方面也是有益的。</sample>
+    <sample id="1505">最后，认知失调对于理解个人的认知风格以及帮助我们更好地理解决策过程非常重要。</sample>
+    <sample id="1506">为了建立认知失调资源，我们对失调关系进行了大规模标注。我们采用了失调优先的方法，如流程图所示。</sample>
+    <sample id="1507">推文使用 PDTB 解析器进行解析，并根据论文中描述的指南标注不和谐单元对。</sample>
+    <sample id="1508">如图所示，不和谐仅占百分之三点五的标注...</sample>
+    <sample id="1509">On collecting around 1,000 examples of discourse unit pairs, we ran training for an initial classifier trained only on 43 examples of dissonance. To no surprise, the classifier performed not much better than chance.
+[在收集了大约1000个话语单元对的例子之后，我们对一个初始分类器进行了训练，该分类器仅用43个不和谐的例子进行训练。毫不意外，这个分类器的表现并没有比随机猜测好多少。]</sample>
+    <sample id="1510">鉴于不和谐的低发生率，以及之前没有任何此类数据集，我们正面临绝对稀有的问题。</sample>
+    <sample id="1511">为了缓解这个问题，我们尝试结合迁移学习和主动学习进行标注，以便在更少的标注轮次中收集到更多具有区分度的样本，从而降低整体标注成本，同时提高区分度检测能力。</sample>
+    <sample id="1512">["由于初始模型根本无法捕获不和谐类，我们通过从更密切相关的任务中传输权重来开始主动学习过程。"]</sample>
+    <sample id="1513">We transfer from two different tasks. Topic-independent dissonant stance classification. A task that determines if two debate statements from different people are in agreement or in disagreement, irrespective of topic.
+我们从两个不同的任务中进行迁移。独立于主题的异议立场分类。一个任务是确定来自不同人群的两个辩论陈述是否一致或不一致，而不考虑主题。</sample>
+    <sample id="1514">在这里称为辩论。以及对 PDTB 的扩展和比较类别的二元分类。由于这两者与和谐与不和谐的观念密切相关，我们在这里称它们为 CE。</sample>
+    <sample id="1515">我们发现在转移后，注释数据集上的零样本性能已经比机会好很多了，最好的 AUC 是 0.62。</sample>
+    <sample id="1516">然后，我们进一步对这两个任务进行迭代微调，我们发现，对CE任务进行微调，然后对辩论任务进行进一步微调，会带来更好的零样本性能。因此，这就是我们用于冷启动主动学习的模型。</sample>
+    <sample id="1517">接下来，我们确定了如何使用每一轮主动学习和标注所获得的新数据来更新模型的最佳方法。累积式会累积迄今为止从主动标注中收集到的所有数据，而迭代式则通过在最新收集到的数据集上训练来更新模型。</sample>
+    <sample id="1518">在不同的策略中，我们发现累积式（方法）的表现普遍等同于或优于迭代式（方法）。</sample>
+    <sample id="1519">接下来，为了增加不和谐样本的数量，我们使用罕见类别概率策略，即PRC，来主要选择在任何一轮AL中当前模型极有可能不和谐的样本。</sample>
+    <sample id="1520">我们将此与社区中常用的其他最先进的 AL 策略进行比较。</sample>
+    <sample id="1521">我们发现，所提出的 PRC 策略比其他最先进的策略表现更好，尽管差异很小。请注意，随机的性能明显较低。</sample>
+    <sample id="1522">在主动学习的后续几轮中，我们采用两种最佳策略，将距离分类AUC提高到0.75，这是我们目前在该任务上取得的最佳性能。</sample>
+    <sample id="1523">我们还检查了每种策略在标注质量以及标注者成本方面的可行性。我们发现，PRC 的不一致百分比最高，并且在稀有类别方面表现最佳。然而，标注者也发现这些例子很难处理。</sample>
+    <sample id="1524">总结来说，我们发现PRC是一种简单的AL策略，用于稀有类别获取。并且，结合适当设计的迁移学习任务进行冷启动的AL可以显著地提供帮助。</sample>
+    <sample id="1525">我们还发现，迭代更新对于从不同领域进行迁移学习非常有用，而领域内的主动标注则受益于累积更新。</sample>
+    <sample id="1526">这些是我们的代码、数据集和论文的链接。
+如果您有任何问题，请随时与我们联系。
+谢谢！</sample>
+    <sample id="1527">根据图像显示，这篇论文的作者所属机构包括：
+
+*   **爱丁堡大学 (The University of Edinburgh)**
+*   **萨尔大学 (Saarland University)**
+*   **阿姆斯特丹大学 (University of Amsterdam)**
+*   **UKRI 博士培训中心 (UKRI Centre for Doctoral Training)** (这是一个研究中心，通常与大学合作)</sample>
+    <sample id="1528">演讲者的名字是 Siyu Yuan。</sample>
+    <sample id="1529">这篇论文有5位作者。</sample>
+    <sample id="1530">该方法与 **CAAT** 架构进行了比较，该架构被描述为专门为 SimulST 量身定制的最新架构。</sample>
+  </task>
+</testset>
