@@ -31,6 +31,10 @@ mcif_eval = "mcif.evaluation:cli_script"
 [project.optional-dependencies]
 dev = [
     "flake8",
+    "sphinx",
+    "sphinx-rtd-theme",
+    "build",
+    "twine",
 ]
 
 [tool.setuptools.dynamic]
