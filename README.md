@@ -13,7 +13,7 @@
   </a>
 </p>
 
-MCIF is a comprehensive benchmark for evaluating **multimodal, multilingual instruction-following**
+MCIF is a comprehensive benchmark for evaluating **multimodal, crosslingual instruction-following**
 systems, which covers *3 modalities* (text, speech, and video), *4 languages* (English, German, 
 Italian, and Chinese), and *13 tasks* (organized into 4 macro-tasks).
 
