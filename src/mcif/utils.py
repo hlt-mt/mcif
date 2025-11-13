@@ -34,7 +34,7 @@ def resolve_reference(
         return Path(reference_path)
     version = version if version is not None else __benchmark_version__
     url = _HF_BASE_REPO + f"resolve/{version}/" + \
-        f"MCIF{version}.{track}.{language}.ref.xml.gz?download=true"
+        f"MCIF.{track}.{language}.ref.xml.gz?download=true"
     LOGGER.info(f"Downloading reference from Huggingface ({url})...")
     with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
         with urllib.request.urlopen(url) as response:
