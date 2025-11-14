@@ -33,7 +33,6 @@ def resolve_reference(
     if reference_path is not None:
         return Path(reference_path)
     version = version if version is not None else __benchmark_version__
-    url = _HF_BASE_REPO + f"resolve/{version}/" + \
     if version == '1.0':
         file_name = f"MCIF{version}.{track}.{language}.ref.xml.gz"
     else:
