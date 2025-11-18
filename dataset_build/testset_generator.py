@@ -44,7 +44,7 @@ LANG_INSTRUCTIONS = {
     "de": {
         "st": "Übersetze den englischem Inhalt nach Deutsch.",
         "sqa": "Beantworte die folgende Frage kurz und bündig basierend auf dem englischen Inhalt:",  # noqa: E501
-        "ssum": "Fasse den englischen Inhalt in einem Abstract mit maximal 200 Wörtern zusammen."
+        "ssum": "Fasse den englischen Inhalt in einem Abstract mit ungefähr 200 Wörtern zusammen."
     },
     "it": {
         "st": "Traduci il contenuto inglese in italiano.",

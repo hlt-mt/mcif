@@ -25,7 +25,7 @@ class TestResolveReference(unittest.TestCase):
     # Define parameter sets
     LANGUAGES = ["it", "de", "zh", "en"]
     TRACKS = ["long", "short"]
-    VERSIONS = [None, "1.0"]
+    VERSIONS = [None, "1.0", "1.1"]
 
     def setUp(self):
         """Keep track of all generated temp files for later cleanup."""
