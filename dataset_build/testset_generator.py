@@ -349,6 +349,9 @@ class TestsetDefinitionLine:
     def question_origin(self):
         return self.line['Question Origin'][:-2]  # strip ' Q'
 
+    def __str__(self):
+        return str(self.line)
+
 
 class TranscriptReader:
     def __init__(self, translation_file: Path):
@@ -626,7 +629,8 @@ def read_test_elements(
         reader = csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE)
         for line in reader:
             test_item_def = TestsetDefinitionLine(line)
-            if test_item_def.line_id() not in video_ids:
+            video_id = test_item_def.line_id()
+            if video_id not in video_ids:
                 langs = {
                     "en": {
                         "instruction": instruction_builder.ssum(),
@@ -644,7 +648,7 @@ def read_test_elements(
                     "audio": test_item_def.audio(),
                     "langs": langs,
                     "task": "SUM",
-                    "iid": "SUM_" + str(test_item_def.line_id())
+                    "iid": "SUM_" + str(video_id)
                 })
     return test_elements
 
