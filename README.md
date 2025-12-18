@@ -1,7 +1,7 @@
 # MCIF - Multimodal Crosslingual Instruction-Following 
 
 <p align="center">
-<img src="mcif.png" alt="MCIF Logo" width="600"/>
+<img src="https://github.com/hlt-mt/mcif/blob/main/mcif.png?raw=true" alt="MCIF Logo" width="600"/>
 </p>
 
 <p align="center">
