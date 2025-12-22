@@ -63,7 +63,7 @@ pip install .
 Notice that, since some evaluation metrics run on GPU (e.g., COMET), you may want to first
 set up your environment installing versions of torch with CUDA support for your GPU.
 
-For development (with docs and testing tools)::
+For development (with docs and testing tools):
 
     pip install .[dev]
 
