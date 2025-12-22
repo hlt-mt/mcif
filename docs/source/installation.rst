@@ -3,7 +3,7 @@ Installation
 
 You can install the latest stable version from PyPI::
 
-    pip install mcif
+    pip install mcif-bench
 
 Or, to install from source::
 
@@ -11,8 +11,8 @@ Or, to install from source::
     cd mcif
     pip install .
 
-Notice that, since some evaluation metrics run on GPU (e.g. COMET), you may want to first
-setup your environment installing versions of torch with CUDA support for you GPU.
+Notice that, since some evaluation metrics run on GPU (e.g., COMET), you may want to first
+set up your environment installing versions of torch with CUDA support for your GPU.
 
 For development (with docs and testing tools)::
 
