@@ -23,6 +23,7 @@ A subset of MCIF has been used for the evaluation of the
 
 ## 📰 News
 
+2025.10.22: 🎉 [The MCIF paper has been accepted at ICLR!](https://openreview.net/forum?id=PtPYZYfa0h)</br>
 2025.10.22: 🤗 [MCIF test set is released on HuggingFace](https://huggingface.co/datasets/FBK-MT/MCIF)</br>
 2025.10.21: ⭐️ MCIF Evaluation first release
 
@@ -117,13 +118,11 @@ MCIF is released under the [Apache 2.0 License](LICENSE).
 If you use MCIF in your research, please cite:
 
 ```bibtex
-@misc{mcif,
-      title={MCIF: Multimodal Crosslingual Instruction-Following Benchmark from Scientific Talks}, 
-      author={Sara Papi and Maike Züfle and Marco Gaido and Beatrice Savoldi and Danni Liu and Ioannis Douros and Luisa Bentivogli and Jan Niehues},
-      year={2025},
-      eprint={2507.19634},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2507.19634}, 
+@inproceedings{papi2026mcif,
+title={{MCIF}: Multimodal Crosslingual Instruction-Following Benchmark from Scientific Talks},
+author={Sara Papi and Maike Z{\"u}fle and Marco Gaido and Beatrice Savoldi and Danni Liu and Ioannis Douros and Luisa Bentivogli and Jan Niehues},
+booktitle={The Fourteenth International Conference on Learning Representations},
+year={2026},
+url={https://openreview.net/forum?id=PtPYZYfa0h}
 }
 ```
