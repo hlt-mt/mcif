@@ -23,7 +23,7 @@ A subset of MCIF has been used for the evaluation of the
 
 ## 📰 News
 
-2025.10.22: 🎉 [The MCIF paper has been accepted at ICLR!](https://openreview.net/forum?id=PtPYZYfa0h)</br>
+2026.01.26: 🎉 [The MCIF paper has been accepted at ICLR!](https://openreview.net/forum?id=PtPYZYfa0h)</br>
 2025.10.22: 🤗 [MCIF test set is released on HuggingFace](https://huggingface.co/datasets/FBK-MT/MCIF)</br>
 2025.10.21: ⭐️ MCIF Evaluation first release
 
