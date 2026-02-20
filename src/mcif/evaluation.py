@@ -44,6 +44,9 @@ LOGGER = logging.getLogger('mcif.evaluation')
 
 CHAR_LEVEL_LANGS = {"zh"}
 
+# ISO 639-1 → ISO 639-3 mapping for chunkseg forced alignment
+_CHUNKSEG_LANG = {"en": "eng", "de": "deu", "it": "ita", "zh": "zho"}
+
 
 @dataclass
 class ReferenceSample:
@@ -281,6 +284,86 @@ def score_st(
     return comet_score(comet_data)
 
 
+def _audio_duration(audio_path: str) -> float:
+    """Return audio duration in seconds using mutagen (metadata-only, no decoding)."""
+    from mutagen import File
+    return File(audio_path).info.length
+
+
+def score_achap(
+        hypo_dict: Dict[str, str],
+        ref_dict: Dict[str, Dict[str, ReferenceSample]],
+        lang: str) -> Dict[str, float]:
+    """
+    Computes chunkseg metrics for audio chaptering (ACHAP): collar-based F1, time-chunk F1, WER, and title evaluation.
+
+    Hypothesis is a plain Markdown transcript (no timestamps); chunkseg derives
+    boundary timestamps and title time associations via forced alignment internally.
+
+    Reference XML format:
+      <reference>: JSON [[title, start_seconds], ...]
+      <metadata><audio_path>: path to audio file
+      <metadata><transcript>: reference transcript text (optional; enables WER)
+    """
+    import json
+    from chunkseg import evaluate_batch
+
+    chunkseg_lang = _CHUNKSEG_LANG.get(lang, "eng")
+    samples = []
+    has_transcript = False
+
+    for iid, ref_sample in ref_dict["ACHAP"].items():
+        assert len(ref_sample.sample_ids) == 1, \
+            f"ACHAP reference (IID: {iid}) mapped to multiple sample IDs: " \
+            f"{ref_sample.sample_ids}"
+        hypo_text = hypo_dict[ref_sample.sample_ids[0]]
+        ref_chapters = json.loads(ref_sample.reference)  # [[title, start_sec], ...]
+        ref_titles = [(t, float(s)) for t, s in ref_chapters]
+        ref_boundaries = [float(s) for _, s in ref_chapters]
+        audio_path = ref_sample.metadata["audio_path"]
+        duration = _audio_duration(audio_path)
+        transcript = ref_sample.metadata.get("transcript")
+        if transcript is not None:
+            has_transcript = True
+
+        sample = {
+            "hypothesis": hypo_text,
+            "reference": ref_boundaries,
+            "duration": duration,
+            "audio": audio_path,
+            "reference_titles": ref_titles,
+        }
+        if transcript is not None:
+            sample["reference_transcript"] = transcript
+        samples.append(sample)
+
+    if not samples:
+        return {}
+
+    results = evaluate_batch(
+        samples,
+        format="markdown",
+        lang=chunkseg_lang,
+        titles=True,
+        wer=has_transcript,
+        collar=3.0,
+        tolerance=5.0,
+    )
+
+    def _mean(key):
+        return results.get(key, {}).get("mean", 0.0)
+
+    out = {
+        "collar_f1":  _mean("collar_f1"),
+        "tm_bs_f1":   _mean("tm_bs_f1"),
+        "gc_bs_f1":   _mean("gc_bs_f1"),
+        "tm_matched": _mean("tm_matched"),
+    }
+    if has_transcript:
+        out["wer"] = _mean("wer")
+    return out
+
+
 def main(
         hypo_path: Path,
         ref_path: Path,
@@ -310,7 +393,6 @@ def main(
             assert "TRANS" in ref.keys()
             scores["TRANS-COMET"] = score_st(hypo, ref, lang)
     else:
-        assert len(ref.keys()) == 3 or len(ref.keys()) == 2
         assert "SUM" in ref.keys()
         scores["SUM-BERTScore"] = score_ssum(hypo, ref, lang)
         if lang == "en":
@@ -319,6 +401,14 @@ def main(
         else:
             assert "TRANS" in ref.keys()
             scores["TRANS-COMET"] = score_st(hypo, ref, lang)
+        if "ACHAP" in ref.keys():
+            achap = score_achap(hypo, ref, lang)
+            scores["ACHAP-CollarF1"]   = achap.get("collar_f1", 0.0)
+            scores["ACHAP-TM-BS"]      = achap.get("tm_bs_f1", 0.0)
+            scores["ACHAP-GC-BS"]      = achap.get("gc_bs_f1", 0.0)
+            scores["ACHAP-TM-MATCHED"] = achap.get("tm_matched", 0.0)
+            if "wer" in achap:
+                scores["ACHAP-WER"] = achap["wer"]
     return scores
 
 
