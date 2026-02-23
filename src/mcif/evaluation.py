@@ -47,7 +47,6 @@ CHAR_LEVEL_LANGS = {"zh"}
 # ISO 639-1 → ISO 639-3 mapping for chunkseg forced alignment
 _CHUNKSEG_LANG = {"en": "eng", "de": "deu", "it": "ita", "zh": "zho"}
 
-
 @dataclass
 class ReferenceSample:
     sample_ids: List[str]
@@ -295,10 +294,18 @@ def score_achap(
         ref_dict: Dict[str, Dict[str, ReferenceSample]],
         lang: str) -> Dict[str, float]:
     """
-    Computes chunkseg metrics for audio chaptering (ACHAP): collar-based F1, time-chunk F1, WER, and title evaluation.
+    Computes chunkseg metrics for audio chaptering (ACHAP):
+    - Collar-based F1 (±3s collar): Comparing predicted chapter timestamps with reference timestamps with tolerance
+    - BERTScore for titles, with two different strategies
+        - Global Concatenation; concatenated predicted vs reference titles
+        - Temporally Matched; only comparing titles of predicted sections temporally matching reference sections
+    - WER: word error rate, for the transcript generated alongside (optional)
 
     Hypothesis is a plain Markdown transcript (no timestamps); chunkseg derives
     boundary timestamps and title time associations via forced alignment internally.
+
+    Following the work of:
+    `"Beyond Transcripts: A Renewed Perspective on Audio Chaptering" <https://www.arxiv.org/abs/2602.08979>`_
 
     Reference XML format:
       <reference>: JSON [[title, start_seconds], ...]
@@ -404,8 +411,8 @@ def main(
         if "ACHAP" in ref.keys():
             achap = score_achap(hypo, ref, lang)
             scores["ACHAP-CollarF1"]   = achap.get("collar_f1", 0.0)
-            scores["ACHAP-TM-BS"]      = achap.get("tm_bs_f1", 0.0)
-            scores["ACHAP-GC-BS"]      = achap.get("gc_bs_f1", 0.0)
+            scores["ACHAP-TM-BERTScore"]      = achap.get("tm_bs_f1", 0.0)
+            scores["ACHAP-GC-BERTScore"]      = achap.get("gc_bs_f1", 0.0)
             scores["ACHAP-TM-MATCHED"] = achap.get("tm_matched", 0.0)
             if "wer" in achap:
                 scores["ACHAP-WER"] = achap["wer"]
