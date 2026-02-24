@@ -26,6 +26,7 @@ from typing import Dict, List, Optional, Tuple
 
 import bert_score
 import jiwer
+from chunkseg import evaluate_batch
 from comet import download_model, load_from_checkpoint
 from whisper_normalizer import english, basic
 
@@ -295,11 +296,11 @@ def score_achap(
         lang: str) -> Dict[str, float]:
     """
     Computes chunkseg metrics for audio chaptering (ACHAP):
-    - Collar-based F1 (±3s collar): Comparing predicted chapter timestamps with reference timestamps with tolerance
-    - BERTScore for titles, with two different strategies
-        - Global Concatenation; concatenated predicted vs reference titles
-        - Temporally Matched; only comparing titles of predicted sections temporally matching reference sections
-    - WER: word error rate, for the transcript generated alongside (optional)
+    - Collar-based F1 (±3s collar): predicted vs reference timestamps with tolerance
+    - BERTScore for titles, with two different strategies:
+        - Global Concatenation: concatenated predicted vs reference titles
+        - Temporally Matched: titles of predicted sections matching reference sections
+    - WER: word error rate for the transcript generated alongside (optional)
 
     Hypothesis is a plain Markdown transcript (no timestamps); chunkseg derives
     boundary timestamps and title time associations via forced alignment internally.
@@ -312,9 +313,6 @@ def score_achap(
       <metadata><audio_path>: path to audio file
       <metadata><transcript>: reference transcript text (optional; enables WER)
     """
-    import json
-    from chunkseg import evaluate_batch
-
     chunkseg_lang = _CHUNKSEG_LANG.get(lang, "eng")
     samples = []
     has_transcript = False
@@ -357,17 +355,14 @@ def score_achap(
         tolerance=5.0,
     )
 
-    def _mean(key):
-        return results.get(key, {}).get("mean", 0.0)
-
     out = {
-        "collar_f1":  _mean("collar_f1"),
-        "tm_bs_f1":   _mean("tm_bs_f1"),
-        "gc_bs_f1":   _mean("gc_bs_f1"),
-        "tm_matched": _mean("tm_matched"),
+        "ACHAP-CollarF1": results["collar_f1"]["mean"],
+        "ACHAP-TM-BERTScore": results["tm_bs_f1"]["mean"],
+        "ACHAP-GC-BERTScore": results["gc_bs_f1"]["mean"],
+        "ACHAP-TM-MATCHED": results["tm_matched"]["mean"],
     }
     if has_transcript:
-        out["wer"] = _mean("wer")
+        out["ACHAP-WER"] = results["wer"]["mean"]
     return out
 
 
@@ -409,13 +404,7 @@ def main(
             assert "TRANS" in ref.keys()
             scores["TRANS-COMET"] = score_st(hypo, ref, lang)
         if "ACHAP" in ref.keys():
-            achap = score_achap(hypo, ref, lang)
-            scores["ACHAP-CollarF1"]   = achap.get("collar_f1", 0.0)
-            scores["ACHAP-TM-BERTScore"]      = achap.get("tm_bs_f1", 0.0)
-            scores["ACHAP-GC-BERTScore"]      = achap.get("gc_bs_f1", 0.0)
-            scores["ACHAP-TM-MATCHED"] = achap.get("tm_matched", 0.0)
-            if "wer" in achap:
-                scores["ACHAP-WER"] = achap["wer"]
+            scores.update(score_achap(hypo, ref, lang))
     return scores
 
 
