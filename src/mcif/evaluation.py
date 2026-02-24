@@ -48,6 +48,7 @@ CHAR_LEVEL_LANGS = {"zh"}
 # ISO 639-1 → ISO 639-3 mapping for chunkseg forced alignment
 _CHUNKSEG_LANG = {"en": "eng", "de": "deu", "it": "ita", "zh": "zho"}
 
+
 @dataclass
 class ReferenceSample:
     sample_ids: List[str]
@@ -306,7 +307,8 @@ def score_achap(
     boundary timestamps and title time associations via forced alignment internally.
 
     Following the work of:
-    `"Beyond Transcripts: A Renewed Perspective on Audio Chaptering" <https://www.arxiv.org/abs/2602.08979>`_
+    `"Beyond Transcripts: A Renewed Perspective on Audio Chaptering"
+    <https://www.arxiv.org/abs/2602.08979>`_
 
     Reference XML format:
       <reference>: JSON [[title, start_seconds], ...]
