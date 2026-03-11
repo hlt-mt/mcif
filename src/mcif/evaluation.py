@@ -315,7 +315,7 @@ def score_achap(
       <metadata><audio_path>: path to audio file
       <metadata><transcript>: reference transcript text (optional; enables WER)
     """
-    chunkseg_lang = _CHUNKSEG_LANG.get(lang, "eng")
+    chunkseg_lang = _CHUNKSEG_LANG[lang]
     samples = []
     has_transcript = False
 
