@@ -1,4 +1,3 @@
-
 # Copyright 2025 FBK, KIT
 
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -142,17 +141,8 @@ def read_reference(
         ref_path: Path,
         track: str,
         language: str,
-        modality: Optional[str] = None,
-        hypo_path: Optional[Path] = None) -> Dict[str, Dict[str, ReferenceSample]]:
+        modality: Optional[str] = None) -> Dict[str, Dict[str, ReferenceSample]]:
     xml = ET.parse(ref_path)
-    audio_paths = {}
-    if hypo_path is not None:
-        hypo_xml = ET.parse(hypo_path)
-        for task in hypo_xml.getroot().iter("task"):
-            if task.attrib['track'] == track and task.attrib['text_lang'] == language:
-                for s in task.iter("sample"):
-                    audio_paths[s.attrib['id']] = s.find('audio_path').text
-                break
     avail_tasks = []
     for task in xml.getroot().iter("task"):
         if task.attrib['track'] == track and task.attrib['text_lang'] == language:
@@ -163,16 +153,13 @@ def read_reference(
                         samples_by_subtask[sample.attrib['task']] = {}
                     sample_ids = sample.attrib['id'].split(",")
                     sample_reference = next(sample.iter('reference')).text
-                    sample_metadata = {}
+                    sample_metadata = {'audio_path': next(sample.iter('audio_path')).text}
                     for metadata in sample.iter('metadata'):
                         for metadata_field in metadata.iter():
                             sample_metadata[metadata_field.tag] = metadata_field.text
                     for field in ['qa_type', 'qa_origin']:
                         if field in sample.attrib:
                             sample_metadata[field] = sample.attrib[field]
-                    for sid in sample_ids:
-                        if sid in audio_paths:
-                            sample_metadata['audio_path'] = audio_paths[sid]
                     samples_by_subtask[sample.attrib['task']][sample.attrib['iid']] = \
                         ReferenceSample(sample_ids, sample_reference, sample_metadata)
             return samples_by_subtask
@@ -391,8 +378,7 @@ def main(
     Main function computing all the scores and returning a Dictionary with the scores
     """
     hypo = read_hypo(hypo_path, track, lang)
-    ref = read_reference(ref_path, track, lang, modality=filter_modality,
-                         hypo_path=hypo_path)
+    ref = read_reference(ref_path, track, lang, modality=filter_modality)
     scores = {}
     assert "QA" in ref.keys()
     scores["QA-BERTScore"], qa_types_scores = score_sqa(hypo, ref, lang, breakdown_qa_types)
