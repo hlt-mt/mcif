@@ -100,7 +100,6 @@ def generate(model_processor, prompt, example_path, modality):
     )
     inputs = inputs.to(model.device).to(model.dtype)
 
-    # Inference: Generation of the output text
     # Qwen3-Omni always returns a (text_ids, audio) tuple; with return_audio=False the
     # second element is None. thinker_max_new_tokens/thinker_do_sample are Qwen2.5-Omni
     # specific parameters and are not supported by Qwen3-Omni.
