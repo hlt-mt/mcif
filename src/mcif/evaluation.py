@@ -292,6 +292,7 @@ def _audio_duration(audio_path: str) -> float:
 
 
 def score_achap(
+        base_ref_path: Path,
         hypo_dict: Dict[str, str],
         ref_dict: Dict[str, Dict[str, ReferenceSample]],
         lang: str) -> Dict[str, float]:
@@ -326,8 +327,8 @@ def score_achap(
         ref_chapters = json.loads(ref_sample.reference)  # [[title, start_sec], ...]
         ref_titles = [(t, float(s)) for t, s in ref_chapters]
         ref_boundaries = [float(s) for _, s in ref_chapters]
-        audio_path = ref_sample.metadata["audio_path"]
-        duration = _audio_duration(audio_path)
+        audio_path = base_ref_path / "LONG_AUDIOS" / ref_sample.metadata["audio_path"]
+        duration = _audio_duration(audio_path.absolute().as_posix())
         transcript = ref_sample.metadata.get("transcript")
         if transcript is not None:
             has_transcript = True
@@ -336,7 +337,7 @@ def score_achap(
             "hypothesis": hypo_text,
             "reference": ref_boundaries,
             "duration": duration,
-            "audio": audio_path,
+            "audio": audio_path.absolute().as_posix(),
             "reference_titles": ref_titles,
         }
         if transcript is not None:
@@ -405,7 +406,7 @@ def main(
             assert "TRANS" in ref.keys()
             scores["TRANS-COMET"] = score_st(hypo, ref, lang)
         if "ACHAP" in ref.keys():
-            scores.update(score_achap(hypo, ref, lang))
+            scores.update(score_achap(ref_path.parent, hypo, ref, lang))
     return scores
 
 
