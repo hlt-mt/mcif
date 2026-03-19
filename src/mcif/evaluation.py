@@ -308,8 +308,8 @@ def _replace_translation_with_transcript(
     section_texts = [" ".join(sents) for sents in sections]
     full_hyp = " ".join(section_texts)
 
-    gold_lines = [l for l in gold_translation.strip().split("\n") if l.strip()]
-    ref_lines = [l for l in ref_transcript.strip().split("\n") if l.strip()]
+    gold_lines = [s for s in gold_translation.strip().split("\n") if s.strip()]
+    ref_lines = [s for s in ref_transcript.strip().split("\n") if s.strip()]
     assert len(gold_lines) == len(ref_lines), \
         f"Gold translation ({len(gold_lines)}) and transcript ({len(ref_lines)}) " \
         f"line counts differ"
