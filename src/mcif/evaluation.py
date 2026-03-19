@@ -27,6 +27,7 @@ from typing import Dict, List, Optional, Tuple
 import bert_score
 import jiwer
 from chunkseg import evaluate_batch
+from chunkseg.parsers import parse_transcript
 from comet import download_model, load_from_checkpoint
 from whisper_normalizer import english, basic
 
@@ -291,6 +292,56 @@ def _audio_duration(audio_path: str) -> float:
     return File(audio_path).info.length
 
 
+def _replace_translation_with_transcript(
+        hypo_text: str,
+        gold_translation: str,
+        ref_transcript: str,
+        target_lang: str) -> str:
+    """Replace translated hypothesis body with English transcript via mwerSegmenter."""
+    parsed = parse_transcript(hypo_text, "markdown")
+    titles = parsed.titles or []
+    sections = parsed.sections or []
+
+    if not titles or not sections:
+        return hypo_text
+
+    section_texts = [" ".join(sents) for sents in sections]
+    full_hyp = " ".join(section_texts)
+
+    gold_lines = [l for l in gold_translation.strip().split("\n") if l.strip()]
+    ref_lines = [l for l in ref_transcript.strip().split("\n") if l.strip()]
+    assert len(gold_lines) == len(ref_lines), \
+        f"Gold translation ({len(gold_lines)}) and transcript ({len(ref_lines)}) " \
+        f"line counts differ"
+
+    segmenter = MwerSegmenter(character_level=(target_lang in CHAR_LEVEL_LANGS))
+    reseg = segmenter(full_hyp, gold_lines)
+
+    section_ends, pos = [], 0
+    for t in section_texts:
+        pos += len(t)
+        section_ends.append(pos)
+        pos += 1
+
+    section_ref: List[List[str]] = [[] for _ in titles]
+    hyp_pos, sec_idx = 0, 0
+    for i, seg in enumerate(reseg):
+        seg = seg.strip()
+        if not seg:
+            continue
+        found = full_hyp.find(seg, hyp_pos)
+        mid = found + len(seg) // 2 if found >= 0 else hyp_pos
+        if found >= 0:
+            hyp_pos = found + len(seg)
+        while sec_idx < len(section_ends) - 1 and mid >= section_ends[sec_idx]:
+            sec_idx += 1
+        section_ref[sec_idx].append(ref_lines[i])
+
+    return "\n".join(
+        f"# {t}\n{' '.join(r)}\n" for t, r in zip(titles, section_ref)
+    ).strip()
+
+
 def score_achap(
         base_ref_path: Path,
         hypo_dict: Dict[str, str],
@@ -307,15 +358,21 @@ def score_achap(
     Hypothesis is a plain Markdown transcript (no timestamps); chunkseg derives
     boundary timestamps and title time associations via forced alignment internally.
 
+    For crosslingual evaluation, the translated hypothesis is
+    aligned to the gold translation via mwerSegmenter and replaced with the
+    reference transcript before passing to chunkseg.
+
     Following the work of:
     `"Beyond Transcripts: A Renewed Perspective on Audio Chaptering"
     <https://www.arxiv.org/abs/2602.08979>`_
 
     Reference XML format:
       <reference>: JSON [[title, start_seconds], ...]
-      <metadata><transcript>: reference transcript text (optional; enables WER)
+      <metadata><transcript>: English reference transcript (optional; enables WER)
+      <metadata><translation>: gold translation, line-aligned with transcript
+          (crosslingual only)
     """
-    chunkseg_lang = _CHUNKSEG_LANG[lang]
+    crosslingual = (lang != "en")
     samples = []
     has_transcript = False
 
@@ -330,7 +387,13 @@ def score_achap(
         audio_path = base_ref_path / "LONG_AUDIOS" / ref_sample.metadata["audio_path"]
         duration = _audio_duration(audio_path.absolute().as_posix())
         transcript = ref_sample.metadata.get("transcript")
-        if transcript is not None:
+        translation = ref_sample.metadata.get("translation")
+
+        if crosslingual and translation is not None and transcript is not None:
+            hypo_text = _replace_translation_with_transcript(
+                hypo_text, translation, transcript, lang)
+
+        if transcript is not None and not crosslingual:
             has_transcript = True
 
         sample = {
@@ -340,7 +403,7 @@ def score_achap(
             "audio": audio_path.absolute().as_posix(),
             "reference_titles": ref_titles,
         }
-        if transcript is not None:
+        if has_transcript:
             sample["reference_transcript"] = transcript
         samples.append(sample)
 
@@ -350,7 +413,8 @@ def score_achap(
     results = evaluate_batch(
         samples,
         format="markdown",
-        lang=chunkseg_lang,
+        src_lang="eng",
+        tgt_lang=lang,
         titles=True,
         wer=has_transcript,
         collar=3.0,
