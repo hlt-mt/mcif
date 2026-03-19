@@ -31,6 +31,8 @@ from models.mllm.ola import generate as generate_ola
 from models.mllm.ola import load_model as load_ola
 from models.mllm.qwen_omni import generate as generate_qwen_omni
 from models.mllm.qwen_omni import load_model as load_qwen_omni
+from models.mllm.qwen3_omni import generate as generate_qwen3_omni
+from models.mllm.qwen3_omni import load_model as load_qwen3_omni
 
 # import speech models
 from models.speech.desta import generate as generate_desta
@@ -141,6 +143,9 @@ def load_model(model_name):
     elif model_name == "qwen_omni":
         model = load_qwen_omni()
         generate_func = generate_qwen_omni
+    elif model_name == "qwen3_omni":
+        model = load_qwen3_omni()
+        generate_func = generate_qwen3_omni
     elif model_name == "ming_lite_omni":
         model = load_ming_lite_omni()
         generate_func = generate_ming_lite_omni
@@ -228,6 +233,7 @@ if __name__ == "__main__":
         "ming_lite_omni",
         "ola",
         "qwen_omni",
+        "qwen3_omni",
         "gpt_oss",
         "gemini",
     ]
