@@ -292,27 +292,20 @@ def _audio_duration(audio_path: str) -> float:
     return File(audio_path).info.length
 
 
-def _replace_translation_with_transcript(
+def _align_sections(
         hypo_text: str,
-        gold_translation: str,
-        ref_transcript: str,
-        target_lang: str) -> str:
-    """Replace translated hypothesis body with English transcript via mwerSegmenter."""
+        gold_lines: List[str],
+        target_lang: str) -> Tuple[List[str], List[List[int]]]:
+    """Align hypothesis sections to gold translation lines via mwerSegmenter."""
     parsed = parse_transcript(hypo_text, "markdown")
     titles = parsed.titles or []
     sections = parsed.sections or []
 
     if not titles or not sections:
-        return hypo_text
+        return titles, [[] for _ in titles]
 
     section_texts = [" ".join(sents) for sents in sections]
     full_hyp = " ".join(section_texts)
-
-    gold_lines = [s for s in gold_translation.strip().split("\n") if s.strip()]
-    ref_lines = [s for s in ref_transcript.strip().split("\n") if s.strip()]
-    assert len(gold_lines) == len(ref_lines), \
-        f"Gold translation ({len(gold_lines)}) and transcript ({len(ref_lines)}) " \
-        f"line counts differ"
 
     segmenter = MwerSegmenter(character_level=(target_lang in CHAR_LEVEL_LANGS))
     reseg = segmenter(full_hyp, gold_lines)
@@ -323,7 +316,7 @@ def _replace_translation_with_transcript(
         section_ends.append(pos)
         pos += 1
 
-    section_ref: List[List[str]] = [[] for _ in titles]
+    section_to_line_map: List[List[int]] = [[] for _ in titles]
     hyp_pos, sec_idx = 0, 0
     for i, seg in enumerate(reseg):
         seg = seg.strip()
@@ -335,7 +328,28 @@ def _replace_translation_with_transcript(
             hyp_pos = found + len(seg)
         while sec_idx < len(section_ends) - 1 and mid >= section_ends[sec_idx]:
             sec_idx += 1
-        section_ref[sec_idx].append(ref_lines[i])
+        section_to_line_map[sec_idx].append(i)
+
+    return titles, section_to_line_map
+
+
+def _replace_translation_with_transcript(
+        hypo_text: str,
+        gold_translation: str,
+        ref_transcript: str,
+        target_lang: str) -> str:
+    """Replace translated hypothesis body with reference transcript via mwerSegmenter."""
+    gold_lines = [s for s in gold_translation.strip().split("\n") if s.strip()]
+    ref_lines = [s for s in ref_transcript.strip().split("\n") if s.strip()]
+    assert len(gold_lines) == len(ref_lines), \
+        f"Gold translation ({len(gold_lines)}) and transcript ({len(ref_lines)}) " \
+        f"line counts differ"
+
+    titles, section_to_line_map = _align_sections(hypo_text, gold_lines, target_lang)
+    if not titles:
+        return hypo_text
+
+    section_ref = [[ref_lines[i] for i in indices] for indices in section_to_line_map]
 
     return "\n".join(
         f"# {t}\n{' '.join(r)}\n" for t, r in zip(titles, section_ref)
