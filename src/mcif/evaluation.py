@@ -353,7 +353,7 @@ def score_achap(
     - BERTScore for titles, with two different strategies:
         - Global Concatenation: concatenated predicted vs reference titles
         - Temporally Matched: titles of predicted sections matching reference sections
-    - WER: word error rate for the transcript generated alongside (optional)
+    - WER: word error rate for the transcript generated alongside
 
     Hypothesis is a plain Markdown transcript (no timestamps); chunkseg derives
     boundary timestamps and title time associations via forced alignment internally.
@@ -368,12 +368,11 @@ def score_achap(
 
     Reference XML format:
       <reference>: JSON [[title, start_seconds], ...]
-      <metadata><transcript>: English reference transcript (optional; enables WER)
+      <metadata><transcript>: English reference transcript
       <metadata><translation>: reference translation, line-aligned with transcript
     """
     crosslingual = (lang != "en")
     samples = []
-    has_transcript = False
 
     for iid, ref_sample in ref_dict["ACHAP"].items():
         assert len(ref_sample.sample_ids) == 1, \
@@ -385,15 +384,12 @@ def score_achap(
         ref_boundaries = [float(s) for _, s in ref_chapters]
         audio_path = base_ref_path / "LONG_AUDIOS" / ref_sample.metadata["audio_path"]
         duration = _audio_duration(audio_path.absolute().as_posix())
-        transcript = ref_sample.metadata.get("transcript")
-        translation = ref_sample.metadata.get("translation")
+        transcript = ref_sample.metadata["transcript"]
 
-        if crosslingual and translation is not None and transcript is not None:
+        if crosslingual:
+            translation = ref_sample.metadata["translation"]
             hypo_text = _replace_translation_with_transcript(
                 hypo_text, translation, transcript, lang)
-
-        if transcript is not None and not crosslingual:
-            has_transcript = True
 
         sample = {
             "hypothesis": hypo_text,
@@ -401,9 +397,8 @@ def score_achap(
             "duration": duration,
             "audio": audio_path.absolute().as_posix(),
             "reference_titles": ref_titles,
+            "reference_transcript": transcript,
         }
-        if has_transcript:
-            sample["reference_transcript"] = transcript
         samples.append(sample)
 
     if not samples:
@@ -415,7 +410,7 @@ def score_achap(
         src_lang="eng",
         tgt_lang=lang,
         titles=True,
-        wer=has_transcript,
+        wer=not crosslingual,
         collar=3.0,
         tolerance=5.0,
     )
@@ -426,7 +421,7 @@ def score_achap(
         "ACHAP-GC-BERTScore": results["gc_bs_f1"]["mean"],
         "ACHAP-TM-MATCHED": results["tm_matched"]["mean"],
     }
-    if has_transcript:
+    if not crosslingual:
         out["ACHAP-WER"] = results["wer"]["mean"]
     return out
 
