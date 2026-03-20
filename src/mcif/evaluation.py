@@ -369,8 +369,7 @@ def score_achap(
     Reference XML format:
       <reference>: JSON [[title, start_seconds], ...]
       <metadata><transcript>: English reference transcript (optional; enables WER)
-      <metadata><translation>: gold translation, line-aligned with transcript
-          (crosslingual only)
+      <metadata><translation>: reference translation, line-aligned with transcript
     """
     crosslingual = (lang != "en")
     samples = []
