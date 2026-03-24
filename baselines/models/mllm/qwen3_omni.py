@@ -96,6 +96,7 @@ def generate(model_processor, prompt, example_path, modality):
         videos=videos,
         return_tensors="pt",
         padding=True,
+        truncation=False,
         use_audio_in_video=USE_AUDIO_IN_VIDEO,
     )
     inputs = inputs.to(model.device).to(model.dtype)
