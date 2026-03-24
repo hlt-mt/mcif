@@ -46,9 +46,6 @@ LOGGER = logging.getLogger('mcif.evaluation')
 
 CHAR_LEVEL_LANGS = {"zh"}
 
-# ISO 639-1 → ISO 639-3 mapping for chunkseg forced alignment
-_CHUNKSEG_LANG = {"en": "eng", "de": "deu", "it": "ita", "zh": "zho"}
-
 
 @dataclass
 class ReferenceSample:
