@@ -367,7 +367,7 @@ def score_achap(
     - BERTScore for titles, with two different strategies:
         - Global Concatenation: concatenated predicted vs reference titles
         - Temporally Matched: titles of predicted sections matching reference sections
-    - WER: word error rate for the transcript generated alongside
+    - WER/COMET: quality measure for the transcript/translation generated alongside
 
     Hypothesis is a plain Markdown transcript (no timestamps); chunkseg derives
     boundary timestamps and title time associations via forced alignment internally.
@@ -387,6 +387,7 @@ def score_achap(
     """
     crosslingual = (lang != "en")
     samples = []
+    comet_data = []
 
     for iid, ref_sample in ref_dict["ACHAP"].items():
         assert len(ref_sample.sample_ids) == 1, \
@@ -404,6 +405,16 @@ def score_achap(
             translation = ref_sample.metadata["translation"]
             hypo_text = _replace_translation_with_transcript(
                 hypo_text, translation, transcript, lang)
+
+            # Prepare COMET data
+            gold_lines = [s for s in translation.strip().split("\n") if s.strip()]
+            src_lines = [s for s in transcript.strip().split("\n") if s.strip()]
+            segmenter = MwerSegmenter(character_level=(lang in CHAR_LEVEL_LANGS))
+            parsed = parse_transcript(hypo_dict[ref_sample.sample_ids[0]], "markdown")
+            flat = " ".join(" ".join(s) for s in (parsed.sections or []))
+            reseg = segmenter(flat, gold_lines)
+            for mt, ref, src in zip(reseg, gold_lines, src_lines):
+                comet_data.append({"src": src.strip(), "mt": mt.strip(), "ref": ref.strip()})
 
         sample = {
             "hypothesis": hypo_text,
@@ -435,7 +446,9 @@ def score_achap(
         "ACHAP-GC-BERTScore": results["gc_bs_f1"]["mean"],
         "ACHAP-TM-MATCHED": results["tm_matched"]["mean"],
     }
-    if not crosslingual:
+    if crosslingual:
+        out["ACHAP-COMET"] = comet_score(comet_data)
+    else:
         out["ACHAP-WER"] = results["wer"]["mean"]
     return out
 
