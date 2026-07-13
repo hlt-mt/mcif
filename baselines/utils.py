@@ -16,7 +16,6 @@ import io
 import logging
 import os
 import sys
-import xml.etree.ElementTree as ET
 
 from mcif import __benchmark_version__
 from mcif.io import OutputSample, write_output
