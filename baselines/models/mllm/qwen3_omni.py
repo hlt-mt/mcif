@@ -104,12 +104,17 @@ def generate(model_processor, prompt, example_path, modality):
     # Qwen3-Omni always returns a (text_ids, audio) tuple; with return_audio=False the
     # second element is None. thinker_max_new_tokens/thinker_do_sample are Qwen2.5-Omni
     # specific parameters and are not supported by Qwen3-Omni.
-    text_ids, _ = model.generate(
+    result = model.generate(
         **inputs,
         use_audio_in_video=USE_AUDIO_IN_VIDEO,
         return_audio=False,
         max_new_tokens=4096,
     )
+
+    if isinstance(result, tuple):
+        text_ids = result[0]
+    else:
+        text_ids = result
     text = processor.batch_decode(
         text_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False
     )
