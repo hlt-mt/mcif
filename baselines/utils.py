@@ -69,9 +69,11 @@ def read_from_xml(folder_path, lang, track, modality, prompt, version=__benchmar
     if modality == "text" and track == "short":
         raise ValueError("Text-to-text is not available in the short track.")
 
-    xml_path = f"{folder_path}/MCIF{version}.IF.{track}.{lang}.src.{prompt}prompts.xml"
+    try:
+        tree = ET.parse(f"{folder_path}/MCIF.IF.{track}.{lang}.src.{prompt}prompts.xml")
+    except FileNotFoundError:
+        tree = ET.parse(f"{folder_path}/MCIF{version}.IF.{track}.{lang}.src.{prompt}prompts.xml")
 
-    tree = ET.parse(xml_path)
     root = tree.getroot()
 
     # List to hold the tuples
