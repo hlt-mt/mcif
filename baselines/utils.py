@@ -99,13 +99,8 @@ def read_from_xml(folder_path, lang, track, modality, prompt, version=__benchmar
                 f"Unsupported modality: {modality}"
             )
 
-        data.append(
-            (
-                sample["id"],
-                instruction,
-                example_path,
-            )
-        )
+        # Append the tuple to the list
+        data.append((sample["id"], instruction, example_path))
 
     return data
 
