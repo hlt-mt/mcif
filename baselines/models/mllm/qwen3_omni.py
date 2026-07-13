@@ -101,9 +101,6 @@ def generate(model_processor, prompt, example_path, modality):
     )
     inputs = inputs.to(model.device).to(model.dtype)
 
-    # Qwen3-Omni always returns a (text_ids, audio) tuple; with return_audio=False the
-    # second element is None. thinker_max_new_tokens/thinker_do_sample are Qwen2.5-Omni
-    # specific parameters and are not supported by Qwen3-Omni.
     result = model.generate(
         **inputs,
         use_audio_in_video=USE_AUDIO_IN_VIDEO,
@@ -111,6 +108,9 @@ def generate(model_processor, prompt, example_path, modality):
         max_new_tokens=4096,
     )
 
+    # Earlier Qwen3-Omni implementations return a (text_ids, audio) tuple, and, with
+    # return_audio=False the second element is None. However, newer implementations return only a
+    # single element, the text ids.
     if isinstance(result, tuple):
         text_ids = result[0]
     else:
