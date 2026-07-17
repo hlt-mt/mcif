@@ -16,10 +16,11 @@ import io
 import logging
 import os
 import sys
-import xml.etree.ElementTree as ET
 
 from mcif import __benchmark_version__
 from mcif.io import OutputSample, write_output
+
+from datasets import load_dataset
 
 TASK_ATTRIB = ["track", "text_lang"]
 
@@ -69,38 +70,38 @@ def read_from_xml(folder_path, lang, track, modality, prompt, version=__benchmar
     if modality == "text" and track == "short":
         raise ValueError("Text-to-text is not available in the short track.")
 
-    xml_path = f"{folder_path}/MCIF{version}.IF.{track}.{lang}.src.{prompt}prompts.xml"
+    mcif_dataset = load_dataset("FBK-MT/MCIF", f"{track}_{prompt}prompt")["test"]
 
-    tree = ET.parse(xml_path)
-    root = tree.getroot()
+    prompt_key = f"prompt_{lang}"
 
-    # List to hold the tuples
-    data_list = []
+    data = []
 
-    # Iterate over each 'sample' element in the XML
-    for sample in root.findall(".//sample"):
-        # Extract the sample id, instruction, and audio path
-        sample_id = sample.get("id")
-        instruction = sample.find("instruction").text
-        if modality != "mllm":
-            node = sample.find(f"{modality}_path")
-            if node is None:
+    for sample in mcif_dataset:
+        instruction = sample.get(prompt_key)
+
+        # Skip samples without the requested prompt language
+        if instruction is None:
+            continue
+
+        if modality == "audio":
+            if sample["audio"] is None:
                 continue
-            example_path = (
-                f"{folder_path}/{track.upper()}_{modality.upper()}S/{node.text}"
-            )
+            example_path = os.path.join(folder_path, sample["audio"])
+
         elif modality == "mllm":
-            node = sample.find("video_path")
-            if node is None:
+            if sample["video"] is None:
                 continue
-            example_path = f"{folder_path}/{track.upper()}_VIDEOS/{node.text}"
+            example_path = os.path.join(folder_path, sample["video"])
+
         else:
-            raise NotImplementedError(f"No example path found for modality {modality}")
+            raise NotImplementedError(
+                f"Unsupported modality: {modality}"
+            )
 
         # Append the tuple to the list
-        data_list.append((sample_id, instruction, example_path))
+        data.append((sample["id"], instruction, example_path))
 
-    return data_list
+    return data
 
 
 def write_to_xml(outputs, lang, track, output_file):
