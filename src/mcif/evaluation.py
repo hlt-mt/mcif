@@ -26,6 +26,8 @@ from typing import Dict, List, Optional, Tuple
 
 import bert_score
 import jiwer
+from chunkseg import evaluate_batch
+from chunkseg.parsers import parse_transcript
 from comet import download_model, load_from_checkpoint
 from whisper_normalizer import english, basic
 
@@ -149,7 +151,7 @@ def read_reference(
                         samples_by_subtask[sample.attrib['task']] = {}
                     sample_ids = sample.attrib['id'].split(",")
                     sample_reference = next(sample.iter('reference')).text
-                    sample_metadata = {}
+                    sample_metadata = {'audio_path': next(sample.iter('audio_path')).text}
                     for metadata in sample.iter('metadata'):
                         for metadata_field in metadata.iter():
                             sample_metadata[metadata_field.tag] = metadata_field.text
@@ -281,6 +283,173 @@ def score_st(
     return comet_score(comet_data)
 
 
+def _audio_duration(audio_path: str) -> float:
+    """Return audio duration in seconds using mutagen (metadata-only, no decoding)."""
+    from mutagen import File
+    return File(audio_path).info.length
+
+
+def _align_sections(
+        hypo_text: str,
+        gold_lines: List[str],
+        target_lang: str) -> Tuple[List[str], List[List[int]]]:
+    """Align hypothesis sections to gold translation lines via mwerSegmenter."""
+    parsed = parse_transcript(hypo_text, "markdown")
+    titles = parsed.titles or []
+    sections = parsed.sections or []
+
+    if not titles or not sections:
+        return titles, [[] for _ in titles]
+
+    section_texts = [" ".join(sents) for sents in sections]
+    full_hyp = " ".join(section_texts)
+
+    segmenter = MwerSegmenter(character_level=(target_lang in CHAR_LEVEL_LANGS))
+    reseg = segmenter(full_hyp, gold_lines)
+
+    section_ends, pos = [], 0
+    for t in section_texts:
+        pos += len(t)
+        section_ends.append(pos)
+        pos += 1
+
+    section_to_line_map: List[List[int]] = [[] for _ in titles]
+    hyp_pos, sec_idx = 0, 0
+    for i, seg in enumerate(reseg):
+        seg = seg.strip()
+        if not seg:
+            continue
+        found = full_hyp.find(seg, hyp_pos)
+        mid = found + len(seg) // 2 if found >= 0 else hyp_pos
+        if found >= 0:
+            hyp_pos = found + len(seg)
+        while sec_idx < len(section_ends) - 1 and mid >= section_ends[sec_idx]:
+            sec_idx += 1
+        section_to_line_map[sec_idx].append(i)
+
+    return titles, section_to_line_map
+
+
+def _replace_translation_with_transcript(
+        hypo_text: str,
+        gold_translation: str,
+        ref_transcript: str,
+        target_lang: str) -> str:
+    """Replace translated hypothesis body with reference transcript via mwerSegmenter."""
+    gold_lines = [s for s in gold_translation.strip().split("\n") if s.strip()]
+    ref_lines = [s for s in ref_transcript.strip().split("\n") if s.strip()]
+    assert len(gold_lines) == len(ref_lines), \
+        f"Gold translation ({len(gold_lines)}) and transcript ({len(ref_lines)}) " \
+        f"line counts differ"
+
+    titles, section_to_line_map = _align_sections(hypo_text, gold_lines, target_lang)
+    if not titles:
+        return hypo_text
+
+    section_ref = [[ref_lines[i] for i in indices] for indices in section_to_line_map]
+
+    return "\n".join(
+        f"# {t}\n{' '.join(r)}\n" for t, r in zip(titles, section_ref)
+    ).strip()
+
+
+def score_achap(
+        base_ref_path: Path,
+        hypo_dict: Dict[str, str],
+        ref_dict: Dict[str, Dict[str, ReferenceSample]],
+        lang: str) -> Dict[str, float]:
+    """
+    Computes chunkseg metrics for audio chaptering (ACHAP):
+    - Collar-based F1 (±3s collar): predicted vs reference timestamps with tolerance
+    - BERTScore for titles, with two different strategies:
+        - Global Concatenation: concatenated predicted vs reference titles
+        - Temporally Matched: titles of predicted sections matching reference sections
+    - WER/COMET: quality measure for the transcript/translation generated alongside
+
+    Hypothesis is a plain Markdown transcript (no timestamps); chunkseg derives
+    boundary timestamps and title time associations via forced alignment internally.
+
+    For crosslingual evaluation, the translated hypothesis is
+    aligned to the gold translation via mwerSegmenter and replaced with the
+    reference transcript before passing to chunkseg.
+
+    Following the work of:
+    `"Beyond Transcripts: A Renewed Perspective on Audio Chaptering"
+    <https://www.arxiv.org/abs/2602.08979>`_
+
+    Reference XML format:
+      <reference>: JSON [[title, start_seconds], ...]
+      <metadata><transcript>: English reference transcript
+      <metadata><translation>: reference translation, line-aligned with transcript
+    """
+    crosslingual = (lang != "en")
+    samples = []
+    comet_data = []
+
+    for iid, ref_sample in ref_dict["ACHAP"].items():
+        assert len(ref_sample.sample_ids) == 1, \
+            f"ACHAP reference (IID: {iid}) mapped to multiple sample IDs: " \
+            f"{ref_sample.sample_ids}"
+        hypo_text = hypo_dict[ref_sample.sample_ids[0]]
+        ref_chapters = json.loads(ref_sample.reference)  # [[title, start_sec], ...]
+        ref_titles = [(t, float(s)) for t, s in ref_chapters]
+        ref_boundaries = [float(s) for _, s in ref_chapters]
+        audio_path = base_ref_path / "LONG_AUDIOS" / ref_sample.metadata["audio_path"]
+        duration = _audio_duration(audio_path.absolute().as_posix())
+        transcript = ref_sample.metadata["transcript"]
+
+        if crosslingual:
+            translation = ref_sample.metadata["translation"]
+            hypo_text = _replace_translation_with_transcript(
+                hypo_text, translation, transcript, lang)
+
+            # Prepare COMET data
+            gold_lines = [s for s in translation.strip().split("\n") if s.strip()]
+            src_lines = [s for s in transcript.strip().split("\n") if s.strip()]
+            segmenter = MwerSegmenter(character_level=(lang in CHAR_LEVEL_LANGS))
+            parsed = parse_transcript(hypo_dict[ref_sample.sample_ids[0]], "markdown")
+            flat = " ".join(" ".join(s) for s in (parsed.sections or []))
+            reseg = segmenter(flat, gold_lines)
+            for mt, ref, src in zip(reseg, gold_lines, src_lines):
+                comet_data.append({"src": src.strip(), "mt": mt.strip(), "ref": ref.strip()})
+
+        sample = {
+            "hypothesis": hypo_text,
+            "reference": ref_boundaries,
+            "duration": duration,
+            "audio": audio_path.absolute().as_posix(),
+            "reference_titles": ref_titles,
+            "reference_transcript": transcript,
+        }
+        samples.append(sample)
+
+    if not samples:
+        return {}
+
+    results = evaluate_batch(
+        samples,
+        format="markdown",
+        src_lang="eng",
+        tgt_lang=lang,
+        titles=True,
+        wer=not crosslingual,
+        collar=3.0,
+        tolerance=5.0,
+    )
+
+    out = {
+        "ACHAP-CollarF1": results["collar_f1"]["mean"],
+        "ACHAP-TM-BERTScore": results["tm_bs_f1"]["mean"],
+        "ACHAP-GC-BERTScore": results["gc_bs_f1"]["mean"],
+        "ACHAP-TM-MATCHED": results["tm_matched"]["mean"],
+    }
+    if crosslingual:
+        out["ACHAP-COMET"] = comet_score(comet_data)
+    else:
+        out["ACHAP-WER"] = results["wer"]["mean"]
+    return out
+
+
 def main(
         hypo_path: Path,
         ref_path: Path,
@@ -310,7 +479,6 @@ def main(
             assert "TRANS" in ref.keys()
             scores["TRANS-COMET"] = score_st(hypo, ref, lang)
     else:
-        assert len(ref.keys()) == 3 or len(ref.keys()) == 2
         assert "SUM" in ref.keys()
         scores["SUM-BERTScore"] = score_ssum(hypo, ref, lang)
         if lang == "en":
@@ -319,6 +487,8 @@ def main(
         else:
             assert "TRANS" in ref.keys()
             scores["TRANS-COMET"] = score_st(hypo, ref, lang)
+        if "ACHAP" in ref.keys():
+            scores.update(score_achap(ref_path.parent, hypo, ref, lang))
     return scores
 
 
