@@ -14,11 +14,7 @@
 import argparse
 import json
 import logging
-import os
 import re
-import shutil
-import subprocess
-import tempfile
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
@@ -27,6 +23,7 @@ from typing import Dict, List, Optional, Tuple
 import bert_score
 import jiwer
 from comet import download_model, load_from_checkpoint
+import mweralign
 from whisper_normalizer import english, basic
 
 import mcif
@@ -54,65 +51,30 @@ class ReferenceSample:
 
 class MwerSegmenter:
     """
-    Executes the mWERSegmenter tool introduced in `"Evaluating Machine Translation Output
+    Executes the mWERSegmenter alignment introduced in `"Evaluating Machine Translation Output
     with Automatic Sentence Segmentation" by Matusov et al. (2005)
     <https://aclanthology.org/2005.iwslt-1.19/>`_.
 
-    The tool can be downloaded at:
-    https://www-i6.informatik.rwth-aachen.de/web/Software/mwerSegmenter.tar.gz
+    The implementation leverages the python re-implementation of the mWERSegmenter tool, which
+    does not return the same output of the original executable.
     """
     def __init__(self, character_level=False):
-        self.mwer_command = "mwerSegmenter"
         self.character_level = character_level
-        if shutil.which(self.mwer_command) is None:
-            mwerSegmenter_root = os.getenv("MWERSEGMENTER_ROOT")
-            assert mwerSegmenter_root is not None, \
-                f"{self.mwer_command} is not in PATH and no MWERSEGMENTER_ROOT environment " \
-                "variable is set"
-            self.mwer_command = mwerSegmenter_root + "/mwerSegmenter"
 
     def __call__(self, prediction: str, reference_sentences: List[str]) -> List[str]:
         """
         Segments the prediction based on the reference sentences using the edit distance algorithm.
         """
-        tmp_pred = tempfile.NamedTemporaryFile(mode="w", delete=False)
-        tmp_ref = tempfile.NamedTemporaryFile(mode="w", delete=False)
         if self.character_level:
             # If character-level evaluation, add spaces for resegmentation
             prediction = " ".join(prediction)
             reference_sentences = [" ".join(reference) for reference in reference_sentences]
-        try:
-            # if the prediction is empty mwerSegmenter returns a segmentation fault, so we put a
-            # fake "." to avoid this issue
-            if prediction.strip() == "":
-                prediction = "."
-            tmp_pred.write(prediction)
-            tmp_ref.writelines(ref + '\n' for ref in reference_sentences)
-            tmp_pred.flush()
-            tmp_ref.flush()
-            subprocess.run([
-                self.mwer_command,
-                "-mref",
-                tmp_ref.name,
-                "-hypfile",
-                tmp_pred.name,
-                "-usecase",
-                "1"])
-            # mwerSegmenter writes into the __segments file of the current working directory
-            with open("__segments") as f:
-                segments = []
-                for line in f.readlines():
-                    if self.character_level:
-                        # If character-level evaluation, remove only spaces between characters
-                        line = re.sub(r'(.)\s', r'\1', line)
-                    segments.append(line.strip())
-                return segments
-        finally:
-            tmp_pred.close()
-            tmp_ref.close()
-            os.unlink(tmp_pred.name)
-            os.unlink(tmp_ref.name)
-            os.unlink("__segments")
+
+        resegmented_prediction = mweralign.align_texts("\n".join(reference_sentences), prediction)
+        segments = resegmented_prediction.split("\n")
+        if self.character_level:
+            segments = [re.sub(r'(.)\s', r'\1', line) for line in segments]
+        return segments
 
 
 def read_hypo(hypo_path: Path, track: str, language: str) -> Dict[str, str]:
